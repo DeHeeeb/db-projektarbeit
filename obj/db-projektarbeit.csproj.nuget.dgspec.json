@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj": {}
+    "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj": {
+    "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
+        "projectUniqueName": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
         "projectName": "db-projektarbeit",
-        "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
-        "packagesPath": "C:\\Users\\Trabe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\obj\\",
+        "projectPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
+        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,22 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,16 +65,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.10, 3.1.10]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -67,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
