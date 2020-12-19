@@ -7,6 +7,14 @@ namespace db_projektarbeit.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "shared");
+
+            migrationBuilder.CreateSequence<int>(
+                name: "CustomerNr",
+                schema: "shared",
+                startValue: 1000L);
+
             migrationBuilder.CreateTable(
                 name: "Cities",
                 columns: table => new
@@ -39,7 +47,7 @@ namespace db_projektarbeit.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerNr = table.Column<int>(type: "int", nullable: false),
+                    CustomerNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.CustomerNr"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: true)
@@ -107,17 +115,21 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Cities",
                 columns: new[] { "Id", "Name", "Zip" },
-                values: new object[] { 1, "St. Gallen", 9000 });
+                values: new object[,]
+                {
+                    { 1, "St. Gallen", 9000 },
+                    { 2, "Niederuzwil", 9244 },
+                    { 3, "Bettwiesen", 9553 }
+                });
 
             migrationBuilder.InsertData(
-                table: "Cities",
-                columns: new[] { "Id", "Name", "Zip" },
-                values: new object[] { 2, "Niederuzwil", 9244 });
-
-            migrationBuilder.InsertData(
-                table: "Cities",
-                columns: new[] { "Id", "Name", "Zip" },
-                values: new object[] { 3, "Bettwiesen", 9553 });
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "Name", "Street" },
+                values: new object[,]
+                {
+                    { 1, null, "Marc Traber AG", "Hauptstrasse 12" },
+                    { 2, null, "Heeb GmbH", "Winkelstrasse 2" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
@@ -156,6 +168,10 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cities");
+
+            migrationBuilder.DropSequence(
+                name: "CustomerNr",
+                schema: "shared");
         }
     }
 }

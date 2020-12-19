@@ -21,6 +21,14 @@ namespace db_projektarbeit.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
+                .StartsAt(1000);
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.CustomerNr)
+                .HasDefaultValueSql("NEXT VALUE FOR shared.CustomerNr");
+            modelBuilder.Entity<Customer>()
+                .HasOne(c => c.City);
+
             var cities = new List<City>
             {
                 new City
@@ -42,8 +50,24 @@ namespace db_projektarbeit.Model
                     Name = "Bettwiesen"
                 }
             };
-
             cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
+            var customers = new List<Customer>
+            {
+                new Customer
+                {
+                    Id = 1,
+                    Name = "Marc Traber AG",
+                    Street = "Hauptstrasse 12"
+                },
+                new Customer
+                {
+                    Id = 2,
+                    Name = "Heeb GmbH",
+                    Street = "Winkelstrasse 2"
+                }
+            };
+
+            customers.ForEach(customer => modelBuilder.Entity<Customer>().HasData(customer));
         }
     }
 }

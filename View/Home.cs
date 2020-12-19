@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace db_projektarbeit
+namespace db_projektarbeit.View
 {
     public partial class Home : Form
     {
@@ -18,9 +18,10 @@ namespace db_projektarbeit
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void menuBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            CityControl.GetCities();
+            Form form11 = new CustomerView();
+            form11.Show();
         }
     }
 }

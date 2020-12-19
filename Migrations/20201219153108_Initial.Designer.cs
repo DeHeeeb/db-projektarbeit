@@ -10,7 +10,7 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20201219144939_Initial")]
+    [Migration("20201219153108_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,9 @@ namespace db_projektarbeit.Migrations
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
+
+            modelBuilder.HasSequence<int>("CustomerNr", "shared")
+                .StartsAt(1000L);
 
             modelBuilder.Entity("db_projektarbeit.City", b =>
                 {
@@ -70,7 +73,9 @@ namespace db_projektarbeit.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("CustomerNr")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValueSql("NEXT VALUE FOR shared.CustomerNr");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -83,6 +88,22 @@ namespace db_projektarbeit.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomerNr = 0,
+                            Name = "Marc Traber AG",
+                            Street = "Hauptstrasse 12"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomerNr = 0,
+                            Name = "Heeb GmbH",
+                            Street = "Winkelstrasse 2"
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Order", b =>
