@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YMePcSntFVU5YX1BtiPZx7plmKtAYIducB4p01kwGgM5zVUP1afrYDruwElBTqM9VyxSYZAZjnYRmUoABNB8Dw==",
+  "dgSpecHash": "pDortkSxemam9jiGRW0xb8DZSl2iT6SA9EwOpqwGpRDjIRUxnf+3t8OiABks5YL+6PhNR1FEAiyf+wk8z0L9Ug==",
   "success": true,
   "projectFilePath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Trabe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Trabe\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }
