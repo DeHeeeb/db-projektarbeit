@@ -35,6 +35,26 @@ namespace db_projektarbeit.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "St. Gallen",
+                            Zip = 9000
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Niederuzwil",
+                            Zip = 9244
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Bettwiesen",
+                            Zip = 9553
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Customer", b =>

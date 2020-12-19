@@ -16,10 +16,34 @@ namespace db_projektarbeit.Model
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
+            optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var cities = new List<City>
+            {
+                new City
+                {
+                    Id = 1,
+                    Zip = 9000,
+                    Name = "St. Gallen"
+                },
+                new City
+                {
+                    Id = 2,
+                    Zip = 9244,
+                    Name = "Niederuzwil"
+                },
+                new City
+                {
+                    Id = 3,
+                    Zip = 9553,
+                    Name = "Bettwiesen"
+                }
+            };
+
+            cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
         }
     }
 }

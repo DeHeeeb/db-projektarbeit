@@ -104,6 +104,21 @@ namespace db_projektarbeit.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Name", "Zip" },
+                values: new object[] { 1, "St. Gallen", 9000 });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Name", "Zip" },
+                values: new object[] { 2, "Niederuzwil", 9244 });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Name", "Zip" },
+                values: new object[] { 3, "Bettwiesen", 9553 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
                 table: "Customers",
