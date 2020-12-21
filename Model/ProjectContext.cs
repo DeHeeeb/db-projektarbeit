@@ -16,7 +16,8 @@ namespace db_projektarbeit.Model
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
-            optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+            optionsBuilder.EnableSensitiveDataLogging();
+            //optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,23 +51,25 @@ namespace db_projektarbeit.Model
                     Name = "Bettwiesen"
                 }
             };
-            cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
             var customers = new List<Customer>
             {
                 new Customer
                 {
                     Id = 1,
                     Name = "Marc Traber AG",
-                    Street = "Hauptstrasse 12"
+                    Street = "Hauptstrasse 12",
+                    CityId = 2
                 },
                 new Customer
                 {
                     Id = 2,
                     Name = "Heeb GmbH",
-                    Street = "Winkelstrasse 2"
+                    Street = "Winkelstrasse 2",
+                    CityId = 3
                 }
             };
 
+            cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
             customers.ForEach(customer => modelBuilder.Entity<Customer>().HasData(customer));
         }
     }

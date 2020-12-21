@@ -50,7 +50,7 @@ namespace db_projektarbeit.Migrations
                     CustomerNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.CustomerNr"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CityId = table.Column<int>(type: "int", nullable: true)
+                    CityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,7 +60,7 @@ namespace db_projektarbeit.Migrations
                         column: x => x.CityId,
                         principalTable: "Cities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -115,21 +115,27 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Cities",
                 columns: new[] { "Id", "Name", "Zip" },
-                values: new object[,]
-                {
-                    { 1, "St. Gallen", 9000 },
-                    { 2, "Niederuzwil", 9244 },
-                    { 3, "Bettwiesen", 9553 }
-                });
+                values: new object[] { 1, "St. Gallen", 9000 });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Name", "Zip" },
+                values: new object[] { 2, "Niederuzwil", 9244 });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Name", "Zip" },
+                values: new object[] { 3, "Bettwiesen", 9553 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "Name", "Street" },
-                values: new object[,]
-                {
-                    { 1, null, "Marc Traber AG", "Hauptstrasse 12" },
-                    { 2, null, "Heeb GmbH", "Winkelstrasse 2" }
-                });
+                values: new object[] { 1, 2, "Marc Traber AG", "Hauptstrasse 12" });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "Name", "Street" },
+                values: new object[] { 2, 3, "Heeb GmbH", "Winkelstrasse 2" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",

@@ -1,13 +1,16 @@
 ﻿using db_projektarbeit.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace db_projektarbeit.Control
 {
     class CustomerControl
     {
         private CustomerModel CustomerModel = new CustomerModel();
+
+        public List<Customer> GetAll()
+        {
+            return CustomerModel.GetAll();
+        }
 
         public Customer GetById(int id)
         {

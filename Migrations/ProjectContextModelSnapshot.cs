@@ -67,7 +67,7 @@ namespace db_projektarbeit.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int?>("CityId")
+                    b.Property<int>("CityId")
                         .HasColumnType("int");
 
                     b.Property<int>("CustomerNr")
@@ -91,6 +91,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
+                            CityId = 2,
                             CustomerNr = 0,
                             Name = "Marc Traber AG",
                             Street = "Hauptstrasse 12"
@@ -98,6 +99,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 2,
+                            CityId = 3,
                             CustomerNr = 0,
                             Name = "Heeb GmbH",
                             Street = "Winkelstrasse 2"
@@ -171,7 +173,9 @@ namespace db_projektarbeit.Migrations
                 {
                     b.HasOne("db_projektarbeit.City", "City")
                         .WithMany()
-                        .HasForeignKey("CityId");
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("City");
                 });
