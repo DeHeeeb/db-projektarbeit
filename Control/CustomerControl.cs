@@ -12,9 +12,14 @@ namespace db_projektarbeit.Control
             return CustomerModel.GetAll();
         }
 
-        public Customer GetById(int id)
+        public List<Customer> Search(string text)
         {
-            return CustomerModel.GetById(id);
+            return CustomerModel.Search(text);
+        }
+
+        public int Save(Customer customer)
+        {
+            return CustomerModel.Save(customer);
         }
     }
 }

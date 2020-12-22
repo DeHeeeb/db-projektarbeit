@@ -6,17 +6,17 @@ using System.Text;
 
 namespace db_projektarbeit.Model
 {
-    class CustomerModel
+    class ProductModel
     {
-        public List<Customer> GetAll()
+        public List<Product> GetAll()
         {
             using (var context = new ProjectContext())
             {
-                return context.Customers.Include(c => c.City).ToList();
+                return context.Products.Include(p => p.Group).ToList();
             }
         }
 
-        public List<Customer> Search(string text)
+        /*public List<Product> Search(string text)
         {
             text = text.ToLower();
             using (var context = new ProjectContext())
@@ -31,23 +31,23 @@ namespace db_projektarbeit.Model
                         c.City.Name.ToLower().Contains(text)
                     ).ToList();
             }
-        }
+        }*/
 
-        public int Save(Customer customer)
+        public int Save(Product product)
         {
             using (var context = new ProjectContext())
             {
-                if (customer.Id == 0)
+                if (product.Id == 0)
                 {
-                    context.Customers.Add(customer);
+                    context.Products.Add(product);
                 } else
                 {
-                    context.Customers.Attach(customer);
-                    context.Entry(customer).State = EntityState.Modified;
+                    context.Products.Attach(product);
+                    context.Entry(product).State = EntityState.Modified;
                 }
                 context.SaveChanges();
 
-                return customer.Id;
+                return product.Id;
             }
         }
     }

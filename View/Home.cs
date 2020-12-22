@@ -11,17 +11,19 @@ namespace db_projektarbeit.View
 {
     public partial class Home : Form
     {
-        private CityControl CityControl = new CityControl();
-
         public Home()
         {
             InitializeComponent();
         }
 
-        private void menuBar_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void CmdCustomer_Click(object sender, EventArgs e)
         {
-            Form form11 = new CustomerView();
-            form11.Show();
+            new CustomerView().Show();
+        }
+
+        private void CmdProduct_Click(object sender, EventArgs e)
+        {
+            new ProductView().Show();
         }
     }
 }

@@ -41,9 +41,10 @@ namespace db_projektarbeit.View
             this.CmdSave = new System.Windows.Forms.Button();
             this.CmdNew = new System.Windows.Forms.Button();
             this.LblCity = new System.Windows.Forms.Label();
-            this.TxtZip = new System.Windows.Forms.TextBox();
             this.TxtCity = new System.Windows.Forms.TextBox();
+            this.NumZip = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumZip)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvCustomers
@@ -54,12 +55,14 @@ namespace db_projektarbeit.View
             this.DgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvCustomers.Location = new System.Drawing.Point(12, 45);
+            this.DgvCustomers.MultiSelect = false;
             this.DgvCustomers.Name = "DgvCustomers";
             this.DgvCustomers.ReadOnly = true;
             this.DgvCustomers.RowHeadersWidth = 51;
             this.DgvCustomers.RowTemplate.Height = 29;
             this.DgvCustomers.Size = new System.Drawing.Size(776, 195);
             this.DgvCustomers.TabIndex = 0;
+            this.DgvCustomers.TabStop = false;
             this.DgvCustomers.SelectionChanged += new System.EventHandler(this.DgvCustomers_SelectionChanged);
             // 
             // TxtSearch
@@ -68,6 +71,7 @@ namespace db_projektarbeit.View
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(677, 27);
             this.TxtSearch.TabIndex = 1;
+            this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
             // TxtCustomerNr
             // 
@@ -89,7 +93,7 @@ namespace db_projektarbeit.View
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(12, 302);
+            this.LblName.Location = new System.Drawing.Point(12, 291);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(49, 20);
             this.LblName.TabIndex = 5;
@@ -138,6 +142,7 @@ namespace db_projektarbeit.View
             this.CmdSave.TabIndex = 9;
             this.CmdSave.Text = "Speichern";
             this.CmdSave.UseVisualStyleBackColor = true;
+            this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
             // 
             // CmdNew
             // 
@@ -147,6 +152,7 @@ namespace db_projektarbeit.View
             this.CmdNew.TabIndex = 10;
             this.CmdNew.Text = "Neu";
             this.CmdNew.UseVisualStyleBackColor = true;
+            this.CmdNew.Click += new System.EventHandler(this.CmdNew_Click);
             // 
             // LblCity
             // 
@@ -157,14 +163,6 @@ namespace db_projektarbeit.View
             this.LblCity.TabIndex = 12;
             this.LblCity.Text = "PLZ / Stadt";
             // 
-            // TxtZip
-            // 
-            this.TxtZip.Location = new System.Drawing.Point(437, 288);
-            this.TxtZip.Name = "TxtZip";
-            this.TxtZip.ReadOnly = true;
-            this.TxtZip.Size = new System.Drawing.Size(57, 27);
-            this.TxtZip.TabIndex = 11;
-            // 
             // TxtCity
             // 
             this.TxtCity.Location = new System.Drawing.Point(500, 288);
@@ -173,14 +171,37 @@ namespace db_projektarbeit.View
             this.TxtCity.Size = new System.Drawing.Size(138, 27);
             this.TxtCity.TabIndex = 13;
             // 
+            // NumZip
+            // 
+            this.NumZip.Location = new System.Drawing.Point(437, 289);
+            this.NumZip.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.NumZip.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.NumZip.Name = "NumZip";
+            this.NumZip.ReadOnly = true;
+            this.NumZip.Size = new System.Drawing.Size(57, 27);
+            this.NumZip.TabIndex = 14;
+            this.NumZip.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NumZip);
             this.Controls.Add(this.TxtCity);
             this.Controls.Add(this.LblCity);
-            this.Controls.Add(this.TxtZip);
             this.Controls.Add(this.CmdNew);
             this.Controls.Add(this.CmdSave);
             this.Controls.Add(this.CmdSearch);
@@ -193,8 +214,9 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.DgvCustomers);
             this.Name = "CustomerView";
-            this.Text = "Customer";
+            this.Text = "Kunden-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumZip)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +236,7 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.Button CmdSave;
         private System.Windows.Forms.Button CmdNew;
         private System.Windows.Forms.Label LblCity;
-        private System.Windows.Forms.TextBox TxtZip;
         private System.Windows.Forms.TextBox TxtCity;
+        private System.Windows.Forms.NumericUpDown NumZip;
     }
 }
