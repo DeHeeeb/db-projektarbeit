@@ -174,84 +174,84 @@ namespace db_projektarbeit.Model
                     Id = 1,
                     GroupId = 2,
                     Description = "Stuhl mit Armlehnen",
-                    Price = 140
+                    Price = 140M
                 },
                 new Product
                 {
                     Id = 2,
                     GroupId = 2,
                     Description = "Stuhl Comfort",
-                    Price = 170
+                    Price = 170M
                 },
                 new Product
                 {
                     Id = 3,
                     GroupId = 3,
                     Description = "Rolli",
-                    Price = 199.90
+                    Price = 199.90M
                 },
                 new Product
                 {
                     Id = 4,
                     GroupId = 6,
                     Description = "RT-9000",
-                    Price = 360.50
+                    Price = 360.50M
                 },
                 new Product
                 {
                     Id = 5,
                     GroupId = 8,
                     Description = "Polaroid Thermo",
-                    Price = 89.90
+                    Price = 89.90M
                 },
                 new Product
                 {
                     Id = 6,
                     GroupId = 9,
                     Description = "HP M123XX",
-                    Price = 349
+                    Price = 349M
                 },
                 new Product
                 {
                     Id = 7,
                     GroupId = 9,
                     Description = "HP M321YY",
-                    Price = 321
+                    Price = 321M
                 },
                 new Product
                 {
                     Id = 8,
                     GroupId = 9,
                     Description = "Brother Deluxe",
-                    Price = 430
+                    Price = 430M
                 },
                 new Product
                 {
                     Id = 9,
                     GroupId = 10,
                     Description = "HP all-in-one",
-                    Price = 999.90
+                    Price = 999.90M
                 },
                 new Product
                 {
                     Id = 10,
                     GroupId = 11,
                     Description = "Meier (gelb)",
-                    Price = 2.90
+                    Price = 2.90M
                 },
                 new Product
                 {
                     Id = 11,
                     GroupId = 11,
                     Description = "Meier (blau)",
-                    Price = 2.30
+                    Price = 2.30M
                 },
                 new Product
                 {
                     Id = 12,
                     GroupId = 11,
                     Description = "Meier (grau)",
-                    Price = 3
+                    Price = 3M
                 }
             };
             #endregion
