@@ -12,6 +12,6 @@ namespace db_projektarbeit
         public int GroupId { get; set; }
         public ProductGroup Group { get; set; }
         public string Description { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
     }
 }
