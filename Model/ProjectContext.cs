@@ -7,12 +7,15 @@ namespace db_projektarbeit.Model
 {
     class ProjectContext : DbContext
     {
+        #region Entitys
         public DbSet<City> Cities { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductGroup> ProductGroups { get; set; }
+        #endregion
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,26 +27,33 @@ namespace db_projektarbeit.Model
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
-                .StartsAt(1000);
+                .StartsAt(1000);                                                // Index startet bei 1000
+
             modelBuilder.HasSequence<int>("ProductNr", schema: "shared")
-                .StartsAt(10000);
+                .StartsAt(10000);                                               // Index startet bei1000
+
             modelBuilder.Entity<Customer>()
                 .Property(c => c.CustomerNr)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.CustomerNr");
+
             modelBuilder.Entity<Product>()
                 .Property(p => p.ProductNr)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.ProductNr");
+
             modelBuilder.Entity<Customer>()
                 .HasOne(c => c.City);
+
             modelBuilder.Entity<Product>()
                 .HasOne(c => c.Group);
-            modelBuilder.Entity<ProductGroup>()
-                .HasOne(p => p.Parent)
-                .WithMany()
-                .HasForeignKey(p => p.ParentId)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<ProductGroup>()
+                .HasOne(p => p.Parent)                                          // Hat immer ein Eltern Element
+                .WithMany()                                                     // Bezihungen zischen einem und Mehreren Elementen
+                .HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
+                .IsRequired(false)                                              //
+                .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen 
+
+            #region List of City
             var cities = new List<City>
             {
                 new City
@@ -65,6 +75,9 @@ namespace db_projektarbeit.Model
                     Name = "Bettwiesen"
                 }
             };
+            #endregion
+
+            #region List of Customer
             var customers = new List<Customer>
             {
                 new Customer
@@ -82,6 +95,9 @@ namespace db_projektarbeit.Model
                     CityId = 3
                 }
             };
+            #endregion
+
+            #region List of ProductGroup
             var productgroups = new List<ProductGroup>
             {
                 new ProductGroup
@@ -148,6 +164,9 @@ namespace db_projektarbeit.Model
                     Name = "Ordner"
                 }
             };
+            #endregion
+
+            #region List of Product
             var products = new List<Product>
             {
                 new Product
@@ -235,11 +254,15 @@ namespace db_projektarbeit.Model
                     Price = 3
                 }
             };
+            #endregion
 
+            #region Preload all Data in the Entity
             cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
             customers.ForEach(customer => modelBuilder.Entity<Customer>().HasData(customer));
             productgroups.ForEach(group => modelBuilder.Entity<ProductGroup>().HasData(group));
             products.ForEach(product => modelBuilder.Entity<Product>().HasData(product));
+            #endregion
         }
     }
 }
+
