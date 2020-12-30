@@ -25,5 +25,10 @@ namespace db_projektarbeit.View
         {
             new ProductView().Show();
         }
+
+        private void CmdProductGroup_Click(object sender, EventArgs e)
+        {
+            new ProductGroupView().Show();
+        }
     }
 }

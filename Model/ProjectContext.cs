@@ -30,7 +30,7 @@ namespace db_projektarbeit.Model
                 .StartsAt(1000);                                                // Index startet bei 1000
 
             modelBuilder.HasSequence<int>("ProductNr", schema: "shared")
-                .StartsAt(10000);                                               // Index startet bei1000
+                .StartsAt(10000);                                               // Index startet bei 1000
 
             modelBuilder.Entity<Customer>()
                 .Property(c => c.CustomerNr)
@@ -51,7 +51,25 @@ namespace db_projektarbeit.Model
                 .WithMany()                                                     // Bezihungen zischen einem und Mehreren Elementen
                 .HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
                 .IsRequired(false)                                              //
-                .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen 
+                .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen
+
+            /*
+            modelBuilder.Entity<Order>()
+                 .HasOne<Customer>()
+                 .WithMany()
+                 .HasForeignKey(c => c.CustomerId);
+
+            modelBuilder.Entity<Order>()
+                 .HasMany<Position>()
+                 .WithOne()
+                 .HasForeignKey(c => c.OrderId);
+
+            modelBuilder.Entity<Position>()
+                .HasOne(p => p.Product);
+
+            modelBuilder.Entity<Position>()
+                .HasOne(o => o.Order);
+            */
 
             #region List of City
             var cities = new List<City>
@@ -256,11 +274,79 @@ namespace db_projektarbeit.Model
             };
             #endregion
 
+            #region List of Orders
+            var orders = new List<Order>
+            {
+                new Order
+                {
+                    Id = 1,
+                    CustomerId = 0,
+                    Comment = "3456_Haus_Kohl",
+                    Date = new DateTime(2020,12,30)
+                },
+                new Order
+                {
+                    Id = 2,
+                    CustomerId = 0,
+                    Comment = "123_Haus_Tranz",
+                    Date = new DateTime(2020,10,11)
+                },
+                new Order
+                {
+                    Id = 3,
+                    CustomerId = 1,
+                    Comment = "000_Haus_google",
+                    Date = new DateTime(2020,11,02)
+                }
+            };
+
+            #endregion
+
+            #region List of Positions
+            var positions = new List<Position>
+            {
+                new Position
+                {
+                    Id = 1,
+                    Counter = 1,
+                    OrderId = 0,
+                    ProductId = 0,
+                    Total = 0M
+                },
+                new Position
+                {
+                    Id = 2,
+                    Counter = 3,
+                    OrderId = 0,
+                    ProductId = 4,
+                    Total = 0M
+                },
+                new Position
+                {
+                    Id = 3,
+                    Counter = 2,
+                    OrderId = 1,
+                    ProductId = 5,
+                    Total = 0M
+                },
+                new Position
+                {
+                    Id = 4,
+                    Counter = 1,
+                    OrderId = 2,
+                    ProductId = 8,
+                    Total = 0M
+                }
+            };
+            #endregion
+
             #region Preload all Data in the Entity
             cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
             customers.ForEach(customer => modelBuilder.Entity<Customer>().HasData(customer));
             productgroups.ForEach(group => modelBuilder.Entity<ProductGroup>().HasData(group));
             products.ForEach(product => modelBuilder.Entity<Product>().HasData(product));
+            orders.ForEach(order => modelBuilder.Entity<Order>().HasData(order));
+            positions.ForEach(positions => modelBuilder.Entity<Position>().HasData(positions));
             #endregion
         }
     }

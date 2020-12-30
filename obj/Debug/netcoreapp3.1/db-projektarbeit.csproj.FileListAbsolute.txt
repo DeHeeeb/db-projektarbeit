@@ -55,3 +55,5 @@ C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db-
 C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.dll
 C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.pdb
 C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.genruntimeconfig.cache
+C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db_projektarbeit.View.OrderView.resources
+C:\Users\Trabe\Source\Repos\DeHeeeb\db-projektarbeit\obj\Debug\netcoreapp3.1\db_projektarbeit.View.ProductGroupView.resources

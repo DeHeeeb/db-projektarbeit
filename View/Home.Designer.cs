@@ -30,6 +30,7 @@
         {
             this.CmdCustomer = new System.Windows.Forms.Button();
             this.CmdProduct = new System.Windows.Forms.Button();
+            this.CmdProductGroup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdCustomer
@@ -46,19 +47,31 @@
             // CmdProduct
             // 
             this.CmdProduct.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdProduct.Location = new System.Drawing.Point(330, 12);
+            this.CmdProduct.Location = new System.Drawing.Point(342, 12);
             this.CmdProduct.Name = "CmdProduct";
-            this.CmdProduct.Size = new System.Drawing.Size(275, 97);
+            this.CmdProduct.Size = new System.Drawing.Size(312, 97);
             this.CmdProduct.TabIndex = 1;
             this.CmdProduct.Text = "Produkt-Verwaltung";
             this.CmdProduct.UseVisualStyleBackColor = true;
             this.CmdProduct.Click += new System.EventHandler(this.CmdProduct_Click);
             // 
+            // CmdProductGroup
+            // 
+            this.CmdProductGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdProductGroup.Location = new System.Drawing.Point(342, 115);
+            this.CmdProductGroup.Name = "CmdProductGroup";
+            this.CmdProductGroup.Size = new System.Drawing.Size(312, 97);
+            this.CmdProductGroup.TabIndex = 2;
+            this.CmdProductGroup.Text = "ProduktGroup-Verwaltung";
+            this.CmdProductGroup.UseVisualStyleBackColor = true;
+            this.CmdProductGroup.Click += new System.EventHandler(this.CmdProductGroup_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 644);
+            this.ClientSize = new System.Drawing.Size(666, 644);
+            this.Controls.Add(this.CmdProductGroup);
             this.Controls.Add(this.CmdProduct);
             this.Controls.Add(this.CmdCustomer);
             this.Name = "Home";
@@ -71,5 +84,6 @@
 
         private System.Windows.Forms.Button CmdCustomer;
         private System.Windows.Forms.Button CmdProduct;
+        private System.Windows.Forms.Button CmdProductGroup;
     }
 }
