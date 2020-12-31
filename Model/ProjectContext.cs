@@ -52,7 +52,6 @@ namespace db_projektarbeit.Model
                 .IsRequired(false)                                              //
                 .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen
 
-            /*
             modelBuilder.Entity<Order>()
                  .HasOne<Customer>()
                  .WithMany()
@@ -68,7 +67,6 @@ namespace db_projektarbeit.Model
 
             modelBuilder.Entity<Position>()
                 .HasOne(o => o.Order);
-            */
 
             #region List of City
             var cities = new List<City>

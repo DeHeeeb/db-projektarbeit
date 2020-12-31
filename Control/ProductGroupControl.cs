@@ -9,9 +9,9 @@ namespace db_projektarbeit.Control
     {
         private ProductGroupModel ProductGroupModel = new ProductGroupModel();
 
-        public List<Product> GetAllProductGroup()
+        public List<ProductGroup> GetAll()
         {
-            return ProductGroupModel.GetAllProductGroup();
+            return ProductGroupModel.GetAll();
         }
     }
 }

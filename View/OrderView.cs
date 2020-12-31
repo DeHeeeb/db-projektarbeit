@@ -24,11 +24,14 @@ namespace db_projektarbeit.View
             DgvOrder.DataSource = orders;
 
             DgvOrder.Columns[0].Visible = false;
-            DgvOrder.Columns[4].Visible = false;
+            DgvOrder.Columns[3].Visible = false;
             DgvOrder.Columns[1].HeaderText = "Kunden-Nr";
             DgvOrder.Columns[2].HeaderText = "Name";
-            DgvOrder.Columns[3].HeaderText = "Strasse / Nr";
-            DgvOrder.Columns[5].HeaderText = "PLZ / Stadt";
+        }
+
+        private void CmdSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

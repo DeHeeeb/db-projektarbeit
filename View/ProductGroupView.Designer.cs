@@ -29,16 +29,16 @@ namespace db_projektarbeit.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.TvProductGroup = new System.Windows.Forms.TreeView();
             this.CmdSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // treeView1
+            // TvProductGroup
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 13);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(775, 367);
-            this.treeView1.TabIndex = 0;
+            this.TvProductGroup.Location = new System.Drawing.Point(13, 13);
+            this.TvProductGroup.Name = "TvProductGroup";
+            this.TvProductGroup.Size = new System.Drawing.Size(775, 367);
+            this.TvProductGroup.TabIndex = 0;
             // 
             // CmdSave
             // 
@@ -56,7 +56,7 @@ namespace db_projektarbeit.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CmdSave);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.TvProductGroup);
             this.Name = "ProductGroupView";
             this.Text = "ProductGroupView";
             this.ResumeLayout(false);
@@ -65,7 +65,7 @@ namespace db_projektarbeit.View
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView TvProductGroup;
         private System.Windows.Forms.Button CmdSave;
     }
 }

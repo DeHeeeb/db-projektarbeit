@@ -10,8 +10,8 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20201228202556_Entity_Update")]
-    partial class Entity_Update
+    [Migration("20201231124553_Update-Entity_V2")]
+    partial class UpdateEntity_V2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -121,7 +121,10 @@ namespace db_projektarbeit.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -131,7 +134,32 @@ namespace db_projektarbeit.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("CustomerId1");
+
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Comment = "3456_Haus_Kohl",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Comment = "123_Haus_Tranz",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Comment = "000_Haus_google",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Position", b =>
@@ -147,6 +175,9 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("OrderId1")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
@@ -157,9 +188,45 @@ namespace db_projektarbeit.Migrations
 
                     b.HasIndex("OrderId");
 
+                    b.HasIndex("OrderId1");
+
                     b.HasIndex("ProductId");
 
                     b.ToTable("Positions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Counter = 1,
+                            OrderId = 1,
+                            ProductId = 1,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Counter = 3,
+                            OrderId = 1,
+                            ProductId = 4,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Counter = 2,
+                            OrderId = 1,
+                            ProductId = 5,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Counter = 1,
+                            OrderId = 2,
+                            ProductId = 8,
+                            Total = 0m
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Product", b =>
@@ -391,9 +458,15 @@ namespace db_projektarbeit.Migrations
 
             modelBuilder.Entity("db_projektarbeit.Order", b =>
                 {
+                    b.HasOne("db_projektarbeit.Customer", null)
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("db_projektarbeit.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Customer");
                 });
@@ -401,12 +474,18 @@ namespace db_projektarbeit.Migrations
             modelBuilder.Entity("db_projektarbeit.Position", b =>
                 {
                     b.HasOne("db_projektarbeit.Order", null)
-                        .WithMany("Positions")
+                        .WithMany()
                         .HasForeignKey("OrderId");
+
+                    b.HasOne("db_projektarbeit.Order", "Order")
+                        .WithMany("Positions")
+                        .HasForeignKey("OrderId1");
 
                     b.HasOne("db_projektarbeit.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
+
+                    b.Navigation("Order");
 
                     b.Navigation("Product");
                 });

@@ -7,12 +7,12 @@ namespace db_projektarbeit.Model
 {
     class ProductGroupModel
     {
-        public List<Product> GetAllProductGroup()
+        public List<ProductGroup> GetAll()
         {
+            var productGroups = new List<ProductGroup>();
+
             using (var context = new ProjectContext())
             {
-                
-                var newList = new List<Object>();
                 var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
                     "(Id, Name, ParentId, ProductGroupId, ProductLevel) " +
@@ -47,11 +47,10 @@ namespace db_projektarbeit.Model
 
                 foreach (var item in result)
                 {
-                    newList.Add(item);
+                    productGroups.Add(item);
                 }
             }
-
-            return null;
+            return productGroups;
         }
     }
 }
