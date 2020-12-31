@@ -16,7 +16,6 @@ namespace db_projektarbeit.Model
         public DbSet<ProductGroup> ProductGroups { get; set; }
         #endregion
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
@@ -280,21 +279,21 @@ namespace db_projektarbeit.Model
                 new Order
                 {
                     Id = 1,
-                    CustomerId = 0,
+                    CustomerId = 1,
                     Comment = "3456_Haus_Kohl",
                     Date = new DateTime(2020,12,30)
                 },
                 new Order
                 {
                     Id = 2,
-                    CustomerId = 0,
+                    CustomerId = 1,
                     Comment = "123_Haus_Tranz",
                     Date = new DateTime(2020,10,11)
                 },
                 new Order
                 {
                     Id = 3,
-                    CustomerId = 1,
+                    CustomerId = 2,
                     Comment = "000_Haus_google",
                     Date = new DateTime(2020,11,02)
                 }
@@ -309,15 +308,15 @@ namespace db_projektarbeit.Model
                 {
                     Id = 1,
                     Counter = 1,
-                    OrderId = 0,
-                    ProductId = 0,
+                    OrderId = 1,
+                    ProductId = 1,
                     Total = 0M
                 },
                 new Position
                 {
                     Id = 2,
                     Counter = 3,
-                    OrderId = 0,
+                    OrderId = 1,
                     ProductId = 4,
                     Total = 0M
                 },

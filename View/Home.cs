@@ -30,5 +30,10 @@ namespace db_projektarbeit.View
         {
             new ProductGroupView().Show();
         }
+
+        private void CmdOrder_Click(object sender, EventArgs e)
+        {
+            new OrderView().Show();
+        }
     }
 }

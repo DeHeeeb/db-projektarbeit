@@ -31,6 +31,7 @@
             this.CmdCustomer = new System.Windows.Forms.Button();
             this.CmdProduct = new System.Windows.Forms.Button();
             this.CmdProductGroup = new System.Windows.Forms.Button();
+            this.CmdOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdCustomer
@@ -66,11 +67,23 @@
             this.CmdProductGroup.UseVisualStyleBackColor = true;
             this.CmdProductGroup.Click += new System.EventHandler(this.CmdProductGroup_Click);
             // 
+            // CmdOrder
+            // 
+            this.CmdOrder.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdOrder.Location = new System.Drawing.Point(12, 115);
+            this.CmdOrder.Name = "CmdOrder";
+            this.CmdOrder.Size = new System.Drawing.Size(275, 97);
+            this.CmdOrder.TabIndex = 3;
+            this.CmdOrder.Text = "Order-Verwaltung";
+            this.CmdOrder.UseVisualStyleBackColor = true;
+            this.CmdOrder.Click += new System.EventHandler(this.CmdOrder_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 644);
+            this.Controls.Add(this.CmdOrder);
             this.Controls.Add(this.CmdProductGroup);
             this.Controls.Add(this.CmdProduct);
             this.Controls.Add(this.CmdCustomer);
@@ -85,5 +98,6 @@
         private System.Windows.Forms.Button CmdCustomer;
         private System.Windows.Forms.Button CmdProduct;
         private System.Windows.Forms.Button CmdProductGroup;
+        private System.Windows.Forms.Button CmdOrder;
     }
 }
