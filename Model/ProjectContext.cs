@@ -46,11 +46,11 @@ namespace db_projektarbeit.Model
                 .HasOne(c => c.Group);
 
             modelBuilder.Entity<ProductGroup>()
-                .HasOne(p => p.Parent)                                          // Hat immer ein Eltern Element
-                .WithMany()                                                     // Bezihungen zischen einem und Mehreren Elementen
-                .HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
+                .HasOne(p => p.Parent) // Hat immer ein Eltern Element
+                .WithMany(p => p.Children);                                                     // Bezihungen zischen einem und Mehreren Elementen
+                /*.HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
                 .IsRequired(false)                                              //
-                .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen
+                .OnDelete(DeleteBehavior.Restrict);*/                             // Rekursives löschen
 
             modelBuilder.Entity<Order>()
                  .HasOne<Customer>()

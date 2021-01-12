@@ -10,8 +10,8 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20201231124553_Update-Entity_V2")]
-    partial class UpdateEntity_V2
+    [Migration("20210112194615_Entity_Update_V2")]
+    partial class Entity_Update_V2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -368,14 +368,9 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductGroupId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
-
-                    b.HasIndex("ProductGroupId");
 
                     b.ToTable("ProductGroups");
 
@@ -504,13 +499,8 @@ namespace db_projektarbeit.Migrations
             modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("db_projektarbeit.ProductGroup", null)
                         .WithMany("Children")
-                        .HasForeignKey("ProductGroupId");
+                        .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
                 });

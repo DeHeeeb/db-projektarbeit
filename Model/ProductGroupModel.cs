@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 
@@ -13,7 +14,11 @@ namespace db_projektarbeit.Model
 
             using (var context = new ProjectContext())
             {
-                var result = context.ProductGroups.FromSqlRaw(
+                productGroups = context.ProductGroups
+                    .Include(p => p.Children)
+                    .Include(p => p.Parent)
+                    .ToList();
+                /*var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
                     "(Id, Name, ParentId, ProductGroupId, ProductLevel) " +
                     "AS (SELECT " +
@@ -49,7 +54,9 @@ namespace db_projektarbeit.Model
                 {
                     productGroups.Add(item);
                 }
+            }*/
             }
+
             return productGroups;
         }
     }

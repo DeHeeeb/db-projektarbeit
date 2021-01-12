@@ -366,14 +366,9 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductGroupId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
-
-                    b.HasIndex("ProductGroupId");
 
                     b.ToTable("ProductGroups");
 
@@ -502,13 +497,8 @@ namespace db_projektarbeit.Migrations
             modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("db_projektarbeit.ProductGroup", null)
                         .WithMany("Children")
-                        .HasForeignKey("ProductGroupId");
+                        .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
                 });

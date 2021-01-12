@@ -3,13 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class UpdateEntity_V2 : Migration
+    public partial class Entity_Update_V2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Orders_Customers_CustomerId",
                 table: "Orders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ProductGroupId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropIndex(
+                name: "IX_ProductGroups_ProductGroupId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropColumn(
+                name: "ProductGroupId",
+                table: "ProductGroups");
 
             migrationBuilder.AlterColumn<decimal>(
                 name: "Price",
@@ -262,6 +274,12 @@ namespace db_projektarbeit.Migrations
                 oldClrType: typeof(decimal),
                 oldType: "decimal(18,2)");
 
+            migrationBuilder.AddColumn<int>(
+                name: "ProductGroupId",
+                table: "ProductGroups",
+                type: "int",
+                nullable: true);
+
             migrationBuilder.AlterColumn<double>(
                 name: "Total",
                 table: "Positions",
@@ -362,11 +380,24 @@ namespace db_projektarbeit.Migrations
                 column: "Price",
                 value: 3.0);
 
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductGroups_ProductGroupId",
+                table: "ProductGroups",
+                column: "ProductGroupId");
+
             migrationBuilder.AddForeignKey(
                 name: "FK_Orders_Customers_CustomerId",
                 table: "Orders",
                 column: "CustomerId",
                 principalTable: "Customers",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ProductGroupId",
+                table: "ProductGroups",
+                column: "ProductGroupId",
+                principalTable: "ProductGroups",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
