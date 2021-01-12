@@ -16,48 +16,49 @@ namespace db_projektarbeit.Model
 
             using (var context = new ProjectContext())
             {
-                productGroups = context.ProductGroups
-                    .Include(p => p.Children)
-                    .Include(p => p.Parent)
-                    .ToList();
-                /*var result = context.ProductGroups.FromSqlRaw(
+                //productGroups = context.ProductGroups
+                //    .Include(p => p.Children)
+                //    .Include(p => p.Parent)
+                //    .ToList();
+
+                var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
-                    "(Id, ProductId, Name, ParentProductId, ProductLevel) " +
+                    "(Id, ProductId, Name, ParentId, ProductLevel) " +
                     "AS (SELECT " +
                                 "Id," +
                                 "ProductId,"+
                                 "Name," +
-                                "ParentProductId," +
+                                "ParentId," +
                                 "0 AS ProductLevel " +
                     "FROM dbo.ProductGroups " +
-                    "WHERE ParentProductId IS NULL " +
+                    "WHERE ParentId IS NULL " +
                     "UNION ALL " +
                     "SELECT " +
                                 "pn.Id," +
                                 "pn.ProductId," +
                                 "pn.Name," +
-                                "pn.ParentProductId," +
+                                "pn.ParentId," +
                                 "p1.ProductLevel + 1 " +
                     "FROM dbo.ProductGroups AS pn " +
                     "INNER JOIN CTE_ProductGroup AS p1 " +
-                        "ON p1.Id = pn.ParentProductId " +
+                        "ON p1.Id = pn.ParentId " +
                     ") " +
                     "SELECT " +
                                 "Id," +
                                 "ProductId," +
                                 "Name," +
-                                "ParentProductId," +
+                                "ParentId," +
                                 "ProductLevel " +
                     "FROM CTE_ProductGroup " +
-                    "ORDER BY ParentProductId;"
+                    "ORDER BY ParentId;"
                     );
 
                 foreach (var item in result)
                 {
                     productGroups.Add(item);
                 }
-            }*/
             }
+
 
             return productGroups;
         }

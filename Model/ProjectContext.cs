@@ -46,11 +46,11 @@ namespace db_projektarbeit.Model
                 .HasOne(c => c.Group);
 
             modelBuilder.Entity<ProductGroup>()
-                .HasOne(p => p.Parent) // Hat immer ein Eltern Element
-                .WithMany(p => p.Children);                                                     // Bezihungen zischen einem und Mehreren Elementen
-                /*.HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
-                .IsRequired(false)                                              //
-                .OnDelete(DeleteBehavior.Restrict);*/                             // Rekursives löschen
+                .HasOne(p => p.Parent)                  // Hat immer ein Eltern Element
+                .WithMany(p => p.Children);             // Bezihungen zischen einem und Mehreren Elementen
+                /*.HasForeignKey(p => p.ParentId)       // Fremdschlüssel zu Eltern Element
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);*/   // Rekursives löschen
 
             modelBuilder.Entity<Order>()
                  .HasOne<Customer>()
@@ -126,21 +126,21 @@ namespace db_projektarbeit.Model
                     Id = 2,
                     ProductId = 745213689,
                     Name = "Bürostuhl",
-                    ParentProductId = 1
+                    ParentId = 1
                 },
                 new ProductGroup
                 {
                     Id = 3,
                     ProductId = 963258741,
                     Name = "Korpus",
-                    ParentProductId = 1
+                    ParentId = 1
                 },
                 new ProductGroup
                 {
                     Id = 4,
                     ProductId = 987456321,
                     Name = "Schreibtisch",
-                    ParentProductId = 1
+                    ParentId = 1
                 },
                 new ProductGroup
                 {
@@ -153,35 +153,35 @@ namespace db_projektarbeit.Model
                     Id = 6,
                     ProductId = 954068252,
                     Name = "Belegdrucker",
-                    ParentProductId = 5
+                    ParentId = 5
                 },
                 new ProductGroup
                 {
                     Id = 7,
                     ProductId = 427806752,
                     Name = "Farbdrucker",
-                    ParentProductId = 5
+                    ParentId = 5
                 },
                 new ProductGroup
                 {
                     Id = 8,
                     ProductId = 770075678,
                     Name = "Fotodrucker",
-                    ParentProductId = 7
+                    ParentId = 7
                 },
                 new ProductGroup
                 {
                     Id = 9,
                     ProductId = 190069952,
                     Name = "Multifunktionsdrucker",
-                    ParentProductId = 7
+                    ParentId = 7
                 },
                 new ProductGroup
                 {
                     Id = 10,
                     ProductId = 647068712,
                     Name = "Toner",
-                    ParentProductId = 5
+                    ParentId = 5
                 },
                 new ProductGroup
                 {

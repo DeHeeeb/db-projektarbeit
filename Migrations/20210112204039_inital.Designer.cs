@@ -10,8 +10,8 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20201222183050_Initial")]
-    partial class Initial
+    [Migration("20210112204039_inital")]
+    partial class inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -121,7 +121,10 @@ namespace db_projektarbeit.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Date")
@@ -131,7 +134,32 @@ namespace db_projektarbeit.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("CustomerId1");
+
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Comment = "3456_Haus_Kohl",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Comment = "123_Haus_Tranz",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Comment = "000_Haus_google",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Position", b =>
@@ -147,19 +175,58 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("OrderId1")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Total")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
 
+                    b.HasIndex("OrderId1");
+
                     b.HasIndex("ProductId");
 
                     b.ToTable("Positions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Counter = 1,
+                            OrderId = 1,
+                            ProductId = 1,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Counter = 3,
+                            OrderId = 1,
+                            ProductId = 4,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Counter = 2,
+                            OrderId = 1,
+                            ProductId = 5,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Counter = 1,
+                            OrderId = 2,
+                            ProductId = 8,
+                            Total = 0m
+                        });
                 });
 
             modelBuilder.Entity("db_projektarbeit.Product", b =>
@@ -175,8 +242,11 @@ namespace db_projektarbeit.Migrations
                     b.Property<int>("GroupId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<int?>("GroupId1")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductNr")
                         .ValueGeneratedOnAdd()
@@ -185,7 +255,7 @@ namespace db_projektarbeit.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
+                    b.HasIndex("GroupId1");
 
                     b.ToTable("Products");
 
@@ -195,7 +265,7 @@ namespace db_projektarbeit.Migrations
                             Id = 1,
                             Description = "Stuhl mit Armlehnen",
                             GroupId = 2,
-                            Price = 140.0,
+                            Price = 140m,
                             ProductNr = 0
                         },
                         new
@@ -203,7 +273,7 @@ namespace db_projektarbeit.Migrations
                             Id = 2,
                             Description = "Stuhl Comfort",
                             GroupId = 2,
-                            Price = 170.0,
+                            Price = 170m,
                             ProductNr = 0
                         },
                         new
@@ -211,7 +281,7 @@ namespace db_projektarbeit.Migrations
                             Id = 3,
                             Description = "Rolli",
                             GroupId = 3,
-                            Price = 199.90000000000001,
+                            Price = 199.90m,
                             ProductNr = 0
                         },
                         new
@@ -219,7 +289,7 @@ namespace db_projektarbeit.Migrations
                             Id = 4,
                             Description = "RT-9000",
                             GroupId = 6,
-                            Price = 360.5,
+                            Price = 360.50m,
                             ProductNr = 0
                         },
                         new
@@ -227,7 +297,7 @@ namespace db_projektarbeit.Migrations
                             Id = 5,
                             Description = "Polaroid Thermo",
                             GroupId = 8,
-                            Price = 89.900000000000006,
+                            Price = 89.90m,
                             ProductNr = 0
                         },
                         new
@@ -235,7 +305,7 @@ namespace db_projektarbeit.Migrations
                             Id = 6,
                             Description = "HP M123XX",
                             GroupId = 9,
-                            Price = 349.0,
+                            Price = 349m,
                             ProductNr = 0
                         },
                         new
@@ -243,7 +313,7 @@ namespace db_projektarbeit.Migrations
                             Id = 7,
                             Description = "HP M321YY",
                             GroupId = 9,
-                            Price = 321.0,
+                            Price = 321m,
                             ProductNr = 0
                         },
                         new
@@ -251,7 +321,7 @@ namespace db_projektarbeit.Migrations
                             Id = 8,
                             Description = "Brother Deluxe",
                             GroupId = 9,
-                            Price = 430.0,
+                            Price = 430m,
                             ProductNr = 0
                         },
                         new
@@ -259,7 +329,7 @@ namespace db_projektarbeit.Migrations
                             Id = 9,
                             Description = "HP all-in-one",
                             GroupId = 10,
-                            Price = 999.89999999999998,
+                            Price = 999.90m,
                             ProductNr = 0
                         },
                         new
@@ -267,7 +337,7 @@ namespace db_projektarbeit.Migrations
                             Id = 10,
                             Description = "Meier (gelb)",
                             GroupId = 11,
-                            Price = 2.8999999999999999,
+                            Price = 2.90m,
                             ProductNr = 0
                         },
                         new
@@ -275,7 +345,7 @@ namespace db_projektarbeit.Migrations
                             Id = 11,
                             Description = "Meier (blau)",
                             GroupId = 11,
-                            Price = 2.2999999999999998,
+                            Price = 2.30m,
                             ProductNr = 0
                         },
                         new
@@ -283,7 +353,7 @@ namespace db_projektarbeit.Migrations
                             Id = 12,
                             Description = "Meier (grau)",
                             GroupId = 11,
-                            Price = 3.0,
+                            Price = 3m,
                             ProductNr = 0
                         });
                 });
@@ -301,14 +371,12 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductGroupId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
-
-                    b.HasIndex("ProductGroupId");
 
                     b.ToTable("ProductGroups");
 
@@ -316,65 +384,76 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Büromöbel"
+                            Name = "Büromöbel",
+                            ProductId = 140068752
                         },
                         new
                         {
                             Id = 2,
                             Name = "Bürostuhl",
-                            ParentId = 1
+                            ParentId = 1,
+                            ProductId = 745213689
                         },
                         new
                         {
                             Id = 3,
                             Name = "Korpus",
-                            ParentId = 1
+                            ParentId = 1,
+                            ProductId = 963258741
                         },
                         new
                         {
                             Id = 4,
                             Name = "Schreibtisch",
-                            ParentId = 1
+                            ParentId = 1,
+                            ProductId = 987456321
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Drucker"
+                            Name = "Drucker",
+                            ProductId = 123456789
                         },
                         new
                         {
                             Id = 6,
                             Name = "Belegdrucker",
-                            ParentId = 5
+                            ParentId = 5,
+                            ProductId = 954068252
                         },
                         new
                         {
                             Id = 7,
                             Name = "Farbdrucker",
-                            ParentId = 5
+                            ParentId = 5,
+                            ProductId = 427806752
                         },
                         new
                         {
                             Id = 8,
                             Name = "Fotodrucker",
-                            ParentId = 7
+                            ParentId = 7,
+                            ProductId = 770075678
                         },
                         new
                         {
                             Id = 9,
                             Name = "Multifunktionsdrucker",
-                            ParentId = 7
+                            ParentId = 7,
+                            ProductId = 190069952
                         },
                         new
                         {
                             Id = 10,
                             Name = "Toner",
-                            ParentId = 5
+                            ParentId = 5,
+                            ProductId = 647068712
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Ordner"
+                            Name = "Ordner",
+                            ProductId = 140468752
                         });
                 });
 
@@ -391,9 +470,15 @@ namespace db_projektarbeit.Migrations
 
             modelBuilder.Entity("db_projektarbeit.Order", b =>
                 {
+                    b.HasOne("db_projektarbeit.Customer", null)
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("db_projektarbeit.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Customer");
                 });
@@ -401,12 +486,18 @@ namespace db_projektarbeit.Migrations
             modelBuilder.Entity("db_projektarbeit.Position", b =>
                 {
                     b.HasOne("db_projektarbeit.Order", null)
-                        .WithMany("Positions")
+                        .WithMany()
                         .HasForeignKey("OrderId");
+
+                    b.HasOne("db_projektarbeit.Order", "Order")
+                        .WithMany("Positions")
+                        .HasForeignKey("OrderId1");
 
                     b.HasOne("db_projektarbeit.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
+
+                    b.Navigation("Order");
 
                     b.Navigation("Product");
                 });
@@ -415,9 +506,7 @@ namespace db_projektarbeit.Migrations
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId1");
 
                     b.Navigation("Group");
                 });
@@ -425,13 +514,8 @@ namespace db_projektarbeit.Migrations
             modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("db_projektarbeit.ProductGroup", null)
                         .WithMany("Children")
-                        .HasForeignKey("ProductGroupId");
+                        .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
                 });
