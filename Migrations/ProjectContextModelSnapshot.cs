@@ -366,13 +366,15 @@ namespace db_projektarbeit.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ParentProductId")
+                    b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
 
                     b.ToTable("ProductGroups");
 
@@ -387,21 +389,21 @@ namespace db_projektarbeit.Migrations
                         {
                             Id = 2,
                             Name = "Bürostuhl",
-                            ParentProductId = 1,
+                            ParentId = 1,
                             ProductId = 745213689
                         },
                         new
                         {
                             Id = 3,
                             Name = "Korpus",
-                            ParentProductId = 1,
+                            ParentId = 1,
                             ProductId = 963258741
                         },
                         new
                         {
                             Id = 4,
                             Name = "Schreibtisch",
-                            ParentProductId = 1,
+                            ParentId = 1,
                             ProductId = 987456321
                         },
                         new
@@ -414,35 +416,35 @@ namespace db_projektarbeit.Migrations
                         {
                             Id = 6,
                             Name = "Belegdrucker",
-                            ParentProductId = 5,
+                            ParentId = 5,
                             ProductId = 954068252
                         },
                         new
                         {
                             Id = 7,
                             Name = "Farbdrucker",
-                            ParentProductId = 5,
+                            ParentId = 5,
                             ProductId = 427806752
                         },
                         new
                         {
                             Id = 8,
                             Name = "Fotodrucker",
-                            ParentProductId = 7,
+                            ParentId = 7,
                             ProductId = 770075678
                         },
                         new
                         {
                             Id = 9,
                             Name = "Multifunktionsdrucker",
-                            ParentProductId = 7,
+                            ParentId = 7,
                             ProductId = 190069952
                         },
                         new
                         {
                             Id = 10,
                             Name = "Toner",
-                            ParentProductId = 5,
+                            ParentId = 5,
                             ProductId = 647068712
                         },
                         new
@@ -507,9 +509,23 @@ namespace db_projektarbeit.Migrations
                     b.Navigation("Group");
                 });
 
+            modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
+                {
+                    b.HasOne("db_projektarbeit.ProductGroup", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
+
+                    b.Navigation("Parent");
+                });
+
             modelBuilder.Entity("db_projektarbeit.Order", b =>
                 {
                     b.Navigation("Positions");
+                });
+
+            modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
+                {
+                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }
