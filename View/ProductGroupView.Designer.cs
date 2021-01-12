@@ -39,6 +39,7 @@ namespace db_projektarbeit.View
             this.TvProductGroup.Name = "TvProductGroup";
             this.TvProductGroup.Size = new System.Drawing.Size(775, 367);
             this.TvProductGroup.TabIndex = 0;
+            this.TvProductGroup.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvProductGroup_AfterSelect);
             // 
             // CmdSave
             // 

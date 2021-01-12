@@ -10,8 +10,8 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20201231124553_Update-Entity_V2")]
-    partial class UpdateEntity_V2
+    [Migration("20210111202650_Entity_ProductGroup")]
+    partial class Entity_ProductGroup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -242,6 +242,9 @@ namespace db_projektarbeit.Migrations
                     b.Property<int>("GroupId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("GroupId1")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -252,7 +255,7 @@ namespace db_projektarbeit.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId");
+                    b.HasIndex("GroupId1");
 
                     b.ToTable("Products");
 
@@ -365,17 +368,13 @@ namespace db_projektarbeit.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ParentId")
+                    b.Property<int?>("ParentProductId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductGroupId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ParentId");
-
-                    b.HasIndex("ProductGroupId");
 
                     b.ToTable("ProductGroups");
 
@@ -383,65 +382,76 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Büromöbel"
+                            Name = "Büromöbel",
+                            ProductId = 140068752
                         },
                         new
                         {
                             Id = 2,
                             Name = "Bürostuhl",
-                            ParentId = 1
+                            ParentProductId = 1,
+                            ProductId = 745213689
                         },
                         new
                         {
                             Id = 3,
                             Name = "Korpus",
-                            ParentId = 1
+                            ParentProductId = 1,
+                            ProductId = 963258741
                         },
                         new
                         {
                             Id = 4,
                             Name = "Schreibtisch",
-                            ParentId = 1
+                            ParentProductId = 1,
+                            ProductId = 987456321
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Drucker"
+                            Name = "Drucker",
+                            ProductId = 123456789
                         },
                         new
                         {
                             Id = 6,
                             Name = "Belegdrucker",
-                            ParentId = 5
+                            ParentProductId = 5,
+                            ProductId = 954068252
                         },
                         new
                         {
                             Id = 7,
                             Name = "Farbdrucker",
-                            ParentId = 5
+                            ParentProductId = 5,
+                            ProductId = 427806752
                         },
                         new
                         {
                             Id = 8,
                             Name = "Fotodrucker",
-                            ParentId = 7
+                            ParentProductId = 7,
+                            ProductId = 770075678
                         },
                         new
                         {
                             Id = 9,
                             Name = "Multifunktionsdrucker",
-                            ParentId = 7
+                            ParentProductId = 7,
+                            ProductId = 190069952
                         },
                         new
                         {
                             Id = 10,
                             Name = "Toner",
-                            ParentId = 5
+                            ParentProductId = 5,
+                            ProductId = 647068712
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Ordner"
+                            Name = "Ordner",
+                            ProductId = 140468752
                         });
                 });
 
@@ -494,35 +504,14 @@ namespace db_projektarbeit.Migrations
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("GroupId1");
 
                     b.Navigation("Group");
-                });
-
-            modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
-                {
-                    b.HasOne("db_projektarbeit.ProductGroup", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("db_projektarbeit.ProductGroup", null)
-                        .WithMany("Children")
-                        .HasForeignKey("ProductGroupId");
-
-                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("db_projektarbeit.Order", b =>
                 {
                     b.Navigation("Positions");
-                });
-
-            modelBuilder.Entity("db_projektarbeit.ProductGroup", b =>
-                {
-                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }

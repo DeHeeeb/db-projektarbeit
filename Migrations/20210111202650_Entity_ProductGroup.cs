@@ -3,13 +3,46 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class UpdateEntity_V2 : Migration
+    public partial class Entity_ProductGroup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_Orders_Customers_CustomerId",
                 table: "Orders");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ParentId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ProductGroupId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Products_ProductGroups_GroupId",
+                table: "Products");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Products_GroupId",
+                table: "Products");
+
+            migrationBuilder.DropIndex(
+                name: "IX_ProductGroups_ParentId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropIndex(
+                name: "IX_ProductGroups_ProductGroupId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropColumn(
+                name: "ParentId",
+                table: "ProductGroups");
+
+            migrationBuilder.RenameColumn(
+                name: "ProductGroupId",
+                table: "ProductGroups",
+                newName: "ParentProductId");
 
             migrationBuilder.AlterColumn<decimal>(
                 name: "Price",
@@ -18,6 +51,19 @@ namespace db_projektarbeit.Migrations
                 nullable: false,
                 oldClrType: typeof(double),
                 oldType: "float");
+
+            migrationBuilder.AddColumn<int>(
+                name: "GroupId1",
+                table: "Products",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "ProductId",
+                table: "ProductGroups",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
 
             migrationBuilder.AlterColumn<decimal>(
                 name: "Total",
@@ -58,6 +104,83 @@ namespace db_projektarbeit.Migrations
                     { 2, "123_Haus_Tranz", 1, null, new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 3, "000_Haus_google", 2, null, new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 1,
+                column: "ProductId",
+                value: 140068752);
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 2,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 1, 745213689 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 3,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 1, 963258741 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 4,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 1, 987456321 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 5,
+                column: "ProductId",
+                value: 123456789);
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 6,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 5, 954068252 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 7,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 5, 427806752 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 8,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 7, 770075678 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 9,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 7, 190069952 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 10,
+                columns: new[] { "ParentProductId", "ProductId" },
+                values: new object[] { 5, 647068712 });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 11,
+                column: "ProductId",
+                value: 140468752);
 
             migrationBuilder.UpdateData(
                 table: "Products",
@@ -155,6 +278,11 @@ namespace db_projektarbeit.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Products_GroupId1",
+                table: "Products",
+                column: "GroupId1");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Positions_OrderId1",
                 table: "Positions",
                 column: "OrderId1");
@@ -187,6 +315,14 @@ namespace db_projektarbeit.Migrations
                 principalTable: "Orders",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Products_ProductGroups_GroupId1",
+                table: "Products",
+                column: "GroupId1",
+                principalTable: "ProductGroups",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -202,6 +338,14 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.DropForeignKey(
                 name: "FK_Positions_Orders_OrderId1",
                 table: "Positions");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Products_ProductGroups_GroupId1",
+                table: "Products");
+
+            migrationBuilder.DropIndex(
+                name: "IX_Products_GroupId1",
+                table: "Products");
 
             migrationBuilder.DropIndex(
                 name: "IX_Positions_OrderId1",
@@ -247,12 +391,25 @@ namespace db_projektarbeit.Migrations
                 keyValue: 2);
 
             migrationBuilder.DropColumn(
+                name: "GroupId1",
+                table: "Products");
+
+            migrationBuilder.DropColumn(
+                name: "ProductId",
+                table: "ProductGroups");
+
+            migrationBuilder.DropColumn(
                 name: "OrderId1",
                 table: "Positions");
 
             migrationBuilder.DropColumn(
                 name: "CustomerId1",
                 table: "Orders");
+
+            migrationBuilder.RenameColumn(
+                name: "ParentProductId",
+                table: "ProductGroups",
+                newName: "ProductGroupId");
 
             migrationBuilder.AlterColumn<double>(
                 name: "Price",
@@ -261,6 +418,12 @@ namespace db_projektarbeit.Migrations
                 nullable: false,
                 oldClrType: typeof(decimal),
                 oldType: "decimal(18,2)");
+
+            migrationBuilder.AddColumn<int>(
+                name: "ParentId",
+                table: "ProductGroups",
+                type: "int",
+                nullable: true);
 
             migrationBuilder.AlterColumn<double>(
                 name: "Total",
@@ -277,6 +440,62 @@ namespace db_projektarbeit.Migrations
                 nullable: true,
                 oldClrType: typeof(int),
                 oldType: "int");
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 2,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 1, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 3,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 1, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 4,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 1, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 6,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 5, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 7,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 5, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 8,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 7, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 9,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 7, null });
+
+            migrationBuilder.UpdateData(
+                table: "ProductGroups",
+                keyColumn: "Id",
+                keyValue: 10,
+                columns: new[] { "ParentId", "ProductGroupId" },
+                values: new object[] { 5, null });
 
             migrationBuilder.UpdateData(
                 table: "Products",
@@ -362,6 +581,21 @@ namespace db_projektarbeit.Migrations
                 column: "Price",
                 value: 3.0);
 
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_GroupId",
+                table: "Products",
+                column: "GroupId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductGroups_ParentId",
+                table: "ProductGroups",
+                column: "ParentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductGroups_ProductGroupId",
+                table: "ProductGroups",
+                column: "ProductGroupId");
+
             migrationBuilder.AddForeignKey(
                 name: "FK_Orders_Customers_CustomerId",
                 table: "Orders",
@@ -369,6 +603,30 @@ namespace db_projektarbeit.Migrations
                 principalTable: "Customers",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ParentId",
+                table: "ProductGroups",
+                column: "ParentId",
+                principalTable: "ProductGroups",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ProductGroups_ProductGroups_ProductGroupId",
+                table: "ProductGroups",
+                column: "ProductGroupId",
+                principalTable: "ProductGroups",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Products_ProductGroups_GroupId",
+                table: "Products",
+                column: "GroupId",
+                principalTable: "ProductGroups",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
     }
 }

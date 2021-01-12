@@ -45,12 +45,12 @@ namespace db_projektarbeit.Model
             modelBuilder.Entity<Product>()
                 .HasOne(c => c.Group);
 
-            modelBuilder.Entity<ProductGroup>()
-                .HasOne(p => p.Parent)                                          // Hat immer ein Eltern Element
-                .WithMany()                                                     // Bezihungen zischen einem und Mehreren Elementen
-                .HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
-                .IsRequired(false)                                              //
-                .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen
+            //modelBuilder.Entity<ProductGroup>()
+            //    .HasOne(p => p.Parent)                                          // Hat immer ein Eltern Element
+            //    .WithMany()                                                     // Bezihungen zischen einem und Mehreren Elementen
+            //    .HasForeignKey(p => p.ParentId)                                 // Fremdschlüssel zu Eltern Element
+            //    .IsRequired(false)                                              //
+            //    .OnDelete(DeleteBehavior.Restrict);                             // Rekursives löschen
 
             modelBuilder.Entity<Order>()
                  .HasOne<Customer>()
@@ -118,64 +118,75 @@ namespace db_projektarbeit.Model
                 new ProductGroup
                 {
                     Id = 1,
+                    ProductId = 140068752,
                     Name = "Büromöbel"
                 },
                 new ProductGroup
                 {
                     Id = 2,
+                    ProductId = 745213689,
                     Name = "Bürostuhl",
-                    ParentId = 1
+                    ParentProductId = 1
                 },
                 new ProductGroup
                 {
                     Id = 3,
+                    ProductId = 963258741,
                     Name = "Korpus",
-                    ParentId = 1
+                    ParentProductId = 1
                 },
                 new ProductGroup
                 {
                     Id = 4,
+                    ProductId = 987456321,
                     Name = "Schreibtisch",
-                    ParentId = 1
+                    ParentProductId = 1
                 },
                 new ProductGroup
                 {
                     Id = 5,
+                    ProductId = 123456789,
                     Name = "Drucker"
                 },
                 new ProductGroup
                 {
                     Id = 6,
+                    ProductId = 954068252,
                     Name = "Belegdrucker",
-                    ParentId = 5
+                    ParentProductId = 5
                 },
                 new ProductGroup
                 {
                     Id = 7,
+                    ProductId = 427806752,
                     Name = "Farbdrucker",
-                    ParentId = 5
+                    ParentProductId = 5
                 },
                 new ProductGroup
                 {
                     Id = 8,
+                    ProductId = 770075678,
                     Name = "Fotodrucker",
-                    ParentId = 7
+                    ParentProductId = 7
                 },
                 new ProductGroup
                 {
                     Id = 9,
+                    ProductId = 190069952,
                     Name = "Multifunktionsdrucker",
-                    ParentId = 7
+                    ParentProductId = 7
                 },
                 new ProductGroup
                 {
                     Id = 10,
+                    ProductId = 647068712,
                     Name = "Toner",
-                    ParentId = 5
+                    ParentProductId = 5
                 },
                 new ProductGroup
                 {
                     Id = 11,
+                    ProductId = 140468752,
                     Name = "Ordner"
                 }
             };

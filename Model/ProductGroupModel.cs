@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
+using System.Windows.Forms;
+using System.Linq;
 
 namespace db_projektarbeit.Model
 {
@@ -15,34 +17,34 @@ namespace db_projektarbeit.Model
             {
                 var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
-                    "(Id, Name, ParentId, ProductGroupId, ProductLevel) " +
+                    "(Id, ProductId, Name, ParentProductId, ProductLevel) " +
                     "AS (SELECT " +
                                 "Id," +
+                                "ProductId,"+
                                 "Name," +
-                                "ParentId," +
-                                "ProductGroupId," +
+                                "ParentProductId," +
                                 "0 AS ProductLevel " +
                     "FROM dbo.ProductGroups " +
-                    "WHERE ParentId IS NULL " +
+                    "WHERE ParentProductId IS NULL " +
                     "UNION ALL " +
                     "SELECT " +
                                 "pn.Id," +
+                                "pn.ProductId," +
                                 "pn.Name," +
-                                "pn.ProductGroupId," +
-                                "pn.ParentId," +
+                                "pn.ParentProductId," +
                                 "p1.ProductLevel + 1 " +
                     "FROM dbo.ProductGroups AS pn " +
                     "INNER JOIN CTE_ProductGroup AS p1 " +
-                        "ON p1.Id = pn.ParentId " +
+                        "ON p1.Id = pn.ParentProductId " +
                     ") " +
                     "SELECT " +
                                 "Id," +
+                                "ProductId," +
                                 "Name," +
-                                "ParentId," +
-                                "ProductGroupId," +
+                                "ParentProductId," +
                                 "ProductLevel " +
                     "FROM CTE_ProductGroup " +
-                    "ORDER BY ParentId;"
+                    "ORDER BY ParentProductId;"
                     );
 
                 foreach (var item in result)
@@ -51,6 +53,33 @@ namespace db_projektarbeit.Model
                 }
             }
             return productGroups;
+        }
+
+        public TreeView GetTreeView()
+        {
+            TreeView newTreeView = new TreeView();
+            List<TreeNode> new1TreeNode = new List<TreeNode>();
+            TreeNode newTreeNode = new TreeNode("", new1TreeNode.ToArray());
+
+            //List<ProductGroup> test = GetAll();
+            //test.Where(x => x.ParentProductId.Equals(null))
+
+            return newTreeView;
+        }
+
+        private TreeNode CreateTreeNode(ProductGroup productGroup)
+        {
+            TreeNode newTreeNode = new TreeNode();
+
+            newTreeNode.Text = productGroup.Name;  // Absichtlich MTR
+            newTreeNode.Name = productGroup.Name;
+            newTreeNode.Tag = productGroup.ProductId;
+
+            return newTreeNode;
+        }
+
+        private void rekCreateTreeNode(TreeNode parentNode, List<ProductGroup> productGroups)
+        {
         }
     }
 }
