@@ -9,7 +9,7 @@ namespace db_projektarbeit
 
         public override string ToString()
         {
-            return Zip.ToString() + " " + Name;
+            return Zip + " " + Name;
         }
     }
 }

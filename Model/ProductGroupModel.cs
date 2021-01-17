@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
+using System.Windows.Forms;
+using System.Linq;
 
 namespace db_projektarbeit.Model
 {
@@ -13,22 +16,27 @@ namespace db_projektarbeit.Model
 
             using (var context = new ProjectContext())
             {
+                //productGroups = context.ProductGroups
+                //    .Include(p => p.Children)
+                //    .Include(p => p.Parent)
+                //    .ToList();
+
                 var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
-                    "(Id, Name, ParentId, ProductGroupId, ProductLevel) " +
+                    "(Id, ProductId, Name, ParentId, ProductLevel) " +
                     "AS (SELECT " +
                                 "Id," +
+                                "ProductId,"+
                                 "Name," +
                                 "ParentId," +
-                                "ProductGroupId," +
                                 "0 AS ProductLevel " +
                     "FROM dbo.ProductGroups " +
                     "WHERE ParentId IS NULL " +
                     "UNION ALL " +
                     "SELECT " +
                                 "pn.Id," +
+                                "pn.ProductId," +
                                 "pn.Name," +
-                                "pn.ProductGroupId," +
                                 "pn.ParentId," +
                                 "p1.ProductLevel + 1 " +
                     "FROM dbo.ProductGroups AS pn " +
@@ -37,9 +45,9 @@ namespace db_projektarbeit.Model
                     ") " +
                     "SELECT " +
                                 "Id," +
+                                "ProductId," +
                                 "Name," +
                                 "ParentId," +
-                                "ProductGroupId," +
                                 "ProductLevel " +
                     "FROM CTE_ProductGroup " +
                     "ORDER BY ParentId;"
@@ -50,7 +58,36 @@ namespace db_projektarbeit.Model
                     productGroups.Add(item);
                 }
             }
+
+
             return productGroups;
+        }
+
+        public TreeView GetTreeView()
+        {
+            TreeView newTreeView = new TreeView();
+            List<TreeNode> new1TreeNode = new List<TreeNode>();
+            TreeNode newTreeNode = new TreeNode("", new1TreeNode.ToArray());
+
+            //List<ProductGroup> test = GetAll();
+            //test.Where(x => x.ParentProductId.Equals(null))
+
+            return newTreeView;
+        }
+
+        private TreeNode CreateTreeNode(ProductGroup productGroup)
+        {
+            TreeNode newTreeNode = new TreeNode();
+
+            newTreeNode.Text = productGroup.Name;  // Absichtlich MTR
+            newTreeNode.Name = productGroup.Name;
+            newTreeNode.Tag = productGroup.ProductId;
+
+            return newTreeNode;
+        }
+
+        private void rekCreateTreeNode(TreeNode parentNode, List<ProductGroup> productGroups)
+        {
         }
     }
 }

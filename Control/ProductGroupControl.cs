@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using db_projektarbeit.Model;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.Control
 {
@@ -12,6 +13,11 @@ namespace db_projektarbeit.Control
         public List<ProductGroup> GetAll()
         {
             return ProductGroupModel.GetAll();
+        }
+
+        public TreeView GetTreeView()
+        {
+            return ProductGroupModel.GetTreeView();
         }
     }
 }
