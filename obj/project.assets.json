@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Trabe\\.nuget\\packages\\": {}
+    "C:\\Users\\ericm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
+      "projectUniqueName": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
       "projectName": "db-projektarbeit",
-      "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
-      "packagesPath": "C:\\Users\\Trabe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\obj\\",
+      "projectPath": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
+      "packagesPath": "C:\\Users\\ericm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ericm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5874,7 +5874,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

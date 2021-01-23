@@ -18,34 +18,14 @@ namespace db_projektarbeit.View
         public ProductGroupView()
         {
             InitializeComponent();
-            LoadTable(ProductGroupControl.GetAll());
+            var arrayNodes = ProductGroupControl.ConvertToTreeNodes(ProductGroupControl.GetAll());
+            LoadTreeView(arrayNodes);
         }
 
-        private void LoadTable(List<ProductGroup> productGroups)
+        public void LoadTreeView(TreeNode[] treeNodes)
         {
-            var root = productGroups.Where(p => p.ParentId == null);
-
-            foreach (var parent in root)
-            {
-                var parentNode = TvProductGroup.Nodes.Add(parent.Id.ToString(), parent.Name);
-                if (parent.Children != null)
-                {
-                    PopulateChildren(parentNode, parent.Children);
-                }
-            }
+            TvProductGroup.Nodes.AddRange(treeNodes);
         }
-        private static void PopulateChildren(TreeNode parentNode, IEnumerable<ProductGroup> children)
-        {
-            foreach (var child in children)
-            {
-                var newNode = parentNode.Nodes.Add(child.Id.ToString(), child.Name);
-                if (child.Children != null)
-                {
-                    PopulateChildren(newNode, child.Children);
-                }
-            }
-        }
-
 
         private void CmdSave_Click(object sender, EventArgs e)
         {

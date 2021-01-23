@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -85,7 +85,8 @@ namespace db_projektarbeit.Migrations
                     ProductNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.ProductNr"),
                     GroupId = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -191,12 +192,12 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "GroupId", "Price" },
+                columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
-                    { 10, "Meier (gelb)", 11, 2.90m },
-                    { 11, "Meier (blau)", 11, 2.30m },
-                    { 12, "Meier (grau)", 11, 3m }
+                    { 10, new DateTime(2020, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (gelb)", 11, 2.90m },
+                    { 11, new DateTime(2020, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (blau)", 11, 2.30m },
+                    { 12, new DateTime(2020, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (grau)", 11, 3m }
                 });
 
             migrationBuilder.InsertData(
@@ -220,14 +221,14 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "GroupId", "Price" },
+                columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
-                    { 1, "Stuhl mit Armlehnen", 2, 140m },
-                    { 2, "Stuhl Comfort", 2, 170m },
-                    { 3, "Rolli", 3, 199.90m },
-                    { 4, "RT-9000", 6, 360.50m },
-                    { 9, "HP all-in-one", 10, 999.90m }
+                    { 1, new DateTime(2020, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stuhl mit Armlehnen", 2, 140m },
+                    { 2, new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stuhl Comfort", 2, 170m },
+                    { 3, new DateTime(2020, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Rolli", 3, 199.90m },
+                    { 4, new DateTime(2020, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "RT-9000", 6, 360.50m },
+                    { 9, new DateTime(2020, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP all-in-one", 10, 999.90m }
                 });
 
             migrationBuilder.InsertData(
@@ -241,13 +242,13 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "Description", "GroupId", "Price" },
+                columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
-                    { 5, "Polaroid Thermo", 8, 89.90m },
-                    { 6, "HP M123XX", 9, 349m },
-                    { 7, "HP M321YY", 9, 321m },
-                    { 8, "Brother Deluxe", 9, 430m }
+                    { 5, new DateTime(2020, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Polaroid Thermo", 8, 89.90m },
+                    { 6, new DateTime(2020, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP M123XX", 9, 349m },
+                    { 7, new DateTime(2020, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP M321YY", 9, 321m },
+                    { 8, new DateTime(2020, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Brother Deluxe", 9, 430m }
                 });
 
             migrationBuilder.InsertData(

@@ -11,6 +11,7 @@ namespace db_projektarbeit.View
 {
     public partial class ProductView : Form
     {
+        private ProductGroupControl ProductGroupControl = new ProductGroupControl();
         ProductControl ProductControl = new ProductControl();
         Product selected = new Product();
 
@@ -18,6 +19,13 @@ namespace db_projektarbeit.View
         {
             InitializeComponent();
             LoadTable(ProductControl.GetAll());
+            var arrayNodes = ProductGroupControl.ConvertToTreeNodes(ProductGroupControl.GetAll());
+            LoadTreeView(arrayNodes);
+        }
+
+        public void LoadTreeView(TreeNode[] treeNodes)
+        {
+            TvProductGroup.Nodes.AddRange(treeNodes);
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)

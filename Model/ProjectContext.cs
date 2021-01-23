@@ -189,84 +189,96 @@ namespace db_projektarbeit.Model
                     Id = 1,
                     GroupId = 2,
                     Description = "Stuhl mit Armlehnen",
-                    Price = 140M
+                    Price = 140M,
+                    CreationDate = new DateTime(2020,03,15)
                 },
                 new Product
                 {
                     Id = 2,
                     GroupId = 2,
                     Description = "Stuhl Comfort",
-                    Price = 170M
+                    Price = 170M,
+                    CreationDate = new DateTime(2020,02,05)
                 },
                 new Product
                 {
                     Id = 3,
                     GroupId = 3,
                     Description = "Rolli",
-                    Price = 199.90M
+                    Price = 199.90M,
+                    CreationDate = new DateTime(2020,01,25)
                 },
                 new Product
                 {
                     Id = 4,
                     GroupId = 6,
                     Description = "RT-9000",
-                    Price = 360.50M
+                    Price = 360.50M,
+                    CreationDate = new DateTime(2020,07,02)
                 },
                 new Product
                 {
                     Id = 5,
                     GroupId = 8,
                     Description = "Polaroid Thermo",
-                    Price = 89.90M
+                    Price = 89.90M,
+                    CreationDate = new DateTime(2020,10,9)
                 },
                 new Product
                 {
                     Id = 6,
                     GroupId = 9,
                     Description = "HP M123XX",
-                    Price = 349M
+                    Price = 349M,
+                    CreationDate = new DateTime(2020,12,6)
                 },
                 new Product
                 {
                     Id = 7,
                     GroupId = 9,
                     Description = "HP M321YY",
-                    Price = 321M
+                    Price = 321M,
+                    CreationDate = new DateTime(2020,9,17)
                 },
                 new Product
                 {
                     Id = 8,
                     GroupId = 9,
                     Description = "Brother Deluxe",
-                    Price = 430M
+                    Price = 430M,
+                    CreationDate = new DateTime(2020,08,01)
                 },
                 new Product
                 {
                     Id = 9,
                     GroupId = 10,
                     Description = "HP all-in-one",
-                    Price = 999.90M
+                    Price = 999.90M,
+                    CreationDate = new DateTime(2020,04,7)
                 },
                 new Product
                 {
                     Id = 10,
                     GroupId = 11,
                     Description = "Meier (gelb)",
-                    Price = 2.90M
+                    Price = 2.90M,
+                    CreationDate = new DateTime(2020,9,9)
                 },
                 new Product
                 {
                     Id = 11,
                     GroupId = 11,
                     Description = "Meier (blau)",
-                    Price = 2.30M
+                    Price = 2.30M,
+                    CreationDate = new DateTime(2020,6,10)
                 },
                 new Product
                 {
                     Id = 12,
                     GroupId = 11,
                     Description = "Meier (grau)",
-                    Price = 3M
+                    Price = 3M,
+                    CreationDate = new DateTime(2020,10,01)
                 }
             };
             #endregion

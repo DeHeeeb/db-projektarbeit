@@ -224,6 +224,9 @@ namespace db_projektarbeit.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -248,6 +251,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
+                            CreationDate = new DateTime(2020, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Stuhl mit Armlehnen",
                             GroupId = 2,
                             Price = 140m,
@@ -256,6 +260,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 2,
+                            CreationDate = new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Stuhl Comfort",
                             GroupId = 2,
                             Price = 170m,
@@ -264,6 +269,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 3,
+                            CreationDate = new DateTime(2020, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Rolli",
                             GroupId = 3,
                             Price = 199.90m,
@@ -272,6 +278,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 4,
+                            CreationDate = new DateTime(2020, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "RT-9000",
                             GroupId = 6,
                             Price = 360.50m,
@@ -280,6 +287,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 5,
+                            CreationDate = new DateTime(2020, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Polaroid Thermo",
                             GroupId = 8,
                             Price = 89.90m,
@@ -288,6 +296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 6,
+                            CreationDate = new DateTime(2020, 12, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "HP M123XX",
                             GroupId = 9,
                             Price = 349m,
@@ -296,6 +305,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 7,
+                            CreationDate = new DateTime(2020, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "HP M321YY",
                             GroupId = 9,
                             Price = 321m,
@@ -304,6 +314,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 8,
+                            CreationDate = new DateTime(2020, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Brother Deluxe",
                             GroupId = 9,
                             Price = 430m,
@@ -312,6 +323,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 9,
+                            CreationDate = new DateTime(2020, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "HP all-in-one",
                             GroupId = 10,
                             Price = 999.90m,
@@ -320,6 +332,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 10,
+                            CreationDate = new DateTime(2020, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Meier (gelb)",
                             GroupId = 11,
                             Price = 2.90m,
@@ -328,6 +341,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 11,
+                            CreationDate = new DateTime(2020, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Meier (blau)",
                             GroupId = 11,
                             Price = 2.30m,
@@ -336,6 +350,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 12,
+                            CreationDate = new DateTime(2020, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Meier (grau)",
                             GroupId = 11,
                             Price = 3m,

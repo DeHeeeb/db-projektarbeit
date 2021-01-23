@@ -13,5 +13,6 @@ namespace db_projektarbeit
         public ProductGroup Group { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
