@@ -12,18 +12,30 @@ namespace db_projektarbeit.Control
     {
         private ProductGroupModel ProductGroupModel = new ProductGroupModel();
 
+        private ProductControl ProductControl = new ProductControl();
+
         public List<ProductGroup> GetAll()
         {
             return ProductGroupModel.GetAll();
         }
 
+        public int AddNode(ProductGroup productGroup)
+        {
+            return ProductGroupModel.AddNode(productGroup);
+        }
+
+        public int UpdateNode(ProductGroup productGroup)
+        {
+            return ProductGroupModel.UpdateNode(productGroup);
+        }
+
         public TreeNode[] ConvertToTreeNodes(List<ProductGroup> productGroups)
         {
-            List<TreeNode> listTreeNodes = new List<TreeNode>();
+            List<TreeNode> listTreeNodes = new List<TreeNode>();                                    // Liste von TreeNode
 
-            var root = productGroups.Where(p => p.ParentId == null);
+            var root = productGroups.Where(p => p.ParentId == null);// Root Node suchen
 
-            foreach (var parent in root)
+            foreach (var parent in root)                                                 // 
             {
                 var parentNode = new TreeNode(parent.Name)
                 {
