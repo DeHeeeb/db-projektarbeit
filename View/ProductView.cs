@@ -11,8 +11,8 @@ namespace db_projektarbeit.View
 {
     public partial class ProductView : Form
     {
-        private ProductGroupControl ProductGroupControl = new ProductGroupControl();
         ProductControl ProductControl = new ProductControl();
+        ProductGroupControl ProductGroupControl = new ProductGroupControl();
         Product selected = new Product();
 
         public ProductView()
@@ -26,6 +26,7 @@ namespace db_projektarbeit.View
         public void LoadTreeView(TreeNode[] treeNodes)
         {
             TvProductGroup.Nodes.AddRange(treeNodes);
+            TvProductGroup.ExpandAll();
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -58,15 +59,16 @@ namespace db_projektarbeit.View
         private void CmdSave_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(TxtDescription.Text) && 
-                !String.IsNullOrWhiteSpace(TxtPrice.Text))
+                NumPrice.Value != 0 &&
+                TvProductGroup.SelectedNode != null)
             {
                 Product productToSave = new Product
                 {
                     Id = selected.Id,
                     ProductNr = selected.ProductNr,
-                    GroupId = selected.GroupId,
                     Description = TxtDescription.Text,
-                    //Price = TxtPrice.Text,
+                    Price = NumPrice.Value,
+                    GroupId = Convert.ToInt32(TvProductGroup.SelectedNode.Name)
                 };
                 ProductControl.Save(productToSave);
 
@@ -94,7 +96,9 @@ namespace db_projektarbeit.View
             selected = (Product) row.DataBoundItem;
             TxtProductNr.Text = selected.ProductNr.ToString();
             TxtDescription.Text = selected.Description;
-            TxtPrice.Text = selected.Price.ToString();
+            NumPrice.Value = selected.Price;
+            TvProductGroup.SelectedNode = TvProductGroup.Nodes.Find(selected.Group.Id.ToString(), true)[0];
+            TvProductGroup.Select();
         }
 
         private void LoadTable(List<Product> products)
@@ -103,6 +107,7 @@ namespace db_projektarbeit.View
 
             DgvProducts.Columns[0].Visible = false;
             DgvProducts.Columns[2].Visible = false;
+            DgvProducts.Columns[6].Visible = false;
             DgvProducts.Columns[1].HeaderText = "Produkt-Nr";
             DgvProducts.Columns[3].HeaderText = "Produktgruppe";
             DgvProducts.Columns[4].HeaderText = "Beschreibung";
@@ -114,13 +119,15 @@ namespace db_projektarbeit.View
             selected = new Product();
             TxtProductNr.Text = "wird vergeben";
             TxtDescription.Clear();
-            TxtPrice.Clear();
+            NumPrice.Value = 0;
+            TvProductGroup.SelectedNode = null;
         }
 
         private void UnlockFields()
         {
             TxtDescription.ReadOnly = false;
-            TxtPrice.ReadOnly = false;
+            NumPrice.ReadOnly = false;
+            TvProductGroup.Enabled = true;
         }
     }
 }

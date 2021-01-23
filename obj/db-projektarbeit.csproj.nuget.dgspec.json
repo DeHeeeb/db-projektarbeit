@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
+        "projectName": "db-projektarbeit",
+        "projectPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
+        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> b411791760eac67d07f494723cf9523a9e2df626
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
