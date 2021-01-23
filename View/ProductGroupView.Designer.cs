@@ -30,43 +30,129 @@ namespace db_projektarbeit.View
         private void InitializeComponent()
         {
             this.TvProductGroup = new System.Windows.Forms.TreeView();
-            this.CmdSave = new System.Windows.Forms.Button();
+            this.CmdUpdate = new System.Windows.Forms.Button();
+            this.CmdNewNode = new System.Windows.Forms.Button();
+            this.LblDescription = new System.Windows.Forms.Label();
+            this.TxtArtikelGruppeName = new System.Windows.Forms.TextBox();
+            this.LblProductNr = new System.Windows.Forms.Label();
+            this.TxtArtikelGruppeNr = new System.Windows.Forms.TextBox();
+            this.NewChildNode = new System.Windows.Forms.Button();
+            this.CmdDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TvProductGroup
             // 
             this.TvProductGroup.Location = new System.Drawing.Point(13, 13);
             this.TvProductGroup.Name = "TvProductGroup";
-            this.TvProductGroup.Size = new System.Drawing.Size(775, 367);
+            this.TvProductGroup.Size = new System.Drawing.Size(775, 319);
             this.TvProductGroup.TabIndex = 0;
             this.TvProductGroup.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvProductGroup_AfterSelect);
             // 
-            // CmdSave
+            // CmdUpdate
             // 
-            this.CmdSave.Location = new System.Drawing.Point(13, 409);
-            this.CmdSave.Name = "CmdSave";
-            this.CmdSave.Size = new System.Drawing.Size(94, 29);
-            this.CmdSave.TabIndex = 10;
-            this.CmdSave.Text = "Speichern";
-            this.CmdSave.UseVisualStyleBackColor = true;
-            this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
+            this.CmdUpdate.Location = new System.Drawing.Point(638, 343);
+            this.CmdUpdate.Name = "CmdUpdate";
+            this.CmdUpdate.Size = new System.Drawing.Size(150, 29);
+            this.CmdUpdate.TabIndex = 10;
+            this.CmdUpdate.Text = "Speichern";
+            this.CmdUpdate.UseVisualStyleBackColor = true;
+            this.CmdUpdate.Click += new System.EventHandler(this.CmdUpdateNode_Click);
+            // 
+            // CmdNewNode
+            // 
+            this.CmdNewNode.Location = new System.Drawing.Point(398, 343);
+            this.CmdNewNode.Name = "CmdNewNode";
+            this.CmdNewNode.Size = new System.Drawing.Size(150, 29);
+            this.CmdNewNode.TabIndex = 15;
+            this.CmdNewNode.Text = "Neue Gruppe";
+            this.CmdNewNode.UseVisualStyleBackColor = true;
+            this.CmdNewNode.Click += new System.EventHandler(this.CmdNewNode_Click);
+            // 
+            // LblDescription
+            // 
+            this.LblDescription.AutoSize = true;
+            this.LblDescription.Location = new System.Drawing.Point(13, 388);
+            this.LblDescription.Name = "LblDescription";
+            this.LblDescription.Size = new System.Drawing.Size(49, 20);
+            this.LblDescription.TabIndex = 14;
+            this.LblDescription.Text = "Name";
+            // 
+            // TxtArtikelGruppeName
+            // 
+            this.TxtArtikelGruppeName.Location = new System.Drawing.Point(145, 385);
+            this.TxtArtikelGruppeName.Name = "TxtArtikelGruppeName";
+            this.TxtArtikelGruppeName.ReadOnly = true;
+            this.TxtArtikelGruppeName.Size = new System.Drawing.Size(200, 27);
+            this.TxtArtikelGruppeName.TabIndex = 13;
+            // 
+            // LblProductNr
+            // 
+            this.LblProductNr.AutoSize = true;
+            this.LblProductNr.Location = new System.Drawing.Point(13, 348);
+            this.LblProductNr.Name = "LblProductNr";
+            this.LblProductNr.Size = new System.Drawing.Size(126, 20);
+            this.LblProductNr.TabIndex = 12;
+            this.LblProductNr.Text = "ArtikelGruppe-Nr.";
+            // 
+            // TxtArtikelGruppeNr
+            // 
+            this.TxtArtikelGruppeNr.Location = new System.Drawing.Point(145, 345);
+            this.TxtArtikelGruppeNr.Name = "TxtArtikelGruppeNr";
+            this.TxtArtikelGruppeNr.ReadOnly = true;
+            this.TxtArtikelGruppeNr.Size = new System.Drawing.Size(200, 27);
+            this.TxtArtikelGruppeNr.TabIndex = 11;
+            // 
+            // NewChildNode
+            // 
+            this.NewChildNode.Location = new System.Drawing.Point(398, 385);
+            this.NewChildNode.Name = "NewChildNode";
+            this.NewChildNode.Size = new System.Drawing.Size(150, 29);
+            this.NewChildNode.TabIndex = 16;
+            this.NewChildNode.Text = "Neue Untergruppe";
+            this.NewChildNode.UseVisualStyleBackColor = true;
+            this.NewChildNode.Click += new System.EventHandler(this.CmdNewChildNode_Click);
+            // 
+            // CmdDelete
+            // 
+            this.CmdDelete.Location = new System.Drawing.Point(638, 383);
+            this.CmdDelete.Name = "CmdDelete";
+            this.CmdDelete.Size = new System.Drawing.Size(150, 29);
+            this.CmdDelete.TabIndex = 17;
+            this.CmdDelete.Text = "Löschen";
+            this.CmdDelete.UseVisualStyleBackColor = true;
+            this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
             // ProductGroupView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CmdSave);
+            this.Controls.Add(this.CmdDelete);
+            this.Controls.Add(this.NewChildNode);
+            this.Controls.Add(this.CmdNewNode);
+            this.Controls.Add(this.LblDescription);
+            this.Controls.Add(this.TxtArtikelGruppeName);
+            this.Controls.Add(this.LblProductNr);
+            this.Controls.Add(this.TxtArtikelGruppeNr);
+            this.Controls.Add(this.CmdUpdate);
             this.Controls.Add(this.TvProductGroup);
             this.Name = "ProductGroupView";
             this.Text = "ProductGroupView";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.TreeView TvProductGroup;
-        private System.Windows.Forms.Button CmdSave;
+        private System.Windows.Forms.Button CmdUpdate;
+        private System.Windows.Forms.Button CmdNewNode;
+        private System.Windows.Forms.Label LblDescription;
+        private System.Windows.Forms.TextBox TxtArtikelGruppeName;
+        private System.Windows.Forms.Label LblProductNr;
+        private System.Windows.Forms.TextBox TxtArtikelGruppeNr;
+        private System.Windows.Forms.Button NewChildNode;
+        private System.Windows.Forms.Button CmdDelete;
     }
 }

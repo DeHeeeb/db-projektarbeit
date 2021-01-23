@@ -1,11 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using System.Text;
-using System.Windows.Forms;
-using System.Linq;
 
 namespace db_projektarbeit.Model
 {
@@ -52,6 +46,36 @@ namespace db_projektarbeit.Model
                 }
             }
             return productGroups;
+        }
+
+        public int AddNode(ProductGroup productGroup)
+        {
+
+            using (var context = new ProjectContext())
+            {
+                if (productGroup.Id == 0)
+                {
+                    context.ProductGroups.Add(productGroup);
+                }
+                else
+                {
+                    context.ProductGroups.Update(productGroup);
+                }
+
+                context.SaveChanges();
+            }
+            return productGroup.Id;
+        }
+
+        public int UpdateNode(ProductGroup productGroup)
+        {
+            using (var context = new ProjectContext())
+            {
+                context.ProductGroups.Update(productGroup);
+                context.SaveChanges();
+            }
+
+            return productGroup.Id;
         }
     }
 }
