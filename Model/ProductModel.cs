@@ -12,7 +12,10 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                return context.Products.Include(p => p.Group).ToList();
+                return context.Products
+                    .Include(p => p.Group)
+                    .OrderBy(p => p.ProductNr)
+                    .ToList();
             }
         }
 
@@ -39,11 +42,11 @@ namespace db_projektarbeit.Model
             {
                 if (product.Id == 0)
                 {
+                    product.CreationDate = DateTime.Now.Date;
                     context.Products.Add(product);
                 } else
                 {
-                    context.Products.Attach(product);
-                    context.Entry(product).State = EntityState.Modified;
+                    context.Products.Update(product);
                 }
                 context.SaveChanges();
 

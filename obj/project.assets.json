@@ -5799,19 +5799,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ericm\\.nuget\\packages\\": {}
+    "C:\\Users\\lukas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
+      "projectUniqueName": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
       "projectName": "db-projektarbeit",
-      "projectPath": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
-      "packagesPath": "C:\\Users\\ericm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ericm\\Documents\\10_Studium\\3_SEM\\DATABANK_ADVANCED\\Semesterarbeit\\db-projektarbeit\\obj\\",
+      "projectPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\db-projektarbeit.csproj",
+      "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lukas\\source\\repos\\db-projektarbeit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ericm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
