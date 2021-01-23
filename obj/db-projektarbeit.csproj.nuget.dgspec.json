@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj": {}
+    "C:\\visual\\DATABANK_ADVANCED\\Projektarbeit_DB\\db-projektarbeit\\db-projektarbeit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj": {
+    "C:\\visual\\DATABANK_ADVANCED\\Projektarbeit_DB\\db-projektarbeit\\db-projektarbeit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
+        "projectUniqueName": "C:\\visual\\DATABANK_ADVANCED\\Projektarbeit_DB\\db-projektarbeit\\db-projektarbeit.csproj",
         "projectName": "db-projektarbeit",
-        "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit.csproj",
-        "packagesPath": "C:\\Users\\Trabe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\obj\\",
+        "projectPath": "C:\\visual\\DATABANK_ADVANCED\\Projektarbeit_DB\\db-projektarbeit\\db-projektarbeit.csproj",
+        "packagesPath": "C:\\Users\\ericm\\.nuget\\packages\\",
+        "outputPath": "C:\\visual\\DATABANK_ADVANCED\\Projektarbeit_DB\\db-projektarbeit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ericm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
