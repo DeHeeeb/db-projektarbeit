@@ -44,7 +44,15 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                context.Cities.Add(city);
+                if (city.Id == 0)
+                {
+                    context.Cities.Add(city);
+                }
+                else
+                {
+                    context.Cities.Update(city);
+                }
+
                 context.SaveChanges();
 
                 return city.Id;

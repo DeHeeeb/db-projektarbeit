@@ -90,9 +90,9 @@ namespace db_projektarbeit.View
             this.LblProductNr.AutoSize = true;
             this.LblProductNr.Location = new System.Drawing.Point(13, 348);
             this.LblProductNr.Name = "LblProductNr";
-            this.LblProductNr.Size = new System.Drawing.Size(126, 20);
+            this.LblProductNr.Size = new System.Drawing.Size(125, 20);
             this.LblProductNr.TabIndex = 12;
-            this.LblProductNr.Text = "ArtikelGruppe-Nr.";
+            this.LblProductNr.Text = "Artikelgruppe-Nr.";
             // 
             // TxtArtikelGruppeNr
             // 
@@ -137,7 +137,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.CmdUpdate);
             this.Controls.Add(this.TvProductGroup);
             this.Name = "ProductGroupView";
-            this.Text = "ProductGroupView";
+            this.Text = "Artikelgruppen-Verwaltung";
             this.ResumeLayout(false);
             this.PerformLayout();
 

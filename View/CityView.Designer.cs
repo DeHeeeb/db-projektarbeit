@@ -162,7 +162,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.DgvCities);
             this.Name = "CityView";
-            this.Text = "CityView";
+            this.Text = "Städte-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvCities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumZip)).EndInit();
             this.ResumeLayout(false);

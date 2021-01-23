@@ -41,12 +41,9 @@ namespace db_projektarbeit.View
             this.CmdSave = new System.Windows.Forms.Button();
             this.CmdNew = new System.Windows.Forms.Button();
             this.LblCity = new System.Windows.Forms.Label();
-            this.TxtCity = new System.Windows.Forms.TextBox();
-            this.NumZip = new System.Windows.Forms.NumericUpDown();
             this.CbxCity = new System.Windows.Forms.ComboBox();
             this.CmdEditCity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumZip)).BeginInit();
             this.SuspendLayout();
             // 
             // DgvCustomers
@@ -62,7 +59,7 @@ namespace db_projektarbeit.View
             this.DgvCustomers.ReadOnly = true;
             this.DgvCustomers.RowHeadersWidth = 51;
             this.DgvCustomers.RowTemplate.Height = 29;
-            this.DgvCustomers.Size = new System.Drawing.Size(776, 195);
+            this.DgvCustomers.Size = new System.Drawing.Size(776, 249);
             this.DgvCustomers.TabIndex = 0;
             this.DgvCustomers.TabStop = false;
             this.DgvCustomers.SelectionChanged += new System.EventHandler(this.DgvCustomers_SelectionChanged);
@@ -77,7 +74,7 @@ namespace db_projektarbeit.View
             // 
             // TxtCustomerNr
             // 
-            this.TxtCustomerNr.Location = new System.Drawing.Point(102, 255);
+            this.TxtCustomerNr.Location = new System.Drawing.Point(99, 314);
             this.TxtCustomerNr.Name = "TxtCustomerNr";
             this.TxtCustomerNr.ReadOnly = true;
             this.TxtCustomerNr.Size = new System.Drawing.Size(201, 27);
@@ -86,7 +83,7 @@ namespace db_projektarbeit.View
             // LblCustomerNr
             // 
             this.LblCustomerNr.AutoSize = true;
-            this.LblCustomerNr.Location = new System.Drawing.Point(12, 258);
+            this.LblCustomerNr.Location = new System.Drawing.Point(9, 317);
             this.LblCustomerNr.Name = "LblCustomerNr";
             this.LblCustomerNr.Size = new System.Drawing.Size(84, 20);
             this.LblCustomerNr.TabIndex = 3;
@@ -95,7 +92,7 @@ namespace db_projektarbeit.View
             // LblName
             // 
             this.LblName.AutoSize = true;
-            this.LblName.Location = new System.Drawing.Point(12, 291);
+            this.LblName.Location = new System.Drawing.Point(9, 350);
             this.LblName.Name = "LblName";
             this.LblName.Size = new System.Drawing.Size(49, 20);
             this.LblName.TabIndex = 5;
@@ -103,7 +100,7 @@ namespace db_projektarbeit.View
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(102, 288);
+            this.TxtName.Location = new System.Drawing.Point(99, 347);
             this.TxtName.Name = "TxtName";
             this.TxtName.ReadOnly = true;
             this.TxtName.Size = new System.Drawing.Size(201, 27);
@@ -112,7 +109,7 @@ namespace db_projektarbeit.View
             // LblStreet
             // 
             this.LblStreet.AutoSize = true;
-            this.LblStreet.Location = new System.Drawing.Point(347, 258);
+            this.LblStreet.Location = new System.Drawing.Point(344, 317);
             this.LblStreet.Name = "LblStreet";
             this.LblStreet.Size = new System.Drawing.Size(85, 20);
             this.LblStreet.TabIndex = 7;
@@ -120,7 +117,7 @@ namespace db_projektarbeit.View
             // 
             // TxtStreet
             // 
-            this.TxtStreet.Location = new System.Drawing.Point(437, 255);
+            this.TxtStreet.Location = new System.Drawing.Point(434, 314);
             this.TxtStreet.Name = "TxtStreet";
             this.TxtStreet.ReadOnly = true;
             this.TxtStreet.Size = new System.Drawing.Size(201, 27);
@@ -159,56 +156,25 @@ namespace db_projektarbeit.View
             // LblCity
             // 
             this.LblCity.AutoSize = true;
-            this.LblCity.Location = new System.Drawing.Point(347, 291);
+            this.LblCity.Location = new System.Drawing.Point(344, 350);
             this.LblCity.Name = "LblCity";
             this.LblCity.Size = new System.Drawing.Size(82, 20);
             this.LblCity.TabIndex = 12;
             this.LblCity.Text = "PLZ / Stadt";
-            // 
-            // TxtCity
-            // 
-            this.TxtCity.Location = new System.Drawing.Point(500, 372);
-            this.TxtCity.Name = "TxtCity";
-            this.TxtCity.ReadOnly = true;
-            this.TxtCity.Size = new System.Drawing.Size(138, 27);
-            this.TxtCity.TabIndex = 13;
-            // 
-            // NumZip
-            // 
-            this.NumZip.Location = new System.Drawing.Point(437, 373);
-            this.NumZip.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.NumZip.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.NumZip.Name = "NumZip";
-            this.NumZip.ReadOnly = true;
-            this.NumZip.Size = new System.Drawing.Size(57, 27);
-            this.NumZip.TabIndex = 14;
-            this.NumZip.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
             // 
             // CbxCity
             // 
             this.CbxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCity.Enabled = false;
             this.CbxCity.FormattingEnabled = true;
-            this.CbxCity.Location = new System.Drawing.Point(437, 288);
+            this.CbxCity.Location = new System.Drawing.Point(434, 347);
             this.CbxCity.Name = "CbxCity";
             this.CbxCity.Size = new System.Drawing.Size(201, 28);
             this.CbxCity.TabIndex = 15;
             // 
             // CmdEditCity
             // 
-            this.CmdEditCity.Location = new System.Drawing.Point(644, 288);
+            this.CmdEditCity.Location = new System.Drawing.Point(641, 347);
             this.CmdEditCity.Name = "CmdEditCity";
             this.CmdEditCity.Size = new System.Drawing.Size(144, 28);
             this.CmdEditCity.TabIndex = 16;
@@ -223,8 +189,6 @@ namespace db_projektarbeit.View
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CmdEditCity);
             this.Controls.Add(this.CbxCity);
-            this.Controls.Add(this.NumZip);
-            this.Controls.Add(this.TxtCity);
             this.Controls.Add(this.LblCity);
             this.Controls.Add(this.CmdNew);
             this.Controls.Add(this.CmdSave);
@@ -240,7 +204,6 @@ namespace db_projektarbeit.View
             this.Name = "CustomerView";
             this.Text = "Kunden-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumZip)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,8 +223,6 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.Button CmdSave;
         private System.Windows.Forms.Button CmdNew;
         private System.Windows.Forms.Label LblCity;
-        private System.Windows.Forms.TextBox TxtCity;
-        private System.Windows.Forms.NumericUpDown NumZip;
         private System.Windows.Forms.ComboBox CbxCity;
         private System.Windows.Forms.Button CmdEditCity;
     }

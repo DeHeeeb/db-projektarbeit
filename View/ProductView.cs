@@ -108,8 +108,8 @@ namespace db_projektarbeit.View
             DgvProducts.Columns[0].Visible = false;
             DgvProducts.Columns[2].Visible = false;
             DgvProducts.Columns[6].Visible = false;
-            DgvProducts.Columns[1].HeaderText = "Produkt-Nr";
-            DgvProducts.Columns[3].HeaderText = "Produktgruppe";
+            DgvProducts.Columns[1].HeaderText = "Artikel-Nr";
+            DgvProducts.Columns[3].HeaderText = "Artikelgruppe";
             DgvProducts.Columns[4].HeaderText = "Beschreibung";
             DgvProducts.Columns[5].HeaderText = "Preis";
         }

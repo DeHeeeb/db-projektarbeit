@@ -85,9 +85,9 @@ namespace db_projektarbeit.View
             this.LblProductNr.AutoSize = true;
             this.LblProductNr.Location = new System.Drawing.Point(12, 258);
             this.LblProductNr.Name = "LblProductNr";
-            this.LblProductNr.Size = new System.Drawing.Size(85, 20);
+            this.LblProductNr.Size = new System.Drawing.Size(77, 20);
             this.LblProductNr.TabIndex = 3;
-            this.LblProductNr.Text = "Produkt-Nr.";
+            this.LblProductNr.Text = "Artikel-Nr.";
             // 
             // LblDescription
             // 
@@ -150,9 +150,9 @@ namespace db_projektarbeit.View
             this.LblGroup.AutoSize = true;
             this.LblGroup.Location = new System.Drawing.Point(348, 258);
             this.LblGroup.Name = "LblGroup";
-            this.LblGroup.Size = new System.Drawing.Size(115, 20);
+            this.LblGroup.Size = new System.Drawing.Size(100, 20);
             this.LblGroup.TabIndex = 12;
-            this.LblGroup.Text = "Produkt-Gruppe";
+            this.LblGroup.Text = "Artikelgruppe";
             // 
             // TvProductGroup
             // 
@@ -196,7 +196,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.DgvProducts);
             this.Name = "ProductView";
-            this.Text = "Produkt-Verwaltung";
+            this.Text = "Artikel-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumPrice)).EndInit();
             this.ResumeLayout(false);

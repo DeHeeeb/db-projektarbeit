@@ -98,7 +98,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.CmdSearch);
             this.Controls.Add(this.TxtSearch);
             this.Name = "OrderView";
-            this.Text = "OrderView";
+            this.Text = "Auftrags-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrderPos)).EndInit();
             this.ResumeLayout(false);

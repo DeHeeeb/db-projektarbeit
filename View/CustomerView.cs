@@ -53,28 +53,21 @@ namespace db_projektarbeit.View
         {
             if (!string.IsNullOrWhiteSpace(TxtName.Text) && 
                 !string.IsNullOrWhiteSpace(TxtStreet.Text) &&
-                !string.IsNullOrWhiteSpace(TxtCity.Text))
+                CbxCity.SelectedItem != null)
             {
-                City cityToSave = new City
-                {
-                    Id = selected.CityId,
-                    Zip = (int)NumZip.Value,
-                    Name = TxtCity.Text
-                };
-                int cityId = CityControl.Save(cityToSave);
-
                 Customer customerToSave = new Customer
                 {
                     Id = selected.Id,
                     CustomerNr = selected.CustomerNr,
                     Name = TxtName.Text,
                     Street = TxtStreet.Text,
-                    CityId = cityId
+                    CityId = (int)CbxCity.SelectedValue
                 };
                 CustomerControl.Save(customerToSave);
 
                 LoadTable(CustomerControl.GetAll());
                 LoadCombobox(CityControl.GetAll());
+                CbxCity.SelectedValue = selected.City.Id;
             }
         }
 
@@ -88,6 +81,7 @@ namespace db_projektarbeit.View
         private void RefreshCombobox(object sender, EventArgs e)
         {
             LoadCombobox(CityControl.GetAll());
+            LoadTable(CustomerControl.GetAll());
         }
 
         private void DgvCustomers_SelectionChanged(object sender, EventArgs e)
@@ -112,8 +106,6 @@ namespace db_projektarbeit.View
             TxtName.Text = selected.Name;
             TxtStreet.Text = selected.Street;
             CbxCity.SelectedValue = selected.City.Id;
-            NumZip.Value = selected.City.Zip;
-            TxtCity.Text = selected.City.Name;
         }
 
         private void LoadTable(List<Customer> customers)
@@ -141,8 +133,6 @@ namespace db_projektarbeit.View
             TxtCustomerNr.Text = "wird vergeben";
             TxtName.Clear();
             TxtStreet.Clear();
-            NumZip.ResetText();
-            TxtCity.Clear();
             CbxCity.SelectedIndex = 0;
         }
 
@@ -150,8 +140,6 @@ namespace db_projektarbeit.View
         {
             TxtName.ReadOnly = false;
             TxtStreet.ReadOnly = false;
-            NumZip.ReadOnly = false;
-            TxtCity.ReadOnly = false;
             CbxCity.Enabled = true;
         }
     }

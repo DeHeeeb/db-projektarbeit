@@ -21,6 +21,11 @@ namespace db_projektarbeit.View
             new CustomerView().Show();
         }
 
+        private void CmdCity_Click(object sender, EventArgs e)
+        {
+            new CityView().Show();
+        }
+
         private void CmdProduct_Click(object sender, EventArgs e)
         {
             new ProductView().Show();
