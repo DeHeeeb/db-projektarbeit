@@ -43,6 +43,8 @@ namespace db_projektarbeit.View
             this.LblCity = new System.Windows.Forms.Label();
             this.TxtCity = new System.Windows.Forms.TextBox();
             this.NumZip = new System.Windows.Forms.NumericUpDown();
+            this.CbxCity = new System.Windows.Forms.ComboBox();
+            this.CmdEditCity = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumZip)).BeginInit();
             this.SuspendLayout();
@@ -165,7 +167,7 @@ namespace db_projektarbeit.View
             // 
             // TxtCity
             // 
-            this.TxtCity.Location = new System.Drawing.Point(500, 288);
+            this.TxtCity.Location = new System.Drawing.Point(500, 372);
             this.TxtCity.Name = "TxtCity";
             this.TxtCity.ReadOnly = true;
             this.TxtCity.Size = new System.Drawing.Size(138, 27);
@@ -173,7 +175,7 @@ namespace db_projektarbeit.View
             // 
             // NumZip
             // 
-            this.NumZip.Location = new System.Drawing.Point(437, 289);
+            this.NumZip.Location = new System.Drawing.Point(437, 373);
             this.NumZip.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -194,11 +196,33 @@ namespace db_projektarbeit.View
             0,
             0});
             // 
+            // CbxCity
+            // 
+            this.CbxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxCity.Enabled = false;
+            this.CbxCity.FormattingEnabled = true;
+            this.CbxCity.Location = new System.Drawing.Point(437, 288);
+            this.CbxCity.Name = "CbxCity";
+            this.CbxCity.Size = new System.Drawing.Size(201, 28);
+            this.CbxCity.TabIndex = 15;
+            // 
+            // CmdEditCity
+            // 
+            this.CmdEditCity.Location = new System.Drawing.Point(644, 288);
+            this.CmdEditCity.Name = "CmdEditCity";
+            this.CmdEditCity.Size = new System.Drawing.Size(144, 28);
+            this.CmdEditCity.TabIndex = 16;
+            this.CmdEditCity.Text = "Städte bearbeiten";
+            this.CmdEditCity.UseVisualStyleBackColor = true;
+            this.CmdEditCity.Click += new System.EventHandler(this.CmdEditCity_Click);
+            // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CmdEditCity);
+            this.Controls.Add(this.CbxCity);
             this.Controls.Add(this.NumZip);
             this.Controls.Add(this.TxtCity);
             this.Controls.Add(this.LblCity);
@@ -238,5 +262,7 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.Label LblCity;
         private System.Windows.Forms.TextBox TxtCity;
         private System.Windows.Forms.NumericUpDown NumZip;
+        private System.Windows.Forms.ComboBox CbxCity;
+        private System.Windows.Forms.Button CmdEditCity;
     }
 }

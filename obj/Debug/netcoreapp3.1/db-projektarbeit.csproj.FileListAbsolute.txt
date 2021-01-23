@@ -175,3 +175,4 @@ C:\Users\ericm\Documents\10_Studium\3_SEM\DATABANK_ADVANCED\Semesterarbeit\db-pr
 C:\Users\ericm\Documents\10_Studium\3_SEM\DATABANK_ADVANCED\Semesterarbeit\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.dll
 C:\Users\ericm\Documents\10_Studium\3_SEM\DATABANK_ADVANCED\Semesterarbeit\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.pdb
 C:\Users\ericm\Documents\10_Studium\3_SEM\DATABANK_ADVANCED\Semesterarbeit\db-projektarbeit\obj\Debug\netcoreapp3.1\db-projektarbeit.genruntimeconfig.cache
+C:\Users\lukas\source\repos\db-projektarbeit\obj\Debug\netcoreapp3.1\db_projektarbeit.View.CityView.resources

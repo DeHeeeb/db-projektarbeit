@@ -32,7 +32,7 @@ namespace db_projektarbeit.View
         private void CmdSearch_Click(object sender, EventArgs e)
         {
             var searchText = TxtSearch.Text;
-            if (String.IsNullOrWhiteSpace(searchText))
+            if (string.IsNullOrWhiteSpace(searchText))
             {
                 LoadTable(ProductControl.GetAll());
             } else
@@ -58,7 +58,7 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(TxtDescription.Text) && 
+            if (!string.IsNullOrWhiteSpace(TxtDescription.Text) && 
                 NumPrice.Value != 0 &&
                 TvProductGroup.SelectedNode != null)
             {

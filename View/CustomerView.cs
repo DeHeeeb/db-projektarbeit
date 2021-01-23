@@ -18,13 +18,14 @@ namespace db_projektarbeit.View
         public CustomerView()
         {
             InitializeComponent();
+            LoadCombobox(CityControl.GetAll());
             LoadTable(CustomerControl.GetAll());
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
         {
             var searchText = TxtSearch.Text;
-            if (String.IsNullOrWhiteSpace(searchText))
+            if (string.IsNullOrWhiteSpace(searchText))
             {
                 LoadTable(CustomerControl.GetAll());
             } else
@@ -50,9 +51,9 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(TxtName.Text) && 
-                !String.IsNullOrWhiteSpace(TxtStreet.Text) &&
-                !String.IsNullOrWhiteSpace(TxtCity.Text))
+            if (!string.IsNullOrWhiteSpace(TxtName.Text) && 
+                !string.IsNullOrWhiteSpace(TxtStreet.Text) &&
+                !string.IsNullOrWhiteSpace(TxtCity.Text))
             {
                 City cityToSave = new City
                 {
@@ -73,7 +74,20 @@ namespace db_projektarbeit.View
                 CustomerControl.Save(customerToSave);
 
                 LoadTable(CustomerControl.GetAll());
+                LoadCombobox(CityControl.GetAll());
             }
+        }
+
+        private void CmdEditCity_Click(object sender, EventArgs e)
+        {
+            CityView cityView = new CityView();
+            cityView.Show();
+            cityView.Closed += RefreshCombobox;
+        }
+
+        private void RefreshCombobox(object sender, EventArgs e)
+        {
+            LoadCombobox(CityControl.GetAll());
         }
 
         private void DgvCustomers_SelectionChanged(object sender, EventArgs e)
@@ -97,6 +111,7 @@ namespace db_projektarbeit.View
             TxtCustomerNr.Text = selected.CustomerNr.ToString();
             TxtName.Text = selected.Name;
             TxtStreet.Text = selected.Street;
+            CbxCity.SelectedValue = selected.City.Id;
             NumZip.Value = selected.City.Zip;
             TxtCity.Text = selected.City.Name;
         }
@@ -113,6 +128,13 @@ namespace db_projektarbeit.View
             DgvCustomers.Columns[5].HeaderText = "PLZ / Stadt";
         }
 
+        private void LoadCombobox(List<City> cities)
+        {
+            CbxCity.DisplayMember = "DisplayName";
+            CbxCity.ValueMember = "Id";
+            CbxCity.DataSource = cities;
+        }
+
         private void ClearFields()
         {
             selected = new Customer();
@@ -121,6 +143,7 @@ namespace db_projektarbeit.View
             TxtStreet.Clear();
             NumZip.ResetText();
             TxtCity.Clear();
+            CbxCity.SelectedIndex = 0;
         }
 
         private void UnlockFields()
@@ -129,6 +152,7 @@ namespace db_projektarbeit.View
             TxtStreet.ReadOnly = false;
             NumZip.ReadOnly = false;
             TxtCity.ReadOnly = false;
+            CbxCity.Enabled = true;
         }
     }
 }

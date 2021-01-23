@@ -12,7 +12,10 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                return context.Customers.Include(c => c.City).ToList();
+                return context.Customers
+                    .Include(c => c.City)
+                    .OrderBy(c => c.CustomerNr)
+                    .ToList();
             }
         }
 
@@ -42,8 +45,7 @@ namespace db_projektarbeit.Model
                     context.Customers.Add(customer);
                 } else
                 {
-                    context.Customers.Attach(customer);
-                    context.Entry(customer).State = EntityState.Modified;
+                    context.Customers.Update(customer);
                 }
                 context.SaveChanges();
 
