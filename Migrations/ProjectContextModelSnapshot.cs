@@ -122,17 +122,12 @@ namespace db_projektarbeit.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId1")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
-
-                    b.HasIndex("CustomerId1");
 
                     b.ToTable("Orders");
 
@@ -173,9 +168,6 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderId1")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
@@ -185,8 +177,6 @@ namespace db_projektarbeit.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
-
-                    b.HasIndex("OrderId1");
 
                     b.HasIndex("ProductId");
 
@@ -240,9 +230,6 @@ namespace db_projektarbeit.Migrations
                     b.Property<int>("GroupId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("GroupId1")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -253,7 +240,7 @@ namespace db_projektarbeit.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GroupId1");
+                    b.HasIndex("GroupId");
 
                     b.ToTable("Products");
 
@@ -369,9 +356,6 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("ParentId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
@@ -382,76 +366,65 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Büromöbel",
-                            ProductId = 140068752
+                            Name = "Büromöbel"
                         },
                         new
                         {
                             Id = 2,
                             Name = "Bürostuhl",
-                            ParentId = 1,
-                            ProductId = 745213689
+                            ParentId = 1
                         },
                         new
                         {
                             Id = 3,
                             Name = "Korpus",
-                            ParentId = 1,
-                            ProductId = 963258741
+                            ParentId = 1
                         },
                         new
                         {
                             Id = 4,
                             Name = "Schreibtisch",
-                            ParentId = 1,
-                            ProductId = 987456321
+                            ParentId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Drucker",
-                            ProductId = 123456789
+                            Name = "Drucker"
                         },
                         new
                         {
                             Id = 6,
                             Name = "Belegdrucker",
-                            ParentId = 5,
-                            ProductId = 954068252
+                            ParentId = 5
                         },
                         new
                         {
                             Id = 7,
                             Name = "Farbdrucker",
-                            ParentId = 5,
-                            ProductId = 427806752
+                            ParentId = 5
                         },
                         new
                         {
                             Id = 8,
                             Name = "Fotodrucker",
-                            ParentId = 7,
-                            ProductId = 770075678
+                            ParentId = 7
                         },
                         new
                         {
                             Id = 9,
                             Name = "Multifunktionsdrucker",
-                            ParentId = 7,
-                            ProductId = 190069952
+                            ParentId = 7
                         },
                         new
                         {
                             Id = 10,
                             Name = "Toner",
-                            ParentId = 5,
-                            ProductId = 647068712
+                            ParentId = 5
                         },
                         new
                         {
                             Id = 11,
-                            Name = "Ordner",
-                            ProductId = 140468752
+                            Name = "Ordner"
                         });
                 });
 
@@ -468,28 +441,20 @@ namespace db_projektarbeit.Migrations
 
             modelBuilder.Entity("db_projektarbeit.Order", b =>
                 {
-                    b.HasOne("db_projektarbeit.Customer", null)
+                    b.HasOne("db_projektarbeit.Customer", "Customer")
                         .WithMany()
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("db_projektarbeit.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId1");
 
                     b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("db_projektarbeit.Position", b =>
                 {
-                    b.HasOne("db_projektarbeit.Order", null)
-                        .WithMany()
-                        .HasForeignKey("OrderId");
-
                     b.HasOne("db_projektarbeit.Order", "Order")
                         .WithMany("Positions")
-                        .HasForeignKey("OrderId1");
+                        .HasForeignKey("OrderId");
 
                     b.HasOne("db_projektarbeit.Product", "Product")
                         .WithMany()
@@ -504,7 +469,9 @@ namespace db_projektarbeit.Migrations
                 {
                     b.HasOne("db_projektarbeit.ProductGroup", "Group")
                         .WithMany()
-                        .HasForeignKey("GroupId1");
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Group");
                 });

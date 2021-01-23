@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
@@ -12,21 +13,15 @@ namespace db_projektarbeit.Model
     {
         public List<ProductGroup> GetAll()
         {
-            var productGroups = new List<ProductGroup>();
+            List<ProductGroup> productGroups = new List<ProductGroup>();
 
             using (var context = new ProjectContext())
             {
-                //productGroups = context.ProductGroups
-                //    .Include(p => p.Children)
-                //    .Include(p => p.Parent)
-                //    .ToList();
-
                 var result = context.ProductGroups.FromSqlRaw(
                     ";WITH CTE_ProductGroup " +
-                    "(Id, ProductId, Name, ParentId, ProductLevel) " +
+                    "(Id, Name, ParentId, ProductLevel) " +
                     "AS (SELECT " +
                                 "Id," +
-                                "ProductId,"+
                                 "Name," +
                                 "ParentId," +
                                 "0 AS ProductLevel " +
@@ -35,7 +30,6 @@ namespace db_projektarbeit.Model
                     "UNION ALL " +
                     "SELECT " +
                                 "pn.Id," +
-                                "pn.ProductId," +
                                 "pn.Name," +
                                 "pn.ParentId," +
                                 "p1.ProductLevel + 1 " +
@@ -45,7 +39,6 @@ namespace db_projektarbeit.Model
                     ") " +
                     "SELECT " +
                                 "Id," +
-                                "ProductId," +
                                 "Name," +
                                 "ParentId," +
                                 "ProductLevel " +
@@ -58,36 +51,7 @@ namespace db_projektarbeit.Model
                     productGroups.Add(item);
                 }
             }
-
-
             return productGroups;
-        }
-
-        public TreeView GetTreeView()
-        {
-            TreeView newTreeView = new TreeView();
-            List<TreeNode> new1TreeNode = new List<TreeNode>();
-            TreeNode newTreeNode = new TreeNode("", new1TreeNode.ToArray());
-
-            //List<ProductGroup> test = GetAll();
-            //test.Where(x => x.ParentProductId.Equals(null))
-
-            return newTreeView;
-        }
-
-        private TreeNode CreateTreeNode(ProductGroup productGroup)
-        {
-            TreeNode newTreeNode = new TreeNode();
-
-            newTreeNode.Text = productGroup.Name;  // Absichtlich MTR
-            newTreeNode.Name = productGroup.Name;
-            newTreeNode.Tag = productGroup.ProductId;
-
-            return newTreeNode;
-        }
-
-        private void rekCreateTreeNode(TreeNode parentNode, List<ProductGroup> productGroups)
-        {
         }
     }
 }

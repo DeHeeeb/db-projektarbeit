@@ -14,10 +14,5 @@ namespace db_projektarbeit.Control
         {
             return ProductGroupModel.GetAll();
         }
-
-        public TreeView GetTreeView()
-        {
-            return ProductGroupModel.GetTreeView();
-        }
     }
 }

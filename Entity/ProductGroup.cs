@@ -11,7 +11,6 @@ namespace db_projektarbeit
         public int? ParentId { get; set; }
         public ProductGroup Parent { get; set; }
         public List<ProductGroup> Children { get; set; }
-        public int ProductId { get; set; }
         public string Name { get; set; }
 
         public override string ToString()
