@@ -51,7 +51,7 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TxtName.Text) && 
+            if (!string.IsNullOrWhiteSpace(TxtCompanyName.Text) && 
                 !string.IsNullOrWhiteSpace(TxtStreet.Text) &&
                 CbxCity.SelectedItem != null)
             {
@@ -59,7 +59,9 @@ namespace db_projektarbeit.View
                 {
                     Id = selected.Id,
                     CustomerNr = selected.CustomerNr,
-                    Name = TxtName.Text,
+                    FirstName = TxtCompanyName.Text,
+                    LastName = TxtCompanyName.Text,
+                    CompanyName = TxtCompanyName.Text,
                     Street = TxtStreet.Text,
                     CityId = (int)CbxCity.SelectedValue
                 };
@@ -103,7 +105,9 @@ namespace db_projektarbeit.View
 
             selected = (Customer) row.DataBoundItem;
             TxtCustomerNr.Text = selected.CustomerNr.ToString();
-            TxtName.Text = selected.Name;
+            TxtCompanyName.Text = selected.CompanyName;
+            TxtFirstName.Text = selected.FirstName;
+            TxtLastName.Text = selected.LastName;
             TxtStreet.Text = selected.Street;
             CbxCity.SelectedValue = selected.City.Id;
         }
@@ -131,14 +135,14 @@ namespace db_projektarbeit.View
         {
             selected = new Customer();
             TxtCustomerNr.Text = "wird vergeben";
-            TxtName.Clear();
+            TxtCompanyName.Clear();
             TxtStreet.Clear();
             CbxCity.SelectedIndex = 0;
         }
 
         private void UnlockFields()
         {
-            TxtName.ReadOnly = false;
+            TxtCompanyName.ReadOnly = false;
             TxtStreet.ReadOnly = false;
             CbxCity.Enabled = true;
         }

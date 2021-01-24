@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class initial : Migration
+    public partial class inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,8 +61,11 @@ namespace db_projektarbeit.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.CustomerNr"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HouseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -170,11 +173,11 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "Name", "Street" },
+                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
                 values: new object[,]
                 {
-                    { 1, 2, "Marc Traber AG", "Hauptstrasse 12" },
-                    { 2, 3, "Heeb GmbH", "Winkelstrasse 2" }
+                    { 1, 2, "Traber Corp", "Marc", null, "Traber", "Hauptstrasse 12" },
+                    { 2, 3, "Heeb GmbH", "Lukas", null, "Heeb", "Winkelstrasse 2" }
                 });
 
             migrationBuilder.InsertData(

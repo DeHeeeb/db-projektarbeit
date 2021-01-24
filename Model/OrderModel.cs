@@ -12,7 +12,9 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                return context.Orders.Include(p => p.Positions).ToList();
+                return context.Orders.Include(p => p.Positions)
+                                     .Include(c => c.Customer)
+                                     .ToList();
             }
         }
     }

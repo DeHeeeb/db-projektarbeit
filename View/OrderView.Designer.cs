@@ -70,6 +70,7 @@ namespace db_projektarbeit.View
             this.DgvOrder.Size = new System.Drawing.Size(776, 206);
             this.DgvOrder.TabIndex = 11;
             this.DgvOrder.TabStop = false;
+            this.DgvOrder.SelectionChanged += new System.EventHandler(this.DgvOrder_SelectionChanged);
             // 
             // DgvOrderPos
             // 

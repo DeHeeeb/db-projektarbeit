@@ -73,12 +73,21 @@ namespace db_projektarbeit.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CustomerNr")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasDefaultValueSql("NEXT VALUE FOR shared.CustomerNr");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HouseNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Street")
@@ -95,16 +104,20 @@ namespace db_projektarbeit.Migrations
                         {
                             Id = 1,
                             CityId = 2,
+                            CompanyName = "Traber Corp",
                             CustomerNr = 0,
-                            Name = "Marc Traber AG",
+                            FirstName = "Marc",
+                            LastName = "Traber",
                             Street = "Hauptstrasse 12"
                         },
                         new
                         {
                             Id = 2,
                             CityId = 3,
+                            CompanyName = "Heeb GmbH",
                             CustomerNr = 0,
-                            Name = "Heeb GmbH",
+                            FirstName = "Lukas",
+                            LastName = "Heeb",
                             Street = "Winkelstrasse 2"
                         });
                 });

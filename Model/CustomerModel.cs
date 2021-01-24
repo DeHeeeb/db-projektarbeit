@@ -28,7 +28,9 @@ namespace db_projektarbeit.Model
                     .Include(c => c.City)
                     .Where(c => 
                         c.CustomerNr.ToString().ToLower().Contains(text) ||
-                        c.Name.ToLower().Contains(text) ||
+                        c.FirstName.ToLower().Contains(text) ||
+                        c.LastName.ToLower().Contains(text) ||
+                        c.CompanyName.ToLower().Contains(text) ||
                         c.Street.ToLower().Contains(text) ||
                         c.City.Zip.ToString().ToLower().Contains(text) ||
                         c.City.Name.ToLower().Contains(text)

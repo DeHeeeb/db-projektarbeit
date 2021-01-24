@@ -98,14 +98,18 @@ namespace db_projektarbeit.Model
                 new Customer
                 {
                     Id = 1,
-                    Name = "Marc Traber AG",
+                    FirstName = "Marc",
+                    LastName = "Traber",
+                    CompanyName = "Traber Corp",
                     Street = "Hauptstrasse 12",
                     CityId = 2
                 },
                 new Customer
                 {
                     Id = 2,
-                    Name = "Heeb GmbH",
+                    FirstName = "Lukas",
+                    LastName = "Heeb",
+                    CompanyName = "Heeb GmbH",
                     Street = "Winkelstrasse 2",
                     CityId = 3
                 }
