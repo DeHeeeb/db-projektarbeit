@@ -156,7 +156,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Name", "Zip" },
                 values: new object[,]
                 {
-                    { 1, "St. Gallen", 9000 },
+                    { 1, "Niederuzwil", 9244 },
                     { 30, "Thal", 9425 },
                     { 29, "Buchs", 9470 },
                     { 28, "Rheineck", 9424 },
@@ -183,9 +183,9 @@ namespace db_projektarbeit.Migrations
                     { 15, "Gais", 9056 },
                     { 6, "Rorschach", 9400 },
                     { 5, "Goldach", 9403 },
-                    { 4, "Rebstein", 9445 },
-                    { 3, "Bettwiesen", 9553 },
-                    { 2, "Niederuzwil", 9244 }
+                    { 4, "St. Gallen", 9000 },
+                    { 3, "Rebstein", 9445 },
+                    { 2, "Bettwiesen", 9553 }
                 });
 
             migrationBuilder.InsertData(
@@ -203,10 +203,46 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
                 values: new object[,]
                 {
-                    { 4, 1, null, "Anton", "9", "Segmüller", "Weiherweg" },
-                    { 1, 2, "Traber Corp", "Marc", "12", "Traber", "Hauptstrasse" },
-                    { 2, 3, "Heeb GmbH", "Lukas", "2", "Heeb", "Winkelstrasse" },
-                    { 3, 4, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" }
+                    { 1, 1, "Traber Corp", "Marc", "12", "Traber", "Hauptstrasse" },
+                    { 14, 13, "Raiffeisenbank Berg", "Antonio", "13", "Perugia", "Schlossgasse" },
+                    { 15, 14, "Stampino AG", "Tina", "16", "Mächler", "Hinterwaldstrasse" },
+                    { 17, 16, null, "Stefano", null, "Dalbacco", "Birkenau" },
+                    { 18, 17, "Sägerei Fenk", "Michael", "10", "Graf", "Fuchsweg" },
+                    { 19, 18, null, "Angela", "75", "Wick", "Dammstrasse" },
+                    { 20, 19, "Sounddog GmbH", "Patrick", "5", "Viera", "Sonnengasse" },
+                    { 22, 20, "Enderli Buch AG", "Erich", "18", "Kästner", "Feldwiesenstrasse" },
+                    { 24, 21, "Velomech.ch AG", "Beat", "1", "Breu", "Gartenstrasse" },
+                    { 26, 22, "Anton Kehrer AG", "Nadine", null, "Niedermann", "Am Bühl" },
+                    { 27, 23, "Tres Amigos Ristorante", "Fabian", "2", "Buhmann", "Hauptstrasse" },
+                    { 28, 24, "Birreria", "Tatjana", "92", "Kekarova", "Meistergasse" },
+                    { 29, 25, "Pizzeria Antonio", "Selina", "3", "Gabenthuler", "Postplatz" },
+                    { 30, 26, null, "Alessia", null, "Eichholzer", "Im Tobel" },
+                    { 31, 27, "TeleVisio Corporation", "Tobias", "32", "Savello", "Marktgasse" },
+                    { 33, 28, "Car Import GmbH", "Ignazio", "2", "Torres", "Rheinstrasse" },
+                    { 34, 29, "NetworkTrade GmbH", "Rolf", "56", "Fringer", "Pizolerstrasse" },
+                    { 35, 30, "Gasser Bau AG", "Hubert", "11", "Gasser", "Studenbach" },
+                    { 13, 12, "Eon Pharma AG", "Ernst", "2", "Hediger", "Dinkelweg" },
+                    { 40, 11, null, "Manuel", "28", "Stähli", "Lindenweg" },
+                    { 16, 15, "Sport Säntis", "Didier", "3", "Cuche", "Unter den Linden" },
+                    { 12, 11, null, "Marianne", "7", "Stettler", "Bachstrasse" },
+                    { 23, 1, "Blumeria GmbH", "Remo", "88", "Santiago", "Bahnhofstrasse" },
+                    { 36, 1, null, "Bernhard", "22", "Lutz", "Fähnernweg" },
+                    { 2, 2, "Heeb GmbH", "Lukas", "2", "Heeb", "Winkelstrasse" },
+                    { 3, 3, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" },
+                    { 37, 3, "Orthopädie Lüchinger", "Dorothea", "19", "Mittermeier", "Hauptstrasse" },
+                    { 32, 11, "CompuTrade GmbH", "Daniel", "10", "Brunner", "Bachstrasse" },
+                    { 4, 4, null, "Charlotte", "9", "Segmüller", "Weiherweg" },
+                    { 5, 5, "Swisscom AG", "Fred", "2", "Chatwick", "Burggasse" },
+                    { 6, 6, null, "Selina", null, "Schmidt", "Im Bohl" },
+                    { 38, 3, "Sonnenbräu AG", "Fritz", "5", "Baumann", "Hinterstrasse" },
+                    { 39, 7, null, "Alexander", "15", "Marty", "Kugelgasse" },
+                    { 8, 8, "Bau Köster AG", "Michelle", "5", "Terzic", "Settlerstrasse" },
+                    { 25, 8, null, "Jan", "62", "Steiger", "Rorschacherstrasse" },
+                    { 9, 9, null, "Thorsten", "2", "Müller", "Waldweg" },
+                    { 21, 9, "BCJ AG", "Davide", "7", "Kluser", "Mühlackerweg" },
+                    { 10, 10, "Contacta GmbH", "Andreas", "1", "Hugentobler", "Hauptstrasse" },
+                    { 11, 11, "Stadtverwaltung Arbon", "Esther", null, "Amgarten", "Rathausplatz" },
+                    { 7, 7, "Setca GmbH", "Paul", "21", "Del Curto", "Bahnhofstrasse" }
                 });
 
             migrationBuilder.InsertData(
@@ -214,12 +250,19 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Name", "ParentId" },
                 values: new object[,]
                 {
+                    { 10, "Toner", 5 },
+                    { 7, "Farbdrucker", 5 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductGroups",
+                columns: new[] { "Id", "Name", "ParentId" },
+                values: new object[,]
+                {
+                    { 6, "Belegdrucker", 5 },
                     { 2, "Bürostuhl", 1 },
                     { 3, "Korpus", 1 },
-                    { 4, "Schreibtisch", 1 },
-                    { 6, "Belegdrucker", 5 },
-                    { 7, "Farbdrucker", 5 },
-                    { 10, "Toner", 5 }
+                    { 4, "Schreibtisch", 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -227,8 +270,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
-                    { 10, new DateTime(2020, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (gelb)", 11, 2.90m },
                     { 11, new DateTime(2020, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (blau)", 11, 2.30m },
+                    { 10, new DateTime(2020, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (gelb)", 11, 2.90m },
                     { 12, new DateTime(2020, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Meier (grau)", 11, 3m }
                 });
 

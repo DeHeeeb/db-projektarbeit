@@ -74,26 +74,26 @@ namespace db_projektarbeit.Model
                 new City
                 {
                     Id = 1,
-                    Zip = 9000,
-                    Name = "St. Gallen"
-                },
-                new City
-                {
-                    Id = 2,
                     Zip = 9244,
                     Name = "Niederuzwil"
                 },
                 new City
                 {
-                    Id = 3,
+                    Id = 2,
                     Zip = 9553,
                     Name = "Bettwiesen"
                 },
                 new City
                 {
-                    Id = 4,
+                    Id = 3,
                     Zip = 9445,
                     Name = "Rebstein"
+                },
+                new City
+                {
+                    Id = 4,
+                    Zip = 9000,
+                    Name = "St. Gallen"
                 },
                 new City
                 {
@@ -265,7 +265,7 @@ namespace db_projektarbeit.Model
                     CompanyName = "Traber Corp",
                     Street = "Hauptstrasse",
                     HouseNumber = "12",
-                    CityId = 2
+                    CityId = 1
                 },
                 new Customer
                 {
@@ -275,7 +275,7 @@ namespace db_projektarbeit.Model
                     CompanyName = "Heeb GmbH",
                     Street = "Winkelstrasse",
                     HouseNumber = "2",
-                    CityId = 3
+                    CityId = 2
                 },
                 new Customer
                 {
@@ -285,18 +285,378 @@ namespace db_projektarbeit.Model
                     CompanyName = "CableTec AG",
                     Street = "Bergstrasse",
                     HouseNumber = "25",
-                    CityId = 4
+                    CityId = 3
                 },
                 new Customer
                 {
                     Id = 4,
-                    FirstName = "Anton",
+                    FirstName = "Charlotte",
                     LastName = "Segmüller",
                     CompanyName = null,
                     Street = "Weiherweg",
                     HouseNumber = "9",
+                    CityId = 4
+                },
+                new Customer
+                {
+                    Id = 5,
+                    FirstName = "Fred",
+                    LastName = "Chatwick",
+                    CompanyName = "Swisscom AG",
+                    Street = "Burggasse",
+                    HouseNumber = "2",
+                    CityId = 5
+                },
+                new Customer
+                {
+                    Id = 6,
+                    FirstName = "Selina",
+                    LastName = "Schmidt",
+                    CompanyName = null,
+                    Street = "Im Bohl",
+                    HouseNumber = null,
+                    CityId = 6
+                },
+                new Customer
+                {
+                    Id = 7,
+                    FirstName = "Paul",
+                    LastName = "Del Curto",
+                    CompanyName = "Setca GmbH",
+                    Street = "Bahnhofstrasse",
+                    HouseNumber = "21",
+                    CityId = 7
+                },
+                new Customer
+                {
+                    Id = 8,
+                    FirstName = "Michelle",
+                    LastName = "Terzic",
+                    CompanyName = "Bau Köster AG",
+                    Street = "Settlerstrasse",
+                    HouseNumber = "5",
+                    CityId = 8
+                },
+                new Customer
+                {
+                    Id = 9,
+                    FirstName = "Thorsten",
+                    LastName = "Müller",
+                    CompanyName = null,
+                    Street = "Waldweg",
+                    HouseNumber = "2",
+                    CityId = 9
+                },
+                new Customer
+                {
+                    Id = 10,
+                    FirstName = "Andreas",
+                    LastName = "Hugentobler",
+                    CompanyName = "Contacta GmbH",
+                    Street = "Hauptstrasse",
+                    HouseNumber = "1",
+                    CityId = 10
+                },
+                new Customer
+                {
+                    Id = 11,
+                    FirstName = "Esther",
+                    LastName = "Amgarten",
+                    CompanyName = "Stadtverwaltung Arbon",
+                    Street = "Rathausplatz",
+                    HouseNumber = null,
+                    CityId = 11
+                },
+                new Customer
+                {
+                    Id = 12,
+                    FirstName = "Marianne",
+                    LastName = "Stettler",
+                    CompanyName = null,
+                    Street = "Bachstrasse",
+                    HouseNumber = "7",
+                    CityId = 11
+                },
+                new Customer
+                {
+                    Id = 13,
+                    FirstName = "Ernst",
+                    LastName = "Hediger",
+                    CompanyName = "Eon Pharma AG",
+                    Street = "Dinkelweg",
+                    HouseNumber = "2",
+                    CityId = 12
+                },
+                new Customer
+                {
+                    Id = 14,
+                    FirstName = "Antonio",
+                    LastName = "Perugia",
+                    CompanyName = "Raiffeisenbank Berg",
+                    Street = "Schlossgasse",
+                    HouseNumber = "13",
+                    CityId = 13
+                },
+                new Customer
+                {
+                    Id = 15,
+                    FirstName = "Tina",
+                    LastName = "Mächler",
+                    CompanyName = "Stampino AG",
+                    Street = "Hinterwaldstrasse",
+                    HouseNumber = "16",
+                    CityId = 14
+                },
+                new Customer
+                {
+                    Id = 16,
+                    FirstName = "Didier",
+                    LastName = "Cuche",
+                    CompanyName = "Sport Säntis",
+                    Street = "Unter den Linden",
+                    HouseNumber = "3",
+                    CityId = 15
+                },
+                new Customer
+                {
+                    Id = 17,
+                    FirstName = "Stefano",
+                    LastName = "Dalbacco",
+                    CompanyName = null,
+                    Street = "Birkenau",
+                    HouseNumber = null,
+                    CityId = 16
+                },
+                new Customer
+                {
+                    Id = 18,
+                    FirstName = "Michael",
+                    LastName = "Graf",
+                    CompanyName = "Sägerei Fenk",
+                    Street = "Fuchsweg",
+                    HouseNumber = "10",
+                    CityId = 17
+                },
+                new Customer
+                {
+                    Id = 19,
+                    FirstName = "Angela",
+                    LastName = "Wick",
+                    CompanyName = null,
+                    Street = "Dammstrasse",
+                    HouseNumber = "75",
+                    CityId = 18
+                },
+                new Customer
+                {
+                    Id = 20,
+                    FirstName = "Patrick",
+                    LastName = "Viera",
+                    CompanyName = "Sounddog GmbH",
+                    Street = "Sonnengasse",
+                    HouseNumber = "5",
+                    CityId = 19
+                },
+                new Customer
+                {
+                    Id = 21,
+                    FirstName = "Davide",
+                    LastName = "Kluser",
+                    CompanyName = "BCJ AG",
+                    Street = "Mühlackerweg",
+                    HouseNumber = "7",
+                    CityId = 9
+                },
+                new Customer
+                {
+                    Id = 22,
+                    FirstName = "Erich",
+                    LastName = "Kästner",
+                    CompanyName = "Enderli Buch AG",
+                    Street = "Feldwiesenstrasse",
+                    HouseNumber = "18",
+                    CityId = 20
+                },
+                new Customer
+                {
+                    Id = 23,
+                    FirstName = "Remo",
+                    LastName = "Santiago",
+                    CompanyName = "Blumeria GmbH",
+                    Street = "Bahnhofstrasse",
+                    HouseNumber = "88",
                     CityId = 1
-                }
+                },
+                new Customer
+                {
+                    Id = 24,
+                    FirstName = "Beat",
+                    LastName = "Breu",
+                    CompanyName = "Velomech.ch AG",
+                    Street = "Gartenstrasse",
+                    HouseNumber = "1",
+                    CityId = 21
+                },
+                new Customer
+                {
+                    Id = 25,
+                    FirstName = "Jan",
+                    LastName = "Steiger",
+                    CompanyName = null,
+                    Street = "Rorschacherstrasse",
+                    HouseNumber = "62",
+                    CityId = 8
+                },
+                new Customer
+                {
+                    Id = 26,
+                    FirstName = "Nadine",
+                    LastName = "Niedermann",
+                    CompanyName = "Anton Kehrer AG",
+                    Street = "Am Bühl",
+                    HouseNumber = null,
+                    CityId = 22
+                },
+                new Customer
+                {
+                    Id = 27,
+                    FirstName = "Fabian",
+                    LastName = "Buhmann",
+                    CompanyName = "Tres Amigos Ristorante",
+                    Street = "Hauptstrasse",
+                    HouseNumber = "2",
+                    CityId = 23
+                },
+                new Customer
+                {
+                    Id = 28,
+                    FirstName = "Tatjana",
+                    LastName = "Kekarova",
+                    CompanyName = "Birreria",
+                    Street = "Meistergasse",
+                    HouseNumber = "92",
+                    CityId = 24
+                },
+                new Customer
+                {
+                    Id = 29,
+                    FirstName = "Selina",
+                    LastName = "Gabenthuler",
+                    CompanyName = "Pizzeria Antonio",
+                    Street = "Postplatz",
+                    HouseNumber = "3",
+                    CityId = 25
+                },
+                new Customer
+                {
+                    Id = 30,
+                    FirstName = "Alessia",
+                    LastName = "Eichholzer",
+                    CompanyName = null,
+                    Street = "Im Tobel",
+                    HouseNumber = null,
+                    CityId = 26
+                },
+                new Customer
+                {
+                    Id = 31,
+                    FirstName = "Tobias",
+                    LastName = "Savello",
+                    CompanyName = "TeleVisio Corporation",
+                    Street = "Marktgasse",
+                    HouseNumber = "32",
+                    CityId = 27
+                },
+                new Customer
+                {
+                    Id = 32,
+                    FirstName = "Daniel",
+                    LastName = "Brunner",
+                    CompanyName = "CompuTrade GmbH",
+                    Street = "Bachstrasse",
+                    HouseNumber = "10",
+                    CityId = 11
+                },
+                new Customer
+                {
+                    Id = 33,
+                    FirstName = "Ignazio",
+                    LastName = "Torres",
+                    CompanyName = "Car Import GmbH",
+                    Street = "Rheinstrasse",
+                    HouseNumber = "2",
+                    CityId = 28
+                },
+                new Customer
+                {
+                    Id = 34,
+                    FirstName = "Rolf",
+                    LastName = "Fringer",
+                    CompanyName = "NetworkTrade GmbH",
+                    Street = "Pizolerstrasse",
+                    HouseNumber = "56",
+                    CityId = 29
+                },
+                new Customer
+                {
+                    Id = 35,
+                    FirstName = "Hubert",
+                    LastName = "Gasser",
+                    CompanyName = "Gasser Bau AG",
+                    Street = "Studenbach",
+                    HouseNumber = "11",
+                    CityId = 30
+                },
+                new Customer
+                {
+                    Id = 36,
+                    FirstName = "Bernhard",
+                    LastName = "Lutz",
+                    CompanyName = null,
+                    Street = "Fähnernweg",
+                    HouseNumber = "22",
+                    CityId = 1
+                },
+                new Customer
+                {
+                    Id = 37,
+                    FirstName = "Dorothea",
+                    LastName = "Mittermeier",
+                    CompanyName = "Orthopädie Lüchinger",
+                    Street = "Hauptstrasse",
+                    HouseNumber = "19",
+                    CityId = 3
+                },
+                new Customer
+                {
+                    Id = 38,
+                    FirstName = "Fritz",
+                    LastName = "Baumann",
+                    CompanyName = "Sonnenbräu AG",
+                    Street = "Hinterstrasse",
+                    HouseNumber = "5",
+                    CityId = 3
+                },
+                new Customer
+                {
+                    Id = 39,
+                    FirstName = "Alexander",
+                    LastName = "Marty",
+                    CompanyName = null,
+                    Street = "Kugelgasse",
+                    HouseNumber = "15",
+                    CityId = 7
+                },
+                new Customer
+                {
+                    Id = 40,
+                    FirstName = "Manuel",
+                    LastName = "Stähli",
+                    CompanyName = null,
+                    Street = "Lindenweg",
+                    HouseNumber = "28",
+                    CityId = 11
+                },
             };
             #endregion
 

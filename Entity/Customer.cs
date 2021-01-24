@@ -8,6 +8,7 @@ namespace db_projektarbeit
     public class Customer
     {
         public int Id { get; set; }                 // Id für Index
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CustomerNr { get; set; }         // Kunden Nummer
         public string FirstName { get; set; }       // Vorname Kunde
         public string LastName { get; set; }        // Nachname Kunde

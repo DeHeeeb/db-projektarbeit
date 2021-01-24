@@ -123,14 +123,15 @@ namespace db_projektarbeit.View
             DgvCustomers.DataSource = customers;
 
             DgvCustomers.Columns[0].Visible = false;
-            DgvCustomers.Columns[7].Visible = false;
+            DgvCustomers.Columns[5].Visible = false;
+            DgvCustomers.Columns[8].Visible = false;
             DgvCustomers.Columns[1].HeaderText = "Kunden-Nr";
             DgvCustomers.Columns[2].HeaderText = "Vorname";
             DgvCustomers.Columns[3].HeaderText = "Nachname";
             DgvCustomers.Columns[4].HeaderText = "Firma";
-            DgvCustomers.Columns[5].HeaderText = "Strasse";
-            DgvCustomers.Columns[6].HeaderText = "Nr";
-            DgvCustomers.Columns[8].HeaderText = "PLZ / Stadt";
+            DgvCustomers.Columns[6].HeaderText = "Strasse";
+            DgvCustomers.Columns[7].HeaderText = "Nr";
+            DgvCustomers.Columns[9].HeaderText = "PLZ / Stadt";
         }
 
         private void LoadCombobox(List<City> cities)
