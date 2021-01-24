@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class initial : Migration
+    public partial class intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -237,9 +237,28 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
-                    { 1, "3456_Haus_Kohl", 1, new DateTime(2020, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, "Privat", 4, new DateTime(2020, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 20, "999_Karten_Schnutz", 3, new DateTime(2020, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 16, "149_Böhni_Urs", 3, new DateTime(2020, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 12, "Brügger_Baden", 3, new DateTime(2020, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 8, "730_Martins", 3, new DateTime(2020, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, "403_Haus_Torsten", 3, new DateTime(2020, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 19, "396_Björn_Kortu", 2, new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 15, "719_Kratt_Manuel", 2, new DateTime(2020, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 7, "730_Martins", 2, new DateTime(2020, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, "000_Haus_google", 2, new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 22, "123_holdergarten_Gerd", 1, new DateTime(2020, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 11, "Butz_Herkingen", 2, new DateTime(2020, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 14, "642_Gieger_Peter", 1, new DateTime(2020, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 9, "Brühwiler_Ferienhaus", 4, new DateTime(2020, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 18, "639_Spielman_Gorden", 1, new DateTime(2020, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 17, "Skiferien", 4, new DateTime(2020, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 21, "Garten_Haus", 4, new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 13, "Familenfest", 4, new DateTime(2020, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 2, "123_Haus_Tranz", 1, new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, "000_Haus_google", 2, new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 6, "750_Gotinger_Martin", 1, new DateTime(2020, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 10, "Dubli", 1, new DateTime(2020, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 1, "3456_Haus_Kohl", 1, new DateTime(2020, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -247,8 +266,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Name", "ParentId" },
                 values: new object[,]
                 {
-                    { 8, "Fotodrucker", 7 },
-                    { 9, "Multifunktionsdrucker", 7 }
+                    { 9, "Multifunktionsdrucker", 7 },
+                    { 8, "Fotodrucker", 7 }
                 });
 
             migrationBuilder.InsertData(
@@ -268,8 +287,31 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
                 values: new object[,]
                 {
+                    { 10, 3, 6, 10, 0m },
+                    { 2, 3, 1, 4, 15m },
+                    { 39, 2, 22, 3, 0m },
+                    { 35, 1, 20, 3, 0m },
+                    { 31, 2, 18, 3, 0m },
+                    { 29, 1, 17, 3, 0m },
+                    { 28, 1, 16, 3, 0m },
+                    { 13, 8, 7, 3, 0m },
+                    { 5, 1, 3, 3, 0m },
+                    { 22, 3, 13, 9, 0m },
+                    { 23, 2, 13, 2, 0m },
+                    { 17, 3, 9, 2, 0m },
+                    { 27, 1, 16, 2, 0m },
                     { 1, 1, 1, 1, 1m },
-                    { 2, 3, 1, 4, 15m }
+                    { 15, 2, 8, 12, 0m },
+                    { 34, 1, 19, 12, 0m },
+                    { 33, 2, 19, 11, 0m },
+                    { 32, 2, 19, 10, 0m },
+                    { 26, 1, 15, 12, 0m },
+                    { 25, 2, 15, 11, 0m },
+                    { 19, 1, 10, 12, 0m },
+                    { 12, 3, 6, 12, 0m },
+                    { 11, 1, 6, 11, 0m },
+                    { 16, 1, 8, 1, 0m },
+                    { 30, 1, 18, 9, 0m }
                 });
 
             migrationBuilder.InsertData(
@@ -286,12 +328,23 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Positions",
                 columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
-                values: new object[] { 3, 2, 1, 5, 2.50m });
-
-            migrationBuilder.InsertData(
-                table: "Positions",
-                columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
-                values: new object[] { 4, 1, 2, 8, 17.69m });
+                values: new object[,]
+                {
+                    { 3, 2, 1, 5, 2.50m },
+                    { 18, 2, 10, 5, 0m },
+                    { 24, 1, 14, 5, 0m },
+                    { 36, 3, 21, 5, 0m },
+                    { 6, 3, 3, 7, 0m },
+                    { 20, 4, 11, 7, 0m },
+                    { 4, 1, 2, 8, 17.69m },
+                    { 7, 2, 4, 8, 0m },
+                    { 8, 2, 5, 8, 0m },
+                    { 9, 2, 5, 8, 0m },
+                    { 14, 1, 7, 8, 0m },
+                    { 21, 1, 12, 8, 0m },
+                    { 37, 1, 21, 8, 0m },
+                    { 38, 1, 22, 8, 0m }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
