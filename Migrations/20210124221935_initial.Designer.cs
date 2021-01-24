@@ -10,7 +10,7 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20210124220534_initial")]
+    [Migration("20210124221935_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -733,6 +733,139 @@ namespace db_projektarbeit.Migrations
                             Comment = "000_Haus_google",
                             CustomerId = 2,
                             Date = new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Comment = "403_Haus_Torsten",
+                            CustomerId = 3,
+                            Date = new DateTime(2020, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Comment = "Privat",
+                            CustomerId = 4,
+                            Date = new DateTime(2020, 8, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Comment = "750_Gotinger_Martin",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Comment = "730_Martins",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Comment = "730_Martins",
+                            CustomerId = 3,
+                            Date = new DateTime(2020, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Comment = "Brühwiler_Ferienhaus",
+                            CustomerId = 4,
+                            Date = new DateTime(2020, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Comment = "Dubli",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Comment = "Butz_Herkingen",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Comment = "Brügger_Baden",
+                            CustomerId = 3,
+                            Date = new DateTime(2020, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Comment = "Familenfest",
+                            CustomerId = 4,
+                            Date = new DateTime(2020, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Comment = "642_Gieger_Peter",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Comment = "719_Kratt_Manuel",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Comment = "149_Böhni_Urs",
+                            CustomerId = 3,
+                            Date = new DateTime(2020, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Comment = "Skiferien",
+                            CustomerId = 4,
+                            Date = new DateTime(2020, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Comment = "639_Spielman_Gorden",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Comment = "396_Björn_Kortu",
+                            CustomerId = 2,
+                            Date = new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Comment = "999_Karten_Schnutz",
+                            CustomerId = 3,
+                            Date = new DateTime(2020, 1, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Comment = "Garten_Haus",
+                            CustomerId = 4,
+                            Date = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Comment = "123_holdergarten_Gerd",
+                            CustomerId = 1,
+                            Date = new DateTime(2020, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -795,6 +928,286 @@ namespace db_projektarbeit.Migrations
                             OrderId = 2,
                             ProductId = 8,
                             Total = 17.69m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Counter = 1,
+                            OrderId = 3,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Counter = 3,
+                            OrderId = 3,
+                            ProductId = 7,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Counter = 2,
+                            OrderId = 4,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Counter = 2,
+                            OrderId = 5,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Counter = 2,
+                            OrderId = 5,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Counter = 3,
+                            OrderId = 6,
+                            ProductId = 10,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Counter = 1,
+                            OrderId = 6,
+                            ProductId = 11,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Counter = 3,
+                            OrderId = 6,
+                            ProductId = 12,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Counter = 8,
+                            OrderId = 7,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Counter = 1,
+                            OrderId = 7,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Counter = 2,
+                            OrderId = 8,
+                            ProductId = 12,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Counter = 1,
+                            OrderId = 8,
+                            ProductId = 1,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Counter = 3,
+                            OrderId = 9,
+                            ProductId = 2,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Counter = 2,
+                            OrderId = 10,
+                            ProductId = 5,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Counter = 1,
+                            OrderId = 10,
+                            ProductId = 12,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Counter = 4,
+                            OrderId = 11,
+                            ProductId = 7,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Counter = 1,
+                            OrderId = 12,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Counter = 3,
+                            OrderId = 13,
+                            ProductId = 9,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Counter = 2,
+                            OrderId = 13,
+                            ProductId = 2,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Counter = 1,
+                            OrderId = 14,
+                            ProductId = 5,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Counter = 2,
+                            OrderId = 15,
+                            ProductId = 11,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Counter = 1,
+                            OrderId = 15,
+                            ProductId = 12,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Counter = 1,
+                            OrderId = 16,
+                            ProductId = 2,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Counter = 1,
+                            OrderId = 16,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Counter = 1,
+                            OrderId = 17,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Counter = 1,
+                            OrderId = 18,
+                            ProductId = 9,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Counter = 2,
+                            OrderId = 18,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Counter = 2,
+                            OrderId = 19,
+                            ProductId = 10,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Counter = 2,
+                            OrderId = 19,
+                            ProductId = 11,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Counter = 1,
+                            OrderId = 19,
+                            ProductId = 12,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Counter = 1,
+                            OrderId = 20,
+                            ProductId = 3,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Counter = 3,
+                            OrderId = 21,
+                            ProductId = 5,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Counter = 1,
+                            OrderId = 21,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Counter = 1,
+                            OrderId = 22,
+                            ProductId = 8,
+                            Total = 0m
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Counter = 2,
+                            OrderId = 22,
+                            ProductId = 3,
+                            Total = 0m
                         });
                 });
 
