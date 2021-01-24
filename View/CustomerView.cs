@@ -62,9 +62,13 @@ namespace db_projektarbeit.View
                     CustomerNr = selected.CustomerNr,
                     FirstName = TxtFirstName.Text,
                     LastName = TxtLastName.Text,
-                    CompanyName = TxtCompanyName.Text,
+                    CompanyName = 
+                        string.IsNullOrWhiteSpace(TxtCompanyName.Text) ? 
+                            null : TxtCompanyName.Text,
                     Street = TxtStreet.Text,
-                    HouseNumber = TxtHouseNumber.Text,
+                    HouseNumber = 
+                        string.IsNullOrWhiteSpace(TxtHouseNumber.Text) ? 
+                            null : TxtHouseNumber.Text,
                     CityId = (int)CbxCity.SelectedValue
                 };
                 CustomerControl.Save(customerToSave);
