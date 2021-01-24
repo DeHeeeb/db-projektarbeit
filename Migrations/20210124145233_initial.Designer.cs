@@ -10,7 +10,7 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20210124134419_initial")]
+    [Migration("20210124145233_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,6 +62,168 @@ namespace db_projektarbeit.Migrations
                             Id = 3,
                             Name = "Bettwiesen",
                             Zip = 9553
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Rebstein",
+                            Zip = 9445
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Goldach",
+                            Zip = 9403
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Rorschach",
+                            Zip = 9400
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Au",
+                            Zip = 9434
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Diepoldsau",
+                            Zip = 9444
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Sevelen",
+                            Zip = 9475
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Mörschwil",
+                            Zip = 9402
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Arbon",
+                            Zip = 9320
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "Tübach",
+                            Zip = 9327
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Berg (SG)",
+                            Zip = 9305
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Teufen",
+                            Zip = 9053
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Gais",
+                            Zip = 9056
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Rehetobel",
+                            Zip = 9038
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "Trogen",
+                            Zip = 9043
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Name = "Grub",
+                            Zip = 9035
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Name = "Hundwil",
+                            Zip = 9064
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Name = "Untereggen",
+                            Zip = 9033
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Name = "Gossau",
+                            Zip = 9200
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Name = "Flawil",
+                            Zip = 9230
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Name = "Bischofszell",
+                            Zip = 9220
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Name = "Oberbüren",
+                            Zip = 9245
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Name = "Jonschwil",
+                            Zip = 9243
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Name = "Andwil (SG)",
+                            Zip = 9204
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Name = "Hohentannen",
+                            Zip = 9216
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "Rheineck",
+                            Zip = 9424
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "Buchs",
+                            Zip = 9470
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "Thal",
+                            Zip = 9425
                         });
                 });
 
@@ -109,8 +271,9 @@ namespace db_projektarbeit.Migrations
                             CompanyName = "Traber Corp",
                             CustomerNr = 0,
                             FirstName = "Marc",
+                            HouseNumber = "12",
                             LastName = "Traber",
-                            Street = "Hauptstrasse 12"
+                            Street = "Hauptstrasse"
                         },
                         new
                         {
@@ -119,8 +282,30 @@ namespace db_projektarbeit.Migrations
                             CompanyName = "Heeb GmbH",
                             CustomerNr = 0,
                             FirstName = "Lukas",
+                            HouseNumber = "2",
                             LastName = "Heeb",
-                            Street = "Winkelstrasse 2"
+                            Street = "Winkelstrasse"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 4,
+                            CompanyName = "CableTec AG",
+                            CustomerNr = 0,
+                            FirstName = "Eric",
+                            HouseNumber = "25",
+                            LastName = "Lüchinger",
+                            Street = "Bergstrasse"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityId = 1,
+                            CustomerNr = 0,
+                            FirstName = "Anton",
+                            HouseNumber = "9",
+                            LastName = "Segmüller",
+                            Street = "Weiherweg"
                         });
                 });
 

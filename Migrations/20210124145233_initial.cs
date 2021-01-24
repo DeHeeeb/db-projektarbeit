@@ -157,8 +157,35 @@ namespace db_projektarbeit.Migrations
                 values: new object[,]
                 {
                     { 1, "St. Gallen", 9000 },
-                    { 2, "Niederuzwil", 9244 },
-                    { 3, "Bettwiesen", 9553 }
+                    { 30, "Thal", 9425 },
+                    { 29, "Buchs", 9470 },
+                    { 28, "Rheineck", 9424 },
+                    { 27, "Hohentannen", 9216 },
+                    { 26, "Andwil (SG)", 9204 },
+                    { 25, "Jonschwil", 9243 },
+                    { 24, "Oberbüren", 9245 },
+                    { 23, "Bischofszell", 9220 },
+                    { 22, "Flawil", 9230 },
+                    { 21, "Gossau", 9200 },
+                    { 20, "Untereggen", 9033 },
+                    { 19, "Hundwil", 9064 },
+                    { 18, "Grub", 9035 },
+                    { 16, "Rehetobel", 9038 },
+                    { 17, "Trogen", 9043 },
+                    { 7, "Au", 9434 },
+                    { 14, "Teufen", 9053 },
+                    { 13, "Berg (SG)", 9305 },
+                    { 12, "Tübach", 9327 },
+                    { 11, "Arbon", 9320 },
+                    { 10, "Mörschwil", 9402 },
+                    { 9, "Sevelen", 9475 },
+                    { 8, "Diepoldsau", 9444 },
+                    { 15, "Gais", 9056 },
+                    { 6, "Rorschach", 9400 },
+                    { 5, "Goldach", 9403 },
+                    { 4, "Rebstein", 9445 },
+                    { 3, "Bettwiesen", 9553 },
+                    { 2, "Niederuzwil", 9244 }
                 });
 
             migrationBuilder.InsertData(
@@ -166,8 +193,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Name", "ParentId" },
                 values: new object[,]
                 {
-                    { 1, "Büromöbel", null },
                     { 5, "Drucker", null },
+                    { 1, "Büromöbel", null },
                     { 11, "Ordner", null }
                 });
 
@@ -176,8 +203,10 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
                 values: new object[,]
                 {
-                    { 1, 2, "Traber Corp", "Marc", null, "Traber", "Hauptstrasse 12" },
-                    { 2, 3, "Heeb GmbH", "Lukas", null, "Heeb", "Winkelstrasse 2" }
+                    { 4, 1, null, "Anton", "9", "Segmüller", "Weiherweg" },
+                    { 1, 2, "Traber Corp", "Marc", "12", "Traber", "Hauptstrasse" },
+                    { 2, 3, "Heeb GmbH", "Lukas", "2", "Heeb", "Winkelstrasse" },
+                    { 3, 4, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" }
                 });
 
             migrationBuilder.InsertData(

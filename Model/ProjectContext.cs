@@ -88,6 +88,168 @@ namespace db_projektarbeit.Model
                     Id = 3,
                     Zip = 9553,
                     Name = "Bettwiesen"
+                },
+                new City
+                {
+                    Id = 4,
+                    Zip = 9445,
+                    Name = "Rebstein"
+                },
+                new City
+                {
+                    Id = 5,
+                    Zip = 9403,
+                    Name = "Goldach"
+                },
+                new City
+                {
+                    Id = 6,
+                    Zip = 9400,
+                    Name = "Rorschach"
+                },
+                new City
+                {
+                    Id = 7,
+                    Zip = 9434,
+                    Name = "Au"
+                },
+                new City
+                {
+                    Id = 8,
+                    Zip = 9444,
+                    Name = "Diepoldsau"
+                },
+                new City
+                {
+                    Id = 9,
+                    Zip = 9475,
+                    Name = "Sevelen"
+                },
+                new City
+                {
+                    Id = 10,
+                    Zip = 9402,
+                    Name = "Mörschwil"
+                },
+                new City
+                {
+                    Id = 11,
+                    Zip = 9320,
+                    Name = "Arbon"
+                },
+                new City
+                {
+                    Id = 12,
+                    Zip = 9327,
+                    Name = "Tübach"
+                },
+                new City
+                {
+                    Id = 13,
+                    Zip = 9305,
+                    Name = "Berg (SG)"
+                },
+                new City
+                {
+                    Id = 14,
+                    Zip = 9053,
+                    Name = "Teufen"
+                },
+                new City
+                {
+                    Id = 15,
+                    Zip = 9056,
+                    Name = "Gais"
+                },
+                new City
+                {
+                    Id = 16,
+                    Zip = 9038,
+                    Name = "Rehetobel"
+                },
+                new City
+                {
+                    Id = 17,
+                    Zip = 9043,
+                    Name = "Trogen"
+                },
+                new City
+                {
+                    Id = 18,
+                    Zip = 9035,
+                    Name = "Grub"
+                },
+                new City
+                {
+                    Id = 19,
+                    Zip = 9064,
+                    Name = "Hundwil"
+                },
+                new City
+                {
+                    Id = 20,
+                    Zip = 9033,
+                    Name = "Untereggen"
+                },
+                new City
+                {
+                    Id = 21,
+                    Zip = 9200,
+                    Name = "Gossau"
+                },
+                new City
+                {
+                    Id = 22,
+                    Zip = 9230,
+                    Name = "Flawil"
+                },
+                new City
+                {
+                    Id = 23,
+                    Zip = 9220,
+                    Name = "Bischofszell"
+                },
+                new City
+                {
+                    Id = 24,
+                    Zip = 9245,
+                    Name = "Oberbüren"
+                },
+                new City
+                {
+                    Id = 25,
+                    Zip = 9243,
+                    Name = "Jonschwil"
+                },
+                new City
+                {
+                    Id = 26,
+                    Zip = 9204,
+                    Name = "Andwil (SG)"
+                },
+                new City
+                {
+                    Id = 27,
+                    Zip = 9216,
+                    Name = "Hohentannen"
+                },
+                new City
+                {
+                    Id = 28,
+                    Zip = 9424,
+                    Name = "Rheineck"
+                },
+                new City
+                {
+                    Id = 29,
+                    Zip = 9470,
+                    Name = "Buchs"
+                },
+                new City
+                {
+                    Id = 30,
+                    Zip = 9425,
+                    Name = "Thal"
                 }
             };
             #endregion
@@ -101,7 +263,8 @@ namespace db_projektarbeit.Model
                     FirstName = "Marc",
                     LastName = "Traber",
                     CompanyName = "Traber Corp",
-                    Street = "Hauptstrasse 12",
+                    Street = "Hauptstrasse",
+                    HouseNumber = "12",
                     CityId = 2
                 },
                 new Customer
@@ -110,8 +273,29 @@ namespace db_projektarbeit.Model
                     FirstName = "Lukas",
                     LastName = "Heeb",
                     CompanyName = "Heeb GmbH",
-                    Street = "Winkelstrasse 2",
+                    Street = "Winkelstrasse",
+                    HouseNumber = "2",
                     CityId = 3
+                },
+                new Customer
+                {
+                    Id = 3,
+                    FirstName = "Eric",
+                    LastName = "Lüchinger",
+                    CompanyName = "CableTec AG",
+                    Street = "Bergstrasse",
+                    HouseNumber = "25",
+                    CityId = 4
+                },
+                new Customer
+                {
+                    Id = 4,
+                    FirstName = "Anton",
+                    LastName = "Segmüller",
+                    CompanyName = null,
+                    Street = "Weiherweg",
+                    HouseNumber = "9",
+                    CityId = 1
                 }
             };
             #endregion

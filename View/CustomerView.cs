@@ -51,18 +51,20 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(TxtCompanyName.Text) && 
+            if (!string.IsNullOrWhiteSpace(TxtFirstName.Text) &&
+                !string.IsNullOrWhiteSpace(TxtLastName.Text) &&
                 !string.IsNullOrWhiteSpace(TxtStreet.Text) &&
-                CbxCity.SelectedItem != null)
+                CbxCity.SelectedItem != null) 
             {
                 Customer customerToSave = new Customer
                 {
                     Id = selected.Id,
                     CustomerNr = selected.CustomerNr,
-                    FirstName = TxtCompanyName.Text,
-                    LastName = TxtCompanyName.Text,
+                    FirstName = TxtFirstName.Text,
+                    LastName = TxtLastName.Text,
                     CompanyName = TxtCompanyName.Text,
                     Street = TxtStreet.Text,
+                    HouseNumber = TxtHouseNumber.Text,
                     CityId = (int)CbxCity.SelectedValue
                 };
                 CustomerControl.Save(customerToSave);
@@ -117,11 +119,14 @@ namespace db_projektarbeit.View
             DgvCustomers.DataSource = customers;
 
             DgvCustomers.Columns[0].Visible = false;
-            DgvCustomers.Columns[4].Visible = false;
+            DgvCustomers.Columns[7].Visible = false;
             DgvCustomers.Columns[1].HeaderText = "Kunden-Nr";
-            DgvCustomers.Columns[2].HeaderText = "Name";
-            DgvCustomers.Columns[3].HeaderText = "Strasse / Nr";
-            DgvCustomers.Columns[5].HeaderText = "PLZ / Stadt";
+            DgvCustomers.Columns[2].HeaderText = "Vorname";
+            DgvCustomers.Columns[3].HeaderText = "Nachname";
+            DgvCustomers.Columns[4].HeaderText = "Firma";
+            DgvCustomers.Columns[5].HeaderText = "Strasse";
+            DgvCustomers.Columns[6].HeaderText = "Nr";
+            DgvCustomers.Columns[8].HeaderText = "PLZ / Stadt";
         }
 
         private void LoadCombobox(List<City> cities)
@@ -136,14 +141,20 @@ namespace db_projektarbeit.View
             selected = new Customer();
             TxtCustomerNr.Text = "wird vergeben";
             TxtCompanyName.Clear();
+            TxtFirstName.Clear();
+            TxtLastName.Clear();
             TxtStreet.Clear();
+            TxtHouseNumber.Clear();
             CbxCity.SelectedIndex = 0;
         }
 
         private void UnlockFields()
         {
+            TxtFirstName.ReadOnly = false;
+            TxtLastName.ReadOnly = false;
             TxtCompanyName.ReadOnly = false;
             TxtStreet.ReadOnly = false;
+            TxtHouseNumber.ReadOnly = false;
             CbxCity.Enabled = true;
         }
     }
