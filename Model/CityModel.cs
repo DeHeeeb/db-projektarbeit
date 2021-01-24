@@ -36,7 +36,8 @@ namespace db_projektarbeit.Model
                     .Where(c =>
                         c.Zip.ToString().ToLower().Contains(text) ||
                         c.Name.ToLower().Contains(text)
-                    ).ToList();
+                    ).OrderBy(c => c.Zip)
+                    .ToList();
             }
         }
 

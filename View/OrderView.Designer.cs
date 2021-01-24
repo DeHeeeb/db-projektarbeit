@@ -33,8 +33,21 @@ namespace db_projektarbeit.View
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.DgvOrder = new System.Windows.Forms.DataGridView();
             this.DgvPosition = new System.Windows.Forms.DataGridView();
+            this.DtpDate = new System.Windows.Forms.DateTimePicker();
+            this.LblDate = new System.Windows.Forms.Label();
+            this.CmdEditPositions = new System.Windows.Forms.Button();
+            this.CbxCustomer = new System.Windows.Forms.ComboBox();
+            this.LblCustomer = new System.Windows.Forms.Label();
+            this.LblComment = new System.Windows.Forms.Label();
+            this.TxtComment = new System.Windows.Forms.TextBox();
+            this.CmdNew = new System.Windows.Forms.Button();
+            this.CmdSave = new System.Windows.Forms.Button();
+            this.LblTotal = new System.Windows.Forms.Label();
+            this.NumTotal = new System.Windows.Forms.NumericUpDown();
+            this.CmdEditCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPosition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // CmdSearch
@@ -53,6 +66,7 @@ namespace db_projektarbeit.View
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(841, 27);
             this.TxtSearch.TabIndex = 9;
+            this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
             // DgvOrder
             // 
@@ -67,7 +81,7 @@ namespace db_projektarbeit.View
             this.DgvOrder.ReadOnly = true;
             this.DgvOrder.RowHeadersWidth = 51;
             this.DgvOrder.RowTemplate.Height = 29;
-            this.DgvOrder.Size = new System.Drawing.Size(396, 391);
+            this.DgvOrder.Size = new System.Drawing.Size(396, 464);
             this.DgvOrder.TabIndex = 11;
             this.DgvOrder.TabStop = false;
             this.DgvOrder.SelectionChanged += new System.EventHandler(this.DgvOrder_SelectionChanged);
@@ -89,11 +103,141 @@ namespace db_projektarbeit.View
             this.DgvPosition.TabIndex = 12;
             this.DgvPosition.TabStop = false;
             // 
+            // DtpDate
+            // 
+            this.DtpDate.Enabled = false;
+            this.DtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpDate.Location = new System.Drawing.Point(510, 236);
+            this.DtpDate.Name = "DtpDate";
+            this.DtpDate.Size = new System.Drawing.Size(250, 27);
+            this.DtpDate.TabIndex = 13;
+            // 
+            // LblDate
+            // 
+            this.LblDate.AutoSize = true;
+            this.LblDate.Location = new System.Drawing.Point(414, 241);
+            this.LblDate.Name = "LblDate";
+            this.LblDate.Size = new System.Drawing.Size(54, 20);
+            this.LblDate.TabIndex = 15;
+            this.LblDate.Text = "Datum";
+            // 
+            // CmdEditPositions
+            // 
+            this.CmdEditPositions.Location = new System.Drawing.Point(212, 518);
+            this.CmdEditPositions.Name = "CmdEditPositions";
+            this.CmdEditPositions.Size = new System.Drawing.Size(196, 29);
+            this.CmdEditPositions.TabIndex = 16;
+            this.CmdEditPositions.Text = "Positionen bearbeiten";
+            this.CmdEditPositions.UseVisualStyleBackColor = true;
+            this.CmdEditPositions.Click += new System.EventHandler(this.CmdEditPositions_Click);
+            // 
+            // CbxCustomer
+            // 
+            this.CbxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxCustomer.Enabled = false;
+            this.CbxCustomer.FormattingEnabled = true;
+            this.CbxCustomer.Location = new System.Drawing.Point(510, 269);
+            this.CbxCustomer.Name = "CbxCustomer";
+            this.CbxCustomer.Size = new System.Drawing.Size(250, 28);
+            this.CbxCustomer.TabIndex = 18;
+            // 
+            // LblCustomer
+            // 
+            this.LblCustomer.AutoSize = true;
+            this.LblCustomer.Location = new System.Drawing.Point(414, 276);
+            this.LblCustomer.Name = "LblCustomer";
+            this.LblCustomer.Size = new System.Drawing.Size(51, 20);
+            this.LblCustomer.TabIndex = 17;
+            this.LblCustomer.Text = "Kunde";
+            // 
+            // LblComment
+            // 
+            this.LblComment.AutoSize = true;
+            this.LblComment.Location = new System.Drawing.Point(414, 306);
+            this.LblComment.Name = "LblComment";
+            this.LblComment.Size = new System.Drawing.Size(87, 20);
+            this.LblComment.TabIndex = 19;
+            this.LblComment.Text = "Kommentar";
+            // 
+            // TxtComment
+            // 
+            this.TxtComment.Location = new System.Drawing.Point(510, 303);
+            this.TxtComment.Multiline = true;
+            this.TxtComment.Name = "TxtComment";
+            this.TxtComment.Size = new System.Drawing.Size(443, 164);
+            this.TxtComment.TabIndex = 20;
+            // 
+            // CmdNew
+            // 
+            this.CmdNew.Location = new System.Drawing.Point(112, 518);
+            this.CmdNew.Name = "CmdNew";
+            this.CmdNew.Size = new System.Drawing.Size(94, 29);
+            this.CmdNew.TabIndex = 22;
+            this.CmdNew.Text = "Neu";
+            this.CmdNew.UseVisualStyleBackColor = true;
+            this.CmdNew.Click += new System.EventHandler(this.CmdNew_Click);
+            // 
+            // CmdSave
+            // 
+            this.CmdSave.Location = new System.Drawing.Point(12, 518);
+            this.CmdSave.Name = "CmdSave";
+            this.CmdSave.Size = new System.Drawing.Size(94, 29);
+            this.CmdSave.TabIndex = 21;
+            this.CmdSave.Text = "Speichern";
+            this.CmdSave.UseVisualStyleBackColor = true;
+            this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblTotal.Location = new System.Drawing.Point(775, 516);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(59, 28);
+            this.LblTotal.TabIndex = 23;
+            this.LblTotal.Text = "Total";
+            // 
+            // NumTotal
+            // 
+            this.NumTotal.DecimalPlaces = 2;
+            this.NumTotal.Location = new System.Drawing.Point(840, 518);
+            this.NumTotal.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.NumTotal.Name = "NumTotal";
+            this.NumTotal.ReadOnly = true;
+            this.NumTotal.Size = new System.Drawing.Size(113, 27);
+            this.NumTotal.TabIndex = 24;
+            // 
+            // CmdEditCustomer
+            // 
+            this.CmdEditCustomer.Location = new System.Drawing.Point(766, 269);
+            this.CmdEditCustomer.Name = "CmdEditCustomer";
+            this.CmdEditCustomer.Size = new System.Drawing.Size(187, 28);
+            this.CmdEditCustomer.TabIndex = 25;
+            this.CmdEditCustomer.Text = "Kunden bearbeiten";
+            this.CmdEditCustomer.UseVisualStyleBackColor = true;
+            this.CmdEditCustomer.Click += new System.EventHandler(this.CmdEditCustomer_Click);
+            // 
             // OrderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 450);
+            this.ClientSize = new System.Drawing.Size(965, 558);
+            this.Controls.Add(this.CmdEditCustomer);
+            this.Controls.Add(this.NumTotal);
+            this.Controls.Add(this.LblTotal);
+            this.Controls.Add(this.CmdNew);
+            this.Controls.Add(this.CmdSave);
+            this.Controls.Add(this.TxtComment);
+            this.Controls.Add(this.LblComment);
+            this.Controls.Add(this.CbxCustomer);
+            this.Controls.Add(this.LblCustomer);
+            this.Controls.Add(this.CmdEditPositions);
+            this.Controls.Add(this.LblDate);
+            this.Controls.Add(this.DtpDate);
             this.Controls.Add(this.DgvPosition);
             this.Controls.Add(this.DgvOrder);
             this.Controls.Add(this.CmdSearch);
@@ -102,6 +246,7 @@ namespace db_projektarbeit.View
             this.Text = "Auftrags-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPosition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumTotal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +258,17 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.DataGridView DgvOrder;
         private System.Windows.Forms.DataGridView DgvPosition;
+        private System.Windows.Forms.DateTimePicker DtpDate;
+        private System.Windows.Forms.Label LblDate;
+        private System.Windows.Forms.Button CmdEditPositions;
+        private System.Windows.Forms.Label LblCustomer;
+        private System.Windows.Forms.Label LblComment;
+        private System.Windows.Forms.TextBox TxtComment;
+        private System.Windows.Forms.Button CmdNew;
+        private System.Windows.Forms.Button CmdSave;
+        private System.Windows.Forms.Label LblTotal;
+        private System.Windows.Forms.ComboBox CbxCustomer;
+        private System.Windows.Forms.NumericUpDown NumTotal;
+        private System.Windows.Forms.Button CmdEditCustomer;
     }
 }

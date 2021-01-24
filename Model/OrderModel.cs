@@ -12,9 +12,52 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                return context.Orders.Include(p => p.Positions)
-                                     .Include(c => c.Customer)
-                                     .ToList();
+                return context.Orders
+                    .Include(o => o.Positions)
+                    .ThenInclude(p => p.Product)
+                    .Include(o => o.Customer)
+                    .OrderByDescending(o => o.Date)
+                    .ToList();
+            }
+        }
+
+        public List<Order> Search(string text)
+        {
+            text = text.ToLower();
+            using (var context = new ProjectContext())
+            {
+                return context.Orders
+                    .Include(o => o.Positions)
+                    .ThenInclude(p => p.Product)
+                    .Include(o => o.Customer)
+                    .Where(o =>
+                        o.Date.ToString().Contains(text) ||
+                        o.Comment.ToLower().Contains(text) ||
+                        o.Customer.CompanyName.ToLower().Contains(text) ||
+                        o.Customer.FirstName.ToLower().Contains(text) ||
+                        o.Customer.LastName.ToLower().Contains(text) ||
+                        o.Customer.CustomerNr.ToString().Contains(text)
+                    ).OrderByDescending(o => o.Date)
+                    .ToList();
+            }
+        }
+
+        public int Save(Order order)
+        {
+            using (var context = new ProjectContext())
+            {
+                if (order.Id == 0)
+                {
+                    context.Orders.Add(order);
+                }
+                else
+                {
+                    context.Orders.Update(order);
+                }
+
+                context.SaveChanges();
+
+                return order.Id;
             }
         }
     }

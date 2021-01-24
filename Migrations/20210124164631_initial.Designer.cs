@@ -10,7 +10,7 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20210124145953_initial")]
+    [Migration("20210124164631_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -32,9 +32,11 @@ namespace db_projektarbeit.Model
                         c.LastName.ToLower().Contains(text) ||
                         c.CompanyName.ToLower().Contains(text) ||
                         c.Street.ToLower().Contains(text) ||
+                        c.HouseNumber.ToLower().Contains(text) ||
                         c.City.Zip.ToString().ToLower().Contains(text) ||
                         c.City.Name.ToLower().Contains(text)
-                    ).ToList();
+                    ).OrderBy(c => c.CustomerNr)
+                    .ToList();
             }
         }
 

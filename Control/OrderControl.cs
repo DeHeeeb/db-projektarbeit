@@ -12,5 +12,15 @@ namespace db_projektarbeit.Control
         {
             return OrderModel.GetAll();
         }
+
+        public List<Order> Search(string text)
+        {
+            return OrderModel.Search(text);
+        }
+
+        public int Save(Order order)
+        {
+            return OrderModel.Save(order);
+        }
     }
 }
