@@ -32,14 +32,14 @@ namespace db_projektarbeit.View
             this.CmdSearch = new System.Windows.Forms.Button();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.DgvOrder = new System.Windows.Forms.DataGridView();
-            this.DgvOrderPos = new System.Windows.Forms.DataGridView();
+            this.DgvPosition = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvOrderPos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // CmdSearch
             // 
-            this.CmdSearch.Location = new System.Drawing.Point(694, 12);
+            this.CmdSearch.Location = new System.Drawing.Point(859, 11);
             this.CmdSearch.Name = "CmdSearch";
             this.CmdSearch.Size = new System.Drawing.Size(94, 29);
             this.CmdSearch.TabIndex = 10;
@@ -51,7 +51,7 @@ namespace db_projektarbeit.View
             // 
             this.TxtSearch.Location = new System.Drawing.Point(12, 12);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(677, 27);
+            this.TxtSearch.Size = new System.Drawing.Size(841, 27);
             this.TxtSearch.TabIndex = 9;
             // 
             // DgvOrder
@@ -67,41 +67,41 @@ namespace db_projektarbeit.View
             this.DgvOrder.ReadOnly = true;
             this.DgvOrder.RowHeadersWidth = 51;
             this.DgvOrder.RowTemplate.Height = 29;
-            this.DgvOrder.Size = new System.Drawing.Size(776, 206);
+            this.DgvOrder.Size = new System.Drawing.Size(396, 391);
             this.DgvOrder.TabIndex = 11;
             this.DgvOrder.TabStop = false;
             this.DgvOrder.SelectionChanged += new System.EventHandler(this.DgvOrder_SelectionChanged);
             // 
-            // DgvOrderPos
+            // DgvPosition
             // 
-            this.DgvOrderPos.AllowUserToAddRows = false;
-            this.DgvOrderPos.AllowUserToDeleteRows = false;
-            this.DgvOrderPos.AllowUserToResizeRows = false;
-            this.DgvOrderPos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DgvOrderPos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvOrderPos.Location = new System.Drawing.Point(12, 259);
-            this.DgvOrderPos.MultiSelect = false;
-            this.DgvOrderPos.Name = "DgvOrderPos";
-            this.DgvOrderPos.ReadOnly = true;
-            this.DgvOrderPos.RowHeadersWidth = 51;
-            this.DgvOrderPos.RowTemplate.Height = 29;
-            this.DgvOrderPos.Size = new System.Drawing.Size(776, 179);
-            this.DgvOrderPos.TabIndex = 12;
-            this.DgvOrderPos.TabStop = false;
+            this.DgvPosition.AllowUserToAddRows = false;
+            this.DgvPosition.AllowUserToDeleteRows = false;
+            this.DgvPosition.AllowUserToResizeRows = false;
+            this.DgvPosition.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvPosition.Location = new System.Drawing.Point(414, 47);
+            this.DgvPosition.MultiSelect = false;
+            this.DgvPosition.Name = "DgvPosition";
+            this.DgvPosition.ReadOnly = true;
+            this.DgvPosition.RowHeadersWidth = 51;
+            this.DgvPosition.RowTemplate.Height = 29;
+            this.DgvPosition.Size = new System.Drawing.Size(539, 179);
+            this.DgvPosition.TabIndex = 12;
+            this.DgvPosition.TabStop = false;
             // 
             // OrderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.DgvOrderPos);
+            this.ClientSize = new System.Drawing.Size(965, 450);
+            this.Controls.Add(this.DgvPosition);
             this.Controls.Add(this.DgvOrder);
             this.Controls.Add(this.CmdSearch);
             this.Controls.Add(this.TxtSearch);
             this.Name = "OrderView";
             this.Text = "Auftrags-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvOrderPos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPosition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +112,6 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.Button CmdSearch;
         private System.Windows.Forms.TextBox TxtSearch;
         private System.Windows.Forms.DataGridView DgvOrder;
-        private System.Windows.Forms.DataGridView DgvOrderPos;
+        private System.Windows.Forms.DataGridView DgvPosition;
     }
 }

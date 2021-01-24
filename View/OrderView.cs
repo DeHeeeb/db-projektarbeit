@@ -13,53 +13,32 @@ namespace db_projektarbeit.View
     public partial class OrderView : Form
     {
         private OrderControl OrderControl = new OrderControl();
-        private BindingSource bindingSourceOder = new BindingSource();
-        private BindingSource bindingSourceOderPosition = new BindingSource();
+        private Order selected = new Order();
 
         public OrderView()
         {
             InitializeComponent();
-            LoadTable(OrderControl.GetAll());
+            LoadOrderTable(OrderControl.GetAll());
         }
 
-        private void LoadTable(List<Order> orders)
+        private void LoadOrderTable(List<Order> orders)
         {
-            orders.ForEach(o => bindingSourceOder.Add(o));
-            DgvOrder.DataSource = bindingSourceOder;
+            DgvOrder.DataSource = orders;
 
-
-            //DgvOrder.Columns[0].Visible = false;
-            //DgvOrder.Columns[3].Visible = false;
-
-            //DgvOrder.Columns[1].HeaderText = "Datum";
-            //DgvOrder.Columns[2].HeaderText = "Kommentar";
-            //DgvOrder.Columns[4].HeaderText = "Kunde";
-            //DgvOrder.Columns[5].HeaderText = "Positionen";
-            //var temp = DgvOrder.Columns[5].Displayed;
-
-
-
-
-            //DataGridViewOderMapper(orders);
+            DgvOrder.Columns[0].Visible = false;
+            DgvOrder.Columns[2].Visible = false;
+            DgvOrder.Columns[3].Visible = false;
+            //DgvOrder.Columns[5].Visible = false;
+            DgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvOrder.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvOrder.Columns[1].HeaderText = "Datum";
+            DgvOrder.Columns[4].HeaderText = "Kunde";
         }
 
-        //private DataTable DataGridViewOderMapper(List<Order> orders)
-        //{
-        //    DataTable dt = new DataTable();
-
-        //    dt.Columns.Add("Id", typeof(int));
-        //    dt.Columns.Add("Datum", typeof(DateTime));
-        //    dt.Columns.Add("Kommentar", typeof(string));
-        //    dt.Columns.Add("Kunde", typeof(string));
-        //    dt.Columns.Add("Anzahl-Artikel", typeof(int));
-
-        //    foreach (var item in orders)
-        //    {
-        //        dt.Rows.Add(item.Id, item.Date, item.Comment, item.Customer.Name, item.Positions.Count);
-        //    }
-
-        //    return dt;
-        //}
+        private void LoadPositionTable(List<Position> positions)
+        {
+            DgvPosition.DataSource = positions;
+        }
 
         private void CmdSearch_Click(object sender, EventArgs e)
         {
@@ -68,39 +47,23 @@ namespace db_projektarbeit.View
 
         private void DgvOrder_SelectionChanged(object sender, EventArgs e)
         {
-            var selected = (DataGridView) sender;
-            
+            var rows = DgvOrder.SelectedRows;
             DataGridViewRow row;
-            if (selected.SelectedRows.Count == 0 && selected.SelectedCells.Count == 1)
+            if (rows.Count == 0 && DgvOrder.SelectedCells.Count == 1)
             {
-                row = selected.SelectedCells[0].OwningRow;
+                row = DgvOrder.SelectedCells[0].OwningRow;
             }
-            else if (selected.SelectedRows.Count == 1)
+            else if (rows.Count == 1)
             {
-                row = selected.Rows[0];
+                row = rows[0];
             }
             else
             {
                 return;
             }
 
-            bindingSourceOderPosition.Clear();
-
-            var selectOder = (Order)row.DataBoundItem;
-
-            foreach (var item in selectOder.Positions)
-            {
-                bindingSourceOderPosition.Add(item);
-            }
-
-            DgvOrderPos.DataSource = bindingSourceOderPosition;
-
-            DgvOrderPos.Columns[3].Visible = false;
-            DgvOrderPos.Columns[4].Visible = false;
-
-            DgvOrderPos.Columns[0].HeaderText = "Position";
-            DgvOrderPos.Columns[1].HeaderText = "Anzahl";
-
+            selected = (Order) row.DataBoundItem;
+            LoadPositionTable(selected.Positions);
         }
     }
 }
