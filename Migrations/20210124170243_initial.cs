@@ -268,8 +268,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, 1, 0m },
-                    { 2, 3, 1, 4, 0m }
+                    { 1, 1, 1, 1, 1m },
+                    { 2, 3, 1, 4, 15m }
                 });
 
             migrationBuilder.InsertData(
@@ -286,12 +286,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Positions",
                 columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
-                values: new object[] { 3, 2, 1, 5, 0m });
+                values: new object[] { 3, 2, 1, 5, 2.50m });
 
             migrationBuilder.InsertData(
                 table: "Positions",
                 columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
-                values: new object[] { 4, 1, 2, 8, 0m });
+                values: new object[] { 4, 1, 2, 8, 17.69m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",

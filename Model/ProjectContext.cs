@@ -508,7 +508,7 @@ namespace db_projektarbeit.Model
                     Counter = 1,
                     OrderId = 1,
                     ProductId = 1,
-                    Total = 0M
+                    Total = 1M
                 },
                 new Position
                 {
@@ -516,7 +516,7 @@ namespace db_projektarbeit.Model
                     Counter = 3,
                     OrderId = 1,
                     ProductId = 4,
-                    Total = 0M
+                    Total = 15M
                 },
                 new Position
                 {
@@ -524,7 +524,7 @@ namespace db_projektarbeit.Model
                     Counter = 2,
                     OrderId = 1,
                     ProductId = 5,
-                    Total = 0M
+                    Total = 2.50M
                 },
                 new Position
                 {
@@ -532,7 +532,7 @@ namespace db_projektarbeit.Model
                     Counter = 1,
                     OrderId = 2,
                     ProductId = 8,
-                    Total = 0M
+                    Total = 17.69M
                 }
             };
             #endregion

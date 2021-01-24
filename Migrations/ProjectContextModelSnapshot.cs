@@ -387,7 +387,7 @@ namespace db_projektarbeit.Migrations
                             Counter = 1,
                             OrderId = 1,
                             ProductId = 1,
-                            Total = 0m
+                            Total = 1m
                         },
                         new
                         {
@@ -395,7 +395,7 @@ namespace db_projektarbeit.Migrations
                             Counter = 3,
                             OrderId = 1,
                             ProductId = 4,
-                            Total = 0m
+                            Total = 15m
                         },
                         new
                         {
@@ -403,7 +403,7 @@ namespace db_projektarbeit.Migrations
                             Counter = 2,
                             OrderId = 1,
                             ProductId = 5,
-                            Total = 0m
+                            Total = 2.50m
                         },
                         new
                         {
@@ -411,7 +411,7 @@ namespace db_projektarbeit.Migrations
                             Counter = 1,
                             OrderId = 2,
                             ProductId = 8,
-                            Total = 0m
+                            Total = 17.69m
                         });
                 });
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -21,6 +22,7 @@ namespace db_projektarbeit.View
             InitializeComponent();
             LoadOrderTable(OrderControl.GetAll());
             LoadCombobox(CustomerControl.GetAll());
+            LoadTotal();
         }
 
         private void LoadOrderTable(List<Order> orders)
@@ -60,6 +62,14 @@ namespace db_projektarbeit.View
             CbxCustomer.DisplayMember = "FullName";
             CbxCustomer.ValueMember = "Id";
             CbxCustomer.DataSource = customers;
+        }
+
+        private void LoadTotal()
+        {
+            if (selected.Positions != null)
+            {
+                NumTotal.Value = selected.Positions.Sum(p => p.Total);
+            }
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -107,6 +117,7 @@ namespace db_projektarbeit.View
 
                 LoadOrderTable(OrderControl.GetAll());
                 LoadCombobox(CustomerControl.GetAll());
+                LoadTotal();
                 CbxCustomer.SelectedValue = selected.Customer.Id;
             }
         }
@@ -139,6 +150,7 @@ namespace db_projektarbeit.View
 
             selected = (Order) row.DataBoundItem;
             LoadPositionTable(selected.Positions);
+            LoadTotal();
             DtpDate.Value = selected.Date;
             CbxCustomer.SelectedValue = selected.Customer.Id;
             TxtComment.Text = selected.Comment;

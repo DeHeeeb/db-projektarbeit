@@ -200,7 +200,8 @@ namespace db_projektarbeit.View
             // NumTotal
             // 
             this.NumTotal.DecimalPlaces = 2;
-            this.NumTotal.Location = new System.Drawing.Point(840, 518);
+            this.NumTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumTotal.Location = new System.Drawing.Point(840, 514);
             this.NumTotal.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -208,7 +209,7 @@ namespace db_projektarbeit.View
             0});
             this.NumTotal.Name = "NumTotal";
             this.NumTotal.ReadOnly = true;
-            this.NumTotal.Size = new System.Drawing.Size(113, 27);
+            this.NumTotal.Size = new System.Drawing.Size(113, 34);
             this.NumTotal.TabIndex = 24;
             // 
             // CmdEditCustomer
