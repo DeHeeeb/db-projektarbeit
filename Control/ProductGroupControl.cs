@@ -21,12 +21,22 @@ namespace db_projektarbeit.Control
 
         public int AddNode(ProductGroup productGroup)
         {
-            return ProductGroupModel.AddNode(productGroup);
+            return ProductGroupModel.Add(productGroup);
         }
 
         public int UpdateNode(ProductGroup productGroup)
         {
-            return ProductGroupModel.UpdateNode(productGroup);
+            return ProductGroupModel.Update(productGroup);
+        }
+
+        public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
+        {
+            return ProductControl.SearchUsedProductGroup(productGroup);
+        }
+
+        public int DeleteNode(ProductGroup productGroup)
+        {
+            return ProductGroupModel.Delete(productGroup);
         }
 
         public TreeNode[] ConvertToTreeNodes(List<ProductGroup> productGroups)

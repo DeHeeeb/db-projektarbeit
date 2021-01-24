@@ -19,6 +19,16 @@ namespace db_projektarbeit.Model
             }
         }
 
+        public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
+        {
+            using (var context = new ProjectContext())
+            {
+                return context.Products
+                    .Where(pg => pg.GroupId == productGroup.Id)
+                    .ToList();
+            }
+        }
+
         /*public List<Product> Search(string text)
         {
             text = text.ToLower();

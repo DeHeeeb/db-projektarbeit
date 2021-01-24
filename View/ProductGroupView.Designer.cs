@@ -33,9 +33,9 @@ namespace db_projektarbeit.View
             this.CmdUpdate = new System.Windows.Forms.Button();
             this.CmdNewNode = new System.Windows.Forms.Button();
             this.LblDescription = new System.Windows.Forms.Label();
-            this.TxtArtikelGruppeName = new System.Windows.Forms.TextBox();
+            this.TxtProductGrupName = new System.Windows.Forms.TextBox();
             this.LblProductNr = new System.Windows.Forms.Label();
-            this.TxtArtikelGruppeNr = new System.Windows.Forms.TextBox();
+            this.TxtProductGrupNr = new System.Windows.Forms.TextBox();
             this.NewChildNode = new System.Windows.Forms.Button();
             this.CmdDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace db_projektarbeit.View
             this.CmdUpdate.TabIndex = 10;
             this.CmdUpdate.Text = "Speichern";
             this.CmdUpdate.UseVisualStyleBackColor = true;
-            this.CmdUpdate.Click += new System.EventHandler(this.CmdUpdateNode_Click);
+            this.CmdUpdate.Click += new System.EventHandler(this.CmdUpdate_Click);
             // 
             // CmdNewNode
             // 
@@ -77,13 +77,13 @@ namespace db_projektarbeit.View
             this.LblDescription.TabIndex = 14;
             this.LblDescription.Text = "Name";
             // 
-            // TxtArtikelGruppeName
+            // TxtProductGrupName
             // 
-            this.TxtArtikelGruppeName.Location = new System.Drawing.Point(145, 385);
-            this.TxtArtikelGruppeName.Name = "TxtArtikelGruppeName";
-            this.TxtArtikelGruppeName.ReadOnly = true;
-            this.TxtArtikelGruppeName.Size = new System.Drawing.Size(200, 27);
-            this.TxtArtikelGruppeName.TabIndex = 13;
+            this.TxtProductGrupName.Location = new System.Drawing.Point(145, 385);
+            this.TxtProductGrupName.Name = "TxtProductGrupName";
+            this.TxtProductGrupName.ReadOnly = true;
+            this.TxtProductGrupName.Size = new System.Drawing.Size(200, 27);
+            this.TxtProductGrupName.TabIndex = 13;
             // 
             // LblProductNr
             // 
@@ -94,13 +94,13 @@ namespace db_projektarbeit.View
             this.LblProductNr.TabIndex = 12;
             this.LblProductNr.Text = "Artikelgruppe-Nr.";
             // 
-            // TxtArtikelGruppeNr
+            // TxtProductGrupNr
             // 
-            this.TxtArtikelGruppeNr.Location = new System.Drawing.Point(145, 345);
-            this.TxtArtikelGruppeNr.Name = "TxtArtikelGruppeNr";
-            this.TxtArtikelGruppeNr.ReadOnly = true;
-            this.TxtArtikelGruppeNr.Size = new System.Drawing.Size(200, 27);
-            this.TxtArtikelGruppeNr.TabIndex = 11;
+            this.TxtProductGrupNr.Location = new System.Drawing.Point(145, 345);
+            this.TxtProductGrupNr.Name = "TxtProductGrupNr";
+            this.TxtProductGrupNr.ReadOnly = true;
+            this.TxtProductGrupNr.Size = new System.Drawing.Size(200, 27);
+            this.TxtProductGrupNr.TabIndex = 11;
             // 
             // NewChildNode
             // 
@@ -131,9 +131,9 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.NewChildNode);
             this.Controls.Add(this.CmdNewNode);
             this.Controls.Add(this.LblDescription);
-            this.Controls.Add(this.TxtArtikelGruppeName);
+            this.Controls.Add(this.TxtProductGrupName);
             this.Controls.Add(this.LblProductNr);
-            this.Controls.Add(this.TxtArtikelGruppeNr);
+            this.Controls.Add(this.TxtProductGrupNr);
             this.Controls.Add(this.CmdUpdate);
             this.Controls.Add(this.TvProductGroup);
             this.Name = "ProductGroupView";
@@ -149,9 +149,9 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.Button CmdUpdate;
         private System.Windows.Forms.Button CmdNewNode;
         private System.Windows.Forms.Label LblDescription;
-        private System.Windows.Forms.TextBox TxtArtikelGruppeName;
+        private System.Windows.Forms.TextBox TxtProductGrupName;
         private System.Windows.Forms.Label LblProductNr;
-        private System.Windows.Forms.TextBox TxtArtikelGruppeNr;
+        private System.Windows.Forms.TextBox TxtProductGrupNr;
         private System.Windows.Forms.Button NewChildNode;
         private System.Windows.Forms.Button CmdDelete;
     }

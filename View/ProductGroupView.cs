@@ -31,64 +31,94 @@ namespace db_projektarbeit.View
 
         public void LoadTreeView(TreeNode[] treeNodes)
         {
-            TvProductGroup.Nodes.Clear();
-            TvProductGroup.Nodes.AddRange(treeNodes);
+            TvProductGroup.Nodes.Clear();                                   // Nodes in Treeview löschen
+            TvProductGroup.Nodes.AddRange(treeNodes);                       // Daten in Treeview aktualisieren
         }
 
-        private void CmdUpdateNode_Click(object sender, EventArgs e)
+        private void CmdUpdate_Click(object sender, EventArgs e)
         {
-            var selectedNode = TvProductGroup.SelectedNode;
-            LockFields();
-            if (selectedNode.Parent == null)
+            var selectedNode = TvProductGroup.SelectedNode;                 // Selektierter Node 
+            LockFields();                                                   // Eingabefeler Sperrren
+            if (selectedNode.Parent == null)                                // hat der Node ein Elternelement
             {
-                var updateProductGroup = new ProductGroup()
+                var updateProductGroup = new ProductGroup()                 // Neues ProducteGruppe Element erzeugen
                 {
-                    Id = int.Parse(selectedNode.Name),
-                    Name = TxtArtikelGruppeName.Text
+                    Id = int.Parse(selectedNode.Name),                      // Id des aktuellen Node         
+                    Name = TxtProductGrupName.Text                        // Anzeigetext
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);
+                ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
             }
             else
             {
-                var updateProductGroup = new ProductGroup()
+                var updateProductGroup = new ProductGroup()                 // hat der Node kein Elternelement
                 {
-                    Id = int.Parse(selectedNode.Name),
-                    Name = TxtArtikelGruppeName.Text,
-                    ParentId = int.Parse(selectedNode.Parent.Name)
+                    Id = int.Parse(selectedNode.Name),                      // Id des aktuellen Node
+                    Name = TxtProductGrupName.Text,                       // Anzeigetext
+                    ParentId = int.Parse(selectedNode.Parent.Name)          // Id des Eltern Node
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);
+                ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
             }
 
-            LoadTreeViewDefault();
-            UnlockFields();
+            LoadTreeViewDefault();                                          // TreeView aktuallisieren
+            UnlockFields();                                                 // Eingabefelder Freigeben
         }
 
         private void CmdDelete_Click(object sender, EventArgs e)
         {
-            var selectedNode = TvProductGroup.SelectedNode;
-            LockFields();
-            if (selectedNode.Parent == null)
+            var selectedNode = TvProductGroup.SelectedNode;                         // Selektierter Node 
+            LockFields();                                                           // Eingabefeler Sperrren
+
+            List<Product> onUsedProductGroup;
+            ProductGroup deletedProductGroup;
+            if (selectedNode.Parent == null)                                        // hat der Node ein Elternelement
             {
-                var updateProductGroup = new ProductGroup()
+                deletedProductGroup = new ProductGroup()                            // Neues ProducteGruppen Element erzeugen
                 {
-                    Id = int.Parse(selectedNode.Name),
-                    Name = TxtArtikelGruppeName.Text
+                    Id = int.Parse(selectedNode.Name),                              // Id des aktuellen Node         
+                    Name = TxtProductGrupName.Text                                  // Anzeigetext
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);
             }
             else
             {
-                var updateProductGroup = new ProductGroup()
+                deletedProductGroup = new ProductGroup()                            // hat der Node kein Elternelement
                 {
-                    Id = int.Parse(selectedNode.Name),
-                    Name = TxtArtikelGruppeName.Text,
-                    ParentId = int.Parse(selectedNode.Parent.Name)
+                    Id = int.Parse(selectedNode.Name),                              // Id des aktuellen Node
+                    Name = TxtProductGrupName.Text,                                 // Anzeigetext
+                    ParentId = int.Parse(selectedNode.Parent.Name)                  // Id des Eltern Node
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);
             }
 
-            LoadTreeViewDefault();
-            UnlockFields();
+            onUsedProductGroup = ProductGroupControl
+                                    .SearchUsedProductGroup(deletedProductGroup);   // Product suchen die eine Verbindung
+                                                                                    // zu dieser ProductGruppe haben
+            if (onUsedProductGroup.Count == 0)
+            {
+                if (selectedNode.Nodes.Count == 0)
+                {
+                    ProductGroupControl.DeleteNode(deletedProductGroup);
+                }
+                else
+                {
+                    MessageBox.Show("Die Artkielgruppe hat noch untergruppen die "
+                                    + " zuerst glöscht werden müssen");
+                }
+            }
+            else
+            {
+
+                string products = "\r\n";
+                foreach (var item in onUsedProductGroup)
+                {
+                    products += "- "+ item.ToString() + "\r\n";
+                }
+                MessageBox.Show("Die Folgenden Artiekl sind in der Artikelgruppe "
+                                + selectedNode.Name + "(" + selectedNode.Text + ")"
+                                + " und können somit nicht gelöscht werden"
+                                + products);
+            }
+
+            LoadTreeViewDefault();                                                  // TreeView aktuallisieren
+            UnlockFields();                                                         // Eingabefelder Freigeben
         }
 
         private void TvProductGroup_AfterSelect(object sender, TreeViewEventArgs e)
@@ -98,62 +128,69 @@ namespace db_projektarbeit.View
             int selectId = int.Parse(selected.SelectedNode.Name);
             string name = selected.SelectedNode.Text;
 
-            TxtArtikelGruppeNr.Text = selectId.ToString();
-            TxtArtikelGruppeName.Text = name;
+            TxtProductGrupNr.Text = selectId.ToString();
+            TxtProductGrupName.Text = name;
         }
 
         private void CmdNewNode_Click(object sender, EventArgs e)
         {
-            var selectedNode = TvProductGroup.SelectedNode;
-            if (selectedNode.Parent == null)
+            if (TvProductGroup.SelectedNode != null)
             {
-
-                var newAritkelGroup = new ProductGroup()
+                var selectedNode = TvProductGroup.SelectedNode;
+                ProductGroup newAritkelGroup;
+                if (selectedNode.Parent == null)
                 {
-                    Name = TxtArtikelGruppeName.Text
-                };
-                ProductGroupControl.AddNode(newAritkelGroup);
 
-            }
-            else
-            {
-                var newAritkelGroup = new ProductGroup()
+                    newAritkelGroup = new ProductGroup()
+                    {
+                        Name = TxtProductGrupName.Text
+                    };
+                    ProductGroupControl.AddNode(newAritkelGroup);
+
+                }
+                else
                 {
-                    Name = TxtArtikelGruppeName.Text,
-                    ParentId = int.Parse(selectedNode.Name)
+                    newAritkelGroup = new ProductGroup()
+                    {
+                        Name = TxtProductGrupName.Text,
+                        ParentId = int.Parse(selectedNode.Parent.Name)
 
-                };
-                ProductGroupControl.AddNode(newAritkelGroup);
+                    };
+                    ProductGroupControl.AddNode(newAritkelGroup);
 
+                }
+
+                LoadTreeViewDefault();
             }
-
-            LoadTreeViewDefault();
         }
 
         private void CmdNewChildNode_Click(object sender, EventArgs e)
         {
-            var selectedNode = TvProductGroup.SelectedNode;
-            int selectId = int.Parse(selectedNode.Name);
-
-            var newAritkelGroup = new ProductGroup()
+            if (TvProductGroup.SelectedNode != null)
             {
-                Name = TxtArtikelGruppeName.Text,
-                ParentId = selectId
-            };
+                var selectedNode = TvProductGroup.SelectedNode;
+                int selectId = int.Parse(selectedNode.Name);
 
-            ProductGroupControl.AddNode(newAritkelGroup);
+                var newAritkelGroup = new ProductGroup()
+                {
+                    Name = TxtProductGrupName.Text,
+                    ParentId = selectId
+                };
 
-            LoadTreeViewDefault();
+                ProductGroupControl.AddNode(newAritkelGroup);
+
+                LoadTreeViewDefault();
+            }
         }
 
         private void UnlockFields()
         {
-            TxtArtikelGruppeName.ReadOnly = false;
+            TxtProductGrupName.ReadOnly = false;
         }
 
         private void LockFields()
         {
-            TxtArtikelGruppeName.ReadOnly = true;
+            TxtProductGrupName.ReadOnly = true;
         }
 
 

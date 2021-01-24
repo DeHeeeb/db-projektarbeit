@@ -12,10 +12,10 @@ namespace db_projektarbeit.Control
             return ProductModel.GetAll();
         }
 
-        /*public List<Customer> Search(string text)
+        public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            return ProductModel.Search(text);
-        }*/
+            return ProductModel.SearchUsedProductGroup(productGroup);
+        }
 
         public int Save(Product product)
         {

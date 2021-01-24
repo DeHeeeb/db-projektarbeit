@@ -48,7 +48,7 @@ namespace db_projektarbeit.Model
             return productGroups;
         }
 
-        public int AddNode(ProductGroup productGroup)
+        public int Add(ProductGroup productGroup)
         {
 
             using (var context = new ProjectContext())
@@ -67,11 +67,22 @@ namespace db_projektarbeit.Model
             return productGroup.Id;
         }
 
-        public int UpdateNode(ProductGroup productGroup)
+        public int Update(ProductGroup productGroup)
         {
             using (var context = new ProjectContext())
             {
                 context.ProductGroups.Update(productGroup);
+                context.SaveChanges();
+            }
+
+            return productGroup.Id;
+        }
+
+        public int Delete(ProductGroup productGroup)
+        {
+            using (var context = new ProjectContext())
+            {
+                context.ProductGroups.Remove(productGroup);
                 context.SaveChanges();
             }
 

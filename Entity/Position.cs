@@ -9,7 +9,7 @@ namespace db_projektarbeit
     {
         public int Id { get; set; }             // Id für Index
         public int Counter { get; set; }        // Anzahl der Itemes
-        public decimal Total { get; set; }      // gesammt Summe aller Artikel
+        public decimal Total { get; set; }      // gesammt Summe aller Producte
         public int? OrderId { get; set; }
         public Order Order { get; set; }
         public int? ProductId { get; set; }
