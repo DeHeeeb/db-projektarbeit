@@ -12,7 +12,7 @@ namespace db_projektarbeit
         public string LastName { get; set; }        // Nachname Kunde
         public string? CompanyName { get; set; }     // Firmenname
         public string Street { get; set; }          // Adresse
-        public  string HouseNumber { get; set; }    // Hausnummer
+        public  string? HouseNumber { get; set; }    // Hausnummer
         public int CityId { get; set; }             // 
         public City City { get; set; }              // City
 
