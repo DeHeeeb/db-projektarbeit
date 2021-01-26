@@ -12,6 +12,11 @@ namespace db_projektarbeit.Control
             return ProductModel.GetAll();
         }
 
+        public List<Product> Search(string text)
+        {
+            return ProductModel.Search(text);
+        }
+
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
             return ProductModel.SearchUsedProductGroup(productGroup);

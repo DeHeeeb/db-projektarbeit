@@ -37,7 +37,7 @@ namespace db_projektarbeit.View
                 LoadTable(ProductControl.GetAll());
             } else
             {
-                //LoadTable(ProductControl.Search(searchText));
+                LoadTable(ProductControl.Search(searchText));
             }
         }
 
