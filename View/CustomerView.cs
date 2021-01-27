@@ -123,12 +123,16 @@ namespace db_projektarbeit.View
             DgvCustomers.DataSource = customers;
 
             DgvCustomers.Columns[0].Visible = false;
-            DgvCustomers.Columns[5].Visible = false;
+            DgvCustomers.Columns[2].Visible = false;
+            DgvCustomers.Columns[3].Visible = false;
+            DgvCustomers.Columns[4].Visible = false;
             DgvCustomers.Columns[8].Visible = false;
+            DgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCustomers.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvCustomers.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvCustomers.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvCustomers.Columns[1].HeaderText = "Kunden-Nr";
-            DgvCustomers.Columns[2].HeaderText = "Vorname";
-            DgvCustomers.Columns[3].HeaderText = "Nachname";
-            DgvCustomers.Columns[4].HeaderText = "Firma";
+            DgvCustomers.Columns[5].HeaderText = "Name";
             DgvCustomers.Columns[6].HeaderText = "Strasse";
             DgvCustomers.Columns[7].HeaderText = "Nr";
             DgvCustomers.Columns[9].HeaderText = "PLZ / Stadt";

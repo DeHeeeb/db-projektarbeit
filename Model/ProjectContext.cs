@@ -1000,7 +1000,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 1,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 1,
                     ProductId = 1,
                     Total = 1M
@@ -1008,7 +1008,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 2,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 1,
                     ProductId = 4,
                     Total = 15M
@@ -1016,7 +1016,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 3,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 1,
                     ProductId = 5,
                     Total = 2.50M
@@ -1024,7 +1024,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 4,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 2,
                     ProductId = 8,
                     Total = 17.69M
@@ -1032,7 +1032,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 5,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 3,
                     ProductId = 3,
                     Total = 0M
@@ -1040,7 +1040,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 6,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 3,
                     ProductId = 7,
                     Total = 0M
@@ -1048,7 +1048,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 7,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 4,
                     ProductId = 8,
                     Total = 0M
@@ -1056,7 +1056,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 8,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 5,
                     ProductId = 8,
                     Total = 0M
@@ -1064,7 +1064,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 9,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 5,
                     ProductId = 8,
                     Total = 0M
@@ -1072,7 +1072,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 10,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 6,
                     ProductId = 10,
                     Total = 0M
@@ -1080,7 +1080,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 11,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 6,
                     ProductId = 11,
                     Total = 0M
@@ -1088,7 +1088,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 12,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 6,
                     ProductId = 12,
                     Total = 0M
@@ -1096,7 +1096,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 13,
-                    Counter = 8,
+                    Count = 8,
                     OrderId = 7,
                     ProductId = 3,
                     Total = 0M
@@ -1104,7 +1104,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 14,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 7,
                     ProductId = 8,
                     Total = 0M
@@ -1112,7 +1112,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 15,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 8,
                     ProductId = 12,
                     Total = 0M
@@ -1120,7 +1120,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 16,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 8,
                     ProductId = 1,
                     Total = 0M
@@ -1128,7 +1128,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 17,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 9,
                     ProductId = 2,
                     Total = 0M
@@ -1136,7 +1136,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 18,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 10,
                     ProductId = 5,
                     Total = 0M
@@ -1144,7 +1144,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 19,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 10,
                     ProductId = 12,
                     Total = 0M
@@ -1152,7 +1152,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 20,
-                    Counter = 4,
+                    Count = 4,
                     OrderId = 11,
                     ProductId = 7,
                     Total = 0M
@@ -1160,7 +1160,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 21,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 12,
                     ProductId = 8,
                     Total = 0M
@@ -1168,7 +1168,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 22,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 13,
                     ProductId = 9,
                     Total = 0M
@@ -1176,7 +1176,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 23,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 13,
                     ProductId = 2,
                     Total = 0M
@@ -1184,7 +1184,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 24,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 14,
                     ProductId = 5,
                     Total = 0M
@@ -1192,7 +1192,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 25,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 15,
                     ProductId = 11,
                     Total = 0M
@@ -1200,7 +1200,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 26,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 15,
                     ProductId = 12,
                     Total = 0M
@@ -1208,7 +1208,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 27,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 16,
                     ProductId = 2,
                     Total = 0M
@@ -1216,7 +1216,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 28,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 16,
                     ProductId = 3,
                     Total = 0M
@@ -1224,7 +1224,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 29,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 17,
                     ProductId = 3,
                     Total = 0M
@@ -1232,7 +1232,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 30,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 18,
                     ProductId = 9,
                     Total = 0M
@@ -1240,7 +1240,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 31,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 18,
                     ProductId = 3,
                     Total = 0M
@@ -1248,7 +1248,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 32,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 19,
                     ProductId = 10,
                     Total = 0M
@@ -1256,7 +1256,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 33,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 19,
                     ProductId = 11,
                     Total = 0M
@@ -1264,7 +1264,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 34,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 19,
                     ProductId = 12,
                     Total = 0M
@@ -1272,7 +1272,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 35,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 20,
                     ProductId = 3,
                     Total = 0M
@@ -1280,7 +1280,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 36,
-                    Counter = 3,
+                    Count = 3,
                     OrderId = 21,
                     ProductId = 5,
                     Total = 0M
@@ -1288,7 +1288,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 37,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 21,
                     ProductId = 8,
                     Total = 0M
@@ -1296,7 +1296,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 38,
-                    Counter = 1,
+                    Count = 1,
                     OrderId = 22,
                     ProductId = 8,
                     Total = 0M
@@ -1304,7 +1304,7 @@ namespace db_projektarbeit.Model
                 new Position
                 {
                     Id = 39,
-                    Counter = 2,
+                    Count = 2,
                     OrderId = 22,
                     ProductId = 3,
                     Total = 0M

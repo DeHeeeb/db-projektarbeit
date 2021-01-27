@@ -5,7 +5,7 @@ using System.Text;
 
 namespace db_projektarbeit
 {
-    class ProductGroup
+    public class ProductGroup
     {
         public int Id { get; set; }
         public int? ParentId { get; set; }

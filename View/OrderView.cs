@@ -96,7 +96,7 @@ namespace db_projektarbeit.View
 
         private void CmdEditPositions_Click(object sender, EventArgs e)
         {
-
+            new PositionView(selected.Positions).Show();
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
