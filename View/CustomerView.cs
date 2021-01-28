@@ -115,6 +115,7 @@ namespace db_projektarbeit.View
             TxtFirstName.Text = selected.FirstName;
             TxtLastName.Text = selected.LastName;
             TxtStreet.Text = selected.Street;
+            TxtHouseNumber.Text = selected.HouseNumber;
             CbxCity.SelectedValue = selected.City.Id;
         }
 
@@ -165,6 +166,11 @@ namespace db_projektarbeit.View
             TxtStreet.ReadOnly = false;
             TxtHouseNumber.ReadOnly = false;
             CbxCity.Enabled = true;
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
