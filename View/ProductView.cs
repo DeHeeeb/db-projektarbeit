@@ -37,7 +37,7 @@ namespace db_projektarbeit.View
                 LoadTable(ProductControl.GetAll());
             } else
             {
-                //LoadTable(ProductControl.Search(searchText));
+                LoadTable(ProductControl.Search(searchText));
             }
         }
 
@@ -108,6 +108,10 @@ namespace db_projektarbeit.View
             DgvProducts.Columns[0].Visible = false;
             DgvProducts.Columns[2].Visible = false;
             DgvProducts.Columns[6].Visible = false;
+            DgvProducts.Columns[7].Visible = false;
+            DgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvProducts.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvProducts.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvProducts.Columns[1].HeaderText = "Artikel-Nr";
             DgvProducts.Columns[3].HeaderText = "Artikelgruppe";
             DgvProducts.Columns[4].HeaderText = "Beschreibung";

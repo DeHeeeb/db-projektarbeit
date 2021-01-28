@@ -95,6 +95,8 @@ namespace db_projektarbeit.View
 
             DgvCities.Columns[0].Visible = false;
             DgvCities.Columns[3].Visible = false;
+            DgvCities.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCities.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvCities.Columns[1].HeaderText = "PLZ";
             DgvCities.Columns[2].HeaderText = "Name";
         }

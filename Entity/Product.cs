@@ -5,7 +5,7 @@ using System.Text;
 
 namespace db_projektarbeit
 {
-    class Product
+    public class Product
     {
         public int Id { get; set; }
         public int ProductNr { get; set; }
@@ -14,6 +14,8 @@ namespace db_projektarbeit
         public string Description { get; set; }
         public decimal Price { get; set; }
         public DateTime CreationDate { get; set; }
+        [NotMapped]
+        public string DisplayName => ToString();
 
         public override string ToString()
         {

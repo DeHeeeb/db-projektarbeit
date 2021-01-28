@@ -5,10 +5,10 @@ using System.Text;
 
 namespace db_projektarbeit
 {
-    class Position
+    public class Position
     {
         public int Id { get; set; }             // Id für Index
-        public int Counter { get; set; }        // Anzahl der Itemes
+        public int Count { get; set; }        // Anzahl der Itemes
         public decimal Total { get; set; }      // gesammt Summe aller Producte
         public int? OrderId { get; set; }
         public Order Order { get; set; }

@@ -129,7 +129,7 @@ namespace db_projektarbeit.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Counter = table.Column<int>(type: "int", nullable: false),
+                    Count = table.Column<int>(type: "int", nullable: false),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: true)
@@ -327,7 +327,7 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Positions",
-                columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
+                columns: new[] { "Id", "Count", "OrderId", "ProductId", "Total" },
                 values: new object[,]
                 {
                     { 10, 3, 6, 10, 0m },
@@ -370,7 +370,7 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Positions",
-                columns: new[] { "Id", "Counter", "OrderId", "ProductId", "Total" },
+                columns: new[] { "Id", "Count", "OrderId", "ProductId", "Total" },
                 values: new object[,]
                 {
                     { 3, 2, 1, 5, 2.50m },
