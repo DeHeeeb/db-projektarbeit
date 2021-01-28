@@ -36,8 +36,9 @@ namespace db_projektarbeit.View
             this.TxtProductGrupName = new System.Windows.Forms.TextBox();
             this.LblProductNr = new System.Windows.Forms.Label();
             this.TxtProductGrupNr = new System.Windows.Forms.TextBox();
-            this.NewChildNode = new System.Windows.Forms.Button();
+            this.CmdNewChildNode = new System.Windows.Forms.Button();
             this.CmdDelete = new System.Windows.Forms.Button();
+            this.CmdNewGroup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TvProductGroup
@@ -50,9 +51,9 @@ namespace db_projektarbeit.View
             // 
             // CmdUpdate
             // 
-            this.CmdUpdate.Location = new System.Drawing.Point(638, 343);
+            this.CmdUpdate.Location = new System.Drawing.Point(658, 343);
             this.CmdUpdate.Name = "CmdUpdate";
-            this.CmdUpdate.Size = new System.Drawing.Size(150, 29);
+            this.CmdUpdate.Size = new System.Drawing.Size(130, 29);
             this.CmdUpdate.TabIndex = 10;
             this.CmdUpdate.Text = "Speichern";
             this.CmdUpdate.UseVisualStyleBackColor = true;
@@ -60,12 +61,13 @@ namespace db_projektarbeit.View
             // 
             // CmdNewNode
             // 
-            this.CmdNewNode.Location = new System.Drawing.Point(398, 343);
+            this.CmdNewNode.Location = new System.Drawing.Point(513, 343);
             this.CmdNewNode.Name = "CmdNewNode";
-            this.CmdNewNode.Size = new System.Drawing.Size(150, 29);
+            this.CmdNewNode.Size = new System.Drawing.Size(130, 29);
             this.CmdNewNode.TabIndex = 15;
-            this.CmdNewNode.Text = "Neue Gruppe";
+            this.CmdNewNode.Text = "Gruppe";
             this.CmdNewNode.UseVisualStyleBackColor = true;
+            this.CmdNewNode.Visible = false;
             this.CmdNewNode.Click += new System.EventHandler(this.CmdNewNode_Click);
             // 
             // LblDescription
@@ -102,33 +104,45 @@ namespace db_projektarbeit.View
             this.TxtProductGrupNr.Size = new System.Drawing.Size(200, 27);
             this.TxtProductGrupNr.TabIndex = 11;
             // 
-            // NewChildNode
+            // CmdNewChildNode
             // 
-            this.NewChildNode.Location = new System.Drawing.Point(398, 385);
-            this.NewChildNode.Name = "NewChildNode";
-            this.NewChildNode.Size = new System.Drawing.Size(150, 29);
-            this.NewChildNode.TabIndex = 16;
-            this.NewChildNode.Text = "Neue Untergruppe";
-            this.NewChildNode.UseVisualStyleBackColor = true;
-            this.NewChildNode.Click += new System.EventHandler(this.CmdNewChildNode_Click);
+            this.CmdNewChildNode.Location = new System.Drawing.Point(513, 383);
+            this.CmdNewChildNode.Name = "CmdNewChildNode";
+            this.CmdNewChildNode.Size = new System.Drawing.Size(130, 29);
+            this.CmdNewChildNode.TabIndex = 16;
+            this.CmdNewChildNode.Text = "Untergruppe";
+            this.CmdNewChildNode.UseVisualStyleBackColor = true;
+            this.CmdNewChildNode.Visible = false;
+            this.CmdNewChildNode.Click += new System.EventHandler(this.CmdNewChildNode_Click);
             // 
             // CmdDelete
             // 
-            this.CmdDelete.Location = new System.Drawing.Point(638, 383);
+            this.CmdDelete.Location = new System.Drawing.Point(658, 383);
             this.CmdDelete.Name = "CmdDelete";
-            this.CmdDelete.Size = new System.Drawing.Size(150, 29);
+            this.CmdDelete.Size = new System.Drawing.Size(130, 29);
             this.CmdDelete.TabIndex = 17;
             this.CmdDelete.Text = "Löschen";
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
+            // 
+            // CmdNewGroup
+            // 
+            this.CmdNewGroup.Location = new System.Drawing.Point(368, 343);
+            this.CmdNewGroup.Name = "CmdNewGroup";
+            this.CmdNewGroup.Size = new System.Drawing.Size(130, 29);
+            this.CmdNewGroup.TabIndex = 18;
+            this.CmdNewGroup.Text = "Neuer Gruppe";
+            this.CmdNewGroup.UseVisualStyleBackColor = true;
+            this.CmdNewGroup.Click += new System.EventHandler(this.CmdNewGroup_Click);
             // 
             // ProductGroupView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CmdNewGroup);
             this.Controls.Add(this.CmdDelete);
-            this.Controls.Add(this.NewChildNode);
+            this.Controls.Add(this.CmdNewChildNode);
             this.Controls.Add(this.CmdNewNode);
             this.Controls.Add(this.LblDescription);
             this.Controls.Add(this.TxtProductGrupName);
@@ -152,7 +166,8 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.TextBox TxtProductGrupName;
         private System.Windows.Forms.Label LblProductNr;
         private System.Windows.Forms.TextBox TxtProductGrupNr;
-        private System.Windows.Forms.Button NewChildNode;
+        private System.Windows.Forms.Button CmdNewChildNode;
         private System.Windows.Forms.Button CmdDelete;
+        private System.Windows.Forms.Button CmdNewGroup;
     }
 }

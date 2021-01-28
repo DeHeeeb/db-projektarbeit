@@ -27,6 +27,8 @@ namespace db_projektarbeit.View
         {
             var arrayNodes = ProductGroupControl.ConvertToTreeNodes(ProductGroupControl.GetAll());
             LoadTreeView(arrayNodes);
+
+            TvProductGroup.ExpandAll();
         }
 
         public void LoadTreeView(TreeNode[] treeNodes)
@@ -130,6 +132,9 @@ namespace db_projektarbeit.View
 
             TxtProductGrupNr.Text = selectId.ToString();
             TxtProductGrupName.Text = name;
+
+            DeVisibleNewNode();
+            VisibleUpdateDelete();
         }
 
         private void CmdNewNode_Click(object sender, EventArgs e)
@@ -162,6 +167,7 @@ namespace db_projektarbeit.View
 
                 LoadTreeViewDefault();
             }
+            DeVisibleNewNode();
         }
 
         private void CmdNewChildNode_Click(object sender, EventArgs e)
@@ -181,6 +187,17 @@ namespace db_projektarbeit.View
 
                 LoadTreeViewDefault();
             }
+
+            DeVisibleNewNode();
+        }
+
+        private void CmdNewGroup_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            UnlockFields();
+            VisibleNewNode();
+            DeVisibleUpdateDelete();
+            TxtProductGrupNr.Text = "...";
         }
 
         private void UnlockFields()
@@ -191,6 +208,35 @@ namespace db_projektarbeit.View
         private void LockFields()
         {
             TxtProductGrupName.ReadOnly = true;
+        }
+
+        private void ClearFields()
+        {
+            TxtProductGrupName.Clear();
+        }
+
+        private void VisibleNewNode()
+        {
+            CmdNewNode.Visible = true;
+            CmdNewChildNode.Visible = true;
+        }
+
+        private void DeVisibleNewNode()
+        {
+            CmdNewNode.Visible = false;
+            CmdNewChildNode.Visible = false;
+        }
+
+        private void VisibleUpdateDelete()
+        {
+            CmdDelete.Visible = true;
+            CmdUpdate.Visible = true;
+        }
+
+        private void DeVisibleUpdateDelete()
+        {
+            CmdDelete.Visible = false;
+            CmdUpdate.Visible = false;
         }
 
 
