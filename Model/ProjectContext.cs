@@ -18,6 +18,7 @@ namespace db_projektarbeit.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // Server=(localdb)\\MSSQLLocalDB;Database=OrderManagement;MultipleActiveResultSets=True;Trusted_Connection=True
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
             optionsBuilder.EnableSensitiveDataLogging();
             //optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);

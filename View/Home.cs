@@ -6,11 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace db_projektarbeit.View
 {
     public partial class Home : Form
     {
+        HomeControl homeControl = new HomeControl();
+
         public Home()
         {
             InitializeComponent();
@@ -39,6 +42,19 @@ namespace db_projektarbeit.View
         private void CmdOrder_Click(object sender, EventArgs e)
         {
             new OrderView().Show();
+        }
+
+        private void TimerSQLCheck_Tick(object sender, EventArgs e)
+        {
+            var sqlCheck = homeControl.GetStatusSQL();
+            if (sqlCheck)
+            {
+                LblSQLCheck.Text = "SQL Server Verbunden";
+            }
+            else
+            {
+                LblSQLCheck.Text = "SQL Server nicht Verbunden";
+            }
         }
     }
 }
