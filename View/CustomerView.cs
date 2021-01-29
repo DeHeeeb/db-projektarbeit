@@ -180,7 +180,7 @@ namespace db_projektarbeit.View
 
             if (toDelete != 0)
             {
-                MessageBox.Show("Der Mitarbeiter konnte gelöscht werden.");
+                MessageBox.Show("Der Kunde konnte gelöscht werden.");
             }
             else
             {
