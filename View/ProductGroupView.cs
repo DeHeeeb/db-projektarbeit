@@ -46,7 +46,7 @@ namespace db_projektarbeit.View
                 var updateProductGroup = new ProductGroup()                 // Neues ProducteGruppe Element erzeugen
                 {
                     Id = int.Parse(selectedNode.Name),                      // Id des aktuellen Node         
-                    Name = TxtProductGrupName.Text                        // Anzeigetext
+                    Name = TxtProductGroupName.Text                        // Anzeigetext
                 };
                 ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
             }
@@ -55,7 +55,7 @@ namespace db_projektarbeit.View
                 var updateProductGroup = new ProductGroup()                 // hat der Node kein Elternelement
                 {
                     Id = int.Parse(selectedNode.Name),                      // Id des aktuellen Node
-                    Name = TxtProductGrupName.Text,                       // Anzeigetext
+                    Name = TxtProductGroupName.Text,                       // Anzeigetext
                     ParentId = int.Parse(selectedNode.Parent.Name)          // Id des Eltern Node
                 };
                 ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
@@ -77,7 +77,7 @@ namespace db_projektarbeit.View
                 deletedProductGroup = new ProductGroup()                            // Neues ProducteGruppen Element erzeugen
                 {
                     Id = int.Parse(selectedNode.Name),                              // Id des aktuellen Node         
-                    Name = TxtProductGrupName.Text                                  // Anzeigetext
+                    Name = TxtProductGroupName.Text                                  // Anzeigetext
                 };
             }
             else
@@ -85,7 +85,7 @@ namespace db_projektarbeit.View
                 deletedProductGroup = new ProductGroup()                            // hat der Node kein Elternelement
                 {
                     Id = int.Parse(selectedNode.Name),                              // Id des aktuellen Node
-                    Name = TxtProductGrupName.Text,                                 // Anzeigetext
+                    Name = TxtProductGroupName.Text,                                 // Anzeigetext
                     ParentId = int.Parse(selectedNode.Parent.Name)                  // Id des Eltern Node
                 };
             }
@@ -130,7 +130,7 @@ namespace db_projektarbeit.View
             string name = selected.SelectedNode.Text;
 
             TxtProductGrupNr.Text = selectId.ToString();
-            TxtProductGrupName.Text = name;
+            TxtProductGroupName.Text = name;
 
             DeVisibleNewNode();
             VisibleUpdateDelete();
@@ -147,7 +147,7 @@ namespace db_projektarbeit.View
 
                     newArtikelGroup = new ProductGroup()
                     {
-                        Name = TxtProductGrupName.Text
+                        Name = TxtProductGroupName.Text
                     };
                     ProductGroupControl.AddNode(newArtikelGroup);
 
@@ -156,7 +156,7 @@ namespace db_projektarbeit.View
                 {
                     newArtikelGroup = new ProductGroup()
                     {
-                        Name = TxtProductGrupName.Text,
+                        Name = TxtProductGroupName.Text,
                         ParentId = int.Parse(selectedNode.Parent.Name)
 
                     };
@@ -178,7 +178,7 @@ namespace db_projektarbeit.View
 
                 var newArtikelGroup = new ProductGroup()
                 {
-                    Name = TxtProductGrupName.Text,
+                    Name = TxtProductGroupName.Text,
                     ParentId = selectId
                 };
 
@@ -201,17 +201,17 @@ namespace db_projektarbeit.View
 
         private void UnlockFields()
         {
-            TxtProductGrupName.ReadOnly = false;
+            TxtProductGroupName.ReadOnly = false;
         }
 
         private void LockFields()
         {
-            TxtProductGrupName.ReadOnly = true;
+            TxtProductGroupName.ReadOnly = true;
         }
 
         private void ClearFields()
         {
-            TxtProductGrupName.Clear();
+            TxtProductGroupName.Clear();
         }
 
         private void VisibleNewNode()
