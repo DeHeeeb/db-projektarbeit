@@ -21,5 +21,18 @@ namespace db_projektarbeit.Control
         {
             return CustomerModel.Save(customer);
         }
+
+        public int Delete(Customer customer)
+        {
+            var deletedId = CustomerModel.Delete(customer);
+            if (deletedId != 0)
+            {
+                return deletedId;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

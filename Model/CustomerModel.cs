@@ -56,5 +56,23 @@ namespace db_projektarbeit.Model
                 return customer.Id;
             }
         }
+
+        public int Delete(Customer customer)
+        {
+            try
+            {
+                using (var context = new ProjectContext())
+                {
+                    context.Customers.Remove(customer);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return customer.Id;
+        }
     }
 }

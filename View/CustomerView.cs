@@ -175,7 +175,20 @@ namespace db_projektarbeit.View
 
         private void CmdDelete_Click(object sender, EventArgs e)
         {
+            LockFields();
+            var toDelete = CustomerControl.Delete(selected);
 
+            if (toDelete != 0)
+            {
+                MessageBox.Show("Der Mitarbeiter konnte gelöscht werden.");
+            }
+            else
+            {
+                MessageBox.Show("Verlinkte Aufträge gefunden. Bitte löschen Sie diese zuerst.");
+            }
+
+            UnlockFields();
+            LoadTable(CustomerControl.GetAll());
         }
 
         private void LockFields()
@@ -185,6 +198,7 @@ namespace db_projektarbeit.View
             TxtLastName.ReadOnly = true;
             TxtStreet.ReadOnly = true;
             TxtHouseNumber.ReadOnly = true;
+            CbxCity.Enabled = false;
         }
     }
 }
