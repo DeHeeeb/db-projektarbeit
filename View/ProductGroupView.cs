@@ -101,8 +101,7 @@ namespace db_projektarbeit.View
                 }
                 else
                 {
-                    MessageBox.Show("Die Artkielgruppe hat noch untergruppen die "
-                                    + " zuerst glöscht werden müssen");
+                    MessageBox.Show("Die Artikelgruppe hat noch Untergruppen die zuerst gelöscht werden müssen.");
                 }
             }
             else
@@ -113,9 +112,9 @@ namespace db_projektarbeit.View
                 {
                     products += "- "+ item.ToString() + "\r\n";
                 }
-                MessageBox.Show("Die Folgenden Artiekl sind in der Artikelgruppe "
-                                + selectedNode.Name + "(" + selectedNode.Text + ")"
-                                + " und können somit nicht gelöscht werden"
+                MessageBox.Show("Die folgenden Artikel sind in der Artikelgruppe "
+                                + selectedNode.Name + " (" + selectedNode.Text + ")"
+                                + " und können somit nicht gelöscht werden."
                                 + products);
             }
 
@@ -142,26 +141,26 @@ namespace db_projektarbeit.View
             if (TvProductGroup.SelectedNode != null)
             {
                 var selectedNode = TvProductGroup.SelectedNode;
-                ProductGroup newAritkelGroup;
+                ProductGroup newArtikelGroup;
                 if (selectedNode.Parent == null)
                 {
 
-                    newAritkelGroup = new ProductGroup()
+                    newArtikelGroup = new ProductGroup()
                     {
                         Name = TxtProductGrupName.Text
                     };
-                    ProductGroupControl.AddNode(newAritkelGroup);
+                    ProductGroupControl.AddNode(newArtikelGroup);
 
                 }
                 else
                 {
-                    newAritkelGroup = new ProductGroup()
+                    newArtikelGroup = new ProductGroup()
                     {
                         Name = TxtProductGrupName.Text,
                         ParentId = int.Parse(selectedNode.Parent.Name)
 
                     };
-                    ProductGroupControl.AddNode(newAritkelGroup);
+                    ProductGroupControl.AddNode(newArtikelGroup);
 
                 }
 
@@ -177,13 +176,13 @@ namespace db_projektarbeit.View
                 var selectedNode = TvProductGroup.SelectedNode;
                 int selectId = int.Parse(selectedNode.Name);
 
-                var newAritkelGroup = new ProductGroup()
+                var newArtikelGroup = new ProductGroup()
                 {
                     Name = TxtProductGrupName.Text,
                     ParentId = selectId
                 };
 
-                ProductGroupControl.AddNode(newAritkelGroup);
+                ProductGroupControl.AddNode(newArtikelGroup);
 
                 LoadTreeViewDefault();
             }
