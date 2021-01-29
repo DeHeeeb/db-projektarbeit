@@ -172,5 +172,10 @@ namespace db_projektarbeit.View
         {
 
         }
+
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
