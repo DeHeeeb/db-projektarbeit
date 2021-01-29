@@ -177,5 +177,14 @@ namespace db_projektarbeit.View
         {
 
         }
+
+        private void LockFields()
+        {
+            TxtCompanyName.ReadOnly = true;
+            TxtFirstName.ReadOnly = true;
+            TxtLastName.ReadOnly = true;
+            TxtStreet.ReadOnly = true;
+            TxtHouseNumber.ReadOnly = true;
+        }
     }
 }
