@@ -14,7 +14,7 @@ namespace db_projektarbeit.View
         ProductControl ProductControl = new ProductControl();
         Position selected = new Position();
         List<Position> allPositions = new List<Position>();
-
+        
         public PositionView(List<Position> positions)
         {
             allPositions = positions;

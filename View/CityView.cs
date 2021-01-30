@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using db_projektarbeit.Control;
+using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
@@ -13,14 +14,6 @@ namespace db_projektarbeit.View
     {
         CityControl CityControl = new CityControl();
         City selected = new City();
-
-        private string[] messageCaption =
-        {
-            "SUCCESS",
-            "ERROR",
-            "QUESTION",
-            "INFORMATION"
-        };
 
         public CityView()
         {
@@ -125,34 +118,34 @@ namespace db_projektarbeit.View
         private void CmdDelete_Click(object sender, EventArgs e)
         {
             LockFields();
-            var toDelete = CityControl.Delete(selected);
-
-            DialogResult dialogResult = MessageBox.Show("Möchten Sie diesen Datensatz wirklich löschen?",
-                messageCaption[2],
+            
+            DialogResult dialogResult = MessageBox.Show(MessageBoxConstants.TextQuestionSureToDelete,
+                MessageBoxConstants.CaptionQuestion,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes)
             {
+                var toDelete = CityControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show("Datensatz wurde erfolgreich gelöscht.",
-                        messageCaption[0],
+                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete, "Der Datensatz"),
+                        MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Löschen aufgrund verlinkter Adressen nicht möglich. \r\nBitte löschen Sie zuerst die entsprechenden Datensätze.",
-                        messageCaption[1],
+                    MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Adressen"),
+                        MessageBoxConstants.CaptionError,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else if (dialogResult == DialogResult.No)
             {
-                MessageBox.Show("Datensatz wird nicht gelöscht.",
-                    messageCaption[3],
+                MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                    MessageBoxConstants.CaptionInformation,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }

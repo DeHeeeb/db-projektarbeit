@@ -60,5 +60,23 @@ namespace db_projektarbeit.Model
                 return order.Id;
             }
         }
+
+        public int Delete(Order order)
+        {
+            try
+            {
+                using (var context = new ProjectContext())
+                {
+                    context.Orders.Remove(order);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return order.Id;
+        }
     }
 }

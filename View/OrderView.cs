@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
@@ -182,6 +183,52 @@ namespace db_projektarbeit.View
             DtpDate.Value = DateTime.Now.Date;
             CbxCustomer.SelectedIndex = 0;
             TxtComment.Clear();
+        }
+
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+            LockFields();
+
+            DialogResult dialogResult = MessageBox.Show(MessageBoxConstants.TextQuestionSureToDelete,
+                MessageBoxConstants.CaptionQuestion,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var toDelete = OrderControl.Delete(selected);
+                if (toDelete != 0)
+                {
+                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete, "Der Auftrag"),
+                        MessageBoxConstants.CaptionSuccess,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                    MessageBoxConstants.CaptionInformation,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            UnlockFields();
+            LoadOrderTable((OrderControl.GetAll()));
+        }
+
+        private void LockFields()
+        {
+            DtpDate.Enabled = false;
+            CbxCustomer.Enabled = false;
+            TxtComment.ReadOnly = true;
         }
     }
 }

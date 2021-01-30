@@ -29,15 +29,7 @@ namespace db_projektarbeit.Control
 
         public int Delete(City city)
         {
-            var deletedId = CityModel.Delete(city);
-            if (deletedId != 0)
-            {
-                return deletedId;
-            }
-            else
-            {
-                return 0;
-            }
+            return CityModel.Delete(city);
         }
     }
 }

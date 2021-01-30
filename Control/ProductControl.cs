@@ -29,15 +29,7 @@ namespace db_projektarbeit.Control
 
         public int Delete(Product product)
         {
-            var deletedId = ProductModel.Delete(product);
-            if (deletedId != 0)
-            {
-                return deletedId;
-            }
-            else
-            {
-                return 0;
-            }
+            return ProductModel.Delete(product);
         }
     }
 }

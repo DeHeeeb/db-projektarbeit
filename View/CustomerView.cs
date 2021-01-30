@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
@@ -14,14 +15,6 @@ namespace db_projektarbeit.View
         CustomerControl CustomerControl = new CustomerControl();
         CityControl CityControl = new CityControl();
         Customer selected = new Customer();
-
-        private string[] messageCaption =
-        {
-            "SUCCESS",
-            "ERROR",
-            "QUESTION",
-            "INFORMATION"
-        };
 
         public CustomerView()
         {
@@ -184,38 +177,37 @@ namespace db_projektarbeit.View
         private void CmdDelete_Click(object sender, EventArgs e)
         {
             LockFields();
-            var toDelete = CustomerControl.Delete(selected);
 
-            DialogResult dialogResult = MessageBox.Show("Möchten Sie diesen Datensatz wirklich löschen?",
-                messageCaption[2],
+            DialogResult dialogResult = MessageBox.Show(MessageBoxConstants.TextQuestionSureToDelete,
+                MessageBoxConstants.CaptionQuestion,
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes)
             {
+                var toDelete = CustomerControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show("Der Kunde konnte erfolgreich gelöscht werden.",
-                        messageCaption[0],
+                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete,"Der Kunde"),
+                        MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Löschen aufgrund verlinkter Aufträge nicht möglich. Bitte löschen Sie die Aufträge zuerst.",
-                        messageCaption[1],
+                    MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink,"Aufträge"),
+                        MessageBoxConstants.CaptionError,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             }
             else if (dialogResult == DialogResult.No)
             {
-                MessageBox.Show("Datensatz wird nicht gelöscht.",
-                    messageCaption[3],
+                MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                    MessageBoxConstants.CaptionInformation,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-
             UnlockFields();
             LoadTable(CustomerControl.GetAll());
         }

@@ -22,5 +22,10 @@ namespace db_projektarbeit.Control
         {
             return OrderModel.Save(order);
         }
+
+        public int Delete(Order order)
+        {
+            return OrderModel.Delete(order);
+        }
     }
 }
