@@ -34,6 +34,11 @@ namespace db_projektarbeit.View
             UnlockFields();
         }
 
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void CmdEditProduct_Click(object sender, EventArgs e)
         {
             ProductView productView = new ProductView();
@@ -76,15 +81,15 @@ namespace db_projektarbeit.View
             DgvPositions.DataSource = positions;
 
             DgvPositions.Columns[0].Visible = false;
+            DgvPositions.Columns[2].Visible = false;
             DgvPositions.Columns[3].Visible = false;
             DgvPositions.Columns[4].Visible = false;
-            DgvPositions.Columns[5].Visible = false;
             DgvPositions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvPositions.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            DgvPositions.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvPositions.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvPositions.Columns[1].HeaderText = "Anzahl";
-            DgvPositions.Columns[2].HeaderText = "Preis";
-            DgvPositions.Columns[6].HeaderText = "Produkt";
+            DgvPositions.Columns[5].HeaderText = "Produkt";
+            DgvPositions.Columns[6].HeaderText = "Preis";
         }
 
         private void LoadCombobox(List<Product> products)

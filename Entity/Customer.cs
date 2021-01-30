@@ -13,7 +13,6 @@ namespace db_projektarbeit
         public string FirstName { get; set; }       // Vorname Kunde
         public string LastName { get; set; }        // Nachname Kunde
         public string? CompanyName { get; set; }     // Firmenname
-        [NotMapped]
         public string FullName => ToString();
         public string Street { get; set; }          // Adresse
         public  string? HouseNumber { get; set; }    // Hausnummer

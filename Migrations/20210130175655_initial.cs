@@ -130,7 +130,6 @@ namespace db_projektarbeit.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Count = table.Column<int>(type: "int", nullable: false),
-                    Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderId = table.Column<int>(type: "int", nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: true)
                 },
@@ -327,34 +326,34 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Positions",
-                columns: new[] { "Id", "Count", "OrderId", "ProductId", "Total" },
+                columns: new[] { "Id", "Count", "OrderId", "ProductId" },
                 values: new object[,]
                 {
-                    { 10, 3, 6, 10, 0m },
-                    { 2, 3, 1, 4, 15m },
-                    { 39, 2, 22, 3, 0m },
-                    { 35, 1, 20, 3, 0m },
-                    { 31, 2, 18, 3, 0m },
-                    { 29, 1, 17, 3, 0m },
-                    { 28, 1, 16, 3, 0m },
-                    { 13, 8, 7, 3, 0m },
-                    { 5, 1, 3, 3, 0m },
-                    { 22, 3, 13, 9, 0m },
-                    { 23, 2, 13, 2, 0m },
-                    { 17, 3, 9, 2, 0m },
-                    { 27, 1, 16, 2, 0m },
-                    { 1, 1, 1, 1, 1m },
-                    { 15, 2, 8, 12, 0m },
-                    { 34, 1, 19, 12, 0m },
-                    { 33, 2, 19, 11, 0m },
-                    { 32, 2, 19, 10, 0m },
-                    { 26, 1, 15, 12, 0m },
-                    { 25, 2, 15, 11, 0m },
-                    { 19, 1, 10, 12, 0m },
-                    { 12, 3, 6, 12, 0m },
-                    { 11, 1, 6, 11, 0m },
-                    { 16, 1, 8, 1, 0m },
-                    { 30, 1, 18, 9, 0m }
+                    { 10, 3, 6, 10 },
+                    { 2, 3, 1, 4 },
+                    { 39, 2, 22, 3 },
+                    { 35, 1, 20, 3 },
+                    { 31, 2, 18, 3 },
+                    { 29, 1, 17, 3 },
+                    { 28, 1, 16, 3 },
+                    { 13, 8, 7, 3 },
+                    { 5, 1, 3, 3 },
+                    { 22, 3, 13, 9 },
+                    { 23, 2, 13, 2 },
+                    { 17, 3, 9, 2 },
+                    { 27, 1, 16, 2 },
+                    { 1, 1, 1, 1 },
+                    { 15, 2, 8, 12 },
+                    { 34, 1, 19, 12 },
+                    { 33, 2, 19, 11 },
+                    { 32, 2, 19, 10 },
+                    { 26, 1, 15, 12 },
+                    { 25, 2, 15, 11 },
+                    { 19, 1, 10, 12 },
+                    { 12, 3, 6, 12 },
+                    { 11, 1, 6, 11 },
+                    { 16, 1, 8, 1 },
+                    { 30, 1, 18, 9 }
                 });
 
             migrationBuilder.InsertData(
@@ -370,23 +369,23 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Positions",
-                columns: new[] { "Id", "Count", "OrderId", "ProductId", "Total" },
+                columns: new[] { "Id", "Count", "OrderId", "ProductId" },
                 values: new object[,]
                 {
-                    { 3, 2, 1, 5, 2.50m },
-                    { 18, 2, 10, 5, 0m },
-                    { 24, 1, 14, 5, 0m },
-                    { 36, 3, 21, 5, 0m },
-                    { 6, 3, 3, 7, 0m },
-                    { 20, 4, 11, 7, 0m },
-                    { 4, 1, 2, 8, 17.69m },
-                    { 7, 2, 4, 8, 0m },
-                    { 8, 2, 5, 8, 0m },
-                    { 9, 2, 5, 8, 0m },
-                    { 14, 1, 7, 8, 0m },
-                    { 21, 1, 12, 8, 0m },
-                    { 37, 1, 21, 8, 0m },
-                    { 38, 1, 22, 8, 0m }
+                    { 3, 2, 1, 5 },
+                    { 18, 2, 10, 5 },
+                    { 24, 1, 14, 5 },
+                    { 36, 3, 21, 5 },
+                    { 6, 3, 3, 7 },
+                    { 20, 4, 11, 7 },
+                    { 4, 1, 2, 8 },
+                    { 7, 2, 4, 8 },
+                    { 8, 2, 5, 8 },
+                    { 9, 2, 5, 8 },
+                    { 14, 1, 7, 8 },
+                    { 21, 1, 12, 8 },
+                    { 37, 1, 21, 8 },
+                    { 38, 1, 22, 8 }
                 });
 
             migrationBuilder.CreateIndex(

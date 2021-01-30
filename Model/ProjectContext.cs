@@ -40,34 +40,26 @@ namespace db_projektarbeit.Model
                 .Property(p => p.ProductNr)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.ProductNr");
 
+            modelBuilder.Entity<City>()
+                .Ignore(c => c.DisplayName);
+
+            modelBuilder.Entity<Order>()
+                .Ignore(o => o.Total);
+
+            modelBuilder.Entity<Position>()
+                .Ignore(p => p.Total);
+
             modelBuilder.Entity<Customer>()
+                .Ignore(c => c.FullName)
                 .HasOne(c => c.City);
 
             modelBuilder.Entity<Product>()
-                .HasOne(c => c.Group);
+                .Ignore(p => p.DisplayName)
+                .HasOne(p => p.Group);
 
             modelBuilder.Entity<ProductGroup>()
                 .HasOne(p => p.Parent)                  // Hat immer ein Eltern Element
                 .WithMany(p => p.Children);             // Bezihungen zischen einem und Mehreren Elementen
-                /*.HasForeignKey(p => p.ParentId)       // Fremdschlüssel zu Eltern Element
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict);*/   // Rekursives löschen
-
-            //modelBuilder.Entity<Order>()
-            //     .HasOne<Customer>()
-            //     .WithMany()
-            //     .HasForeignKey(c => c.CustomerId);
-
-            //modelBuilder.Entity<Order>()
-            //     .HasMany<Position>()
-            //     .WithOne()
-            //     .HasForeignKey(c => c.OrderId);
-
-            //modelBuilder.Entity<Position>()
-            //    .HasOne(p => p.Product);
-
-            //modelBuilder.Entity<Position>()
-            //    .HasOne(o => o.Order);
 
             #region List of City
             var cities = new List<City>
@@ -1003,312 +995,273 @@ namespace db_projektarbeit.Model
                     Id = 1,
                     Count = 1,
                     OrderId = 1,
-                    ProductId = 1,
-                    Total = 1M
+                    ProductId = 1
                 },
                 new Position
                 {
                     Id = 2,
                     Count = 3,
                     OrderId = 1,
-                    ProductId = 4,
-                    Total = 15M
+                    ProductId = 4
                 },
                 new Position
                 {
                     Id = 3,
                     Count = 2,
                     OrderId = 1,
-                    ProductId = 5,
-                    Total = 2.50M
+                    ProductId = 5
                 },
                 new Position
                 {
                     Id = 4,
                     Count = 1,
                     OrderId = 2,
-                    ProductId = 8,
-                    Total = 17.69M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 5,
                     Count = 1,
                     OrderId = 3,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 6,
                     Count = 3,
                     OrderId = 3,
-                    ProductId = 7,
-                    Total = 0M
+                    ProductId = 7
                 },
                 new Position
                 {
                     Id = 7,
                     Count = 2,
                     OrderId = 4,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 8,
                     Count = 2,
                     OrderId = 5,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 9,
                     Count = 2,
                     OrderId = 5,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 10,
                     Count = 3,
                     OrderId = 6,
-                    ProductId = 10,
-                    Total = 0M
+                    ProductId = 10
                 },
                 new Position
                 {
                     Id = 11,
                     Count = 1,
                     OrderId = 6,
-                    ProductId = 11,
-                    Total = 0M
+                    ProductId = 11
                 },
                 new Position
                 {
                     Id = 12,
                     Count = 3,
                     OrderId = 6,
-                    ProductId = 12,
-                    Total = 0M
+                    ProductId = 12
                 },
                 new Position
                 {
                     Id = 13,
                     Count = 8,
                     OrderId = 7,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 14,
                     Count = 1,
                     OrderId = 7,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 15,
                     Count = 2,
                     OrderId = 8,
-                    ProductId = 12,
-                    Total = 0M
+                    ProductId = 12
                 },
                 new Position
                 {
                     Id = 16,
                     Count = 1,
                     OrderId = 8,
-                    ProductId = 1,
-                    Total = 0M
+                    ProductId = 1
                 },
                 new Position
                 {
                     Id = 17,
                     Count = 3,
                     OrderId = 9,
-                    ProductId = 2,
-                    Total = 0M
+                    ProductId = 2
                 },
                 new Position
                 {
                     Id = 18,
                     Count = 2,
                     OrderId = 10,
-                    ProductId = 5,
-                    Total = 0M
+                    ProductId = 5
                 },
                 new Position
                 {
                     Id = 19,
                     Count = 1,
                     OrderId = 10,
-                    ProductId = 12,
-                    Total = 0M
+                    ProductId = 12
                 },
                 new Position
                 {
                     Id = 20,
                     Count = 4,
                     OrderId = 11,
-                    ProductId = 7,
-                    Total = 0M
+                    ProductId = 7
                 },
                 new Position
                 {
                     Id = 21,
                     Count = 1,
                     OrderId = 12,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 22,
                     Count = 3,
                     OrderId = 13,
-                    ProductId = 9,
-                    Total = 0M
+                    ProductId = 9
                 },
                 new Position
                 {
                     Id = 23,
                     Count = 2,
                     OrderId = 13,
-                    ProductId = 2,
-                    Total = 0M
+                    ProductId = 2
                 },
                 new Position
                 {
                     Id = 24,
                     Count = 1,
                     OrderId = 14,
-                    ProductId = 5,
-                    Total = 0M
+                    ProductId = 5
                 },
                 new Position
                 {
                     Id = 25,
                     Count = 2,
                     OrderId = 15,
-                    ProductId = 11,
-                    Total = 0M
+                    ProductId = 11
                 },
                 new Position
                 {
                     Id = 26,
                     Count = 1,
                     OrderId = 15,
-                    ProductId = 12,
-                    Total = 0M
+                    ProductId = 12
                 },
                 new Position
                 {
                     Id = 27,
                     Count = 1,
                     OrderId = 16,
-                    ProductId = 2,
-                    Total = 0M
+                    ProductId = 2
                 },
                 new Position
                 {
                     Id = 28,
                     Count = 1,
                     OrderId = 16,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 29,
                     Count = 1,
                     OrderId = 17,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 30,
                     Count = 1,
                     OrderId = 18,
-                    ProductId = 9,
-                    Total = 0M
+                    ProductId = 9
                 },
                 new Position
                 {
                     Id = 31,
                     Count = 2,
                     OrderId = 18,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 32,
                     Count = 2,
                     OrderId = 19,
-                    ProductId = 10,
-                    Total = 0M
+                    ProductId = 10
                 },
                 new Position
                 {
                     Id = 33,
                     Count = 2,
                     OrderId = 19,
-                    ProductId = 11,
-                    Total = 0M
+                    ProductId = 11
                 },
                 new Position
                 {
                     Id = 34,
                     Count = 1,
                     OrderId = 19,
-                    ProductId = 12,
-                    Total = 0M
+                    ProductId = 12
                 },
                 new Position
                 {
                     Id = 35,
                     Count = 1,
                     OrderId = 20,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 },
                 new Position
                 {
                     Id = 36,
                     Count = 3,
                     OrderId = 21,
-                    ProductId = 5,
-                    Total = 0M
+                    ProductId = 5
                 },
                 new Position
                 {
                     Id = 37,
                     Count = 1,
                     OrderId = 21,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 38,
                     Count = 1,
                     OrderId = 22,
-                    ProductId = 8,
-                    Total = 0M
+                    ProductId = 8
                 },
                 new Position
                 {
                     Id = 39,
                     Count = 2,
                     OrderId = 22,
-                    ProductId = 3,
-                    Total = 0M
+                    ProductId = 3
                 }
             };
             #endregion

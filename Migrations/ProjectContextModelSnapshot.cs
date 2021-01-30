@@ -883,9 +883,6 @@ namespace db_projektarbeit.Migrations
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(18,2)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
@@ -900,312 +897,273 @@ namespace db_projektarbeit.Migrations
                             Id = 1,
                             Count = 1,
                             OrderId = 1,
-                            ProductId = 1,
-                            Total = 1m
+                            ProductId = 1
                         },
                         new
                         {
                             Id = 2,
                             Count = 3,
                             OrderId = 1,
-                            ProductId = 4,
-                            Total = 15m
+                            ProductId = 4
                         },
                         new
                         {
                             Id = 3,
                             Count = 2,
                             OrderId = 1,
-                            ProductId = 5,
-                            Total = 2.50m
+                            ProductId = 5
                         },
                         new
                         {
                             Id = 4,
                             Count = 1,
                             OrderId = 2,
-                            ProductId = 8,
-                            Total = 17.69m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 5,
                             Count = 1,
                             OrderId = 3,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 6,
                             Count = 3,
                             OrderId = 3,
-                            ProductId = 7,
-                            Total = 0m
+                            ProductId = 7
                         },
                         new
                         {
                             Id = 7,
                             Count = 2,
                             OrderId = 4,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 8,
                             Count = 2,
                             OrderId = 5,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 9,
                             Count = 2,
                             OrderId = 5,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 10,
                             Count = 3,
                             OrderId = 6,
-                            ProductId = 10,
-                            Total = 0m
+                            ProductId = 10
                         },
                         new
                         {
                             Id = 11,
                             Count = 1,
                             OrderId = 6,
-                            ProductId = 11,
-                            Total = 0m
+                            ProductId = 11
                         },
                         new
                         {
                             Id = 12,
                             Count = 3,
                             OrderId = 6,
-                            ProductId = 12,
-                            Total = 0m
+                            ProductId = 12
                         },
                         new
                         {
                             Id = 13,
                             Count = 8,
                             OrderId = 7,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 14,
                             Count = 1,
                             OrderId = 7,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 15,
                             Count = 2,
                             OrderId = 8,
-                            ProductId = 12,
-                            Total = 0m
+                            ProductId = 12
                         },
                         new
                         {
                             Id = 16,
                             Count = 1,
                             OrderId = 8,
-                            ProductId = 1,
-                            Total = 0m
+                            ProductId = 1
                         },
                         new
                         {
                             Id = 17,
                             Count = 3,
                             OrderId = 9,
-                            ProductId = 2,
-                            Total = 0m
+                            ProductId = 2
                         },
                         new
                         {
                             Id = 18,
                             Count = 2,
                             OrderId = 10,
-                            ProductId = 5,
-                            Total = 0m
+                            ProductId = 5
                         },
                         new
                         {
                             Id = 19,
                             Count = 1,
                             OrderId = 10,
-                            ProductId = 12,
-                            Total = 0m
+                            ProductId = 12
                         },
                         new
                         {
                             Id = 20,
                             Count = 4,
                             OrderId = 11,
-                            ProductId = 7,
-                            Total = 0m
+                            ProductId = 7
                         },
                         new
                         {
                             Id = 21,
                             Count = 1,
                             OrderId = 12,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 22,
                             Count = 3,
                             OrderId = 13,
-                            ProductId = 9,
-                            Total = 0m
+                            ProductId = 9
                         },
                         new
                         {
                             Id = 23,
                             Count = 2,
                             OrderId = 13,
-                            ProductId = 2,
-                            Total = 0m
+                            ProductId = 2
                         },
                         new
                         {
                             Id = 24,
                             Count = 1,
                             OrderId = 14,
-                            ProductId = 5,
-                            Total = 0m
+                            ProductId = 5
                         },
                         new
                         {
                             Id = 25,
                             Count = 2,
                             OrderId = 15,
-                            ProductId = 11,
-                            Total = 0m
+                            ProductId = 11
                         },
                         new
                         {
                             Id = 26,
                             Count = 1,
                             OrderId = 15,
-                            ProductId = 12,
-                            Total = 0m
+                            ProductId = 12
                         },
                         new
                         {
                             Id = 27,
                             Count = 1,
                             OrderId = 16,
-                            ProductId = 2,
-                            Total = 0m
+                            ProductId = 2
                         },
                         new
                         {
                             Id = 28,
                             Count = 1,
                             OrderId = 16,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 29,
                             Count = 1,
                             OrderId = 17,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 30,
                             Count = 1,
                             OrderId = 18,
-                            ProductId = 9,
-                            Total = 0m
+                            ProductId = 9
                         },
                         new
                         {
                             Id = 31,
                             Count = 2,
                             OrderId = 18,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 32,
                             Count = 2,
                             OrderId = 19,
-                            ProductId = 10,
-                            Total = 0m
+                            ProductId = 10
                         },
                         new
                         {
                             Id = 33,
                             Count = 2,
                             OrderId = 19,
-                            ProductId = 11,
-                            Total = 0m
+                            ProductId = 11
                         },
                         new
                         {
                             Id = 34,
                             Count = 1,
                             OrderId = 19,
-                            ProductId = 12,
-                            Total = 0m
+                            ProductId = 12
                         },
                         new
                         {
                             Id = 35,
                             Count = 1,
                             OrderId = 20,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         },
                         new
                         {
                             Id = 36,
                             Count = 3,
                             OrderId = 21,
-                            ProductId = 5,
-                            Total = 0m
+                            ProductId = 5
                         },
                         new
                         {
                             Id = 37,
                             Count = 1,
                             OrderId = 21,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 38,
                             Count = 1,
                             OrderId = 22,
-                            ProductId = 8,
-                            Total = 0m
+                            ProductId = 8
                         },
                         new
                         {
                             Id = 39,
                             Count = 2,
                             OrderId = 22,
-                            ProductId = 3,
-                            Total = 0m
+                            ProductId = 3
                         });
                 });
 

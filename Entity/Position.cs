@@ -7,12 +7,17 @@ namespace db_projektarbeit
 {
     public class Position
     {
-        public int Id { get; set; }             // Id für Index
-        public int Count { get; set; }        // Anzahl der Itemes
-        public decimal Total { get; set; }      // gesammt Summe aller Producte
+        public int Id { get; set; }
+        public int Count { get; set; }
         public int? OrderId { get; set; }
         public Order Order { get; set; }
         public int? ProductId { get; set; }
-        public Product Product { get; set; }   // Product
+        public Product Product { get; set; }
+        public decimal Total => GetTotal();
+
+        public decimal GetTotal()
+        {
+            return Count * Product.Price;
+        }
     }
 }

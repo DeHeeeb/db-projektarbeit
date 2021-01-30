@@ -33,6 +33,7 @@ namespace db_projektarbeit.View
             DgvOrder.Columns[0].Visible = false;
             DgvOrder.Columns[2].Visible = false;
             DgvOrder.Columns[3].Visible = false;
+            DgvOrder.Columns[5].Visible = false;
             DgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvOrder.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvOrder.Columns[1].HeaderText = "Datum";
@@ -46,15 +47,15 @@ namespace db_projektarbeit.View
                 DgvPosition.DataSource = positions;
 
                 DgvPosition.Columns[0].Visible = false;
+                DgvPosition.Columns[2].Visible = false;
                 DgvPosition.Columns[3].Visible = false;
                 DgvPosition.Columns[4].Visible = false;
-                DgvPosition.Columns[5].Visible = false;
                 DgvPosition.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 DgvPosition.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-                DgvPosition.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                DgvPosition.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
                 DgvPosition.Columns[1].HeaderText = "Anzahl";
-                DgvPosition.Columns[2].HeaderText = "Preis";
-                DgvPosition.Columns[6].HeaderText = "Produkt";
+                DgvPosition.Columns[5].HeaderText = "Produkt";
+                DgvPosition.Columns[6].HeaderText = "Preis";
             }
         }
 
@@ -69,7 +70,7 @@ namespace db_projektarbeit.View
         {
             if (selected.Positions != null)
             {
-                NumTotal.Value = selected.Positions.Sum(p => p.Total);
+                NumTotal.Value = selected.Total;
             }
         }
 
