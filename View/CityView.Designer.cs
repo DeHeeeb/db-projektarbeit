@@ -166,6 +166,7 @@ namespace db_projektarbeit.View
             this.CmdDelete.TabIndex = 29;
             this.CmdDelete.Text = "Löschen";
             this.CmdDelete.UseVisualStyleBackColor = true;
+            this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
             // CityView
             // 

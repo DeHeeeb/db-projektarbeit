@@ -113,5 +113,10 @@ namespace db_projektarbeit.View
             NumZip.ReadOnly = false;
             TxtName.ReadOnly = false;
         }
+
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

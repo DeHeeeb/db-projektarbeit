@@ -14,6 +14,12 @@ namespace db_projektarbeit.View
         CustomerControl CustomerControl = new CustomerControl();
         CityControl CityControl = new CityControl();
         Customer selected = new Customer();
+        
+        private string[] messageCaption =
+        {
+            "SUCCESS",
+            "ERROR"
+        };
 
         public CustomerView()
         {
@@ -180,11 +186,17 @@ namespace db_projektarbeit.View
 
             if (toDelete != 0)
             {
-                MessageBox.Show("Der Kunde konnte gelöscht werden.");
+                MessageBox.Show("Der Kunde konnte erfolgreich gelöscht werden.",
+                    messageCaption[0],
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Verlinkte Aufträge gefunden. Bitte löschen Sie diese zuerst.");
+                MessageBox.Show("Löschen aufgrund verlinkter Aufträge nicht möglich. Bitte löschen Sie die Aufträge zuerst.",
+                    messageCaption[1],
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
 
             UnlockFields();
