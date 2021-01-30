@@ -81,5 +81,23 @@ namespace db_projektarbeit.Model
                 return product.Id;
             }
         }
+
+        public int Delete(Product product)
+        {
+            try
+            {
+                using (var context = new ProjectContext())
+                {
+                    context.Products.Remove(product);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return product.Id;
+        }
     }
 }

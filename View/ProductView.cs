@@ -15,6 +15,14 @@ namespace db_projektarbeit.View
         ProductGroupControl ProductGroupControl = new ProductGroupControl();
         Product selected = new Product();
 
+        private string[] messageCaption =
+        {
+            "SUCCESS",
+            "ERROR",
+            "QUESTION",
+            "INFORMATION"
+        };
+
         public ProductView()
         {
             InitializeComponent();
@@ -132,6 +140,52 @@ namespace db_projektarbeit.View
             TxtDescription.ReadOnly = false;
             NumPrice.ReadOnly = false;
             TvProductGroup.Enabled = true;
+        }
+
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+            LockFields();
+            var toDelete = ProductControl.Delete(selected);
+
+            DialogResult dialogResult = MessageBox.Show("Möchten Sie diesen Datensatz wirklich löschen?",
+                messageCaption[2],
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (toDelete != 0)
+                {
+                    MessageBox.Show("Das Produkt konnte erfolgreich gelöscht werden.",
+                        messageCaption[0],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Löschen aufgrund verlinkter Aufträge nicht möglich. Bitte löschen Sie diese Positionen zuerst.",
+                        messageCaption[1],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Datensatz wird nicht gelöscht.",
+                    messageCaption[3],
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            UnlockFields();
+            LoadTable(ProductControl.GetAll());
+        }
+
+        private void LockFields()
+        {
+            TxtDescription.ReadOnly = true;
+            NumPrice.ReadOnly = true;
+            TvProductGroup.Enabled = false;
         }
     }
 }
