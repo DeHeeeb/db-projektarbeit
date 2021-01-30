@@ -188,14 +188,14 @@ namespace db_projektarbeit.View
                 var toDelete = CustomerControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete,"Der Kunde"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete,"Der Kunde"),
                         MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink,"Aufträge"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Aufträge"),
                         MessageBoxConstants.CaptionError,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);

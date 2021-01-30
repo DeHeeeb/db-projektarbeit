@@ -71,7 +71,7 @@ namespace db_projektarbeit.Model
                     context.SaveChanges();
                 }
             }
-            catch (Exception e)
+            catch
             {
                 return 0;
             }

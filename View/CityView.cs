@@ -129,14 +129,14 @@ namespace db_projektarbeit.View
                 var toDelete = CityControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete, "Der Datensatz"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Die Stadt"),
                         MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Adressen"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Kunden"),
                         MessageBoxConstants.CaptionError,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);

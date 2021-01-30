@@ -199,7 +199,7 @@ namespace db_projektarbeit.View
                 var toDelete = OrderControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete, "Der Auftrag"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Der Auftrag"),
                         MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);

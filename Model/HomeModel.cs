@@ -21,8 +21,6 @@ namespace db_projektarbeit.Model
                 catch (SqlException se)
                 {
                     Console.WriteLine(se);
-                    //context.Database.Migrate();
-                    //throw;
                 }
             }
 

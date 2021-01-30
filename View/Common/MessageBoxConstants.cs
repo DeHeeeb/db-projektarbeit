@@ -14,8 +14,8 @@ namespace db_projektarbeit.View.Common
         public const string TextQuestionSureToDelete = "Möchten Sie diesen Datensatz wirklich löschen?";
         public const string TextSuccessDelete = "{0} konnte erfolgreich gelöscht werden.";
         public const string TextNotDeleted = "Datensatz wird nicht gelöscht.";
-
-        public const string TextErrorDeleteBecauseLink =
-            "Löschen aufgrund verlinkter {0} nicht möglich. Bitte löschen Sie diese Datensätze zuerst.";
+        public const string TextErrorDeleteBecauseLink = "Löschen aufgrund verlinkter {0} nicht " +
+                                                         "möglich. Bitte löschen Sie diese " +
+                                                         "Datensätze zuerst.";
     }
 }

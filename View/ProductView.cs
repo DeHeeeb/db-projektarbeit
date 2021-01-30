@@ -149,14 +149,14 @@ namespace db_projektarbeit.View
                 var toDelete = ProductControl.Delete(selected);
                 if (toDelete != 0)
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextSuccessDelete, "Der Artikel"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Der Artikel"),
                         MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Aufträge"),
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Aufträge"),
                         MessageBoxConstants.CaptionError,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
@@ -164,7 +164,7 @@ namespace db_projektarbeit.View
             }
             else if (dialogResult == DialogResult.No)
             {
-                MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Aufträge"),
+                MessageBox.Show(string.Format(MessageBoxConstants.TextErrorDeleteBecauseLink, "Aufträge"),
                     MessageBoxConstants.CaptionError,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
