@@ -14,6 +14,14 @@ namespace db_projektarbeit.View
         CityControl CityControl = new CityControl();
         City selected = new City();
 
+        private string[] messageCaption =
+        {
+            "SUCCESS",
+            "ERROR",
+            "QUESTION",
+            "INFORMATION"
+        };
+
         public CityView()
         {
             InitializeComponent();
@@ -116,7 +124,47 @@ namespace db_projektarbeit.View
 
         private void CmdDelete_Click(object sender, EventArgs e)
         {
+            LockFields();
+            var toDelete = CityControl.Delete(selected);
 
+            DialogResult dialogResult = MessageBox.Show("Möchten Sie diesen Datensatz wirklich löschen?",
+                messageCaption[2],
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (toDelete != 0)
+                {
+                    MessageBox.Show("Datensatz wurde erfolgreich gelöscht.",
+                        messageCaption[0],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Löschen aufgrund verlinkter Adressen nicht möglich. \r\nBitte löschen Sie zuerst die entsprechenden Datensätze.",
+                        messageCaption[1],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Datensatz wird nicht gelöscht.",
+                    messageCaption[3],
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            UnlockFields();
+            LoadTable(CityControl.GetAll());
+        }
+
+        private void LockFields()
+        {
+            NumZip.ReadOnly = true;
+            TxtName.ReadOnly = true;
         }
     }
 }

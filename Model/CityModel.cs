@@ -59,5 +59,23 @@ namespace db_projektarbeit.Model
                 return city.Id;
             }
         }
+
+        public int Delete(City city)
+        {
+            try
+            {
+                using (var context = new ProjectContext())
+                {
+                    context.Cities.Remove(city);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+            return city.Id;
+        }
     }
 }

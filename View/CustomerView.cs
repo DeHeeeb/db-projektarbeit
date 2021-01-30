@@ -14,11 +14,13 @@ namespace db_projektarbeit.View
         CustomerControl CustomerControl = new CustomerControl();
         CityControl CityControl = new CityControl();
         Customer selected = new Customer();
-        
+
         private string[] messageCaption =
         {
             "SUCCESS",
-            "ERROR"
+            "ERROR",
+            "QUESTION",
+            "INFORMATION"
         };
 
         public CustomerView()
@@ -184,23 +186,38 @@ namespace db_projektarbeit.View
             LockFields();
             var toDelete = CustomerControl.Delete(selected);
 
-            if (toDelete != 0)
+            DialogResult dialogResult = MessageBox.Show("Möchten Sie diesen Datensatz wirklich löschen?",
+                messageCaption[2],
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show("Der Kunde konnte erfolgreich gelöscht werden.",
-                    messageCaption[0],
+                if (toDelete != 0)
+                {
+                    MessageBox.Show("Der Kunde konnte erfolgreich gelöscht werden.",
+                        messageCaption[0],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Löschen aufgrund verlinkter Aufträge nicht möglich. Bitte löschen Sie die Aufträge zuerst.",
+                        messageCaption[1],
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+                UnlockFields();
+                LoadTable(CustomerControl.GetAll());
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show("Datensatz wird nicht gelöscht.",
+                    messageCaption[3],
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            else
-            {
-                MessageBox.Show("Löschen aufgrund verlinkter Aufträge nicht möglich. Bitte löschen Sie die Aufträge zuerst.",
-                    messageCaption[1],
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-
-            UnlockFields();
-            LoadTable(CustomerControl.GetAll());
         }
 
         private void LockFields()
