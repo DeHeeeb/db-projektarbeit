@@ -17,5 +17,7 @@ namespace db_projektarbeit.View.Common
         public const string TextErrorDeleteBecauseLink = "Löschen aufgrund verlinkter {0} nicht " +
                                                          "möglich. Bitte löschen Sie diese " +
                                                          "Datensätze zuerst.";
+        public const string TextMissingFormInfo = "Bitte füllen Sie die Formularfelder vollständig aus.";
+        public const string TextMissingOrderEntity = "Speichern Sie zuerst Ihren Auftrag ab.";
     }
 }

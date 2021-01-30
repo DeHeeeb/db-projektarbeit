@@ -58,6 +58,13 @@ namespace db_projektarbeit.View
 
                 LoadTable(CityControl.GetAll());
             }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void DgvCities_SelectionChanged(object sender, EventArgs e)

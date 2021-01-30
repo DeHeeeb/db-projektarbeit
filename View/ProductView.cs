@@ -75,6 +75,13 @@ namespace db_projektarbeit.View
 
                 LoadTable(ProductControl.GetAll());
             }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void DgvCustomers_SelectionChanged(object sender, EventArgs e)

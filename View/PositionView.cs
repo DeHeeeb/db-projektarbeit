@@ -73,6 +73,13 @@ namespace db_projektarbeit.View
                 LoadCombobox(ProductControl.GetAll());
                 CbxProduct.SelectedValue = selected.Product.Id;
             }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void CmdEditProduct_Click(object sender, EventArgs e)

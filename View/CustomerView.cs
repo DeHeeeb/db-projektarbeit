@@ -78,6 +78,13 @@ namespace db_projektarbeit.View
                 LoadCombobox(CityControl.GetAll());
                 CbxCity.SelectedValue = selected.City.Id;
             }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void CmdEditCity_Click(object sender, EventArgs e)

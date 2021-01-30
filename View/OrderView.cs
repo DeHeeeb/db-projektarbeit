@@ -98,9 +98,19 @@ namespace db_projektarbeit.View
 
         private void CmdEditPositions_Click(object sender, EventArgs e)
         {
-            PositionView positionView = new PositionView(selected);
-            positionView.Show();
-            positionView.Closed += Refresh;
+            if (selected.Id != 0)
+            {
+                PositionView positionView = new PositionView(selected);
+                positionView.Show();
+                positionView.Closed += Refresh;
+            }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingOrderEntity,
+                    MessageBoxConstants.CaptionInformation,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
@@ -123,6 +133,13 @@ namespace db_projektarbeit.View
                 LoadCombobox(CustomerControl.GetAll());
                 LoadTotal();
                 CbxCustomer.SelectedValue = selected.Customer.Id;
+            }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
