@@ -207,9 +207,6 @@ namespace db_projektarbeit.View
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-
-                UnlockFields();
-                LoadTable(CustomerControl.GetAll());
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -218,6 +215,9 @@ namespace db_projektarbeit.View
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
+
+            UnlockFields();
+            LoadTable(CustomerControl.GetAll());
         }
 
         private void LockFields()
