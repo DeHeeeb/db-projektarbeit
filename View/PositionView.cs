@@ -6,26 +6,45 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using db_projektarbeit.Control;
+using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
     public partial class PositionView : Form
     {
+        PositionControl PositionControl = new PositionControl();
         ProductControl ProductControl = new ProductControl();
         Position selected = new Position();
-        List<Position> allPositions = new List<Position>();
+        Order parentOrder;
         
-        public PositionView(List<Position> positions)
+        public PositionView(Order order)
         {
-            allPositions = positions;
+            parentOrder = order;
             InitializeComponent();
+            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
             LoadCombobox(ProductControl.GetAll());
-            LoadTable(allPositions);
         }
 
-        private void CmdSave_Click(object sender, EventArgs e)
+        private void CmdSearch_Click(object sender, EventArgs e)
         {
-            // todo
+            var searchText = TxtSearch.Text;
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
+            }
+            else
+            {
+                LoadTable(PositionControl.Search(searchText, parentOrder.Id));
+            }
+        }
+
+        private void TxtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CmdSearch_Click(sender, e);
+                e.Handled = true;
+            }
         }
 
         private void CmdNew_Click(object sender, EventArgs e)
@@ -34,9 +53,26 @@ namespace db_projektarbeit.View
             UnlockFields();
         }
 
-        private void CmdDelete_Click(object sender, EventArgs e)
+        private void CmdSave_Click(object sender, EventArgs e)
         {
+            if (NumCount.Value != 0 &&
+                CbxProduct.SelectedItem != null &&
+                !string.IsNullOrWhiteSpace(CbxProduct.Text))
+            {
+                Position positionToSave = new Position()
+                {
+                    Id = selected.Id,
+                    Count = (int)NumCount.Value,
+                    OrderId = parentOrder.Id,
+                    ProductId = (int)CbxProduct.SelectedValue
+                };
 
+                PositionControl.Save(positionToSave);
+
+                LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
+                LoadCombobox(ProductControl.GetAll());
+                CbxProduct.SelectedValue = selected.Product.Id;
+            }
         }
 
         private void CmdEditProduct_Click(object sender, EventArgs e)
@@ -49,7 +85,7 @@ namespace db_projektarbeit.View
         private void RefreshCombobox(object sender, EventArgs e)
         {
             LoadCombobox(ProductControl.GetAll());
-            LoadTable(allPositions);
+            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
         }
 
         private void DgvPositions_SelectionChanged(object sender, EventArgs e)
@@ -110,6 +146,50 @@ namespace db_projektarbeit.View
         {
             NumCount.ReadOnly = false;
             CbxProduct.Enabled = true;
+        }
+
+        private void LockFields()
+        {
+            NumCount.ReadOnly = true;
+            CbxProduct.Enabled = false;
+        }
+
+        private void CmdDelete_Click(object sender, EventArgs e)
+        {
+            LockFields();
+
+            DialogResult dialogResult = MessageBox.Show(MessageBoxConstants.TextQuestionSureToDelete,
+                MessageBoxConstants.CaptionQuestion,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                var toDelete = PositionControl.Delete(selected);
+                if (toDelete != 0)
+                {
+                    MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Die Position"),
+                        MessageBoxConstants.CaptionSuccess,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                MessageBox.Show(MessageBoxConstants.TextNotDeleted,
+                    MessageBoxConstants.CaptionInformation,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            UnlockFields();
+            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
         }
     }
 }

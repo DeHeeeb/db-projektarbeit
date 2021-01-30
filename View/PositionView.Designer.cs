@@ -38,6 +38,8 @@ namespace db_projektarbeit.View
             this.DgvPositions = new System.Windows.Forms.DataGridView();
             this.NumCount = new System.Windows.Forms.NumericUpDown();
             this.CmdDelete = new System.Windows.Forms.Button();
+            this.CmdSearch = new System.Windows.Forms.Button();
+            this.TxtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPositions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumCount)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +48,7 @@ namespace db_projektarbeit.View
             // 
             this.CmdEditProduct.Location = new System.Drawing.Point(525, 278);
             this.CmdEditProduct.Name = "CmdEditProduct";
-            this.CmdEditProduct.Size = new System.Drawing.Size(144, 28);
+            this.CmdEditProduct.Size = new System.Drawing.Size(167, 28);
             this.CmdEditProduct.TabIndex = 36;
             this.CmdEditProduct.Text = "Produkte bearbeiten";
             this.CmdEditProduct.UseVisualStyleBackColor = true;
@@ -108,13 +110,13 @@ namespace db_projektarbeit.View
             this.DgvPositions.AllowUserToResizeRows = false;
             this.DgvPositions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvPositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvPositions.Location = new System.Drawing.Point(13, 15);
+            this.DgvPositions.Location = new System.Drawing.Point(9, 46);
             this.DgvPositions.MultiSelect = false;
             this.DgvPositions.Name = "DgvPositions";
             this.DgvPositions.ReadOnly = true;
             this.DgvPositions.RowHeadersWidth = 51;
             this.DgvPositions.RowTemplate.Height = 29;
-            this.DgvPositions.Size = new System.Drawing.Size(656, 249);
+            this.DgvPositions.Size = new System.Drawing.Size(681, 218);
             this.DgvPositions.TabIndex = 23;
             this.DgvPositions.TabStop = false;
             this.DgvPositions.SelectionChanged += new System.EventHandler(this.DgvPositions_SelectionChanged);
@@ -122,7 +124,7 @@ namespace db_projektarbeit.View
             // NumCount
             // 
             this.NumCount.Location = new System.Drawing.Point(77, 281);
-            this.NumCount.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.NumCount.Margin = new System.Windows.Forms.Padding(1);
             this.NumCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -153,11 +155,31 @@ namespace db_projektarbeit.View
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
+            // CmdSearch
+            // 
+            this.CmdSearch.Location = new System.Drawing.Point(583, 11);
+            this.CmdSearch.Name = "CmdSearch";
+            this.CmdSearch.Size = new System.Drawing.Size(107, 29);
+            this.CmdSearch.TabIndex = 40;
+            this.CmdSearch.Text = "Suche";
+            this.CmdSearch.UseVisualStyleBackColor = true;
+            this.CmdSearch.Click += new System.EventHandler(this.CmdSearch_Click);
+            // 
+            // TxtSearch
+            // 
+            this.TxtSearch.Location = new System.Drawing.Point(9, 12);
+            this.TxtSearch.Name = "TxtSearch";
+            this.TxtSearch.Size = new System.Drawing.Size(568, 27);
+            this.TxtSearch.TabIndex = 39;
+            this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
+            // 
             // PositionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 374);
+            this.ClientSize = new System.Drawing.Size(702, 374);
+            this.Controls.Add(this.CmdSearch);
+            this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.CmdDelete);
             this.Controls.Add(this.NumCount);
             this.Controls.Add(this.CmdEditProduct);
@@ -167,7 +189,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.CmdSave);
             this.Controls.Add(this.LblCount);
             this.Controls.Add(this.DgvPositions);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "PositionView";
             this.Text = "Positionen-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvPositions)).EndInit();
@@ -187,5 +209,7 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.DataGridView DgvPositions;
         private System.Windows.Forms.NumericUpDown NumCount;
         private System.Windows.Forms.Button CmdDelete;
+        private System.Windows.Forms.Button CmdSearch;
+        private System.Windows.Forms.TextBox TxtSearch;
     }
 }

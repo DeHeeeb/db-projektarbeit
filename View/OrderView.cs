@@ -98,7 +98,9 @@ namespace db_projektarbeit.View
 
         private void CmdEditPositions_Click(object sender, EventArgs e)
         {
-            new PositionView(selected.Positions).Show();
+            PositionView positionView = new PositionView(selected);
+            positionView.Show();
+            positionView.Closed += Refresh;
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
@@ -162,10 +164,10 @@ namespace db_projektarbeit.View
         {
             CustomerView customerView = new CustomerView();
             customerView.Show();
-            customerView.Closed += RefreshCombobox;
+            customerView.Closed += Refresh;
         }
 
-        private void RefreshCombobox(object sender, EventArgs e)
+        private void Refresh(object sender, EventArgs e)
         {
             LoadCombobox(CustomerControl.GetAll());
             LoadOrderTable(OrderControl.GetAll());
