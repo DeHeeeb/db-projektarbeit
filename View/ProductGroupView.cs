@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using db_projektarbeit.Control;
 using System.Linq;
+using db_projektarbeit.View.Common;
 using Newtonsoft.Json.Bson;
 
 namespace db_projektarbeit.View
@@ -101,21 +102,23 @@ namespace db_projektarbeit.View
                 }
                 else
                 {
-                    MessageBox.Show("Die Artikelgruppe hat noch Untergruppen die zuerst gelöscht werden müssen.");
+                    MessageBox.Show(MessageBoxConstants.TextErrorDeletedArticleGroup,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             else
             {
-
                 string products = "\r\n";
                 foreach (var item in onUsedProductGroup)
                 {
                     products += "- "+ item.ToString() + "\r\n";
                 }
-                MessageBox.Show("Die folgenden Artikel sind in der Artikelgruppe "
-                                + selectedNode.Name + " (" + selectedNode.Text + ")"
-                                + " und können somit nicht gelöscht werden."
-                                + products);
+                MessageBox.Show(String.Format(MessageBoxConstants.TextErrorDeleteLinkedArticles, selectedNode.Name, selectedNode.Text, products),
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
 
             LoadTreeViewDefault();                                                  // TreeView aktuallisieren
