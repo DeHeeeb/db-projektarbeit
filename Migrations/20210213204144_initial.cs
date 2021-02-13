@@ -11,6 +11,11 @@ namespace db_projektarbeit.Migrations
                 name: "shared");
 
             migrationBuilder.CreateSequence<int>(
+                name: "BillNr",
+                schema: "shared",
+                startValue: 100000L);
+
+            migrationBuilder.CreateSequence<int>(
                 name: "CustomerNr",
                 schema: "shared",
                 startValue: 1000L);
@@ -67,7 +72,7 @@ namespace db_projektarbeit.Migrations
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HouseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: false),
-                    ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 13, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)),
+                    ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 13, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058)),
                     ValidTo = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999))
                 },
                 constraints: table =>
@@ -100,6 +105,28 @@ namespace db_projektarbeit.Migrations
                         name: "FK_Products_ProductGroups_GroupId",
                         column: x => x.GroupId,
                         principalTable: "ProductGroups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bills",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BillNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.BillNr"),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    Netto = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bills", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Bills_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -212,12 +239,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
-                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255) });
+                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 6, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255) });
+                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 6, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -256,12 +283,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
-                values: new object[] { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255) });
+                values: new object[] { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2021, 1, 4, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom", "ValidTo" },
-                values: new object[] { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255), new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255) });
+                values: new object[] { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 4, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058), new DateTime(2021, 2, 11, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -275,7 +302,7 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255) });
+                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 11, 21, 41, 43, 773, DateTimeKind.Local).AddTicks(9058) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -328,6 +355,7 @@ namespace db_projektarbeit.Migrations
                 values: new object[,]
                 {
                     { 1, "3456_Haus_Kohl", 1, new DateTime(2020, 12, 30, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 23, null, 45, new DateTime(2021, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 21, "Garten_Haus", 4, new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 17, "Skiferien", 4, new DateTime(2020, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 13, "Familenfest", 4, new DateTime(2020, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
@@ -337,18 +365,18 @@ namespace db_projektarbeit.Migrations
                     { 16, "149_Böhni_Urs", 3, new DateTime(2020, 3, 27, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 8, "730_Martins", 3, new DateTime(2020, 6, 27, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 4, "403_Haus_Torsten", 3, new DateTime(2020, 9, 17, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 19, "396_Björn_Kortu", 2, new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 12, "Brügger_Baden", 3, new DateTime(2020, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 11, "Butz_Herkingen", 2, new DateTime(2020, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, "123_Haus_Tranz", 1, new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 15, "719_Kratt_Manuel", 2, new DateTime(2020, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 10, "Dubli", 1, new DateTime(2020, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 14, "642_Gieger_Peter", 1, new DateTime(2020, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "123_Haus_Tranz", 1, new DateTime(2020, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 6, "750_Gotinger_Martin", 1, new DateTime(2020, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 22, "123_holdergarten_Gerd", 1, new DateTime(2020, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 19, "396_Björn_Kortu", 2, new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 14, "642_Gieger_Peter", 1, new DateTime(2020, 4, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 18, "639_Spielman_Gorden", 1, new DateTime(2020, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 10, "Dubli", 1, new DateTime(2020, 6, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 3, "000_Haus_google", 2, new DateTime(2020, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 7, "730_Martins", 2, new DateTime(2020, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 18, "639_Spielman_Gorden", 1, new DateTime(2020, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 11, "Butz_Herkingen", 2, new DateTime(2020, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 22, "123_holdergarten_Gerd", 1, new DateTime(2020, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -378,6 +406,7 @@ namespace db_projektarbeit.Migrations
                 values: new object[,]
                 {
                     { 10, 3, 6, 10 },
+                    { 22, 3, 13, 9 },
                     { 2, 3, 1, 4 },
                     { 39, 2, 22, 3 },
                     { 35, 1, 20, 3 },
@@ -386,22 +415,23 @@ namespace db_projektarbeit.Migrations
                     { 28, 1, 16, 3 },
                     { 13, 8, 7, 3 },
                     { 5, 1, 3, 3 },
-                    { 22, 3, 13, 9 },
+                    { 30, 1, 18, 9 },
                     { 23, 2, 13, 2 },
                     { 17, 3, 9, 2 },
                     { 27, 1, 16, 2 },
                     { 1, 1, 1, 1 },
-                    { 15, 2, 8, 12 },
-                    { 34, 1, 19, 12 },
-                    { 33, 2, 19, 11 },
-                    { 32, 2, 19, 10 },
-                    { 26, 1, 15, 12 },
-                    { 25, 2, 15, 11 },
-                    { 19, 1, 10, 12 },
-                    { 12, 3, 6, 12 },
                     { 11, 1, 6, 11 },
+                    { 12, 3, 6, 12 },
                     { 16, 1, 8, 1 },
-                    { 30, 1, 18, 9 }
+                    { 25, 2, 15, 11 },
+                    { 26, 1, 15, 12 },
+                    { 19, 1, 10, 12 },
+                    { 33, 2, 19, 11 },
+                    { 34, 1, 19, 12 },
+                    { 15, 2, 8, 12 },
+                    { 41, 3, 23, 12 },
+                    { 32, 2, 19, 10 },
+                    { 40, 1, 23, 9 }
                 });
 
             migrationBuilder.InsertData(
@@ -437,6 +467,11 @@ namespace db_projektarbeit.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Bills_CustomerId",
+                table: "Bills",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
@@ -470,6 +505,9 @@ namespace db_projektarbeit.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Bills");
+
+            migrationBuilder.DropTable(
                 name: "Positions");
 
             migrationBuilder.DropTable(
@@ -486,6 +524,10 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cities");
+
+            migrationBuilder.DropSequence(
+                name: "BillNr",
+                schema: "shared");
 
             migrationBuilder.DropSequence(
                 name: "CustomerNr",

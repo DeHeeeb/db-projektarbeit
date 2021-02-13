@@ -14,14 +14,12 @@ namespace db_projektarbeit.Model
         public DbSet<Position> Positions { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductGroup> ProductGroups { get; set; }
+        public DbSet<Bill> Bills { get; set; }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Server=(localdb)\\MSSQLLocalDB;Database=OrderManagement;MultipleActiveResultSets=True;Trusted_Connection=True
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
-            optionsBuilder.EnableSensitiveDataLogging();
-            //optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,10 +27,13 @@ namespace db_projektarbeit.Model
             var now = DateTime.Now;
 
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
-                .StartsAt(1000);                                                // Index startet bei 1000
+                .StartsAt(1_000);
 
             modelBuilder.HasSequence<int>("ProductNr", schema: "shared")
-                .StartsAt(10000);                                               // Index startet bei 1000
+                .StartsAt(10_000);
+
+            modelBuilder.HasSequence<int>("BillNr", schema: "shared")
+                .StartsAt(100_000);
 
             modelBuilder.Entity<Customer>()
                 .Property(c => c.CustomerNr)
@@ -50,14 +51,20 @@ namespace db_projektarbeit.Model
                 .Property(p => p.ProductNr)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.ProductNr");
 
+            modelBuilder.Entity<Bill>()
+                .Property(b => b.BillNr)
+                .HasDefaultValueSql("NEXT VALUE FOR shared.BillNr");
+
             modelBuilder.Entity<City>()
                 .Ignore(c => c.DisplayName);
 
             modelBuilder.Entity<Order>()
-                .Ignore(o => o.Total);
+                .Ignore(o => o.Total)
+                .HasOne(o => o.Customer);
 
             modelBuilder.Entity<Position>()
-                .Ignore(p => p.Total);
+                .Ignore(p => p.Total)
+                .HasOne(p => p.Order);
 
             modelBuilder.Entity<Customer>()
                 .Ignore(c => c.FullName)
@@ -68,8 +75,12 @@ namespace db_projektarbeit.Model
                 .HasOne(p => p.Group);
 
             modelBuilder.Entity<ProductGroup>()
-                .HasOne(p => p.Parent)                  // Hat immer ein Eltern Element
-                .WithMany(p => p.Children);             // Bezihungen zischen einem und Mehreren Elementen
+                .HasOne(p => p.Parent)
+                .WithMany(p => p.Children);
+
+            modelBuilder.Entity<Bill>()
+                .Ignore(b => b.Brutto)
+                .HasOne(b => b.Customer);
 
 
             #region List of City
@@ -1044,8 +1055,7 @@ namespace db_projektarbeit.Model
                     CustomerId = 4,
                     Comment = "Garten_Haus",
                     Date = new DateTime(2020,01,15)
-                }
-                ,
+                },
                 new Order
                 {
                     Id = 22,
@@ -1055,7 +1065,6 @@ namespace db_projektarbeit.Model
                 }
 
             };
-
             #endregion
 
             #region List of Positions
@@ -1337,13 +1346,27 @@ namespace db_projektarbeit.Model
             };
             #endregion
 
+            #region List of Bills
+            var bills = new List<Bill>
+            {
+                new Bill()
+                {
+                    Id = 1,
+                    CustomerId = 45,
+                    Date = new DateTime(2021, 02, 01),
+                    Netto = 1008.90M
+                }
+            };
+            #endregion
+
             #region Preload all Data in the Entity
             cities.ForEach(city => modelBuilder.Entity<City>().HasData(city));
             customers.ForEach(customer => modelBuilder.Entity<Customer>().HasData(customer));
             productgroups.ForEach(group => modelBuilder.Entity<ProductGroup>().HasData(group));
             products.ForEach(product => modelBuilder.Entity<Product>().HasData(product));
             orders.ForEach(order => modelBuilder.Entity<Order>().HasData(order));
-            positions.ForEach(positions => modelBuilder.Entity<Position>().HasData(positions));
+            positions.ForEach(position => modelBuilder.Entity<Position>().HasData(position));
+            bills.ForEach(bill => modelBuilder.Entity<Bill>().HasData(bill));
             #endregion
         }
     }

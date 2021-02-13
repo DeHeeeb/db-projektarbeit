@@ -15,9 +15,9 @@ namespace db_projektarbeit.Model
                 return context.Customers
                     .Include(c => c.City)
                     .OrderBy(c => c.CustomerNr)
-                    .Where(c => (
+                    .Where(c =>
                         DateTime.Now > c.ValidFrom &&
-                        DateTime.Now < c.ValidTo))
+                        DateTime.Now < c.ValidTo)
                     .ToList();
             }
         }

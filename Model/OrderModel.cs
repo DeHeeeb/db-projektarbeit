@@ -12,12 +12,22 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
-                return context.Orders
+                var orders = context.Orders
                     .Include(o => o.Positions)
                     .ThenInclude(p => p.Product)
                     .Include(o => o.Customer)
                     .OrderByDescending(o => o.Date)
                     .ToList();
+
+                foreach (var order in orders)
+                {
+                    order.Customer = context.Customers.SingleOrDefault(c => 
+                            c.CustomerNr == order.Customer.CustomerNr && 
+                            DateTime.Now > c.ValidFrom &&
+                            DateTime.Now < c.ValidTo);
+                }
+
+                return orders;
             }
         }
 
@@ -52,6 +62,11 @@ namespace db_projektarbeit.Model
                 }
                 else
                 {
+                    var customer = context.Customers.SingleOrDefault(c => c.Id == order.CustomerId);
+                    order.Customer = context.Customers.SingleOrDefault(c =>
+                        c.CustomerNr == customer.CustomerNr &&
+                        DateTime.Now > c.ValidFrom &&
+                        DateTime.Now < c.ValidTo);
                     context.Orders.Update(order);
                 }
 
