@@ -15,6 +15,9 @@ namespace db_projektarbeit.Model
                 return context.Customers
                     .Include(c => c.City)
                     .OrderBy(c => c.CustomerNr)
+                    .Where(c => (
+                        DateTime.Now > c.ValidFrom &&
+                        DateTime.Now < c.ValidTo))
                     .ToList();
             }
         }
@@ -26,7 +29,7 @@ namespace db_projektarbeit.Model
             {
                 return context.Customers
                     .Include(c => c.City)
-                    .Where(c => 
+                    .Where(c => (
                         c.CustomerNr.ToString().ToLower().Contains(text) ||
                         c.FirstName.ToLower().Contains(text) ||
                         c.LastName.ToLower().Contains(text) ||
@@ -34,7 +37,9 @@ namespace db_projektarbeit.Model
                         c.Street.ToLower().Contains(text) ||
                         c.HouseNumber.ToLower().Contains(text) ||
                         c.City.Zip.ToString().ToLower().Contains(text) ||
-                        c.City.Name.ToLower().Contains(text)
+                        c.City.Name.ToLower().Contains(text)) && (
+                            DateTime.Now > c.ValidFrom && 
+                            DateTime.Now < c.ValidTo)
                     ).OrderBy(c => c.CustomerNr)
                     .ToList();
             }
@@ -44,12 +49,23 @@ namespace db_projektarbeit.Model
         {
             using (var context = new ProjectContext())
             {
+                var currentDate = DateTime.Now;
+
                 if (customer.Id == 0)
                 {
+                    customer.ValidFrom = currentDate;
+                    customer.ValidTo = DateTime.MaxValue;
                     context.Customers.Add(customer);
                 } else
                 {
-                    context.Customers.Update(customer);
+                    var oldCustomer = context.Customers
+                        .Single(c => c.Id == customer.Id);
+                    oldCustomer.ValidTo = currentDate;
+
+                    customer.Id = 0;
+                    customer.ValidFrom = currentDate;
+                    customer.ValidTo = DateTime.MaxValue;
+                    context.Customers.Add(customer);
                 }
                 context.SaveChanges();
 
@@ -63,7 +79,8 @@ namespace db_projektarbeit.Model
             {
                 using (var context = new ProjectContext())
                 {
-                    context.Customers.Remove(customer);
+                    customer.ValidTo = DateTime.Now;
+                    context.Customers.Update(customer);
                     context.SaveChanges();
                 }
             }

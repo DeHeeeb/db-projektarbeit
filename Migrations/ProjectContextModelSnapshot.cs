@@ -255,6 +255,16 @@ namespace db_projektarbeit.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("ValidFrom")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2021, 2, 13, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255));
+
+                    b.Property<DateTime>("ValidTo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999));
+
                     b.HasKey("Id");
 
                     b.HasIndex("CityId");
@@ -271,7 +281,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Marc",
                             HouseNumber = "12",
                             LastName = "Traber",
-                            Street = "Hauptstrasse"
+                            Street = "Hauptstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -282,7 +294,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Lukas",
                             HouseNumber = "2",
                             LastName = "Heeb",
-                            Street = "Winkelstrasse"
+                            Street = "Winkelstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -293,7 +307,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Eric",
                             HouseNumber = "25",
                             LastName = "Lüchinger",
-                            Street = "Bergstrasse"
+                            Street = "Bergstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -303,7 +319,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Charlotte",
                             HouseNumber = "9",
                             LastName = "Segmüller",
-                            Street = "Weiherweg"
+                            Street = "Weiherweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -314,7 +332,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Fred",
                             HouseNumber = "2",
                             LastName = "Chatwick",
-                            Street = "Burggasse"
+                            Street = "Burggasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -323,7 +343,9 @@ namespace db_projektarbeit.Migrations
                             CustomerNr = 0,
                             FirstName = "Selina",
                             LastName = "Schmidt",
-                            Street = "Im Bohl"
+                            Street = "Im Bohl",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -334,7 +356,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Paul",
                             HouseNumber = "21",
                             LastName = "Del Curto",
-                            Street = "Bahnhofstrasse"
+                            Street = "Bahnhofstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -345,7 +369,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Michelle",
                             HouseNumber = "5",
                             LastName = "Terzic",
-                            Street = "Settlerstrasse"
+                            Street = "Settlerstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -355,7 +381,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Thorsten",
                             HouseNumber = "2",
                             LastName = "Müller",
-                            Street = "Waldweg"
+                            Street = "Waldweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -366,7 +394,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Andreas",
                             HouseNumber = "1",
                             LastName = "Hugentobler",
-                            Street = "Hauptstrasse"
+                            Street = "Hauptstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -376,7 +406,9 @@ namespace db_projektarbeit.Migrations
                             CustomerNr = 0,
                             FirstName = "Esther",
                             LastName = "Amgarten",
-                            Street = "Rathausplatz"
+                            Street = "Rathausplatz",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -386,7 +418,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Marianne",
                             HouseNumber = "7",
                             LastName = "Stettler",
-                            Street = "Bachstrasse"
+                            Street = "Bachstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -397,7 +431,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Ernst",
                             HouseNumber = "2",
                             LastName = "Hediger",
-                            Street = "Dinkelweg"
+                            Street = "Dinkelweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -408,7 +444,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Antonio",
                             HouseNumber = "13",
                             LastName = "Perugia",
-                            Street = "Schlossgasse"
+                            Street = "Schlossgasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -419,7 +457,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Tina",
                             HouseNumber = "16",
                             LastName = "Mächler",
-                            Street = "Hinterwaldstrasse"
+                            Street = "Hinterwaldstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -430,7 +470,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Didier",
                             HouseNumber = "3",
                             LastName = "Cuche",
-                            Street = "Unter den Linden"
+                            Street = "Unter den Linden",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -439,7 +481,9 @@ namespace db_projektarbeit.Migrations
                             CustomerNr = 0,
                             FirstName = "Stefano",
                             LastName = "Dalbacco",
-                            Street = "Birkenau"
+                            Street = "Birkenau",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -450,7 +494,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Michael",
                             HouseNumber = "10",
                             LastName = "Graf",
-                            Street = "Fuchsweg"
+                            Street = "Fuchsweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -460,7 +506,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Angela",
                             HouseNumber = "75",
                             LastName = "Wick",
-                            Street = "Dammstrasse"
+                            Street = "Dammstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -471,7 +519,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Patrick",
                             HouseNumber = "5",
                             LastName = "Viera",
-                            Street = "Sonnengasse"
+                            Street = "Sonnengasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -482,7 +532,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Davide",
                             HouseNumber = "7",
                             LastName = "Kluser",
-                            Street = "Mühlackerweg"
+                            Street = "Mühlackerweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -493,7 +545,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Erich",
                             HouseNumber = "18",
                             LastName = "Kästner",
-                            Street = "Feldwiesenstrasse"
+                            Street = "Feldwiesenstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -504,7 +558,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Remo",
                             HouseNumber = "88",
                             LastName = "Santiago",
-                            Street = "Bahnhofstrasse"
+                            Street = "Bahnhofstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -515,7 +571,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Beat",
                             HouseNumber = "1",
                             LastName = "Breu",
-                            Street = "Gartenstrasse"
+                            Street = "Gartenstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -525,7 +583,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Jan",
                             HouseNumber = "62",
                             LastName = "Steiger",
-                            Street = "Rorschacherstrasse"
+                            Street = "Rorschacherstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -535,7 +595,9 @@ namespace db_projektarbeit.Migrations
                             CustomerNr = 0,
                             FirstName = "Nadine",
                             LastName = "Niedermann",
-                            Street = "Am Bühl"
+                            Street = "Am Bühl",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -546,7 +608,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Fabian",
                             HouseNumber = "2",
                             LastName = "Buhmann",
-                            Street = "Hauptstrasse"
+                            Street = "Hauptstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -557,7 +621,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Tatjana",
                             HouseNumber = "92",
                             LastName = "Kekarova",
-                            Street = "Meistergasse"
+                            Street = "Meistergasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -568,7 +634,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Selina",
                             HouseNumber = "3",
                             LastName = "Gabenthuler",
-                            Street = "Postplatz"
+                            Street = "Postplatz",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -577,7 +645,9 @@ namespace db_projektarbeit.Migrations
                             CustomerNr = 0,
                             FirstName = "Alessia",
                             LastName = "Eichholzer",
-                            Street = "Im Tobel"
+                            Street = "Im Tobel",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -588,7 +658,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Tobias",
                             HouseNumber = "32",
                             LastName = "Savello",
-                            Street = "Marktgasse"
+                            Street = "Marktgasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -599,7 +671,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Daniel",
                             HouseNumber = "10",
                             LastName = "Brunner",
-                            Street = "Bachstrasse"
+                            Street = "Bachstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -610,7 +684,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Ignazio",
                             HouseNumber = "2",
                             LastName = "Torres",
-                            Street = "Rheinstrasse"
+                            Street = "Rheinstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -621,7 +697,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Rolf",
                             HouseNumber = "56",
                             LastName = "Fringer",
-                            Street = "Pizolerstrasse"
+                            Street = "Pizolerstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -632,7 +710,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Hubert",
                             HouseNumber = "11",
                             LastName = "Gasser",
-                            Street = "Studenbach"
+                            Street = "Studenbach",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -642,7 +722,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Bernhard",
                             HouseNumber = "22",
                             LastName = "Lutz",
-                            Street = "Fähnernweg"
+                            Street = "Fähnernweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -653,7 +735,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Dorothea",
                             HouseNumber = "19",
                             LastName = "Mittermeier",
-                            Street = "Hauptstrasse"
+                            Street = "Hauptstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -664,7 +748,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Fritz",
                             HouseNumber = "5",
                             LastName = "Baumann",
-                            Street = "Hinterstrasse"
+                            Street = "Hinterstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -674,7 +760,9 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Alexander",
                             HouseNumber = "15",
                             LastName = "Marty",
-                            Street = "Kugelgasse"
+                            Street = "Kugelgasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -684,7 +772,71 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Manuel",
                             HouseNumber = "28",
                             LastName = "Stähli",
-                            Street = "Lindenweg"
+                            Street = "Lindenweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 41,
+                            CityId = 15,
+                            CustomerNr = 9001,
+                            FirstName = "Dominic",
+                            HouseNumber = "32",
+                            LastName = "Kunz",
+                            Street = "Grubstrasse",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                        },
+                        new
+                        {
+                            Id = 42,
+                            CityId = 15,
+                            CustomerNr = 9001,
+                            FirstName = "Dominic",
+                            HouseNumber = "9",
+                            LastName = "Kunz",
+                            Street = "Grabweg",
+                            ValidFrom = new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 43,
+                            CityId = 5,
+                            CompanyName = "Weber und Söhne",
+                            CustomerNr = 9002,
+                            FirstName = "Christian",
+                            LastName = "Weber",
+                            Street = "Kleinweg",
+                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                        },
+                        new
+                        {
+                            Id = 44,
+                            CityId = 5,
+                            CompanyName = "Weber und Söhne",
+                            CustomerNr = 9002,
+                            FirstName = "Christian",
+                            HouseNumber = "500",
+                            LastName = "Weber",
+                            Street = "Grossweg",
+                            ValidFrom = new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
+                            ValidTo = new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                        },
+                        new
+                        {
+                            Id = 45,
+                            CityId = 5,
+                            CompanyName = "Weber AG",
+                            CustomerNr = 9002,
+                            FirstName = "Christian",
+                            HouseNumber = "500",
+                            LastName = "Weber",
+                            Street = "Grossweg",
+                            ValidFrom = new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
+                            ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

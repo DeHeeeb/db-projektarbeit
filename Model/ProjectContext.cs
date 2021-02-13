@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Model
 {
     class ProjectContext : DbContext
     {
-        #region Entitys
+
+        #region Entities
         public DbSet<City> Cities { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -26,6 +26,8 @@ namespace db_projektarbeit.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var now = DateTime.Now;
+
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
                 .StartsAt(1000);                                                // Index startet bei 1000
 
@@ -35,6 +37,14 @@ namespace db_projektarbeit.Model
             modelBuilder.Entity<Customer>()
                 .Property(c => c.CustomerNr)
                 .HasDefaultValueSql("NEXT VALUE FOR shared.CustomerNr");
+
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.ValidFrom)
+                .HasDefaultValue(now);
+
+            modelBuilder.Entity<Customer>()
+                .Property(c => c.ValidTo)
+                .HasDefaultValue(DateTime.MaxValue);
 
             modelBuilder.Entity<Product>()
                 .Property(p => p.ProductNr)
@@ -60,6 +70,7 @@ namespace db_projektarbeit.Model
             modelBuilder.Entity<ProductGroup>()
                 .HasOne(p => p.Parent)                  // Hat immer ein Eltern Element
                 .WithMany(p => p.Children);             // Bezihungen zischen einem und Mehreren Elementen
+
 
             #region List of City
             var cities = new List<City>
@@ -650,6 +661,66 @@ namespace db_projektarbeit.Model
                     HouseNumber = "28",
                     CityId = 11
                 },
+                new Customer()
+                {
+                    Id = 41,
+                    CustomerNr = 9001,
+                    FirstName = "Dominic",
+                    LastName = "Kunz",
+                    CompanyName = null,
+                    Street = "Grubstrasse",
+                    HouseNumber = "32",
+                    CityId = 15,
+                    ValidTo = now.AddDays(-7)
+                },
+                new Customer()
+                {
+                    Id = 42,
+                    CustomerNr = 9001,
+                    FirstName = "Dominic",
+                    LastName = "Kunz",
+                    CompanyName = null,
+                    Street = "Grabweg",
+                    HouseNumber = "9",
+                    CityId = 15,
+                    ValidFrom = now.AddDays(-7)
+                },
+                new Customer()
+                {
+                    Id = 43,
+                    CustomerNr = 9002,
+                    FirstName = "Christian",
+                    LastName = "Weber",
+                    CompanyName = "Weber und Söhne",
+                    Street = "Kleinweg",
+                    CityId = 5,
+                    ValidTo = now.AddDays(-40)
+                },
+                new Customer()
+                {
+                    Id = 44,
+                    CustomerNr = 9002,
+                    FirstName = "Christian",
+                    LastName = "Weber",
+                    CompanyName = "Weber und Söhne",
+                    Street = "Grossweg",
+                    HouseNumber = "500",
+                    CityId = 5,
+                    ValidFrom = now.AddDays(-40),
+                    ValidTo = now.AddDays(-2)
+                },
+                new Customer()
+                {
+                    Id = 45,
+                    CustomerNr = 9002,
+                    FirstName = "Christian",
+                    LastName = "Weber",
+                    CompanyName = "Weber AG",
+                    Street = "Grossweg",
+                    HouseNumber = "500",
+                    CityId = 5,
+                    ValidFrom = now.AddDays(-2)
+                }
             };
             #endregion
 
