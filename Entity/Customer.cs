@@ -7,17 +7,19 @@ namespace db_projektarbeit
 {
     public class Customer
     {
-        public int Id { get; set; }                 // Id für Index
+        public int Id { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CustomerNr { get; set; }         // Kunden Nummer
-        public string FirstName { get; set; }       // Vorname Kunde
-        public string LastName { get; set; }        // Nachname Kunde
-        public string? CompanyName { get; set; }     // Firmenname
+        public int CustomerNr { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string? CompanyName { get; set; }
         public string FullName => ToString();
-        public string Street { get; set; }          // Adresse
-        public  string? HouseNumber { get; set; }    // Hausnummer
-        public int CityId { get; set; }             // 
-        public City City { get; set; }              // City
+        public string Street { get; set; }
+        public  string? HouseNumber { get; set; }
+        public int CityId { get; set; }
+        public City City { get; set; }
+        public DateTime ValidFrom { get; set; }
+        public DateTime ValidTo { get; set; }
 
         public override string ToString()
         {

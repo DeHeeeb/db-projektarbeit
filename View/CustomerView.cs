@@ -136,6 +136,8 @@ namespace db_projektarbeit.View
             DgvCustomers.Columns[3].Visible = false;
             DgvCustomers.Columns[4].Visible = false;
             DgvCustomers.Columns[8].Visible = false;
+            DgvCustomers.Columns[10].Visible = false;
+            DgvCustomers.Columns[11].Visible = false;
             DgvCustomers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCustomers.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvCustomers.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
