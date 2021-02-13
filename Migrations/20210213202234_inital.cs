@@ -66,7 +66,9 @@ namespace db_projektarbeit.Migrations
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HouseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CityId = table.Column<int>(type: "int", nullable: false)
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 13, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)),
+                    ValidTo = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999))
                 },
                 constraints: table =>
                 {
@@ -208,9 +210,26 @@ namespace db_projektarbeit.Migrations
                     { 1, 1, "Traber Corp", "Marc", "12", "Traber", "Hauptstrasse" },
                     { 14, 13, "Raiffeisenbank Berg", "Antonio", "13", "Perugia", "Schlossgasse" },
                     { 15, 14, "Stampino AG", "Tina", "16", "Mächler", "Hinterwaldstrasse" },
-                    { 16, 15, "Sport Säntis", "Didier", "3", "Cuche", "Unter den Linden" },
-                    { 17, 16, null, "Stefano", null, "Dalbacco", "Birkenau" },
+                    { 16, 15, "Sport Säntis", "Didier", "3", "Cuche", "Unter den Linden" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
+                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
+                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                values: new object[,]
+                {
                     { 18, 17, "Sägerei Fenk", "Michael", "10", "Graf", "Fuchsweg" },
+                    { 19, 18, null, "Angela", "75", "Wick", "Dammstrasse" },
                     { 20, 19, "Sounddog GmbH", "Patrick", "5", "Viera", "Sonnengasse" },
                     { 22, 20, "Enderli Buch AG", "Erich", "18", "Kästner", "Feldwiesenstrasse" },
                     { 24, 21, "Velomech.ch AG", "Beat", "1", "Breu", "Gartenstrasse" },
@@ -225,27 +244,56 @@ namespace db_projektarbeit.Migrations
                     { 35, 30, "Gasser Bau AG", "Hubert", "11", "Gasser", "Studenbach" },
                     { 13, 12, "Eon Pharma AG", "Ernst", "2", "Hediger", "Dinkelweg" },
                     { 40, 11, null, "Manuel", "28", "Stähli", "Lindenweg" },
-                    { 19, 18, null, "Angela", "75", "Wick", "Dammstrasse" },
+                    { 17, 16, null, "Stefano", null, "Dalbacco", "Birkenau" },
                     { 12, 11, null, "Marianne", "7", "Stettler", "Bachstrasse" },
                     { 23, 1, "Blumeria GmbH", "Remo", "88", "Santiago", "Bahnhofstrasse" },
-                    { 32, 11, "CompuTrade GmbH", "Daniel", "10", "Brunner", "Bachstrasse" },
+                    { 36, 1, null, "Bernhard", "22", "Lutz", "Fähnernweg" },
                     { 2, 2, "Heeb GmbH", "Lukas", "2", "Heeb", "Winkelstrasse" },
-                    { 3, 3, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" },
+                    { 32, 11, "CompuTrade GmbH", "Daniel", "10", "Brunner", "Bachstrasse" },
                     { 37, 3, "Orthopädie Lüchinger", "Dorothea", "19", "Mittermeier", "Hauptstrasse" },
                     { 38, 3, "Sonnenbräu AG", "Fritz", "5", "Baumann", "Hinterstrasse" },
                     { 4, 4, null, "Charlotte", "9", "Segmüller", "Weiherweg" },
-                    { 5, 5, "Swisscom AG", "Fred", "2", "Chatwick", "Burggasse" },
+                    { 5, 5, "Swisscom AG", "Fred", "2", "Chatwick", "Burggasse" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
+                values: new object[] { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom", "ValidTo" },
+                values: new object[] { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055), new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                values: new object[,]
+                {
+                    { 3, 3, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" },
                     { 6, 6, null, "Selina", null, "Schmidt", "Im Bohl" },
-                    { 36, 1, null, "Bernhard", "22", "Lutz", "Fähnernweg" },
+                    { 7, 7, "Setca GmbH", "Paul", "21", "Del Curto", "Bahnhofstrasse" },
                     { 39, 7, null, "Alexander", "15", "Marty", "Kugelgasse" },
                     { 8, 8, "Bau Köster AG", "Michelle", "5", "Terzic", "Settlerstrasse" },
                     { 25, 8, null, "Jan", "62", "Steiger", "Rorschacherstrasse" },
                     { 9, 9, null, "Thorsten", "2", "Müller", "Waldweg" },
-                    { 21, 9, "BCJ AG", "Davide", "7", "Kluser", "Mühlackerweg" },
-                    { 10, 10, "Contacta GmbH", "Andreas", "1", "Hugentobler", "Hauptstrasse" },
-                    { 11, 11, "Stadtverwaltung Arbon", "Esther", null, "Amgarten", "Rathausplatz" },
-                    { 7, 7, "Setca GmbH", "Paul", "21", "Del Curto", "Bahnhofstrasse" }
+                    { 21, 9, "BCJ AG", "Davide", "7", "Kluser", "Mühlackerweg" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                values: new object[,]
+                {
+                    { 10, 10, "Contacta GmbH", "Andreas", "1", "Hugentobler", "Hauptstrasse" },
+                    { 11, 11, "Stadtverwaltung Arbon", "Esther", null, "Amgarten", "Rathausplatz" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Customers",
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
+                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
 
             migrationBuilder.InsertData(
                 table: "ProductGroups",
@@ -253,18 +301,11 @@ namespace db_projektarbeit.Migrations
                 values: new object[,]
                 {
                     { 17, "Bildschirm", 16 },
-                    { 15, "Sitzpult", 13 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "ProductGroups",
-                columns: new[] { "Id", "Name", "ParentId" },
-                values: new object[,]
-                {
+                    { 15, "Sitzpult", 13 },
                     { 14, "Stehpult", 13 },
                     { 10, "Toner", 5 },
-                    { 6, "Belegdrucker", 5 },
                     { 4, "Schreibtisch", 1 },
+                    { 6, "Belegdrucker", 5 },
                     { 3, "Korpus", 1 },
                     { 2, "Bürostuhl", 1 },
                     { 18, "Maus", 16 },

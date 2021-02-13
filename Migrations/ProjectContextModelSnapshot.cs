@@ -258,7 +258,7 @@ namespace db_projektarbeit.Migrations
                     b.Property<DateTime>("ValidFrom")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 2, 13, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255));
+                        .HasDefaultValue(new DateTime(2021, 2, 13, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055));
 
                     b.Property<DateTime>("ValidTo")
                         .ValueGeneratedOnAdd()
@@ -786,7 +786,7 @@ namespace db_projektarbeit.Migrations
                             LastName = "Kunz",
                             Street = "Grubstrasse",
                             ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                            ValidTo = new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
                         },
                         new
                         {
@@ -797,7 +797,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "9",
                             LastName = "Kunz",
                             Street = "Grabweg",
-                            ValidFrom = new DateTime(2021, 2, 6, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
+                            ValidFrom = new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -810,7 +810,7 @@ namespace db_projektarbeit.Migrations
                             LastName = "Weber",
                             Street = "Kleinweg",
                             ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                            ValidTo = new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
                         },
                         new
                         {
@@ -822,8 +822,8 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 1, 4, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
-                            ValidTo = new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255)
+                            ValidFrom = new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
+                            ValidTo = new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
                         },
                         new
                         {
@@ -835,7 +835,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 2, 11, 19, 46, 58, 83, DateTimeKind.Local).AddTicks(3255),
+                            ValidFrom = new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
