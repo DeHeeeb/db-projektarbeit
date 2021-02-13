@@ -36,14 +36,15 @@
             this.CmdCity = new System.Windows.Forms.Button();
             this.TimerSQLCheck = new System.Windows.Forms.Timer(this.components);
             this.LblSQLCheck = new System.Windows.Forms.Label();
+            this.CmdBill = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdCustomer
             // 
             this.CmdCustomer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdCustomer.Location = new System.Drawing.Point(11, 12);
+            this.CmdCustomer.Location = new System.Drawing.Point(342, 115);
             this.CmdCustomer.Name = "CmdCustomer";
-            this.CmdCustomer.Size = new System.Drawing.Size(642, 97);
+            this.CmdCustomer.Size = new System.Drawing.Size(311, 97);
             this.CmdCustomer.TabIndex = 0;
             this.CmdCustomer.Text = "Kunden-Verwaltung";
             this.CmdCustomer.UseVisualStyleBackColor = true;
@@ -52,9 +53,9 @@
             // CmdProduct
             // 
             this.CmdProduct.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdProduct.Location = new System.Drawing.Point(11, 219);
+            this.CmdProduct.Location = new System.Drawing.Point(11, 115);
             this.CmdProduct.Name = "CmdProduct";
-            this.CmdProduct.Size = new System.Drawing.Size(642, 97);
+            this.CmdProduct.Size = new System.Drawing.Size(325, 97);
             this.CmdProduct.TabIndex = 1;
             this.CmdProduct.Text = "Artikel-Verwaltung";
             this.CmdProduct.UseVisualStyleBackColor = true;
@@ -63,9 +64,9 @@
             // CmdProductGroup
             // 
             this.CmdProductGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdProductGroup.Location = new System.Drawing.Point(11, 321);
+            this.CmdProductGroup.Location = new System.Drawing.Point(11, 218);
             this.CmdProductGroup.Name = "CmdProductGroup";
-            this.CmdProductGroup.Size = new System.Drawing.Size(642, 97);
+            this.CmdProductGroup.Size = new System.Drawing.Size(325, 97);
             this.CmdProductGroup.TabIndex = 2;
             this.CmdProductGroup.Text = "Artikelgruppen-Verwaltung";
             this.CmdProductGroup.UseVisualStyleBackColor = true;
@@ -74,9 +75,9 @@
             // CmdOrder
             // 
             this.CmdOrder.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdOrder.Location = new System.Drawing.Point(11, 424);
+            this.CmdOrder.Location = new System.Drawing.Point(11, 12);
             this.CmdOrder.Name = "CmdOrder";
-            this.CmdOrder.Size = new System.Drawing.Size(642, 97);
+            this.CmdOrder.Size = new System.Drawing.Size(325, 97);
             this.CmdOrder.TabIndex = 3;
             this.CmdOrder.Text = "Auftrags-Verwaltung";
             this.CmdOrder.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // CmdCity
             // 
             this.CmdCity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdCity.Location = new System.Drawing.Point(11, 115);
+            this.CmdCity.Location = new System.Drawing.Point(342, 218);
             this.CmdCity.Name = "CmdCity";
-            this.CmdCity.Size = new System.Drawing.Size(642, 97);
+            this.CmdCity.Size = new System.Drawing.Size(311, 97);
             this.CmdCity.TabIndex = 4;
             this.CmdCity.Text = "Städte-Verwaltung";
             this.CmdCity.UseVisualStyleBackColor = true;
@@ -102,17 +103,29 @@
             // LblSQLCheck
             // 
             this.LblSQLCheck.AutoSize = true;
-            this.LblSQLCheck.Location = new System.Drawing.Point(12, 615);
+            this.LblSQLCheck.Location = new System.Drawing.Point(12, 368);
             this.LblSQLCheck.Name = "LblSQLCheck";
             this.LblSQLCheck.Size = new System.Drawing.Size(208, 20);
             this.LblSQLCheck.TabIndex = 5;
             this.LblSQLCheck.Text = "SQL Verbindung Initialisieren...";
             // 
+            // CmdBill
+            // 
+            this.CmdBill.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdBill.Location = new System.Drawing.Point(342, 12);
+            this.CmdBill.Name = "CmdBill";
+            this.CmdBill.Size = new System.Drawing.Size(311, 97);
+            this.CmdBill.TabIndex = 6;
+            this.CmdBill.Text = "Rechnungs-Übersicht";
+            this.CmdBill.UseVisualStyleBackColor = true;
+            this.CmdBill.Click += new System.EventHandler(this.CmdBill_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 644);
+            this.ClientSize = new System.Drawing.Size(666, 402);
+            this.Controls.Add(this.CmdBill);
             this.Controls.Add(this.LblSQLCheck);
             this.Controls.Add(this.CmdCity);
             this.Controls.Add(this.CmdOrder);
@@ -135,5 +148,6 @@
         private System.Windows.Forms.Button CmdCity;
         private System.Windows.Forms.Timer TimerSQLCheck;
         private System.Windows.Forms.Label LblSQLCheck;
+        private System.Windows.Forms.Button CmdBill;
     }
 }

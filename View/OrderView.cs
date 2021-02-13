@@ -16,6 +16,7 @@ namespace db_projektarbeit.View
     {
         private OrderControl OrderControl = new OrderControl();
         private CustomerControl CustomerControl = new CustomerControl();
+        private BillControl BillControl = new BillControl();
         private Order selected = new Order();
 
         public OrderView()
@@ -34,6 +35,7 @@ namespace db_projektarbeit.View
             DgvOrder.Columns[2].Visible = false;
             DgvOrder.Columns[3].Visible = false;
             DgvOrder.Columns[5].Visible = false;
+            DgvOrder.Columns[6].Visible = false;
             DgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvOrder.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvOrder.Columns[1].HeaderText = "Datum";
@@ -115,31 +117,34 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
-            if (DtpDate.Value != null &&
-                CbxCustomer.SelectedItem != null)
+            if (!selected.Billed)
             {
-                Order orderToSave = new Order()
+                if (DtpDate.Value != null &&
+                    CbxCustomer.SelectedItem != null)
                 {
-                    Id = selected.Id,
-                    Date = DtpDate.Value,
-                    Comment = 
-                        string.IsNullOrWhiteSpace(TxtComment.Text) ? 
-                            null : TxtComment.Text,
-                    CustomerId = (int) CbxCustomer.SelectedValue
-                };
-                OrderControl.Save(orderToSave);
+                    Order orderToSave = new Order()
+                    {
+                        Id = selected.Id,
+                        Date = DtpDate.Value,
+                        Comment =
+                            string.IsNullOrWhiteSpace(TxtComment.Text) ?
+                                null : TxtComment.Text,
+                        CustomerId = (int) CbxCustomer.SelectedValue
+                    };
+                    OrderControl.Save(orderToSave);
 
-                LoadOrderTable(OrderControl.GetAll());
-                LoadCombobox(CustomerControl.GetAll());
-                LoadTotal();
-                CbxCustomer.SelectedValue = selected.Customer.Id;
-            }
-            else
-            {
-                MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
-                    MessageBoxConstants.CaptionError,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    LoadOrderTable(OrderControl.GetAll());
+                    LoadCombobox(CustomerControl.GetAll());
+                    LoadTotal();
+                    CbxCustomer.SelectedValue = selected.Customer.Id;
+                }
+                else
+                {
+                    MessageBox.Show(MessageBoxConstants.TextMissingFormInfo,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -175,6 +180,16 @@ namespace db_projektarbeit.View
             DtpDate.Value = selected.Date;
             CbxCustomer.SelectedValue = selected.Customer.Id;
             TxtComment.Text = selected.Comment;
+            if (selected.Billed)
+            {
+                CmdBill.Enabled = false;
+                CmdBill.ForeColor = Color.ForestGreen;
+            }
+            else
+            {
+                CmdBill.Enabled = true;
+                CmdBill.ForeColor = Color.Black;
+            }
         }
 
         private void CmdEditCustomer_Click(object sender, EventArgs e)
@@ -182,6 +197,40 @@ namespace db_projektarbeit.View
             CustomerView customerView = new CustomerView();
             customerView.Show();
             customerView.Closed += Refresh;
+        }
+
+        private void CmdBill_Click(object sender, EventArgs e)
+        {
+            if (!selected.Billed && 
+                DtpDate.Value != null &&
+                CbxCustomer.SelectedItem != null)
+            {
+                if (selected.Total > 0)
+                {
+                    OrderControl.Bill(selected.Id);
+
+                    var billToSave = new Bill
+                    {
+                        Date = DateTime.Now,
+                        CustomerId = selected.CustomerId,
+                        Netto = selected.Total
+                    };
+                    BillControl.Save(billToSave);
+
+                    MessageBox.Show(MessageBoxConstants.TextOrderBilled,
+                        MessageBoxConstants.CaptionSuccess,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    LoadOrderTable(OrderControl.GetAll());
+                }
+                else
+                {
+                    MessageBox.Show(MessageBoxConstants.TextOrderTotalNotSet,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void Refresh(object sender, EventArgs e)
@@ -203,6 +252,9 @@ namespace db_projektarbeit.View
             DtpDate.Value = DateTime.Now.Date;
             CbxCustomer.SelectedIndex = 0;
             TxtComment.Clear();
+            NumTotal.Value = 0;
+            CmdBill.Enabled = true;
+            CmdBill.ForeColor = Color.Black;
         }
 
         private void CmdDelete_Click(object sender, EventArgs e)

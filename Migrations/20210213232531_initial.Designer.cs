@@ -10,7 +10,7 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20210213212722_initial")]
+    [Migration("20210213232531_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,6 +65,62 @@ namespace db_projektarbeit.Migrations
                             CustomerId = 45,
                             Date = new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Netto = 1008.90m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BillNr = 0,
+                            CustomerId = 37,
+                            Date = new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 2141.90m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BillNr = 0,
+                            CustomerId = 45,
+                            Date = new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 545m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BillNr = 0,
+                            CustomerId = 13,
+                            Date = new DateTime(2021, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 3283.90m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BillNr = 0,
+                            CustomerId = 10,
+                            Date = new DateTime(2021, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 5344.20m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BillNr = 0,
+                            CustomerId = 15,
+                            Date = new DateTime(2021, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 775.70m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BillNr = 0,
+                            CustomerId = 5,
+                            Date = new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 2430.00m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BillNr = 0,
+                            CustomerId = 33,
+                            Date = new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 568.90m
                         });
                 });
 
@@ -301,7 +357,7 @@ namespace db_projektarbeit.Migrations
                     b.Property<DateTime>("ValidFrom")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 2, 13, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893));
+                        .HasDefaultValue(new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<DateTime>("ValidTo")
                         .ValueGeneratedOnAdd()
@@ -829,7 +885,7 @@ namespace db_projektarbeit.Migrations
                             LastName = "Kunz",
                             Street = "Grubstrasse",
                             ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
+                            ValidTo = new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -840,7 +896,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "9",
                             LastName = "Kunz",
                             Street = "Grabweg",
-                            ValidFrom = new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
+                            ValidFrom = new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -852,8 +908,8 @@ namespace db_projektarbeit.Migrations
                             FirstName = "Christian",
                             LastName = "Weber",
                             Street = "Kleinweg",
-                            ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
+                            ValidFrom = new DateTime(2020, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -865,8 +921,8 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
-                            ValidTo = new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
+                            ValidFrom = new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ValidTo = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -878,7 +934,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
+                            ValidFrom = new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -889,6 +945,9 @@ namespace db_projektarbeit.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<bool>("Billed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
@@ -909,6 +968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1,
+                            Billed = false,
                             Comment = "84451102_Haus_in_1604",
                             CustomerId = 27,
                             Date = new DateTime(2018, 1, 1, 11, 41, 54, 0, DateTimeKind.Unspecified)
@@ -916,6 +976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 2,
+                            Billed = false,
                             Comment = "61974418_Haus_in_1971",
                             CustomerId = 11,
                             Date = new DateTime(2018, 1, 2, 3, 48, 42, 0, DateTimeKind.Unspecified)
@@ -923,6 +984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 3,
+                            Billed = false,
                             Comment = "88658138_Haus_in_3690",
                             CustomerId = 31,
                             Date = new DateTime(2018, 1, 2, 18, 23, 31, 0, DateTimeKind.Unspecified)
@@ -930,6 +992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 4,
+                            Billed = false,
                             Comment = "92310075_Haus_in_7885",
                             CustomerId = 11,
                             Date = new DateTime(2018, 1, 3, 6, 59, 11, 0, DateTimeKind.Unspecified)
@@ -937,6 +1000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 5,
+                            Billed = false,
                             Comment = "61198647_Haus_in_2027",
                             CustomerId = 6,
                             Date = new DateTime(2018, 1, 3, 22, 38, 5, 0, DateTimeKind.Unspecified)
@@ -944,6 +1008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 6,
+                            Billed = false,
                             Comment = "70303456_Haus_in_5365",
                             CustomerId = 25,
                             Date = new DateTime(2018, 1, 4, 6, 35, 57, 0, DateTimeKind.Unspecified)
@@ -951,6 +1016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 7,
+                            Billed = false,
                             Comment = "10235982_Haus_in_3776",
                             CustomerId = 24,
                             Date = new DateTime(2018, 1, 4, 16, 19, 46, 0, DateTimeKind.Unspecified)
@@ -958,6 +1024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 8,
+                            Billed = false,
                             Comment = "207572_Haus_in_8559",
                             CustomerId = 14,
                             Date = new DateTime(2018, 1, 5, 8, 6, 14, 0, DateTimeKind.Unspecified)
@@ -965,6 +1032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 9,
+                            Billed = false,
                             Comment = "65668944_Haus_in_9995",
                             CustomerId = 31,
                             Date = new DateTime(2018, 1, 5, 15, 31, 39, 0, DateTimeKind.Unspecified)
@@ -972,6 +1040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 10,
+                            Billed = false,
                             Comment = "9604391_Haus_in_2828",
                             CustomerId = 7,
                             Date = new DateTime(2018, 1, 6, 4, 36, 24, 0, DateTimeKind.Unspecified)
@@ -979,6 +1048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 11,
+                            Billed = false,
                             Comment = "17854123_Haus_in_6852",
                             CustomerId = 29,
                             Date = new DateTime(2018, 1, 6, 13, 4, 52, 0, DateTimeKind.Unspecified)
@@ -986,6 +1056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 12,
+                            Billed = false,
                             Comment = "54081376_Haus_in_2549",
                             CustomerId = 15,
                             Date = new DateTime(2018, 1, 6, 22, 57, 44, 0, DateTimeKind.Unspecified)
@@ -993,6 +1064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 13,
+                            Billed = false,
                             Comment = "71140186_Haus_in_2339",
                             CustomerId = 16,
                             Date = new DateTime(2018, 1, 7, 12, 46, 13, 0, DateTimeKind.Unspecified)
@@ -1000,6 +1072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 14,
+                            Billed = false,
                             Comment = "6608857_Haus_in_2861",
                             CustomerId = 4,
                             Date = new DateTime(2018, 1, 7, 22, 59, 51, 0, DateTimeKind.Unspecified)
@@ -1007,6 +1080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 15,
+                            Billed = false,
                             Comment = "20330645_Haus_in_6826",
                             CustomerId = 36,
                             Date = new DateTime(2018, 1, 8, 16, 19, 10, 0, DateTimeKind.Unspecified)
@@ -1014,6 +1088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 16,
+                            Billed = false,
                             Comment = "45077967_Haus_in_6739",
                             CustomerId = 26,
                             Date = new DateTime(2018, 1, 9, 9, 23, 47, 0, DateTimeKind.Unspecified)
@@ -1021,6 +1096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 17,
+                            Billed = false,
                             Comment = "13345458_Haus_in_2101",
                             CustomerId = 34,
                             Date = new DateTime(2018, 1, 10, 5, 12, 23, 0, DateTimeKind.Unspecified)
@@ -1028,6 +1104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 18,
+                            Billed = false,
                             Comment = "30480874_Haus_in_8560",
                             CustomerId = 11,
                             Date = new DateTime(2018, 1, 11, 3, 55, 14, 0, DateTimeKind.Unspecified)
@@ -1035,6 +1112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 19,
+                            Billed = false,
                             Comment = "87455820_Haus_in_8933",
                             CustomerId = 26,
                             Date = new DateTime(2018, 1, 11, 17, 57, 35, 0, DateTimeKind.Unspecified)
@@ -1042,6 +1120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 20,
+                            Billed = false,
                             Comment = "4554195_Haus_in_8715",
                             CustomerId = 12,
                             Date = new DateTime(2018, 1, 12, 9, 0, 59, 0, DateTimeKind.Unspecified)
@@ -1049,6 +1128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 21,
+                            Billed = false,
                             Comment = "65680311_Haus_in_5426",
                             CustomerId = 10,
                             Date = new DateTime(2018, 1, 12, 20, 21, 39, 0, DateTimeKind.Unspecified)
@@ -1056,6 +1136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 22,
+                            Billed = false,
                             Comment = "56667728_Haus_in_8998",
                             CustomerId = 35,
                             Date = new DateTime(2018, 1, 13, 12, 10, 1, 0, DateTimeKind.Unspecified)
@@ -1063,6 +1144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 23,
+                            Billed = false,
                             Comment = "12878612_Haus_in_4183",
                             CustomerId = 22,
                             Date = new DateTime(2018, 1, 14, 3, 37, 6, 0, DateTimeKind.Unspecified)
@@ -1070,6 +1152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 24,
+                            Billed = false,
                             Comment = "37392087_Haus_in_2648",
                             CustomerId = 20,
                             Date = new DateTime(2018, 1, 14, 15, 2, 8, 0, DateTimeKind.Unspecified)
@@ -1077,6 +1160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 25,
+                            Billed = false,
                             Comment = "9776133_Haus_in_4710",
                             CustomerId = 30,
                             Date = new DateTime(2018, 1, 15, 2, 7, 19, 0, DateTimeKind.Unspecified)
@@ -1084,6 +1168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 26,
+                            Billed = false,
                             Comment = "50224655_Haus_in_8269",
                             CustomerId = 31,
                             Date = new DateTime(2018, 1, 15, 11, 40, 5, 0, DateTimeKind.Unspecified)
@@ -1091,6 +1176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 27,
+                            Billed = false,
                             Comment = "73045305_Haus_in_5473",
                             CustomerId = 16,
                             Date = new DateTime(2018, 1, 16, 1, 22, 9, 0, DateTimeKind.Unspecified)
@@ -1098,6 +1184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 28,
+                            Billed = false,
                             Comment = "10309699_Haus_in_4848",
                             CustomerId = 19,
                             Date = new DateTime(2018, 1, 16, 15, 1, 36, 0, DateTimeKind.Unspecified)
@@ -1105,6 +1192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 29,
+                            Billed = false,
                             Comment = "95887123_Haus_in_6721",
                             CustomerId = 3,
                             Date = new DateTime(2018, 1, 17, 10, 3, 30, 0, DateTimeKind.Unspecified)
@@ -1112,6 +1200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 30,
+                            Billed = false,
                             Comment = "94315415_Haus_in_6317",
                             CustomerId = 21,
                             Date = new DateTime(2018, 1, 18, 6, 54, 26, 0, DateTimeKind.Unspecified)
@@ -1119,6 +1208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 31,
+                            Billed = false,
                             Comment = "62550776_Haus_in_1347",
                             CustomerId = 39,
                             Date = new DateTime(2018, 1, 18, 18, 41, 8, 0, DateTimeKind.Unspecified)
@@ -1126,6 +1216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 32,
+                            Billed = false,
                             Comment = "11382965_Haus_in_4747",
                             CustomerId = 12,
                             Date = new DateTime(2018, 1, 19, 2, 28, 4, 0, DateTimeKind.Unspecified)
@@ -1133,6 +1224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 33,
+                            Billed = false,
                             Comment = "850978_Haus_in_7498",
                             CustomerId = 22,
                             Date = new DateTime(2018, 1, 19, 13, 23, 44, 0, DateTimeKind.Unspecified)
@@ -1140,6 +1232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 34,
+                            Billed = false,
                             Comment = "95101120_Haus_in_1925",
                             CustomerId = 31,
                             Date = new DateTime(2018, 1, 20, 8, 13, 41, 0, DateTimeKind.Unspecified)
@@ -1147,6 +1240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 35,
+                            Billed = false,
                             Comment = "91333488_Haus_in_6907",
                             CustomerId = 6,
                             Date = new DateTime(2018, 1, 20, 22, 25, 15, 0, DateTimeKind.Unspecified)
@@ -1154,6 +1248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 36,
+                            Billed = false,
                             Comment = "8393712_Haus_in_9518",
                             CustomerId = 20,
                             Date = new DateTime(2018, 1, 21, 19, 19, 1, 0, DateTimeKind.Unspecified)
@@ -1161,6 +1256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 37,
+                            Billed = false,
                             Comment = "35224881_Haus_in_3973",
                             CustomerId = 18,
                             Date = new DateTime(2018, 1, 22, 14, 49, 3, 0, DateTimeKind.Unspecified)
@@ -1168,6 +1264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 38,
+                            Billed = false,
                             Comment = "77508683_Haus_in_1333",
                             CustomerId = 21,
                             Date = new DateTime(2018, 1, 23, 4, 20, 55, 0, DateTimeKind.Unspecified)
@@ -1175,6 +1272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 39,
+                            Billed = false,
                             Comment = "80496712_Haus_in_2086",
                             CustomerId = 10,
                             Date = new DateTime(2018, 1, 24, 2, 39, 44, 0, DateTimeKind.Unspecified)
@@ -1182,6 +1280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 40,
+                            Billed = false,
                             Comment = "47500529_Haus_in_5134",
                             CustomerId = 25,
                             Date = new DateTime(2018, 1, 24, 19, 12, 33, 0, DateTimeKind.Unspecified)
@@ -1189,6 +1288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 41,
+                            Billed = false,
                             Comment = "42573698_Haus_in_2923",
                             CustomerId = 12,
                             Date = new DateTime(2018, 1, 25, 9, 9, 24, 0, DateTimeKind.Unspecified)
@@ -1196,6 +1296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 42,
+                            Billed = false,
                             Comment = "75282081_Haus_in_5561",
                             CustomerId = 30,
                             Date = new DateTime(2018, 1, 26, 1, 57, 14, 0, DateTimeKind.Unspecified)
@@ -1203,6 +1304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 43,
+                            Billed = false,
                             Comment = "29168994_Haus_in_4936",
                             CustomerId = 26,
                             Date = new DateTime(2018, 1, 26, 19, 13, 42, 0, DateTimeKind.Unspecified)
@@ -1210,6 +1312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 44,
+                            Billed = false,
                             Comment = "19992264_Haus_in_6471",
                             CustomerId = 23,
                             Date = new DateTime(2018, 1, 27, 5, 11, 6, 0, DateTimeKind.Unspecified)
@@ -1217,6 +1320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 45,
+                            Billed = false,
                             Comment = "85988187_Haus_in_5902",
                             CustomerId = 27,
                             Date = new DateTime(2018, 1, 28, 0, 47, 13, 0, DateTimeKind.Unspecified)
@@ -1224,6 +1328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 46,
+                            Billed = false,
                             Comment = "99149075_Haus_in_4581",
                             CustomerId = 24,
                             Date = new DateTime(2018, 1, 28, 7, 56, 15, 0, DateTimeKind.Unspecified)
@@ -1231,6 +1336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 47,
+                            Billed = false,
                             Comment = "87512907_Haus_in_9736",
                             CustomerId = 28,
                             Date = new DateTime(2018, 1, 28, 21, 6, 21, 0, DateTimeKind.Unspecified)
@@ -1238,6 +1344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 48,
+                            Billed = false,
                             Comment = "54649633_Haus_in_5844",
                             CustomerId = 14,
                             Date = new DateTime(2018, 1, 29, 5, 19, 54, 0, DateTimeKind.Unspecified)
@@ -1245,6 +1352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 49,
+                            Billed = false,
                             Comment = "42532169_Haus_in_5510",
                             CustomerId = 17,
                             Date = new DateTime(2018, 1, 29, 22, 17, 9, 0, DateTimeKind.Unspecified)
@@ -1252,6 +1360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 50,
+                            Billed = false,
                             Comment = "48925402_Haus_in_8307",
                             CustomerId = 11,
                             Date = new DateTime(2018, 1, 30, 5, 9, 54, 0, DateTimeKind.Unspecified)
@@ -1259,6 +1368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 51,
+                            Billed = false,
                             Comment = "62536433_Haus_in_6469",
                             CustomerId = 13,
                             Date = new DateTime(2018, 1, 30, 13, 7, 49, 0, DateTimeKind.Unspecified)
@@ -1266,6 +1376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 52,
+                            Billed = false,
                             Comment = "19144153_Haus_in_2202",
                             CustomerId = 4,
                             Date = new DateTime(2018, 1, 31, 2, 15, 6, 0, DateTimeKind.Unspecified)
@@ -1273,6 +1384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 53,
+                            Billed = false,
                             Comment = "38128674_Haus_in_9912",
                             CustomerId = 18,
                             Date = new DateTime(2018, 1, 31, 13, 45, 13, 0, DateTimeKind.Unspecified)
@@ -1280,6 +1392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 54,
+                            Billed = false,
                             Comment = "3831045_Haus_in_9002",
                             CustomerId = 23,
                             Date = new DateTime(2018, 1, 31, 20, 13, 18, 0, DateTimeKind.Unspecified)
@@ -1287,6 +1400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 55,
+                            Billed = false,
                             Comment = "52227047_Haus_in_2018",
                             CustomerId = 22,
                             Date = new DateTime(2018, 2, 1, 6, 56, 1, 0, DateTimeKind.Unspecified)
@@ -1294,6 +1408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 56,
+                            Billed = false,
                             Comment = "58939150_Haus_in_9189",
                             CustomerId = 12,
                             Date = new DateTime(2018, 2, 1, 23, 8, 41, 0, DateTimeKind.Unspecified)
@@ -1301,6 +1416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 57,
+                            Billed = false,
                             Comment = "87293718_Haus_in_4973",
                             CustomerId = 39,
                             Date = new DateTime(2018, 2, 2, 6, 0, 15, 0, DateTimeKind.Unspecified)
@@ -1308,6 +1424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 58,
+                            Billed = false,
                             Comment = "6768457_Haus_in_9236",
                             CustomerId = 6,
                             Date = new DateTime(2018, 2, 2, 16, 33, 1, 0, DateTimeKind.Unspecified)
@@ -1315,6 +1432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 59,
+                            Billed = false,
                             Comment = "21882427_Haus_in_1285",
                             CustomerId = 31,
                             Date = new DateTime(2018, 2, 3, 5, 10, 31, 0, DateTimeKind.Unspecified)
@@ -1322,6 +1440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 60,
+                            Billed = false,
                             Comment = "2497054_Haus_in_9251",
                             CustomerId = 3,
                             Date = new DateTime(2018, 2, 3, 23, 42, 25, 0, DateTimeKind.Unspecified)
@@ -1329,6 +1448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 61,
+                            Billed = false,
                             Comment = "46210795_Haus_in_1122",
                             CustomerId = 8,
                             Date = new DateTime(2018, 2, 4, 20, 37, 0, 0, DateTimeKind.Unspecified)
@@ -1336,6 +1456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 62,
+                            Billed = false,
                             Comment = "40156611_Haus_in_5707",
                             CustomerId = 8,
                             Date = new DateTime(2018, 2, 5, 9, 40, 54, 0, DateTimeKind.Unspecified)
@@ -1343,6 +1464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 63,
+                            Billed = false,
                             Comment = "32075489_Haus_in_5559",
                             CustomerId = 26,
                             Date = new DateTime(2018, 2, 5, 21, 47, 29, 0, DateTimeKind.Unspecified)
@@ -1350,6 +1472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 64,
+                            Billed = false,
                             Comment = "14759795_Haus_in_9062",
                             CustomerId = 33,
                             Date = new DateTime(2018, 2, 6, 4, 58, 7, 0, DateTimeKind.Unspecified)
@@ -1357,6 +1480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 65,
+                            Billed = false,
                             Comment = "54507597_Haus_in_1667",
                             CustomerId = 27,
                             Date = new DateTime(2018, 2, 6, 21, 49, 4, 0, DateTimeKind.Unspecified)
@@ -1364,6 +1488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 66,
+                            Billed = false,
                             Comment = "7633433_Haus_in_9489",
                             CustomerId = 27,
                             Date = new DateTime(2018, 2, 7, 20, 46, 53, 0, DateTimeKind.Unspecified)
@@ -1371,6 +1496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 67,
+                            Billed = false,
                             Comment = "68727682_Haus_in_1265",
                             CustomerId = 32,
                             Date = new DateTime(2018, 2, 8, 16, 51, 58, 0, DateTimeKind.Unspecified)
@@ -1378,6 +1504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 68,
+                            Billed = false,
                             Comment = "36574827_Haus_in_2244",
                             CustomerId = 40,
                             Date = new DateTime(2018, 2, 9, 15, 4, 12, 0, DateTimeKind.Unspecified)
@@ -1385,6 +1512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 69,
+                            Billed = false,
                             Comment = "94946091_Haus_in_8835",
                             CustomerId = 18,
                             Date = new DateTime(2018, 2, 10, 4, 11, 24, 0, DateTimeKind.Unspecified)
@@ -1392,6 +1520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 70,
+                            Billed = false,
                             Comment = "58476641_Haus_in_6487",
                             CustomerId = 28,
                             Date = new DateTime(2018, 2, 10, 14, 16, 10, 0, DateTimeKind.Unspecified)
@@ -1399,6 +1528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 71,
+                            Billed = false,
                             Comment = "21490621_Haus_in_4955",
                             CustomerId = 35,
                             Date = new DateTime(2018, 2, 10, 21, 2, 40, 0, DateTimeKind.Unspecified)
@@ -1406,6 +1536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 72,
+                            Billed = false,
                             Comment = "79005383_Haus_in_3313",
                             CustomerId = 27,
                             Date = new DateTime(2018, 2, 11, 14, 45, 41, 0, DateTimeKind.Unspecified)
@@ -1413,6 +1544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 73,
+                            Billed = false,
                             Comment = "81777782_Haus_in_9582",
                             CustomerId = 25,
                             Date = new DateTime(2018, 2, 12, 4, 6, 9, 0, DateTimeKind.Unspecified)
@@ -1420,6 +1552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 74,
+                            Billed = false,
                             Comment = "23727732_Haus_in_5019",
                             CustomerId = 34,
                             Date = new DateTime(2018, 2, 12, 21, 41, 38, 0, DateTimeKind.Unspecified)
@@ -1427,6 +1560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 75,
+                            Billed = false,
                             Comment = "39447975_Haus_in_1185",
                             CustomerId = 39,
                             Date = new DateTime(2018, 2, 13, 18, 14, 40, 0, DateTimeKind.Unspecified)
@@ -1434,6 +1568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 76,
+                            Billed = false,
                             Comment = "74939820_Haus_in_9147",
                             CustomerId = 19,
                             Date = new DateTime(2018, 2, 14, 2, 24, 9, 0, DateTimeKind.Unspecified)
@@ -1441,6 +1576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 77,
+                            Billed = false,
                             Comment = "31296783_Haus_in_6694",
                             CustomerId = 32,
                             Date = new DateTime(2018, 2, 14, 16, 33, 6, 0, DateTimeKind.Unspecified)
@@ -1448,6 +1584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 78,
+                            Billed = false,
                             Comment = "273547_Haus_in_6634",
                             CustomerId = 39,
                             Date = new DateTime(2018, 2, 15, 0, 18, 25, 0, DateTimeKind.Unspecified)
@@ -1455,6 +1592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 79,
+                            Billed = false,
                             Comment = "2657662_Haus_in_9835",
                             CustomerId = 34,
                             Date = new DateTime(2018, 2, 15, 12, 56, 40, 0, DateTimeKind.Unspecified)
@@ -1462,6 +1600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 80,
+                            Billed = false,
                             Comment = "249082_Haus_in_6988",
                             CustomerId = 3,
                             Date = new DateTime(2018, 2, 15, 20, 8, 12, 0, DateTimeKind.Unspecified)
@@ -1469,6 +1608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 81,
+                            Billed = false,
                             Comment = "49422937_Haus_in_6800",
                             CustomerId = 1,
                             Date = new DateTime(2018, 2, 16, 9, 50, 32, 0, DateTimeKind.Unspecified)
@@ -1476,6 +1616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 82,
+                            Billed = false,
                             Comment = "11254129_Haus_in_7191",
                             CustomerId = 23,
                             Date = new DateTime(2018, 2, 17, 4, 47, 6, 0, DateTimeKind.Unspecified)
@@ -1483,6 +1624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 83,
+                            Billed = false,
                             Comment = "73128540_Haus_in_5273",
                             CustomerId = 35,
                             Date = new DateTime(2018, 2, 18, 3, 38, 23, 0, DateTimeKind.Unspecified)
@@ -1490,6 +1632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 84,
+                            Billed = false,
                             Comment = "56938762_Haus_in_7732",
                             CustomerId = 16,
                             Date = new DateTime(2018, 2, 18, 12, 31, 55, 0, DateTimeKind.Unspecified)
@@ -1497,6 +1640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 85,
+                            Billed = false,
                             Comment = "35722251_Haus_in_6117",
                             CustomerId = 21,
                             Date = new DateTime(2018, 2, 19, 6, 52, 3, 0, DateTimeKind.Unspecified)
@@ -1504,6 +1648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 86,
+                            Billed = false,
                             Comment = "38068833_Haus_in_6487",
                             CustomerId = 13,
                             Date = new DateTime(2018, 2, 19, 19, 18, 11, 0, DateTimeKind.Unspecified)
@@ -1511,6 +1656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 87,
+                            Billed = false,
                             Comment = "19871823_Haus_in_1542",
                             CustomerId = 28,
                             Date = new DateTime(2018, 2, 20, 5, 25, 27, 0, DateTimeKind.Unspecified)
@@ -1518,6 +1664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 88,
+                            Billed = false,
                             Comment = "85605935_Haus_in_2457",
                             CustomerId = 23,
                             Date = new DateTime(2018, 2, 20, 12, 14, 59, 0, DateTimeKind.Unspecified)
@@ -1525,6 +1672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 89,
+                            Billed = false,
                             Comment = "94089970_Haus_in_2035",
                             CustomerId = 4,
                             Date = new DateTime(2018, 2, 21, 5, 30, 26, 0, DateTimeKind.Unspecified)
@@ -1532,6 +1680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 90,
+                            Billed = false,
                             Comment = "24855098_Haus_in_2568",
                             CustomerId = 24,
                             Date = new DateTime(2018, 2, 21, 12, 31, 35, 0, DateTimeKind.Unspecified)
@@ -1539,6 +1688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 91,
+                            Billed = false,
                             Comment = "20592097_Haus_in_7028",
                             CustomerId = 1,
                             Date = new DateTime(2018, 2, 22, 2, 47, 10, 0, DateTimeKind.Unspecified)
@@ -1546,6 +1696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 92,
+                            Billed = false,
                             Comment = "57821790_Haus_in_6669",
                             CustomerId = 28,
                             Date = new DateTime(2018, 2, 22, 18, 26, 39, 0, DateTimeKind.Unspecified)
@@ -1553,6 +1704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 93,
+                            Billed = false,
                             Comment = "35537952_Haus_in_7625",
                             CustomerId = 21,
                             Date = new DateTime(2018, 2, 23, 3, 54, 20, 0, DateTimeKind.Unspecified)
@@ -1560,6 +1712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 94,
+                            Billed = false,
                             Comment = "81518362_Haus_in_2060",
                             CustomerId = 39,
                             Date = new DateTime(2018, 2, 23, 13, 6, 48, 0, DateTimeKind.Unspecified)
@@ -1567,6 +1720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 95,
+                            Billed = false,
                             Comment = "20808873_Haus_in_4361",
                             CustomerId = 2,
                             Date = new DateTime(2018, 2, 23, 20, 24, 18, 0, DateTimeKind.Unspecified)
@@ -1574,6 +1728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 96,
+                            Billed = false,
                             Comment = "15846145_Haus_in_9515",
                             CustomerId = 5,
                             Date = new DateTime(2018, 2, 24, 10, 5, 8, 0, DateTimeKind.Unspecified)
@@ -1581,6 +1736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 97,
+                            Billed = false,
                             Comment = "1318227_Haus_in_2895",
                             CustomerId = 35,
                             Date = new DateTime(2018, 2, 24, 23, 7, 45, 0, DateTimeKind.Unspecified)
@@ -1588,6 +1744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 98,
+                            Billed = false,
                             Comment = "88379652_Haus_in_5478",
                             CustomerId = 34,
                             Date = new DateTime(2018, 2, 25, 16, 9, 24, 0, DateTimeKind.Unspecified)
@@ -1595,6 +1752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 99,
+                            Billed = false,
                             Comment = "39029062_Haus_in_1611",
                             CustomerId = 17,
                             Date = new DateTime(2018, 2, 26, 4, 46, 3, 0, DateTimeKind.Unspecified)
@@ -1602,6 +1760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 100,
+                            Billed = false,
                             Comment = "90706901_Haus_in_9331",
                             CustomerId = 20,
                             Date = new DateTime(2018, 2, 26, 22, 18, 29, 0, DateTimeKind.Unspecified)
@@ -1609,6 +1768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 101,
+                            Billed = false,
                             Comment = "21923856_Haus_in_9032",
                             CustomerId = 6,
                             Date = new DateTime(2018, 2, 27, 6, 49, 55, 0, DateTimeKind.Unspecified)
@@ -1616,6 +1776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 102,
+                            Billed = false,
                             Comment = "5102653_Haus_in_4025",
                             CustomerId = 31,
                             Date = new DateTime(2018, 2, 28, 1, 55, 12, 0, DateTimeKind.Unspecified)
@@ -1623,6 +1784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 103,
+                            Billed = false,
                             Comment = "31486369_Haus_in_8302",
                             CustomerId = 11,
                             Date = new DateTime(2018, 2, 28, 9, 15, 23, 0, DateTimeKind.Unspecified)
@@ -1630,6 +1792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 104,
+                            Billed = false,
                             Comment = "62304181_Haus_in_6445",
                             CustomerId = 1,
                             Date = new DateTime(2018, 2, 28, 22, 32, 47, 0, DateTimeKind.Unspecified)
@@ -1637,6 +1800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 105,
+                            Billed = false,
                             Comment = "42105732_Haus_in_6564",
                             CustomerId = 33,
                             Date = new DateTime(2018, 3, 1, 16, 37, 5, 0, DateTimeKind.Unspecified)
@@ -1644,6 +1808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 106,
+                            Billed = false,
                             Comment = "71121530_Haus_in_5442",
                             CustomerId = 29,
                             Date = new DateTime(2018, 3, 2, 7, 33, 12, 0, DateTimeKind.Unspecified)
@@ -1651,6 +1816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 107,
+                            Billed = false,
                             Comment = "6171275_Haus_in_8228",
                             CustomerId = 32,
                             Date = new DateTime(2018, 3, 3, 2, 4, 58, 0, DateTimeKind.Unspecified)
@@ -1658,6 +1824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 108,
+                            Billed = false,
                             Comment = "30353829_Haus_in_1586",
                             CustomerId = 14,
                             Date = new DateTime(2018, 3, 3, 11, 43, 31, 0, DateTimeKind.Unspecified)
@@ -1665,6 +1832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 109,
+                            Billed = false,
                             Comment = "5553624_Haus_in_6694",
                             CustomerId = 26,
                             Date = new DateTime(2018, 3, 4, 8, 8, 45, 0, DateTimeKind.Unspecified)
@@ -1672,6 +1840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 110,
+                            Billed = false,
                             Comment = "42244538_Haus_in_2521",
                             CustomerId = 34,
                             Date = new DateTime(2018, 3, 4, 22, 18, 38, 0, DateTimeKind.Unspecified)
@@ -1679,6 +1848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 111,
+                            Billed = false,
                             Comment = "24655933_Haus_in_1906",
                             CustomerId = 28,
                             Date = new DateTime(2018, 3, 5, 15, 16, 17, 0, DateTimeKind.Unspecified)
@@ -1686,6 +1856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 112,
+                            Billed = false,
                             Comment = "52003723_Haus_in_8099",
                             CustomerId = 28,
                             Date = new DateTime(2018, 3, 6, 0, 40, 54, 0, DateTimeKind.Unspecified)
@@ -1693,6 +1864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 113,
+                            Billed = false,
                             Comment = "81405368_Haus_in_9758",
                             CustomerId = 24,
                             Date = new DateTime(2018, 3, 6, 7, 19, 7, 0, DateTimeKind.Unspecified)
@@ -1700,6 +1872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 114,
+                            Billed = false,
                             Comment = "92399343_Haus_in_1152",
                             CustomerId = 10,
                             Date = new DateTime(2018, 3, 6, 13, 41, 51, 0, DateTimeKind.Unspecified)
@@ -1707,6 +1880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 115,
+                            Billed = false,
                             Comment = "17806814_Haus_in_6136",
                             CustomerId = 20,
                             Date = new DateTime(2018, 3, 7, 2, 33, 44, 0, DateTimeKind.Unspecified)
@@ -1714,6 +1888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 116,
+                            Billed = false,
                             Comment = "18642794_Haus_in_1953",
                             CustomerId = 26,
                             Date = new DateTime(2018, 3, 7, 18, 26, 51, 0, DateTimeKind.Unspecified)
@@ -1721,6 +1896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 117,
+                            Billed = false,
                             Comment = "12412172_Haus_in_9171",
                             CustomerId = 19,
                             Date = new DateTime(2018, 3, 8, 2, 58, 15, 0, DateTimeKind.Unspecified)
@@ -1728,6 +1904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 118,
+                            Billed = false,
                             Comment = "60661480_Haus_in_4680",
                             CustomerId = 18,
                             Date = new DateTime(2018, 3, 8, 16, 10, 7, 0, DateTimeKind.Unspecified)
@@ -1735,6 +1912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 119,
+                            Billed = false,
                             Comment = "80394436_Haus_in_1535",
                             CustomerId = 38,
                             Date = new DateTime(2018, 3, 9, 5, 5, 27, 0, DateTimeKind.Unspecified)
@@ -1742,6 +1920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 120,
+                            Billed = false,
                             Comment = "29401542_Haus_in_4377",
                             CustomerId = 27,
                             Date = new DateTime(2018, 3, 9, 17, 26, 30, 0, DateTimeKind.Unspecified)
@@ -1749,6 +1928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 121,
+                            Billed = false,
                             Comment = "10713333_Haus_in_6565",
                             CustomerId = 3,
                             Date = new DateTime(2018, 3, 10, 3, 8, 43, 0, DateTimeKind.Unspecified)
@@ -1756,6 +1936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 122,
+                            Billed = false,
                             Comment = "45751308_Haus_in_3699",
                             CustomerId = 5,
                             Date = new DateTime(2018, 3, 10, 20, 32, 11, 0, DateTimeKind.Unspecified)
@@ -1763,6 +1944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 123,
+                            Billed = false,
                             Comment = "81519206_Haus_in_7675",
                             CustomerId = 35,
                             Date = new DateTime(2018, 3, 11, 12, 6, 26, 0, DateTimeKind.Unspecified)
@@ -1770,6 +1952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 124,
+                            Billed = false,
                             Comment = "8117629_Haus_in_3302",
                             CustomerId = 21,
                             Date = new DateTime(2018, 3, 11, 20, 1, 42, 0, DateTimeKind.Unspecified)
@@ -1777,6 +1960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 125,
+                            Billed = false,
                             Comment = "22648569_Haus_in_8532",
                             CustomerId = 3,
                             Date = new DateTime(2018, 3, 12, 5, 39, 48, 0, DateTimeKind.Unspecified)
@@ -1784,6 +1968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 126,
+                            Billed = false,
                             Comment = "28391773_Haus_in_4741",
                             CustomerId = 2,
                             Date = new DateTime(2018, 3, 12, 12, 8, 2, 0, DateTimeKind.Unspecified)
@@ -1791,6 +1976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 127,
+                            Billed = false,
                             Comment = "76371427_Haus_in_3000",
                             CustomerId = 12,
                             Date = new DateTime(2018, 3, 13, 5, 30, 7, 0, DateTimeKind.Unspecified)
@@ -1798,6 +1984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 128,
+                            Billed = false,
                             Comment = "36046241_Haus_in_3138",
                             CustomerId = 2,
                             Date = new DateTime(2018, 3, 14, 2, 47, 35, 0, DateTimeKind.Unspecified)
@@ -1805,6 +1992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 129,
+                            Billed = false,
                             Comment = "54892677_Haus_in_4258",
                             CustomerId = 13,
                             Date = new DateTime(2018, 3, 14, 22, 20, 7, 0, DateTimeKind.Unspecified)
@@ -1812,6 +2000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 130,
+                            Billed = false,
                             Comment = "82624982_Haus_in_5129",
                             CustomerId = 39,
                             Date = new DateTime(2018, 3, 15, 6, 0, 44, 0, DateTimeKind.Unspecified)
@@ -1819,6 +2008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 131,
+                            Billed = false,
                             Comment = "7041589_Haus_in_9784",
                             CustomerId = 26,
                             Date = new DateTime(2018, 3, 15, 20, 37, 54, 0, DateTimeKind.Unspecified)
@@ -1826,6 +2016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 132,
+                            Billed = false,
                             Comment = "16196085_Haus_in_5085",
                             CustomerId = 34,
                             Date = new DateTime(2018, 3, 16, 4, 9, 11, 0, DateTimeKind.Unspecified)
@@ -1833,6 +2024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 133,
+                            Billed = false,
                             Comment = "57024651_Haus_in_8154",
                             CustomerId = 3,
                             Date = new DateTime(2018, 3, 16, 21, 57, 22, 0, DateTimeKind.Unspecified)
@@ -1840,6 +2032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 134,
+                            Billed = false,
                             Comment = "26122095_Haus_in_7107",
                             CustomerId = 35,
                             Date = new DateTime(2018, 3, 17, 17, 9, 40, 0, DateTimeKind.Unspecified)
@@ -1847,6 +2040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 135,
+                            Billed = false,
                             Comment = "94084051_Haus_in_6484",
                             CustomerId = 35,
                             Date = new DateTime(2018, 3, 18, 4, 54, 35, 0, DateTimeKind.Unspecified)
@@ -1854,6 +2048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 136,
+                            Billed = false,
                             Comment = "77140099_Haus_in_2373",
                             CustomerId = 26,
                             Date = new DateTime(2018, 3, 19, 0, 37, 7, 0, DateTimeKind.Unspecified)
@@ -1861,6 +2056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 137,
+                            Billed = false,
                             Comment = "97800976_Haus_in_8461",
                             CustomerId = 20,
                             Date = new DateTime(2018, 3, 19, 6, 55, 20, 0, DateTimeKind.Unspecified)
@@ -1868,6 +2064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 138,
+                            Billed = false,
                             Comment = "64413229_Haus_in_7538",
                             CustomerId = 4,
                             Date = new DateTime(2018, 3, 20, 4, 51, 43, 0, DateTimeKind.Unspecified)
@@ -1875,6 +2072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 139,
+                            Billed = false,
                             Comment = "19952191_Haus_in_6735",
                             CustomerId = 34,
                             Date = new DateTime(2018, 3, 20, 13, 54, 50, 0, DateTimeKind.Unspecified)
@@ -1882,6 +2080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 140,
+                            Billed = false,
                             Comment = "33382907_Haus_in_3977",
                             CustomerId = 20,
                             Date = new DateTime(2018, 3, 20, 22, 32, 11, 0, DateTimeKind.Unspecified)
@@ -1889,6 +2088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 141,
+                            Billed = false,
                             Comment = "6807220_Haus_in_5072",
                             CustomerId = 28,
                             Date = new DateTime(2018, 3, 21, 4, 43, 46, 0, DateTimeKind.Unspecified)
@@ -1896,6 +2096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 142,
+                            Billed = false,
                             Comment = "1501780_Haus_in_3498",
                             CustomerId = 2,
                             Date = new DateTime(2018, 3, 22, 1, 45, 50, 0, DateTimeKind.Unspecified)
@@ -1903,6 +2104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 143,
+                            Billed = false,
                             Comment = "93816809_Haus_in_3830",
                             CustomerId = 19,
                             Date = new DateTime(2018, 3, 22, 17, 2, 3, 0, DateTimeKind.Unspecified)
@@ -1910,6 +2112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 144,
+                            Billed = false,
                             Comment = "69680657_Haus_in_9158",
                             CustomerId = 9,
                             Date = new DateTime(2018, 3, 23, 3, 15, 10, 0, DateTimeKind.Unspecified)
@@ -1917,6 +2120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 145,
+                            Billed = false,
                             Comment = "46884538_Haus_in_2305",
                             CustomerId = 37,
                             Date = new DateTime(2018, 3, 23, 18, 10, 40, 0, DateTimeKind.Unspecified)
@@ -1924,6 +2128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 146,
+                            Billed = false,
                             Comment = "45506736_Haus_in_8135",
                             CustomerId = 36,
                             Date = new DateTime(2018, 3, 24, 13, 44, 37, 0, DateTimeKind.Unspecified)
@@ -1931,6 +2136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 147,
+                            Billed = false,
                             Comment = "18361949_Haus_in_6535",
                             CustomerId = 38,
                             Date = new DateTime(2018, 3, 24, 23, 0, 29, 0, DateTimeKind.Unspecified)
@@ -1938,6 +2144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 148,
+                            Billed = false,
                             Comment = "26798323_Haus_in_9331",
                             CustomerId = 34,
                             Date = new DateTime(2018, 3, 25, 16, 9, 31, 0, DateTimeKind.Unspecified)
@@ -1945,6 +2152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 149,
+                            Billed = false,
                             Comment = "20806765_Haus_in_2213",
                             CustomerId = 3,
                             Date = new DateTime(2018, 3, 26, 5, 51, 12, 0, DateTimeKind.Unspecified)
@@ -1952,6 +2160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 150,
+                            Billed = false,
                             Comment = "19185710_Haus_in_2318",
                             CustomerId = 28,
                             Date = new DateTime(2018, 3, 26, 15, 40, 41, 0, DateTimeKind.Unspecified)
@@ -1959,6 +2168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 151,
+                            Billed = false,
                             Comment = "25280162_Haus_in_5225",
                             CustomerId = 37,
                             Date = new DateTime(2018, 3, 27, 13, 39, 14, 0, DateTimeKind.Unspecified)
@@ -1966,6 +2176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 152,
+                            Billed = false,
                             Comment = "23299782_Haus_in_7238",
                             CustomerId = 18,
                             Date = new DateTime(2018, 3, 28, 1, 20, 2, 0, DateTimeKind.Unspecified)
@@ -1973,6 +2184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 153,
+                            Billed = false,
                             Comment = "54087361_Haus_in_6025",
                             CustomerId = 20,
                             Date = new DateTime(2018, 3, 28, 14, 40, 4, 0, DateTimeKind.Unspecified)
@@ -1980,6 +2192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 154,
+                            Billed = false,
                             Comment = "49149399_Haus_in_8032",
                             CustomerId = 24,
                             Date = new DateTime(2018, 3, 29, 12, 18, 43, 0, DateTimeKind.Unspecified)
@@ -1987,6 +2200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 155,
+                            Billed = false,
                             Comment = "67712888_Haus_in_6634",
                             CustomerId = 34,
                             Date = new DateTime(2018, 3, 30, 2, 2, 3, 0, DateTimeKind.Unspecified)
@@ -1994,6 +2208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 156,
+                            Billed = false,
                             Comment = "1528383_Haus_in_2772",
                             CustomerId = 31,
                             Date = new DateTime(2018, 3, 30, 13, 34, 7, 0, DateTimeKind.Unspecified)
@@ -2001,6 +2216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 157,
+                            Billed = false,
                             Comment = "53981671_Haus_in_6351",
                             CustomerId = 23,
                             Date = new DateTime(2018, 3, 30, 20, 18, 59, 0, DateTimeKind.Unspecified)
@@ -2008,6 +2224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 158,
+                            Billed = false,
                             Comment = "63591289_Haus_in_8818",
                             CustomerId = 1,
                             Date = new DateTime(2018, 3, 31, 4, 17, 26, 0, DateTimeKind.Unspecified)
@@ -2015,6 +2232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 159,
+                            Billed = false,
                             Comment = "80208822_Haus_in_5880",
                             CustomerId = 38,
                             Date = new DateTime(2018, 3, 31, 12, 0, 43, 0, DateTimeKind.Unspecified)
@@ -2022,6 +2240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 160,
+                            Billed = false,
                             Comment = "48445210_Haus_in_5785",
                             CustomerId = 32,
                             Date = new DateTime(2018, 4, 1, 2, 21, 13, 0, DateTimeKind.Unspecified)
@@ -2029,6 +2248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 161,
+                            Billed = false,
                             Comment = "12571440_Haus_in_7202",
                             CustomerId = 8,
                             Date = new DateTime(2018, 4, 1, 10, 48, 14, 0, DateTimeKind.Unspecified)
@@ -2036,6 +2256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 162,
+                            Billed = false,
                             Comment = "44829653_Haus_in_8150",
                             CustomerId = 34,
                             Date = new DateTime(2018, 4, 2, 3, 27, 33, 0, DateTimeKind.Unspecified)
@@ -2043,6 +2264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 163,
+                            Billed = false,
                             Comment = "48645785_Haus_in_5546",
                             CustomerId = 3,
                             Date = new DateTime(2018, 4, 2, 20, 46, 40, 0, DateTimeKind.Unspecified)
@@ -2050,6 +2272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 164,
+                            Billed = false,
                             Comment = "74614306_Haus_in_9570",
                             CustomerId = 20,
                             Date = new DateTime(2018, 4, 3, 8, 11, 46, 0, DateTimeKind.Unspecified)
@@ -2057,6 +2280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 165,
+                            Billed = false,
                             Comment = "27968237_Haus_in_7137",
                             CustomerId = 21,
                             Date = new DateTime(2018, 4, 3, 19, 33, 30, 0, DateTimeKind.Unspecified)
@@ -2064,6 +2288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 166,
+                            Billed = false,
                             Comment = "43874672_Haus_in_1848",
                             CustomerId = 15,
                             Date = new DateTime(2018, 4, 4, 12, 49, 46, 0, DateTimeKind.Unspecified)
@@ -2071,6 +2296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 167,
+                            Billed = false,
                             Comment = "37709903_Haus_in_9718",
                             CustomerId = 31,
                             Date = new DateTime(2018, 4, 5, 5, 43, 37, 0, DateTimeKind.Unspecified)
@@ -2078,6 +2304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 168,
+                            Billed = false,
                             Comment = "27615323_Haus_in_5329",
                             CustomerId = 21,
                             Date = new DateTime(2018, 4, 5, 20, 58, 54, 0, DateTimeKind.Unspecified)
@@ -2085,6 +2312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 169,
+                            Billed = false,
                             Comment = "46473878_Haus_in_1628",
                             CustomerId = 1,
                             Date = new DateTime(2018, 4, 6, 10, 23, 44, 0, DateTimeKind.Unspecified)
@@ -2092,6 +2320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 170,
+                            Billed = false,
                             Comment = "86920118_Haus_in_7902",
                             CustomerId = 2,
                             Date = new DateTime(2018, 4, 7, 0, 2, 26, 0, DateTimeKind.Unspecified)
@@ -2099,6 +2328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 171,
+                            Billed = false,
                             Comment = "15755312_Haus_in_2793",
                             CustomerId = 26,
                             Date = new DateTime(2018, 4, 7, 21, 9, 49, 0, DateTimeKind.Unspecified)
@@ -2106,6 +2336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 172,
+                            Billed = false,
                             Comment = "48610654_Haus_in_6256",
                             CustomerId = 2,
                             Date = new DateTime(2018, 4, 8, 11, 28, 41, 0, DateTimeKind.Unspecified)
@@ -2113,6 +2344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 173,
+                            Billed = false,
                             Comment = "93532250_Haus_in_5445",
                             CustomerId = 5,
                             Date = new DateTime(2018, 4, 9, 4, 0, 44, 0, DateTimeKind.Unspecified)
@@ -2120,6 +2352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 174,
+                            Billed = false,
                             Comment = "9921446_Haus_in_8953",
                             CustomerId = 11,
                             Date = new DateTime(2018, 4, 9, 21, 49, 49, 0, DateTimeKind.Unspecified)
@@ -2127,6 +2360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 175,
+                            Billed = false,
                             Comment = "93027215_Haus_in_8191",
                             CustomerId = 9,
                             Date = new DateTime(2018, 4, 10, 18, 30, 36, 0, DateTimeKind.Unspecified)
@@ -2134,6 +2368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 176,
+                            Billed = false,
                             Comment = "83186417_Haus_in_3466",
                             CustomerId = 5,
                             Date = new DateTime(2018, 4, 11, 7, 2, 39, 0, DateTimeKind.Unspecified)
@@ -2141,6 +2376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 177,
+                            Billed = false,
                             Comment = "97306610_Haus_in_9815",
                             CustomerId = 4,
                             Date = new DateTime(2018, 4, 11, 22, 54, 45, 0, DateTimeKind.Unspecified)
@@ -2148,6 +2384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 178,
+                            Billed = false,
                             Comment = "37393912_Haus_in_9241",
                             CustomerId = 11,
                             Date = new DateTime(2018, 4, 12, 14, 18, 38, 0, DateTimeKind.Unspecified)
@@ -2155,6 +2392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 179,
+                            Billed = false,
                             Comment = "37466923_Haus_in_1475",
                             CustomerId = 9,
                             Date = new DateTime(2018, 4, 12, 20, 38, 19, 0, DateTimeKind.Unspecified)
@@ -2162,6 +2400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 180,
+                            Billed = false,
                             Comment = "82026053_Haus_in_5392",
                             CustomerId = 21,
                             Date = new DateTime(2018, 4, 13, 14, 17, 20, 0, DateTimeKind.Unspecified)
@@ -2169,6 +2408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 181,
+                            Billed = false,
                             Comment = "66019277_Haus_in_9527",
                             CustomerId = 4,
                             Date = new DateTime(2018, 4, 14, 2, 36, 42, 0, DateTimeKind.Unspecified)
@@ -2176,6 +2416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 182,
+                            Billed = false,
                             Comment = "54188705_Haus_in_1478",
                             CustomerId = 32,
                             Date = new DateTime(2018, 4, 14, 18, 8, 24, 0, DateTimeKind.Unspecified)
@@ -2183,6 +2424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 183,
+                            Billed = false,
                             Comment = "68490376_Haus_in_7423",
                             CustomerId = 5,
                             Date = new DateTime(2018, 4, 15, 6, 44, 14, 0, DateTimeKind.Unspecified)
@@ -2190,6 +2432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 184,
+                            Billed = false,
                             Comment = "19712690_Haus_in_6602",
                             CustomerId = 36,
                             Date = new DateTime(2018, 4, 16, 5, 17, 32, 0, DateTimeKind.Unspecified)
@@ -2197,6 +2440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 185,
+                            Billed = false,
                             Comment = "42402344_Haus_in_2557",
                             CustomerId = 40,
                             Date = new DateTime(2018, 4, 16, 12, 26, 42, 0, DateTimeKind.Unspecified)
@@ -2204,6 +2448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 186,
+                            Billed = false,
                             Comment = "69274494_Haus_in_6902",
                             CustomerId = 25,
                             Date = new DateTime(2018, 4, 16, 22, 31, 47, 0, DateTimeKind.Unspecified)
@@ -2211,6 +2456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 187,
+                            Billed = false,
                             Comment = "73101851_Haus_in_8615",
                             CustomerId = 39,
                             Date = new DateTime(2018, 4, 17, 15, 1, 30, 0, DateTimeKind.Unspecified)
@@ -2218,6 +2464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 188,
+                            Billed = false,
                             Comment = "83649244_Haus_in_8111",
                             CustomerId = 27,
                             Date = new DateTime(2018, 4, 18, 0, 16, 15, 0, DateTimeKind.Unspecified)
@@ -2225,6 +2472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 189,
+                            Billed = false,
                             Comment = "53418443_Haus_in_3463",
                             CustomerId = 13,
                             Date = new DateTime(2018, 4, 18, 9, 51, 13, 0, DateTimeKind.Unspecified)
@@ -2232,6 +2480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 190,
+                            Billed = false,
                             Comment = "224749_Haus_in_5652",
                             CustomerId = 30,
                             Date = new DateTime(2018, 4, 18, 19, 21, 21, 0, DateTimeKind.Unspecified)
@@ -2239,6 +2488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 191,
+                            Billed = false,
                             Comment = "53207251_Haus_in_5257",
                             CustomerId = 23,
                             Date = new DateTime(2018, 4, 19, 14, 53, 28, 0, DateTimeKind.Unspecified)
@@ -2246,6 +2496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 192,
+                            Billed = false,
                             Comment = "49306267_Haus_in_2808",
                             CustomerId = 9,
                             Date = new DateTime(2018, 4, 20, 13, 39, 20, 0, DateTimeKind.Unspecified)
@@ -2253,6 +2504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 193,
+                            Billed = false,
                             Comment = "68267360_Haus_in_9750",
                             CustomerId = 19,
                             Date = new DateTime(2018, 4, 21, 11, 41, 8, 0, DateTimeKind.Unspecified)
@@ -2260,6 +2512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 194,
+                            Billed = false,
                             Comment = "81126026_Haus_in_8677",
                             CustomerId = 16,
                             Date = new DateTime(2018, 4, 22, 8, 6, 27, 0, DateTimeKind.Unspecified)
@@ -2267,6 +2520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 195,
+                            Billed = false,
                             Comment = "43943006_Haus_in_2685",
                             CustomerId = 33,
                             Date = new DateTime(2018, 4, 22, 18, 2, 59, 0, DateTimeKind.Unspecified)
@@ -2274,6 +2528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 196,
+                            Billed = false,
                             Comment = "18190150_Haus_in_2776",
                             CustomerId = 9,
                             Date = new DateTime(2018, 4, 23, 8, 54, 28, 0, DateTimeKind.Unspecified)
@@ -2281,6 +2536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 197,
+                            Billed = false,
                             Comment = "69775229_Haus_in_1725",
                             CustomerId = 13,
                             Date = new DateTime(2018, 4, 24, 3, 33, 9, 0, DateTimeKind.Unspecified)
@@ -2288,6 +2544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 198,
+                            Billed = false,
                             Comment = "32112037_Haus_in_5795",
                             CustomerId = 32,
                             Date = new DateTime(2018, 4, 25, 1, 30, 14, 0, DateTimeKind.Unspecified)
@@ -2295,6 +2552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 199,
+                            Billed = false,
                             Comment = "90138426_Haus_in_6244",
                             CustomerId = 7,
                             Date = new DateTime(2018, 4, 25, 15, 13, 3, 0, DateTimeKind.Unspecified)
@@ -2302,6 +2560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 200,
+                            Billed = false,
                             Comment = "37682164_Haus_in_6288",
                             CustomerId = 11,
                             Date = new DateTime(2018, 4, 26, 0, 37, 46, 0, DateTimeKind.Unspecified)
@@ -2309,6 +2568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 201,
+                            Billed = false,
                             Comment = "67627552_Haus_in_6697",
                             CustomerId = 29,
                             Date = new DateTime(2018, 4, 26, 21, 48, 6, 0, DateTimeKind.Unspecified)
@@ -2316,6 +2576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 202,
+                            Billed = false,
                             Comment = "71889022_Haus_in_1476",
                             CustomerId = 26,
                             Date = new DateTime(2018, 4, 27, 15, 33, 54, 0, DateTimeKind.Unspecified)
@@ -2323,6 +2584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 203,
+                            Billed = false,
                             Comment = "48368649_Haus_in_8476",
                             CustomerId = 10,
                             Date = new DateTime(2018, 4, 28, 2, 6, 37, 0, DateTimeKind.Unspecified)
@@ -2330,6 +2592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 204,
+                            Billed = false,
                             Comment = "36912155_Haus_in_7483",
                             CustomerId = 1,
                             Date = new DateTime(2018, 4, 28, 21, 30, 14, 0, DateTimeKind.Unspecified)
@@ -2337,6 +2600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 205,
+                            Billed = false,
                             Comment = "1958589_Haus_in_8011",
                             CustomerId = 37,
                             Date = new DateTime(2018, 4, 29, 8, 53, 10, 0, DateTimeKind.Unspecified)
@@ -2344,6 +2608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 206,
+                            Billed = false,
                             Comment = "37864559_Haus_in_5903",
                             CustomerId = 5,
                             Date = new DateTime(2018, 4, 29, 22, 22, 26, 0, DateTimeKind.Unspecified)
@@ -2351,6 +2616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 207,
+                            Billed = false,
                             Comment = "9406652_Haus_in_6063",
                             CustomerId = 19,
                             Date = new DateTime(2018, 4, 30, 16, 33, 44, 0, DateTimeKind.Unspecified)
@@ -2358,6 +2624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 208,
+                            Billed = false,
                             Comment = "87336010_Haus_in_4294",
                             CustomerId = 32,
                             Date = new DateTime(2018, 5, 1, 10, 20, 45, 0, DateTimeKind.Unspecified)
@@ -2365,6 +2632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 209,
+                            Billed = false,
                             Comment = "48282780_Haus_in_9923",
                             CustomerId = 37,
                             Date = new DateTime(2018, 5, 2, 7, 17, 39, 0, DateTimeKind.Unspecified)
@@ -2372,6 +2640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 210,
+                            Billed = false,
                             Comment = "37310782_Haus_in_3789",
                             CustomerId = 25,
                             Date = new DateTime(2018, 5, 3, 6, 11, 25, 0, DateTimeKind.Unspecified)
@@ -2379,6 +2648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 211,
+                            Billed = false,
                             Comment = "18214941_Haus_in_3195",
                             CustomerId = 2,
                             Date = new DateTime(2018, 5, 3, 23, 58, 9, 0, DateTimeKind.Unspecified)
@@ -2386,6 +2656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 212,
+                            Billed = false,
                             Comment = "50240400_Haus_in_3844",
                             CustomerId = 8,
                             Date = new DateTime(2018, 5, 4, 19, 8, 19, 0, DateTimeKind.Unspecified)
@@ -2393,6 +2664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 213,
+                            Billed = false,
                             Comment = "31227315_Haus_in_6143",
                             CustomerId = 3,
                             Date = new DateTime(2018, 5, 5, 9, 27, 36, 0, DateTimeKind.Unspecified)
@@ -2400,6 +2672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 214,
+                            Billed = false,
                             Comment = "6356546_Haus_in_1686",
                             CustomerId = 25,
                             Date = new DateTime(2018, 5, 6, 4, 1, 6, 0, DateTimeKind.Unspecified)
@@ -2407,6 +2680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 215,
+                            Billed = false,
                             Comment = "15637416_Haus_in_5263",
                             CustomerId = 11,
                             Date = new DateTime(2018, 5, 7, 0, 33, 7, 0, DateTimeKind.Unspecified)
@@ -2414,6 +2688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 216,
+                            Billed = false,
                             Comment = "78559503_Haus_in_3856",
                             CustomerId = 1,
                             Date = new DateTime(2018, 5, 7, 18, 41, 54, 0, DateTimeKind.Unspecified)
@@ -2421,6 +2696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 217,
+                            Billed = false,
                             Comment = "1563953_Haus_in_7374",
                             CustomerId = 31,
                             Date = new DateTime(2018, 5, 8, 14, 20, 31, 0, DateTimeKind.Unspecified)
@@ -2428,6 +2704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 218,
+                            Billed = false,
                             Comment = "38114633_Haus_in_2553",
                             CustomerId = 25,
                             Date = new DateTime(2018, 5, 8, 23, 59, 58, 0, DateTimeKind.Unspecified)
@@ -2435,6 +2712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 219,
+                            Billed = false,
                             Comment = "89747230_Haus_in_8405",
                             CustomerId = 9,
                             Date = new DateTime(2018, 5, 9, 17, 52, 33, 0, DateTimeKind.Unspecified)
@@ -2442,6 +2720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 220,
+                            Billed = false,
                             Comment = "19451009_Haus_in_6714",
                             CustomerId = 28,
                             Date = new DateTime(2018, 5, 10, 12, 57, 15, 0, DateTimeKind.Unspecified)
@@ -2449,6 +2728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 221,
+                            Billed = false,
                             Comment = "43811866_Haus_in_4418",
                             CustomerId = 28,
                             Date = new DateTime(2018, 5, 10, 22, 27, 16, 0, DateTimeKind.Unspecified)
@@ -2456,6 +2736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 222,
+                            Billed = false,
                             Comment = "25853635_Haus_in_6970",
                             CustomerId = 40,
                             Date = new DateTime(2018, 5, 11, 12, 58, 48, 0, DateTimeKind.Unspecified)
@@ -2463,6 +2744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 223,
+                            Billed = false,
                             Comment = "41132777_Haus_in_4670",
                             CustomerId = 32,
                             Date = new DateTime(2018, 5, 12, 11, 54, 20, 0, DateTimeKind.Unspecified)
@@ -2470,6 +2752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 224,
+                            Billed = false,
                             Comment = "57321373_Haus_in_3540",
                             CustomerId = 34,
                             Date = new DateTime(2018, 5, 13, 4, 8, 30, 0, DateTimeKind.Unspecified)
@@ -2477,6 +2760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 225,
+                            Billed = false,
                             Comment = "20504875_Haus_in_7553",
                             CustomerId = 40,
                             Date = new DateTime(2018, 5, 14, 0, 39, 44, 0, DateTimeKind.Unspecified)
@@ -2484,6 +2768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 226,
+                            Billed = false,
                             Comment = "53607974_Haus_in_5666",
                             CustomerId = 40,
                             Date = new DateTime(2018, 5, 14, 15, 48, 11, 0, DateTimeKind.Unspecified)
@@ -2491,6 +2776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 227,
+                            Billed = false,
                             Comment = "10999205_Haus_in_8785",
                             CustomerId = 4,
                             Date = new DateTime(2018, 5, 15, 9, 17, 25, 0, DateTimeKind.Unspecified)
@@ -2498,6 +2784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 228,
+                            Billed = false,
                             Comment = "27797464_Haus_in_9580",
                             CustomerId = 38,
                             Date = new DateTime(2018, 5, 16, 2, 0, 2, 0, DateTimeKind.Unspecified)
@@ -2505,6 +2792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 229,
+                            Billed = false,
                             Comment = "6724890_Haus_in_9592",
                             CustomerId = 13,
                             Date = new DateTime(2018, 5, 16, 12, 1, 40, 0, DateTimeKind.Unspecified)
@@ -2512,6 +2800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 230,
+                            Billed = false,
                             Comment = "82950952_Haus_in_9214",
                             CustomerId = 30,
                             Date = new DateTime(2018, 5, 17, 1, 25, 34, 0, DateTimeKind.Unspecified)
@@ -2519,6 +2808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 231,
+                            Billed = false,
                             Comment = "39527965_Haus_in_2224",
                             CustomerId = 33,
                             Date = new DateTime(2018, 5, 17, 9, 56, 53, 0, DateTimeKind.Unspecified)
@@ -2526,6 +2816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 232,
+                            Billed = false,
                             Comment = "10442912_Haus_in_9244",
                             CustomerId = 1,
                             Date = new DateTime(2018, 5, 17, 19, 53, 17, 0, DateTimeKind.Unspecified)
@@ -2533,6 +2824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 233,
+                            Billed = false,
                             Comment = "21196000_Haus_in_8714",
                             CustomerId = 13,
                             Date = new DateTime(2018, 5, 18, 4, 24, 25, 0, DateTimeKind.Unspecified)
@@ -2540,6 +2832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 234,
+                            Billed = false,
                             Comment = "69837417_Haus_in_2904",
                             CustomerId = 12,
                             Date = new DateTime(2018, 5, 18, 22, 18, 40, 0, DateTimeKind.Unspecified)
@@ -2547,6 +2840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 235,
+                            Billed = false,
                             Comment = "53029887_Haus_in_2376",
                             CustomerId = 21,
                             Date = new DateTime(2018, 5, 19, 5, 34, 44, 0, DateTimeKind.Unspecified)
@@ -2554,6 +2848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 236,
+                            Billed = false,
                             Comment = "94096891_Haus_in_6335",
                             CustomerId = 13,
                             Date = new DateTime(2018, 5, 19, 21, 31, 23, 0, DateTimeKind.Unspecified)
@@ -2561,6 +2856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 237,
+                            Billed = false,
                             Comment = "73924817_Haus_in_3979",
                             CustomerId = 20,
                             Date = new DateTime(2018, 5, 20, 13, 19, 42, 0, DateTimeKind.Unspecified)
@@ -2568,6 +2864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 238,
+                            Billed = false,
                             Comment = "14577757_Haus_in_5865",
                             CustomerId = 30,
                             Date = new DateTime(2018, 5, 21, 4, 36, 35, 0, DateTimeKind.Unspecified)
@@ -2575,6 +2872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 239,
+                            Billed = false,
                             Comment = "9014460_Haus_in_9123",
                             CustomerId = 3,
                             Date = new DateTime(2018, 5, 22, 0, 45, 46, 0, DateTimeKind.Unspecified)
@@ -2582,6 +2880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 240,
+                            Billed = false,
                             Comment = "73456120_Haus_in_2258",
                             CustomerId = 5,
                             Date = new DateTime(2018, 5, 22, 18, 36, 34, 0, DateTimeKind.Unspecified)
@@ -2589,6 +2888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 241,
+                            Billed = false,
                             Comment = "44163562_Haus_in_2451",
                             CustomerId = 11,
                             Date = new DateTime(2018, 5, 23, 2, 17, 59, 0, DateTimeKind.Unspecified)
@@ -2596,6 +2896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 242,
+                            Billed = false,
                             Comment = "75628418_Haus_in_4617",
                             CustomerId = 22,
                             Date = new DateTime(2018, 5, 23, 13, 9, 34, 0, DateTimeKind.Unspecified)
@@ -2603,6 +2904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 243,
+                            Billed = false,
                             Comment = "73538503_Haus_in_5009",
                             CustomerId = 38,
                             Date = new DateTime(2018, 5, 24, 4, 18, 45, 0, DateTimeKind.Unspecified)
@@ -2610,6 +2912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 244,
+                            Billed = false,
                             Comment = "68027576_Haus_in_4463",
                             CustomerId = 22,
                             Date = new DateTime(2018, 5, 24, 15, 38, 52, 0, DateTimeKind.Unspecified)
@@ -2617,6 +2920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 245,
+                            Billed = false,
                             Comment = "64998897_Haus_in_1835",
                             CustomerId = 31,
                             Date = new DateTime(2018, 5, 25, 14, 9, 43, 0, DateTimeKind.Unspecified)
@@ -2624,6 +2928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 246,
+                            Billed = false,
                             Comment = "44001578_Haus_in_1490",
                             CustomerId = 8,
                             Date = new DateTime(2018, 5, 26, 8, 35, 48, 0, DateTimeKind.Unspecified)
@@ -2631,6 +2936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 247,
+                            Billed = false,
                             Comment = "48592108_Haus_in_3629",
                             CustomerId = 30,
                             Date = new DateTime(2018, 5, 27, 5, 53, 36, 0, DateTimeKind.Unspecified)
@@ -2638,6 +2944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 248,
+                            Billed = false,
                             Comment = "54144542_Haus_in_9468",
                             CustomerId = 32,
                             Date = new DateTime(2018, 5, 28, 4, 11, 0, 0, DateTimeKind.Unspecified)
@@ -2645,6 +2952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 249,
+                            Billed = false,
                             Comment = "80787789_Haus_in_4607",
                             CustomerId = 16,
                             Date = new DateTime(2018, 5, 28, 22, 54, 8, 0, DateTimeKind.Unspecified)
@@ -2652,6 +2960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 250,
+                            Billed = false,
                             Comment = "30569366_Haus_in_9406",
                             CustomerId = 2,
                             Date = new DateTime(2018, 5, 29, 5, 25, 9, 0, DateTimeKind.Unspecified)
@@ -2659,6 +2968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 251,
+                            Billed = false,
                             Comment = "77849194_Haus_in_3922",
                             CustomerId = 21,
                             Date = new DateTime(2018, 5, 29, 15, 54, 22, 0, DateTimeKind.Unspecified)
@@ -2666,6 +2976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 252,
+                            Billed = false,
                             Comment = "2791054_Haus_in_5172",
                             CustomerId = 6,
                             Date = new DateTime(2018, 5, 30, 3, 15, 4, 0, DateTimeKind.Unspecified)
@@ -2673,6 +2984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 253,
+                            Billed = false,
                             Comment = "58744890_Haus_in_4654",
                             CustomerId = 34,
                             Date = new DateTime(2018, 5, 30, 19, 48, 54, 0, DateTimeKind.Unspecified)
@@ -2680,6 +2992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 254,
+                            Billed = false,
                             Comment = "5253658_Haus_in_9219",
                             CustomerId = 37,
                             Date = new DateTime(2018, 5, 31, 18, 0, 51, 0, DateTimeKind.Unspecified)
@@ -2687,6 +3000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 255,
+                            Billed = false,
                             Comment = "18463340_Haus_in_9215",
                             CustomerId = 28,
                             Date = new DateTime(2018, 6, 1, 16, 23, 28, 0, DateTimeKind.Unspecified)
@@ -2694,6 +3008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 256,
+                            Billed = false,
                             Comment = "46058399_Haus_in_1133",
                             CustomerId = 36,
                             Date = new DateTime(2018, 6, 1, 23, 14, 25, 0, DateTimeKind.Unspecified)
@@ -2701,6 +3016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 257,
+                            Billed = false,
                             Comment = "47575943_Haus_in_2904",
                             CustomerId = 4,
                             Date = new DateTime(2018, 6, 2, 6, 40, 55, 0, DateTimeKind.Unspecified)
@@ -2708,6 +3024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 258,
+                            Billed = false,
                             Comment = "76477373_Haus_in_3357",
                             CustomerId = 27,
                             Date = new DateTime(2018, 6, 2, 16, 14, 37, 0, DateTimeKind.Unspecified)
@@ -2715,6 +3032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 259,
+                            Billed = false,
                             Comment = "6725742_Haus_in_2288",
                             CustomerId = 25,
                             Date = new DateTime(2018, 6, 3, 7, 25, 32, 0, DateTimeKind.Unspecified)
@@ -2722,6 +3040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 260,
+                            Billed = false,
                             Comment = "55234964_Haus_in_4662",
                             CustomerId = 12,
                             Date = new DateTime(2018, 6, 4, 5, 47, 57, 0, DateTimeKind.Unspecified)
@@ -2729,6 +3048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 261,
+                            Billed = false,
                             Comment = "11965707_Haus_in_2689",
                             CustomerId = 32,
                             Date = new DateTime(2018, 6, 4, 23, 25, 6, 0, DateTimeKind.Unspecified)
@@ -2736,6 +3056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 262,
+                            Billed = false,
                             Comment = "76588584_Haus_in_2474",
                             CustomerId = 35,
                             Date = new DateTime(2018, 6, 5, 14, 8, 12, 0, DateTimeKind.Unspecified)
@@ -2743,6 +3064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 263,
+                            Billed = false,
                             Comment = "69258741_Haus_in_5428",
                             CustomerId = 31,
                             Date = new DateTime(2018, 6, 6, 12, 1, 53, 0, DateTimeKind.Unspecified)
@@ -2750,6 +3072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 264,
+                            Billed = false,
                             Comment = "15152923_Haus_in_1224",
                             CustomerId = 16,
                             Date = new DateTime(2018, 6, 6, 21, 19, 29, 0, DateTimeKind.Unspecified)
@@ -2757,6 +3080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 265,
+                            Billed = false,
                             Comment = "91851282_Haus_in_1966",
                             CustomerId = 34,
                             Date = new DateTime(2018, 6, 7, 19, 44, 15, 0, DateTimeKind.Unspecified)
@@ -2764,6 +3088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 266,
+                            Billed = false,
                             Comment = "39618880_Haus_in_8697",
                             CustomerId = 5,
                             Date = new DateTime(2018, 6, 8, 11, 30, 7, 0, DateTimeKind.Unspecified)
@@ -2771,6 +3096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 267,
+                            Billed = false,
                             Comment = "18290207_Haus_in_1370",
                             CustomerId = 22,
                             Date = new DateTime(2018, 6, 8, 17, 56, 33, 0, DateTimeKind.Unspecified)
@@ -2778,6 +3104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 268,
+                            Billed = false,
                             Comment = "72192851_Haus_in_2595",
                             CustomerId = 32,
                             Date = new DateTime(2018, 6, 9, 2, 36, 57, 0, DateTimeKind.Unspecified)
@@ -2785,6 +3112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 269,
+                            Billed = false,
                             Comment = "9752398_Haus_in_3439",
                             CustomerId = 38,
                             Date = new DateTime(2018, 6, 9, 15, 49, 36, 0, DateTimeKind.Unspecified)
@@ -2792,6 +3120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 270,
+                            Billed = false,
                             Comment = "82688364_Haus_in_7426",
                             CustomerId = 6,
                             Date = new DateTime(2018, 6, 10, 11, 8, 4, 0, DateTimeKind.Unspecified)
@@ -2799,6 +3128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 271,
+                            Billed = false,
                             Comment = "28107020_Haus_in_9952",
                             CustomerId = 40,
                             Date = new DateTime(2018, 6, 10, 23, 46, 52, 0, DateTimeKind.Unspecified)
@@ -2806,6 +3136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 272,
+                            Billed = false,
                             Comment = "71856471_Haus_in_3421",
                             CustomerId = 34,
                             Date = new DateTime(2018, 6, 11, 10, 33, 22, 0, DateTimeKind.Unspecified)
@@ -2813,6 +3144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 273,
+                            Billed = false,
                             Comment = "22104077_Haus_in_5253",
                             CustomerId = 24,
                             Date = new DateTime(2018, 6, 11, 17, 12, 29, 0, DateTimeKind.Unspecified)
@@ -2820,6 +3152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 274,
+                            Billed = false,
                             Comment = "40542651_Haus_in_7486",
                             CustomerId = 25,
                             Date = new DateTime(2018, 6, 12, 9, 24, 9, 0, DateTimeKind.Unspecified)
@@ -2827,6 +3160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 275,
+                            Billed = false,
                             Comment = "31796608_Haus_in_1920",
                             CustomerId = 25,
                             Date = new DateTime(2018, 6, 12, 23, 1, 49, 0, DateTimeKind.Unspecified)
@@ -2834,6 +3168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 276,
+                            Billed = false,
                             Comment = "13782902_Haus_in_5900",
                             CustomerId = 30,
                             Date = new DateTime(2018, 6, 13, 11, 55, 25, 0, DateTimeKind.Unspecified)
@@ -2841,6 +3176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 277,
+                            Billed = false,
                             Comment = "51558528_Haus_in_9374",
                             CustomerId = 17,
                             Date = new DateTime(2018, 6, 13, 21, 5, 49, 0, DateTimeKind.Unspecified)
@@ -2848,6 +3184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 278,
+                            Billed = false,
                             Comment = "90651205_Haus_in_4907",
                             CustomerId = 17,
                             Date = new DateTime(2018, 6, 14, 14, 41, 17, 0, DateTimeKind.Unspecified)
@@ -2855,6 +3192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 279,
+                            Billed = false,
                             Comment = "53570190_Haus_in_6826",
                             CustomerId = 1,
                             Date = new DateTime(2018, 6, 14, 22, 53, 22, 0, DateTimeKind.Unspecified)
@@ -2862,6 +3200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 280,
+                            Billed = false,
                             Comment = "57394501_Haus_in_6927",
                             CustomerId = 4,
                             Date = new DateTime(2018, 6, 15, 5, 39, 36, 0, DateTimeKind.Unspecified)
@@ -2869,6 +3208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 281,
+                            Billed = false,
                             Comment = "46112495_Haus_in_8348",
                             CustomerId = 17,
                             Date = new DateTime(2018, 6, 15, 17, 18, 4, 0, DateTimeKind.Unspecified)
@@ -2876,6 +3216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 282,
+                            Billed = false,
                             Comment = "37277391_Haus_in_1653",
                             CustomerId = 23,
                             Date = new DateTime(2018, 6, 16, 10, 36, 35, 0, DateTimeKind.Unspecified)
@@ -2883,6 +3224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 283,
+                            Billed = false,
                             Comment = "95290830_Haus_in_8348",
                             CustomerId = 31,
                             Date = new DateTime(2018, 6, 16, 17, 49, 14, 0, DateTimeKind.Unspecified)
@@ -2890,6 +3232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 284,
+                            Billed = false,
                             Comment = "46534591_Haus_in_2152",
                             CustomerId = 10,
                             Date = new DateTime(2018, 6, 17, 2, 50, 56, 0, DateTimeKind.Unspecified)
@@ -2897,6 +3240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 285,
+                            Billed = false,
                             Comment = "71296752_Haus_in_4303",
                             CustomerId = 39,
                             Date = new DateTime(2018, 6, 17, 9, 13, 18, 0, DateTimeKind.Unspecified)
@@ -2904,6 +3248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 286,
+                            Billed = false,
                             Comment = "9030686_Haus_in_8785",
                             CustomerId = 30,
                             Date = new DateTime(2018, 6, 17, 20, 20, 52, 0, DateTimeKind.Unspecified)
@@ -2911,6 +3256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 287,
+                            Billed = false,
                             Comment = "75763523_Haus_in_6482",
                             CustomerId = 27,
                             Date = new DateTime(2018, 6, 18, 9, 36, 0, 0, DateTimeKind.Unspecified)
@@ -2918,6 +3264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 288,
+                            Billed = false,
                             Comment = "94285385_Haus_in_4134",
                             CustomerId = 1,
                             Date = new DateTime(2018, 6, 19, 7, 10, 49, 0, DateTimeKind.Unspecified)
@@ -2925,6 +3272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 289,
+                            Billed = false,
                             Comment = "86518592_Haus_in_6099",
                             CustomerId = 17,
                             Date = new DateTime(2018, 6, 20, 5, 27, 37, 0, DateTimeKind.Unspecified)
@@ -2932,6 +3280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 290,
+                            Billed = false,
                             Comment = "40594825_Haus_in_1847",
                             CustomerId = 15,
                             Date = new DateTime(2018, 6, 21, 2, 32, 48, 0, DateTimeKind.Unspecified)
@@ -2939,6 +3288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 291,
+                            Billed = false,
                             Comment = "26853652_Haus_in_3424",
                             CustomerId = 7,
                             Date = new DateTime(2018, 6, 21, 16, 14, 23, 0, DateTimeKind.Unspecified)
@@ -2946,6 +3296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 292,
+                            Billed = false,
                             Comment = "30206408_Haus_in_7356",
                             CustomerId = 33,
                             Date = new DateTime(2018, 6, 22, 6, 33, 30, 0, DateTimeKind.Unspecified)
@@ -2953,6 +3304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 293,
+                            Billed = false,
                             Comment = "35214955_Haus_in_8928",
                             CustomerId = 5,
                             Date = new DateTime(2018, 6, 23, 0, 6, 45, 0, DateTimeKind.Unspecified)
@@ -2960,6 +3312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 294,
+                            Billed = false,
                             Comment = "98784402_Haus_in_5081",
                             CustomerId = 2,
                             Date = new DateTime(2018, 6, 23, 11, 5, 11, 0, DateTimeKind.Unspecified)
@@ -2967,6 +3320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 295,
+                            Billed = false,
                             Comment = "81574972_Haus_in_1251",
                             CustomerId = 1,
                             Date = new DateTime(2018, 6, 24, 2, 56, 26, 0, DateTimeKind.Unspecified)
@@ -2974,6 +3328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 296,
+                            Billed = false,
                             Comment = "22274376_Haus_in_1698",
                             CustomerId = 2,
                             Date = new DateTime(2018, 6, 24, 20, 3, 15, 0, DateTimeKind.Unspecified)
@@ -2981,6 +3336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 297,
+                            Billed = false,
                             Comment = "54823592_Haus_in_6719",
                             CustomerId = 23,
                             Date = new DateTime(2018, 6, 25, 2, 45, 34, 0, DateTimeKind.Unspecified)
@@ -2988,6 +3344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 298,
+                            Billed = false,
                             Comment = "73991073_Haus_in_3768",
                             CustomerId = 5,
                             Date = new DateTime(2018, 6, 25, 11, 56, 30, 0, DateTimeKind.Unspecified)
@@ -2995,6 +3352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 299,
+                            Billed = false,
                             Comment = "6793062_Haus_in_4861",
                             CustomerId = 13,
                             Date = new DateTime(2018, 6, 25, 23, 45, 12, 0, DateTimeKind.Unspecified)
@@ -3002,6 +3360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 300,
+                            Billed = false,
                             Comment = "63971663_Haus_in_4599",
                             CustomerId = 6,
                             Date = new DateTime(2018, 6, 26, 17, 10, 53, 0, DateTimeKind.Unspecified)
@@ -3009,6 +3368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 301,
+                            Billed = false,
                             Comment = "12816792_Haus_in_2921",
                             CustomerId = 4,
                             Date = new DateTime(2018, 6, 26, 23, 38, 22, 0, DateTimeKind.Unspecified)
@@ -3016,6 +3376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 302,
+                            Billed = false,
                             Comment = "10056879_Haus_in_6718",
                             CustomerId = 8,
                             Date = new DateTime(2018, 6, 27, 20, 15, 42, 0, DateTimeKind.Unspecified)
@@ -3023,6 +3384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 303,
+                            Billed = false,
                             Comment = "79363138_Haus_in_8379",
                             CustomerId = 33,
                             Date = new DateTime(2018, 6, 28, 11, 58, 8, 0, DateTimeKind.Unspecified)
@@ -3030,6 +3392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 304,
+                            Billed = false,
                             Comment = "71850834_Haus_in_9974",
                             CustomerId = 38,
                             Date = new DateTime(2018, 6, 29, 2, 22, 16, 0, DateTimeKind.Unspecified)
@@ -3037,6 +3400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 305,
+                            Billed = false,
                             Comment = "39980869_Haus_in_8269",
                             CustomerId = 17,
                             Date = new DateTime(2018, 6, 29, 12, 44, 18, 0, DateTimeKind.Unspecified)
@@ -3044,6 +3408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 306,
+                            Billed = false,
                             Comment = "55468468_Haus_in_1982",
                             CustomerId = 37,
                             Date = new DateTime(2018, 6, 30, 1, 35, 23, 0, DateTimeKind.Unspecified)
@@ -3051,6 +3416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 307,
+                            Billed = false,
                             Comment = "26465082_Haus_in_2023",
                             CustomerId = 31,
                             Date = new DateTime(2018, 6, 30, 9, 44, 26, 0, DateTimeKind.Unspecified)
@@ -3058,6 +3424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 308,
+                            Billed = false,
                             Comment = "74497553_Haus_in_4188",
                             CustomerId = 4,
                             Date = new DateTime(2018, 7, 1, 7, 52, 8, 0, DateTimeKind.Unspecified)
@@ -3065,6 +3432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 309,
+                            Billed = false,
                             Comment = "66000706_Haus_in_3145",
                             CustomerId = 36,
                             Date = new DateTime(2018, 7, 2, 6, 41, 45, 0, DateTimeKind.Unspecified)
@@ -3072,6 +3440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 310,
+                            Billed = false,
                             Comment = "79613402_Haus_in_7853",
                             CustomerId = 20,
                             Date = new DateTime(2018, 7, 2, 16, 46, 28, 0, DateTimeKind.Unspecified)
@@ -3079,6 +3448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 311,
+                            Billed = false,
                             Comment = "82661007_Haus_in_3134",
                             CustomerId = 22,
                             Date = new DateTime(2018, 7, 3, 1, 12, 42, 0, DateTimeKind.Unspecified)
@@ -3086,6 +3456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 312,
+                            Billed = false,
                             Comment = "66935875_Haus_in_6873",
                             CustomerId = 14,
                             Date = new DateTime(2018, 7, 3, 16, 49, 52, 0, DateTimeKind.Unspecified)
@@ -3093,6 +3464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 313,
+                            Billed = false,
                             Comment = "99284655_Haus_in_6453",
                             CustomerId = 2,
                             Date = new DateTime(2018, 7, 4, 12, 32, 1, 0, DateTimeKind.Unspecified)
@@ -3100,6 +3472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 314,
+                            Billed = false,
                             Comment = "43615130_Haus_in_6058",
                             CustomerId = 28,
                             Date = new DateTime(2018, 7, 4, 22, 44, 38, 0, DateTimeKind.Unspecified)
@@ -3107,6 +3480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 315,
+                            Billed = false,
                             Comment = "66842396_Haus_in_5464",
                             CustomerId = 35,
                             Date = new DateTime(2018, 7, 5, 8, 12, 51, 0, DateTimeKind.Unspecified)
@@ -3114,6 +3488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 316,
+                            Billed = false,
                             Comment = "58730561_Haus_in_8475",
                             CustomerId = 12,
                             Date = new DateTime(2018, 7, 5, 20, 50, 12, 0, DateTimeKind.Unspecified)
@@ -3121,6 +3496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 317,
+                            Billed = false,
                             Comment = "54211761_Haus_in_2066",
                             CustomerId = 20,
                             Date = new DateTime(2018, 7, 6, 17, 15, 29, 0, DateTimeKind.Unspecified)
@@ -3128,6 +3504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 318,
+                            Billed = false,
                             Comment = "11016858_Haus_in_9448",
                             CustomerId = 40,
                             Date = new DateTime(2018, 7, 7, 2, 53, 40, 0, DateTimeKind.Unspecified)
@@ -3135,6 +3512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 319,
+                            Billed = false,
                             Comment = "21980685_Haus_in_6391",
                             CustomerId = 6,
                             Date = new DateTime(2018, 7, 7, 10, 6, 45, 0, DateTimeKind.Unspecified)
@@ -3142,6 +3520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 320,
+                            Billed = false,
                             Comment = "35655880_Haus_in_4223",
                             CustomerId = 28,
                             Date = new DateTime(2018, 7, 7, 18, 36, 43, 0, DateTimeKind.Unspecified)
@@ -3149,6 +3528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 321,
+                            Billed = false,
                             Comment = "97127842_Haus_in_1405",
                             CustomerId = 28,
                             Date = new DateTime(2018, 7, 8, 1, 18, 40, 0, DateTimeKind.Unspecified)
@@ -3156,6 +3536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 322,
+                            Billed = false,
                             Comment = "16839504_Haus_in_6226",
                             CustomerId = 13,
                             Date = new DateTime(2018, 7, 8, 12, 47, 48, 0, DateTimeKind.Unspecified)
@@ -3163,6 +3544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 323,
+                            Billed = false,
                             Comment = "50499069_Haus_in_8110",
                             CustomerId = 21,
                             Date = new DateTime(2018, 7, 9, 0, 34, 27, 0, DateTimeKind.Unspecified)
@@ -3170,6 +3552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 324,
+                            Billed = false,
                             Comment = "76987876_Haus_in_5069",
                             CustomerId = 11,
                             Date = new DateTime(2018, 7, 9, 12, 46, 49, 0, DateTimeKind.Unspecified)
@@ -3177,6 +3560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 325,
+                            Billed = false,
                             Comment = "14944815_Haus_in_1983",
                             CustomerId = 31,
                             Date = new DateTime(2018, 7, 10, 2, 1, 14, 0, DateTimeKind.Unspecified)
@@ -3184,6 +3568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 326,
+                            Billed = false,
                             Comment = "47561223_Haus_in_8623",
                             CustomerId = 38,
                             Date = new DateTime(2018, 7, 10, 22, 12, 18, 0, DateTimeKind.Unspecified)
@@ -3191,6 +3576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 327,
+                            Billed = false,
                             Comment = "67628471_Haus_in_6600",
                             CustomerId = 6,
                             Date = new DateTime(2018, 7, 11, 6, 42, 58, 0, DateTimeKind.Unspecified)
@@ -3198,6 +3584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 328,
+                            Billed = false,
                             Comment = "82021933_Haus_in_4941",
                             CustomerId = 20,
                             Date = new DateTime(2018, 7, 12, 2, 28, 2, 0, DateTimeKind.Unspecified)
@@ -3205,6 +3592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 329,
+                            Billed = false,
                             Comment = "29796044_Haus_in_2445",
                             CustomerId = 9,
                             Date = new DateTime(2018, 7, 13, 0, 5, 0, 0, DateTimeKind.Unspecified)
@@ -3212,6 +3600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 330,
+                            Billed = false,
                             Comment = "25921262_Haus_in_7647",
                             CustomerId = 21,
                             Date = new DateTime(2018, 7, 13, 22, 48, 54, 0, DateTimeKind.Unspecified)
@@ -3219,6 +3608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 331,
+                            Billed = false,
                             Comment = "48894978_Haus_in_9856",
                             CustomerId = 2,
                             Date = new DateTime(2018, 7, 14, 15, 21, 14, 0, DateTimeKind.Unspecified)
@@ -3226,6 +3616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 332,
+                            Billed = false,
                             Comment = "37876742_Haus_in_1135",
                             CustomerId = 33,
                             Date = new DateTime(2018, 7, 15, 5, 43, 33, 0, DateTimeKind.Unspecified)
@@ -3233,6 +3624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 333,
+                            Billed = false,
                             Comment = "47155075_Haus_in_1152",
                             CustomerId = 30,
                             Date = new DateTime(2018, 7, 15, 12, 59, 4, 0, DateTimeKind.Unspecified)
@@ -3240,6 +3632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 334,
+                            Billed = false,
                             Comment = "82080722_Haus_in_5842",
                             CustomerId = 40,
                             Date = new DateTime(2018, 7, 16, 1, 53, 29, 0, DateTimeKind.Unspecified)
@@ -3247,6 +3640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 335,
+                            Billed = false,
                             Comment = "95685023_Haus_in_7648",
                             CustomerId = 37,
                             Date = new DateTime(2018, 7, 16, 9, 30, 21, 0, DateTimeKind.Unspecified)
@@ -3254,6 +3648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 336,
+                            Billed = false,
                             Comment = "52392195_Haus_in_2285",
                             CustomerId = 38,
                             Date = new DateTime(2018, 7, 17, 7, 6, 36, 0, DateTimeKind.Unspecified)
@@ -3261,6 +3656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 337,
+                            Billed = false,
                             Comment = "98150788_Haus_in_5114",
                             CustomerId = 3,
                             Date = new DateTime(2018, 7, 17, 17, 51, 53, 0, DateTimeKind.Unspecified)
@@ -3268,6 +3664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 338,
+                            Billed = false,
                             Comment = "10235377_Haus_in_1604",
                             CustomerId = 40,
                             Date = new DateTime(2018, 7, 18, 1, 59, 7, 0, DateTimeKind.Unspecified)
@@ -3275,6 +3672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 339,
+                            Billed = false,
                             Comment = "13299258_Haus_in_4110",
                             CustomerId = 37,
                             Date = new DateTime(2018, 7, 18, 18, 13, 23, 0, DateTimeKind.Unspecified)
@@ -3282,6 +3680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 340,
+                            Billed = false,
                             Comment = "92240064_Haus_in_8866",
                             CustomerId = 33,
                             Date = new DateTime(2018, 7, 19, 5, 51, 5, 0, DateTimeKind.Unspecified)
@@ -3289,6 +3688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 341,
+                            Billed = false,
                             Comment = "89633843_Haus_in_7901",
                             CustomerId = 24,
                             Date = new DateTime(2018, 7, 19, 13, 27, 29, 0, DateTimeKind.Unspecified)
@@ -3296,6 +3696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 342,
+                            Billed = false,
                             Comment = "47427909_Haus_in_7373",
                             CustomerId = 16,
                             Date = new DateTime(2018, 7, 20, 7, 38, 11, 0, DateTimeKind.Unspecified)
@@ -3303,6 +3704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 343,
+                            Billed = false,
                             Comment = "86768278_Haus_in_7343",
                             CustomerId = 39,
                             Date = new DateTime(2018, 7, 21, 1, 58, 6, 0, DateTimeKind.Unspecified)
@@ -3310,6 +3712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 344,
+                            Billed = false,
                             Comment = "29057024_Haus_in_7526",
                             CustomerId = 34,
                             Date = new DateTime(2018, 7, 21, 13, 6, 36, 0, DateTimeKind.Unspecified)
@@ -3317,6 +3720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 345,
+                            Billed = false,
                             Comment = "62215728_Haus_in_9044",
                             CustomerId = 37,
                             Date = new DateTime(2018, 7, 22, 3, 5, 4, 0, DateTimeKind.Unspecified)
@@ -3324,6 +3728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 346,
+                            Billed = false,
                             Comment = "97313596_Haus_in_4464",
                             CustomerId = 17,
                             Date = new DateTime(2018, 7, 22, 15, 32, 53, 0, DateTimeKind.Unspecified)
@@ -3331,6 +3736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 347,
+                            Billed = false,
                             Comment = "22177694_Haus_in_9412",
                             CustomerId = 19,
                             Date = new DateTime(2018, 7, 22, 22, 5, 6, 0, DateTimeKind.Unspecified)
@@ -3338,6 +3744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 348,
+                            Billed = false,
                             Comment = "19385082_Haus_in_8335",
                             CustomerId = 23,
                             Date = new DateTime(2018, 7, 23, 9, 18, 51, 0, DateTimeKind.Unspecified)
@@ -3345,6 +3752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 349,
+                            Billed = false,
                             Comment = "51661907_Haus_in_8129",
                             CustomerId = 1,
                             Date = new DateTime(2018, 7, 23, 21, 40, 36, 0, DateTimeKind.Unspecified)
@@ -3352,6 +3760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 350,
+                            Billed = false,
                             Comment = "11076174_Haus_in_9112",
                             CustomerId = 28,
                             Date = new DateTime(2018, 7, 24, 9, 56, 55, 0, DateTimeKind.Unspecified)
@@ -3359,6 +3768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 351,
+                            Billed = false,
                             Comment = "98903351_Haus_in_1203",
                             CustomerId = 34,
                             Date = new DateTime(2018, 7, 24, 20, 47, 27, 0, DateTimeKind.Unspecified)
@@ -3366,6 +3776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 352,
+                            Billed = false,
                             Comment = "92757815_Haus_in_4022",
                             CustomerId = 23,
                             Date = new DateTime(2018, 7, 25, 17, 6, 48, 0, DateTimeKind.Unspecified)
@@ -3373,6 +3784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 353,
+                            Billed = false,
                             Comment = "49392523_Haus_in_1717",
                             CustomerId = 24,
                             Date = new DateTime(2018, 7, 26, 7, 55, 41, 0, DateTimeKind.Unspecified)
@@ -3380,6 +3792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 354,
+                            Billed = false,
                             Comment = "50823251_Haus_in_3488",
                             CustomerId = 27,
                             Date = new DateTime(2018, 7, 27, 6, 49, 28, 0, DateTimeKind.Unspecified)
@@ -3387,6 +3800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 355,
+                            Billed = false,
                             Comment = "4520002_Haus_in_7390",
                             CustomerId = 3,
                             Date = new DateTime(2018, 7, 27, 15, 13, 23, 0, DateTimeKind.Unspecified)
@@ -3394,6 +3808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 356,
+                            Billed = false,
                             Comment = "19219509_Haus_in_4377",
                             CustomerId = 13,
                             Date = new DateTime(2018, 7, 27, 22, 34, 48, 0, DateTimeKind.Unspecified)
@@ -3401,6 +3816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 357,
+                            Billed = false,
                             Comment = "70370119_Haus_in_8834",
                             CustomerId = 31,
                             Date = new DateTime(2018, 7, 28, 11, 5, 2, 0, DateTimeKind.Unspecified)
@@ -3408,6 +3824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 358,
+                            Billed = false,
                             Comment = "54429423_Haus_in_7303",
                             CustomerId = 18,
                             Date = new DateTime(2018, 7, 29, 0, 54, 27, 0, DateTimeKind.Unspecified)
@@ -3415,6 +3832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 359,
+                            Billed = false,
                             Comment = "73007602_Haus_in_2955",
                             CustomerId = 10,
                             Date = new DateTime(2018, 7, 29, 21, 41, 12, 0, DateTimeKind.Unspecified)
@@ -3422,6 +3840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 360,
+                            Billed = false,
                             Comment = "69686562_Haus_in_6464",
                             CustomerId = 12,
                             Date = new DateTime(2018, 7, 30, 5, 17, 33, 0, DateTimeKind.Unspecified)
@@ -3429,6 +3848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 361,
+                            Billed = false,
                             Comment = "49934882_Haus_in_6275",
                             CustomerId = 26,
                             Date = new DateTime(2018, 7, 30, 13, 4, 50, 0, DateTimeKind.Unspecified)
@@ -3436,6 +3856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 362,
+                            Billed = false,
                             Comment = "19226447_Haus_in_9845",
                             CustomerId = 22,
                             Date = new DateTime(2018, 7, 31, 10, 14, 27, 0, DateTimeKind.Unspecified)
@@ -3443,6 +3864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 363,
+                            Billed = false,
                             Comment = "20325638_Haus_in_7098",
                             CustomerId = 38,
                             Date = new DateTime(2018, 8, 1, 6, 27, 39, 0, DateTimeKind.Unspecified)
@@ -3450,6 +3872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 364,
+                            Billed = false,
                             Comment = "17622515_Haus_in_3480",
                             CustomerId = 11,
                             Date = new DateTime(2018, 8, 2, 3, 9, 28, 0, DateTimeKind.Unspecified)
@@ -3457,6 +3880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 365,
+                            Billed = false,
                             Comment = "22517983_Haus_in_6256",
                             CustomerId = 9,
                             Date = new DateTime(2018, 8, 3, 0, 58, 4, 0, DateTimeKind.Unspecified)
@@ -3464,6 +3888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 366,
+                            Billed = false,
                             Comment = "68732417_Haus_in_9094",
                             CustomerId = 26,
                             Date = new DateTime(2018, 8, 3, 7, 5, 52, 0, DateTimeKind.Unspecified)
@@ -3471,6 +3896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 367,
+                            Billed = false,
                             Comment = "53804834_Haus_in_4571",
                             CustomerId = 34,
                             Date = new DateTime(2018, 8, 3, 23, 54, 12, 0, DateTimeKind.Unspecified)
@@ -3478,6 +3904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 368,
+                            Billed = false,
                             Comment = "41039516_Haus_in_5727",
                             CustomerId = 32,
                             Date = new DateTime(2018, 8, 4, 7, 14, 47, 0, DateTimeKind.Unspecified)
@@ -3485,6 +3912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 369,
+                            Billed = false,
                             Comment = "43824595_Haus_in_1145",
                             CustomerId = 27,
                             Date = new DateTime(2018, 8, 4, 13, 25, 11, 0, DateTimeKind.Unspecified)
@@ -3492,6 +3920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 370,
+                            Billed = false,
                             Comment = "70675407_Haus_in_7165",
                             CustomerId = 1,
                             Date = new DateTime(2018, 8, 5, 8, 13, 48, 0, DateTimeKind.Unspecified)
@@ -3499,6 +3928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 371,
+                            Billed = false,
                             Comment = "52189234_Haus_in_1848",
                             CustomerId = 2,
                             Date = new DateTime(2018, 8, 6, 6, 54, 42, 0, DateTimeKind.Unspecified)
@@ -3506,6 +3936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 372,
+                            Billed = false,
                             Comment = "34424967_Haus_in_4468",
                             CustomerId = 13,
                             Date = new DateTime(2018, 8, 6, 15, 7, 13, 0, DateTimeKind.Unspecified)
@@ -3513,6 +3944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 373,
+                            Billed = false,
                             Comment = "18169580_Haus_in_8585",
                             CustomerId = 19,
                             Date = new DateTime(2018, 8, 7, 3, 5, 22, 0, DateTimeKind.Unspecified)
@@ -3520,6 +3952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 374,
+                            Billed = false,
                             Comment = "21391553_Haus_in_1648",
                             CustomerId = 4,
                             Date = new DateTime(2018, 8, 7, 20, 14, 46, 0, DateTimeKind.Unspecified)
@@ -3527,6 +3960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 375,
+                            Billed = false,
                             Comment = "87110936_Haus_in_8885",
                             CustomerId = 33,
                             Date = new DateTime(2018, 8, 8, 4, 36, 25, 0, DateTimeKind.Unspecified)
@@ -3534,6 +3968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 376,
+                            Billed = false,
                             Comment = "88149322_Haus_in_8771",
                             CustomerId = 27,
                             Date = new DateTime(2018, 8, 8, 15, 10, 32, 0, DateTimeKind.Unspecified)
@@ -3541,6 +3976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 377,
+                            Billed = false,
                             Comment = "62175853_Haus_in_2942",
                             CustomerId = 21,
                             Date = new DateTime(2018, 8, 9, 4, 13, 20, 0, DateTimeKind.Unspecified)
@@ -3548,6 +3984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 378,
+                            Billed = false,
                             Comment = "33399124_Haus_in_5055",
                             CustomerId = 2,
                             Date = new DateTime(2018, 8, 10, 2, 55, 8, 0, DateTimeKind.Unspecified)
@@ -3555,6 +3992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 379,
+                            Billed = false,
                             Comment = "33298211_Haus_in_6115",
                             CustomerId = 32,
                             Date = new DateTime(2018, 8, 10, 23, 13, 45, 0, DateTimeKind.Unspecified)
@@ -3562,6 +4000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 380,
+                            Billed = false,
                             Comment = "87985986_Haus_in_2644",
                             CustomerId = 35,
                             Date = new DateTime(2018, 8, 11, 10, 5, 12, 0, DateTimeKind.Unspecified)
@@ -3569,6 +4008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 381,
+                            Billed = false,
                             Comment = "3239414_Haus_in_7938",
                             CustomerId = 26,
                             Date = new DateTime(2018, 8, 11, 23, 26, 32, 0, DateTimeKind.Unspecified)
@@ -3576,6 +4016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 382,
+                            Billed = false,
                             Comment = "99345792_Haus_in_2546",
                             CustomerId = 12,
                             Date = new DateTime(2018, 8, 12, 10, 6, 39, 0, DateTimeKind.Unspecified)
@@ -3583,6 +4024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 383,
+                            Billed = false,
                             Comment = "10100449_Haus_in_5616",
                             CustomerId = 9,
                             Date = new DateTime(2018, 8, 12, 16, 18, 10, 0, DateTimeKind.Unspecified)
@@ -3590,6 +4032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 384,
+                            Billed = false,
                             Comment = "96163513_Haus_in_6127",
                             CustomerId = 10,
                             Date = new DateTime(2018, 8, 13, 2, 26, 11, 0, DateTimeKind.Unspecified)
@@ -3597,6 +4040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 385,
+                            Billed = false,
                             Comment = "38070505_Haus_in_1235",
                             CustomerId = 23,
                             Date = new DateTime(2018, 8, 13, 12, 54, 26, 0, DateTimeKind.Unspecified)
@@ -3604,6 +4048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 386,
+                            Billed = false,
                             Comment = "9159226_Haus_in_3456",
                             CustomerId = 26,
                             Date = new DateTime(2018, 8, 14, 1, 29, 35, 0, DateTimeKind.Unspecified)
@@ -3611,6 +4056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 387,
+                            Billed = false,
                             Comment = "77311471_Haus_in_6884",
                             CustomerId = 3,
                             Date = new DateTime(2018, 8, 14, 21, 51, 15, 0, DateTimeKind.Unspecified)
@@ -3618,6 +4064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 388,
+                            Billed = false,
                             Comment = "76075591_Haus_in_2498",
                             CustomerId = 19,
                             Date = new DateTime(2018, 8, 15, 9, 24, 34, 0, DateTimeKind.Unspecified)
@@ -3625,6 +4072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 389,
+                            Billed = false,
                             Comment = "62912156_Haus_in_7715",
                             CustomerId = 39,
                             Date = new DateTime(2018, 8, 15, 15, 30, 19, 0, DateTimeKind.Unspecified)
@@ -3632,6 +4080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 390,
+                            Billed = false,
                             Comment = "40489391_Haus_in_6014",
                             CustomerId = 31,
                             Date = new DateTime(2018, 8, 15, 23, 41, 42, 0, DateTimeKind.Unspecified)
@@ -3639,6 +4088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 391,
+                            Billed = false,
                             Comment = "89355866_Haus_in_4693",
                             CustomerId = 4,
                             Date = new DateTime(2018, 8, 16, 14, 23, 0, 0, DateTimeKind.Unspecified)
@@ -3646,6 +4096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 392,
+                            Billed = false,
                             Comment = "32879145_Haus_in_7806",
                             CustomerId = 11,
                             Date = new DateTime(2018, 8, 16, 20, 46, 5, 0, DateTimeKind.Unspecified)
@@ -3653,6 +4104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 393,
+                            Billed = false,
                             Comment = "89652257_Haus_in_4718",
                             CustomerId = 15,
                             Date = new DateTime(2018, 8, 17, 16, 57, 27, 0, DateTimeKind.Unspecified)
@@ -3660,6 +4112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 394,
+                            Billed = false,
                             Comment = "51456429_Haus_in_3856",
                             CustomerId = 4,
                             Date = new DateTime(2018, 8, 18, 3, 43, 9, 0, DateTimeKind.Unspecified)
@@ -3667,6 +4120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 395,
+                            Billed = false,
                             Comment = "48374861_Haus_in_9171",
                             CustomerId = 16,
                             Date = new DateTime(2018, 8, 18, 14, 10, 5, 0, DateTimeKind.Unspecified)
@@ -3674,6 +4128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 396,
+                            Billed = false,
                             Comment = "52732592_Haus_in_1729",
                             CustomerId = 5,
                             Date = new DateTime(2018, 8, 19, 10, 18, 0, 0, DateTimeKind.Unspecified)
@@ -3681,6 +4136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 397,
+                            Billed = false,
                             Comment = "44841171_Haus_in_4434",
                             CustomerId = 37,
                             Date = new DateTime(2018, 8, 19, 21, 32, 39, 0, DateTimeKind.Unspecified)
@@ -3688,6 +4144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 398,
+                            Billed = false,
                             Comment = "12310559_Haus_in_5032",
                             CustomerId = 1,
                             Date = new DateTime(2018, 8, 20, 5, 19, 23, 0, DateTimeKind.Unspecified)
@@ -3695,6 +4152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 399,
+                            Billed = false,
                             Comment = "51760045_Haus_in_6715",
                             CustomerId = 40,
                             Date = new DateTime(2018, 8, 20, 18, 5, 40, 0, DateTimeKind.Unspecified)
@@ -3702,6 +4160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 400,
+                            Billed = false,
                             Comment = "85158052_Haus_in_5104",
                             CustomerId = 40,
                             Date = new DateTime(2018, 8, 21, 14, 31, 51, 0, DateTimeKind.Unspecified)
@@ -3709,6 +4168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 401,
+                            Billed = false,
                             Comment = "39053166_Haus_in_3106",
                             CustomerId = 8,
                             Date = new DateTime(2018, 8, 22, 4, 9, 44, 0, DateTimeKind.Unspecified)
@@ -3716,6 +4176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 402,
+                            Billed = false,
                             Comment = "2003973_Haus_in_7018",
                             CustomerId = 12,
                             Date = new DateTime(2018, 8, 22, 23, 52, 23, 0, DateTimeKind.Unspecified)
@@ -3723,6 +4184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 403,
+                            Billed = false,
                             Comment = "1649880_Haus_in_7612",
                             CustomerId = 14,
                             Date = new DateTime(2018, 8, 23, 18, 12, 42, 0, DateTimeKind.Unspecified)
@@ -3730,6 +4192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 404,
+                            Billed = false,
                             Comment = "1788239_Haus_in_7264",
                             CustomerId = 21,
                             Date = new DateTime(2018, 8, 24, 9, 27, 1, 0, DateTimeKind.Unspecified)
@@ -3737,6 +4200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 405,
+                            Billed = false,
                             Comment = "29112010_Haus_in_1905",
                             CustomerId = 13,
                             Date = new DateTime(2018, 8, 25, 2, 18, 36, 0, DateTimeKind.Unspecified)
@@ -3744,6 +4208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 406,
+                            Billed = false,
                             Comment = "46856097_Haus_in_8438",
                             CustomerId = 9,
                             Date = new DateTime(2018, 8, 25, 22, 39, 59, 0, DateTimeKind.Unspecified)
@@ -3751,6 +4216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 407,
+                            Billed = false,
                             Comment = "20270087_Haus_in_4786",
                             CustomerId = 21,
                             Date = new DateTime(2018, 8, 26, 13, 32, 22, 0, DateTimeKind.Unspecified)
@@ -3758,6 +4224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 408,
+                            Billed = false,
                             Comment = "24674076_Haus_in_2680",
                             CustomerId = 25,
                             Date = new DateTime(2018, 8, 27, 8, 38, 7, 0, DateTimeKind.Unspecified)
@@ -3765,6 +4232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 409,
+                            Billed = false,
                             Comment = "42900443_Haus_in_6598",
                             CustomerId = 19,
                             Date = new DateTime(2018, 8, 27, 20, 7, 32, 0, DateTimeKind.Unspecified)
@@ -3772,6 +4240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 410,
+                            Billed = false,
                             Comment = "55971912_Haus_in_5672",
                             CustomerId = 9,
                             Date = new DateTime(2018, 8, 28, 5, 2, 8, 0, DateTimeKind.Unspecified)
@@ -3779,6 +4248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 411,
+                            Billed = false,
                             Comment = "41355710_Haus_in_7055",
                             CustomerId = 23,
                             Date = new DateTime(2018, 8, 28, 21, 31, 33, 0, DateTimeKind.Unspecified)
@@ -3786,6 +4256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 412,
+                            Billed = false,
                             Comment = "87512317_Haus_in_2214",
                             CustomerId = 21,
                             Date = new DateTime(2018, 8, 29, 8, 3, 24, 0, DateTimeKind.Unspecified)
@@ -3793,6 +4264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 413,
+                            Billed = false,
                             Comment = "73958478_Haus_in_9398",
                             CustomerId = 37,
                             Date = new DateTime(2018, 8, 29, 19, 6, 26, 0, DateTimeKind.Unspecified)
@@ -3800,6 +4272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 414,
+                            Billed = false,
                             Comment = "758851_Haus_in_8266",
                             CustomerId = 17,
                             Date = new DateTime(2018, 8, 30, 17, 5, 3, 0, DateTimeKind.Unspecified)
@@ -3807,6 +4280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 415,
+                            Billed = false,
                             Comment = "8484313_Haus_in_5972",
                             CustomerId = 31,
                             Date = new DateTime(2018, 8, 31, 10, 30, 57, 0, DateTimeKind.Unspecified)
@@ -3814,6 +4288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 416,
+                            Billed = false,
                             Comment = "88075044_Haus_in_7369",
                             CustomerId = 36,
                             Date = new DateTime(2018, 8, 31, 19, 47, 17, 0, DateTimeKind.Unspecified)
@@ -3821,6 +4296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 417,
+                            Billed = false,
                             Comment = "33903859_Haus_in_7473",
                             CustomerId = 5,
                             Date = new DateTime(2018, 9, 1, 18, 0, 56, 0, DateTimeKind.Unspecified)
@@ -3828,6 +4304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 418,
+                            Billed = false,
                             Comment = "11862994_Haus_in_4502",
                             CustomerId = 12,
                             Date = new DateTime(2018, 9, 2, 5, 48, 32, 0, DateTimeKind.Unspecified)
@@ -3835,6 +4312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 419,
+                            Billed = false,
                             Comment = "28980119_Haus_in_6126",
                             CustomerId = 27,
                             Date = new DateTime(2018, 9, 2, 21, 1, 43, 0, DateTimeKind.Unspecified)
@@ -3842,6 +4320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 420,
+                            Billed = false,
                             Comment = "90338725_Haus_in_9913",
                             CustomerId = 25,
                             Date = new DateTime(2018, 9, 3, 18, 16, 12, 0, DateTimeKind.Unspecified)
@@ -3849,6 +4328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 421,
+                            Billed = false,
                             Comment = "28335540_Haus_in_6577",
                             CustomerId = 14,
                             Date = new DateTime(2018, 9, 4, 12, 47, 38, 0, DateTimeKind.Unspecified)
@@ -3856,6 +4336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 422,
+                            Billed = false,
                             Comment = "91252108_Haus_in_5823",
                             CustomerId = 14,
                             Date = new DateTime(2018, 9, 5, 8, 14, 48, 0, DateTimeKind.Unspecified)
@@ -3863,6 +4344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 423,
+                            Billed = false,
                             Comment = "10615008_Haus_in_2926",
                             CustomerId = 37,
                             Date = new DateTime(2018, 9, 5, 19, 3, 27, 0, DateTimeKind.Unspecified)
@@ -3870,6 +4352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 424,
+                            Billed = false,
                             Comment = "17711196_Haus_in_8792",
                             CustomerId = 22,
                             Date = new DateTime(2018, 9, 6, 4, 25, 45, 0, DateTimeKind.Unspecified)
@@ -3877,6 +4360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 425,
+                            Billed = false,
                             Comment = "99682032_Haus_in_6915",
                             CustomerId = 31,
                             Date = new DateTime(2018, 9, 6, 16, 58, 42, 0, DateTimeKind.Unspecified)
@@ -3884,6 +4368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 426,
+                            Billed = false,
                             Comment = "35588390_Haus_in_8375",
                             CustomerId = 28,
                             Date = new DateTime(2018, 9, 7, 2, 22, 0, 0, DateTimeKind.Unspecified)
@@ -3891,6 +4376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 427,
+                            Billed = false,
                             Comment = "50579313_Haus_in_6967",
                             CustomerId = 40,
                             Date = new DateTime(2018, 9, 7, 13, 19, 31, 0, DateTimeKind.Unspecified)
@@ -3898,6 +4384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 428,
+                            Billed = false,
                             Comment = "41326523_Haus_in_5299",
                             CustomerId = 27,
                             Date = new DateTime(2018, 9, 7, 22, 34, 49, 0, DateTimeKind.Unspecified)
@@ -3905,6 +4392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 429,
+                            Billed = false,
                             Comment = "41906299_Haus_in_5847",
                             CustomerId = 12,
                             Date = new DateTime(2018, 9, 8, 20, 31, 57, 0, DateTimeKind.Unspecified)
@@ -3912,6 +4400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 430,
+                            Billed = false,
                             Comment = "96057218_Haus_in_7677",
                             CustomerId = 24,
                             Date = new DateTime(2018, 9, 9, 13, 44, 17, 0, DateTimeKind.Unspecified)
@@ -3919,6 +4408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 431,
+                            Billed = false,
                             Comment = "11436746_Haus_in_5827",
                             CustomerId = 21,
                             Date = new DateTime(2018, 9, 10, 5, 46, 44, 0, DateTimeKind.Unspecified)
@@ -3926,6 +4416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 432,
+                            Billed = false,
                             Comment = "64507039_Haus_in_2244",
                             CustomerId = 34,
                             Date = new DateTime(2018, 9, 10, 15, 21, 11, 0, DateTimeKind.Unspecified)
@@ -3933,6 +4424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 433,
+                            Billed = false,
                             Comment = "32556686_Haus_in_9275",
                             CustomerId = 26,
                             Date = new DateTime(2018, 9, 11, 8, 34, 2, 0, DateTimeKind.Unspecified)
@@ -3940,6 +4432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 434,
+                            Billed = false,
                             Comment = "86046721_Haus_in_1369",
                             CustomerId = 20,
                             Date = new DateTime(2018, 9, 12, 0, 16, 10, 0, DateTimeKind.Unspecified)
@@ -3947,6 +4440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 435,
+                            Billed = false,
                             Comment = "99562992_Haus_in_2440",
                             CustomerId = 31,
                             Date = new DateTime(2018, 9, 12, 16, 11, 6, 0, DateTimeKind.Unspecified)
@@ -3954,6 +4448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 436,
+                            Billed = false,
                             Comment = "35121318_Haus_in_5398",
                             CustomerId = 32,
                             Date = new DateTime(2018, 9, 13, 6, 51, 8, 0, DateTimeKind.Unspecified)
@@ -3961,6 +4456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 437,
+                            Billed = false,
                             Comment = "42762221_Haus_in_8524",
                             CustomerId = 32,
                             Date = new DateTime(2018, 9, 13, 16, 32, 17, 0, DateTimeKind.Unspecified)
@@ -3968,6 +4464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 438,
+                            Billed = false,
                             Comment = "60232250_Haus_in_3070",
                             CustomerId = 40,
                             Date = new DateTime(2018, 9, 13, 22, 36, 36, 0, DateTimeKind.Unspecified)
@@ -3975,6 +4472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 439,
+                            Billed = false,
                             Comment = "2561036_Haus_in_3309",
                             CustomerId = 18,
                             Date = new DateTime(2018, 9, 14, 15, 40, 28, 0, DateTimeKind.Unspecified)
@@ -3982,6 +4480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 440,
+                            Billed = false,
                             Comment = "98210147_Haus_in_2780",
                             CustomerId = 18,
                             Date = new DateTime(2018, 9, 15, 7, 49, 38, 0, DateTimeKind.Unspecified)
@@ -3989,6 +4488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 441,
+                            Billed = false,
                             Comment = "36627636_Haus_in_9617",
                             CustomerId = 13,
                             Date = new DateTime(2018, 9, 15, 23, 17, 12, 0, DateTimeKind.Unspecified)
@@ -3996,6 +4496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 442,
+                            Billed = false,
                             Comment = "44952238_Haus_in_6657",
                             CustomerId = 16,
                             Date = new DateTime(2018, 9, 16, 7, 11, 2, 0, DateTimeKind.Unspecified)
@@ -4003,6 +4504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 443,
+                            Billed = false,
                             Comment = "49060534_Haus_in_8147",
                             CustomerId = 12,
                             Date = new DateTime(2018, 9, 17, 2, 57, 19, 0, DateTimeKind.Unspecified)
@@ -4010,6 +4512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 444,
+                            Billed = false,
                             Comment = "10512232_Haus_in_9602",
                             CustomerId = 30,
                             Date = new DateTime(2018, 9, 17, 21, 29, 38, 0, DateTimeKind.Unspecified)
@@ -4017,6 +4520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 445,
+                            Billed = false,
                             Comment = "17364146_Haus_in_2938",
                             CustomerId = 31,
                             Date = new DateTime(2018, 9, 18, 7, 33, 17, 0, DateTimeKind.Unspecified)
@@ -4024,6 +4528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 446,
+                            Billed = false,
                             Comment = "20955975_Haus_in_9789",
                             CustomerId = 39,
                             Date = new DateTime(2018, 9, 18, 19, 18, 59, 0, DateTimeKind.Unspecified)
@@ -4031,6 +4536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 447,
+                            Billed = false,
                             Comment = "88459882_Haus_in_7323",
                             CustomerId = 15,
                             Date = new DateTime(2018, 9, 19, 6, 0, 40, 0, DateTimeKind.Unspecified)
@@ -4038,6 +4544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 448,
+                            Billed = false,
                             Comment = "65155500_Haus_in_3301",
                             CustomerId = 11,
                             Date = new DateTime(2018, 9, 19, 18, 18, 15, 0, DateTimeKind.Unspecified)
@@ -4045,6 +4552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 449,
+                            Billed = false,
                             Comment = "72739677_Haus_in_5064",
                             CustomerId = 15,
                             Date = new DateTime(2018, 9, 20, 16, 37, 53, 0, DateTimeKind.Unspecified)
@@ -4052,6 +4560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 450,
+                            Billed = false,
                             Comment = "4423287_Haus_in_3949",
                             CustomerId = 26,
                             Date = new DateTime(2018, 9, 21, 13, 26, 14, 0, DateTimeKind.Unspecified)
@@ -4059,6 +4568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 451,
+                            Billed = false,
                             Comment = "6292167_Haus_in_7217",
                             CustomerId = 26,
                             Date = new DateTime(2018, 9, 22, 0, 46, 57, 0, DateTimeKind.Unspecified)
@@ -4066,6 +4576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 452,
+                            Billed = false,
                             Comment = "4662127_Haus_in_8177",
                             CustomerId = 13,
                             Date = new DateTime(2018, 9, 22, 22, 35, 31, 0, DateTimeKind.Unspecified)
@@ -4073,6 +4584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 453,
+                            Billed = false,
                             Comment = "36928702_Haus_in_8392",
                             CustomerId = 26,
                             Date = new DateTime(2018, 9, 23, 5, 56, 9, 0, DateTimeKind.Unspecified)
@@ -4080,6 +4592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 454,
+                            Billed = false,
                             Comment = "80882921_Haus_in_8782",
                             CustomerId = 17,
                             Date = new DateTime(2018, 9, 23, 17, 57, 32, 0, DateTimeKind.Unspecified)
@@ -4087,6 +4600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 455,
+                            Billed = false,
                             Comment = "9281598_Haus_in_4523",
                             CustomerId = 11,
                             Date = new DateTime(2018, 9, 24, 9, 53, 35, 0, DateTimeKind.Unspecified)
@@ -4094,6 +4608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 456,
+                            Billed = false,
                             Comment = "7111899_Haus_in_5960",
                             CustomerId = 16,
                             Date = new DateTime(2018, 9, 25, 2, 31, 13, 0, DateTimeKind.Unspecified)
@@ -4101,6 +4616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 457,
+                            Billed = false,
                             Comment = "35219016_Haus_in_8518",
                             CustomerId = 37,
                             Date = new DateTime(2018, 9, 26, 1, 14, 26, 0, DateTimeKind.Unspecified)
@@ -4108,6 +4624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 458,
+                            Billed = false,
                             Comment = "28221134_Haus_in_4547",
                             CustomerId = 35,
                             Date = new DateTime(2018, 9, 26, 18, 52, 42, 0, DateTimeKind.Unspecified)
@@ -4115,6 +4632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 459,
+                            Billed = false,
                             Comment = "26345619_Haus_in_1394",
                             CustomerId = 22,
                             Date = new DateTime(2018, 9, 27, 14, 7, 9, 0, DateTimeKind.Unspecified)
@@ -4122,6 +4640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 460,
+                            Billed = false,
                             Comment = "9122488_Haus_in_2128",
                             CustomerId = 35,
                             Date = new DateTime(2018, 9, 28, 11, 58, 40, 0, DateTimeKind.Unspecified)
@@ -4129,6 +4648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 461,
+                            Billed = false,
                             Comment = "67886390_Haus_in_4878",
                             CustomerId = 8,
                             Date = new DateTime(2018, 9, 29, 5, 36, 23, 0, DateTimeKind.Unspecified)
@@ -4136,6 +4656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 462,
+                            Billed = false,
                             Comment = "65607386_Haus_in_6780",
                             CustomerId = 5,
                             Date = new DateTime(2018, 9, 29, 14, 17, 39, 0, DateTimeKind.Unspecified)
@@ -4143,6 +4664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 463,
+                            Billed = false,
                             Comment = "73904106_Haus_in_2499",
                             CustomerId = 23,
                             Date = new DateTime(2018, 9, 30, 6, 45, 18, 0, DateTimeKind.Unspecified)
@@ -4150,6 +4672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 464,
+                            Billed = false,
                             Comment = "48260235_Haus_in_8704",
                             CustomerId = 26,
                             Date = new DateTime(2018, 9, 30, 23, 26, 57, 0, DateTimeKind.Unspecified)
@@ -4157,6 +4680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 465,
+                            Billed = false,
                             Comment = "45935906_Haus_in_2820",
                             CustomerId = 25,
                             Date = new DateTime(2018, 10, 1, 20, 34, 18, 0, DateTimeKind.Unspecified)
@@ -4164,6 +4688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 466,
+                            Billed = false,
                             Comment = "25190776_Haus_in_7529",
                             CustomerId = 5,
                             Date = new DateTime(2018, 10, 2, 2, 40, 56, 0, DateTimeKind.Unspecified)
@@ -4171,6 +4696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 467,
+                            Billed = false,
                             Comment = "71637323_Haus_in_6233",
                             CustomerId = 34,
                             Date = new DateTime(2018, 10, 2, 10, 10, 53, 0, DateTimeKind.Unspecified)
@@ -4178,6 +4704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 468,
+                            Billed = false,
                             Comment = "93042454_Haus_in_8243",
                             CustomerId = 33,
                             Date = new DateTime(2018, 10, 2, 17, 51, 27, 0, DateTimeKind.Unspecified)
@@ -4185,6 +4712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 469,
+                            Billed = false,
                             Comment = "26737444_Haus_in_4670",
                             CustomerId = 15,
                             Date = new DateTime(2018, 10, 3, 6, 12, 36, 0, DateTimeKind.Unspecified)
@@ -4192,6 +4720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 470,
+                            Billed = false,
                             Comment = "25787861_Haus_in_6224",
                             CustomerId = 35,
                             Date = new DateTime(2018, 10, 3, 19, 13, 45, 0, DateTimeKind.Unspecified)
@@ -4199,6 +4728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 471,
+                            Billed = false,
                             Comment = "9169862_Haus_in_6030",
                             CustomerId = 4,
                             Date = new DateTime(2018, 10, 4, 2, 45, 0, 0, DateTimeKind.Unspecified)
@@ -4206,6 +4736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 472,
+                            Billed = false,
                             Comment = "45396493_Haus_in_3311",
                             CustomerId = 38,
                             Date = new DateTime(2018, 10, 5, 1, 14, 13, 0, DateTimeKind.Unspecified)
@@ -4213,6 +4744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 473,
+                            Billed = false,
                             Comment = "53148442_Haus_in_8199",
                             CustomerId = 4,
                             Date = new DateTime(2018, 10, 5, 11, 0, 10, 0, DateTimeKind.Unspecified)
@@ -4220,6 +4752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 474,
+                            Billed = false,
                             Comment = "24774879_Haus_in_1975",
                             CustomerId = 23,
                             Date = new DateTime(2018, 10, 5, 21, 7, 21, 0, DateTimeKind.Unspecified)
@@ -4227,6 +4760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 475,
+                            Billed = false,
                             Comment = "66018039_Haus_in_3318",
                             CustomerId = 10,
                             Date = new DateTime(2018, 10, 6, 3, 46, 10, 0, DateTimeKind.Unspecified)
@@ -4234,6 +4768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 476,
+                            Billed = false,
                             Comment = "77528704_Haus_in_2819",
                             CustomerId = 16,
                             Date = new DateTime(2018, 10, 6, 19, 0, 24, 0, DateTimeKind.Unspecified)
@@ -4241,6 +4776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 477,
+                            Billed = false,
                             Comment = "82086101_Haus_in_5043",
                             CustomerId = 2,
                             Date = new DateTime(2018, 10, 7, 6, 3, 59, 0, DateTimeKind.Unspecified)
@@ -4248,6 +4784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 478,
+                            Billed = false,
                             Comment = "19158575_Haus_in_5625",
                             CustomerId = 36,
                             Date = new DateTime(2018, 10, 7, 22, 30, 52, 0, DateTimeKind.Unspecified)
@@ -4255,6 +4792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 479,
+                            Billed = false,
                             Comment = "59918087_Haus_in_2430",
                             CustomerId = 14,
                             Date = new DateTime(2018, 10, 8, 11, 52, 20, 0, DateTimeKind.Unspecified)
@@ -4262,6 +4800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 480,
+                            Billed = false,
                             Comment = "2475100_Haus_in_5110",
                             CustomerId = 6,
                             Date = new DateTime(2018, 10, 9, 0, 22, 37, 0, DateTimeKind.Unspecified)
@@ -4269,6 +4808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 481,
+                            Billed = false,
                             Comment = "36332092_Haus_in_3039",
                             CustomerId = 39,
                             Date = new DateTime(2018, 10, 9, 19, 7, 26, 0, DateTimeKind.Unspecified)
@@ -4276,6 +4816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 482,
+                            Billed = false,
                             Comment = "76012373_Haus_in_5481",
                             CustomerId = 32,
                             Date = new DateTime(2018, 10, 10, 1, 54, 24, 0, DateTimeKind.Unspecified)
@@ -4283,6 +4824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 483,
+                            Billed = false,
                             Comment = "96343754_Haus_in_8344",
                             CustomerId = 30,
                             Date = new DateTime(2018, 10, 10, 11, 9, 41, 0, DateTimeKind.Unspecified)
@@ -4290,6 +4832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 484,
+                            Billed = false,
                             Comment = "81368861_Haus_in_3792",
                             CustomerId = 14,
                             Date = new DateTime(2018, 10, 10, 20, 20, 8, 0, DateTimeKind.Unspecified)
@@ -4297,6 +4840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 485,
+                            Billed = false,
                             Comment = "99634048_Haus_in_3487",
                             CustomerId = 4,
                             Date = new DateTime(2018, 10, 11, 15, 34, 45, 0, DateTimeKind.Unspecified)
@@ -4304,6 +4848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 486,
+                            Billed = false,
                             Comment = "31084426_Haus_in_1671",
                             CustomerId = 6,
                             Date = new DateTime(2018, 10, 12, 12, 45, 46, 0, DateTimeKind.Unspecified)
@@ -4311,6 +4856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 487,
+                            Billed = false,
                             Comment = "87807230_Haus_in_4733",
                             CustomerId = 28,
                             Date = new DateTime(2018, 10, 13, 5, 22, 51, 0, DateTimeKind.Unspecified)
@@ -4318,6 +4864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 488,
+                            Billed = false,
                             Comment = "14577380_Haus_in_4276",
                             CustomerId = 40,
                             Date = new DateTime(2018, 10, 13, 20, 1, 26, 0, DateTimeKind.Unspecified)
@@ -4325,6 +4872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 489,
+                            Billed = false,
                             Comment = "96006951_Haus_in_8790",
                             CustomerId = 19,
                             Date = new DateTime(2018, 10, 14, 16, 40, 58, 0, DateTimeKind.Unspecified)
@@ -4332,6 +4880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 490,
+                            Billed = false,
                             Comment = "18460753_Haus_in_2341",
                             CustomerId = 22,
                             Date = new DateTime(2018, 10, 15, 15, 4, 53, 0, DateTimeKind.Unspecified)
@@ -4339,6 +4888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 491,
+                            Billed = false,
                             Comment = "86639072_Haus_in_6261",
                             CustomerId = 29,
                             Date = new DateTime(2018, 10, 16, 6, 59, 39, 0, DateTimeKind.Unspecified)
@@ -4346,6 +4896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 492,
+                            Billed = false,
                             Comment = "11612302_Haus_in_4051",
                             CustomerId = 10,
                             Date = new DateTime(2018, 10, 16, 21, 4, 34, 0, DateTimeKind.Unspecified)
@@ -4353,6 +4904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 493,
+                            Billed = false,
                             Comment = "80354050_Haus_in_2618",
                             CustomerId = 2,
                             Date = new DateTime(2018, 10, 17, 15, 33, 51, 0, DateTimeKind.Unspecified)
@@ -4360,6 +4912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 494,
+                            Billed = false,
                             Comment = "22524021_Haus_in_3998",
                             CustomerId = 12,
                             Date = new DateTime(2018, 10, 18, 9, 20, 56, 0, DateTimeKind.Unspecified)
@@ -4367,6 +4920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 495,
+                            Billed = false,
                             Comment = "14345431_Haus_in_9287",
                             CustomerId = 7,
                             Date = new DateTime(2018, 10, 19, 3, 48, 9, 0, DateTimeKind.Unspecified)
@@ -4374,6 +4928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 496,
+                            Billed = false,
                             Comment = "11216732_Haus_in_9547",
                             CustomerId = 38,
                             Date = new DateTime(2018, 10, 19, 11, 54, 35, 0, DateTimeKind.Unspecified)
@@ -4381,6 +4936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 497,
+                            Billed = false,
                             Comment = "50357268_Haus_in_1864",
                             CustomerId = 1,
                             Date = new DateTime(2018, 10, 20, 4, 42, 21, 0, DateTimeKind.Unspecified)
@@ -4388,6 +4944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 498,
+                            Billed = false,
                             Comment = "71951799_Haus_in_5217",
                             CustomerId = 9,
                             Date = new DateTime(2018, 10, 20, 18, 19, 54, 0, DateTimeKind.Unspecified)
@@ -4395,6 +4952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 499,
+                            Billed = false,
                             Comment = "82263568_Haus_in_4564",
                             CustomerId = 31,
                             Date = new DateTime(2018, 10, 21, 10, 16, 29, 0, DateTimeKind.Unspecified)
@@ -4402,6 +4960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 500,
+                            Billed = false,
                             Comment = "99386321_Haus_in_4784",
                             CustomerId = 19,
                             Date = new DateTime(2018, 10, 21, 17, 35, 10, 0, DateTimeKind.Unspecified)
@@ -4409,6 +4968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 501,
+                            Billed = false,
                             Comment = "10656782_Haus_in_1354",
                             CustomerId = 1,
                             Date = new DateTime(2018, 10, 22, 5, 55, 4, 0, DateTimeKind.Unspecified)
@@ -4416,6 +4976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 502,
+                            Billed = false,
                             Comment = "42263834_Haus_in_9967",
                             CustomerId = 14,
                             Date = new DateTime(2018, 10, 23, 3, 43, 27, 0, DateTimeKind.Unspecified)
@@ -4423,6 +4984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 503,
+                            Billed = false,
                             Comment = "85784706_Haus_in_6360",
                             CustomerId = 40,
                             Date = new DateTime(2018, 10, 23, 16, 23, 44, 0, DateTimeKind.Unspecified)
@@ -4430,6 +4992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 504,
+                            Billed = false,
                             Comment = "56963373_Haus_in_2763",
                             CustomerId = 31,
                             Date = new DateTime(2018, 10, 24, 11, 54, 27, 0, DateTimeKind.Unspecified)
@@ -4437,6 +5000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 505,
+                            Billed = false,
                             Comment = "87296428_Haus_in_8351",
                             CustomerId = 3,
                             Date = new DateTime(2018, 10, 24, 23, 14, 43, 0, DateTimeKind.Unspecified)
@@ -4444,6 +5008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 506,
+                            Billed = false,
                             Comment = "65974058_Haus_in_2690",
                             CustomerId = 15,
                             Date = new DateTime(2018, 10, 25, 9, 25, 31, 0, DateTimeKind.Unspecified)
@@ -4451,6 +5016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 507,
+                            Billed = false,
                             Comment = "33087340_Haus_in_9185",
                             CustomerId = 22,
                             Date = new DateTime(2018, 10, 25, 17, 50, 2, 0, DateTimeKind.Unspecified)
@@ -4458,6 +5024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 508,
+                            Billed = false,
                             Comment = "38251454_Haus_in_2336",
                             CustomerId = 24,
                             Date = new DateTime(2018, 10, 26, 1, 5, 34, 0, DateTimeKind.Unspecified)
@@ -4465,6 +5032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 509,
+                            Billed = false,
                             Comment = "69337507_Haus_in_5418",
                             CustomerId = 5,
                             Date = new DateTime(2018, 10, 26, 8, 10, 0, 0, DateTimeKind.Unspecified)
@@ -4472,6 +5040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 510,
+                            Billed = false,
                             Comment = "67961733_Haus_in_7883",
                             CustomerId = 30,
                             Date = new DateTime(2018, 10, 27, 1, 45, 44, 0, DateTimeKind.Unspecified)
@@ -4479,6 +5048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 511,
+                            Billed = false,
                             Comment = "8796739_Haus_in_3469",
                             CustomerId = 23,
                             Date = new DateTime(2018, 10, 27, 20, 34, 39, 0, DateTimeKind.Unspecified)
@@ -4486,6 +5056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 512,
+                            Billed = false,
                             Comment = "82700835_Haus_in_5077",
                             CustomerId = 5,
                             Date = new DateTime(2018, 10, 28, 5, 36, 41, 0, DateTimeKind.Unspecified)
@@ -4493,6 +5064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 513,
+                            Billed = false,
                             Comment = "68231850_Haus_in_3968",
                             CustomerId = 34,
                             Date = new DateTime(2018, 10, 28, 12, 51, 52, 0, DateTimeKind.Unspecified)
@@ -4500,6 +5072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 514,
+                            Billed = false,
                             Comment = "96342237_Haus_in_8292",
                             CustomerId = 6,
                             Date = new DateTime(2018, 10, 29, 6, 36, 48, 0, DateTimeKind.Unspecified)
@@ -4507,6 +5080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 515,
+                            Billed = false,
                             Comment = "68465020_Haus_in_1636",
                             CustomerId = 14,
                             Date = new DateTime(2018, 10, 29, 18, 45, 15, 0, DateTimeKind.Unspecified)
@@ -4514,6 +5088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 516,
+                            Billed = false,
                             Comment = "76655374_Haus_in_5621",
                             CustomerId = 31,
                             Date = new DateTime(2018, 10, 30, 8, 11, 58, 0, DateTimeKind.Unspecified)
@@ -4521,6 +5096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 517,
+                            Billed = false,
                             Comment = "40773795_Haus_in_4264",
                             CustomerId = 11,
                             Date = new DateTime(2018, 10, 31, 6, 42, 8, 0, DateTimeKind.Unspecified)
@@ -4528,6 +5104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 518,
+                            Billed = false,
                             Comment = "5072270_Haus_in_5127",
                             CustomerId = 40,
                             Date = new DateTime(2018, 10, 31, 14, 39, 22, 0, DateTimeKind.Unspecified)
@@ -4535,6 +5112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 519,
+                            Billed = false,
                             Comment = "8069842_Haus_in_9445",
                             CustomerId = 18,
                             Date = new DateTime(2018, 11, 1, 2, 30, 16, 0, DateTimeKind.Unspecified)
@@ -4542,6 +5120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 520,
+                            Billed = false,
                             Comment = "19624228_Haus_in_9603",
                             CustomerId = 6,
                             Date = new DateTime(2018, 11, 1, 22, 8, 6, 0, DateTimeKind.Unspecified)
@@ -4549,6 +5128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 521,
+                            Billed = false,
                             Comment = "69315373_Haus_in_4588",
                             CustomerId = 39,
                             Date = new DateTime(2018, 11, 2, 17, 58, 26, 0, DateTimeKind.Unspecified)
@@ -4556,6 +5136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 522,
+                            Billed = false,
                             Comment = "85461251_Haus_in_2687",
                             CustomerId = 27,
                             Date = new DateTime(2018, 11, 3, 12, 16, 54, 0, DateTimeKind.Unspecified)
@@ -4563,6 +5144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 523,
+                            Billed = false,
                             Comment = "1522306_Haus_in_9839",
                             CustomerId = 25,
                             Date = new DateTime(2018, 11, 3, 20, 40, 14, 0, DateTimeKind.Unspecified)
@@ -4570,6 +5152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 524,
+                            Billed = false,
                             Comment = "2262557_Haus_in_8487",
                             CustomerId = 1,
                             Date = new DateTime(2018, 11, 4, 12, 3, 19, 0, DateTimeKind.Unspecified)
@@ -4577,6 +5160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 525,
+                            Billed = false,
                             Comment = "96620126_Haus_in_2293",
                             CustomerId = 32,
                             Date = new DateTime(2018, 11, 4, 21, 1, 40, 0, DateTimeKind.Unspecified)
@@ -4584,6 +5168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 526,
+                            Billed = false,
                             Comment = "46803732_Haus_in_6027",
                             CustomerId = 9,
                             Date = new DateTime(2018, 11, 5, 14, 50, 58, 0, DateTimeKind.Unspecified)
@@ -4591,6 +5176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 527,
+                            Billed = false,
                             Comment = "27920859_Haus_in_7814",
                             CustomerId = 34,
                             Date = new DateTime(2018, 11, 5, 21, 0, 15, 0, DateTimeKind.Unspecified)
@@ -4598,6 +5184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 528,
+                            Billed = false,
                             Comment = "27335976_Haus_in_7324",
                             CustomerId = 30,
                             Date = new DateTime(2018, 11, 6, 19, 37, 16, 0, DateTimeKind.Unspecified)
@@ -4605,6 +5192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 529,
+                            Billed = false,
                             Comment = "55996171_Haus_in_8349",
                             CustomerId = 36,
                             Date = new DateTime(2018, 11, 7, 11, 49, 52, 0, DateTimeKind.Unspecified)
@@ -4612,6 +5200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 530,
+                            Billed = false,
                             Comment = "82521422_Haus_in_7387",
                             CustomerId = 21,
                             Date = new DateTime(2018, 11, 8, 8, 36, 41, 0, DateTimeKind.Unspecified)
@@ -4619,6 +5208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 531,
+                            Billed = false,
                             Comment = "2347243_Haus_in_1236",
                             CustomerId = 14,
                             Date = new DateTime(2018, 11, 8, 15, 31, 1, 0, DateTimeKind.Unspecified)
@@ -4626,6 +5216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 532,
+                            Billed = false,
                             Comment = "59561718_Haus_in_8826",
                             CustomerId = 32,
                             Date = new DateTime(2018, 11, 9, 12, 27, 54, 0, DateTimeKind.Unspecified)
@@ -4633,6 +5224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 533,
+                            Billed = false,
                             Comment = "3493969_Haus_in_4553",
                             CustomerId = 14,
                             Date = new DateTime(2018, 11, 10, 6, 10, 0, 0, DateTimeKind.Unspecified)
@@ -4640,6 +5232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 534,
+                            Billed = false,
                             Comment = "19078195_Haus_in_7986",
                             CustomerId = 27,
                             Date = new DateTime(2018, 11, 11, 2, 34, 42, 0, DateTimeKind.Unspecified)
@@ -4647,6 +5240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 535,
+                            Billed = false,
                             Comment = "33110374_Haus_in_7140",
                             CustomerId = 20,
                             Date = new DateTime(2018, 11, 11, 17, 19, 59, 0, DateTimeKind.Unspecified)
@@ -4654,6 +5248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 536,
+                            Billed = false,
                             Comment = "81061038_Haus_in_4303",
                             CustomerId = 24,
                             Date = new DateTime(2018, 11, 12, 11, 49, 18, 0, DateTimeKind.Unspecified)
@@ -4661,6 +5256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 537,
+                            Billed = false,
                             Comment = "87228553_Haus_in_3925",
                             CustomerId = 40,
                             Date = new DateTime(2018, 11, 13, 1, 26, 54, 0, DateTimeKind.Unspecified)
@@ -4668,6 +5264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 538,
+                            Billed = false,
                             Comment = "18419085_Haus_in_8545",
                             CustomerId = 31,
                             Date = new DateTime(2018, 11, 13, 21, 15, 29, 0, DateTimeKind.Unspecified)
@@ -4675,6 +5272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 539,
+                            Billed = false,
                             Comment = "68320203_Haus_in_4892",
                             CustomerId = 18,
                             Date = new DateTime(2018, 11, 14, 15, 48, 13, 0, DateTimeKind.Unspecified)
@@ -4682,6 +5280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 540,
+                            Billed = false,
                             Comment = "82703587_Haus_in_3365",
                             CustomerId = 23,
                             Date = new DateTime(2018, 11, 15, 14, 11, 56, 0, DateTimeKind.Unspecified)
@@ -4689,6 +5288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 541,
+                            Billed = false,
                             Comment = "6003782_Haus_in_1972",
                             CustomerId = 10,
                             Date = new DateTime(2018, 11, 16, 8, 34, 33, 0, DateTimeKind.Unspecified)
@@ -4696,6 +5296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 542,
+                            Billed = false,
                             Comment = "90346848_Haus_in_4662",
                             CustomerId = 30,
                             Date = new DateTime(2018, 11, 16, 23, 42, 26, 0, DateTimeKind.Unspecified)
@@ -4703,6 +5304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 543,
+                            Billed = false,
                             Comment = "87046338_Haus_in_4383",
                             CustomerId = 16,
                             Date = new DateTime(2018, 11, 17, 19, 31, 57, 0, DateTimeKind.Unspecified)
@@ -4710,6 +5312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 544,
+                            Billed = false,
                             Comment = "78262045_Haus_in_8087",
                             CustomerId = 18,
                             Date = new DateTime(2018, 11, 18, 5, 17, 31, 0, DateTimeKind.Unspecified)
@@ -4717,6 +5320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 545,
+                            Billed = false,
                             Comment = "58962575_Haus_in_4937",
                             CustomerId = 36,
                             Date = new DateTime(2018, 11, 19, 2, 35, 19, 0, DateTimeKind.Unspecified)
@@ -4724,6 +5328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 546,
+                            Billed = false,
                             Comment = "25245597_Haus_in_5536",
                             CustomerId = 15,
                             Date = new DateTime(2018, 11, 19, 19, 27, 6, 0, DateTimeKind.Unspecified)
@@ -4731,6 +5336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 547,
+                            Billed = false,
                             Comment = "20401901_Haus_in_1754",
                             CustomerId = 21,
                             Date = new DateTime(2018, 11, 20, 12, 59, 51, 0, DateTimeKind.Unspecified)
@@ -4738,6 +5344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 548,
+                            Billed = false,
                             Comment = "66911698_Haus_in_8569",
                             CustomerId = 15,
                             Date = new DateTime(2018, 11, 21, 10, 57, 29, 0, DateTimeKind.Unspecified)
@@ -4745,6 +5352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 549,
+                            Billed = false,
                             Comment = "38021037_Haus_in_1666",
                             CustomerId = 15,
                             Date = new DateTime(2018, 11, 22, 8, 32, 59, 0, DateTimeKind.Unspecified)
@@ -4752,6 +5360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 550,
+                            Billed = false,
                             Comment = "31167404_Haus_in_8074",
                             CustomerId = 34,
                             Date = new DateTime(2018, 11, 23, 1, 50, 34, 0, DateTimeKind.Unspecified)
@@ -4759,6 +5368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 551,
+                            Billed = false,
                             Comment = "11359134_Haus_in_1430",
                             CustomerId = 20,
                             Date = new DateTime(2018, 11, 23, 12, 29, 5, 0, DateTimeKind.Unspecified)
@@ -4766,6 +5376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 552,
+                            Billed = false,
                             Comment = "70604036_Haus_in_3955",
                             CustomerId = 2,
                             Date = new DateTime(2018, 11, 24, 4, 54, 40, 0, DateTimeKind.Unspecified)
@@ -4773,6 +5384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 553,
+                            Billed = false,
                             Comment = "52040508_Haus_in_8348",
                             CustomerId = 21,
                             Date = new DateTime(2018, 11, 24, 21, 35, 13, 0, DateTimeKind.Unspecified)
@@ -4780,6 +5392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 554,
+                            Billed = false,
                             Comment = "99849285_Haus_in_9946",
                             CustomerId = 40,
                             Date = new DateTime(2018, 11, 25, 6, 8, 49, 0, DateTimeKind.Unspecified)
@@ -4787,6 +5400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 555,
+                            Billed = false,
                             Comment = "69025115_Haus_in_9668",
                             CustomerId = 30,
                             Date = new DateTime(2018, 11, 26, 3, 25, 18, 0, DateTimeKind.Unspecified)
@@ -4794,6 +5408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 556,
+                            Billed = false,
                             Comment = "21869945_Haus_in_6035",
                             CustomerId = 40,
                             Date = new DateTime(2018, 11, 27, 1, 15, 32, 0, DateTimeKind.Unspecified)
@@ -4801,6 +5416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 557,
+                            Billed = false,
                             Comment = "76401911_Haus_in_3347",
                             CustomerId = 25,
                             Date = new DateTime(2018, 11, 27, 16, 42, 22, 0, DateTimeKind.Unspecified)
@@ -4808,6 +5424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 558,
+                            Billed = false,
                             Comment = "75559371_Haus_in_7366",
                             CustomerId = 8,
                             Date = new DateTime(2018, 11, 28, 3, 34, 14, 0, DateTimeKind.Unspecified)
@@ -4815,6 +5432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 559,
+                            Billed = false,
                             Comment = "69858333_Haus_in_7717",
                             CustomerId = 32,
                             Date = new DateTime(2018, 11, 28, 17, 43, 59, 0, DateTimeKind.Unspecified)
@@ -4822,6 +5440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 560,
+                            Billed = false,
                             Comment = "56140799_Haus_in_8618",
                             CustomerId = 22,
                             Date = new DateTime(2018, 11, 29, 2, 2, 37, 0, DateTimeKind.Unspecified)
@@ -4829,6 +5448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 561,
+                            Billed = false,
                             Comment = "12346021_Haus_in_8716",
                             CustomerId = 26,
                             Date = new DateTime(2018, 11, 29, 17, 53, 20, 0, DateTimeKind.Unspecified)
@@ -4836,6 +5456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 562,
+                            Billed = false,
                             Comment = "96286656_Haus_in_1812",
                             CustomerId = 1,
                             Date = new DateTime(2018, 11, 30, 1, 30, 47, 0, DateTimeKind.Unspecified)
@@ -4843,6 +5464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 563,
+                            Billed = false,
                             Comment = "72875998_Haus_in_2267",
                             CustomerId = 15,
                             Date = new DateTime(2018, 12, 1, 0, 3, 34, 0, DateTimeKind.Unspecified)
@@ -4850,6 +5472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 564,
+                            Billed = false,
                             Comment = "24402652_Haus_in_5870",
                             CustomerId = 32,
                             Date = new DateTime(2018, 12, 1, 7, 47, 4, 0, DateTimeKind.Unspecified)
@@ -4857,6 +5480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 565,
+                            Billed = false,
                             Comment = "80301345_Haus_in_9229",
                             CustomerId = 20,
                             Date = new DateTime(2018, 12, 1, 16, 55, 13, 0, DateTimeKind.Unspecified)
@@ -4864,6 +5488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 566,
+                            Billed = false,
                             Comment = "5810975_Haus_in_9274",
                             CustomerId = 1,
                             Date = new DateTime(2018, 12, 2, 13, 58, 5, 0, DateTimeKind.Unspecified)
@@ -4871,6 +5496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 567,
+                            Billed = false,
                             Comment = "10851247_Haus_in_2258",
                             CustomerId = 2,
                             Date = new DateTime(2018, 12, 3, 4, 34, 49, 0, DateTimeKind.Unspecified)
@@ -4878,6 +5504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 568,
+                            Billed = false,
                             Comment = "81797445_Haus_in_2560",
                             CustomerId = 28,
                             Date = new DateTime(2018, 12, 3, 15, 4, 1, 0, DateTimeKind.Unspecified)
@@ -4885,6 +5512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 569,
+                            Billed = false,
                             Comment = "42343475_Haus_in_8488",
                             CustomerId = 21,
                             Date = new DateTime(2018, 12, 4, 12, 52, 35, 0, DateTimeKind.Unspecified)
@@ -4892,6 +5520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 570,
+                            Billed = false,
                             Comment = "43509690_Haus_in_9950",
                             CustomerId = 8,
                             Date = new DateTime(2018, 12, 5, 0, 38, 10, 0, DateTimeKind.Unspecified)
@@ -4899,6 +5528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 571,
+                            Billed = false,
                             Comment = "10403078_Haus_in_9470",
                             CustomerId = 22,
                             Date = new DateTime(2018, 12, 5, 18, 12, 58, 0, DateTimeKind.Unspecified)
@@ -4906,6 +5536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 572,
+                            Billed = false,
                             Comment = "83121672_Haus_in_2088",
                             CustomerId = 36,
                             Date = new DateTime(2018, 12, 6, 4, 9, 26, 0, DateTimeKind.Unspecified)
@@ -4913,6 +5544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 573,
+                            Billed = false,
                             Comment = "53755168_Haus_in_7765",
                             CustomerId = 16,
                             Date = new DateTime(2018, 12, 6, 16, 15, 3, 0, DateTimeKind.Unspecified)
@@ -4920,6 +5552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 574,
+                            Billed = false,
                             Comment = "55662043_Haus_in_9843",
                             CustomerId = 40,
                             Date = new DateTime(2018, 12, 7, 3, 45, 22, 0, DateTimeKind.Unspecified)
@@ -4927,6 +5560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 575,
+                            Billed = false,
                             Comment = "67885566_Haus_in_3713",
                             CustomerId = 3,
                             Date = new DateTime(2018, 12, 7, 15, 8, 57, 0, DateTimeKind.Unspecified)
@@ -4934,6 +5568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 576,
+                            Billed = false,
                             Comment = "32984156_Haus_in_5757",
                             CustomerId = 31,
                             Date = new DateTime(2018, 12, 8, 2, 29, 8, 0, DateTimeKind.Unspecified)
@@ -4941,6 +5576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 577,
+                            Billed = false,
                             Comment = "49140414_Haus_in_8831",
                             CustomerId = 11,
                             Date = new DateTime(2018, 12, 8, 14, 10, 31, 0, DateTimeKind.Unspecified)
@@ -4948,6 +5584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 578,
+                            Billed = false,
                             Comment = "13616114_Haus_in_4244",
                             CustomerId = 19,
                             Date = new DateTime(2018, 12, 9, 7, 15, 29, 0, DateTimeKind.Unspecified)
@@ -4955,6 +5592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 579,
+                            Billed = false,
                             Comment = "84813718_Haus_in_9390",
                             CustomerId = 35,
                             Date = new DateTime(2018, 12, 9, 17, 10, 43, 0, DateTimeKind.Unspecified)
@@ -4962,6 +5600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 580,
+                            Billed = false,
                             Comment = "20756091_Haus_in_7532",
                             CustomerId = 34,
                             Date = new DateTime(2018, 12, 10, 10, 52, 45, 0, DateTimeKind.Unspecified)
@@ -4969,6 +5608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 581,
+                            Billed = false,
                             Comment = "56880577_Haus_in_5540",
                             CustomerId = 8,
                             Date = new DateTime(2018, 12, 10, 22, 2, 1, 0, DateTimeKind.Unspecified)
@@ -4976,6 +5616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 582,
+                            Billed = false,
                             Comment = "7849216_Haus_in_8539",
                             CustomerId = 5,
                             Date = new DateTime(2018, 12, 11, 19, 39, 44, 0, DateTimeKind.Unspecified)
@@ -4983,6 +5624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 583,
+                            Billed = false,
                             Comment = "30319072_Haus_in_5585",
                             CustomerId = 18,
                             Date = new DateTime(2018, 12, 12, 7, 45, 45, 0, DateTimeKind.Unspecified)
@@ -4990,6 +5632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 584,
+                            Billed = false,
                             Comment = "84292928_Haus_in_7613",
                             CustomerId = 10,
                             Date = new DateTime(2018, 12, 13, 6, 37, 0, 0, DateTimeKind.Unspecified)
@@ -4997,6 +5640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 585,
+                            Billed = false,
                             Comment = "6669518_Haus_in_6572",
                             CustomerId = 11,
                             Date = new DateTime(2018, 12, 13, 14, 4, 29, 0, DateTimeKind.Unspecified)
@@ -5004,6 +5648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 586,
+                            Billed = false,
                             Comment = "90989001_Haus_in_4155",
                             CustomerId = 27,
                             Date = new DateTime(2018, 12, 14, 4, 31, 58, 0, DateTimeKind.Unspecified)
@@ -5011,6 +5656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 587,
+                            Billed = false,
                             Comment = "54044234_Haus_in_5566",
                             CustomerId = 20,
                             Date = new DateTime(2018, 12, 14, 21, 2, 27, 0, DateTimeKind.Unspecified)
@@ -5018,6 +5664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 588,
+                            Billed = false,
                             Comment = "49561993_Haus_in_7829",
                             CustomerId = 16,
                             Date = new DateTime(2018, 12, 15, 13, 10, 18, 0, DateTimeKind.Unspecified)
@@ -5025,6 +5672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 589,
+                            Billed = false,
                             Comment = "84758740_Haus_in_4107",
                             CustomerId = 22,
                             Date = new DateTime(2018, 12, 16, 10, 25, 42, 0, DateTimeKind.Unspecified)
@@ -5032,6 +5680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 590,
+                            Billed = false,
                             Comment = "11953472_Haus_in_2040",
                             CustomerId = 22,
                             Date = new DateTime(2018, 12, 17, 0, 32, 0, 0, DateTimeKind.Unspecified)
@@ -5039,6 +5688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 591,
+                            Billed = false,
                             Comment = "60646306_Haus_in_6563",
                             CustomerId = 6,
                             Date = new DateTime(2018, 12, 17, 7, 12, 33, 0, DateTimeKind.Unspecified)
@@ -5046,6 +5696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 592,
+                            Billed = false,
                             Comment = "84404636_Haus_in_8240",
                             CustomerId = 27,
                             Date = new DateTime(2018, 12, 17, 18, 52, 44, 0, DateTimeKind.Unspecified)
@@ -5053,6 +5704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 593,
+                            Billed = false,
                             Comment = "63511519_Haus_in_7651",
                             CustomerId = 30,
                             Date = new DateTime(2018, 12, 18, 1, 23, 4, 0, DateTimeKind.Unspecified)
@@ -5060,6 +5712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 594,
+                            Billed = false,
                             Comment = "33291828_Haus_in_8443",
                             CustomerId = 30,
                             Date = new DateTime(2018, 12, 18, 22, 4, 1, 0, DateTimeKind.Unspecified)
@@ -5067,6 +5720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 595,
+                            Billed = false,
                             Comment = "19171242_Haus_in_8353",
                             CustomerId = 7,
                             Date = new DateTime(2018, 12, 19, 8, 1, 37, 0, DateTimeKind.Unspecified)
@@ -5074,6 +5728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 596,
+                            Billed = false,
                             Comment = "47711011_Haus_in_8811",
                             CustomerId = 16,
                             Date = new DateTime(2018, 12, 19, 14, 6, 0, 0, DateTimeKind.Unspecified)
@@ -5081,6 +5736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 597,
+                            Billed = false,
                             Comment = "5029933_Haus_in_8284",
                             CustomerId = 11,
                             Date = new DateTime(2018, 12, 20, 11, 35, 30, 0, DateTimeKind.Unspecified)
@@ -5088,6 +5744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 598,
+                            Billed = false,
                             Comment = "50680450_Haus_in_4178",
                             CustomerId = 25,
                             Date = new DateTime(2018, 12, 21, 2, 50, 54, 0, DateTimeKind.Unspecified)
@@ -5095,6 +5752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 599,
+                            Billed = false,
                             Comment = "67616242_Haus_in_5075",
                             CustomerId = 23,
                             Date = new DateTime(2018, 12, 21, 9, 34, 21, 0, DateTimeKind.Unspecified)
@@ -5102,6 +5760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 600,
+                            Billed = false,
                             Comment = "92438067_Haus_in_6785",
                             CustomerId = 30,
                             Date = new DateTime(2018, 12, 21, 17, 51, 41, 0, DateTimeKind.Unspecified)
@@ -5109,6 +5768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 601,
+                            Billed = false,
                             Comment = "63311316_Haus_in_8086",
                             CustomerId = 15,
                             Date = new DateTime(2018, 12, 22, 16, 3, 10, 0, DateTimeKind.Unspecified)
@@ -5116,6 +5776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 602,
+                            Billed = false,
                             Comment = "81103380_Haus_in_2446",
                             CustomerId = 19,
                             Date = new DateTime(2018, 12, 23, 5, 41, 12, 0, DateTimeKind.Unspecified)
@@ -5123,6 +5784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 603,
+                            Billed = false,
                             Comment = "15525858_Haus_in_1849",
                             CustomerId = 7,
                             Date = new DateTime(2018, 12, 23, 16, 17, 49, 0, DateTimeKind.Unspecified)
@@ -5130,6 +5792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 604,
+                            Billed = false,
                             Comment = "14993377_Haus_in_5186",
                             CustomerId = 11,
                             Date = new DateTime(2018, 12, 24, 5, 53, 16, 0, DateTimeKind.Unspecified)
@@ -5137,6 +5800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 605,
+                            Billed = false,
                             Comment = "24392422_Haus_in_2817",
                             CustomerId = 38,
                             Date = new DateTime(2018, 12, 24, 18, 21, 39, 0, DateTimeKind.Unspecified)
@@ -5144,6 +5808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 606,
+                            Billed = false,
                             Comment = "25917261_Haus_in_8804",
                             CustomerId = 35,
                             Date = new DateTime(2018, 12, 25, 8, 34, 12, 0, DateTimeKind.Unspecified)
@@ -5151,6 +5816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 607,
+                            Billed = false,
                             Comment = "18940963_Haus_in_8822",
                             CustomerId = 25,
                             Date = new DateTime(2018, 12, 25, 19, 46, 48, 0, DateTimeKind.Unspecified)
@@ -5158,6 +5824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 608,
+                            Billed = false,
                             Comment = "33470725_Haus_in_1721",
                             CustomerId = 13,
                             Date = new DateTime(2018, 12, 26, 7, 19, 42, 0, DateTimeKind.Unspecified)
@@ -5165,6 +5832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 609,
+                            Billed = false,
                             Comment = "31591606_Haus_in_4062",
                             CustomerId = 11,
                             Date = new DateTime(2018, 12, 27, 3, 16, 50, 0, DateTimeKind.Unspecified)
@@ -5172,6 +5840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 610,
+                            Billed = false,
                             Comment = "1265470_Haus_in_2590",
                             CustomerId = 2,
                             Date = new DateTime(2018, 12, 27, 12, 58, 53, 0, DateTimeKind.Unspecified)
@@ -5179,6 +5848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 611,
+                            Billed = false,
                             Comment = "93814866_Haus_in_6632",
                             CustomerId = 34,
                             Date = new DateTime(2018, 12, 28, 1, 28, 16, 0, DateTimeKind.Unspecified)
@@ -5186,6 +5856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 612,
+                            Billed = false,
                             Comment = "85128176_Haus_in_9546",
                             CustomerId = 31,
                             Date = new DateTime(2018, 12, 28, 17, 50, 37, 0, DateTimeKind.Unspecified)
@@ -5193,6 +5864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 613,
+                            Billed = false,
                             Comment = "95254382_Haus_in_6498",
                             CustomerId = 24,
                             Date = new DateTime(2018, 12, 29, 7, 39, 1, 0, DateTimeKind.Unspecified)
@@ -5200,6 +5872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 614,
+                            Billed = false,
                             Comment = "11265232_Haus_in_3504",
                             CustomerId = 13,
                             Date = new DateTime(2018, 12, 29, 22, 42, 9, 0, DateTimeKind.Unspecified)
@@ -5207,6 +5880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 615,
+                            Billed = false,
                             Comment = "68509420_Haus_in_5866",
                             CustomerId = 10,
                             Date = new DateTime(2018, 12, 30, 5, 59, 0, 0, DateTimeKind.Unspecified)
@@ -5214,6 +5888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 616,
+                            Billed = false,
                             Comment = "21123080_Haus_in_7368",
                             CustomerId = 19,
                             Date = new DateTime(2018, 12, 31, 2, 15, 12, 0, DateTimeKind.Unspecified)
@@ -5221,6 +5896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 617,
+                            Billed = false,
                             Comment = "71977704_Haus_in_9656",
                             CustomerId = 13,
                             Date = new DateTime(2018, 12, 31, 16, 44, 48, 0, DateTimeKind.Unspecified)
@@ -5228,6 +5904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 618,
+                            Billed = false,
                             Comment = "79157189_Haus_in_5566",
                             CustomerId = 8,
                             Date = new DateTime(2019, 1, 1, 10, 48, 56, 0, DateTimeKind.Unspecified)
@@ -5235,6 +5912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 619,
+                            Billed = false,
                             Comment = "50204690_Haus_in_9708",
                             CustomerId = 18,
                             Date = new DateTime(2019, 1, 2, 8, 23, 41, 0, DateTimeKind.Unspecified)
@@ -5242,6 +5920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 620,
+                            Billed = false,
                             Comment = "77126249_Haus_in_7072",
                             CustomerId = 6,
                             Date = new DateTime(2019, 1, 2, 14, 30, 3, 0, DateTimeKind.Unspecified)
@@ -5249,6 +5928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 621,
+                            Billed = false,
                             Comment = "92669815_Haus_in_6260",
                             CustomerId = 33,
                             Date = new DateTime(2019, 1, 3, 8, 51, 43, 0, DateTimeKind.Unspecified)
@@ -5256,6 +5936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 622,
+                            Billed = false,
                             Comment = "12132858_Haus_in_5255",
                             CustomerId = 28,
                             Date = new DateTime(2019, 1, 4, 2, 53, 18, 0, DateTimeKind.Unspecified)
@@ -5263,6 +5944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 623,
+                            Billed = false,
                             Comment = "59419894_Haus_in_1530",
                             CustomerId = 7,
                             Date = new DateTime(2019, 1, 4, 9, 7, 37, 0, DateTimeKind.Unspecified)
@@ -5270,6 +5952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 624,
+                            Billed = false,
                             Comment = "29917746_Haus_in_2013",
                             CustomerId = 15,
                             Date = new DateTime(2019, 1, 4, 18, 0, 5, 0, DateTimeKind.Unspecified)
@@ -5277,6 +5960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 625,
+                            Billed = false,
                             Comment = "41567127_Haus_in_2212",
                             CustomerId = 10,
                             Date = new DateTime(2019, 1, 5, 12, 24, 50, 0, DateTimeKind.Unspecified)
@@ -5284,6 +5968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 626,
+                            Billed = false,
                             Comment = "55377370_Haus_in_4294",
                             CustomerId = 38,
                             Date = new DateTime(2019, 1, 5, 23, 46, 32, 0, DateTimeKind.Unspecified)
@@ -5291,6 +5976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 627,
+                            Billed = false,
                             Comment = "42538795_Haus_in_8001",
                             CustomerId = 22,
                             Date = new DateTime(2019, 1, 6, 10, 39, 41, 0, DateTimeKind.Unspecified)
@@ -5298,6 +5984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 628,
+                            Billed = false,
                             Comment = "42815548_Haus_in_3480",
                             CustomerId = 13,
                             Date = new DateTime(2019, 1, 7, 7, 54, 8, 0, DateTimeKind.Unspecified)
@@ -5305,6 +5992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 629,
+                            Billed = false,
                             Comment = "97979712_Haus_in_9020",
                             CustomerId = 14,
                             Date = new DateTime(2019, 1, 8, 0, 45, 37, 0, DateTimeKind.Unspecified)
@@ -5312,6 +6000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 630,
+                            Billed = false,
                             Comment = "4979677_Haus_in_5772",
                             CustomerId = 24,
                             Date = new DateTime(2019, 1, 8, 10, 7, 41, 0, DateTimeKind.Unspecified)
@@ -5319,6 +6008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 631,
+                            Billed = false,
                             Comment = "36758950_Haus_in_7996",
                             CustomerId = 20,
                             Date = new DateTime(2019, 1, 9, 5, 39, 16, 0, DateTimeKind.Unspecified)
@@ -5326,6 +6016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 632,
+                            Billed = false,
                             Comment = "89721342_Haus_in_7218",
                             CustomerId = 39,
                             Date = new DateTime(2019, 1, 9, 23, 43, 56, 0, DateTimeKind.Unspecified)
@@ -5333,6 +6024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 633,
+                            Billed = false,
                             Comment = "47498316_Haus_in_1722",
                             CustomerId = 29,
                             Date = new DateTime(2019, 1, 10, 21, 19, 23, 0, DateTimeKind.Unspecified)
@@ -5340,6 +6032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 634,
+                            Billed = false,
                             Comment = "58461632_Haus_in_6013",
                             CustomerId = 21,
                             Date = new DateTime(2019, 1, 11, 13, 47, 20, 0, DateTimeKind.Unspecified)
@@ -5347,6 +6040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 635,
+                            Billed = false,
                             Comment = "73983967_Haus_in_2704",
                             CustomerId = 34,
                             Date = new DateTime(2019, 1, 12, 5, 48, 42, 0, DateTimeKind.Unspecified)
@@ -5354,6 +6048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 636,
+                            Billed = false,
                             Comment = "73437603_Haus_in_9075",
                             CustomerId = 25,
                             Date = new DateTime(2019, 1, 12, 17, 29, 32, 0, DateTimeKind.Unspecified)
@@ -5361,6 +6056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 637,
+                            Billed = false,
                             Comment = "55401365_Haus_in_4331",
                             CustomerId = 28,
                             Date = new DateTime(2019, 1, 13, 1, 55, 23, 0, DateTimeKind.Unspecified)
@@ -5368,6 +6064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 638,
+                            Billed = false,
                             Comment = "41690719_Haus_in_4466",
                             CustomerId = 33,
                             Date = new DateTime(2019, 1, 13, 17, 36, 20, 0, DateTimeKind.Unspecified)
@@ -5375,6 +6072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 639,
+                            Billed = false,
                             Comment = "94725136_Haus_in_6366",
                             CustomerId = 40,
                             Date = new DateTime(2019, 1, 14, 7, 6, 13, 0, DateTimeKind.Unspecified)
@@ -5382,6 +6080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 640,
+                            Billed = false,
                             Comment = "84864352_Haus_in_4325",
                             CustomerId = 2,
                             Date = new DateTime(2019, 1, 14, 22, 25, 8, 0, DateTimeKind.Unspecified)
@@ -5389,6 +6088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 641,
+                            Billed = false,
                             Comment = "67181511_Haus_in_2981",
                             CustomerId = 21,
                             Date = new DateTime(2019, 1, 15, 11, 19, 27, 0, DateTimeKind.Unspecified)
@@ -5396,6 +6096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 642,
+                            Billed = false,
                             Comment = "52599019_Haus_in_1614",
                             CustomerId = 23,
                             Date = new DateTime(2019, 1, 16, 7, 38, 18, 0, DateTimeKind.Unspecified)
@@ -5403,6 +6104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 643,
+                            Billed = false,
                             Comment = "91850583_Haus_in_9201",
                             CustomerId = 25,
                             Date = new DateTime(2019, 1, 16, 17, 35, 11, 0, DateTimeKind.Unspecified)
@@ -5410,6 +6112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 644,
+                            Billed = false,
                             Comment = "39136052_Haus_in_3291",
                             CustomerId = 40,
                             Date = new DateTime(2019, 1, 17, 9, 23, 46, 0, DateTimeKind.Unspecified)
@@ -5417,6 +6120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 645,
+                            Billed = false,
                             Comment = "6401161_Haus_in_4916",
                             CustomerId = 11,
                             Date = new DateTime(2019, 1, 17, 19, 42, 29, 0, DateTimeKind.Unspecified)
@@ -5424,6 +6128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 646,
+                            Billed = false,
                             Comment = "27953016_Haus_in_6691",
                             CustomerId = 21,
                             Date = new DateTime(2019, 1, 18, 17, 51, 3, 0, DateTimeKind.Unspecified)
@@ -5431,6 +6136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 647,
+                            Billed = false,
                             Comment = "97607919_Haus_in_2198",
                             CustomerId = 31,
                             Date = new DateTime(2019, 1, 18, 23, 56, 4, 0, DateTimeKind.Unspecified)
@@ -5438,6 +6144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 648,
+                            Billed = false,
                             Comment = "78775035_Haus_in_9958",
                             CustomerId = 34,
                             Date = new DateTime(2019, 1, 19, 14, 48, 1, 0, DateTimeKind.Unspecified)
@@ -5445,6 +6152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 649,
+                            Billed = false,
                             Comment = "46448513_Haus_in_1321",
                             CustomerId = 2,
                             Date = new DateTime(2019, 1, 20, 8, 43, 24, 0, DateTimeKind.Unspecified)
@@ -5452,6 +6160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 650,
+                            Billed = false,
                             Comment = "22285311_Haus_in_4398",
                             CustomerId = 4,
                             Date = new DateTime(2019, 1, 21, 4, 8, 56, 0, DateTimeKind.Unspecified)
@@ -5459,6 +6168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 651,
+                            Billed = false,
                             Comment = "60840539_Haus_in_4670",
                             CustomerId = 18,
                             Date = new DateTime(2019, 1, 21, 18, 42, 10, 0, DateTimeKind.Unspecified)
@@ -5466,6 +6176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 652,
+                            Billed = false,
                             Comment = "57542649_Haus_in_8542",
                             CustomerId = 12,
                             Date = new DateTime(2019, 1, 22, 9, 23, 49, 0, DateTimeKind.Unspecified)
@@ -5473,6 +6184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 653,
+                            Billed = false,
                             Comment = "47962867_Haus_in_5709",
                             CustomerId = 19,
                             Date = new DateTime(2019, 1, 23, 7, 13, 39, 0, DateTimeKind.Unspecified)
@@ -5480,6 +6192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 654,
+                            Billed = false,
                             Comment = "57920558_Haus_in_2225",
                             CustomerId = 30,
                             Date = new DateTime(2019, 1, 23, 17, 40, 9, 0, DateTimeKind.Unspecified)
@@ -5487,6 +6200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 655,
+                            Billed = false,
                             Comment = "72861466_Haus_in_8759",
                             CustomerId = 22,
                             Date = new DateTime(2019, 1, 24, 0, 34, 48, 0, DateTimeKind.Unspecified)
@@ -5494,6 +6208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 656,
+                            Billed = false,
                             Comment = "28549538_Haus_in_4775",
                             CustomerId = 26,
                             Date = new DateTime(2019, 1, 24, 8, 31, 38, 0, DateTimeKind.Unspecified)
@@ -5501,6 +6216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 657,
+                            Billed = false,
                             Comment = "35603743_Haus_in_1847",
                             CustomerId = 23,
                             Date = new DateTime(2019, 1, 25, 5, 36, 54, 0, DateTimeKind.Unspecified)
@@ -5508,6 +6224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 658,
+                            Billed = false,
                             Comment = "12678658_Haus_in_6764",
                             CustomerId = 23,
                             Date = new DateTime(2019, 1, 25, 17, 1, 16, 0, DateTimeKind.Unspecified)
@@ -5515,6 +6232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 659,
+                            Billed = false,
                             Comment = "80373585_Haus_in_8096",
                             CustomerId = 1,
                             Date = new DateTime(2019, 1, 26, 1, 20, 11, 0, DateTimeKind.Unspecified)
@@ -5522,6 +6240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 660,
+                            Billed = false,
                             Comment = "39928909_Haus_in_7254",
                             CustomerId = 5,
                             Date = new DateTime(2019, 1, 26, 22, 4, 9, 0, DateTimeKind.Unspecified)
@@ -5529,6 +6248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 661,
+                            Billed = false,
                             Comment = "18358209_Haus_in_6617",
                             CustomerId = 33,
                             Date = new DateTime(2019, 1, 27, 17, 0, 6, 0, DateTimeKind.Unspecified)
@@ -5536,6 +6256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 662,
+                            Billed = false,
                             Comment = "57481409_Haus_in_4752",
                             CustomerId = 18,
                             Date = new DateTime(2019, 1, 28, 15, 16, 38, 0, DateTimeKind.Unspecified)
@@ -5543,6 +6264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 663,
+                            Billed = false,
                             Comment = "42104465_Haus_in_2611",
                             CustomerId = 18,
                             Date = new DateTime(2019, 1, 29, 1, 58, 43, 0, DateTimeKind.Unspecified)
@@ -5550,6 +6272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 664,
+                            Billed = false,
                             Comment = "37133742_Haus_in_4867",
                             CustomerId = 1,
                             Date = new DateTime(2019, 1, 29, 20, 28, 29, 0, DateTimeKind.Unspecified)
@@ -5557,6 +6280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 665,
+                            Billed = false,
                             Comment = "77698604_Haus_in_6074",
                             CustomerId = 3,
                             Date = new DateTime(2019, 1, 30, 17, 33, 38, 0, DateTimeKind.Unspecified)
@@ -5564,6 +6288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 666,
+                            Billed = false,
                             Comment = "82865519_Haus_in_4799",
                             CustomerId = 23,
                             Date = new DateTime(2019, 1, 31, 7, 20, 17, 0, DateTimeKind.Unspecified)
@@ -5571,6 +6296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 667,
+                            Billed = false,
                             Comment = "57507104_Haus_in_8680",
                             CustomerId = 30,
                             Date = new DateTime(2019, 1, 31, 14, 50, 31, 0, DateTimeKind.Unspecified)
@@ -5578,6 +6304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 668,
+                            Billed = false,
                             Comment = "76577431_Haus_in_1954",
                             CustomerId = 22,
                             Date = new DateTime(2019, 1, 31, 22, 34, 14, 0, DateTimeKind.Unspecified)
@@ -5585,6 +6312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 669,
+                            Billed = false,
                             Comment = "34281746_Haus_in_9201",
                             CustomerId = 33,
                             Date = new DateTime(2019, 2, 1, 15, 59, 32, 0, DateTimeKind.Unspecified)
@@ -5592,6 +6320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 670,
+                            Billed = false,
                             Comment = "89057430_Haus_in_2069",
                             CustomerId = 23,
                             Date = new DateTime(2019, 2, 2, 13, 42, 6, 0, DateTimeKind.Unspecified)
@@ -5599,6 +6328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 671,
+                            Billed = false,
                             Comment = "912423_Haus_in_8114",
                             CustomerId = 40,
                             Date = new DateTime(2019, 2, 3, 3, 35, 35, 0, DateTimeKind.Unspecified)
@@ -5606,6 +6336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 672,
+                            Billed = false,
                             Comment = "32470776_Haus_in_9196",
                             CustomerId = 27,
                             Date = new DateTime(2019, 2, 3, 22, 16, 27, 0, DateTimeKind.Unspecified)
@@ -5613,6 +6344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 673,
+                            Billed = false,
                             Comment = "93171203_Haus_in_6738",
                             CustomerId = 38,
                             Date = new DateTime(2019, 2, 4, 20, 19, 21, 0, DateTimeKind.Unspecified)
@@ -5620,6 +6352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 674,
+                            Billed = false,
                             Comment = "36850479_Haus_in_4244",
                             CustomerId = 3,
                             Date = new DateTime(2019, 2, 5, 13, 42, 39, 0, DateTimeKind.Unspecified)
@@ -5627,6 +6360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 675,
+                            Billed = false,
                             Comment = "67368243_Haus_in_2125",
                             CustomerId = 31,
                             Date = new DateTime(2019, 2, 6, 0, 19, 5, 0, DateTimeKind.Unspecified)
@@ -5634,6 +6368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 676,
+                            Billed = false,
                             Comment = "27628536_Haus_in_7084",
                             CustomerId = 5,
                             Date = new DateTime(2019, 2, 6, 20, 52, 42, 0, DateTimeKind.Unspecified)
@@ -5641,6 +6376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 677,
+                            Billed = false,
                             Comment = "79054253_Haus_in_1896",
                             CustomerId = 38,
                             Date = new DateTime(2019, 2, 7, 9, 0, 25, 0, DateTimeKind.Unspecified)
@@ -5648,6 +6384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 678,
+                            Billed = false,
                             Comment = "87375795_Haus_in_3990",
                             CustomerId = 16,
                             Date = new DateTime(2019, 2, 7, 18, 3, 31, 0, DateTimeKind.Unspecified)
@@ -5655,6 +6392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 679,
+                            Billed = false,
                             Comment = "86213600_Haus_in_5545",
                             CustomerId = 38,
                             Date = new DateTime(2019, 2, 8, 17, 0, 17, 0, DateTimeKind.Unspecified)
@@ -5662,6 +6400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 680,
+                            Billed = false,
                             Comment = "73185991_Haus_in_4641",
                             CustomerId = 6,
                             Date = new DateTime(2019, 2, 9, 12, 24, 48, 0, DateTimeKind.Unspecified)
@@ -5669,6 +6408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 681,
+                            Billed = false,
                             Comment = "82044273_Haus_in_7968",
                             CustomerId = 31,
                             Date = new DateTime(2019, 2, 10, 0, 21, 49, 0, DateTimeKind.Unspecified)
@@ -5676,6 +6416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 682,
+                            Billed = false,
                             Comment = "58520900_Haus_in_8424",
                             CustomerId = 10,
                             Date = new DateTime(2019, 2, 10, 11, 10, 33, 0, DateTimeKind.Unspecified)
@@ -5683,6 +6424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 683,
+                            Billed = false,
                             Comment = "84250744_Haus_in_4035",
                             CustomerId = 9,
                             Date = new DateTime(2019, 2, 11, 8, 55, 8, 0, DateTimeKind.Unspecified)
@@ -5690,6 +6432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 684,
+                            Billed = false,
                             Comment = "76412338_Haus_in_7436",
                             CustomerId = 5,
                             Date = new DateTime(2019, 2, 11, 19, 45, 51, 0, DateTimeKind.Unspecified)
@@ -5697,6 +6440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 685,
+                            Billed = false,
                             Comment = "32094634_Haus_in_8808",
                             CustomerId = 5,
                             Date = new DateTime(2019, 2, 12, 7, 39, 32, 0, DateTimeKind.Unspecified)
@@ -5704,6 +6448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 686,
+                            Billed = false,
                             Comment = "59929003_Haus_in_8326",
                             CustomerId = 14,
                             Date = new DateTime(2019, 2, 12, 15, 52, 54, 0, DateTimeKind.Unspecified)
@@ -5711,6 +6456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 687,
+                            Billed = false,
                             Comment = "10733792_Haus_in_1560",
                             CustomerId = 14,
                             Date = new DateTime(2019, 2, 12, 23, 20, 7, 0, DateTimeKind.Unspecified)
@@ -5718,6 +6464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 688,
+                            Billed = false,
                             Comment = "3258928_Haus_in_2122",
                             CustomerId = 39,
                             Date = new DateTime(2019, 2, 13, 15, 4, 29, 0, DateTimeKind.Unspecified)
@@ -5725,6 +6472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 689,
+                            Billed = false,
                             Comment = "89280883_Haus_in_8892",
                             CustomerId = 9,
                             Date = new DateTime(2019, 2, 14, 12, 39, 2, 0, DateTimeKind.Unspecified)
@@ -5732,6 +6480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 690,
+                            Billed = false,
                             Comment = "43469601_Haus_in_9213",
                             CustomerId = 12,
                             Date = new DateTime(2019, 2, 15, 5, 52, 15, 0, DateTimeKind.Unspecified)
@@ -5739,6 +6488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 691,
+                            Billed = false,
                             Comment = "10427787_Haus_in_4462",
                             CustomerId = 36,
                             Date = new DateTime(2019, 2, 15, 13, 2, 45, 0, DateTimeKind.Unspecified)
@@ -5746,6 +6496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 692,
+                            Billed = false,
                             Comment = "13679532_Haus_in_4610",
                             CustomerId = 32,
                             Date = new DateTime(2019, 2, 16, 2, 36, 54, 0, DateTimeKind.Unspecified)
@@ -5753,6 +6504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 693,
+                            Billed = false,
                             Comment = "53871826_Haus_in_1196",
                             CustomerId = 28,
                             Date = new DateTime(2019, 2, 16, 10, 31, 38, 0, DateTimeKind.Unspecified)
@@ -5760,6 +6512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 694,
+                            Billed = false,
                             Comment = "22406017_Haus_in_7725",
                             CustomerId = 24,
                             Date = new DateTime(2019, 2, 16, 21, 54, 29, 0, DateTimeKind.Unspecified)
@@ -5767,6 +6520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 695,
+                            Billed = false,
                             Comment = "67284596_Haus_in_4447",
                             CustomerId = 21,
                             Date = new DateTime(2019, 2, 17, 9, 49, 48, 0, DateTimeKind.Unspecified)
@@ -5774,6 +6528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 696,
+                            Billed = false,
                             Comment = "24763084_Haus_in_9466",
                             CustomerId = 13,
                             Date = new DateTime(2019, 2, 18, 2, 35, 49, 0, DateTimeKind.Unspecified)
@@ -5781,6 +6536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 697,
+                            Billed = false,
                             Comment = "51409531_Haus_in_5202",
                             CustomerId = 40,
                             Date = new DateTime(2019, 2, 18, 18, 17, 27, 0, DateTimeKind.Unspecified)
@@ -5788,6 +6544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 698,
+                            Billed = false,
                             Comment = "9547372_Haus_in_9717",
                             CustomerId = 7,
                             Date = new DateTime(2019, 2, 19, 16, 24, 53, 0, DateTimeKind.Unspecified)
@@ -5795,6 +6552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 699,
+                            Billed = false,
                             Comment = "95711648_Haus_in_1672",
                             CustomerId = 9,
                             Date = new DateTime(2019, 2, 20, 1, 22, 33, 0, DateTimeKind.Unspecified)
@@ -5802,6 +6560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 700,
+                            Billed = false,
                             Comment = "57811295_Haus_in_2639",
                             CustomerId = 31,
                             Date = new DateTime(2019, 2, 20, 7, 53, 28, 0, DateTimeKind.Unspecified)
@@ -5809,6 +6568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 701,
+                            Billed = false,
                             Comment = "19216058_Haus_in_4168",
                             CustomerId = 31,
                             Date = new DateTime(2019, 2, 20, 15, 49, 21, 0, DateTimeKind.Unspecified)
@@ -5816,6 +6576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 702,
+                            Billed = false,
                             Comment = "13921613_Haus_in_8521",
                             CustomerId = 33,
                             Date = new DateTime(2019, 2, 21, 4, 37, 1, 0, DateTimeKind.Unspecified)
@@ -5823,6 +6584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 703,
+                            Billed = false,
                             Comment = "61235726_Haus_in_2137",
                             CustomerId = 17,
                             Date = new DateTime(2019, 2, 21, 16, 57, 51, 0, DateTimeKind.Unspecified)
@@ -5830,6 +6592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 704,
+                            Billed = false,
                             Comment = "37516763_Haus_in_7343",
                             CustomerId = 14,
                             Date = new DateTime(2019, 2, 22, 4, 6, 40, 0, DateTimeKind.Unspecified)
@@ -5837,6 +6600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 705,
+                            Billed = false,
                             Comment = "27223827_Haus_in_7723",
                             CustomerId = 39,
                             Date = new DateTime(2019, 2, 22, 21, 30, 29, 0, DateTimeKind.Unspecified)
@@ -5844,6 +6608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 706,
+                            Billed = false,
                             Comment = "93797983_Haus_in_6174",
                             CustomerId = 20,
                             Date = new DateTime(2019, 2, 23, 20, 16, 37, 0, DateTimeKind.Unspecified)
@@ -5851,6 +6616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 707,
+                            Billed = false,
                             Comment = "79425796_Haus_in_3712",
                             CustomerId = 4,
                             Date = new DateTime(2019, 2, 24, 11, 29, 31, 0, DateTimeKind.Unspecified)
@@ -5858,6 +6624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 708,
+                            Billed = false,
                             Comment = "84561804_Haus_in_6638",
                             CustomerId = 35,
                             Date = new DateTime(2019, 2, 24, 21, 49, 20, 0, DateTimeKind.Unspecified)
@@ -5865,6 +6632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 709,
+                            Billed = false,
                             Comment = "45371996_Haus_in_5141",
                             CustomerId = 34,
                             Date = new DateTime(2019, 2, 25, 7, 26, 12, 0, DateTimeKind.Unspecified)
@@ -5872,6 +6640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 710,
+                            Billed = false,
                             Comment = "8360707_Haus_in_8219",
                             CustomerId = 8,
                             Date = new DateTime(2019, 2, 25, 19, 8, 46, 0, DateTimeKind.Unspecified)
@@ -5879,6 +6648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 711,
+                            Billed = false,
                             Comment = "81228277_Haus_in_4210",
                             CustomerId = 38,
                             Date = new DateTime(2019, 2, 26, 9, 34, 17, 0, DateTimeKind.Unspecified)
@@ -5886,6 +6656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 712,
+                            Billed = false,
                             Comment = "85496776_Haus_in_4854",
                             CustomerId = 12,
                             Date = new DateTime(2019, 2, 27, 4, 26, 41, 0, DateTimeKind.Unspecified)
@@ -5893,6 +6664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 713,
+                            Billed = false,
                             Comment = "5581211_Haus_in_1624",
                             CustomerId = 22,
                             Date = new DateTime(2019, 2, 27, 13, 40, 1, 0, DateTimeKind.Unspecified)
@@ -5900,6 +6672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 714,
+                            Billed = false,
                             Comment = "74523524_Haus_in_6914",
                             CustomerId = 9,
                             Date = new DateTime(2019, 2, 28, 10, 29, 33, 0, DateTimeKind.Unspecified)
@@ -5907,6 +6680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 715,
+                            Billed = false,
                             Comment = "14331068_Haus_in_3095",
                             CustomerId = 27,
                             Date = new DateTime(2019, 3, 1, 6, 39, 53, 0, DateTimeKind.Unspecified)
@@ -5914,6 +6688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 716,
+                            Billed = false,
                             Comment = "58764803_Haus_in_4359",
                             CustomerId = 5,
                             Date = new DateTime(2019, 3, 1, 13, 2, 0, 0, DateTimeKind.Unspecified)
@@ -5921,6 +6696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 717,
+                            Billed = false,
                             Comment = "14461926_Haus_in_9684",
                             CustomerId = 20,
                             Date = new DateTime(2019, 3, 2, 7, 23, 30, 0, DateTimeKind.Unspecified)
@@ -5928,6 +6704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 718,
+                            Billed = false,
                             Comment = "62881033_Haus_in_3290",
                             CustomerId = 19,
                             Date = new DateTime(2019, 3, 2, 17, 18, 15, 0, DateTimeKind.Unspecified)
@@ -5935,6 +6712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 719,
+                            Billed = false,
                             Comment = "32956197_Haus_in_3286",
                             CustomerId = 21,
                             Date = new DateTime(2019, 3, 3, 2, 4, 54, 0, DateTimeKind.Unspecified)
@@ -5942,6 +6720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 720,
+                            Billed = false,
                             Comment = "8036997_Haus_in_6828",
                             CustomerId = 36,
                             Date = new DateTime(2019, 3, 3, 12, 23, 34, 0, DateTimeKind.Unspecified)
@@ -5949,6 +6728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 721,
+                            Billed = false,
                             Comment = "28740926_Haus_in_5484",
                             CustomerId = 7,
                             Date = new DateTime(2019, 3, 3, 18, 26, 17, 0, DateTimeKind.Unspecified)
@@ -5956,6 +6736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 722,
+                            Billed = false,
                             Comment = "78197662_Haus_in_7309",
                             CustomerId = 39,
                             Date = new DateTime(2019, 3, 4, 5, 31, 54, 0, DateTimeKind.Unspecified)
@@ -5963,6 +6744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 723,
+                            Billed = false,
                             Comment = "98888654_Haus_in_8463",
                             CustomerId = 24,
                             Date = new DateTime(2019, 3, 4, 20, 55, 35, 0, DateTimeKind.Unspecified)
@@ -5970,6 +6752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 724,
+                            Billed = false,
                             Comment = "55014955_Haus_in_4241",
                             CustomerId = 4,
                             Date = new DateTime(2019, 3, 5, 18, 19, 7, 0, DateTimeKind.Unspecified)
@@ -5977,6 +6760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 725,
+                            Billed = false,
                             Comment = "86350601_Haus_in_3714",
                             CustomerId = 35,
                             Date = new DateTime(2019, 3, 6, 9, 48, 9, 0, DateTimeKind.Unspecified)
@@ -5984,6 +6768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 726,
+                            Billed = false,
                             Comment = "47171288_Haus_in_2096",
                             CustomerId = 35,
                             Date = new DateTime(2019, 3, 7, 3, 40, 26, 0, DateTimeKind.Unspecified)
@@ -5991,6 +6776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 727,
+                            Billed = false,
                             Comment = "15653826_Haus_in_5967",
                             CustomerId = 11,
                             Date = new DateTime(2019, 3, 7, 12, 44, 3, 0, DateTimeKind.Unspecified)
@@ -5998,6 +6784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 728,
+                            Billed = false,
                             Comment = "95884776_Haus_in_9506",
                             CustomerId = 39,
                             Date = new DateTime(2019, 3, 8, 4, 54, 4, 0, DateTimeKind.Unspecified)
@@ -6005,6 +6792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 729,
+                            Billed = false,
                             Comment = "98895545_Haus_in_7311",
                             CustomerId = 35,
                             Date = new DateTime(2019, 3, 8, 20, 33, 22, 0, DateTimeKind.Unspecified)
@@ -6012,6 +6800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 730,
+                            Billed = false,
                             Comment = "60979220_Haus_in_8207",
                             CustomerId = 16,
                             Date = new DateTime(2019, 3, 9, 4, 27, 51, 0, DateTimeKind.Unspecified)
@@ -6019,6 +6808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 731,
+                            Billed = false,
                             Comment = "28284852_Haus_in_9086",
                             CustomerId = 14,
                             Date = new DateTime(2019, 3, 9, 17, 55, 4, 0, DateTimeKind.Unspecified)
@@ -6026,6 +6816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 732,
+                            Billed = false,
                             Comment = "35542477_Haus_in_9448",
                             CustomerId = 24,
                             Date = new DateTime(2019, 3, 10, 7, 36, 57, 0, DateTimeKind.Unspecified)
@@ -6033,6 +6824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 733,
+                            Billed = false,
                             Comment = "46701694_Haus_in_4592",
                             CustomerId = 40,
                             Date = new DateTime(2019, 3, 10, 17, 13, 11, 0, DateTimeKind.Unspecified)
@@ -6040,6 +6832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 734,
+                            Billed = false,
                             Comment = "31231562_Haus_in_2821",
                             CustomerId = 4,
                             Date = new DateTime(2019, 3, 11, 4, 48, 42, 0, DateTimeKind.Unspecified)
@@ -6047,6 +6840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 735,
+                            Billed = false,
                             Comment = "75888205_Haus_in_6008",
                             CustomerId = 24,
                             Date = new DateTime(2019, 3, 12, 3, 37, 34, 0, DateTimeKind.Unspecified)
@@ -6054,6 +6848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 736,
+                            Billed = false,
                             Comment = "81362160_Haus_in_7382",
                             CustomerId = 34,
                             Date = new DateTime(2019, 3, 12, 20, 27, 0, 0, DateTimeKind.Unspecified)
@@ -6061,6 +6856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 737,
+                            Billed = false,
                             Comment = "54237180_Haus_in_3493",
                             CustomerId = 5,
                             Date = new DateTime(2019, 3, 13, 7, 45, 51, 0, DateTimeKind.Unspecified)
@@ -6068,6 +6864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 738,
+                            Billed = false,
                             Comment = "65975212_Haus_in_4422",
                             CustomerId = 15,
                             Date = new DateTime(2019, 3, 13, 14, 43, 10, 0, DateTimeKind.Unspecified)
@@ -6075,6 +6872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 739,
+                            Billed = false,
                             Comment = "4243304_Haus_in_1174",
                             CustomerId = 4,
                             Date = new DateTime(2019, 3, 14, 4, 50, 37, 0, DateTimeKind.Unspecified)
@@ -6082,6 +6880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 740,
+                            Billed = false,
                             Comment = "34082420_Haus_in_5173",
                             CustomerId = 2,
                             Date = new DateTime(2019, 3, 14, 15, 12, 46, 0, DateTimeKind.Unspecified)
@@ -6089,6 +6888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 741,
+                            Billed = false,
                             Comment = "95586806_Haus_in_5681",
                             CustomerId = 15,
                             Date = new DateTime(2019, 3, 14, 22, 2, 41, 0, DateTimeKind.Unspecified)
@@ -6096,6 +6896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 742,
+                            Billed = false,
                             Comment = "66636920_Haus_in_2625",
                             CustomerId = 21,
                             Date = new DateTime(2019, 3, 15, 12, 25, 28, 0, DateTimeKind.Unspecified)
@@ -6103,6 +6904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 743,
+                            Billed = false,
                             Comment = "5762662_Haus_in_4176",
                             CustomerId = 11,
                             Date = new DateTime(2019, 3, 16, 2, 39, 32, 0, DateTimeKind.Unspecified)
@@ -6110,6 +6912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 744,
+                            Billed = false,
                             Comment = "10919573_Haus_in_6885",
                             CustomerId = 21,
                             Date = new DateTime(2019, 3, 16, 23, 15, 42, 0, DateTimeKind.Unspecified)
@@ -6117,6 +6920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 745,
+                            Billed = false,
                             Comment = "56392348_Haus_in_5055",
                             CustomerId = 18,
                             Date = new DateTime(2019, 3, 17, 6, 48, 29, 0, DateTimeKind.Unspecified)
@@ -6124,6 +6928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 746,
+                            Billed = false,
                             Comment = "11005525_Haus_in_7363",
                             CustomerId = 17,
                             Date = new DateTime(2019, 3, 17, 22, 7, 25, 0, DateTimeKind.Unspecified)
@@ -6131,6 +6936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 747,
+                            Billed = false,
                             Comment = "87078062_Haus_in_3736",
                             CustomerId = 33,
                             Date = new DateTime(2019, 3, 18, 9, 46, 26, 0, DateTimeKind.Unspecified)
@@ -6138,6 +6944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 748,
+                            Billed = false,
                             Comment = "57587918_Haus_in_8316",
                             CustomerId = 12,
                             Date = new DateTime(2019, 3, 19, 1, 42, 52, 0, DateTimeKind.Unspecified)
@@ -6145,6 +6952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 749,
+                            Billed = false,
                             Comment = "14979172_Haus_in_7522",
                             CustomerId = 32,
                             Date = new DateTime(2019, 3, 19, 23, 44, 11, 0, DateTimeKind.Unspecified)
@@ -6152,6 +6960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 750,
+                            Billed = false,
                             Comment = "26506489_Haus_in_4846",
                             CustomerId = 12,
                             Date = new DateTime(2019, 3, 20, 10, 12, 54, 0, DateTimeKind.Unspecified)
@@ -6159,6 +6968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 751,
+                            Billed = false,
                             Comment = "95345567_Haus_in_4357",
                             CustomerId = 15,
                             Date = new DateTime(2019, 3, 21, 4, 17, 41, 0, DateTimeKind.Unspecified)
@@ -6166,6 +6976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 752,
+                            Billed = false,
                             Comment = "92600181_Haus_in_4563",
                             CustomerId = 15,
                             Date = new DateTime(2019, 3, 21, 13, 23, 49, 0, DateTimeKind.Unspecified)
@@ -6173,6 +6984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 753,
+                            Billed = false,
                             Comment = "95334643_Haus_in_2517",
                             CustomerId = 35,
                             Date = new DateTime(2019, 3, 22, 0, 29, 33, 0, DateTimeKind.Unspecified)
@@ -6180,6 +6992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 754,
+                            Billed = false,
                             Comment = "48696863_Haus_in_6066",
                             CustomerId = 40,
                             Date = new DateTime(2019, 3, 22, 10, 18, 29, 0, DateTimeKind.Unspecified)
@@ -6187,6 +7000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 755,
+                            Billed = false,
                             Comment = "12770678_Haus_in_6722",
                             CustomerId = 10,
                             Date = new DateTime(2019, 3, 22, 19, 3, 38, 0, DateTimeKind.Unspecified)
@@ -6194,6 +7008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 756,
+                            Billed = false,
                             Comment = "8629152_Haus_in_8289",
                             CustomerId = 24,
                             Date = new DateTime(2019, 3, 23, 17, 8, 2, 0, DateTimeKind.Unspecified)
@@ -6201,6 +7016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 757,
+                            Billed = false,
                             Comment = "6891921_Haus_in_5363",
                             CustomerId = 4,
                             Date = new DateTime(2019, 3, 24, 7, 22, 0, 0, DateTimeKind.Unspecified)
@@ -6208,6 +7024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 758,
+                            Billed = false,
                             Comment = "46016987_Haus_in_1772",
                             CustomerId = 37,
                             Date = new DateTime(2019, 3, 25, 0, 57, 5, 0, DateTimeKind.Unspecified)
@@ -6215,6 +7032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 759,
+                            Billed = false,
                             Comment = "7543575_Haus_in_5119",
                             CustomerId = 23,
                             Date = new DateTime(2019, 3, 25, 23, 22, 36, 0, DateTimeKind.Unspecified)
@@ -6222,6 +7040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 760,
+                            Billed = false,
                             Comment = "22754730_Haus_in_2710",
                             CustomerId = 10,
                             Date = new DateTime(2019, 3, 26, 13, 6, 10, 0, DateTimeKind.Unspecified)
@@ -6229,6 +7048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 761,
+                            Billed = false,
                             Comment = "38315949_Haus_in_8863",
                             CustomerId = 20,
                             Date = new DateTime(2019, 3, 26, 23, 4, 7, 0, DateTimeKind.Unspecified)
@@ -6236,6 +7056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 762,
+                            Billed = false,
                             Comment = "37579472_Haus_in_7711",
                             CustomerId = 38,
                             Date = new DateTime(2019, 3, 27, 21, 49, 5, 0, DateTimeKind.Unspecified)
@@ -6243,6 +7064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 763,
+                            Billed = false,
                             Comment = "29906273_Haus_in_9081",
                             CustomerId = 20,
                             Date = new DateTime(2019, 3, 28, 5, 57, 49, 0, DateTimeKind.Unspecified)
@@ -6250,6 +7072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 764,
+                            Billed = false,
                             Comment = "26180342_Haus_in_7396",
                             CustomerId = 4,
                             Date = new DateTime(2019, 3, 28, 20, 11, 8, 0, DateTimeKind.Unspecified)
@@ -6257,6 +7080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 765,
+                            Billed = false,
                             Comment = "13071592_Haus_in_4301",
                             CustomerId = 39,
                             Date = new DateTime(2019, 3, 29, 3, 36, 5, 0, DateTimeKind.Unspecified)
@@ -6264,6 +7088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 766,
+                            Billed = false,
                             Comment = "86370188_Haus_in_1899",
                             CustomerId = 33,
                             Date = new DateTime(2019, 3, 29, 12, 52, 3, 0, DateTimeKind.Unspecified)
@@ -6271,6 +7096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 767,
+                            Billed = false,
                             Comment = "93940290_Haus_in_7490",
                             CustomerId = 9,
                             Date = new DateTime(2019, 3, 30, 3, 4, 16, 0, DateTimeKind.Unspecified)
@@ -6278,6 +7104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 768,
+                            Billed = false,
                             Comment = "41058219_Haus_in_9518",
                             CustomerId = 32,
                             Date = new DateTime(2019, 3, 30, 10, 6, 19, 0, DateTimeKind.Unspecified)
@@ -6285,6 +7112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 769,
+                            Billed = false,
                             Comment = "76567968_Haus_in_1286",
                             CustomerId = 28,
                             Date = new DateTime(2019, 3, 31, 5, 3, 44, 0, DateTimeKind.Unspecified)
@@ -6292,6 +7120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 770,
+                            Billed = false,
                             Comment = "38426782_Haus_in_9829",
                             CustomerId = 11,
                             Date = new DateTime(2019, 4, 1, 1, 12, 26, 0, DateTimeKind.Unspecified)
@@ -6299,6 +7128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 771,
+                            Billed = false,
                             Comment = "70948320_Haus_in_2210",
                             CustomerId = 26,
                             Date = new DateTime(2019, 4, 1, 22, 15, 2, 0, DateTimeKind.Unspecified)
@@ -6306,6 +7136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 772,
+                            Billed = false,
                             Comment = "97260860_Haus_in_2001",
                             CustomerId = 27,
                             Date = new DateTime(2019, 4, 2, 16, 35, 18, 0, DateTimeKind.Unspecified)
@@ -6313,6 +7144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 773,
+                            Billed = false,
                             Comment = "99146682_Haus_in_3154",
                             CustomerId = 24,
                             Date = new DateTime(2019, 4, 3, 9, 51, 34, 0, DateTimeKind.Unspecified)
@@ -6320,6 +7152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 774,
+                            Billed = false,
                             Comment = "24719989_Haus_in_2456",
                             CustomerId = 2,
                             Date = new DateTime(2019, 4, 4, 3, 11, 32, 0, DateTimeKind.Unspecified)
@@ -6327,6 +7160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 775,
+                            Billed = false,
                             Comment = "95087119_Haus_in_7570",
                             CustomerId = 39,
                             Date = new DateTime(2019, 4, 5, 0, 45, 1, 0, DateTimeKind.Unspecified)
@@ -6334,6 +7168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 776,
+                            Billed = false,
                             Comment = "31448266_Haus_in_9181",
                             CustomerId = 10,
                             Date = new DateTime(2019, 4, 5, 13, 0, 49, 0, DateTimeKind.Unspecified)
@@ -6341,6 +7176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 777,
+                            Billed = false,
                             Comment = "2350852_Haus_in_1706",
                             CustomerId = 37,
                             Date = new DateTime(2019, 4, 5, 20, 28, 8, 0, DateTimeKind.Unspecified)
@@ -6348,6 +7184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 778,
+                            Billed = false,
                             Comment = "98985432_Haus_in_5524",
                             CustomerId = 14,
                             Date = new DateTime(2019, 4, 6, 13, 31, 9, 0, DateTimeKind.Unspecified)
@@ -6355,6 +7192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 779,
+                            Billed = false,
                             Comment = "59999559_Haus_in_1651",
                             CustomerId = 20,
                             Date = new DateTime(2019, 4, 7, 7, 47, 18, 0, DateTimeKind.Unspecified)
@@ -6362,6 +7200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 780,
+                            Billed = false,
                             Comment = "69937867_Haus_in_2510",
                             CustomerId = 19,
                             Date = new DateTime(2019, 4, 8, 6, 38, 4, 0, DateTimeKind.Unspecified)
@@ -6369,6 +7208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 781,
+                            Billed = false,
                             Comment = "28600965_Haus_in_7567",
                             CustomerId = 22,
                             Date = new DateTime(2019, 4, 8, 23, 25, 27, 0, DateTimeKind.Unspecified)
@@ -6376,6 +7216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 782,
+                            Billed = false,
                             Comment = "48964299_Haus_in_5875",
                             CustomerId = 15,
                             Date = new DateTime(2019, 4, 9, 9, 53, 23, 0, DateTimeKind.Unspecified)
@@ -6383,6 +7224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 783,
+                            Billed = false,
                             Comment = "35227697_Haus_in_2866",
                             CustomerId = 37,
                             Date = new DateTime(2019, 4, 10, 7, 37, 41, 0, DateTimeKind.Unspecified)
@@ -6390,6 +7232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 784,
+                            Billed = false,
                             Comment = "21226037_Haus_in_7154",
                             CustomerId = 40,
                             Date = new DateTime(2019, 4, 10, 16, 13, 14, 0, DateTimeKind.Unspecified)
@@ -6397,6 +7240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 785,
+                            Billed = false,
                             Comment = "23713138_Haus_in_5138",
                             CustomerId = 31,
                             Date = new DateTime(2019, 4, 11, 8, 5, 52, 0, DateTimeKind.Unspecified)
@@ -6404,6 +7248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 786,
+                            Billed = false,
                             Comment = "28367746_Haus_in_3134",
                             CustomerId = 7,
                             Date = new DateTime(2019, 4, 11, 16, 44, 36, 0, DateTimeKind.Unspecified)
@@ -6411,6 +7256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 787,
+                            Billed = false,
                             Comment = "4269953_Haus_in_5790",
                             CustomerId = 12,
                             Date = new DateTime(2019, 4, 12, 9, 54, 21, 0, DateTimeKind.Unspecified)
@@ -6418,6 +7264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 788,
+                            Billed = false,
                             Comment = "58090834_Haus_in_8739",
                             CustomerId = 25,
                             Date = new DateTime(2019, 4, 13, 1, 18, 7, 0, DateTimeKind.Unspecified)
@@ -6425,6 +7272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 789,
+                            Billed = false,
                             Comment = "31568492_Haus_in_1970",
                             CustomerId = 24,
                             Date = new DateTime(2019, 4, 13, 19, 22, 37, 0, DateTimeKind.Unspecified)
@@ -6432,6 +7280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 790,
+                            Billed = false,
                             Comment = "95771302_Haus_in_4700",
                             CustomerId = 29,
                             Date = new DateTime(2019, 4, 14, 12, 1, 11, 0, DateTimeKind.Unspecified)
@@ -6439,6 +7288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 791,
+                            Billed = false,
                             Comment = "23664438_Haus_in_8611",
                             CustomerId = 21,
                             Date = new DateTime(2019, 4, 14, 19, 32, 25, 0, DateTimeKind.Unspecified)
@@ -6446,6 +7296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 792,
+                            Billed = false,
                             Comment = "25052393_Haus_in_2985",
                             CustomerId = 3,
                             Date = new DateTime(2019, 4, 15, 15, 16, 52, 0, DateTimeKind.Unspecified)
@@ -6453,6 +7304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 793,
+                            Billed = false,
                             Comment = "44806343_Haus_in_8408",
                             CustomerId = 2,
                             Date = new DateTime(2019, 4, 16, 5, 8, 25, 0, DateTimeKind.Unspecified)
@@ -6460,6 +7312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 794,
+                            Billed = false,
                             Comment = "99302417_Haus_in_2645",
                             CustomerId = 32,
                             Date = new DateTime(2019, 4, 17, 3, 5, 43, 0, DateTimeKind.Unspecified)
@@ -6467,6 +7320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 795,
+                            Billed = false,
                             Comment = "56973189_Haus_in_6764",
                             CustomerId = 27,
                             Date = new DateTime(2019, 4, 18, 1, 38, 3, 0, DateTimeKind.Unspecified)
@@ -6474,6 +7328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 796,
+                            Billed = false,
                             Comment = "20002430_Haus_in_5652",
                             CustomerId = 15,
                             Date = new DateTime(2019, 4, 18, 18, 34, 14, 0, DateTimeKind.Unspecified)
@@ -6481,6 +7336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 797,
+                            Billed = false,
                             Comment = "82935862_Haus_in_8561",
                             CustomerId = 38,
                             Date = new DateTime(2019, 4, 19, 5, 37, 23, 0, DateTimeKind.Unspecified)
@@ -6488,6 +7344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 798,
+                            Billed = false,
                             Comment = "15283413_Haus_in_5119",
                             CustomerId = 12,
                             Date = new DateTime(2019, 4, 19, 18, 18, 11, 0, DateTimeKind.Unspecified)
@@ -6495,6 +7352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 799,
+                            Billed = false,
                             Comment = "81410914_Haus_in_9873",
                             CustomerId = 31,
                             Date = new DateTime(2019, 4, 20, 9, 51, 23, 0, DateTimeKind.Unspecified)
@@ -6502,6 +7360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 800,
+                            Billed = false,
                             Comment = "55740673_Haus_in_7328",
                             CustomerId = 3,
                             Date = new DateTime(2019, 4, 20, 17, 8, 55, 0, DateTimeKind.Unspecified)
@@ -6509,6 +7368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 801,
+                            Billed = false,
                             Comment = "42823855_Haus_in_3678",
                             CustomerId = 33,
                             Date = new DateTime(2019, 4, 21, 7, 17, 6, 0, DateTimeKind.Unspecified)
@@ -6516,6 +7376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 802,
+                            Billed = false,
                             Comment = "73560442_Haus_in_4734",
                             CustomerId = 2,
                             Date = new DateTime(2019, 4, 21, 13, 22, 45, 0, DateTimeKind.Unspecified)
@@ -6523,6 +7384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 803,
+                            Billed = false,
                             Comment = "38769031_Haus_in_3817",
                             CustomerId = 19,
                             Date = new DateTime(2019, 4, 22, 7, 18, 54, 0, DateTimeKind.Unspecified)
@@ -6530,6 +7392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 804,
+                            Billed = false,
                             Comment = "12272192_Haus_in_1201",
                             CustomerId = 36,
                             Date = new DateTime(2019, 4, 22, 19, 57, 17, 0, DateTimeKind.Unspecified)
@@ -6537,6 +7400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 805,
+                            Billed = false,
                             Comment = "25702636_Haus_in_9177",
                             CustomerId = 8,
                             Date = new DateTime(2019, 4, 23, 9, 49, 26, 0, DateTimeKind.Unspecified)
@@ -6544,6 +7408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 806,
+                            Billed = false,
                             Comment = "42370177_Haus_in_7408",
                             CustomerId = 19,
                             Date = new DateTime(2019, 4, 24, 8, 4, 55, 0, DateTimeKind.Unspecified)
@@ -6551,6 +7416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 807,
+                            Billed = false,
                             Comment = "27102325_Haus_in_1808",
                             CustomerId = 22,
                             Date = new DateTime(2019, 4, 25, 1, 39, 11, 0, DateTimeKind.Unspecified)
@@ -6558,6 +7424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 808,
+                            Billed = false,
                             Comment = "9597346_Haus_in_8691",
                             CustomerId = 32,
                             Date = new DateTime(2019, 4, 25, 21, 8, 59, 0, DateTimeKind.Unspecified)
@@ -6565,6 +7432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 809,
+                            Billed = false,
                             Comment = "69519603_Haus_in_9211",
                             CustomerId = 10,
                             Date = new DateTime(2019, 4, 26, 17, 47, 52, 0, DateTimeKind.Unspecified)
@@ -6572,6 +7440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 810,
+                            Billed = false,
                             Comment = "38546511_Haus_in_5968",
                             CustomerId = 7,
                             Date = new DateTime(2019, 4, 27, 5, 25, 50, 0, DateTimeKind.Unspecified)
@@ -6579,6 +7448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 811,
+                            Billed = false,
                             Comment = "7693045_Haus_in_5458",
                             CustomerId = 31,
                             Date = new DateTime(2019, 4, 27, 14, 15, 38, 0, DateTimeKind.Unspecified)
@@ -6586,6 +7456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 812,
+                            Billed = false,
                             Comment = "79763475_Haus_in_8304",
                             CustomerId = 18,
                             Date = new DateTime(2019, 4, 28, 11, 29, 10, 0, DateTimeKind.Unspecified)
@@ -6593,6 +7464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 813,
+                            Billed = false,
                             Comment = "9269412_Haus_in_6755",
                             CustomerId = 13,
                             Date = new DateTime(2019, 4, 28, 18, 18, 32, 0, DateTimeKind.Unspecified)
@@ -6600,6 +7472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 814,
+                            Billed = false,
                             Comment = "35446750_Haus_in_6595",
                             CustomerId = 12,
                             Date = new DateTime(2019, 4, 29, 3, 57, 18, 0, DateTimeKind.Unspecified)
@@ -6607,6 +7480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 815,
+                            Billed = false,
                             Comment = "13994953_Haus_in_8122",
                             CustomerId = 23,
                             Date = new DateTime(2019, 4, 29, 10, 40, 50, 0, DateTimeKind.Unspecified)
@@ -6614,6 +7488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 816,
+                            Billed = false,
                             Comment = "38379937_Haus_in_5034",
                             CustomerId = 29,
                             Date = new DateTime(2019, 4, 30, 5, 11, 2, 0, DateTimeKind.Unspecified)
@@ -6621,6 +7496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 817,
+                            Billed = false,
                             Comment = "86706587_Haus_in_8970",
                             CustomerId = 14,
                             Date = new DateTime(2019, 4, 30, 15, 13, 26, 0, DateTimeKind.Unspecified)
@@ -6628,6 +7504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 818,
+                            Billed = false,
                             Comment = "19001333_Haus_in_8769",
                             CustomerId = 4,
                             Date = new DateTime(2019, 5, 1, 2, 38, 15, 0, DateTimeKind.Unspecified)
@@ -6635,6 +7512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 819,
+                            Billed = false,
                             Comment = "97662955_Haus_in_7693",
                             CustomerId = 15,
                             Date = new DateTime(2019, 5, 1, 17, 39, 47, 0, DateTimeKind.Unspecified)
@@ -6642,6 +7520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 820,
+                            Billed = false,
                             Comment = "75422845_Haus_in_4121",
                             CustomerId = 9,
                             Date = new DateTime(2019, 5, 2, 12, 30, 15, 0, DateTimeKind.Unspecified)
@@ -6649,6 +7528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 821,
+                            Billed = false,
                             Comment = "72347554_Haus_in_3733",
                             CustomerId = 30,
                             Date = new DateTime(2019, 5, 3, 9, 51, 20, 0, DateTimeKind.Unspecified)
@@ -6656,6 +7536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 822,
+                            Billed = false,
                             Comment = "4475519_Haus_in_1672",
                             CustomerId = 38,
                             Date = new DateTime(2019, 5, 4, 2, 11, 47, 0, DateTimeKind.Unspecified)
@@ -6663,6 +7544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 823,
+                            Billed = false,
                             Comment = "97926528_Haus_in_9509",
                             CustomerId = 37,
                             Date = new DateTime(2019, 5, 4, 12, 2, 33, 0, DateTimeKind.Unspecified)
@@ -6670,6 +7552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 824,
+                            Billed = false,
                             Comment = "3541815_Haus_in_2271",
                             CustomerId = 28,
                             Date = new DateTime(2019, 5, 5, 7, 56, 5, 0, DateTimeKind.Unspecified)
@@ -6677,6 +7560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 825,
+                            Billed = false,
                             Comment = "95316736_Haus_in_5883",
                             CustomerId = 19,
                             Date = new DateTime(2019, 5, 5, 18, 17, 36, 0, DateTimeKind.Unspecified)
@@ -6684,6 +7568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 826,
+                            Billed = false,
                             Comment = "39688281_Haus_in_5678",
                             CustomerId = 3,
                             Date = new DateTime(2019, 5, 6, 16, 21, 52, 0, DateTimeKind.Unspecified)
@@ -6691,6 +7576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 827,
+                            Billed = false,
                             Comment = "47907418_Haus_in_8750",
                             CustomerId = 22,
                             Date = new DateTime(2019, 5, 7, 11, 55, 32, 0, DateTimeKind.Unspecified)
@@ -6698,6 +7584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 828,
+                            Billed = false,
                             Comment = "13887935_Haus_in_2224",
                             CustomerId = 20,
                             Date = new DateTime(2019, 5, 8, 1, 31, 28, 0, DateTimeKind.Unspecified)
@@ -6705,6 +7592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 829,
+                            Billed = false,
                             Comment = "42540298_Haus_in_8637",
                             CustomerId = 22,
                             Date = new DateTime(2019, 5, 9, 0, 22, 19, 0, DateTimeKind.Unspecified)
@@ -6712,6 +7600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 830,
+                            Billed = false,
                             Comment = "50204040_Haus_in_4453",
                             CustomerId = 38,
                             Date = new DateTime(2019, 5, 9, 19, 37, 38, 0, DateTimeKind.Unspecified)
@@ -6719,6 +7608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 831,
+                            Billed = false,
                             Comment = "96713541_Haus_in_9853",
                             CustomerId = 37,
                             Date = new DateTime(2019, 5, 10, 14, 48, 0, 0, DateTimeKind.Unspecified)
@@ -6726,6 +7616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 832,
+                            Billed = false,
                             Comment = "8897546_Haus_in_4778",
                             CustomerId = 11,
                             Date = new DateTime(2019, 5, 11, 9, 57, 27, 0, DateTimeKind.Unspecified)
@@ -6733,6 +7624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 833,
+                            Billed = false,
                             Comment = "27759227_Haus_in_4955",
                             CustomerId = 28,
                             Date = new DateTime(2019, 5, 11, 20, 11, 52, 0, DateTimeKind.Unspecified)
@@ -6740,6 +7632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 834,
+                            Billed = false,
                             Comment = "48937984_Haus_in_1946",
                             CustomerId = 17,
                             Date = new DateTime(2019, 5, 12, 4, 57, 5, 0, DateTimeKind.Unspecified)
@@ -6747,6 +7640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 835,
+                            Billed = false,
                             Comment = "28172687_Haus_in_2429",
                             CustomerId = 18,
                             Date = new DateTime(2019, 5, 12, 22, 23, 42, 0, DateTimeKind.Unspecified)
@@ -6754,6 +7648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 836,
+                            Billed = false,
                             Comment = "77791926_Haus_in_3909",
                             CustomerId = 13,
                             Date = new DateTime(2019, 5, 13, 8, 14, 46, 0, DateTimeKind.Unspecified)
@@ -6761,6 +7656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 837,
+                            Billed = false,
                             Comment = "69101578_Haus_in_9879",
                             CustomerId = 40,
                             Date = new DateTime(2019, 5, 13, 22, 44, 23, 0, DateTimeKind.Unspecified)
@@ -6768,6 +7664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 838,
+                            Billed = false,
                             Comment = "27129121_Haus_in_2867",
                             CustomerId = 19,
                             Date = new DateTime(2019, 5, 14, 16, 26, 8, 0, DateTimeKind.Unspecified)
@@ -6775,6 +7672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 839,
+                            Billed = false,
                             Comment = "77537335_Haus_in_7637",
                             CustomerId = 36,
                             Date = new DateTime(2019, 5, 15, 5, 33, 5, 0, DateTimeKind.Unspecified)
@@ -6782,6 +7680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 840,
+                            Billed = false,
                             Comment = "24352506_Haus_in_5828",
                             CustomerId = 12,
                             Date = new DateTime(2019, 5, 15, 13, 55, 45, 0, DateTimeKind.Unspecified)
@@ -6789,6 +7688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 841,
+                            Billed = false,
                             Comment = "6789693_Haus_in_3043",
                             CustomerId = 13,
                             Date = new DateTime(2019, 5, 16, 1, 17, 36, 0, DateTimeKind.Unspecified)
@@ -6796,6 +7696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 842,
+                            Billed = false,
                             Comment = "20639886_Haus_in_8028",
                             CustomerId = 5,
                             Date = new DateTime(2019, 5, 16, 13, 14, 3, 0, DateTimeKind.Unspecified)
@@ -6803,6 +7704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 843,
+                            Billed = false,
                             Comment = "73000908_Haus_in_8134",
                             CustomerId = 9,
                             Date = new DateTime(2019, 5, 17, 8, 25, 8, 0, DateTimeKind.Unspecified)
@@ -6810,6 +7712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 844,
+                            Billed = false,
                             Comment = "1014310_Haus_in_2709",
                             CustomerId = 18,
                             Date = new DateTime(2019, 5, 17, 19, 38, 18, 0, DateTimeKind.Unspecified)
@@ -6817,6 +7720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 845,
+                            Billed = false,
                             Comment = "14259375_Haus_in_4748",
                             CustomerId = 14,
                             Date = new DateTime(2019, 5, 18, 4, 57, 24, 0, DateTimeKind.Unspecified)
@@ -6824,6 +7728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 846,
+                            Billed = false,
                             Comment = "63302690_Haus_in_4056",
                             CustomerId = 5,
                             Date = new DateTime(2019, 5, 18, 21, 9, 39, 0, DateTimeKind.Unspecified)
@@ -6831,6 +7736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 847,
+                            Billed = false,
                             Comment = "10704619_Haus_in_3975",
                             CustomerId = 23,
                             Date = new DateTime(2019, 5, 19, 4, 32, 16, 0, DateTimeKind.Unspecified)
@@ -6838,6 +7744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 848,
+                            Billed = false,
                             Comment = "8833231_Haus_in_6359",
                             CustomerId = 8,
                             Date = new DateTime(2019, 5, 19, 22, 51, 8, 0, DateTimeKind.Unspecified)
@@ -6845,6 +7752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 849,
+                            Billed = false,
                             Comment = "95954642_Haus_in_1368",
                             CustomerId = 36,
                             Date = new DateTime(2019, 5, 20, 16, 46, 46, 0, DateTimeKind.Unspecified)
@@ -6852,6 +7760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 850,
+                            Billed = false,
                             Comment = "12889256_Haus_in_7839",
                             CustomerId = 28,
                             Date = new DateTime(2019, 5, 21, 5, 40, 7, 0, DateTimeKind.Unspecified)
@@ -6859,6 +7768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 851,
+                            Billed = false,
                             Comment = "47352240_Haus_in_1174",
                             CustomerId = 2,
                             Date = new DateTime(2019, 5, 21, 13, 42, 54, 0, DateTimeKind.Unspecified)
@@ -6866,6 +7776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 852,
+                            Billed = false,
                             Comment = "10612986_Haus_in_4359",
                             CustomerId = 30,
                             Date = new DateTime(2019, 5, 22, 4, 24, 27, 0, DateTimeKind.Unspecified)
@@ -6873,6 +7784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 853,
+                            Billed = false,
                             Comment = "69032879_Haus_in_7378",
                             CustomerId = 34,
                             Date = new DateTime(2019, 5, 22, 13, 9, 34, 0, DateTimeKind.Unspecified)
@@ -6880,6 +7792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 854,
+                            Billed = false,
                             Comment = "67291698_Haus_in_2862",
                             CustomerId = 21,
                             Date = new DateTime(2019, 5, 23, 0, 7, 47, 0, DateTimeKind.Unspecified)
@@ -6887,6 +7800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 855,
+                            Billed = false,
                             Comment = "73909117_Haus_in_7537",
                             CustomerId = 10,
                             Date = new DateTime(2019, 5, 23, 19, 52, 1, 0, DateTimeKind.Unspecified)
@@ -6894,6 +7808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 856,
+                            Billed = false,
                             Comment = "43158986_Haus_in_1905",
                             CustomerId = 35,
                             Date = new DateTime(2019, 5, 24, 18, 17, 15, 0, DateTimeKind.Unspecified)
@@ -6901,6 +7816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 857,
+                            Billed = false,
                             Comment = "67010087_Haus_in_4630",
                             CustomerId = 36,
                             Date = new DateTime(2019, 5, 25, 9, 0, 4, 0, DateTimeKind.Unspecified)
@@ -6908,6 +7824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 858,
+                            Billed = false,
                             Comment = "72577926_Haus_in_2788",
                             CustomerId = 11,
                             Date = new DateTime(2019, 5, 25, 15, 53, 53, 0, DateTimeKind.Unspecified)
@@ -6915,6 +7832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 859,
+                            Billed = false,
                             Comment = "40631083_Haus_in_2390",
                             CustomerId = 26,
                             Date = new DateTime(2019, 5, 26, 13, 25, 6, 0, DateTimeKind.Unspecified)
@@ -6922,6 +7840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 860,
+                            Billed = false,
                             Comment = "26992747_Haus_in_7492",
                             CustomerId = 25,
                             Date = new DateTime(2019, 5, 27, 5, 1, 26, 0, DateTimeKind.Unspecified)
@@ -6929,6 +7848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 861,
+                            Billed = false,
                             Comment = "76351631_Haus_in_7161",
                             CustomerId = 34,
                             Date = new DateTime(2019, 5, 28, 0, 20, 22, 0, DateTimeKind.Unspecified)
@@ -6936,6 +7856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 862,
+                            Billed = false,
                             Comment = "32712209_Haus_in_9848",
                             CustomerId = 1,
                             Date = new DateTime(2019, 5, 28, 8, 37, 42, 0, DateTimeKind.Unspecified)
@@ -6943,6 +7864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 863,
+                            Billed = false,
                             Comment = "46691566_Haus_in_7872",
                             CustomerId = 34,
                             Date = new DateTime(2019, 5, 29, 5, 1, 1, 0, DateTimeKind.Unspecified)
@@ -6950,6 +7872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 864,
+                            Billed = false,
                             Comment = "30531062_Haus_in_3032",
                             CustomerId = 3,
                             Date = new DateTime(2019, 5, 29, 17, 30, 3, 0, DateTimeKind.Unspecified)
@@ -6957,6 +7880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 865,
+                            Billed = false,
                             Comment = "33989577_Haus_in_8361",
                             CustomerId = 4,
                             Date = new DateTime(2019, 5, 30, 7, 50, 5, 0, DateTimeKind.Unspecified)
@@ -6964,6 +7888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 866,
+                            Billed = false,
                             Comment = "12081990_Haus_in_4437",
                             CustomerId = 5,
                             Date = new DateTime(2019, 5, 31, 2, 43, 31, 0, DateTimeKind.Unspecified)
@@ -6971,6 +7896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 867,
+                            Billed = false,
                             Comment = "14329589_Haus_in_5032",
                             CustomerId = 7,
                             Date = new DateTime(2019, 5, 31, 15, 56, 40, 0, DateTimeKind.Unspecified)
@@ -6978,6 +7904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 868,
+                            Billed = false,
                             Comment = "77061467_Haus_in_1200",
                             CustomerId = 10,
                             Date = new DateTime(2019, 6, 1, 12, 49, 52, 0, DateTimeKind.Unspecified)
@@ -6985,6 +7912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 869,
+                            Billed = false,
                             Comment = "25179639_Haus_in_7974",
                             CustomerId = 24,
                             Date = new DateTime(2019, 6, 2, 9, 32, 1, 0, DateTimeKind.Unspecified)
@@ -6992,6 +7920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 870,
+                            Billed = false,
                             Comment = "32559903_Haus_in_4897",
                             CustomerId = 30,
                             Date = new DateTime(2019, 6, 3, 3, 14, 59, 0, DateTimeKind.Unspecified)
@@ -6999,6 +7928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 871,
+                            Billed = false,
                             Comment = "27355330_Haus_in_4849",
                             CustomerId = 21,
                             Date = new DateTime(2019, 6, 3, 20, 18, 54, 0, DateTimeKind.Unspecified)
@@ -7006,6 +7936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 872,
+                            Billed = false,
                             Comment = "38386130_Haus_in_3395",
                             CustomerId = 38,
                             Date = new DateTime(2019, 6, 4, 12, 4, 10, 0, DateTimeKind.Unspecified)
@@ -7013,6 +7944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 873,
+                            Billed = false,
                             Comment = "20149480_Haus_in_4682",
                             CustomerId = 24,
                             Date = new DateTime(2019, 6, 5, 4, 16, 31, 0, DateTimeKind.Unspecified)
@@ -7020,6 +7952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 874,
+                            Billed = false,
                             Comment = "26245348_Haus_in_6727",
                             CustomerId = 1,
                             Date = new DateTime(2019, 6, 5, 10, 33, 4, 0, DateTimeKind.Unspecified)
@@ -7027,6 +7960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 875,
+                            Billed = false,
                             Comment = "42511103_Haus_in_4701",
                             CustomerId = 27,
                             Date = new DateTime(2019, 6, 6, 3, 43, 42, 0, DateTimeKind.Unspecified)
@@ -7034,6 +7968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 876,
+                            Billed = false,
                             Comment = "49710721_Haus_in_2043",
                             CustomerId = 29,
                             Date = new DateTime(2019, 6, 6, 16, 25, 34, 0, DateTimeKind.Unspecified)
@@ -7041,6 +7976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 877,
+                            Billed = false,
                             Comment = "69091161_Haus_in_1201",
                             CustomerId = 32,
                             Date = new DateTime(2019, 6, 7, 6, 45, 11, 0, DateTimeKind.Unspecified)
@@ -7048,6 +7984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 878,
+                            Billed = false,
                             Comment = "97195819_Haus_in_1579",
                             CustomerId = 36,
                             Date = new DateTime(2019, 6, 8, 1, 37, 30, 0, DateTimeKind.Unspecified)
@@ -7055,6 +7992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 879,
+                            Billed = false,
                             Comment = "71661158_Haus_in_1633",
                             CustomerId = 24,
                             Date = new DateTime(2019, 6, 8, 14, 44, 0, 0, DateTimeKind.Unspecified)
@@ -7062,6 +8000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 880,
+                            Billed = false,
                             Comment = "85674139_Haus_in_2113",
                             CustomerId = 13,
                             Date = new DateTime(2019, 6, 9, 11, 22, 45, 0, DateTimeKind.Unspecified)
@@ -7069,6 +8008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 881,
+                            Billed = false,
                             Comment = "55685284_Haus_in_7137",
                             CustomerId = 35,
                             Date = new DateTime(2019, 6, 10, 7, 15, 5, 0, DateTimeKind.Unspecified)
@@ -7076,6 +8016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 882,
+                            Billed = false,
                             Comment = "9215928_Haus_in_8892",
                             CustomerId = 10,
                             Date = new DateTime(2019, 6, 10, 20, 7, 46, 0, DateTimeKind.Unspecified)
@@ -7083,6 +8024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 883,
+                            Billed = false,
                             Comment = "27439959_Haus_in_4431",
                             CustomerId = 23,
                             Date = new DateTime(2019, 6, 11, 15, 23, 20, 0, DateTimeKind.Unspecified)
@@ -7090,6 +8032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 884,
+                            Billed = false,
                             Comment = "24740096_Haus_in_4001",
                             CustomerId = 25,
                             Date = new DateTime(2019, 6, 12, 3, 8, 31, 0, DateTimeKind.Unspecified)
@@ -7097,6 +8040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 885,
+                            Billed = false,
                             Comment = "86357260_Haus_in_8616",
                             CustomerId = 34,
                             Date = new DateTime(2019, 6, 13, 0, 56, 29, 0, DateTimeKind.Unspecified)
@@ -7104,6 +8048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 886,
+                            Billed = false,
                             Comment = "936558_Haus_in_8312",
                             CustomerId = 21,
                             Date = new DateTime(2019, 6, 13, 12, 7, 57, 0, DateTimeKind.Unspecified)
@@ -7111,6 +8056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 887,
+                            Billed = false,
                             Comment = "51935961_Haus_in_1845",
                             CustomerId = 26,
                             Date = new DateTime(2019, 6, 14, 5, 59, 17, 0, DateTimeKind.Unspecified)
@@ -7118,6 +8064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 888,
+                            Billed = false,
                             Comment = "81682385_Haus_in_5300",
                             CustomerId = 26,
                             Date = new DateTime(2019, 6, 14, 17, 9, 18, 0, DateTimeKind.Unspecified)
@@ -7125,6 +8072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 889,
+                            Billed = false,
                             Comment = "516417_Haus_in_1838",
                             CustomerId = 17,
                             Date = new DateTime(2019, 6, 15, 7, 27, 40, 0, DateTimeKind.Unspecified)
@@ -7132,6 +8080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 890,
+                            Billed = false,
                             Comment = "98267061_Haus_in_7882",
                             CustomerId = 1,
                             Date = new DateTime(2019, 6, 16, 4, 38, 17, 0, DateTimeKind.Unspecified)
@@ -7139,6 +8088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 891,
+                            Billed = false,
                             Comment = "92034199_Haus_in_9185",
                             CustomerId = 35,
                             Date = new DateTime(2019, 6, 16, 22, 10, 19, 0, DateTimeKind.Unspecified)
@@ -7146,6 +8096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 892,
+                            Billed = false,
                             Comment = "88190869_Haus_in_4764",
                             CustomerId = 31,
                             Date = new DateTime(2019, 6, 17, 10, 25, 33, 0, DateTimeKind.Unspecified)
@@ -7153,6 +8104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 893,
+                            Billed = false,
                             Comment = "25126250_Haus_in_1812",
                             CustomerId = 5,
                             Date = new DateTime(2019, 6, 17, 17, 4, 48, 0, DateTimeKind.Unspecified)
@@ -7160,6 +8112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 894,
+                            Billed = false,
                             Comment = "34260075_Haus_in_6098",
                             CustomerId = 21,
                             Date = new DateTime(2019, 6, 18, 4, 20, 45, 0, DateTimeKind.Unspecified)
@@ -7167,6 +8120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 895,
+                            Billed = false,
                             Comment = "59305147_Haus_in_8624",
                             CustomerId = 16,
                             Date = new DateTime(2019, 6, 18, 18, 14, 56, 0, DateTimeKind.Unspecified)
@@ -7174,6 +8128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 896,
+                            Billed = false,
                             Comment = "95732706_Haus_in_9751",
                             CustomerId = 23,
                             Date = new DateTime(2019, 6, 19, 3, 54, 48, 0, DateTimeKind.Unspecified)
@@ -7181,6 +8136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 897,
+                            Billed = false,
                             Comment = "23360629_Haus_in_6105",
                             CustomerId = 4,
                             Date = new DateTime(2019, 6, 19, 10, 24, 3, 0, DateTimeKind.Unspecified)
@@ -7188,6 +8144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 898,
+                            Billed = false,
                             Comment = "36078564_Haus_in_4163",
                             CustomerId = 39,
                             Date = new DateTime(2019, 6, 19, 21, 6, 28, 0, DateTimeKind.Unspecified)
@@ -7195,6 +8152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 899,
+                            Billed = false,
                             Comment = "69269978_Haus_in_7632",
                             CustomerId = 23,
                             Date = new DateTime(2019, 6, 20, 17, 55, 21, 0, DateTimeKind.Unspecified)
@@ -7202,6 +8160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 900,
+                            Billed = false,
                             Comment = "39154088_Haus_in_9941",
                             CustomerId = 19,
                             Date = new DateTime(2019, 6, 21, 13, 5, 33, 0, DateTimeKind.Unspecified)
@@ -7209,6 +8168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 901,
+                            Billed = false,
                             Comment = "58858870_Haus_in_3041",
                             CustomerId = 16,
                             Date = new DateTime(2019, 6, 22, 7, 8, 12, 0, DateTimeKind.Unspecified)
@@ -7216,6 +8176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 902,
+                            Billed = false,
                             Comment = "4944617_Haus_in_7847",
                             CustomerId = 12,
                             Date = new DateTime(2019, 6, 22, 22, 36, 53, 0, DateTimeKind.Unspecified)
@@ -7223,6 +8184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 903,
+                            Billed = false,
                             Comment = "28256124_Haus_in_6666",
                             CustomerId = 17,
                             Date = new DateTime(2019, 6, 23, 18, 49, 54, 0, DateTimeKind.Unspecified)
@@ -7230,6 +8192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 904,
+                            Billed = false,
                             Comment = "56109049_Haus_in_7999",
                             CustomerId = 34,
                             Date = new DateTime(2019, 6, 24, 3, 19, 27, 0, DateTimeKind.Unspecified)
@@ -7237,6 +8200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 905,
+                            Billed = false,
                             Comment = "78642586_Haus_in_8100",
                             CustomerId = 6,
                             Date = new DateTime(2019, 6, 25, 0, 57, 24, 0, DateTimeKind.Unspecified)
@@ -7244,6 +8208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 906,
+                            Billed = false,
                             Comment = "36950434_Haus_in_3018",
                             CustomerId = 11,
                             Date = new DateTime(2019, 6, 25, 20, 32, 30, 0, DateTimeKind.Unspecified)
@@ -7251,6 +8216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 907,
+                            Billed = false,
                             Comment = "43686787_Haus_in_9014",
                             CustomerId = 9,
                             Date = new DateTime(2019, 6, 26, 18, 21, 38, 0, DateTimeKind.Unspecified)
@@ -7258,6 +8224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 908,
+                            Billed = false,
                             Comment = "72344629_Haus_in_5328",
                             CustomerId = 7,
                             Date = new DateTime(2019, 6, 27, 10, 54, 23, 0, DateTimeKind.Unspecified)
@@ -7265,6 +8232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 909,
+                            Billed = false,
                             Comment = "32407018_Haus_in_9045",
                             CustomerId = 24,
                             Date = new DateTime(2019, 6, 28, 5, 17, 15, 0, DateTimeKind.Unspecified)
@@ -7272,6 +8240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 910,
+                            Billed = false,
                             Comment = "45817720_Haus_in_9695",
                             CustomerId = 36,
                             Date = new DateTime(2019, 6, 28, 19, 9, 42, 0, DateTimeKind.Unspecified)
@@ -7279,6 +8248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 911,
+                            Billed = false,
                             Comment = "51581350_Haus_in_5174",
                             CustomerId = 37,
                             Date = new DateTime(2019, 6, 29, 5, 33, 22, 0, DateTimeKind.Unspecified)
@@ -7286,6 +8256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 912,
+                            Billed = false,
                             Comment = "51604680_Haus_in_5001",
                             CustomerId = 33,
                             Date = new DateTime(2019, 6, 29, 23, 8, 12, 0, DateTimeKind.Unspecified)
@@ -7293,6 +8264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 913,
+                            Billed = false,
                             Comment = "19620286_Haus_in_1271",
                             CustomerId = 28,
                             Date = new DateTime(2019, 6, 30, 14, 3, 16, 0, DateTimeKind.Unspecified)
@@ -7300,6 +8272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 914,
+                            Billed = false,
                             Comment = "42857999_Haus_in_4833",
                             CustomerId = 20,
                             Date = new DateTime(2019, 6, 30, 20, 50, 9, 0, DateTimeKind.Unspecified)
@@ -7307,6 +8280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 915,
+                            Billed = false,
                             Comment = "82714630_Haus_in_5330",
                             CustomerId = 9,
                             Date = new DateTime(2019, 7, 1, 18, 1, 25, 0, DateTimeKind.Unspecified)
@@ -7314,6 +8288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 916,
+                            Billed = false,
                             Comment = "95810540_Haus_in_1583",
                             CustomerId = 7,
                             Date = new DateTime(2019, 7, 2, 12, 2, 48, 0, DateTimeKind.Unspecified)
@@ -7321,6 +8296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 917,
+                            Billed = false,
                             Comment = "49877588_Haus_in_2417",
                             CustomerId = 13,
                             Date = new DateTime(2019, 7, 2, 21, 44, 50, 0, DateTimeKind.Unspecified)
@@ -7328,6 +8304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 918,
+                            Billed = false,
                             Comment = "8344825_Haus_in_4547",
                             CustomerId = 19,
                             Date = new DateTime(2019, 7, 3, 14, 39, 40, 0, DateTimeKind.Unspecified)
@@ -7335,6 +8312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 919,
+                            Billed = false,
                             Comment = "88041809_Haus_in_7158",
                             CustomerId = 18,
                             Date = new DateTime(2019, 7, 4, 11, 24, 21, 0, DateTimeKind.Unspecified)
@@ -7342,6 +8320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 920,
+                            Billed = false,
                             Comment = "2014056_Haus_in_4023",
                             CustomerId = 11,
                             Date = new DateTime(2019, 7, 4, 19, 9, 17, 0, DateTimeKind.Unspecified)
@@ -7349,6 +8328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 921,
+                            Billed = false,
                             Comment = "4427013_Haus_in_5578",
                             CustomerId = 15,
                             Date = new DateTime(2019, 7, 5, 4, 36, 1, 0, DateTimeKind.Unspecified)
@@ -7356,6 +8336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 922,
+                            Billed = false,
                             Comment = "47265999_Haus_in_5332",
                             CustomerId = 1,
                             Date = new DateTime(2019, 7, 5, 10, 56, 58, 0, DateTimeKind.Unspecified)
@@ -7363,6 +8344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 923,
+                            Billed = false,
                             Comment = "87172115_Haus_in_5652",
                             CustomerId = 31,
                             Date = new DateTime(2019, 7, 6, 9, 38, 15, 0, DateTimeKind.Unspecified)
@@ -7370,6 +8352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 924,
+                            Billed = false,
                             Comment = "37846625_Haus_in_1791",
                             CustomerId = 36,
                             Date = new DateTime(2019, 7, 7, 1, 4, 22, 0, DateTimeKind.Unspecified)
@@ -7377,6 +8360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 925,
+                            Billed = false,
                             Comment = "9652243_Haus_in_2981",
                             CustomerId = 29,
                             Date = new DateTime(2019, 7, 7, 20, 23, 30, 0, DateTimeKind.Unspecified)
@@ -7384,6 +8368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 926,
+                            Billed = false,
                             Comment = "12244818_Haus_in_1570",
                             CustomerId = 28,
                             Date = new DateTime(2019, 7, 8, 4, 19, 11, 0, DateTimeKind.Unspecified)
@@ -7391,6 +8376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 927,
+                            Billed = false,
                             Comment = "39958329_Haus_in_7778",
                             CustomerId = 14,
                             Date = new DateTime(2019, 7, 8, 16, 35, 2, 0, DateTimeKind.Unspecified)
@@ -7398,6 +8384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 928,
+                            Billed = false,
                             Comment = "44891200_Haus_in_2759",
                             CustomerId = 9,
                             Date = new DateTime(2019, 7, 9, 5, 23, 19, 0, DateTimeKind.Unspecified)
@@ -7405,6 +8392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 929,
+                            Billed = false,
                             Comment = "69899948_Haus_in_6202",
                             CustomerId = 18,
                             Date = new DateTime(2019, 7, 9, 17, 43, 10, 0, DateTimeKind.Unspecified)
@@ -7412,6 +8400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 930,
+                            Billed = false,
                             Comment = "59792235_Haus_in_7575",
                             CustomerId = 27,
                             Date = new DateTime(2019, 7, 10, 3, 1, 14, 0, DateTimeKind.Unspecified)
@@ -7419,6 +8408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 931,
+                            Billed = false,
                             Comment = "91072448_Haus_in_5862",
                             CustomerId = 31,
                             Date = new DateTime(2019, 7, 10, 15, 22, 28, 0, DateTimeKind.Unspecified)
@@ -7426,6 +8416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 932,
+                            Billed = false,
                             Comment = "35453418_Haus_in_6620",
                             CustomerId = 10,
                             Date = new DateTime(2019, 7, 11, 10, 40, 2, 0, DateTimeKind.Unspecified)
@@ -7433,6 +8424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 933,
+                            Billed = false,
                             Comment = "47419024_Haus_in_6057",
                             CustomerId = 15,
                             Date = new DateTime(2019, 7, 12, 2, 53, 5, 0, DateTimeKind.Unspecified)
@@ -7440,6 +8432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 934,
+                            Billed = false,
                             Comment = "30481306_Haus_in_8061",
                             CustomerId = 38,
                             Date = new DateTime(2019, 7, 12, 22, 26, 56, 0, DateTimeKind.Unspecified)
@@ -7447,6 +8440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 935,
+                            Billed = false,
                             Comment = "47665407_Haus_in_8352",
                             CustomerId = 6,
                             Date = new DateTime(2019, 7, 13, 10, 5, 10, 0, DateTimeKind.Unspecified)
@@ -7454,6 +8448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 936,
+                            Billed = false,
                             Comment = "97930578_Haus_in_1595",
                             CustomerId = 6,
                             Date = new DateTime(2019, 7, 14, 8, 48, 48, 0, DateTimeKind.Unspecified)
@@ -7461,6 +8456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 937,
+                            Billed = false,
                             Comment = "44969950_Haus_in_2510",
                             CustomerId = 30,
                             Date = new DateTime(2019, 7, 14, 23, 27, 41, 0, DateTimeKind.Unspecified)
@@ -7468,6 +8464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 938,
+                            Billed = false,
                             Comment = "80642916_Haus_in_5383",
                             CustomerId = 11,
                             Date = new DateTime(2019, 7, 15, 15, 39, 37, 0, DateTimeKind.Unspecified)
@@ -7475,6 +8472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 939,
+                            Billed = false,
                             Comment = "87410813_Haus_in_1514",
                             CustomerId = 21,
                             Date = new DateTime(2019, 7, 16, 6, 31, 26, 0, DateTimeKind.Unspecified)
@@ -7482,6 +8480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 940,
+                            Billed = false,
                             Comment = "43447785_Haus_in_3392",
                             CustomerId = 19,
                             Date = new DateTime(2019, 7, 17, 2, 56, 29, 0, DateTimeKind.Unspecified)
@@ -7489,6 +8488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 941,
+                            Billed = false,
                             Comment = "24430052_Haus_in_6705",
                             CustomerId = 31,
                             Date = new DateTime(2019, 7, 17, 14, 35, 17, 0, DateTimeKind.Unspecified)
@@ -7496,6 +8496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 942,
+                            Billed = false,
                             Comment = "84103165_Haus_in_8537",
                             CustomerId = 40,
                             Date = new DateTime(2019, 7, 18, 13, 4, 31, 0, DateTimeKind.Unspecified)
@@ -7503,6 +8504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 943,
+                            Billed = false,
                             Comment = "33475498_Haus_in_2271",
                             CustomerId = 29,
                             Date = new DateTime(2019, 7, 19, 5, 8, 37, 0, DateTimeKind.Unspecified)
@@ -7510,6 +8512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 944,
+                            Billed = false,
                             Comment = "60323506_Haus_in_6516",
                             CustomerId = 31,
                             Date = new DateTime(2019, 7, 20, 0, 14, 27, 0, DateTimeKind.Unspecified)
@@ -7517,6 +8520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 945,
+                            Billed = false,
                             Comment = "28686487_Haus_in_6063",
                             CustomerId = 25,
                             Date = new DateTime(2019, 7, 20, 22, 43, 17, 0, DateTimeKind.Unspecified)
@@ -7524,6 +8528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 946,
+                            Billed = false,
                             Comment = "44792357_Haus_in_8256",
                             CustomerId = 27,
                             Date = new DateTime(2019, 7, 21, 4, 47, 29, 0, DateTimeKind.Unspecified)
@@ -7531,6 +8536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 947,
+                            Billed = false,
                             Comment = "29017004_Haus_in_3908",
                             CustomerId = 14,
                             Date = new DateTime(2019, 7, 21, 16, 38, 23, 0, DateTimeKind.Unspecified)
@@ -7538,6 +8544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 948,
+                            Billed = false,
                             Comment = "86686133_Haus_in_8389",
                             CustomerId = 40,
                             Date = new DateTime(2019, 7, 22, 3, 9, 25, 0, DateTimeKind.Unspecified)
@@ -7545,6 +8552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 949,
+                            Billed = false,
                             Comment = "63260196_Haus_in_4275",
                             CustomerId = 37,
                             Date = new DateTime(2019, 7, 23, 1, 18, 31, 0, DateTimeKind.Unspecified)
@@ -7552,6 +8560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 950,
+                            Billed = false,
                             Comment = "77652629_Haus_in_7984",
                             CustomerId = 9,
                             Date = new DateTime(2019, 7, 23, 13, 50, 34, 0, DateTimeKind.Unspecified)
@@ -7559,6 +8568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 951,
+                            Billed = false,
                             Comment = "97893976_Haus_in_8062",
                             CustomerId = 28,
                             Date = new DateTime(2019, 7, 24, 9, 11, 46, 0, DateTimeKind.Unspecified)
@@ -7566,6 +8576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 952,
+                            Billed = false,
                             Comment = "36810237_Haus_in_5374",
                             CustomerId = 12,
                             Date = new DateTime(2019, 7, 25, 2, 10, 22, 0, DateTimeKind.Unspecified)
@@ -7573,6 +8584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 953,
+                            Billed = false,
                             Comment = "51673295_Haus_in_1744",
                             CustomerId = 22,
                             Date = new DateTime(2019, 7, 25, 11, 40, 8, 0, DateTimeKind.Unspecified)
@@ -7580,6 +8592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 954,
+                            Billed = false,
                             Comment = "66616606_Haus_in_2338",
                             CustomerId = 2,
                             Date = new DateTime(2019, 7, 26, 3, 38, 44, 0, DateTimeKind.Unspecified)
@@ -7587,6 +8600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 955,
+                            Billed = false,
                             Comment = "24542402_Haus_in_9205",
                             CustomerId = 34,
                             Date = new DateTime(2019, 7, 26, 16, 46, 9, 0, DateTimeKind.Unspecified)
@@ -7594,6 +8608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 956,
+                            Billed = false,
                             Comment = "55216291_Haus_in_9400",
                             CustomerId = 7,
                             Date = new DateTime(2019, 7, 27, 10, 54, 14, 0, DateTimeKind.Unspecified)
@@ -7601,6 +8616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 957,
+                            Billed = false,
                             Comment = "36640008_Haus_in_8897",
                             CustomerId = 10,
                             Date = new DateTime(2019, 7, 27, 18, 27, 47, 0, DateTimeKind.Unspecified)
@@ -7608,6 +8624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 958,
+                            Billed = false,
                             Comment = "70907818_Haus_in_2364",
                             CustomerId = 25,
                             Date = new DateTime(2019, 7, 28, 4, 6, 33, 0, DateTimeKind.Unspecified)
@@ -7615,6 +8632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 959,
+                            Billed = false,
                             Comment = "62581783_Haus_in_8159",
                             CustomerId = 39,
                             Date = new DateTime(2019, 7, 28, 19, 57, 35, 0, DateTimeKind.Unspecified)
@@ -7622,6 +8640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 960,
+                            Billed = false,
                             Comment = "21219125_Haus_in_8882",
                             CustomerId = 3,
                             Date = new DateTime(2019, 7, 29, 4, 42, 16, 0, DateTimeKind.Unspecified)
@@ -7629,6 +8648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 961,
+                            Billed = false,
                             Comment = "53751139_Haus_in_3173",
                             CustomerId = 28,
                             Date = new DateTime(2019, 7, 29, 17, 29, 0, 0, DateTimeKind.Unspecified)
@@ -7636,6 +8656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 962,
+                            Billed = false,
                             Comment = "42294366_Haus_in_9615",
                             CustomerId = 35,
                             Date = new DateTime(2019, 7, 30, 5, 32, 55, 0, DateTimeKind.Unspecified)
@@ -7643,6 +8664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 963,
+                            Billed = false,
                             Comment = "82060289_Haus_in_1311",
                             CustomerId = 30,
                             Date = new DateTime(2019, 7, 30, 19, 53, 31, 0, DateTimeKind.Unspecified)
@@ -7650,6 +8672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 964,
+                            Billed = false,
                             Comment = "28034339_Haus_in_4390",
                             CustomerId = 12,
                             Date = new DateTime(2019, 7, 31, 8, 43, 54, 0, DateTimeKind.Unspecified)
@@ -7657,6 +8680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 965,
+                            Billed = false,
                             Comment = "98744239_Haus_in_8272",
                             CustomerId = 12,
                             Date = new DateTime(2019, 8, 1, 6, 30, 24, 0, DateTimeKind.Unspecified)
@@ -7664,6 +8688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 966,
+                            Billed = false,
                             Comment = "88933016_Haus_in_6291",
                             CustomerId = 28,
                             Date = new DateTime(2019, 8, 1, 16, 33, 45, 0, DateTimeKind.Unspecified)
@@ -7671,6 +8696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 967,
+                            Billed = false,
                             Comment = "20669758_Haus_in_7022",
                             CustomerId = 22,
                             Date = new DateTime(2019, 8, 2, 1, 3, 52, 0, DateTimeKind.Unspecified)
@@ -7678,6 +8704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 968,
+                            Billed = false,
                             Comment = "45287250_Haus_in_3689",
                             CustomerId = 3,
                             Date = new DateTime(2019, 8, 2, 10, 46, 19, 0, DateTimeKind.Unspecified)
@@ -7685,6 +8712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 969,
+                            Billed = false,
                             Comment = "70923528_Haus_in_4223",
                             CustomerId = 27,
                             Date = new DateTime(2019, 8, 2, 19, 13, 13, 0, DateTimeKind.Unspecified)
@@ -7692,6 +8720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 970,
+                            Billed = false,
                             Comment = "80640714_Haus_in_7751",
                             CustomerId = 16,
                             Date = new DateTime(2019, 8, 3, 9, 18, 43, 0, DateTimeKind.Unspecified)
@@ -7699,6 +8728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 971,
+                            Billed = false,
                             Comment = "61421260_Haus_in_4485",
                             CustomerId = 6,
                             Date = new DateTime(2019, 8, 4, 3, 25, 47, 0, DateTimeKind.Unspecified)
@@ -7706,6 +8736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 972,
+                            Billed = false,
                             Comment = "59754970_Haus_in_3828",
                             CustomerId = 2,
                             Date = new DateTime(2019, 8, 4, 20, 15, 13, 0, DateTimeKind.Unspecified)
@@ -7713,6 +8744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 973,
+                            Billed = false,
                             Comment = "8388208_Haus_in_6159",
                             CustomerId = 30,
                             Date = new DateTime(2019, 8, 5, 18, 2, 52, 0, DateTimeKind.Unspecified)
@@ -7720,6 +8752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 974,
+                            Billed = false,
                             Comment = "10976400_Haus_in_5966",
                             CustomerId = 9,
                             Date = new DateTime(2019, 8, 6, 15, 51, 12, 0, DateTimeKind.Unspecified)
@@ -7727,6 +8760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 975,
+                            Billed = false,
                             Comment = "19984542_Haus_in_8387",
                             CustomerId = 40,
                             Date = new DateTime(2019, 8, 7, 12, 25, 32, 0, DateTimeKind.Unspecified)
@@ -7734,6 +8768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 976,
+                            Billed = false,
                             Comment = "82665912_Haus_in_1919",
                             CustomerId = 15,
                             Date = new DateTime(2019, 8, 7, 20, 10, 14, 0, DateTimeKind.Unspecified)
@@ -7741,6 +8776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 977,
+                            Billed = false,
                             Comment = "45471027_Haus_in_6559",
                             CustomerId = 3,
                             Date = new DateTime(2019, 8, 8, 12, 14, 20, 0, DateTimeKind.Unspecified)
@@ -7748,6 +8784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 978,
+                            Billed = false,
                             Comment = "75213163_Haus_in_9112",
                             CustomerId = 25,
                             Date = new DateTime(2019, 8, 9, 8, 24, 9, 0, DateTimeKind.Unspecified)
@@ -7755,6 +8792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 979,
+                            Billed = false,
                             Comment = "46095056_Haus_in_9819",
                             CustomerId = 38,
                             Date = new DateTime(2019, 8, 10, 2, 9, 7, 0, DateTimeKind.Unspecified)
@@ -7762,6 +8800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 980,
+                            Billed = false,
                             Comment = "25369295_Haus_in_1479",
                             CustomerId = 21,
                             Date = new DateTime(2019, 8, 10, 14, 39, 8, 0, DateTimeKind.Unspecified)
@@ -7769,6 +8808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 981,
+                            Billed = false,
                             Comment = "95460914_Haus_in_8607",
                             CustomerId = 26,
                             Date = new DateTime(2019, 8, 10, 21, 15, 46, 0, DateTimeKind.Unspecified)
@@ -7776,6 +8816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 982,
+                            Billed = false,
                             Comment = "12205260_Haus_in_1252",
                             CustomerId = 23,
                             Date = new DateTime(2019, 8, 11, 13, 49, 43, 0, DateTimeKind.Unspecified)
@@ -7783,6 +8824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 983,
+                            Billed = false,
                             Comment = "37631981_Haus_in_9715",
                             CustomerId = 29,
                             Date = new DateTime(2019, 8, 12, 3, 39, 5, 0, DateTimeKind.Unspecified)
@@ -7790,6 +8832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 984,
+                            Billed = false,
                             Comment = "30283357_Haus_in_5123",
                             CustomerId = 18,
                             Date = new DateTime(2019, 8, 12, 20, 55, 53, 0, DateTimeKind.Unspecified)
@@ -7797,6 +8840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 985,
+                            Billed = false,
                             Comment = "94922031_Haus_in_3997",
                             CustomerId = 30,
                             Date = new DateTime(2019, 8, 13, 17, 5, 11, 0, DateTimeKind.Unspecified)
@@ -7804,6 +8848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 986,
+                            Billed = false,
                             Comment = "2824107_Haus_in_8605",
                             CustomerId = 3,
                             Date = new DateTime(2019, 8, 14, 0, 11, 59, 0, DateTimeKind.Unspecified)
@@ -7811,6 +8856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 987,
+                            Billed = false,
                             Comment = "2292687_Haus_in_2839",
                             CustomerId = 1,
                             Date = new DateTime(2019, 8, 14, 22, 25, 10, 0, DateTimeKind.Unspecified)
@@ -7818,6 +8864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 988,
+                            Billed = false,
                             Comment = "46517071_Haus_in_6613",
                             CustomerId = 39,
                             Date = new DateTime(2019, 8, 15, 19, 33, 47, 0, DateTimeKind.Unspecified)
@@ -7825,6 +8872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 989,
+                            Billed = false,
                             Comment = "80765095_Haus_in_9941",
                             CustomerId = 2,
                             Date = new DateTime(2019, 8, 16, 12, 13, 55, 0, DateTimeKind.Unspecified)
@@ -7832,6 +8880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 990,
+                            Billed = false,
                             Comment = "79567909_Haus_in_8310",
                             CustomerId = 8,
                             Date = new DateTime(2019, 8, 16, 21, 50, 13, 0, DateTimeKind.Unspecified)
@@ -7839,6 +8888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 991,
+                            Billed = false,
                             Comment = "47950608_Haus_in_1321",
                             CustomerId = 27,
                             Date = new DateTime(2019, 8, 17, 13, 41, 49, 0, DateTimeKind.Unspecified)
@@ -7846,6 +8896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 992,
+                            Billed = false,
                             Comment = "75147617_Haus_in_2533",
                             CustomerId = 22,
                             Date = new DateTime(2019, 8, 17, 23, 6, 37, 0, DateTimeKind.Unspecified)
@@ -7853,6 +8904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 993,
+                            Billed = false,
                             Comment = "51592713_Haus_in_2642",
                             CustomerId = 26,
                             Date = new DateTime(2019, 8, 18, 18, 47, 51, 0, DateTimeKind.Unspecified)
@@ -7860,6 +8912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 994,
+                            Billed = false,
                             Comment = "12092598_Haus_in_3457",
                             CustomerId = 27,
                             Date = new DateTime(2019, 8, 19, 15, 38, 31, 0, DateTimeKind.Unspecified)
@@ -7867,6 +8920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 995,
+                            Billed = false,
                             Comment = "83586003_Haus_in_4810",
                             CustomerId = 33,
                             Date = new DateTime(2019, 8, 20, 0, 41, 48, 0, DateTimeKind.Unspecified)
@@ -7874,6 +8928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 996,
+                            Billed = false,
                             Comment = "45006771_Haus_in_2482",
                             CustomerId = 16,
                             Date = new DateTime(2019, 8, 20, 16, 28, 13, 0, DateTimeKind.Unspecified)
@@ -7881,6 +8936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 997,
+                            Billed = false,
                             Comment = "76921094_Haus_in_1570",
                             CustomerId = 25,
                             Date = new DateTime(2019, 8, 21, 7, 44, 51, 0, DateTimeKind.Unspecified)
@@ -7888,6 +8944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 998,
+                            Billed = false,
                             Comment = "25678618_Haus_in_2046",
                             CustomerId = 39,
                             Date = new DateTime(2019, 8, 22, 2, 50, 46, 0, DateTimeKind.Unspecified)
@@ -7895,6 +8952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 999,
+                            Billed = false,
                             Comment = "36369676_Haus_in_9417",
                             CustomerId = 6,
                             Date = new DateTime(2019, 8, 22, 21, 25, 52, 0, DateTimeKind.Unspecified)
@@ -7902,6 +8960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1000,
+                            Billed = false,
                             Comment = "45842001_Haus_in_4954",
                             CustomerId = 14,
                             Date = new DateTime(2019, 8, 23, 6, 17, 36, 0, DateTimeKind.Unspecified)
@@ -7909,6 +8968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1001,
+                            Billed = false,
                             Comment = "99411648_Haus_in_9706",
                             CustomerId = 16,
                             Date = new DateTime(2019, 8, 24, 0, 41, 10, 0, DateTimeKind.Unspecified)
@@ -7916,6 +8976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1002,
+                            Billed = false,
                             Comment = "4032525_Haus_in_3381",
                             CustomerId = 4,
                             Date = new DateTime(2019, 8, 24, 19, 5, 25, 0, DateTimeKind.Unspecified)
@@ -7923,6 +8984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1003,
+                            Billed = false,
                             Comment = "86866607_Haus_in_1481",
                             CustomerId = 26,
                             Date = new DateTime(2019, 8, 25, 9, 18, 31, 0, DateTimeKind.Unspecified)
@@ -7930,6 +8992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1004,
+                            Billed = false,
                             Comment = "6439218_Haus_in_3255",
                             CustomerId = 8,
                             Date = new DateTime(2019, 8, 25, 20, 33, 17, 0, DateTimeKind.Unspecified)
@@ -7937,6 +9000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1005,
+                            Billed = false,
                             Comment = "24636946_Haus_in_6211",
                             CustomerId = 20,
                             Date = new DateTime(2019, 8, 26, 7, 57, 42, 0, DateTimeKind.Unspecified)
@@ -7944,6 +9008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1006,
+                            Billed = false,
                             Comment = "86964287_Haus_in_4560",
                             CustomerId = 9,
                             Date = new DateTime(2019, 8, 26, 20, 13, 29, 0, DateTimeKind.Unspecified)
@@ -7951,6 +9016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1007,
+                            Billed = false,
                             Comment = "22614684_Haus_in_8687",
                             CustomerId = 39,
                             Date = new DateTime(2019, 8, 27, 10, 37, 34, 0, DateTimeKind.Unspecified)
@@ -7958,6 +9024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1008,
+                            Billed = false,
                             Comment = "61514096_Haus_in_2367",
                             CustomerId = 34,
                             Date = new DateTime(2019, 8, 28, 7, 18, 7, 0, DateTimeKind.Unspecified)
@@ -7965,6 +9032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1009,
+                            Billed = false,
                             Comment = "1435187_Haus_in_3108",
                             CustomerId = 29,
                             Date = new DateTime(2019, 8, 29, 3, 48, 8, 0, DateTimeKind.Unspecified)
@@ -7972,6 +9040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1010,
+                            Billed = false,
                             Comment = "7722793_Haus_in_6407",
                             CustomerId = 14,
                             Date = new DateTime(2019, 8, 29, 20, 20, 27, 0, DateTimeKind.Unspecified)
@@ -7979,6 +9048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1011,
+                            Billed = false,
                             Comment = "67634104_Haus_in_8209",
                             CustomerId = 28,
                             Date = new DateTime(2019, 8, 30, 11, 35, 37, 0, DateTimeKind.Unspecified)
@@ -7986,6 +9056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1012,
+                            Billed = false,
                             Comment = "15368722_Haus_in_5204",
                             CustomerId = 29,
                             Date = new DateTime(2019, 8, 31, 0, 53, 58, 0, DateTimeKind.Unspecified)
@@ -7993,6 +9064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1013,
+                            Billed = false,
                             Comment = "33263055_Haus_in_4584",
                             CustomerId = 38,
                             Date = new DateTime(2019, 8, 31, 23, 15, 59, 0, DateTimeKind.Unspecified)
@@ -8000,6 +9072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1014,
+                            Billed = false,
                             Comment = "64328411_Haus_in_7718",
                             CustomerId = 12,
                             Date = new DateTime(2019, 9, 1, 16, 44, 45, 0, DateTimeKind.Unspecified)
@@ -8007,6 +9080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1015,
+                            Billed = false,
                             Comment = "57661687_Haus_in_3972",
                             CustomerId = 24,
                             Date = new DateTime(2019, 9, 2, 8, 25, 59, 0, DateTimeKind.Unspecified)
@@ -8014,6 +9088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1016,
+                            Billed = false,
                             Comment = "42046022_Haus_in_9754",
                             CustomerId = 20,
                             Date = new DateTime(2019, 9, 2, 15, 34, 19, 0, DateTimeKind.Unspecified)
@@ -8021,6 +9096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1017,
+                            Billed = false,
                             Comment = "38704800_Haus_in_3888",
                             CustomerId = 31,
                             Date = new DateTime(2019, 9, 3, 8, 46, 17, 0, DateTimeKind.Unspecified)
@@ -8028,6 +9104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1018,
+                            Billed = false,
                             Comment = "74944533_Haus_in_6894",
                             CustomerId = 22,
                             Date = new DateTime(2019, 9, 4, 3, 55, 38, 0, DateTimeKind.Unspecified)
@@ -8035,6 +9112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1019,
+                            Billed = false,
                             Comment = "64940268_Haus_in_6420",
                             CustomerId = 38,
                             Date = new DateTime(2019, 9, 4, 13, 36, 51, 0, DateTimeKind.Unspecified)
@@ -8042,6 +9120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1020,
+                            Billed = false,
                             Comment = "11222098_Haus_in_9783",
                             CustomerId = 17,
                             Date = new DateTime(2019, 9, 5, 8, 53, 27, 0, DateTimeKind.Unspecified)
@@ -8049,6 +9128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1021,
+                            Billed = false,
                             Comment = "63234137_Haus_in_1250",
                             CustomerId = 2,
                             Date = new DateTime(2019, 9, 6, 0, 45, 10, 0, DateTimeKind.Unspecified)
@@ -8056,6 +9136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1022,
+                            Billed = false,
                             Comment = "24360621_Haus_in_2517",
                             CustomerId = 2,
                             Date = new DateTime(2019, 9, 6, 9, 14, 5, 0, DateTimeKind.Unspecified)
@@ -8063,6 +9144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1023,
+                            Billed = false,
                             Comment = "49082111_Haus_in_5592",
                             CustomerId = 19,
                             Date = new DateTime(2019, 9, 6, 22, 9, 11, 0, DateTimeKind.Unspecified)
@@ -8070,6 +9152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1024,
+                            Billed = false,
                             Comment = "36016887_Haus_in_8865",
                             CustomerId = 24,
                             Date = new DateTime(2019, 9, 7, 10, 12, 7, 0, DateTimeKind.Unspecified)
@@ -8077,6 +9160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1025,
+                            Billed = false,
                             Comment = "67640116_Haus_in_2475",
                             CustomerId = 30,
                             Date = new DateTime(2019, 9, 7, 17, 21, 36, 0, DateTimeKind.Unspecified)
@@ -8084,6 +9168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1026,
+                            Billed = false,
                             Comment = "18434717_Haus_in_5650",
                             CustomerId = 1,
                             Date = new DateTime(2019, 9, 8, 5, 38, 40, 0, DateTimeKind.Unspecified)
@@ -8091,6 +9176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1027,
+                            Billed = false,
                             Comment = "41726393_Haus_in_3617",
                             CustomerId = 14,
                             Date = new DateTime(2019, 9, 8, 21, 23, 10, 0, DateTimeKind.Unspecified)
@@ -8098,6 +9184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1028,
+                            Billed = false,
                             Comment = "53228929_Haus_in_7493",
                             CustomerId = 3,
                             Date = new DateTime(2019, 9, 9, 15, 34, 37, 0, DateTimeKind.Unspecified)
@@ -8105,6 +9192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1029,
+                            Billed = false,
                             Comment = "2055293_Haus_in_1934",
                             CustomerId = 5,
                             Date = new DateTime(2019, 9, 10, 5, 55, 23, 0, DateTimeKind.Unspecified)
@@ -8112,6 +9200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1030,
+                            Billed = false,
                             Comment = "92389883_Haus_in_5437",
                             CustomerId = 35,
                             Date = new DateTime(2019, 9, 10, 12, 53, 53, 0, DateTimeKind.Unspecified)
@@ -8119,6 +9208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1031,
+                            Billed = false,
                             Comment = "67285447_Haus_in_9676",
                             CustomerId = 32,
                             Date = new DateTime(2019, 9, 11, 3, 17, 39, 0, DateTimeKind.Unspecified)
@@ -8126,6 +9216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1032,
+                            Billed = false,
                             Comment = "88430646_Haus_in_7624",
                             CustomerId = 24,
                             Date = new DateTime(2019, 9, 11, 10, 40, 23, 0, DateTimeKind.Unspecified)
@@ -8133,6 +9224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1033,
+                            Billed = false,
                             Comment = "86894849_Haus_in_2692",
                             CustomerId = 27,
                             Date = new DateTime(2019, 9, 12, 8, 44, 58, 0, DateTimeKind.Unspecified)
@@ -8140,6 +9232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1034,
+                            Billed = false,
                             Comment = "22912510_Haus_in_4081",
                             CustomerId = 31,
                             Date = new DateTime(2019, 9, 12, 21, 48, 34, 0, DateTimeKind.Unspecified)
@@ -8147,6 +9240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1035,
+                            Billed = false,
                             Comment = "99685901_Haus_in_2794",
                             CustomerId = 39,
                             Date = new DateTime(2019, 9, 13, 10, 3, 50, 0, DateTimeKind.Unspecified)
@@ -8154,6 +9248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1036,
+                            Billed = false,
                             Comment = "80631203_Haus_in_1298",
                             CustomerId = 1,
                             Date = new DateTime(2019, 9, 14, 8, 47, 39, 0, DateTimeKind.Unspecified)
@@ -8161,6 +9256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1037,
+                            Billed = false,
                             Comment = "96085591_Haus_in_2533",
                             CustomerId = 20,
                             Date = new DateTime(2019, 9, 14, 23, 42, 9, 0, DateTimeKind.Unspecified)
@@ -8168,6 +9264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1038,
+                            Billed = false,
                             Comment = "10858015_Haus_in_9642",
                             CustomerId = 2,
                             Date = new DateTime(2019, 9, 15, 22, 36, 36, 0, DateTimeKind.Unspecified)
@@ -8175,6 +9272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1039,
+                            Billed = false,
                             Comment = "44183516_Haus_in_8878",
                             CustomerId = 14,
                             Date = new DateTime(2019, 9, 16, 12, 57, 44, 0, DateTimeKind.Unspecified)
@@ -8182,6 +9280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1040,
+                            Billed = false,
                             Comment = "41228003_Haus_in_4814",
                             CustomerId = 19,
                             Date = new DateTime(2019, 9, 17, 9, 41, 54, 0, DateTimeKind.Unspecified)
@@ -8189,6 +9288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1041,
+                            Billed = false,
                             Comment = "58750257_Haus_in_2457",
                             CustomerId = 23,
                             Date = new DateTime(2019, 9, 18, 2, 50, 16, 0, DateTimeKind.Unspecified)
@@ -8196,6 +9296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1042,
+                            Billed = false,
                             Comment = "17843858_Haus_in_9562",
                             CustomerId = 24,
                             Date = new DateTime(2019, 9, 19, 0, 47, 31, 0, DateTimeKind.Unspecified)
@@ -8203,6 +9304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1043,
+                            Billed = false,
                             Comment = "79932617_Haus_in_3835",
                             CustomerId = 19,
                             Date = new DateTime(2019, 9, 19, 18, 41, 37, 0, DateTimeKind.Unspecified)
@@ -8210,6 +9312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1044,
+                            Billed = false,
                             Comment = "47936433_Haus_in_6812",
                             CustomerId = 12,
                             Date = new DateTime(2019, 9, 20, 15, 1, 46, 0, DateTimeKind.Unspecified)
@@ -8217,6 +9320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1045,
+                            Billed = false,
                             Comment = "14647709_Haus_in_1550",
                             CustomerId = 39,
                             Date = new DateTime(2019, 9, 20, 22, 41, 3, 0, DateTimeKind.Unspecified)
@@ -8224,6 +9328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1046,
+                            Billed = false,
                             Comment = "79260328_Haus_in_8527",
                             CustomerId = 4,
                             Date = new DateTime(2019, 9, 21, 18, 43, 33, 0, DateTimeKind.Unspecified)
@@ -8231,6 +9336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1047,
+                            Billed = false,
                             Comment = "14462622_Haus_in_2273",
                             CustomerId = 13,
                             Date = new DateTime(2019, 9, 22, 14, 7, 53, 0, DateTimeKind.Unspecified)
@@ -8238,6 +9344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1048,
+                            Billed = false,
                             Comment = "66954568_Haus_in_5793",
                             CustomerId = 7,
                             Date = new DateTime(2019, 9, 23, 8, 1, 4, 0, DateTimeKind.Unspecified)
@@ -8245,6 +9352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1049,
+                            Billed = false,
                             Comment = "58047369_Haus_in_1805",
                             CustomerId = 35,
                             Date = new DateTime(2019, 9, 24, 3, 27, 0, 0, DateTimeKind.Unspecified)
@@ -8252,6 +9360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1050,
+                            Billed = false,
                             Comment = "49416626_Haus_in_9385",
                             CustomerId = 30,
                             Date = new DateTime(2019, 9, 24, 13, 51, 38, 0, DateTimeKind.Unspecified)
@@ -8259,6 +9368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1051,
+                            Billed = false,
                             Comment = "72720476_Haus_in_2393",
                             CustomerId = 9,
                             Date = new DateTime(2019, 9, 25, 10, 47, 27, 0, DateTimeKind.Unspecified)
@@ -8266,6 +9376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1052,
+                            Billed = false,
                             Comment = "66871389_Haus_in_4540",
                             CustomerId = 11,
                             Date = new DateTime(2019, 9, 26, 0, 21, 35, 0, DateTimeKind.Unspecified)
@@ -8273,6 +9384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1053,
+                            Billed = false,
                             Comment = "59406173_Haus_in_6179",
                             CustomerId = 1,
                             Date = new DateTime(2019, 9, 26, 22, 55, 46, 0, DateTimeKind.Unspecified)
@@ -8280,6 +9392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1054,
+                            Billed = false,
                             Comment = "17533388_Haus_in_7564",
                             CustomerId = 31,
                             Date = new DateTime(2019, 9, 27, 12, 48, 44, 0, DateTimeKind.Unspecified)
@@ -8287,6 +9400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1055,
+                            Billed = false,
                             Comment = "82375878_Haus_in_4557",
                             CustomerId = 18,
                             Date = new DateTime(2019, 9, 27, 20, 47, 11, 0, DateTimeKind.Unspecified)
@@ -8294,6 +9408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1056,
+                            Billed = false,
                             Comment = "44576212_Haus_in_2940",
                             CustomerId = 17,
                             Date = new DateTime(2019, 9, 28, 5, 51, 5, 0, DateTimeKind.Unspecified)
@@ -8301,6 +9416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1057,
+                            Billed = false,
                             Comment = "72991141_Haus_in_1942",
                             CustomerId = 2,
                             Date = new DateTime(2019, 9, 28, 17, 21, 16, 0, DateTimeKind.Unspecified)
@@ -8308,6 +9424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1058,
+                            Billed = false,
                             Comment = "88897938_Haus_in_1202",
                             CustomerId = 23,
                             Date = new DateTime(2019, 9, 29, 5, 53, 0, 0, DateTimeKind.Unspecified)
@@ -8315,6 +9432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1059,
+                            Billed = false,
                             Comment = "26949476_Haus_in_6493",
                             CustomerId = 4,
                             Date = new DateTime(2019, 9, 30, 3, 8, 48, 0, DateTimeKind.Unspecified)
@@ -8322,6 +9440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1060,
+                            Billed = false,
                             Comment = "11308853_Haus_in_7631",
                             CustomerId = 5,
                             Date = new DateTime(2019, 10, 1, 1, 15, 33, 0, DateTimeKind.Unspecified)
@@ -8329,6 +9448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1061,
+                            Billed = false,
                             Comment = "6750821_Haus_in_6603",
                             CustomerId = 30,
                             Date = new DateTime(2019, 10, 1, 18, 18, 17, 0, DateTimeKind.Unspecified)
@@ -8336,6 +9456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1062,
+                            Billed = false,
                             Comment = "71737195_Haus_in_1940",
                             CustomerId = 40,
                             Date = new DateTime(2019, 10, 2, 7, 51, 25, 0, DateTimeKind.Unspecified)
@@ -8343,6 +9464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1063,
+                            Billed = false,
                             Comment = "35978288_Haus_in_6844",
                             CustomerId = 36,
                             Date = new DateTime(2019, 10, 2, 20, 17, 35, 0, DateTimeKind.Unspecified)
@@ -8350,6 +9472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1064,
+                            Billed = false,
                             Comment = "53915854_Haus_in_6192",
                             CustomerId = 18,
                             Date = new DateTime(2019, 10, 3, 18, 48, 42, 0, DateTimeKind.Unspecified)
@@ -8357,6 +9480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1065,
+                            Billed = false,
                             Comment = "45996250_Haus_in_4215",
                             CustomerId = 13,
                             Date = new DateTime(2019, 10, 4, 9, 56, 28, 0, DateTimeKind.Unspecified)
@@ -8364,6 +9488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1066,
+                            Billed = false,
                             Comment = "34198982_Haus_in_7443",
                             CustomerId = 18,
                             Date = new DateTime(2019, 10, 4, 23, 8, 51, 0, DateTimeKind.Unspecified)
@@ -8371,6 +9496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1067,
+                            Billed = false,
                             Comment = "10539366_Haus_in_3967",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 5, 10, 48, 18, 0, DateTimeKind.Unspecified)
@@ -8378,6 +9504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1068,
+                            Billed = false,
                             Comment = "68859426_Haus_in_8555",
                             CustomerId = 29,
                             Date = new DateTime(2019, 10, 6, 8, 41, 50, 0, DateTimeKind.Unspecified)
@@ -8385,6 +9512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1069,
+                            Billed = false,
                             Comment = "13064512_Haus_in_6380",
                             CustomerId = 5,
                             Date = new DateTime(2019, 10, 6, 21, 45, 33, 0, DateTimeKind.Unspecified)
@@ -8392,6 +9520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1070,
+                            Billed = false,
                             Comment = "15762394_Haus_in_9617",
                             CustomerId = 8,
                             Date = new DateTime(2019, 10, 7, 14, 1, 1, 0, DateTimeKind.Unspecified)
@@ -8399,6 +9528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1071,
+                            Billed = false,
                             Comment = "54130125_Haus_in_5758",
                             CustomerId = 32,
                             Date = new DateTime(2019, 10, 8, 10, 10, 8, 0, DateTimeKind.Unspecified)
@@ -8406,6 +9536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1072,
+                            Billed = false,
                             Comment = "55217740_Haus_in_7242",
                             CustomerId = 18,
                             Date = new DateTime(2019, 10, 9, 4, 5, 14, 0, DateTimeKind.Unspecified)
@@ -8413,6 +9544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1073,
+                            Billed = false,
                             Comment = "55751515_Haus_in_6748",
                             CustomerId = 32,
                             Date = new DateTime(2019, 10, 9, 13, 54, 39, 0, DateTimeKind.Unspecified)
@@ -8420,6 +9552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1074,
+                            Billed = false,
                             Comment = "86677282_Haus_in_4748",
                             CustomerId = 38,
                             Date = new DateTime(2019, 10, 9, 20, 45, 4, 0, DateTimeKind.Unspecified)
@@ -8427,6 +9560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1075,
+                            Billed = false,
                             Comment = "81922555_Haus_in_1950",
                             CustomerId = 32,
                             Date = new DateTime(2019, 10, 10, 13, 4, 8, 0, DateTimeKind.Unspecified)
@@ -8434,6 +9568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1076,
+                            Billed = false,
                             Comment = "29700567_Haus_in_9577",
                             CustomerId = 21,
                             Date = new DateTime(2019, 10, 10, 22, 14, 38, 0, DateTimeKind.Unspecified)
@@ -8441,6 +9576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1077,
+                            Billed = false,
                             Comment = "1178759_Haus_in_7763",
                             CustomerId = 1,
                             Date = new DateTime(2019, 10, 11, 7, 22, 0, 0, DateTimeKind.Unspecified)
@@ -8448,6 +9584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1078,
+                            Billed = false,
                             Comment = "93608602_Haus_in_3684",
                             CustomerId = 2,
                             Date = new DateTime(2019, 10, 12, 1, 23, 29, 0, DateTimeKind.Unspecified)
@@ -8455,6 +9592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1079,
+                            Billed = false,
                             Comment = "14368323_Haus_in_3758",
                             CustomerId = 34,
                             Date = new DateTime(2019, 10, 12, 11, 14, 10, 0, DateTimeKind.Unspecified)
@@ -8462,6 +9600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1080,
+                            Billed = false,
                             Comment = "16268981_Haus_in_3041",
                             CustomerId = 28,
                             Date = new DateTime(2019, 10, 13, 3, 6, 27, 0, DateTimeKind.Unspecified)
@@ -8469,6 +9608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1081,
+                            Billed = false,
                             Comment = "21215215_Haus_in_4589",
                             CustomerId = 40,
                             Date = new DateTime(2019, 10, 13, 16, 59, 35, 0, DateTimeKind.Unspecified)
@@ -8476,6 +9616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1082,
+                            Billed = false,
                             Comment = "56938264_Haus_in_5082",
                             CustomerId = 19,
                             Date = new DateTime(2019, 10, 14, 2, 40, 7, 0, DateTimeKind.Unspecified)
@@ -8483,6 +9624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1083,
+                            Billed = false,
                             Comment = "19605045_Haus_in_8807",
                             CustomerId = 27,
                             Date = new DateTime(2019, 10, 14, 12, 42, 57, 0, DateTimeKind.Unspecified)
@@ -8490,6 +9632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1084,
+                            Billed = false,
                             Comment = "61688829_Haus_in_9761",
                             CustomerId = 31,
                             Date = new DateTime(2019, 10, 15, 10, 16, 20, 0, DateTimeKind.Unspecified)
@@ -8497,6 +9640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1085,
+                            Billed = false,
                             Comment = "97053699_Haus_in_4701",
                             CustomerId = 9,
                             Date = new DateTime(2019, 10, 15, 22, 39, 21, 0, DateTimeKind.Unspecified)
@@ -8504,6 +9648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1086,
+                            Billed = false,
                             Comment = "55275381_Haus_in_2006",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 16, 16, 10, 16, 0, DateTimeKind.Unspecified)
@@ -8511,6 +9656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1087,
+                            Billed = false,
                             Comment = "86938161_Haus_in_3417",
                             CustomerId = 5,
                             Date = new DateTime(2019, 10, 17, 8, 55, 2, 0, DateTimeKind.Unspecified)
@@ -8518,6 +9664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1088,
+                            Billed = false,
                             Comment = "57354377_Haus_in_2163",
                             CustomerId = 10,
                             Date = new DateTime(2019, 10, 18, 3, 37, 19, 0, DateTimeKind.Unspecified)
@@ -8525,6 +9672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1089,
+                            Billed = false,
                             Comment = "78781014_Haus_in_6416",
                             CustomerId = 17,
                             Date = new DateTime(2019, 10, 18, 17, 28, 0, 0, DateTimeKind.Unspecified)
@@ -8532,6 +9680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1090,
+                            Billed = false,
                             Comment = "59101070_Haus_in_8417",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 19, 14, 8, 18, 0, DateTimeKind.Unspecified)
@@ -8539,6 +9688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1091,
+                            Billed = false,
                             Comment = "79556875_Haus_in_1590",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 20, 3, 4, 59, 0, DateTimeKind.Unspecified)
@@ -8546,6 +9696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1092,
+                            Billed = false,
                             Comment = "4582548_Haus_in_5054",
                             CustomerId = 30,
                             Date = new DateTime(2019, 10, 20, 17, 13, 27, 0, DateTimeKind.Unspecified)
@@ -8553,6 +9704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1093,
+                            Billed = false,
                             Comment = "2891365_Haus_in_9120",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 21, 1, 1, 8, 0, DateTimeKind.Unspecified)
@@ -8560,6 +9712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1094,
+                            Billed = false,
                             Comment = "76458084_Haus_in_2076",
                             CustomerId = 36,
                             Date = new DateTime(2019, 10, 21, 18, 11, 56, 0, DateTimeKind.Unspecified)
@@ -8567,6 +9720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1095,
+                            Billed = false,
                             Comment = "31735964_Haus_in_8825",
                             CustomerId = 15,
                             Date = new DateTime(2019, 10, 22, 12, 27, 39, 0, DateTimeKind.Unspecified)
@@ -8574,6 +9728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1096,
+                            Billed = false,
                             Comment = "73289451_Haus_in_9166",
                             CustomerId = 39,
                             Date = new DateTime(2019, 10, 23, 7, 55, 49, 0, DateTimeKind.Unspecified)
@@ -8581,6 +9736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1097,
+                            Billed = false,
                             Comment = "74449480_Haus_in_5104",
                             CustomerId = 9,
                             Date = new DateTime(2019, 10, 23, 23, 32, 43, 0, DateTimeKind.Unspecified)
@@ -8588,6 +9744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1098,
+                            Billed = false,
                             Comment = "34290622_Haus_in_9859",
                             CustomerId = 11,
                             Date = new DateTime(2019, 10, 24, 16, 14, 31, 0, DateTimeKind.Unspecified)
@@ -8595,6 +9752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1099,
+                            Billed = false,
                             Comment = "45094030_Haus_in_4930",
                             CustomerId = 16,
                             Date = new DateTime(2019, 10, 25, 13, 56, 10, 0, DateTimeKind.Unspecified)
@@ -8602,6 +9760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1100,
+                            Billed = false,
                             Comment = "43325042_Haus_in_5989",
                             CustomerId = 24,
                             Date = new DateTime(2019, 10, 25, 20, 24, 22, 0, DateTimeKind.Unspecified)
@@ -8609,6 +9768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1101,
+                            Billed = false,
                             Comment = "94045447_Haus_in_6138",
                             CustomerId = 25,
                             Date = new DateTime(2019, 10, 26, 7, 34, 9, 0, DateTimeKind.Unspecified)
@@ -8616,6 +9776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1102,
+                            Billed = false,
                             Comment = "57496475_Haus_in_4874",
                             CustomerId = 32,
                             Date = new DateTime(2019, 10, 26, 17, 41, 14, 0, DateTimeKind.Unspecified)
@@ -8623,6 +9784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1103,
+                            Billed = false,
                             Comment = "25291079_Haus_in_1660",
                             CustomerId = 15,
                             Date = new DateTime(2019, 10, 27, 16, 9, 39, 0, DateTimeKind.Unspecified)
@@ -8630,6 +9792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1104,
+                            Billed = false,
                             Comment = "45067651_Haus_in_6591",
                             CustomerId = 30,
                             Date = new DateTime(2019, 10, 28, 2, 37, 32, 0, DateTimeKind.Unspecified)
@@ -8637,6 +9800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1105,
+                            Billed = false,
                             Comment = "96116145_Haus_in_3397",
                             CustomerId = 30,
                             Date = new DateTime(2019, 10, 28, 12, 2, 34, 0, DateTimeKind.Unspecified)
@@ -8644,6 +9808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1106,
+                            Billed = false,
                             Comment = "89628272_Haus_in_6416",
                             CustomerId = 15,
                             Date = new DateTime(2019, 10, 29, 6, 58, 44, 0, DateTimeKind.Unspecified)
@@ -8651,6 +9816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1107,
+                            Billed = false,
                             Comment = "97102641_Haus_in_3176",
                             CustomerId = 11,
                             Date = new DateTime(2019, 10, 29, 23, 2, 29, 0, DateTimeKind.Unspecified)
@@ -8658,6 +9824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1108,
+                            Billed = false,
                             Comment = "41207025_Haus_in_9792",
                             CustomerId = 10,
                             Date = new DateTime(2019, 10, 30, 20, 9, 37, 0, DateTimeKind.Unspecified)
@@ -8665,6 +9832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1109,
+                            Billed = false,
                             Comment = "30493795_Haus_in_9817",
                             CustomerId = 6,
                             Date = new DateTime(2019, 10, 31, 2, 47, 50, 0, DateTimeKind.Unspecified)
@@ -8672,6 +9840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1110,
+                            Billed = false,
                             Comment = "39266683_Haus_in_5791",
                             CustomerId = 8,
                             Date = new DateTime(2019, 10, 31, 19, 22, 31, 0, DateTimeKind.Unspecified)
@@ -8679,6 +9848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1111,
+                            Billed = false,
                             Comment = "8226846_Haus_in_6610",
                             CustomerId = 33,
                             Date = new DateTime(2019, 11, 1, 10, 54, 40, 0, DateTimeKind.Unspecified)
@@ -8686,6 +9856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1112,
+                            Billed = false,
                             Comment = "72471594_Haus_in_2990",
                             CustomerId = 33,
                             Date = new DateTime(2019, 11, 1, 21, 31, 14, 0, DateTimeKind.Unspecified)
@@ -8693,6 +9864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1113,
+                            Billed = false,
                             Comment = "82962419_Haus_in_4133",
                             CustomerId = 27,
                             Date = new DateTime(2019, 11, 2, 8, 34, 42, 0, DateTimeKind.Unspecified)
@@ -8700,6 +9872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1114,
+                            Billed = false,
                             Comment = "71877148_Haus_in_3979",
                             CustomerId = 3,
                             Date = new DateTime(2019, 11, 2, 23, 31, 43, 0, DateTimeKind.Unspecified)
@@ -8707,6 +9880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1115,
+                            Billed = false,
                             Comment = "72640436_Haus_in_3894",
                             CustomerId = 8,
                             Date = new DateTime(2019, 11, 3, 6, 6, 21, 0, DateTimeKind.Unspecified)
@@ -8714,6 +9888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1116,
+                            Billed = false,
                             Comment = "71396365_Haus_in_4846",
                             CustomerId = 10,
                             Date = new DateTime(2019, 11, 4, 3, 33, 59, 0, DateTimeKind.Unspecified)
@@ -8721,6 +9896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1117,
+                            Billed = false,
                             Comment = "98130922_Haus_in_8242",
                             CustomerId = 21,
                             Date = new DateTime(2019, 11, 4, 10, 40, 1, 0, DateTimeKind.Unspecified)
@@ -8728,6 +9904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1118,
+                            Billed = false,
                             Comment = "83710256_Haus_in_3447",
                             CustomerId = 1,
                             Date = new DateTime(2019, 11, 4, 22, 52, 54, 0, DateTimeKind.Unspecified)
@@ -8735,6 +9912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1119,
+                            Billed = false,
                             Comment = "69955509_Haus_in_4783",
                             CustomerId = 15,
                             Date = new DateTime(2019, 11, 5, 13, 50, 38, 0, DateTimeKind.Unspecified)
@@ -8742,6 +9920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1120,
+                            Billed = false,
                             Comment = "77875962_Haus_in_5652",
                             CustomerId = 34,
                             Date = new DateTime(2019, 11, 6, 4, 20, 27, 0, DateTimeKind.Unspecified)
@@ -8749,6 +9928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1121,
+                            Billed = false,
                             Comment = "91992134_Haus_in_3533",
                             CustomerId = 11,
                             Date = new DateTime(2019, 11, 7, 2, 25, 19, 0, DateTimeKind.Unspecified)
@@ -8756,6 +9936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1122,
+                            Billed = false,
                             Comment = "58844973_Haus_in_7592",
                             CustomerId = 3,
                             Date = new DateTime(2019, 11, 7, 17, 29, 39, 0, DateTimeKind.Unspecified)
@@ -8763,6 +9944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1123,
+                            Billed = false,
                             Comment = "65338135_Haus_in_5783",
                             CustomerId = 8,
                             Date = new DateTime(2019, 11, 8, 5, 28, 37, 0, DateTimeKind.Unspecified)
@@ -8770,6 +9952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1124,
+                            Billed = false,
                             Comment = "69554664_Haus_in_7802",
                             CustomerId = 16,
                             Date = new DateTime(2019, 11, 8, 17, 31, 20, 0, DateTimeKind.Unspecified)
@@ -8777,6 +9960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1125,
+                            Billed = false,
                             Comment = "71082319_Haus_in_3152",
                             CustomerId = 10,
                             Date = new DateTime(2019, 11, 9, 9, 4, 4, 0, DateTimeKind.Unspecified)
@@ -8784,6 +9968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1126,
+                            Billed = false,
                             Comment = "53971971_Haus_in_9311",
                             CustomerId = 21,
                             Date = new DateTime(2019, 11, 10, 1, 19, 23, 0, DateTimeKind.Unspecified)
@@ -8791,6 +9976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1127,
+                            Billed = false,
                             Comment = "44856589_Haus_in_7982",
                             CustomerId = 26,
                             Date = new DateTime(2019, 11, 10, 22, 27, 39, 0, DateTimeKind.Unspecified)
@@ -8798,6 +9984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1128,
+                            Billed = false,
                             Comment = "4530256_Haus_in_7473",
                             CustomerId = 1,
                             Date = new DateTime(2019, 11, 11, 19, 54, 2, 0, DateTimeKind.Unspecified)
@@ -8805,6 +9992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1129,
+                            Billed = false,
                             Comment = "41752068_Haus_in_7825",
                             CustomerId = 13,
                             Date = new DateTime(2019, 11, 12, 9, 13, 51, 0, DateTimeKind.Unspecified)
@@ -8812,6 +10000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1130,
+                            Billed = false,
                             Comment = "70489093_Haus_in_4460",
                             CustomerId = 6,
                             Date = new DateTime(2019, 11, 13, 4, 48, 13, 0, DateTimeKind.Unspecified)
@@ -8819,6 +10008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1131,
+                            Billed = false,
                             Comment = "47391233_Haus_in_4060",
                             CustomerId = 4,
                             Date = new DateTime(2019, 11, 13, 19, 7, 34, 0, DateTimeKind.Unspecified)
@@ -8826,6 +10016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1132,
+                            Billed = false,
                             Comment = "28024800_Haus_in_5723",
                             CustomerId = 4,
                             Date = new DateTime(2019, 11, 14, 7, 55, 0, 0, DateTimeKind.Unspecified)
@@ -8833,6 +10024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1133,
+                            Billed = false,
                             Comment = "45378941_Haus_in_3427",
                             CustomerId = 39,
                             Date = new DateTime(2019, 11, 14, 18, 40, 34, 0, DateTimeKind.Unspecified)
@@ -8840,6 +10032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1134,
+                            Billed = false,
                             Comment = "82051506_Haus_in_4535",
                             CustomerId = 2,
                             Date = new DateTime(2019, 11, 15, 7, 13, 3, 0, DateTimeKind.Unspecified)
@@ -8847,6 +10040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1135,
+                            Billed = false,
                             Comment = "74057261_Haus_in_9650",
                             CustomerId = 23,
                             Date = new DateTime(2019, 11, 15, 19, 30, 52, 0, DateTimeKind.Unspecified)
@@ -8854,6 +10048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1136,
+                            Billed = false,
                             Comment = "12145127_Haus_in_2189",
                             CustomerId = 36,
                             Date = new DateTime(2019, 11, 16, 11, 17, 17, 0, DateTimeKind.Unspecified)
@@ -8861,6 +10056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1137,
+                            Billed = false,
                             Comment = "61668268_Haus_in_3341",
                             CustomerId = 3,
                             Date = new DateTime(2019, 11, 17, 1, 7, 13, 0, DateTimeKind.Unspecified)
@@ -8868,6 +10064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1138,
+                            Billed = false,
                             Comment = "5368790_Haus_in_6884",
                             CustomerId = 13,
                             Date = new DateTime(2019, 11, 17, 11, 27, 16, 0, DateTimeKind.Unspecified)
@@ -8875,6 +10072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1139,
+                            Billed = false,
                             Comment = "76252461_Haus_in_2616",
                             CustomerId = 5,
                             Date = new DateTime(2019, 11, 17, 21, 15, 24, 0, DateTimeKind.Unspecified)
@@ -8882,6 +10080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1140,
+                            Billed = false,
                             Comment = "69949846_Haus_in_2814",
                             CustomerId = 39,
                             Date = new DateTime(2019, 11, 18, 17, 44, 54, 0, DateTimeKind.Unspecified)
@@ -8889,6 +10088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1141,
+                            Billed = false,
                             Comment = "51601123_Haus_in_5477",
                             CustomerId = 20,
                             Date = new DateTime(2019, 11, 19, 8, 33, 58, 0, DateTimeKind.Unspecified)
@@ -8896,6 +10096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1142,
+                            Billed = false,
                             Comment = "54100379_Haus_in_6597",
                             CustomerId = 19,
                             Date = new DateTime(2019, 11, 19, 15, 55, 36, 0, DateTimeKind.Unspecified)
@@ -8903,6 +10104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1143,
+                            Billed = false,
                             Comment = "76509556_Haus_in_5385",
                             CustomerId = 10,
                             Date = new DateTime(2019, 11, 20, 3, 15, 30, 0, DateTimeKind.Unspecified)
@@ -8910,6 +10112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1144,
+                            Billed = false,
                             Comment = "38572479_Haus_in_9329",
                             CustomerId = 8,
                             Date = new DateTime(2019, 11, 20, 14, 21, 44, 0, DateTimeKind.Unspecified)
@@ -8917,6 +10120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1145,
+                            Billed = false,
                             Comment = "1748744_Haus_in_6784",
                             CustomerId = 11,
                             Date = new DateTime(2019, 11, 21, 10, 48, 46, 0, DateTimeKind.Unspecified)
@@ -8924,6 +10128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1146,
+                            Billed = false,
                             Comment = "56054535_Haus_in_8001",
                             CustomerId = 31,
                             Date = new DateTime(2019, 11, 22, 3, 15, 54, 0, DateTimeKind.Unspecified)
@@ -8931,6 +10136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1147,
+                            Billed = false,
                             Comment = "22260294_Haus_in_7307",
                             CustomerId = 23,
                             Date = new DateTime(2019, 11, 22, 13, 2, 42, 0, DateTimeKind.Unspecified)
@@ -8938,6 +10144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1148,
+                            Billed = false,
                             Comment = "80280997_Haus_in_5092",
                             CustomerId = 21,
                             Date = new DateTime(2019, 11, 22, 19, 45, 58, 0, DateTimeKind.Unspecified)
@@ -8945,6 +10152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1149,
+                            Billed = false,
                             Comment = "62781080_Haus_in_6554",
                             CustomerId = 2,
                             Date = new DateTime(2019, 11, 23, 6, 23, 40, 0, DateTimeKind.Unspecified)
@@ -8952,6 +10160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1150,
+                            Billed = false,
                             Comment = "64775176_Haus_in_1634",
                             CustomerId = 6,
                             Date = new DateTime(2019, 11, 24, 4, 42, 7, 0, DateTimeKind.Unspecified)
@@ -8959,6 +10168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1151,
+                            Billed = false,
                             Comment = "83887230_Haus_in_1899",
                             CustomerId = 1,
                             Date = new DateTime(2019, 11, 24, 18, 31, 27, 0, DateTimeKind.Unspecified)
@@ -8966,6 +10176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1152,
+                            Billed = false,
                             Comment = "4987409_Haus_in_9790",
                             CustomerId = 6,
                             Date = new DateTime(2019, 11, 25, 9, 3, 11, 0, DateTimeKind.Unspecified)
@@ -8973,6 +10184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1153,
+                            Billed = false,
                             Comment = "18654345_Haus_in_6964",
                             CustomerId = 22,
                             Date = new DateTime(2019, 11, 26, 2, 50, 2, 0, DateTimeKind.Unspecified)
@@ -8980,6 +10192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1154,
+                            Billed = false,
                             Comment = "982740_Haus_in_4536",
                             CustomerId = 24,
                             Date = new DateTime(2019, 11, 26, 20, 10, 40, 0, DateTimeKind.Unspecified)
@@ -8987,6 +10200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1155,
+                            Billed = false,
                             Comment = "80615888_Haus_in_3397",
                             CustomerId = 21,
                             Date = new DateTime(2019, 11, 27, 17, 46, 28, 0, DateTimeKind.Unspecified)
@@ -8994,6 +10208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1156,
+                            Billed = false,
                             Comment = "8924758_Haus_in_4606",
                             CustomerId = 31,
                             Date = new DateTime(2019, 11, 28, 4, 50, 37, 0, DateTimeKind.Unspecified)
@@ -9001,6 +10216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1157,
+                            Billed = false,
                             Comment = "2759372_Haus_in_3531",
                             CustomerId = 8,
                             Date = new DateTime(2019, 11, 28, 17, 49, 29, 0, DateTimeKind.Unspecified)
@@ -9008,6 +10224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1158,
+                            Billed = false,
                             Comment = "36862285_Haus_in_8592",
                             CustomerId = 30,
                             Date = new DateTime(2019, 11, 29, 10, 57, 3, 0, DateTimeKind.Unspecified)
@@ -9015,6 +10232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1159,
+                            Billed = false,
                             Comment = "47946786_Haus_in_3955",
                             CustomerId = 32,
                             Date = new DateTime(2019, 11, 30, 5, 23, 10, 0, DateTimeKind.Unspecified)
@@ -9022,6 +10240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1160,
+                            Billed = false,
                             Comment = "8783810_Haus_in_3333",
                             CustomerId = 39,
                             Date = new DateTime(2019, 11, 30, 18, 15, 58, 0, DateTimeKind.Unspecified)
@@ -9029,6 +10248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1161,
+                            Billed = false,
                             Comment = "82402184_Haus_in_9835",
                             CustomerId = 20,
                             Date = new DateTime(2019, 12, 1, 5, 12, 41, 0, DateTimeKind.Unspecified)
@@ -9036,6 +10256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1162,
+                            Billed = false,
                             Comment = "17318225_Haus_in_2813",
                             CustomerId = 19,
                             Date = new DateTime(2019, 12, 2, 2, 5, 22, 0, DateTimeKind.Unspecified)
@@ -9043,6 +10264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1163,
+                            Billed = false,
                             Comment = "88466938_Haus_in_9135",
                             CustomerId = 16,
                             Date = new DateTime(2019, 12, 2, 21, 32, 40, 0, DateTimeKind.Unspecified)
@@ -9050,6 +10272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1164,
+                            Billed = false,
                             Comment = "77643673_Haus_in_4438",
                             CustomerId = 40,
                             Date = new DateTime(2019, 12, 3, 16, 43, 53, 0, DateTimeKind.Unspecified)
@@ -9057,6 +10280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1165,
+                            Billed = false,
                             Comment = "36011271_Haus_in_2913",
                             CustomerId = 33,
                             Date = new DateTime(2019, 12, 4, 1, 15, 28, 0, DateTimeKind.Unspecified)
@@ -9064,6 +10288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1166,
+                            Billed = false,
                             Comment = "92187125_Haus_in_1747",
                             CustomerId = 26,
                             Date = new DateTime(2019, 12, 4, 16, 40, 21, 0, DateTimeKind.Unspecified)
@@ -9071,6 +10296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1167,
+                            Billed = false,
                             Comment = "90556560_Haus_in_5342",
                             CustomerId = 25,
                             Date = new DateTime(2019, 12, 5, 7, 52, 38, 0, DateTimeKind.Unspecified)
@@ -9078,6 +10304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1168,
+                            Billed = false,
                             Comment = "2687897_Haus_in_1252",
                             CustomerId = 38,
                             Date = new DateTime(2019, 12, 5, 16, 9, 54, 0, DateTimeKind.Unspecified)
@@ -9085,6 +10312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1169,
+                            Billed = false,
                             Comment = "15033632_Haus_in_9187",
                             CustomerId = 37,
                             Date = new DateTime(2019, 12, 5, 22, 11, 55, 0, DateTimeKind.Unspecified)
@@ -9092,6 +10320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1170,
+                            Billed = false,
                             Comment = "35636243_Haus_in_3791",
                             CustomerId = 14,
                             Date = new DateTime(2019, 12, 6, 4, 29, 6, 0, DateTimeKind.Unspecified)
@@ -9099,6 +10328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1171,
+                            Billed = false,
                             Comment = "89731495_Haus_in_7940",
                             CustomerId = 20,
                             Date = new DateTime(2019, 12, 6, 16, 30, 37, 0, DateTimeKind.Unspecified)
@@ -9106,6 +10336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1172,
+                            Billed = false,
                             Comment = "83376288_Haus_in_7222",
                             CustomerId = 10,
                             Date = new DateTime(2019, 12, 7, 2, 39, 9, 0, DateTimeKind.Unspecified)
@@ -9113,6 +10344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1173,
+                            Billed = false,
                             Comment = "83782566_Haus_in_5550",
                             CustomerId = 30,
                             Date = new DateTime(2019, 12, 7, 18, 51, 25, 0, DateTimeKind.Unspecified)
@@ -9120,6 +10352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1174,
+                            Billed = false,
                             Comment = "80101205_Haus_in_4108",
                             CustomerId = 23,
                             Date = new DateTime(2019, 12, 8, 2, 4, 54, 0, DateTimeKind.Unspecified)
@@ -9127,6 +10360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1175,
+                            Billed = false,
                             Comment = "60856078_Haus_in_6801",
                             CustomerId = 40,
                             Date = new DateTime(2019, 12, 8, 11, 44, 9, 0, DateTimeKind.Unspecified)
@@ -9134,6 +10368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1176,
+                            Billed = false,
                             Comment = "20765849_Haus_in_9026",
                             CustomerId = 40,
                             Date = new DateTime(2019, 12, 9, 8, 56, 58, 0, DateTimeKind.Unspecified)
@@ -9141,6 +10376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1177,
+                            Billed = false,
                             Comment = "64087562_Haus_in_9062",
                             CustomerId = 20,
                             Date = new DateTime(2019, 12, 10, 7, 35, 21, 0, DateTimeKind.Unspecified)
@@ -9148,6 +10384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1178,
+                            Billed = false,
                             Comment = "29680143_Haus_in_9532",
                             CustomerId = 13,
                             Date = new DateTime(2019, 12, 10, 22, 21, 32, 0, DateTimeKind.Unspecified)
@@ -9155,6 +10392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1179,
+                            Billed = false,
                             Comment = "23440137_Haus_in_2364",
                             CustomerId = 28,
                             Date = new DateTime(2019, 12, 11, 14, 38, 58, 0, DateTimeKind.Unspecified)
@@ -9162,6 +10400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1180,
+                            Billed = false,
                             Comment = "29317229_Haus_in_3245",
                             CustomerId = 8,
                             Date = new DateTime(2019, 12, 12, 10, 27, 11, 0, DateTimeKind.Unspecified)
@@ -9169,6 +10408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1181,
+                            Billed = false,
                             Comment = "33669696_Haus_in_6759",
                             CustomerId = 37,
                             Date = new DateTime(2019, 12, 13, 0, 44, 42, 0, DateTimeKind.Unspecified)
@@ -9176,6 +10416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1182,
+                            Billed = false,
                             Comment = "80072622_Haus_in_2773",
                             CustomerId = 16,
                             Date = new DateTime(2019, 12, 13, 21, 23, 40, 0, DateTimeKind.Unspecified)
@@ -9183,6 +10424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1183,
+                            Billed = false,
                             Comment = "9856884_Haus_in_1198",
                             CustomerId = 25,
                             Date = new DateTime(2019, 12, 14, 6, 1, 14, 0, DateTimeKind.Unspecified)
@@ -9190,6 +10432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1184,
+                            Billed = false,
                             Comment = "36343080_Haus_in_3982",
                             CustomerId = 13,
                             Date = new DateTime(2019, 12, 14, 14, 53, 35, 0, DateTimeKind.Unspecified)
@@ -9197,6 +10440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1185,
+                            Billed = false,
                             Comment = "17558922_Haus_in_4554",
                             CustomerId = 28,
                             Date = new DateTime(2019, 12, 15, 0, 7, 31, 0, DateTimeKind.Unspecified)
@@ -9204,6 +10448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1186,
+                            Billed = false,
                             Comment = "97644844_Haus_in_4265",
                             CustomerId = 6,
                             Date = new DateTime(2019, 12, 15, 17, 51, 52, 0, DateTimeKind.Unspecified)
@@ -9211,6 +10456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1187,
+                            Billed = false,
                             Comment = "46724771_Haus_in_6960",
                             CustomerId = 23,
                             Date = new DateTime(2019, 12, 16, 6, 26, 19, 0, DateTimeKind.Unspecified)
@@ -9218,6 +10464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1188,
+                            Billed = false,
                             Comment = "56013618_Haus_in_6524",
                             CustomerId = 11,
                             Date = new DateTime(2019, 12, 17, 4, 41, 48, 0, DateTimeKind.Unspecified)
@@ -9225,6 +10472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1189,
+                            Billed = false,
                             Comment = "4721701_Haus_in_4720",
                             CustomerId = 9,
                             Date = new DateTime(2019, 12, 17, 19, 54, 30, 0, DateTimeKind.Unspecified)
@@ -9232,6 +10480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1190,
+                            Billed = false,
                             Comment = "70508932_Haus_in_2218",
                             CustomerId = 9,
                             Date = new DateTime(2019, 12, 18, 16, 7, 24, 0, DateTimeKind.Unspecified)
@@ -9239,6 +10488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1191,
+                            Billed = false,
                             Comment = "70651945_Haus_in_1576",
                             CustomerId = 25,
                             Date = new DateTime(2019, 12, 19, 9, 16, 51, 0, DateTimeKind.Unspecified)
@@ -9246,6 +10496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1192,
+                            Billed = false,
                             Comment = "23010691_Haus_in_5782",
                             CustomerId = 9,
                             Date = new DateTime(2019, 12, 20, 6, 14, 29, 0, DateTimeKind.Unspecified)
@@ -9253,6 +10504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1193,
+                            Billed = false,
                             Comment = "35482283_Haus_in_2099",
                             CustomerId = 29,
                             Date = new DateTime(2019, 12, 20, 21, 49, 54, 0, DateTimeKind.Unspecified)
@@ -9260,6 +10512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1194,
+                            Billed = false,
                             Comment = "13331049_Haus_in_9738",
                             CustomerId = 15,
                             Date = new DateTime(2019, 12, 21, 18, 45, 32, 0, DateTimeKind.Unspecified)
@@ -9267,6 +10520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1195,
+                            Billed = false,
                             Comment = "25987957_Haus_in_7950",
                             CustomerId = 39,
                             Date = new DateTime(2019, 12, 22, 12, 14, 13, 0, DateTimeKind.Unspecified)
@@ -9274,6 +10528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1196,
+                            Billed = false,
                             Comment = "88182890_Haus_in_3955",
                             CustomerId = 14,
                             Date = new DateTime(2019, 12, 23, 1, 25, 4, 0, DateTimeKind.Unspecified)
@@ -9281,6 +10536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1197,
+                            Billed = false,
                             Comment = "42745715_Haus_in_6262",
                             CustomerId = 18,
                             Date = new DateTime(2019, 12, 23, 10, 45, 36, 0, DateTimeKind.Unspecified)
@@ -9288,6 +10544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1198,
+                            Billed = false,
                             Comment = "64882950_Haus_in_5132",
                             CustomerId = 8,
                             Date = new DateTime(2019, 12, 24, 9, 7, 33, 0, DateTimeKind.Unspecified)
@@ -9295,6 +10552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1199,
+                            Billed = false,
                             Comment = "36226874_Haus_in_7914",
                             CustomerId = 33,
                             Date = new DateTime(2019, 12, 25, 7, 19, 23, 0, DateTimeKind.Unspecified)
@@ -9302,6 +10560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1200,
+                            Billed = false,
                             Comment = "94208657_Haus_in_3192",
                             CustomerId = 20,
                             Date = new DateTime(2019, 12, 25, 21, 38, 24, 0, DateTimeKind.Unspecified)
@@ -9309,6 +10568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1201,
+                            Billed = false,
                             Comment = "78708157_Haus_in_1640",
                             CustomerId = 36,
                             Date = new DateTime(2019, 12, 26, 9, 30, 6, 0, DateTimeKind.Unspecified)
@@ -9316,6 +10576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1202,
+                            Billed = false,
                             Comment = "50732017_Haus_in_1202",
                             CustomerId = 4,
                             Date = new DateTime(2019, 12, 27, 2, 44, 48, 0, DateTimeKind.Unspecified)
@@ -9323,6 +10584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1203,
+                            Billed = false,
                             Comment = "39468302_Haus_in_8098",
                             CustomerId = 3,
                             Date = new DateTime(2019, 12, 27, 18, 9, 18, 0, DateTimeKind.Unspecified)
@@ -9330,6 +10592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1204,
+                            Billed = false,
                             Comment = "96507343_Haus_in_1843",
                             CustomerId = 10,
                             Date = new DateTime(2019, 12, 28, 16, 38, 6, 0, DateTimeKind.Unspecified)
@@ -9337,6 +10600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1205,
+                            Billed = false,
                             Comment = "85728943_Haus_in_6132",
                             CustomerId = 5,
                             Date = new DateTime(2019, 12, 29, 14, 15, 53, 0, DateTimeKind.Unspecified)
@@ -9344,6 +10608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1206,
+                            Billed = false,
                             Comment = "8123198_Haus_in_5994",
                             CustomerId = 13,
                             Date = new DateTime(2019, 12, 30, 1, 57, 17, 0, DateTimeKind.Unspecified)
@@ -9351,6 +10616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1207,
+                            Billed = false,
                             Comment = "53844460_Haus_in_4873",
                             CustomerId = 37,
                             Date = new DateTime(2019, 12, 30, 22, 2, 50, 0, DateTimeKind.Unspecified)
@@ -9358,6 +10624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1208,
+                            Billed = false,
                             Comment = "24586789_Haus_in_9609",
                             CustomerId = 34,
                             Date = new DateTime(2019, 12, 31, 16, 55, 29, 0, DateTimeKind.Unspecified)
@@ -9365,6 +10632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1209,
+                            Billed = false,
                             Comment = "49653322_Haus_in_5310",
                             CustomerId = 10,
                             Date = new DateTime(2020, 1, 1, 3, 20, 23, 0, DateTimeKind.Unspecified)
@@ -9372,6 +10640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1210,
+                            Billed = false,
                             Comment = "96184842_Haus_in_2585",
                             CustomerId = 26,
                             Date = new DateTime(2020, 1, 1, 15, 27, 16, 0, DateTimeKind.Unspecified)
@@ -9379,6 +10648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1211,
+                            Billed = false,
                             Comment = "79367705_Haus_in_8262",
                             CustomerId = 6,
                             Date = new DateTime(2020, 1, 2, 2, 0, 38, 0, DateTimeKind.Unspecified)
@@ -9386,6 +10656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1212,
+                            Billed = false,
                             Comment = "21340620_Haus_in_3898",
                             CustomerId = 39,
                             Date = new DateTime(2020, 1, 2, 18, 15, 57, 0, DateTimeKind.Unspecified)
@@ -9393,6 +10664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1213,
+                            Billed = false,
                             Comment = "50910098_Haus_in_1807",
                             CustomerId = 17,
                             Date = new DateTime(2020, 1, 3, 3, 21, 52, 0, DateTimeKind.Unspecified)
@@ -9400,6 +10672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1214,
+                            Billed = false,
                             Comment = "84904179_Haus_in_5172",
                             CustomerId = 35,
                             Date = new DateTime(2020, 1, 3, 16, 27, 14, 0, DateTimeKind.Unspecified)
@@ -9407,6 +10680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1215,
+                            Billed = false,
                             Comment = "90092687_Haus_in_9809",
                             CustomerId = 38,
                             Date = new DateTime(2020, 1, 4, 8, 32, 26, 0, DateTimeKind.Unspecified)
@@ -9414,6 +10688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1216,
+                            Billed = false,
                             Comment = "66405091_Haus_in_9848",
                             CustomerId = 16,
                             Date = new DateTime(2020, 1, 5, 0, 45, 33, 0, DateTimeKind.Unspecified)
@@ -9421,6 +10696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1217,
+                            Billed = false,
                             Comment = "23402526_Haus_in_9925",
                             CustomerId = 35,
                             Date = new DateTime(2020, 1, 5, 7, 20, 39, 0, DateTimeKind.Unspecified)
@@ -9428,6 +10704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1218,
+                            Billed = false,
                             Comment = "164090_Haus_in_4806",
                             CustomerId = 25,
                             Date = new DateTime(2020, 1, 5, 23, 37, 50, 0, DateTimeKind.Unspecified)
@@ -9435,6 +10712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1219,
+                            Billed = false,
                             Comment = "22594466_Haus_in_8988",
                             CustomerId = 34,
                             Date = new DateTime(2020, 1, 6, 14, 39, 25, 0, DateTimeKind.Unspecified)
@@ -9442,6 +10720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1220,
+                            Billed = false,
                             Comment = "50524017_Haus_in_7469",
                             CustomerId = 37,
                             Date = new DateTime(2020, 1, 7, 10, 4, 6, 0, DateTimeKind.Unspecified)
@@ -9449,6 +10728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1221,
+                            Billed = false,
                             Comment = "32610686_Haus_in_9932",
                             CustomerId = 14,
                             Date = new DateTime(2020, 1, 8, 2, 44, 27, 0, DateTimeKind.Unspecified)
@@ -9456,6 +10736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1222,
+                            Billed = false,
                             Comment = "34515038_Haus_in_9263",
                             CustomerId = 38,
                             Date = new DateTime(2020, 1, 8, 12, 33, 52, 0, DateTimeKind.Unspecified)
@@ -9463,6 +10744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1223,
+                            Billed = false,
                             Comment = "22085960_Haus_in_6073",
                             CustomerId = 16,
                             Date = new DateTime(2020, 1, 9, 11, 6, 41, 0, DateTimeKind.Unspecified)
@@ -9470,6 +10752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1224,
+                            Billed = false,
                             Comment = "38868040_Haus_in_9026",
                             CustomerId = 32,
                             Date = new DateTime(2020, 1, 9, 21, 8, 46, 0, DateTimeKind.Unspecified)
@@ -9477,6 +10760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1225,
+                            Billed = false,
                             Comment = "60350539_Haus_in_3465",
                             CustomerId = 10,
                             Date = new DateTime(2020, 1, 10, 9, 56, 44, 0, DateTimeKind.Unspecified)
@@ -9484,6 +10768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1226,
+                            Billed = false,
                             Comment = "26713942_Haus_in_6052",
                             CustomerId = 16,
                             Date = new DateTime(2020, 1, 10, 20, 5, 50, 0, DateTimeKind.Unspecified)
@@ -9491,6 +10776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1227,
+                            Billed = false,
                             Comment = "41406400_Haus_in_2616",
                             CustomerId = 8,
                             Date = new DateTime(2020, 1, 11, 12, 23, 46, 0, DateTimeKind.Unspecified)
@@ -9498,6 +10784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1228,
+                            Billed = false,
                             Comment = "84916887_Haus_in_7145",
                             CustomerId = 28,
                             Date = new DateTime(2020, 1, 12, 10, 59, 25, 0, DateTimeKind.Unspecified)
@@ -9505,6 +10792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1229,
+                            Billed = false,
                             Comment = "64134548_Haus_in_5297",
                             CustomerId = 6,
                             Date = new DateTime(2020, 1, 12, 17, 23, 36, 0, DateTimeKind.Unspecified)
@@ -9512,6 +10800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1230,
+                            Billed = false,
                             Comment = "96105476_Haus_in_5766",
                             CustomerId = 19,
                             Date = new DateTime(2020, 1, 13, 10, 10, 53, 0, DateTimeKind.Unspecified)
@@ -9519,6 +10808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1231,
+                            Billed = false,
                             Comment = "67156703_Haus_in_2899",
                             CustomerId = 7,
                             Date = new DateTime(2020, 1, 14, 9, 7, 7, 0, DateTimeKind.Unspecified)
@@ -9526,6 +10816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1232,
+                            Billed = false,
                             Comment = "74491754_Haus_in_9427",
                             CustomerId = 12,
                             Date = new DateTime(2020, 1, 15, 5, 43, 24, 0, DateTimeKind.Unspecified)
@@ -9533,6 +10824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1233,
+                            Billed = false,
                             Comment = "79122896_Haus_in_8181",
                             CustomerId = 37,
                             Date = new DateTime(2020, 1, 15, 21, 49, 0, 0, DateTimeKind.Unspecified)
@@ -9540,6 +10832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1234,
+                            Billed = false,
                             Comment = "18829680_Haus_in_2857",
                             CustomerId = 13,
                             Date = new DateTime(2020, 1, 16, 7, 31, 56, 0, DateTimeKind.Unspecified)
@@ -9547,6 +10840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1235,
+                            Billed = false,
                             Comment = "73915706_Haus_in_5190",
                             CustomerId = 25,
                             Date = new DateTime(2020, 1, 16, 14, 40, 26, 0, DateTimeKind.Unspecified)
@@ -9554,6 +10848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1236,
+                            Billed = false,
                             Comment = "19694709_Haus_in_5130",
                             CustomerId = 18,
                             Date = new DateTime(2020, 1, 17, 0, 51, 45, 0, DateTimeKind.Unspecified)
@@ -9561,6 +10856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1237,
+                            Billed = false,
                             Comment = "84557034_Haus_in_3257",
                             CustomerId = 19,
                             Date = new DateTime(2020, 1, 17, 22, 42, 39, 0, DateTimeKind.Unspecified)
@@ -9568,6 +10864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1238,
+                            Billed = false,
                             Comment = "55424545_Haus_in_6140",
                             CustomerId = 10,
                             Date = new DateTime(2020, 1, 18, 11, 28, 18, 0, DateTimeKind.Unspecified)
@@ -9575,6 +10872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1239,
+                            Billed = false,
                             Comment = "23743163_Haus_in_3351",
                             CustomerId = 20,
                             Date = new DateTime(2020, 1, 19, 8, 11, 19, 0, DateTimeKind.Unspecified)
@@ -9582,6 +10880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1240,
+                            Billed = false,
                             Comment = "6537357_Haus_in_5935",
                             CustomerId = 2,
                             Date = new DateTime(2020, 1, 19, 23, 52, 4, 0, DateTimeKind.Unspecified)
@@ -9589,6 +10888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1241,
+                            Billed = false,
                             Comment = "1928265_Haus_in_6166",
                             CustomerId = 33,
                             Date = new DateTime(2020, 1, 20, 17, 5, 55, 0, DateTimeKind.Unspecified)
@@ -9596,6 +10896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1242,
+                            Billed = false,
                             Comment = "96683682_Haus_in_9499",
                             CustomerId = 7,
                             Date = new DateTime(2020, 1, 21, 9, 15, 46, 0, DateTimeKind.Unspecified)
@@ -9603,6 +10904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1243,
+                            Billed = false,
                             Comment = "91675567_Haus_in_4926",
                             CustomerId = 29,
                             Date = new DateTime(2020, 1, 22, 6, 1, 37, 0, DateTimeKind.Unspecified)
@@ -9610,6 +10912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1244,
+                            Billed = false,
                             Comment = "76458403_Haus_in_1182",
                             CustomerId = 38,
                             Date = new DateTime(2020, 1, 22, 21, 51, 11, 0, DateTimeKind.Unspecified)
@@ -9617,6 +10920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1245,
+                            Billed = false,
                             Comment = "86994875_Haus_in_5689",
                             CustomerId = 3,
                             Date = new DateTime(2020, 1, 23, 11, 37, 6, 0, DateTimeKind.Unspecified)
@@ -9624,6 +10928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1246,
+                            Billed = false,
                             Comment = "76556640_Haus_in_6714",
                             CustomerId = 16,
                             Date = new DateTime(2020, 1, 24, 5, 30, 52, 0, DateTimeKind.Unspecified)
@@ -9631,6 +10936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1247,
+                            Billed = false,
                             Comment = "63107289_Haus_in_4676",
                             CustomerId = 4,
                             Date = new DateTime(2020, 1, 24, 18, 5, 35, 0, DateTimeKind.Unspecified)
@@ -9638,6 +10944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1248,
+                            Billed = false,
                             Comment = "61997188_Haus_in_5343",
                             CustomerId = 3,
                             Date = new DateTime(2020, 1, 25, 11, 46, 20, 0, DateTimeKind.Unspecified)
@@ -9645,6 +10952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1249,
+                            Billed = false,
                             Comment = "49798616_Haus_in_3079",
                             CustomerId = 14,
                             Date = new DateTime(2020, 1, 26, 0, 37, 5, 0, DateTimeKind.Unspecified)
@@ -9652,6 +10960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1250,
+                            Billed = false,
                             Comment = "37872887_Haus_in_3302",
                             CustomerId = 35,
                             Date = new DateTime(2020, 1, 26, 23, 22, 32, 0, DateTimeKind.Unspecified)
@@ -9659,6 +10968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1251,
+                            Billed = false,
                             Comment = "48921110_Haus_in_1630",
                             CustomerId = 15,
                             Date = new DateTime(2020, 1, 27, 15, 54, 49, 0, DateTimeKind.Unspecified)
@@ -9666,6 +10976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1252,
+                            Billed = false,
                             Comment = "33852186_Haus_in_4118",
                             CustomerId = 10,
                             Date = new DateTime(2020, 1, 28, 0, 24, 47, 0, DateTimeKind.Unspecified)
@@ -9673,6 +10984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1253,
+                            Billed = false,
                             Comment = "24960133_Haus_in_1834",
                             CustomerId = 7,
                             Date = new DateTime(2020, 1, 28, 17, 51, 0, 0, DateTimeKind.Unspecified)
@@ -9680,6 +10992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1254,
+                            Billed = false,
                             Comment = "68338848_Haus_in_1205",
                             CustomerId = 19,
                             Date = new DateTime(2020, 1, 29, 4, 13, 9, 0, DateTimeKind.Unspecified)
@@ -9687,6 +11000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1255,
+                            Billed = false,
                             Comment = "41043361_Haus_in_1143",
                             CustomerId = 23,
                             Date = new DateTime(2020, 1, 29, 22, 33, 33, 0, DateTimeKind.Unspecified)
@@ -9694,6 +11008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1256,
+                            Billed = false,
                             Comment = "46340623_Haus_in_1923",
                             CustomerId = 20,
                             Date = new DateTime(2020, 1, 30, 8, 3, 45, 0, DateTimeKind.Unspecified)
@@ -9701,6 +11016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1257,
+                            Billed = false,
                             Comment = "91133706_Haus_in_2219",
                             CustomerId = 29,
                             Date = new DateTime(2020, 1, 30, 16, 22, 57, 0, DateTimeKind.Unspecified)
@@ -9708,6 +11024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1258,
+                            Billed = false,
                             Comment = "65474246_Haus_in_1617",
                             CustomerId = 18,
                             Date = new DateTime(2020, 1, 31, 6, 33, 28, 0, DateTimeKind.Unspecified)
@@ -9715,6 +11032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1259,
+                            Billed = false,
                             Comment = "61684344_Haus_in_1195",
                             CustomerId = 15,
                             Date = new DateTime(2020, 1, 31, 13, 20, 58, 0, DateTimeKind.Unspecified)
@@ -9722,6 +11040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1260,
+                            Billed = false,
                             Comment = "61323812_Haus_in_2485",
                             CustomerId = 11,
                             Date = new DateTime(2020, 1, 31, 20, 31, 48, 0, DateTimeKind.Unspecified)
@@ -9729,6 +11048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1261,
+                            Billed = false,
                             Comment = "5321753_Haus_in_8451",
                             CustomerId = 40,
                             Date = new DateTime(2020, 2, 1, 14, 6, 53, 0, DateTimeKind.Unspecified)
@@ -9736,6 +11056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1262,
+                            Billed = false,
                             Comment = "5532288_Haus_in_9338",
                             CustomerId = 5,
                             Date = new DateTime(2020, 2, 1, 22, 19, 50, 0, DateTimeKind.Unspecified)
@@ -9743,6 +11064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1263,
+                            Billed = false,
                             Comment = "98180358_Haus_in_5801",
                             CustomerId = 2,
                             Date = new DateTime(2020, 2, 2, 19, 52, 17, 0, DateTimeKind.Unspecified)
@@ -9750,6 +11072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1264,
+                            Billed = false,
                             Comment = "55207283_Haus_in_6580",
                             CustomerId = 15,
                             Date = new DateTime(2020, 2, 3, 10, 11, 57, 0, DateTimeKind.Unspecified)
@@ -9757,6 +11080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1265,
+                            Billed = false,
                             Comment = "39949598_Haus_in_3740",
                             CustomerId = 8,
                             Date = new DateTime(2020, 2, 4, 1, 0, 49, 0, DateTimeKind.Unspecified)
@@ -9764,6 +11088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1266,
+                            Billed = false,
                             Comment = "5780407_Haus_in_3868",
                             CustomerId = 2,
                             Date = new DateTime(2020, 2, 4, 10, 51, 31, 0, DateTimeKind.Unspecified)
@@ -9771,6 +11096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1267,
+                            Billed = false,
                             Comment = "28799189_Haus_in_5185",
                             CustomerId = 28,
                             Date = new DateTime(2020, 2, 4, 17, 20, 37, 0, DateTimeKind.Unspecified)
@@ -9778,6 +11104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1268,
+                            Billed = false,
                             Comment = "48168249_Haus_in_1812",
                             CustomerId = 24,
                             Date = new DateTime(2020, 2, 5, 1, 13, 20, 0, DateTimeKind.Unspecified)
@@ -9785,6 +11112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1269,
+                            Billed = false,
                             Comment = "78277889_Haus_in_3684",
                             CustomerId = 14,
                             Date = new DateTime(2020, 2, 5, 16, 17, 31, 0, DateTimeKind.Unspecified)
@@ -9792,6 +11120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1270,
+                            Billed = false,
                             Comment = "50051950_Haus_in_3264",
                             CustomerId = 19,
                             Date = new DateTime(2020, 2, 6, 6, 35, 34, 0, DateTimeKind.Unspecified)
@@ -9799,6 +11128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1271,
+                            Billed = false,
                             Comment = "88640722_Haus_in_2973",
                             CustomerId = 28,
                             Date = new DateTime(2020, 2, 7, 4, 32, 21, 0, DateTimeKind.Unspecified)
@@ -9806,6 +11136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1272,
+                            Billed = false,
                             Comment = "98818552_Haus_in_5492",
                             CustomerId = 6,
                             Date = new DateTime(2020, 2, 7, 14, 22, 49, 0, DateTimeKind.Unspecified)
@@ -9813,6 +11144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1273,
+                            Billed = false,
                             Comment = "27427177_Haus_in_7019",
                             CustomerId = 9,
                             Date = new DateTime(2020, 2, 8, 4, 9, 52, 0, DateTimeKind.Unspecified)
@@ -9820,6 +11152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1274,
+                            Billed = false,
                             Comment = "63845898_Haus_in_4076",
                             CustomerId = 33,
                             Date = new DateTime(2020, 2, 9, 1, 3, 12, 0, DateTimeKind.Unspecified)
@@ -9827,6 +11160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1275,
+                            Billed = false,
                             Comment = "56434873_Haus_in_7893",
                             CustomerId = 17,
                             Date = new DateTime(2020, 2, 9, 8, 56, 16, 0, DateTimeKind.Unspecified)
@@ -9834,6 +11168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1276,
+                            Billed = false,
                             Comment = "76486092_Haus_in_4127",
                             CustomerId = 35,
                             Date = new DateTime(2020, 2, 9, 19, 31, 14, 0, DateTimeKind.Unspecified)
@@ -9841,6 +11176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1277,
+                            Billed = false,
                             Comment = "37155971_Haus_in_6740",
                             CustomerId = 22,
                             Date = new DateTime(2020, 2, 10, 12, 55, 15, 0, DateTimeKind.Unspecified)
@@ -9848,6 +11184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1278,
+                            Billed = false,
                             Comment = "90338961_Haus_in_9892",
                             CustomerId = 28,
                             Date = new DateTime(2020, 2, 11, 5, 19, 20, 0, DateTimeKind.Unspecified)
@@ -9855,6 +11192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1279,
+                            Billed = false,
                             Comment = "59407491_Haus_in_6405",
                             CustomerId = 16,
                             Date = new DateTime(2020, 2, 11, 15, 34, 22, 0, DateTimeKind.Unspecified)
@@ -9862,6 +11200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1280,
+                            Billed = false,
                             Comment = "57165882_Haus_in_9820",
                             CustomerId = 19,
                             Date = new DateTime(2020, 2, 12, 12, 41, 40, 0, DateTimeKind.Unspecified)
@@ -9869,6 +11208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1281,
+                            Billed = false,
                             Comment = "88622109_Haus_in_4825",
                             CustomerId = 29,
                             Date = new DateTime(2020, 2, 12, 21, 28, 57, 0, DateTimeKind.Unspecified)
@@ -9876,6 +11216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1282,
+                            Billed = false,
                             Comment = "55993616_Haus_in_8903",
                             CustomerId = 28,
                             Date = new DateTime(2020, 2, 13, 12, 1, 59, 0, DateTimeKind.Unspecified)
@@ -9883,6 +11224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1283,
+                            Billed = false,
                             Comment = "21821976_Haus_in_3192",
                             CustomerId = 28,
                             Date = new DateTime(2020, 2, 14, 5, 23, 30, 0, DateTimeKind.Unspecified)
@@ -9890,6 +11232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1284,
+                            Billed = false,
                             Comment = "16740757_Haus_in_3872",
                             CustomerId = 3,
                             Date = new DateTime(2020, 2, 14, 15, 48, 31, 0, DateTimeKind.Unspecified)
@@ -9897,6 +11240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1285,
+                            Billed = false,
                             Comment = "94699227_Haus_in_6901",
                             CustomerId = 16,
                             Date = new DateTime(2020, 2, 15, 10, 40, 28, 0, DateTimeKind.Unspecified)
@@ -9904,6 +11248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1286,
+                            Billed = false,
                             Comment = "38354880_Haus_in_6243",
                             CustomerId = 1,
                             Date = new DateTime(2020, 2, 15, 16, 53, 16, 0, DateTimeKind.Unspecified)
@@ -9911,6 +11256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1287,
+                            Billed = false,
                             Comment = "18830437_Haus_in_4118",
                             CustomerId = 27,
                             Date = new DateTime(2020, 2, 16, 4, 45, 47, 0, DateTimeKind.Unspecified)
@@ -9918,6 +11264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1288,
+                            Billed = false,
                             Comment = "72024250_Haus_in_3321",
                             CustomerId = 6,
                             Date = new DateTime(2020, 2, 17, 3, 19, 28, 0, DateTimeKind.Unspecified)
@@ -9925,6 +11272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1289,
+                            Billed = false,
                             Comment = "20725057_Haus_in_2481",
                             CustomerId = 4,
                             Date = new DateTime(2020, 2, 17, 10, 33, 20, 0, DateTimeKind.Unspecified)
@@ -9932,6 +11280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1290,
+                            Billed = false,
                             Comment = "97449742_Haus_in_1192",
                             CustomerId = 39,
                             Date = new DateTime(2020, 2, 18, 8, 38, 57, 0, DateTimeKind.Unspecified)
@@ -9939,6 +11288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1291,
+                            Billed = false,
                             Comment = "66699354_Haus_in_4325",
                             CustomerId = 16,
                             Date = new DateTime(2020, 2, 18, 21, 46, 33, 0, DateTimeKind.Unspecified)
@@ -9946,6 +11296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1292,
+                            Billed = false,
                             Comment = "34636103_Haus_in_4102",
                             CustomerId = 39,
                             Date = new DateTime(2020, 2, 19, 4, 25, 29, 0, DateTimeKind.Unspecified)
@@ -9953,6 +11304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1293,
+                            Billed = false,
                             Comment = "11683715_Haus_in_6531",
                             CustomerId = 27,
                             Date = new DateTime(2020, 2, 19, 23, 0, 43, 0, DateTimeKind.Unspecified)
@@ -9960,6 +11312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1294,
+                            Billed = false,
                             Comment = "33039508_Haus_in_7595",
                             CustomerId = 30,
                             Date = new DateTime(2020, 2, 20, 15, 35, 53, 0, DateTimeKind.Unspecified)
@@ -9967,6 +11320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1295,
+                            Billed = false,
                             Comment = "4410236_Haus_in_3880",
                             CustomerId = 27,
                             Date = new DateTime(2020, 2, 21, 10, 32, 51, 0, DateTimeKind.Unspecified)
@@ -9974,6 +11328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1296,
+                            Billed = false,
                             Comment = "21819301_Haus_in_1790",
                             CustomerId = 21,
                             Date = new DateTime(2020, 2, 22, 8, 55, 44, 0, DateTimeKind.Unspecified)
@@ -9981,6 +11336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1297,
+                            Billed = false,
                             Comment = "9301178_Haus_in_1796",
                             CustomerId = 14,
                             Date = new DateTime(2020, 2, 23, 3, 30, 36, 0, DateTimeKind.Unspecified)
@@ -9988,6 +11344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1298,
+                            Billed = false,
                             Comment = "35986680_Haus_in_6539",
                             CustomerId = 23,
                             Date = new DateTime(2020, 2, 23, 13, 38, 27, 0, DateTimeKind.Unspecified)
@@ -9995,6 +11352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1299,
+                            Billed = false,
                             Comment = "35627288_Haus_in_4449",
                             CustomerId = 1,
                             Date = new DateTime(2020, 2, 24, 10, 58, 23, 0, DateTimeKind.Unspecified)
@@ -10002,6 +11360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1300,
+                            Billed = false,
                             Comment = "62205986_Haus_in_7452",
                             CustomerId = 36,
                             Date = new DateTime(2020, 2, 25, 7, 41, 9, 0, DateTimeKind.Unspecified)
@@ -10009,6 +11368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1301,
+                            Billed = false,
                             Comment = "520030_Haus_in_9732",
                             CustomerId = 27,
                             Date = new DateTime(2020, 2, 25, 20, 3, 44, 0, DateTimeKind.Unspecified)
@@ -10016,6 +11376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1302,
+                            Billed = false,
                             Comment = "94444411_Haus_in_5883",
                             CustomerId = 7,
                             Date = new DateTime(2020, 2, 26, 9, 17, 6, 0, DateTimeKind.Unspecified)
@@ -10023,6 +11384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1303,
+                            Billed = false,
                             Comment = "44064694_Haus_in_3099",
                             CustomerId = 4,
                             Date = new DateTime(2020, 2, 27, 3, 34, 36, 0, DateTimeKind.Unspecified)
@@ -10030,6 +11392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1304,
+                            Billed = false,
                             Comment = "74676361_Haus_in_7615",
                             CustomerId = 16,
                             Date = new DateTime(2020, 2, 27, 23, 47, 11, 0, DateTimeKind.Unspecified)
@@ -10037,6 +11400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1305,
+                            Billed = false,
                             Comment = "65671727_Haus_in_5590",
                             CustomerId = 22,
                             Date = new DateTime(2020, 2, 28, 12, 42, 13, 0, DateTimeKind.Unspecified)
@@ -10044,6 +11408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1306,
+                            Billed = false,
                             Comment = "96150122_Haus_in_7455",
                             CustomerId = 8,
                             Date = new DateTime(2020, 2, 29, 0, 32, 9, 0, DateTimeKind.Unspecified)
@@ -10051,6 +11416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1307,
+                            Billed = false,
                             Comment = "12926292_Haus_in_2467",
                             CustomerId = 37,
                             Date = new DateTime(2020, 2, 29, 15, 9, 15, 0, DateTimeKind.Unspecified)
@@ -10058,6 +11424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1308,
+                            Billed = false,
                             Comment = "29752666_Haus_in_1744",
                             CustomerId = 17,
                             Date = new DateTime(2020, 3, 1, 0, 54, 37, 0, DateTimeKind.Unspecified)
@@ -10065,6 +11432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1309,
+                            Billed = false,
                             Comment = "3020329_Haus_in_4882",
                             CustomerId = 23,
                             Date = new DateTime(2020, 3, 1, 21, 39, 53, 0, DateTimeKind.Unspecified)
@@ -10072,6 +11440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1310,
+                            Billed = false,
                             Comment = "29386242_Haus_in_1743",
                             CustomerId = 35,
                             Date = new DateTime(2020, 3, 2, 6, 38, 30, 0, DateTimeKind.Unspecified)
@@ -10079,6 +11448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1311,
+                            Billed = false,
                             Comment = "85793336_Haus_in_2112",
                             CustomerId = 35,
                             Date = new DateTime(2020, 3, 3, 5, 32, 2, 0, DateTimeKind.Unspecified)
@@ -10086,6 +11456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1312,
+                            Billed = false,
                             Comment = "60184634_Haus_in_8255",
                             CustomerId = 32,
                             Date = new DateTime(2020, 3, 3, 21, 4, 21, 0, DateTimeKind.Unspecified)
@@ -10093,6 +11464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1313,
+                            Billed = false,
                             Comment = "14784669_Haus_in_9773",
                             CustomerId = 18,
                             Date = new DateTime(2020, 3, 4, 6, 0, 25, 0, DateTimeKind.Unspecified)
@@ -10100,6 +11472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1314,
+                            Billed = false,
                             Comment = "66191286_Haus_in_8969",
                             CustomerId = 38,
                             Date = new DateTime(2020, 3, 4, 18, 56, 2, 0, DateTimeKind.Unspecified)
@@ -10107,6 +11480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1315,
+                            Billed = false,
                             Comment = "5727895_Haus_in_9743",
                             CustomerId = 22,
                             Date = new DateTime(2020, 3, 5, 4, 39, 49, 0, DateTimeKind.Unspecified)
@@ -10114,6 +11488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1316,
+                            Billed = false,
                             Comment = "95112365_Haus_in_3165",
                             CustomerId = 2,
                             Date = new DateTime(2020, 3, 5, 12, 16, 9, 0, DateTimeKind.Unspecified)
@@ -10121,6 +11496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1317,
+                            Billed = false,
                             Comment = "83887319_Haus_in_7821",
                             CustomerId = 11,
                             Date = new DateTime(2020, 3, 6, 4, 38, 3, 0, DateTimeKind.Unspecified)
@@ -10128,6 +11504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1318,
+                            Billed = false,
                             Comment = "43552326_Haus_in_1758",
                             CustomerId = 19,
                             Date = new DateTime(2020, 3, 6, 22, 43, 13, 0, DateTimeKind.Unspecified)
@@ -10135,6 +11512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1319,
+                            Billed = false,
                             Comment = "50319194_Haus_in_4270",
                             CustomerId = 27,
                             Date = new DateTime(2020, 3, 7, 11, 24, 2, 0, DateTimeKind.Unspecified)
@@ -10142,6 +11520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1320,
+                            Billed = false,
                             Comment = "64371889_Haus_in_2184",
                             CustomerId = 27,
                             Date = new DateTime(2020, 3, 8, 0, 25, 16, 0, DateTimeKind.Unspecified)
@@ -10149,6 +11528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1321,
+                            Billed = false,
                             Comment = "71084067_Haus_in_9919",
                             CustomerId = 15,
                             Date = new DateTime(2020, 3, 8, 11, 28, 45, 0, DateTimeKind.Unspecified)
@@ -10156,6 +11536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1322,
+                            Billed = false,
                             Comment = "83895584_Haus_in_8127",
                             CustomerId = 34,
                             Date = new DateTime(2020, 3, 9, 0, 34, 46, 0, DateTimeKind.Unspecified)
@@ -10163,6 +11544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1323,
+                            Billed = false,
                             Comment = "20110996_Haus_in_6305",
                             CustomerId = 36,
                             Date = new DateTime(2020, 3, 9, 7, 41, 52, 0, DateTimeKind.Unspecified)
@@ -10170,6 +11552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1324,
+                            Billed = false,
                             Comment = "17780621_Haus_in_4474",
                             CustomerId = 30,
                             Date = new DateTime(2020, 3, 10, 2, 27, 10, 0, DateTimeKind.Unspecified)
@@ -10177,6 +11560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1325,
+                            Billed = false,
                             Comment = "59559213_Haus_in_9554",
                             CustomerId = 40,
                             Date = new DateTime(2020, 3, 10, 10, 52, 17, 0, DateTimeKind.Unspecified)
@@ -10184,6 +11568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1326,
+                            Billed = false,
                             Comment = "94411615_Haus_in_8159",
                             CustomerId = 32,
                             Date = new DateTime(2020, 3, 11, 9, 47, 59, 0, DateTimeKind.Unspecified)
@@ -10191,6 +11576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1327,
+                            Billed = false,
                             Comment = "883014_Haus_in_4163",
                             CustomerId = 8,
                             Date = new DateTime(2020, 3, 11, 20, 11, 21, 0, DateTimeKind.Unspecified)
@@ -10198,6 +11584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1328,
+                            Billed = false,
                             Comment = "59747594_Haus_in_4613",
                             CustomerId = 3,
                             Date = new DateTime(2020, 3, 12, 3, 43, 10, 0, DateTimeKind.Unspecified)
@@ -10205,6 +11592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1329,
+                            Billed = false,
                             Comment = "95275777_Haus_in_8956",
                             CustomerId = 27,
                             Date = new DateTime(2020, 3, 12, 14, 16, 57, 0, DateTimeKind.Unspecified)
@@ -10212,6 +11600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1330,
+                            Billed = false,
                             Comment = "22362031_Haus_in_3663",
                             CustomerId = 5,
                             Date = new DateTime(2020, 3, 13, 9, 51, 48, 0, DateTimeKind.Unspecified)
@@ -10219,6 +11608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1331,
+                            Billed = false,
                             Comment = "84227884_Haus_in_9137",
                             CustomerId = 3,
                             Date = new DateTime(2020, 3, 14, 7, 20, 17, 0, DateTimeKind.Unspecified)
@@ -10226,6 +11616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1332,
+                            Billed = false,
                             Comment = "61162176_Haus_in_8270",
                             CustomerId = 13,
                             Date = new DateTime(2020, 3, 14, 14, 36, 27, 0, DateTimeKind.Unspecified)
@@ -10233,6 +11624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1333,
+                            Billed = false,
                             Comment = "66231147_Haus_in_6971",
                             CustomerId = 39,
                             Date = new DateTime(2020, 3, 15, 0, 8, 11, 0, DateTimeKind.Unspecified)
@@ -10240,6 +11632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1334,
+                            Billed = false,
                             Comment = "73140352_Haus_in_1486",
                             CustomerId = 29,
                             Date = new DateTime(2020, 3, 15, 15, 13, 59, 0, DateTimeKind.Unspecified)
@@ -10247,6 +11640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1335,
+                            Billed = false,
                             Comment = "97441717_Haus_in_4328",
                             CustomerId = 34,
                             Date = new DateTime(2020, 3, 15, 23, 34, 57, 0, DateTimeKind.Unspecified)
@@ -10254,6 +11648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1336,
+                            Billed = false,
                             Comment = "29611673_Haus_in_5868",
                             CustomerId = 4,
                             Date = new DateTime(2020, 3, 16, 20, 45, 7, 0, DateTimeKind.Unspecified)
@@ -10261,6 +11656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1337,
+                            Billed = false,
                             Comment = "97826519_Haus_in_4048",
                             CustomerId = 38,
                             Date = new DateTime(2020, 3, 17, 16, 46, 47, 0, DateTimeKind.Unspecified)
@@ -10268,6 +11664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1338,
+                            Billed = false,
                             Comment = "43384059_Haus_in_4833",
                             CustomerId = 40,
                             Date = new DateTime(2020, 3, 18, 2, 43, 42, 0, DateTimeKind.Unspecified)
@@ -10275,6 +11672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1339,
+                            Billed = false,
                             Comment = "56828016_Haus_in_2425",
                             CustomerId = 9,
                             Date = new DateTime(2020, 3, 18, 11, 34, 36, 0, DateTimeKind.Unspecified)
@@ -10282,6 +11680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1340,
+                            Billed = false,
                             Comment = "90648689_Haus_in_5544",
                             CustomerId = 19,
                             Date = new DateTime(2020, 3, 19, 0, 45, 20, 0, DateTimeKind.Unspecified)
@@ -10289,6 +11688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1341,
+                            Billed = false,
                             Comment = "38165790_Haus_in_5097",
                             CustomerId = 33,
                             Date = new DateTime(2020, 3, 19, 22, 0, 37, 0, DateTimeKind.Unspecified)
@@ -10296,6 +11696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1342,
+                            Billed = false,
                             Comment = "11131387_Haus_in_6905",
                             CustomerId = 9,
                             Date = new DateTime(2020, 3, 20, 14, 9, 51, 0, DateTimeKind.Unspecified)
@@ -10303,6 +11704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1343,
+                            Billed = false,
                             Comment = "48445826_Haus_in_8059",
                             CustomerId = 20,
                             Date = new DateTime(2020, 3, 21, 12, 44, 57, 0, DateTimeKind.Unspecified)
@@ -10310,6 +11712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1344,
+                            Billed = false,
                             Comment = "70133179_Haus_in_2120",
                             CustomerId = 23,
                             Date = new DateTime(2020, 3, 21, 19, 54, 50, 0, DateTimeKind.Unspecified)
@@ -10317,6 +11720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1345,
+                            Billed = false,
                             Comment = "61837916_Haus_in_2230",
                             CustomerId = 1,
                             Date = new DateTime(2020, 3, 22, 9, 37, 25, 0, DateTimeKind.Unspecified)
@@ -10324,6 +11728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1346,
+                            Billed = false,
                             Comment = "1678129_Haus_in_7646",
                             CustomerId = 8,
                             Date = new DateTime(2020, 3, 23, 5, 0, 32, 0, DateTimeKind.Unspecified)
@@ -10331,6 +11736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1347,
+                            Billed = false,
                             Comment = "36129893_Haus_in_3735",
                             CustomerId = 20,
                             Date = new DateTime(2020, 3, 23, 11, 26, 5, 0, DateTimeKind.Unspecified)
@@ -10338,6 +11744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1348,
+                            Billed = false,
                             Comment = "22558292_Haus_in_9700",
                             CustomerId = 11,
                             Date = new DateTime(2020, 3, 23, 21, 19, 49, 0, DateTimeKind.Unspecified)
@@ -10345,6 +11752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1349,
+                            Billed = false,
                             Comment = "35385439_Haus_in_7789",
                             CustomerId = 39,
                             Date = new DateTime(2020, 3, 24, 4, 16, 29, 0, DateTimeKind.Unspecified)
@@ -10352,6 +11760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1350,
+                            Billed = false,
                             Comment = "36071404_Haus_in_7026",
                             CustomerId = 8,
                             Date = new DateTime(2020, 3, 24, 20, 38, 1, 0, DateTimeKind.Unspecified)
@@ -10359,6 +11768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1351,
+                            Billed = false,
                             Comment = "42384496_Haus_in_7496",
                             CustomerId = 5,
                             Date = new DateTime(2020, 3, 25, 17, 14, 32, 0, DateTimeKind.Unspecified)
@@ -10366,6 +11776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1352,
+                            Billed = false,
                             Comment = "45764103_Haus_in_1628",
                             CustomerId = 15,
                             Date = new DateTime(2020, 3, 26, 9, 2, 6, 0, DateTimeKind.Unspecified)
@@ -10373,6 +11784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1353,
+                            Billed = false,
                             Comment = "38350410_Haus_in_8111",
                             CustomerId = 25,
                             Date = new DateTime(2020, 3, 26, 18, 38, 53, 0, DateTimeKind.Unspecified)
@@ -10380,6 +11792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1354,
+                            Billed = false,
                             Comment = "97356026_Haus_in_6914",
                             CustomerId = 26,
                             Date = new DateTime(2020, 3, 27, 6, 50, 22, 0, DateTimeKind.Unspecified)
@@ -10387,6 +11800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1355,
+                            Billed = false,
                             Comment = "58825915_Haus_in_6985",
                             CustomerId = 15,
                             Date = new DateTime(2020, 3, 27, 20, 39, 25, 0, DateTimeKind.Unspecified)
@@ -10394,6 +11808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1356,
+                            Billed = false,
                             Comment = "63943257_Haus_in_7793",
                             CustomerId = 37,
                             Date = new DateTime(2020, 3, 28, 6, 29, 29, 0, DateTimeKind.Unspecified)
@@ -10401,6 +11816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1357,
+                            Billed = false,
                             Comment = "71991923_Haus_in_4839",
                             CustomerId = 2,
                             Date = new DateTime(2020, 3, 29, 1, 33, 58, 0, DateTimeKind.Unspecified)
@@ -10408,6 +11824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1358,
+                            Billed = false,
                             Comment = "74669157_Haus_in_7746",
                             CustomerId = 26,
                             Date = new DateTime(2020, 3, 29, 14, 14, 28, 0, DateTimeKind.Unspecified)
@@ -10415,6 +11832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1359,
+                            Billed = false,
                             Comment = "81492139_Haus_in_2766",
                             CustomerId = 31,
                             Date = new DateTime(2020, 3, 30, 13, 12, 25, 0, DateTimeKind.Unspecified)
@@ -10422,6 +11840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1360,
+                            Billed = false,
                             Comment = "67157651_Haus_in_6363",
                             CustomerId = 35,
                             Date = new DateTime(2020, 3, 30, 21, 27, 2, 0, DateTimeKind.Unspecified)
@@ -10429,6 +11848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1361,
+                            Billed = false,
                             Comment = "16847733_Haus_in_6429",
                             CustomerId = 37,
                             Date = new DateTime(2020, 3, 31, 14, 39, 15, 0, DateTimeKind.Unspecified)
@@ -10436,6 +11856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1362,
+                            Billed = false,
                             Comment = "83921291_Haus_in_3906",
                             CustomerId = 2,
                             Date = new DateTime(2020, 4, 1, 12, 59, 12, 0, DateTimeKind.Unspecified)
@@ -10443,6 +11864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1363,
+                            Billed = false,
                             Comment = "24733373_Haus_in_3644",
                             CustomerId = 3,
                             Date = new DateTime(2020, 4, 2, 0, 19, 39, 0, DateTimeKind.Unspecified)
@@ -10450,6 +11872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1364,
+                            Billed = false,
                             Comment = "39502260_Haus_in_6563",
                             CustomerId = 12,
                             Date = new DateTime(2020, 4, 2, 9, 7, 44, 0, DateTimeKind.Unspecified)
@@ -10457,6 +11880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1365,
+                            Billed = false,
                             Comment = "72760260_Haus_in_4790",
                             CustomerId = 36,
                             Date = new DateTime(2020, 4, 3, 2, 33, 47, 0, DateTimeKind.Unspecified)
@@ -10464,6 +11888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1366,
+                            Billed = false,
                             Comment = "35181502_Haus_in_5771",
                             CustomerId = 36,
                             Date = new DateTime(2020, 4, 3, 10, 27, 11, 0, DateTimeKind.Unspecified)
@@ -10471,6 +11896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1367,
+                            Billed = false,
                             Comment = "63479644_Haus_in_4981",
                             CustomerId = 37,
                             Date = new DateTime(2020, 4, 3, 19, 54, 42, 0, DateTimeKind.Unspecified)
@@ -10478,6 +11904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1368,
+                            Billed = false,
                             Comment = "45620724_Haus_in_5395",
                             CustomerId = 27,
                             Date = new DateTime(2020, 4, 4, 15, 48, 50, 0, DateTimeKind.Unspecified)
@@ -10485,6 +11912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1369,
+                            Billed = false,
                             Comment = "72217773_Haus_in_8742",
                             CustomerId = 15,
                             Date = new DateTime(2020, 4, 5, 9, 56, 47, 0, DateTimeKind.Unspecified)
@@ -10492,6 +11920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1370,
+                            Billed = false,
                             Comment = "23576091_Haus_in_7587",
                             CustomerId = 25,
                             Date = new DateTime(2020, 4, 6, 0, 20, 34, 0, DateTimeKind.Unspecified)
@@ -10499,6 +11928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1371,
+                            Billed = false,
                             Comment = "92591978_Haus_in_9387",
                             CustomerId = 23,
                             Date = new DateTime(2020, 4, 6, 15, 28, 8, 0, DateTimeKind.Unspecified)
@@ -10506,6 +11936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1372,
+                            Billed = false,
                             Comment = "86932353_Haus_in_8135",
                             CustomerId = 38,
                             Date = new DateTime(2020, 4, 7, 12, 53, 5, 0, DateTimeKind.Unspecified)
@@ -10513,6 +11944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1373,
+                            Billed = false,
                             Comment = "51389598_Haus_in_5371",
                             CustomerId = 27,
                             Date = new DateTime(2020, 4, 8, 8, 7, 16, 0, DateTimeKind.Unspecified)
@@ -10520,6 +11952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1374,
+                            Billed = false,
                             Comment = "14761266_Haus_in_6654",
                             CustomerId = 23,
                             Date = new DateTime(2020, 4, 8, 22, 10, 14, 0, DateTimeKind.Unspecified)
@@ -10527,6 +11960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1375,
+                            Billed = false,
                             Comment = "39410593_Haus_in_9686",
                             CustomerId = 22,
                             Date = new DateTime(2020, 4, 9, 11, 55, 25, 0, DateTimeKind.Unspecified)
@@ -10534,6 +11968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1376,
+                            Billed = false,
                             Comment = "35532813_Haus_in_5745",
                             CustomerId = 32,
                             Date = new DateTime(2020, 4, 10, 6, 30, 38, 0, DateTimeKind.Unspecified)
@@ -10541,6 +11976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1377,
+                            Billed = false,
                             Comment = "74073006_Haus_in_1619",
                             CustomerId = 9,
                             Date = new DateTime(2020, 4, 11, 2, 45, 36, 0, DateTimeKind.Unspecified)
@@ -10548,6 +11984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1378,
+                            Billed = false,
                             Comment = "58584097_Haus_in_5435",
                             CustomerId = 8,
                             Date = new DateTime(2020, 4, 11, 17, 32, 50, 0, DateTimeKind.Unspecified)
@@ -10555,6 +11992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1379,
+                            Billed = false,
                             Comment = "12635369_Haus_in_2932",
                             CustomerId = 13,
                             Date = new DateTime(2020, 4, 12, 11, 23, 41, 0, DateTimeKind.Unspecified)
@@ -10562,6 +12000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1380,
+                            Billed = false,
                             Comment = "11807860_Haus_in_2538",
                             CustomerId = 39,
                             Date = new DateTime(2020, 4, 13, 6, 22, 38, 0, DateTimeKind.Unspecified)
@@ -10569,6 +12008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1381,
+                            Billed = false,
                             Comment = "20633838_Haus_in_3526",
                             CustomerId = 1,
                             Date = new DateTime(2020, 4, 14, 0, 44, 39, 0, DateTimeKind.Unspecified)
@@ -10576,6 +12016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1382,
+                            Billed = false,
                             Comment = "79876670_Haus_in_3680",
                             CustomerId = 27,
                             Date = new DateTime(2020, 4, 14, 16, 42, 31, 0, DateTimeKind.Unspecified)
@@ -10583,6 +12024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1383,
+                            Billed = false,
                             Comment = "6126427_Haus_in_4184",
                             CustomerId = 38,
                             Date = new DateTime(2020, 4, 15, 6, 58, 48, 0, DateTimeKind.Unspecified)
@@ -10590,6 +12032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1384,
+                            Billed = false,
                             Comment = "85846071_Haus_in_5909",
                             CustomerId = 28,
                             Date = new DateTime(2020, 4, 15, 19, 13, 59, 0, DateTimeKind.Unspecified)
@@ -10597,6 +12040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1385,
+                            Billed = false,
                             Comment = "4636329_Haus_in_4339",
                             CustomerId = 1,
                             Date = new DateTime(2020, 4, 16, 2, 38, 27, 0, DateTimeKind.Unspecified)
@@ -10604,6 +12048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1386,
+                            Billed = false,
                             Comment = "45895385_Haus_in_4332",
                             CustomerId = 34,
                             Date = new DateTime(2020, 4, 16, 18, 30, 34, 0, DateTimeKind.Unspecified)
@@ -10611,6 +12056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1387,
+                            Billed = false,
                             Comment = "61865234_Haus_in_6552",
                             CustomerId = 39,
                             Date = new DateTime(2020, 4, 17, 1, 0, 9, 0, DateTimeKind.Unspecified)
@@ -10618,6 +12064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1388,
+                            Billed = false,
                             Comment = "83143426_Haus_in_8688",
                             CustomerId = 24,
                             Date = new DateTime(2020, 4, 17, 17, 2, 13, 0, DateTimeKind.Unspecified)
@@ -10625,6 +12072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1389,
+                            Billed = false,
                             Comment = "57087888_Haus_in_8842",
                             CustomerId = 25,
                             Date = new DateTime(2020, 4, 18, 14, 51, 7, 0, DateTimeKind.Unspecified)
@@ -10632,6 +12080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1390,
+                            Billed = false,
                             Comment = "92459062_Haus_in_8252",
                             CustomerId = 19,
                             Date = new DateTime(2020, 4, 19, 12, 54, 38, 0, DateTimeKind.Unspecified)
@@ -10639,6 +12088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1391,
+                            Billed = false,
                             Comment = "10140524_Haus_in_9170",
                             CustomerId = 21,
                             Date = new DateTime(2020, 4, 20, 8, 28, 32, 0, DateTimeKind.Unspecified)
@@ -10646,6 +12096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1392,
+                            Billed = false,
                             Comment = "87410217_Haus_in_6234",
                             CustomerId = 38,
                             Date = new DateTime(2020, 4, 20, 18, 8, 20, 0, DateTimeKind.Unspecified)
@@ -10653,6 +12104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1393,
+                            Billed = false,
                             Comment = "9331538_Haus_in_8531",
                             CustomerId = 23,
                             Date = new DateTime(2020, 4, 21, 12, 33, 57, 0, DateTimeKind.Unspecified)
@@ -10660,6 +12112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1394,
+                            Billed = false,
                             Comment = "10162419_Haus_in_3132",
                             CustomerId = 25,
                             Date = new DateTime(2020, 4, 22, 3, 4, 31, 0, DateTimeKind.Unspecified)
@@ -10667,6 +12120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1395,
+                            Billed = false,
                             Comment = "84803728_Haus_in_4780",
                             CustomerId = 10,
                             Date = new DateTime(2020, 4, 22, 16, 59, 50, 0, DateTimeKind.Unspecified)
@@ -10674,6 +12128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1396,
+                            Billed = false,
                             Comment = "16226951_Haus_in_1695",
                             CustomerId = 32,
                             Date = new DateTime(2020, 4, 23, 13, 35, 23, 0, DateTimeKind.Unspecified)
@@ -10681,6 +12136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1397,
+                            Billed = false,
                             Comment = "40184822_Haus_in_2628",
                             CustomerId = 6,
                             Date = new DateTime(2020, 4, 24, 6, 42, 17, 0, DateTimeKind.Unspecified)
@@ -10688,6 +12144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1398,
+                            Billed = false,
                             Comment = "86958730_Haus_in_2395",
                             CustomerId = 15,
                             Date = new DateTime(2020, 4, 24, 13, 41, 12, 0, DateTimeKind.Unspecified)
@@ -10695,6 +12152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1399,
+                            Billed = false,
                             Comment = "98065553_Haus_in_4816",
                             CustomerId = 28,
                             Date = new DateTime(2020, 4, 25, 0, 6, 8, 0, DateTimeKind.Unspecified)
@@ -10702,6 +12160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1400,
+                            Billed = false,
                             Comment = "8479674_Haus_in_2584",
                             CustomerId = 28,
                             Date = new DateTime(2020, 4, 25, 9, 17, 35, 0, DateTimeKind.Unspecified)
@@ -10709,6 +12168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1401,
+                            Billed = false,
                             Comment = "8523353_Haus_in_3660",
                             CustomerId = 17,
                             Date = new DateTime(2020, 4, 26, 1, 13, 23, 0, DateTimeKind.Unspecified)
@@ -10716,6 +12176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1402,
+                            Billed = false,
                             Comment = "88229263_Haus_in_1148",
                             CustomerId = 23,
                             Date = new DateTime(2020, 4, 26, 8, 9, 39, 0, DateTimeKind.Unspecified)
@@ -10723,6 +12184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1403,
+                            Billed = false,
                             Comment = "58101432_Haus_in_2127",
                             CustomerId = 17,
                             Date = new DateTime(2020, 4, 27, 5, 29, 46, 0, DateTimeKind.Unspecified)
@@ -10730,6 +12192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1404,
+                            Billed = false,
                             Comment = "99657612_Haus_in_4970",
                             CustomerId = 8,
                             Date = new DateTime(2020, 4, 27, 15, 34, 50, 0, DateTimeKind.Unspecified)
@@ -10737,6 +12200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1405,
+                            Billed = false,
                             Comment = "55964997_Haus_in_9823",
                             CustomerId = 6,
                             Date = new DateTime(2020, 4, 28, 4, 45, 26, 0, DateTimeKind.Unspecified)
@@ -10744,6 +12208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1406,
+                            Billed = false,
                             Comment = "56311867_Haus_in_5167",
                             CustomerId = 31,
                             Date = new DateTime(2020, 4, 28, 21, 43, 27, 0, DateTimeKind.Unspecified)
@@ -10751,6 +12216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1407,
+                            Billed = false,
                             Comment = "33821457_Haus_in_9208",
                             CustomerId = 27,
                             Date = new DateTime(2020, 4, 29, 10, 21, 20, 0, DateTimeKind.Unspecified)
@@ -10758,6 +12224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1408,
+                            Billed = false,
                             Comment = "77230970_Haus_in_6843",
                             CustomerId = 38,
                             Date = new DateTime(2020, 4, 30, 7, 1, 51, 0, DateTimeKind.Unspecified)
@@ -10765,6 +12232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1409,
+                            Billed = false,
                             Comment = "41714883_Haus_in_1170",
                             CustomerId = 14,
                             Date = new DateTime(2020, 4, 30, 18, 51, 26, 0, DateTimeKind.Unspecified)
@@ -10772,6 +12240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1410,
+                            Billed = false,
                             Comment = "94202710_Haus_in_9354",
                             CustomerId = 16,
                             Date = new DateTime(2020, 5, 1, 2, 16, 22, 0, DateTimeKind.Unspecified)
@@ -10779,6 +12248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1411,
+                            Billed = false,
                             Comment = "94926599_Haus_in_9084",
                             CustomerId = 12,
                             Date = new DateTime(2020, 5, 1, 20, 7, 46, 0, DateTimeKind.Unspecified)
@@ -10786,6 +12256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1412,
+                            Billed = false,
                             Comment = "4253405_Haus_in_9512",
                             CustomerId = 26,
                             Date = new DateTime(2020, 5, 2, 18, 18, 31, 0, DateTimeKind.Unspecified)
@@ -10793,6 +12264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1413,
+                            Billed = false,
                             Comment = "29635499_Haus_in_3954",
                             CustomerId = 7,
                             Date = new DateTime(2020, 5, 3, 3, 56, 14, 0, DateTimeKind.Unspecified)
@@ -10800,6 +12272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1414,
+                            Billed = false,
                             Comment = "83217869_Haus_in_7580",
                             CustomerId = 39,
                             Date = new DateTime(2020, 5, 4, 1, 26, 37, 0, DateTimeKind.Unspecified)
@@ -10807,6 +12280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1415,
+                            Billed = false,
                             Comment = "65663626_Haus_in_2480",
                             CustomerId = 40,
                             Date = new DateTime(2020, 5, 4, 13, 44, 10, 0, DateTimeKind.Unspecified)
@@ -10814,6 +12288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1416,
+                            Billed = false,
                             Comment = "97748245_Haus_in_5244",
                             CustomerId = 39,
                             Date = new DateTime(2020, 5, 5, 4, 41, 51, 0, DateTimeKind.Unspecified)
@@ -10821,6 +12296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1417,
+                            Billed = false,
                             Comment = "94869174_Haus_in_6586",
                             CustomerId = 26,
                             Date = new DateTime(2020, 5, 5, 19, 17, 34, 0, DateTimeKind.Unspecified)
@@ -10828,6 +12304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1418,
+                            Billed = false,
                             Comment = "12456823_Haus_in_8151",
                             CustomerId = 27,
                             Date = new DateTime(2020, 5, 6, 15, 57, 20, 0, DateTimeKind.Unspecified)
@@ -10835,6 +12312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1419,
+                            Billed = false,
                             Comment = "47572494_Haus_in_4938",
                             CustomerId = 26,
                             Date = new DateTime(2020, 5, 7, 2, 52, 27, 0, DateTimeKind.Unspecified)
@@ -10842,6 +12320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1420,
+                            Billed = false,
                             Comment = "90453789_Haus_in_7080",
                             CustomerId = 27,
                             Date = new DateTime(2020, 5, 7, 18, 34, 30, 0, DateTimeKind.Unspecified)
@@ -10849,6 +12328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1421,
+                            Billed = false,
                             Comment = "14180222_Haus_in_1668",
                             CustomerId = 25,
                             Date = new DateTime(2020, 5, 8, 5, 35, 59, 0, DateTimeKind.Unspecified)
@@ -10856,6 +12336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1422,
+                            Billed = false,
                             Comment = "64293770_Haus_in_7330",
                             CustomerId = 11,
                             Date = new DateTime(2020, 5, 8, 15, 50, 37, 0, DateTimeKind.Unspecified)
@@ -10863,6 +12344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1423,
+                            Billed = false,
                             Comment = "8947340_Haus_in_2626",
                             CustomerId = 31,
                             Date = new DateTime(2020, 5, 9, 8, 7, 10, 0, DateTimeKind.Unspecified)
@@ -10870,6 +12352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1424,
+                            Billed = false,
                             Comment = "73085249_Haus_in_7436",
                             CustomerId = 32,
                             Date = new DateTime(2020, 5, 10, 5, 49, 19, 0, DateTimeKind.Unspecified)
@@ -10877,6 +12360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1425,
+                            Billed = false,
                             Comment = "43230477_Haus_in_3410",
                             CustomerId = 11,
                             Date = new DateTime(2020, 5, 10, 12, 40, 49, 0, DateTimeKind.Unspecified)
@@ -10884,6 +12368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1426,
+                            Billed = false,
                             Comment = "30544215_Haus_in_9522",
                             CustomerId = 3,
                             Date = new DateTime(2020, 5, 11, 2, 30, 30, 0, DateTimeKind.Unspecified)
@@ -10891,6 +12376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1427,
+                            Billed = false,
                             Comment = "40422399_Haus_in_8990",
                             CustomerId = 30,
                             Date = new DateTime(2020, 5, 11, 9, 46, 1, 0, DateTimeKind.Unspecified)
@@ -10898,6 +12384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1428,
+                            Billed = false,
                             Comment = "3633752_Haus_in_2953",
                             CustomerId = 17,
                             Date = new DateTime(2020, 5, 11, 18, 44, 19, 0, DateTimeKind.Unspecified)
@@ -10905,6 +12392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1429,
+                            Billed = false,
                             Comment = "73256169_Haus_in_2718",
                             CustomerId = 35,
                             Date = new DateTime(2020, 5, 12, 15, 29, 56, 0, DateTimeKind.Unspecified)
@@ -10912,6 +12400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1430,
+                            Billed = false,
                             Comment = "57719529_Haus_in_3446",
                             CustomerId = 32,
                             Date = new DateTime(2020, 5, 13, 6, 3, 12, 0, DateTimeKind.Unspecified)
@@ -10919,6 +12408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1431,
+                            Billed = false,
                             Comment = "85059186_Haus_in_8238",
                             CustomerId = 16,
                             Date = new DateTime(2020, 5, 13, 22, 1, 59, 0, DateTimeKind.Unspecified)
@@ -10926,6 +12416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1432,
+                            Billed = false,
                             Comment = "65284549_Haus_in_8538",
                             CustomerId = 25,
                             Date = new DateTime(2020, 5, 14, 4, 34, 55, 0, DateTimeKind.Unspecified)
@@ -10933,6 +12424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1433,
+                            Billed = false,
                             Comment = "63121078_Haus_in_7677",
                             CustomerId = 11,
                             Date = new DateTime(2020, 5, 14, 21, 48, 14, 0, DateTimeKind.Unspecified)
@@ -10940,6 +12432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1434,
+                            Billed = false,
                             Comment = "39509533_Haus_in_6970",
                             CustomerId = 12,
                             Date = new DateTime(2020, 5, 15, 10, 26, 3, 0, DateTimeKind.Unspecified)
@@ -10947,6 +12440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1435,
+                            Billed = false,
                             Comment = "53713922_Haus_in_7797",
                             CustomerId = 21,
                             Date = new DateTime(2020, 5, 16, 2, 59, 10, 0, DateTimeKind.Unspecified)
@@ -10954,6 +12448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1436,
+                            Billed = false,
                             Comment = "16797832_Haus_in_4805",
                             CustomerId = 11,
                             Date = new DateTime(2020, 5, 16, 20, 19, 50, 0, DateTimeKind.Unspecified)
@@ -10961,6 +12456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1437,
+                            Billed = false,
                             Comment = "40516290_Haus_in_5549",
                             CustomerId = 21,
                             Date = new DateTime(2020, 5, 17, 4, 3, 59, 0, DateTimeKind.Unspecified)
@@ -10968,6 +12464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1438,
+                            Billed = false,
                             Comment = "21989535_Haus_in_5737",
                             CustomerId = 32,
                             Date = new DateTime(2020, 5, 17, 14, 19, 6, 0, DateTimeKind.Unspecified)
@@ -10975,6 +12472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1439,
+                            Billed = false,
                             Comment = "37833053_Haus_in_9542",
                             CustomerId = 22,
                             Date = new DateTime(2020, 5, 18, 10, 35, 0, 0, DateTimeKind.Unspecified)
@@ -10982,6 +12480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1440,
+                            Billed = false,
                             Comment = "75928527_Haus_in_3748",
                             CustomerId = 6,
                             Date = new DateTime(2020, 5, 18, 23, 51, 35, 0, DateTimeKind.Unspecified)
@@ -10989,6 +12488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1441,
+                            Billed = false,
                             Comment = "94143889_Haus_in_3993",
                             CustomerId = 9,
                             Date = new DateTime(2020, 5, 19, 17, 21, 33, 0, DateTimeKind.Unspecified)
@@ -10996,6 +12496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1442,
+                            Billed = false,
                             Comment = "18592943_Haus_in_8888",
                             CustomerId = 37,
                             Date = new DateTime(2020, 5, 20, 1, 44, 36, 0, DateTimeKind.Unspecified)
@@ -11003,6 +12504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1443,
+                            Billed = false,
                             Comment = "5248413_Haus_in_2384",
                             CustomerId = 14,
                             Date = new DateTime(2020, 5, 20, 18, 37, 49, 0, DateTimeKind.Unspecified)
@@ -11010,6 +12512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1444,
+                            Billed = false,
                             Comment = "64974412_Haus_in_3644",
                             CustomerId = 24,
                             Date = new DateTime(2020, 5, 21, 10, 27, 9, 0, DateTimeKind.Unspecified)
@@ -11017,6 +12520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1445,
+                            Billed = false,
                             Comment = "83701992_Haus_in_9162",
                             CustomerId = 30,
                             Date = new DateTime(2020, 5, 22, 6, 37, 5, 0, DateTimeKind.Unspecified)
@@ -11024,6 +12528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1446,
+                            Billed = false,
                             Comment = "80653173_Haus_in_9184",
                             CustomerId = 34,
                             Date = new DateTime(2020, 5, 23, 2, 33, 3, 0, DateTimeKind.Unspecified)
@@ -11031,6 +12536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1447,
+                            Billed = false,
                             Comment = "63457223_Haus_in_8455",
                             CustomerId = 32,
                             Date = new DateTime(2020, 5, 23, 16, 35, 21, 0, DateTimeKind.Unspecified)
@@ -11038,6 +12544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1448,
+                            Billed = false,
                             Comment = "93531360_Haus_in_5276",
                             CustomerId = 2,
                             Date = new DateTime(2020, 5, 24, 7, 31, 25, 0, DateTimeKind.Unspecified)
@@ -11045,6 +12552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1449,
+                            Billed = false,
                             Comment = "60736345_Haus_in_9319",
                             CustomerId = 19,
                             Date = new DateTime(2020, 5, 25, 1, 36, 38, 0, DateTimeKind.Unspecified)
@@ -11052,6 +12560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1450,
+                            Billed = false,
                             Comment = "38049334_Haus_in_8214",
                             CustomerId = 29,
                             Date = new DateTime(2020, 5, 25, 23, 44, 28, 0, DateTimeKind.Unspecified)
@@ -11059,6 +12568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1451,
+                            Billed = false,
                             Comment = "8174811_Haus_in_3346",
                             CustomerId = 6,
                             Date = new DateTime(2020, 5, 26, 12, 11, 1, 0, DateTimeKind.Unspecified)
@@ -11066,6 +12576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1452,
+                            Billed = false,
                             Comment = "84382374_Haus_in_1277",
                             CustomerId = 13,
                             Date = new DateTime(2020, 5, 27, 8, 55, 7, 0, DateTimeKind.Unspecified)
@@ -11073,6 +12584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1453,
+                            Billed = false,
                             Comment = "11152107_Haus_in_7262",
                             CustomerId = 21,
                             Date = new DateTime(2020, 5, 28, 5, 39, 19, 0, DateTimeKind.Unspecified)
@@ -11080,6 +12592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1454,
+                            Billed = false,
                             Comment = "277341_Haus_in_7867",
                             CustomerId = 20,
                             Date = new DateTime(2020, 5, 28, 15, 25, 31, 0, DateTimeKind.Unspecified)
@@ -11087,6 +12600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1455,
+                            Billed = false,
                             Comment = "88198935_Haus_in_7339",
                             CustomerId = 3,
                             Date = new DateTime(2020, 5, 29, 8, 47, 50, 0, DateTimeKind.Unspecified)
@@ -11094,6 +12608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1456,
+                            Billed = false,
                             Comment = "42187471_Haus_in_2917",
                             CustomerId = 21,
                             Date = new DateTime(2020, 5, 29, 16, 34, 28, 0, DateTimeKind.Unspecified)
@@ -11101,6 +12616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1457,
+                            Billed = false,
                             Comment = "16865144_Haus_in_2734",
                             CustomerId = 33,
                             Date = new DateTime(2020, 5, 30, 2, 55, 19, 0, DateTimeKind.Unspecified)
@@ -11108,6 +12624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1458,
+                            Billed = false,
                             Comment = "61715035_Haus_in_8790",
                             CustomerId = 8,
                             Date = new DateTime(2020, 5, 30, 15, 19, 33, 0, DateTimeKind.Unspecified)
@@ -11115,6 +12632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1459,
+                            Billed = false,
                             Comment = "49581714_Haus_in_6416",
                             CustomerId = 7,
                             Date = new DateTime(2020, 5, 31, 9, 47, 31, 0, DateTimeKind.Unspecified)
@@ -11122,6 +12640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1460,
+                            Billed = false,
                             Comment = "44194220_Haus_in_7418",
                             CustomerId = 32,
                             Date = new DateTime(2020, 6, 1, 2, 39, 56, 0, DateTimeKind.Unspecified)
@@ -11129,6 +12648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1461,
+                            Billed = false,
                             Comment = "25375544_Haus_in_1635",
                             CustomerId = 17,
                             Date = new DateTime(2020, 6, 2, 0, 27, 47, 0, DateTimeKind.Unspecified)
@@ -11136,6 +12656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1462,
+                            Billed = false,
                             Comment = "23778004_Haus_in_7982",
                             CustomerId = 40,
                             Date = new DateTime(2020, 6, 2, 12, 47, 6, 0, DateTimeKind.Unspecified)
@@ -11143,6 +12664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1463,
+                            Billed = false,
                             Comment = "11616115_Haus_in_6376",
                             CustomerId = 1,
                             Date = new DateTime(2020, 6, 3, 8, 11, 42, 0, DateTimeKind.Unspecified)
@@ -11150,6 +12672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1464,
+                            Billed = false,
                             Comment = "35107012_Haus_in_4905",
                             CustomerId = 19,
                             Date = new DateTime(2020, 6, 3, 22, 42, 26, 0, DateTimeKind.Unspecified)
@@ -11157,6 +12680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1465,
+                            Billed = false,
                             Comment = "91865682_Haus_in_5816",
                             CustomerId = 3,
                             Date = new DateTime(2020, 6, 4, 17, 35, 43, 0, DateTimeKind.Unspecified)
@@ -11164,6 +12688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1466,
+                            Billed = false,
                             Comment = "89010433_Haus_in_4342",
                             CustomerId = 7,
                             Date = new DateTime(2020, 6, 5, 13, 4, 35, 0, DateTimeKind.Unspecified)
@@ -11171,6 +12696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1467,
+                            Billed = false,
                             Comment = "82525001_Haus_in_3733",
                             CustomerId = 7,
                             Date = new DateTime(2020, 6, 6, 1, 0, 45, 0, DateTimeKind.Unspecified)
@@ -11178,6 +12704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1468,
+                            Billed = false,
                             Comment = "33869023_Haus_in_1923",
                             CustomerId = 9,
                             Date = new DateTime(2020, 6, 6, 16, 43, 58, 0, DateTimeKind.Unspecified)
@@ -11185,6 +12712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1469,
+                            Billed = false,
                             Comment = "26910051_Haus_in_9433",
                             CustomerId = 34,
                             Date = new DateTime(2020, 6, 7, 15, 17, 44, 0, DateTimeKind.Unspecified)
@@ -11192,6 +12720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1470,
+                            Billed = false,
                             Comment = "69574173_Haus_in_4196",
                             CustomerId = 18,
                             Date = new DateTime(2020, 6, 8, 13, 45, 11, 0, DateTimeKind.Unspecified)
@@ -11199,6 +12728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1471,
+                            Billed = false,
                             Comment = "22328274_Haus_in_7901",
                             CustomerId = 32,
                             Date = new DateTime(2020, 6, 9, 9, 3, 35, 0, DateTimeKind.Unspecified)
@@ -11206,6 +12736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1472,
+                            Billed = false,
                             Comment = "71237629_Haus_in_2469",
                             CustomerId = 11,
                             Date = new DateTime(2020, 6, 10, 5, 42, 5, 0, DateTimeKind.Unspecified)
@@ -11213,6 +12744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1473,
+                            Billed = false,
                             Comment = "92037407_Haus_in_6680",
                             CustomerId = 19,
                             Date = new DateTime(2020, 6, 10, 19, 3, 45, 0, DateTimeKind.Unspecified)
@@ -11220,6 +12752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1474,
+                            Billed = false,
                             Comment = "7426037_Haus_in_4226",
                             CustomerId = 8,
                             Date = new DateTime(2020, 6, 11, 4, 33, 18, 0, DateTimeKind.Unspecified)
@@ -11227,6 +12760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1475,
+                            Billed = false,
                             Comment = "21170136_Haus_in_4919",
                             CustomerId = 39,
                             Date = new DateTime(2020, 6, 11, 23, 28, 30, 0, DateTimeKind.Unspecified)
@@ -11234,6 +12768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1476,
+                            Billed = false,
                             Comment = "40414549_Haus_in_5695",
                             CustomerId = 33,
                             Date = new DateTime(2020, 6, 12, 21, 19, 46, 0, DateTimeKind.Unspecified)
@@ -11241,6 +12776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1477,
+                            Billed = false,
                             Comment = "34435923_Haus_in_7231",
                             CustomerId = 19,
                             Date = new DateTime(2020, 6, 13, 19, 4, 16, 0, DateTimeKind.Unspecified)
@@ -11248,6 +12784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1478,
+                            Billed = false,
                             Comment = "40025849_Haus_in_9250",
                             CustomerId = 25,
                             Date = new DateTime(2020, 6, 14, 10, 48, 6, 0, DateTimeKind.Unspecified)
@@ -11255,6 +12792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1479,
+                            Billed = false,
                             Comment = "23435780_Haus_in_2979",
                             CustomerId = 34,
                             Date = new DateTime(2020, 6, 14, 21, 17, 38, 0, DateTimeKind.Unspecified)
@@ -11262,6 +12800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1480,
+                            Billed = false,
                             Comment = "3921303_Haus_in_3640",
                             CustomerId = 3,
                             Date = new DateTime(2020, 6, 15, 16, 51, 52, 0, DateTimeKind.Unspecified)
@@ -11269,6 +12808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1481,
+                            Billed = false,
                             Comment = "34182220_Haus_in_8614",
                             CustomerId = 4,
                             Date = new DateTime(2020, 6, 16, 8, 46, 18, 0, DateTimeKind.Unspecified)
@@ -11276,6 +12816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1482,
+                            Billed = false,
                             Comment = "56816968_Haus_in_2620",
                             CustomerId = 7,
                             Date = new DateTime(2020, 6, 17, 6, 24, 14, 0, DateTimeKind.Unspecified)
@@ -11283,6 +12824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1483,
+                            Billed = false,
                             Comment = "62045532_Haus_in_4163",
                             CustomerId = 36,
                             Date = new DateTime(2020, 6, 17, 15, 8, 23, 0, DateTimeKind.Unspecified)
@@ -11290,6 +12832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1484,
+                            Billed = false,
                             Comment = "70387692_Haus_in_7481",
                             CustomerId = 12,
                             Date = new DateTime(2020, 6, 18, 5, 16, 55, 0, DateTimeKind.Unspecified)
@@ -11297,6 +12840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1485,
+                            Billed = false,
                             Comment = "3016657_Haus_in_8503",
                             CustomerId = 3,
                             Date = new DateTime(2020, 6, 19, 2, 22, 32, 0, DateTimeKind.Unspecified)
@@ -11304,6 +12848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1486,
+                            Billed = false,
                             Comment = "89414937_Haus_in_4910",
                             CustomerId = 9,
                             Date = new DateTime(2020, 6, 19, 13, 12, 14, 0, DateTimeKind.Unspecified)
@@ -11311,6 +12856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1487,
+                            Billed = false,
                             Comment = "73836646_Haus_in_7986",
                             CustomerId = 1,
                             Date = new DateTime(2020, 6, 19, 23, 41, 37, 0, DateTimeKind.Unspecified)
@@ -11318,6 +12864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1488,
+                            Billed = false,
                             Comment = "70197864_Haus_in_5360",
                             CustomerId = 15,
                             Date = new DateTime(2020, 6, 20, 21, 48, 31, 0, DateTimeKind.Unspecified)
@@ -11325,6 +12872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1489,
+                            Billed = false,
                             Comment = "55814761_Haus_in_9196",
                             CustomerId = 36,
                             Date = new DateTime(2020, 6, 21, 5, 42, 27, 0, DateTimeKind.Unspecified)
@@ -11332,6 +12880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1490,
+                            Billed = false,
                             Comment = "19852571_Haus_in_3417",
                             CustomerId = 29,
                             Date = new DateTime(2020, 6, 21, 23, 58, 40, 0, DateTimeKind.Unspecified)
@@ -11339,6 +12888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1491,
+                            Billed = false,
                             Comment = "88377805_Haus_in_7592",
                             CustomerId = 5,
                             Date = new DateTime(2020, 6, 22, 9, 48, 15, 0, DateTimeKind.Unspecified)
@@ -11346,6 +12896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1492,
+                            Billed = false,
                             Comment = "62892479_Haus_in_2256",
                             CustomerId = 29,
                             Date = new DateTime(2020, 6, 22, 23, 42, 5, 0, DateTimeKind.Unspecified)
@@ -11353,6 +12904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1493,
+                            Billed = false,
                             Comment = "32226220_Haus_in_6551",
                             CustomerId = 31,
                             Date = new DateTime(2020, 6, 23, 22, 11, 28, 0, DateTimeKind.Unspecified)
@@ -11360,6 +12912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1494,
+                            Billed = false,
                             Comment = "98829855_Haus_in_2266",
                             CustomerId = 7,
                             Date = new DateTime(2020, 6, 24, 17, 41, 51, 0, DateTimeKind.Unspecified)
@@ -11367,6 +12920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1495,
+                            Billed = false,
                             Comment = "47047537_Haus_in_6654",
                             CustomerId = 33,
                             Date = new DateTime(2020, 6, 25, 14, 5, 8, 0, DateTimeKind.Unspecified)
@@ -11374,6 +12928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1496,
+                            Billed = false,
                             Comment = "80115712_Haus_in_9202",
                             CustomerId = 6,
                             Date = new DateTime(2020, 6, 25, 23, 36, 25, 0, DateTimeKind.Unspecified)
@@ -11381,6 +12936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1497,
+                            Billed = false,
                             Comment = "91285371_Haus_in_8160",
                             CustomerId = 8,
                             Date = new DateTime(2020, 6, 26, 9, 26, 38, 0, DateTimeKind.Unspecified)
@@ -11388,6 +12944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1498,
+                            Billed = false,
                             Comment = "93734832_Haus_in_1776",
                             CustomerId = 33,
                             Date = new DateTime(2020, 6, 27, 1, 47, 54, 0, DateTimeKind.Unspecified)
@@ -11395,6 +12952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1499,
+                            Billed = false,
                             Comment = "93152419_Haus_in_7176",
                             CustomerId = 25,
                             Date = new DateTime(2020, 6, 27, 16, 45, 49, 0, DateTimeKind.Unspecified)
@@ -11402,6 +12960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1500,
+                            Billed = false,
                             Comment = "23755653_Haus_in_5509",
                             CustomerId = 19,
                             Date = new DateTime(2020, 6, 28, 12, 50, 38, 0, DateTimeKind.Unspecified)
@@ -11409,6 +12968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1501,
+                            Billed = false,
                             Comment = "49930249_Haus_in_2000",
                             CustomerId = 10,
                             Date = new DateTime(2020, 6, 29, 2, 30, 4, 0, DateTimeKind.Unspecified)
@@ -11416,6 +12976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1502,
+                            Billed = false,
                             Comment = "58772171_Haus_in_5313",
                             CustomerId = 20,
                             Date = new DateTime(2020, 6, 29, 23, 18, 44, 0, DateTimeKind.Unspecified)
@@ -11423,6 +12984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1503,
+                            Billed = false,
                             Comment = "53958396_Haus_in_6737",
                             CustomerId = 24,
                             Date = new DateTime(2020, 6, 30, 11, 54, 19, 0, DateTimeKind.Unspecified)
@@ -11430,6 +12992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1504,
+                            Billed = false,
                             Comment = "28313655_Haus_in_5457",
                             CustomerId = 9,
                             Date = new DateTime(2020, 7, 1, 7, 58, 46, 0, DateTimeKind.Unspecified)
@@ -11437,6 +13000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1505,
+                            Billed = false,
                             Comment = "25024275_Haus_in_7745",
                             CustomerId = 25,
                             Date = new DateTime(2020, 7, 2, 1, 35, 21, 0, DateTimeKind.Unspecified)
@@ -11444,6 +13008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1506,
+                            Billed = false,
                             Comment = "74902227_Haus_in_3386",
                             CustomerId = 29,
                             Date = new DateTime(2020, 7, 2, 9, 17, 57, 0, DateTimeKind.Unspecified)
@@ -11451,6 +13016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1507,
+                            Billed = false,
                             Comment = "98708334_Haus_in_2109",
                             CustomerId = 7,
                             Date = new DateTime(2020, 7, 2, 21, 40, 47, 0, DateTimeKind.Unspecified)
@@ -11458,6 +13024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1508,
+                            Billed = false,
                             Comment = "19681088_Haus_in_4123",
                             CustomerId = 20,
                             Date = new DateTime(2020, 7, 3, 9, 44, 10, 0, DateTimeKind.Unspecified)
@@ -11465,6 +13032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1509,
+                            Billed = false,
                             Comment = "60780511_Haus_in_2715",
                             CustomerId = 9,
                             Date = new DateTime(2020, 7, 3, 17, 1, 40, 0, DateTimeKind.Unspecified)
@@ -11472,6 +13040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1510,
+                            Billed = false,
                             Comment = "56271787_Haus_in_8982",
                             CustomerId = 38,
                             Date = new DateTime(2020, 7, 3, 23, 17, 2, 0, DateTimeKind.Unspecified)
@@ -11479,6 +13048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1511,
+                            Billed = false,
                             Comment = "40990572_Haus_in_8906",
                             CustomerId = 38,
                             Date = new DateTime(2020, 7, 4, 13, 31, 36, 0, DateTimeKind.Unspecified)
@@ -11486,6 +13056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1512,
+                            Billed = false,
                             Comment = "23254148_Haus_in_2547",
                             CustomerId = 14,
                             Date = new DateTime(2020, 7, 5, 10, 13, 25, 0, DateTimeKind.Unspecified)
@@ -11493,6 +13064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1513,
+                            Billed = false,
                             Comment = "81308426_Haus_in_3289",
                             CustomerId = 14,
                             Date = new DateTime(2020, 7, 6, 5, 53, 30, 0, DateTimeKind.Unspecified)
@@ -11500,6 +13072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1514,
+                            Billed = false,
                             Comment = "53121823_Haus_in_9625",
                             CustomerId = 11,
                             Date = new DateTime(2020, 7, 6, 13, 5, 55, 0, DateTimeKind.Unspecified)
@@ -11507,6 +13080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1515,
+                            Billed = false,
                             Comment = "66967488_Haus_in_5611",
                             CustomerId = 18,
                             Date = new DateTime(2020, 7, 6, 22, 57, 1, 0, DateTimeKind.Unspecified)
@@ -11514,6 +13088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1516,
+                            Billed = false,
                             Comment = "66824413_Haus_in_7881",
                             CustomerId = 39,
                             Date = new DateTime(2020, 7, 7, 19, 21, 49, 0, DateTimeKind.Unspecified)
@@ -11521,6 +13096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1517,
+                            Billed = false,
                             Comment = "61444001_Haus_in_5605",
                             CustomerId = 21,
                             Date = new DateTime(2020, 7, 8, 10, 49, 26, 0, DateTimeKind.Unspecified)
@@ -11528,6 +13104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1518,
+                            Billed = false,
                             Comment = "42974035_Haus_in_9288",
                             CustomerId = 15,
                             Date = new DateTime(2020, 7, 9, 1, 32, 30, 0, DateTimeKind.Unspecified)
@@ -11535,6 +13112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1519,
+                            Billed = false,
                             Comment = "85409060_Haus_in_4332",
                             CustomerId = 6,
                             Date = new DateTime(2020, 7, 9, 9, 13, 55, 0, DateTimeKind.Unspecified)
@@ -11542,6 +13120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1520,
+                            Billed = false,
                             Comment = "70445234_Haus_in_5960",
                             CustomerId = 25,
                             Date = new DateTime(2020, 7, 9, 22, 29, 36, 0, DateTimeKind.Unspecified)
@@ -11549,6 +13128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1521,
+                            Billed = false,
                             Comment = "46485925_Haus_in_8462",
                             CustomerId = 14,
                             Date = new DateTime(2020, 7, 10, 17, 54, 38, 0, DateTimeKind.Unspecified)
@@ -11556,6 +13136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1522,
+                            Billed = false,
                             Comment = "80171463_Haus_in_4274",
                             CustomerId = 13,
                             Date = new DateTime(2020, 7, 11, 5, 41, 40, 0, DateTimeKind.Unspecified)
@@ -11563,6 +13144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1523,
+                            Billed = false,
                             Comment = "76298002_Haus_in_8211",
                             CustomerId = 37,
                             Date = new DateTime(2020, 7, 11, 22, 16, 14, 0, DateTimeKind.Unspecified)
@@ -11570,6 +13152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1524,
+                            Billed = false,
                             Comment = "32066500_Haus_in_9691",
                             CustomerId = 8,
                             Date = new DateTime(2020, 7, 12, 20, 7, 40, 0, DateTimeKind.Unspecified)
@@ -11577,6 +13160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1525,
+                            Billed = false,
                             Comment = "50174664_Haus_in_4876",
                             CustomerId = 19,
                             Date = new DateTime(2020, 7, 13, 3, 52, 12, 0, DateTimeKind.Unspecified)
@@ -11584,6 +13168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1526,
+                            Billed = false,
                             Comment = "74236380_Haus_in_2753",
                             CustomerId = 4,
                             Date = new DateTime(2020, 7, 13, 11, 46, 56, 0, DateTimeKind.Unspecified)
@@ -11591,6 +13176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1527,
+                            Billed = false,
                             Comment = "732699_Haus_in_6649",
                             CustomerId = 10,
                             Date = new DateTime(2020, 7, 14, 1, 57, 12, 0, DateTimeKind.Unspecified)
@@ -11598,6 +13184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1528,
+                            Billed = false,
                             Comment = "51179390_Haus_in_3558",
                             CustomerId = 3,
                             Date = new DateTime(2020, 7, 14, 23, 45, 5, 0, DateTimeKind.Unspecified)
@@ -11605,6 +13192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1529,
+                            Billed = false,
                             Comment = "71849258_Haus_in_8459",
                             CustomerId = 36,
                             Date = new DateTime(2020, 7, 15, 19, 18, 33, 0, DateTimeKind.Unspecified)
@@ -11612,6 +13200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1530,
+                            Billed = false,
                             Comment = "26039798_Haus_in_7432",
                             CustomerId = 3,
                             Date = new DateTime(2020, 7, 16, 2, 53, 40, 0, DateTimeKind.Unspecified)
@@ -11619,6 +13208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1531,
+                            Billed = false,
                             Comment = "24056632_Haus_in_8941",
                             CustomerId = 24,
                             Date = new DateTime(2020, 7, 16, 13, 45, 58, 0, DateTimeKind.Unspecified)
@@ -11626,6 +13216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1532,
+                            Billed = false,
                             Comment = "42716586_Haus_in_6486",
                             CustomerId = 17,
                             Date = new DateTime(2020, 7, 17, 6, 17, 47, 0, DateTimeKind.Unspecified)
@@ -11633,6 +13224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1533,
+                            Billed = false,
                             Comment = "28224553_Haus_in_5714",
                             CustomerId = 33,
                             Date = new DateTime(2020, 7, 17, 21, 57, 38, 0, DateTimeKind.Unspecified)
@@ -11640,6 +13232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1534,
+                            Billed = false,
                             Comment = "67617460_Haus_in_9503",
                             CustomerId = 12,
                             Date = new DateTime(2020, 7, 18, 4, 58, 53, 0, DateTimeKind.Unspecified)
@@ -11647,6 +13240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1535,
+                            Billed = false,
                             Comment = "97134726_Haus_in_2451",
                             CustomerId = 38,
                             Date = new DateTime(2020, 7, 19, 3, 9, 5, 0, DateTimeKind.Unspecified)
@@ -11654,6 +13248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1536,
+                            Billed = false,
                             Comment = "95660496_Haus_in_2121",
                             CustomerId = 23,
                             Date = new DateTime(2020, 7, 19, 10, 34, 58, 0, DateTimeKind.Unspecified)
@@ -11661,6 +13256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1537,
+                            Billed = false,
                             Comment = "47053724_Haus_in_9797",
                             CustomerId = 1,
                             Date = new DateTime(2020, 7, 19, 21, 53, 31, 0, DateTimeKind.Unspecified)
@@ -11668,6 +13264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1538,
+                            Billed = false,
                             Comment = "36405259_Haus_in_1578",
                             CustomerId = 36,
                             Date = new DateTime(2020, 7, 20, 11, 15, 39, 0, DateTimeKind.Unspecified)
@@ -11675,6 +13272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1539,
+                            Billed = false,
                             Comment = "99319966_Haus_in_3395",
                             CustomerId = 24,
                             Date = new DateTime(2020, 7, 21, 9, 33, 57, 0, DateTimeKind.Unspecified)
@@ -11682,6 +13280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1540,
+                            Billed = false,
                             Comment = "65385090_Haus_in_1717",
                             CustomerId = 15,
                             Date = new DateTime(2020, 7, 21, 22, 35, 10, 0, DateTimeKind.Unspecified)
@@ -11689,6 +13288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1541,
+                            Billed = false,
                             Comment = "32542334_Haus_in_9990",
                             CustomerId = 28,
                             Date = new DateTime(2020, 7, 22, 16, 15, 43, 0, DateTimeKind.Unspecified)
@@ -11696,6 +13296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1542,
+                            Billed = false,
                             Comment = "49307636_Haus_in_9798",
                             CustomerId = 31,
                             Date = new DateTime(2020, 7, 23, 11, 13, 25, 0, DateTimeKind.Unspecified)
@@ -11703,6 +13304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1543,
+                            Billed = false,
                             Comment = "83686347_Haus_in_3782",
                             CustomerId = 11,
                             Date = new DateTime(2020, 7, 24, 9, 16, 56, 0, DateTimeKind.Unspecified)
@@ -11710,6 +13312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1544,
+                            Billed = false,
                             Comment = "96967545_Haus_in_7079",
                             CustomerId = 6,
                             Date = new DateTime(2020, 7, 25, 4, 21, 43, 0, DateTimeKind.Unspecified)
@@ -11717,6 +13320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1545,
+                            Billed = false,
                             Comment = "8705845_Haus_in_9612",
                             CustomerId = 26,
                             Date = new DateTime(2020, 7, 26, 0, 51, 9, 0, DateTimeKind.Unspecified)
@@ -11724,6 +13328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1546,
+                            Billed = false,
                             Comment = "34275790_Haus_in_8161",
                             CustomerId = 20,
                             Date = new DateTime(2020, 7, 26, 22, 47, 47, 0, DateTimeKind.Unspecified)
@@ -11731,6 +13336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1547,
+                            Billed = false,
                             Comment = "16999192_Haus_in_4568",
                             CustomerId = 6,
                             Date = new DateTime(2020, 7, 27, 12, 31, 50, 0, DateTimeKind.Unspecified)
@@ -11738,6 +13344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1548,
+                            Billed = false,
                             Comment = "63539058_Haus_in_9571",
                             CustomerId = 14,
                             Date = new DateTime(2020, 7, 27, 23, 44, 37, 0, DateTimeKind.Unspecified)
@@ -11745,6 +13352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1549,
+                            Billed = false,
                             Comment = "54678164_Haus_in_6342",
                             CustomerId = 37,
                             Date = new DateTime(2020, 7, 28, 17, 56, 47, 0, DateTimeKind.Unspecified)
@@ -11752,6 +13360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1550,
+                            Billed = false,
                             Comment = "84414077_Haus_in_8583",
                             CustomerId = 36,
                             Date = new DateTime(2020, 7, 29, 4, 28, 29, 0, DateTimeKind.Unspecified)
@@ -11759,6 +13368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1551,
+                            Billed = false,
                             Comment = "86058541_Haus_in_5868",
                             CustomerId = 31,
                             Date = new DateTime(2020, 7, 29, 19, 33, 21, 0, DateTimeKind.Unspecified)
@@ -11766,6 +13376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1552,
+                            Billed = false,
                             Comment = "85040728_Haus_in_1852",
                             CustomerId = 30,
                             Date = new DateTime(2020, 7, 30, 7, 1, 2, 0, DateTimeKind.Unspecified)
@@ -11773,6 +13384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1553,
+                            Billed = false,
                             Comment = "80621061_Haus_in_7956",
                             CustomerId = 17,
                             Date = new DateTime(2020, 7, 30, 17, 41, 54, 0, DateTimeKind.Unspecified)
@@ -11780,6 +13392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1554,
+                            Billed = false,
                             Comment = "91646203_Haus_in_8951",
                             CustomerId = 20,
                             Date = new DateTime(2020, 7, 31, 14, 12, 44, 0, DateTimeKind.Unspecified)
@@ -11787,6 +13400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1555,
+                            Billed = false,
                             Comment = "23415433_Haus_in_8340",
                             CustomerId = 3,
                             Date = new DateTime(2020, 8, 1, 10, 10, 8, 0, DateTimeKind.Unspecified)
@@ -11794,6 +13408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1556,
+                            Billed = false,
                             Comment = "56734088_Haus_in_2033",
                             CustomerId = 9,
                             Date = new DateTime(2020, 8, 1, 17, 42, 1, 0, DateTimeKind.Unspecified)
@@ -11801,6 +13416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1557,
+                            Billed = false,
                             Comment = "555034_Haus_in_2653",
                             CustomerId = 11,
                             Date = new DateTime(2020, 8, 2, 8, 17, 21, 0, DateTimeKind.Unspecified)
@@ -11808,6 +13424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1558,
+                            Billed = false,
                             Comment = "66663543_Haus_in_8792",
                             CustomerId = 4,
                             Date = new DateTime(2020, 8, 2, 19, 15, 42, 0, DateTimeKind.Unspecified)
@@ -11815,6 +13432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1559,
+                            Billed = false,
                             Comment = "2687965_Haus_in_4085",
                             CustomerId = 38,
                             Date = new DateTime(2020, 8, 3, 13, 5, 24, 0, DateTimeKind.Unspecified)
@@ -11822,6 +13440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1560,
+                            Billed = false,
                             Comment = "95939170_Haus_in_8943",
                             CustomerId = 1,
                             Date = new DateTime(2020, 8, 4, 11, 10, 33, 0, DateTimeKind.Unspecified)
@@ -11829,6 +13448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1561,
+                            Billed = false,
                             Comment = "65366955_Haus_in_4024",
                             CustomerId = 36,
                             Date = new DateTime(2020, 8, 4, 19, 26, 47, 0, DateTimeKind.Unspecified)
@@ -11836,6 +13456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1562,
+                            Billed = false,
                             Comment = "91844663_Haus_in_3026",
                             CustomerId = 32,
                             Date = new DateTime(2020, 8, 5, 3, 29, 54, 0, DateTimeKind.Unspecified)
@@ -11843,6 +13464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1563,
+                            Billed = false,
                             Comment = "22994589_Haus_in_9390",
                             CustomerId = 28,
                             Date = new DateTime(2020, 8, 5, 17, 5, 24, 0, DateTimeKind.Unspecified)
@@ -11850,6 +13472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1564,
+                            Billed = false,
                             Comment = "36908102_Haus_in_4608",
                             CustomerId = 22,
                             Date = new DateTime(2020, 8, 6, 7, 47, 43, 0, DateTimeKind.Unspecified)
@@ -11857,6 +13480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1565,
+                            Billed = false,
                             Comment = "21806080_Haus_in_5432",
                             CustomerId = 23,
                             Date = new DateTime(2020, 8, 6, 14, 57, 12, 0, DateTimeKind.Unspecified)
@@ -11864,6 +13488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1566,
+                            Billed = false,
                             Comment = "14729273_Haus_in_7699",
                             CustomerId = 19,
                             Date = new DateTime(2020, 8, 7, 13, 26, 49, 0, DateTimeKind.Unspecified)
@@ -11871,6 +13496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1567,
+                            Billed = false,
                             Comment = "90576422_Haus_in_6673",
                             CustomerId = 2,
                             Date = new DateTime(2020, 8, 8, 11, 49, 9, 0, DateTimeKind.Unspecified)
@@ -11878,6 +13504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1568,
+                            Billed = false,
                             Comment = "50619879_Haus_in_4963",
                             CustomerId = 21,
                             Date = new DateTime(2020, 8, 9, 6, 43, 3, 0, DateTimeKind.Unspecified)
@@ -11885,6 +13512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1569,
+                            Billed = false,
                             Comment = "47817621_Haus_in_3296",
                             CustomerId = 9,
                             Date = new DateTime(2020, 8, 10, 3, 2, 53, 0, DateTimeKind.Unspecified)
@@ -11892,6 +13520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1570,
+                            Billed = false,
                             Comment = "79487951_Haus_in_5600",
                             CustomerId = 34,
                             Date = new DateTime(2020, 8, 10, 18, 37, 45, 0, DateTimeKind.Unspecified)
@@ -11899,6 +13528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1571,
+                            Billed = false,
                             Comment = "83752949_Haus_in_4874",
                             CustomerId = 26,
                             Date = new DateTime(2020, 8, 11, 15, 13, 33, 0, DateTimeKind.Unspecified)
@@ -11906,6 +13536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1572,
+                            Billed = false,
                             Comment = "72988357_Haus_in_8771",
                             CustomerId = 31,
                             Date = new DateTime(2020, 8, 12, 7, 10, 59, 0, DateTimeKind.Unspecified)
@@ -11913,6 +13544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1573,
+                            Billed = false,
                             Comment = "79775996_Haus_in_5264",
                             CustomerId = 28,
                             Date = new DateTime(2020, 8, 12, 23, 41, 46, 0, DateTimeKind.Unspecified)
@@ -11920,6 +13552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1574,
+                            Billed = false,
                             Comment = "74416169_Haus_in_9129",
                             CustomerId = 3,
                             Date = new DateTime(2020, 8, 13, 14, 16, 24, 0, DateTimeKind.Unspecified)
@@ -11927,6 +13560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1575,
+                            Billed = false,
                             Comment = "88923288_Haus_in_6174",
                             CustomerId = 16,
                             Date = new DateTime(2020, 8, 14, 6, 59, 25, 0, DateTimeKind.Unspecified)
@@ -11934,6 +13568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1576,
+                            Billed = false,
                             Comment = "19479544_Haus_in_3834",
                             CustomerId = 34,
                             Date = new DateTime(2020, 8, 15, 3, 6, 59, 0, DateTimeKind.Unspecified)
@@ -11941,6 +13576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1577,
+                            Billed = false,
                             Comment = "92336337_Haus_in_5845",
                             CustomerId = 20,
                             Date = new DateTime(2020, 8, 15, 22, 14, 3, 0, DateTimeKind.Unspecified)
@@ -11948,6 +13584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1578,
+                            Billed = false,
                             Comment = "61783315_Haus_in_9794",
                             CustomerId = 40,
                             Date = new DateTime(2020, 8, 16, 20, 18, 37, 0, DateTimeKind.Unspecified)
@@ -11955,6 +13592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1579,
+                            Billed = false,
                             Comment = "36291271_Haus_in_2995",
                             CustomerId = 18,
                             Date = new DateTime(2020, 8, 17, 10, 11, 23, 0, DateTimeKind.Unspecified)
@@ -11962,6 +13600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1580,
+                            Billed = false,
                             Comment = "99381966_Haus_in_2013",
                             CustomerId = 37,
                             Date = new DateTime(2020, 8, 18, 6, 57, 13, 0, DateTimeKind.Unspecified)
@@ -11969,6 +13608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1581,
+                            Billed = false,
                             Comment = "91672388_Haus_in_6605",
                             CustomerId = 36,
                             Date = new DateTime(2020, 8, 18, 19, 9, 18, 0, DateTimeKind.Unspecified)
@@ -11976,6 +13616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1582,
+                            Billed = false,
                             Comment = "88397056_Haus_in_7133",
                             CustomerId = 21,
                             Date = new DateTime(2020, 8, 19, 5, 54, 36, 0, DateTimeKind.Unspecified)
@@ -11983,6 +13624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1583,
+                            Billed = false,
                             Comment = "7511388_Haus_in_7122",
                             CustomerId = 5,
                             Date = new DateTime(2020, 8, 19, 18, 52, 15, 0, DateTimeKind.Unspecified)
@@ -11990,6 +13632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1584,
+                            Billed = false,
                             Comment = "94724854_Haus_in_1179",
                             CustomerId = 2,
                             Date = new DateTime(2020, 8, 20, 6, 30, 22, 0, DateTimeKind.Unspecified)
@@ -11997,6 +13640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1585,
+                            Billed = false,
                             Comment = "96325666_Haus_in_4889",
                             CustomerId = 15,
                             Date = new DateTime(2020, 8, 21, 1, 56, 6, 0, DateTimeKind.Unspecified)
@@ -12004,6 +13648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1586,
+                            Billed = false,
                             Comment = "9225544_Haus_in_7550",
                             CustomerId = 39,
                             Date = new DateTime(2020, 8, 21, 15, 48, 14, 0, DateTimeKind.Unspecified)
@@ -12011,6 +13656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1587,
+                            Billed = false,
                             Comment = "70052885_Haus_in_8608",
                             CustomerId = 39,
                             Date = new DateTime(2020, 8, 22, 4, 55, 23, 0, DateTimeKind.Unspecified)
@@ -12018,6 +13664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1588,
+                            Billed = false,
                             Comment = "2499471_Haus_in_4578",
                             CustomerId = 5,
                             Date = new DateTime(2020, 8, 22, 22, 51, 21, 0, DateTimeKind.Unspecified)
@@ -12025,6 +13672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1589,
+                            Billed = false,
                             Comment = "60456773_Haus_in_4203",
                             CustomerId = 8,
                             Date = new DateTime(2020, 8, 23, 14, 36, 2, 0, DateTimeKind.Unspecified)
@@ -12032,6 +13680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1590,
+                            Billed = false,
                             Comment = "8662366_Haus_in_5542",
                             CustomerId = 4,
                             Date = new DateTime(2020, 8, 24, 12, 58, 17, 0, DateTimeKind.Unspecified)
@@ -12039,6 +13688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1591,
+                            Billed = false,
                             Comment = "5031108_Haus_in_1125",
                             CustomerId = 36,
                             Date = new DateTime(2020, 8, 25, 9, 53, 5, 0, DateTimeKind.Unspecified)
@@ -12046,6 +13696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1592,
+                            Billed = false,
                             Comment = "66130639_Haus_in_9679",
                             CustomerId = 38,
                             Date = new DateTime(2020, 8, 26, 1, 19, 57, 0, DateTimeKind.Unspecified)
@@ -12053,6 +13704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1593,
+                            Billed = false,
                             Comment = "36946011_Haus_in_1203",
                             CustomerId = 11,
                             Date = new DateTime(2020, 8, 26, 15, 41, 52, 0, DateTimeKind.Unspecified)
@@ -12060,6 +13712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1594,
+                            Billed = false,
                             Comment = "80849549_Haus_in_2978",
                             CustomerId = 15,
                             Date = new DateTime(2020, 8, 26, 22, 22, 15, 0, DateTimeKind.Unspecified)
@@ -12067,6 +13720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1595,
+                            Billed = false,
                             Comment = "97919282_Haus_in_7559",
                             CustomerId = 32,
                             Date = new DateTime(2020, 8, 27, 16, 38, 32, 0, DateTimeKind.Unspecified)
@@ -12074,6 +13728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1596,
+                            Billed = false,
                             Comment = "9836323_Haus_in_7979",
                             CustomerId = 27,
                             Date = new DateTime(2020, 8, 28, 7, 0, 34, 0, DateTimeKind.Unspecified)
@@ -12081,6 +13736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1597,
+                            Billed = false,
                             Comment = "55083118_Haus_in_6306",
                             CustomerId = 40,
                             Date = new DateTime(2020, 8, 28, 13, 47, 26, 0, DateTimeKind.Unspecified)
@@ -12088,6 +13744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1598,
+                            Billed = false,
                             Comment = "65359314_Haus_in_3387",
                             CustomerId = 30,
                             Date = new DateTime(2020, 8, 29, 4, 23, 32, 0, DateTimeKind.Unspecified)
@@ -12095,6 +13752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1599,
+                            Billed = false,
                             Comment = "6664842_Haus_in_4655",
                             CustomerId = 10,
                             Date = new DateTime(2020, 8, 29, 17, 6, 30, 0, DateTimeKind.Unspecified)
@@ -12102,6 +13760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1600,
+                            Billed = false,
                             Comment = "15073787_Haus_in_8025",
                             CustomerId = 25,
                             Date = new DateTime(2020, 8, 30, 0, 36, 37, 0, DateTimeKind.Unspecified)
@@ -12109,6 +13768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1601,
+                            Billed = false,
                             Comment = "46197063_Haus_in_3683",
                             CustomerId = 7,
                             Date = new DateTime(2020, 8, 30, 19, 22, 4, 0, DateTimeKind.Unspecified)
@@ -12116,6 +13776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1602,
+                            Billed = false,
                             Comment = "24212557_Haus_in_6267",
                             CustomerId = 7,
                             Date = new DateTime(2020, 8, 31, 17, 13, 19, 0, DateTimeKind.Unspecified)
@@ -12123,6 +13784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1603,
+                            Billed = false,
                             Comment = "84899296_Haus_in_2806",
                             CustomerId = 33,
                             Date = new DateTime(2020, 9, 1, 1, 14, 27, 0, DateTimeKind.Unspecified)
@@ -12130,6 +13792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1604,
+                            Billed = false,
                             Comment = "37574136_Haus_in_3513",
                             CustomerId = 1,
                             Date = new DateTime(2020, 9, 1, 9, 16, 3, 0, DateTimeKind.Unspecified)
@@ -12137,6 +13800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1605,
+                            Billed = false,
                             Comment = "54731496_Haus_in_6331",
                             CustomerId = 26,
                             Date = new DateTime(2020, 9, 2, 3, 30, 21, 0, DateTimeKind.Unspecified)
@@ -12144,6 +13808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1606,
+                            Billed = false,
                             Comment = "27213014_Haus_in_8023",
                             CustomerId = 5,
                             Date = new DateTime(2020, 9, 2, 20, 56, 59, 0, DateTimeKind.Unspecified)
@@ -12151,6 +13816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1607,
+                            Billed = false,
                             Comment = "79084475_Haus_in_8050",
                             CustomerId = 33,
                             Date = new DateTime(2020, 9, 3, 5, 18, 9, 0, DateTimeKind.Unspecified)
@@ -12158,6 +13824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1608,
+                            Billed = false,
                             Comment = "11738628_Haus_in_1576",
                             CustomerId = 17,
                             Date = new DateTime(2020, 9, 3, 11, 32, 37, 0, DateTimeKind.Unspecified)
@@ -12165,6 +13832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1609,
+                            Billed = false,
                             Comment = "48277513_Haus_in_2448",
                             CustomerId = 38,
                             Date = new DateTime(2020, 9, 3, 21, 51, 16, 0, DateTimeKind.Unspecified)
@@ -12172,6 +13840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1610,
+                            Billed = false,
                             Comment = "42676138_Haus_in_3155",
                             CustomerId = 8,
                             Date = new DateTime(2020, 9, 4, 6, 32, 40, 0, DateTimeKind.Unspecified)
@@ -12179,6 +13848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1611,
+                            Billed = false,
                             Comment = "51905863_Haus_in_8313",
                             CustomerId = 27,
                             Date = new DateTime(2020, 9, 5, 4, 51, 59, 0, DateTimeKind.Unspecified)
@@ -12186,6 +13856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1612,
+                            Billed = false,
                             Comment = "68548642_Haus_in_5504",
                             CustomerId = 15,
                             Date = new DateTime(2020, 9, 6, 2, 53, 43, 0, DateTimeKind.Unspecified)
@@ -12193,6 +13864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1613,
+                            Billed = false,
                             Comment = "1583591_Haus_in_2405",
                             CustomerId = 34,
                             Date = new DateTime(2020, 9, 6, 9, 12, 56, 0, DateTimeKind.Unspecified)
@@ -12200,6 +13872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1614,
+                            Billed = false,
                             Comment = "36394621_Haus_in_3340",
                             CustomerId = 11,
                             Date = new DateTime(2020, 9, 7, 4, 32, 3, 0, DateTimeKind.Unspecified)
@@ -12207,6 +13880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1615,
+                            Billed = false,
                             Comment = "94947404_Haus_in_6175",
                             CustomerId = 20,
                             Date = new DateTime(2020, 9, 8, 2, 15, 59, 0, DateTimeKind.Unspecified)
@@ -12214,6 +13888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1616,
+                            Billed = false,
                             Comment = "81822153_Haus_in_5349",
                             CustomerId = 38,
                             Date = new DateTime(2020, 9, 8, 15, 11, 53, 0, DateTimeKind.Unspecified)
@@ -12221,6 +13896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1617,
+                            Billed = false,
                             Comment = "47562062_Haus_in_2018",
                             CustomerId = 27,
                             Date = new DateTime(2020, 9, 9, 4, 32, 35, 0, DateTimeKind.Unspecified)
@@ -12228,6 +13904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1618,
+                            Billed = false,
                             Comment = "89345683_Haus_in_2594",
                             CustomerId = 7,
                             Date = new DateTime(2020, 9, 9, 16, 26, 11, 0, DateTimeKind.Unspecified)
@@ -12235,6 +13912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1619,
+                            Billed = false,
                             Comment = "38743830_Haus_in_2137",
                             CustomerId = 11,
                             Date = new DateTime(2020, 9, 10, 13, 45, 51, 0, DateTimeKind.Unspecified)
@@ -12242,6 +13920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1620,
+                            Billed = false,
                             Comment = "73728294_Haus_in_8167",
                             CustomerId = 3,
                             Date = new DateTime(2020, 9, 10, 21, 29, 47, 0, DateTimeKind.Unspecified)
@@ -12249,6 +13928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1621,
+                            Billed = false,
                             Comment = "97891752_Haus_in_7803",
                             CustomerId = 7,
                             Date = new DateTime(2020, 9, 11, 17, 56, 51, 0, DateTimeKind.Unspecified)
@@ -12256,6 +13936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1622,
+                            Billed = false,
                             Comment = "38282281_Haus_in_7088",
                             CustomerId = 30,
                             Date = new DateTime(2020, 9, 12, 9, 4, 20, 0, DateTimeKind.Unspecified)
@@ -12263,6 +13944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1623,
+                            Billed = false,
                             Comment = "94247102_Haus_in_5211",
                             CustomerId = 1,
                             Date = new DateTime(2020, 9, 12, 22, 14, 9, 0, DateTimeKind.Unspecified)
@@ -12270,6 +13952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1624,
+                            Billed = false,
                             Comment = "54705772_Haus_in_6694",
                             CustomerId = 32,
                             Date = new DateTime(2020, 9, 13, 14, 58, 58, 0, DateTimeKind.Unspecified)
@@ -12277,6 +13960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1625,
+                            Billed = false,
                             Comment = "81029417_Haus_in_1882",
                             CustomerId = 33,
                             Date = new DateTime(2020, 9, 14, 12, 7, 30, 0, DateTimeKind.Unspecified)
@@ -12284,6 +13968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1626,
+                            Billed = false,
                             Comment = "79496764_Haus_in_1307",
                             CustomerId = 37,
                             Date = new DateTime(2020, 9, 15, 2, 31, 6, 0, DateTimeKind.Unspecified)
@@ -12291,6 +13976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1627,
+                            Billed = false,
                             Comment = "60119320_Haus_in_8080",
                             CustomerId = 35,
                             Date = new DateTime(2020, 9, 15, 8, 41, 0, 0, DateTimeKind.Unspecified)
@@ -12298,6 +13984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1628,
+                            Billed = false,
                             Comment = "81727096_Haus_in_3246",
                             CustomerId = 1,
                             Date = new DateTime(2020, 9, 16, 1, 54, 55, 0, DateTimeKind.Unspecified)
@@ -12305,6 +13992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1629,
+                            Billed = false,
                             Comment = "43502971_Haus_in_9814",
                             CustomerId = 20,
                             Date = new DateTime(2020, 9, 16, 12, 1, 41, 0, DateTimeKind.Unspecified)
@@ -12312,6 +14000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1630,
+                            Billed = false,
                             Comment = "28898619_Haus_in_8669",
                             CustomerId = 18,
                             Date = new DateTime(2020, 9, 17, 10, 7, 34, 0, DateTimeKind.Unspecified)
@@ -12319,6 +14008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1631,
+                            Billed = false,
                             Comment = "20586587_Haus_in_1131",
                             CustomerId = 17,
                             Date = new DateTime(2020, 9, 17, 19, 51, 52, 0, DateTimeKind.Unspecified)
@@ -12326,6 +14016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1632,
+                            Billed = false,
                             Comment = "97602530_Haus_in_8260",
                             CustomerId = 33,
                             Date = new DateTime(2020, 9, 18, 3, 23, 13, 0, DateTimeKind.Unspecified)
@@ -12333,6 +14024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1633,
+                            Billed = false,
                             Comment = "11268442_Haus_in_4118",
                             CustomerId = 2,
                             Date = new DateTime(2020, 9, 18, 19, 9, 23, 0, DateTimeKind.Unspecified)
@@ -12340,6 +14032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1634,
+                            Billed = false,
                             Comment = "53264590_Haus_in_7397",
                             CustomerId = 13,
                             Date = new DateTime(2020, 9, 19, 13, 0, 42, 0, DateTimeKind.Unspecified)
@@ -12347,6 +14040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1635,
+                            Billed = false,
                             Comment = "95492788_Haus_in_7469",
                             CustomerId = 26,
                             Date = new DateTime(2020, 9, 20, 0, 4, 37, 0, DateTimeKind.Unspecified)
@@ -12354,6 +14048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1636,
+                            Billed = false,
                             Comment = "65017522_Haus_in_8640",
                             CustomerId = 3,
                             Date = new DateTime(2020, 9, 20, 7, 40, 27, 0, DateTimeKind.Unspecified)
@@ -12361,6 +14056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1637,
+                            Billed = false,
                             Comment = "94733820_Haus_in_3776",
                             CustomerId = 38,
                             Date = new DateTime(2020, 9, 20, 21, 56, 28, 0, DateTimeKind.Unspecified)
@@ -12368,6 +14064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1638,
+                            Billed = false,
                             Comment = "95103824_Haus_in_6916",
                             CustomerId = 40,
                             Date = new DateTime(2020, 9, 21, 19, 24, 36, 0, DateTimeKind.Unspecified)
@@ -12375,6 +14072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1639,
+                            Billed = false,
                             Comment = "74773424_Haus_in_4839",
                             CustomerId = 23,
                             Date = new DateTime(2020, 9, 22, 15, 19, 33, 0, DateTimeKind.Unspecified)
@@ -12382,6 +14080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1640,
+                            Billed = false,
                             Comment = "11299235_Haus_in_2602",
                             CustomerId = 24,
                             Date = new DateTime(2020, 9, 23, 7, 12, 46, 0, DateTimeKind.Unspecified)
@@ -12389,6 +14088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1641,
+                            Billed = false,
                             Comment = "69773805_Haus_in_4462",
                             CustomerId = 26,
                             Date = new DateTime(2020, 9, 23, 13, 39, 19, 0, DateTimeKind.Unspecified)
@@ -12396,6 +14096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1642,
+                            Billed = false,
                             Comment = "56234965_Haus_in_8701",
                             CustomerId = 13,
                             Date = new DateTime(2020, 9, 24, 12, 6, 27, 0, DateTimeKind.Unspecified)
@@ -12403,6 +14104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1643,
+                            Billed = false,
                             Comment = "41667491_Haus_in_1699",
                             CustomerId = 1,
                             Date = new DateTime(2020, 9, 24, 23, 51, 21, 0, DateTimeKind.Unspecified)
@@ -12410,6 +14112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1644,
+                            Billed = false,
                             Comment = "80416699_Haus_in_1467",
                             CustomerId = 12,
                             Date = new DateTime(2020, 9, 25, 15, 10, 27, 0, DateTimeKind.Unspecified)
@@ -12417,6 +14120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1645,
+                            Billed = false,
                             Comment = "53424840_Haus_in_7750",
                             CustomerId = 18,
                             Date = new DateTime(2020, 9, 26, 9, 43, 17, 0, DateTimeKind.Unspecified)
@@ -12424,6 +14128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1646,
+                            Billed = false,
                             Comment = "87943821_Haus_in_5620",
                             CustomerId = 34,
                             Date = new DateTime(2020, 9, 27, 2, 35, 26, 0, DateTimeKind.Unspecified)
@@ -12431,6 +14136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1647,
+                            Billed = false,
                             Comment = "2956145_Haus_in_5435",
                             CustomerId = 30,
                             Date = new DateTime(2020, 9, 27, 20, 51, 11, 0, DateTimeKind.Unspecified)
@@ -12438,6 +14144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1648,
+                            Billed = false,
                             Comment = "23253418_Haus_in_9947",
                             CustomerId = 5,
                             Date = new DateTime(2020, 9, 28, 11, 21, 32, 0, DateTimeKind.Unspecified)
@@ -12445,6 +14152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1649,
+                            Billed = false,
                             Comment = "1156373_Haus_in_8217",
                             CustomerId = 7,
                             Date = new DateTime(2020, 9, 29, 1, 53, 1, 0, DateTimeKind.Unspecified)
@@ -12452,6 +14160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1650,
+                            Billed = false,
                             Comment = "88818962_Haus_in_2443",
                             CustomerId = 21,
                             Date = new DateTime(2020, 9, 29, 9, 38, 38, 0, DateTimeKind.Unspecified)
@@ -12459,6 +14168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1651,
+                            Billed = false,
                             Comment = "68381897_Haus_in_7055",
                             CustomerId = 16,
                             Date = new DateTime(2020, 9, 30, 0, 10, 32, 0, DateTimeKind.Unspecified)
@@ -12466,6 +14176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1652,
+                            Billed = false,
                             Comment = "27406674_Haus_in_2578",
                             CustomerId = 17,
                             Date = new DateTime(2020, 9, 30, 18, 41, 23, 0, DateTimeKind.Unspecified)
@@ -12473,6 +14184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1653,
+                            Billed = false,
                             Comment = "77069597_Haus_in_3699",
                             CustomerId = 25,
                             Date = new DateTime(2020, 10, 1, 6, 30, 40, 0, DateTimeKind.Unspecified)
@@ -12480,6 +14192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1654,
+                            Billed = false,
                             Comment = "93222247_Haus_in_1169",
                             CustomerId = 35,
                             Date = new DateTime(2020, 10, 2, 0, 7, 59, 0, DateTimeKind.Unspecified)
@@ -12487,6 +14200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1655,
+                            Billed = false,
                             Comment = "75418628_Haus_in_2132",
                             CustomerId = 14,
                             Date = new DateTime(2020, 10, 2, 10, 36, 51, 0, DateTimeKind.Unspecified)
@@ -12494,6 +14208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1656,
+                            Billed = false,
                             Comment = "22423515_Haus_in_5590",
                             CustomerId = 25,
                             Date = new DateTime(2020, 10, 3, 6, 50, 13, 0, DateTimeKind.Unspecified)
@@ -12501,6 +14216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1657,
+                            Billed = false,
                             Comment = "40479135_Haus_in_7616",
                             CustomerId = 28,
                             Date = new DateTime(2020, 10, 3, 21, 59, 2, 0, DateTimeKind.Unspecified)
@@ -12508,6 +14224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1658,
+                            Billed = false,
                             Comment = "85760577_Haus_in_2720",
                             CustomerId = 13,
                             Date = new DateTime(2020, 10, 4, 6, 4, 17, 0, DateTimeKind.Unspecified)
@@ -12515,6 +14232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1659,
+                            Billed = false,
                             Comment = "83459731_Haus_in_3356",
                             CustomerId = 14,
                             Date = new DateTime(2020, 10, 4, 20, 33, 15, 0, DateTimeKind.Unspecified)
@@ -12522,6 +14240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1660,
+                            Billed = false,
                             Comment = "12413502_Haus_in_3004",
                             CustomerId = 37,
                             Date = new DateTime(2020, 10, 5, 17, 12, 50, 0, DateTimeKind.Unspecified)
@@ -12529,6 +14248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1661,
+                            Billed = false,
                             Comment = "54324803_Haus_in_1633",
                             CustomerId = 31,
                             Date = new DateTime(2020, 10, 6, 12, 35, 34, 0, DateTimeKind.Unspecified)
@@ -12536,6 +14256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1662,
+                            Billed = false,
                             Comment = "4420582_Haus_in_6742",
                             CustomerId = 32,
                             Date = new DateTime(2020, 10, 7, 8, 16, 10, 0, DateTimeKind.Unspecified)
@@ -12543,6 +14264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1663,
+                            Billed = false,
                             Comment = "73712090_Haus_in_8660",
                             CustomerId = 24,
                             Date = new DateTime(2020, 10, 7, 21, 17, 24, 0, DateTimeKind.Unspecified)
@@ -12550,6 +14272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1664,
+                            Billed = false,
                             Comment = "83034925_Haus_in_3543",
                             CustomerId = 29,
                             Date = new DateTime(2020, 10, 8, 16, 13, 0, 0, DateTimeKind.Unspecified)
@@ -12557,6 +14280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1665,
+                            Billed = false,
                             Comment = "78415452_Haus_in_6048",
                             CustomerId = 5,
                             Date = new DateTime(2020, 10, 9, 0, 44, 23, 0, DateTimeKind.Unspecified)
@@ -12564,6 +14288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1666,
+                            Billed = false,
                             Comment = "89676437_Haus_in_1489",
                             CustomerId = 25,
                             Date = new DateTime(2020, 10, 9, 22, 21, 24, 0, DateTimeKind.Unspecified)
@@ -12571,6 +14296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1667,
+                            Billed = false,
                             Comment = "51962793_Haus_in_2699",
                             CustomerId = 8,
                             Date = new DateTime(2020, 10, 10, 20, 42, 56, 0, DateTimeKind.Unspecified)
@@ -12578,6 +14304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1668,
+                            Billed = false,
                             Comment = "88239191_Haus_in_8492",
                             CustomerId = 15,
                             Date = new DateTime(2020, 10, 11, 12, 26, 22, 0, DateTimeKind.Unspecified)
@@ -12585,6 +14312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1669,
+                            Billed = false,
                             Comment = "17089910_Haus_in_2754",
                             CustomerId = 30,
                             Date = new DateTime(2020, 10, 11, 18, 42, 17, 0, DateTimeKind.Unspecified)
@@ -12592,6 +14320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1670,
+                            Billed = false,
                             Comment = "63812047_Haus_in_1255",
                             CustomerId = 19,
                             Date = new DateTime(2020, 10, 12, 10, 47, 48, 0, DateTimeKind.Unspecified)
@@ -12599,6 +14328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1671,
+                            Billed = false,
                             Comment = "86905956_Haus_in_4768",
                             CustomerId = 3,
                             Date = new DateTime(2020, 10, 13, 4, 29, 40, 0, DateTimeKind.Unspecified)
@@ -12606,6 +14336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1672,
+                            Billed = false,
                             Comment = "59787353_Haus_in_4455",
                             CustomerId = 8,
                             Date = new DateTime(2020, 10, 13, 21, 19, 47, 0, DateTimeKind.Unspecified)
@@ -12613,6 +14344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1673,
+                            Billed = false,
                             Comment = "12606327_Haus_in_1949",
                             CustomerId = 18,
                             Date = new DateTime(2020, 10, 14, 8, 53, 12, 0, DateTimeKind.Unspecified)
@@ -12620,6 +14352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1674,
+                            Billed = false,
                             Comment = "8898688_Haus_in_5847",
                             CustomerId = 23,
                             Date = new DateTime(2020, 10, 15, 5, 38, 50, 0, DateTimeKind.Unspecified)
@@ -12627,6 +14360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1675,
+                            Billed = false,
                             Comment = "1611087_Haus_in_8317",
                             CustomerId = 34,
                             Date = new DateTime(2020, 10, 15, 21, 49, 17, 0, DateTimeKind.Unspecified)
@@ -12634,6 +14368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1676,
+                            Billed = false,
                             Comment = "51661017_Haus_in_8474",
                             CustomerId = 21,
                             Date = new DateTime(2020, 10, 16, 12, 19, 59, 0, DateTimeKind.Unspecified)
@@ -12641,6 +14376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1677,
+                            Billed = false,
                             Comment = "73958292_Haus_in_1432",
                             CustomerId = 1,
                             Date = new DateTime(2020, 10, 16, 22, 51, 50, 0, DateTimeKind.Unspecified)
@@ -12648,6 +14384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1678,
+                            Billed = false,
                             Comment = "43397352_Haus_in_6556",
                             CustomerId = 23,
                             Date = new DateTime(2020, 10, 17, 17, 41, 28, 0, DateTimeKind.Unspecified)
@@ -12655,6 +14392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1679,
+                            Billed = false,
                             Comment = "63546369_Haus_in_8907",
                             CustomerId = 18,
                             Date = new DateTime(2020, 10, 18, 12, 52, 24, 0, DateTimeKind.Unspecified)
@@ -12662,6 +14400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1680,
+                            Billed = false,
                             Comment = "42688553_Haus_in_7350",
                             CustomerId = 15,
                             Date = new DateTime(2020, 10, 19, 1, 0, 59, 0, DateTimeKind.Unspecified)
@@ -12669,6 +14408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1681,
+                            Billed = false,
                             Comment = "67743884_Haus_in_1866",
                             CustomerId = 12,
                             Date = new DateTime(2020, 10, 19, 23, 47, 48, 0, DateTimeKind.Unspecified)
@@ -12676,6 +14416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1682,
+                            Billed = false,
                             Comment = "15032503_Haus_in_6459",
                             CustomerId = 24,
                             Date = new DateTime(2020, 10, 20, 17, 33, 51, 0, DateTimeKind.Unspecified)
@@ -12683,6 +14424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1683,
+                            Billed = false,
                             Comment = "82697088_Haus_in_3380",
                             CustomerId = 25,
                             Date = new DateTime(2020, 10, 21, 3, 21, 53, 0, DateTimeKind.Unspecified)
@@ -12690,6 +14432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1684,
+                            Billed = false,
                             Comment = "6293973_Haus_in_8668",
                             CustomerId = 34,
                             Date = new DateTime(2020, 10, 21, 23, 26, 36, 0, DateTimeKind.Unspecified)
@@ -12697,6 +14440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1685,
+                            Billed = false,
                             Comment = "15171479_Haus_in_4562",
                             CustomerId = 34,
                             Date = new DateTime(2020, 10, 22, 19, 32, 27, 0, DateTimeKind.Unspecified)
@@ -12704,6 +14448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1686,
+                            Billed = false,
                             Comment = "7517423_Haus_in_9528",
                             CustomerId = 7,
                             Date = new DateTime(2020, 10, 23, 5, 26, 33, 0, DateTimeKind.Unspecified)
@@ -12711,6 +14456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1687,
+                            Billed = false,
                             Comment = "90180814_Haus_in_6864",
                             CustomerId = 23,
                             Date = new DateTime(2020, 10, 23, 14, 51, 43, 0, DateTimeKind.Unspecified)
@@ -12718,6 +14464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1688,
+                            Billed = false,
                             Comment = "21006564_Haus_in_8425",
                             CustomerId = 15,
                             Date = new DateTime(2020, 10, 24, 6, 2, 44, 0, DateTimeKind.Unspecified)
@@ -12725,6 +14472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1689,
+                            Billed = false,
                             Comment = "48228482_Haus_in_4295",
                             CustomerId = 14,
                             Date = new DateTime(2020, 10, 25, 2, 48, 2, 0, DateTimeKind.Unspecified)
@@ -12732,6 +14480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1690,
+                            Billed = false,
                             Comment = "44584429_Haus_in_6479",
                             CustomerId = 40,
                             Date = new DateTime(2020, 10, 26, 0, 54, 45, 0, DateTimeKind.Unspecified)
@@ -12739,6 +14488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1691,
+                            Billed = false,
                             Comment = "36496437_Haus_in_3136",
                             CustomerId = 27,
                             Date = new DateTime(2020, 10, 26, 10, 42, 22, 0, DateTimeKind.Unspecified)
@@ -12746,6 +14496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1692,
+                            Billed = false,
                             Comment = "40244837_Haus_in_4669",
                             CustomerId = 3,
                             Date = new DateTime(2020, 10, 27, 0, 47, 5, 0, DateTimeKind.Unspecified)
@@ -12753,6 +14504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1693,
+                            Billed = false,
                             Comment = "27794760_Haus_in_9009",
                             CustomerId = 4,
                             Date = new DateTime(2020, 10, 27, 8, 6, 15, 0, DateTimeKind.Unspecified)
@@ -12760,6 +14512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1694,
+                            Billed = false,
                             Comment = "98981707_Haus_in_4562",
                             CustomerId = 3,
                             Date = new DateTime(2020, 10, 28, 4, 36, 6, 0, DateTimeKind.Unspecified)
@@ -12767,6 +14520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1695,
+                            Billed = false,
                             Comment = "19597845_Haus_in_9770",
                             CustomerId = 30,
                             Date = new DateTime(2020, 10, 28, 12, 27, 32, 0, DateTimeKind.Unspecified)
@@ -12774,6 +14528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1696,
+                            Billed = false,
                             Comment = "36098660_Haus_in_1945",
                             CustomerId = 23,
                             Date = new DateTime(2020, 10, 28, 21, 42, 29, 0, DateTimeKind.Unspecified)
@@ -12781,6 +14536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1697,
+                            Billed = false,
                             Comment = "85387002_Haus_in_2421",
                             CustomerId = 32,
                             Date = new DateTime(2020, 10, 29, 4, 37, 16, 0, DateTimeKind.Unspecified)
@@ -12788,6 +14544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1698,
+                            Billed = false,
                             Comment = "24788738_Haus_in_2631",
                             CustomerId = 37,
                             Date = new DateTime(2020, 10, 29, 12, 23, 37, 0, DateTimeKind.Unspecified)
@@ -12795,6 +14552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1699,
+                            Billed = false,
                             Comment = "14505754_Haus_in_9583",
                             CustomerId = 34,
                             Date = new DateTime(2020, 10, 29, 22, 16, 25, 0, DateTimeKind.Unspecified)
@@ -12802,6 +14560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1700,
+                            Billed = false,
                             Comment = "56602843_Haus_in_5426",
                             CustomerId = 10,
                             Date = new DateTime(2020, 10, 30, 16, 26, 13, 0, DateTimeKind.Unspecified)
@@ -12809,6 +14568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1701,
+                            Billed = false,
                             Comment = "85697255_Haus_in_2677",
                             CustomerId = 31,
                             Date = new DateTime(2020, 10, 31, 12, 12, 4, 0, DateTimeKind.Unspecified)
@@ -12816,6 +14576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1702,
+                            Billed = false,
                             Comment = "7341984_Haus_in_4309",
                             CustomerId = 3,
                             Date = new DateTime(2020, 11, 1, 1, 45, 0, 0, DateTimeKind.Unspecified)
@@ -12823,6 +14584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1703,
+                            Billed = false,
                             Comment = "96878517_Haus_in_2962",
                             CustomerId = 29,
                             Date = new DateTime(2020, 11, 1, 8, 48, 38, 0, DateTimeKind.Unspecified)
@@ -12830,6 +14592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1704,
+                            Billed = false,
                             Comment = "54772651_Haus_in_3889",
                             CustomerId = 11,
                             Date = new DateTime(2020, 11, 1, 15, 0, 15, 0, DateTimeKind.Unspecified)
@@ -12837,6 +14600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1705,
+                            Billed = false,
                             Comment = "81159491_Haus_in_2958",
                             CustomerId = 2,
                             Date = new DateTime(2020, 11, 1, 23, 22, 20, 0, DateTimeKind.Unspecified)
@@ -12844,6 +14608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1706,
+                            Billed = false,
                             Comment = "99973845_Haus_in_1898",
                             CustomerId = 13,
                             Date = new DateTime(2020, 11, 2, 10, 7, 41, 0, DateTimeKind.Unspecified)
@@ -12851,6 +14616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1707,
+                            Billed = false,
                             Comment = "48132398_Haus_in_7340",
                             CustomerId = 8,
                             Date = new DateTime(2020, 11, 2, 20, 27, 35, 0, DateTimeKind.Unspecified)
@@ -12858,6 +14624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1708,
+                            Billed = false,
                             Comment = "76162064_Haus_in_1978",
                             CustomerId = 19,
                             Date = new DateTime(2020, 11, 3, 5, 35, 22, 0, DateTimeKind.Unspecified)
@@ -12865,6 +14632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1709,
+                            Billed = false,
                             Comment = "21935768_Haus_in_4485",
                             CustomerId = 25,
                             Date = new DateTime(2020, 11, 3, 16, 37, 33, 0, DateTimeKind.Unspecified)
@@ -12872,6 +14640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1710,
+                            Billed = false,
                             Comment = "61160417_Haus_in_5382",
                             CustomerId = 23,
                             Date = new DateTime(2020, 11, 4, 13, 8, 46, 0, DateTimeKind.Unspecified)
@@ -12879,6 +14648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1711,
+                            Billed = false,
                             Comment = "79716781_Haus_in_3844",
                             CustomerId = 30,
                             Date = new DateTime(2020, 11, 4, 20, 32, 29, 0, DateTimeKind.Unspecified)
@@ -12886,6 +14656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1712,
+                            Billed = false,
                             Comment = "43537571_Haus_in_6853",
                             CustomerId = 23,
                             Date = new DateTime(2020, 11, 5, 3, 16, 32, 0, DateTimeKind.Unspecified)
@@ -12893,6 +14664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1713,
+                            Billed = false,
                             Comment = "4817246_Haus_in_4925",
                             CustomerId = 38,
                             Date = new DateTime(2020, 11, 5, 14, 6, 13, 0, DateTimeKind.Unspecified)
@@ -12900,6 +14672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1714,
+                            Billed = false,
                             Comment = "71302482_Haus_in_8105",
                             CustomerId = 40,
                             Date = new DateTime(2020, 11, 6, 4, 46, 49, 0, DateTimeKind.Unspecified)
@@ -12907,6 +14680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1715,
+                            Billed = false,
                             Comment = "46965638_Haus_in_5385",
                             CustomerId = 39,
                             Date = new DateTime(2020, 11, 6, 11, 26, 21, 0, DateTimeKind.Unspecified)
@@ -12914,6 +14688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1716,
+                            Billed = false,
                             Comment = "8971890_Haus_in_1904",
                             CustomerId = 18,
                             Date = new DateTime(2020, 11, 7, 8, 10, 3, 0, DateTimeKind.Unspecified)
@@ -12921,6 +14696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1717,
+                            Billed = false,
                             Comment = "45529226_Haus_in_1163",
                             CustomerId = 21,
                             Date = new DateTime(2020, 11, 8, 6, 38, 22, 0, DateTimeKind.Unspecified)
@@ -12928,6 +14704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1718,
+                            Billed = false,
                             Comment = "32594309_Haus_in_4458",
                             CustomerId = 22,
                             Date = new DateTime(2020, 11, 8, 13, 23, 57, 0, DateTimeKind.Unspecified)
@@ -12935,6 +14712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1719,
+                            Billed = false,
                             Comment = "5144366_Haus_in_9315",
                             CustomerId = 32,
                             Date = new DateTime(2020, 11, 9, 7, 18, 25, 0, DateTimeKind.Unspecified)
@@ -12942,6 +14720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1720,
+                            Billed = false,
                             Comment = "71881634_Haus_in_2276",
                             CustomerId = 38,
                             Date = new DateTime(2020, 11, 10, 3, 26, 5, 0, DateTimeKind.Unspecified)
@@ -12949,6 +14728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1721,
+                            Billed = false,
                             Comment = "67908311_Haus_in_7409",
                             CustomerId = 23,
                             Date = new DateTime(2020, 11, 10, 21, 29, 22, 0, DateTimeKind.Unspecified)
@@ -12956,6 +14736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1722,
+                            Billed = false,
                             Comment = "96518176_Haus_in_6172",
                             CustomerId = 25,
                             Date = new DateTime(2020, 11, 11, 19, 19, 6, 0, DateTimeKind.Unspecified)
@@ -12963,6 +14744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1723,
+                            Billed = false,
                             Comment = "93359399_Haus_in_9541",
                             CustomerId = 25,
                             Date = new DateTime(2020, 11, 12, 2, 20, 20, 0, DateTimeKind.Unspecified)
@@ -12970,6 +14752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1724,
+                            Billed = false,
                             Comment = "29787389_Haus_in_5965",
                             CustomerId = 7,
                             Date = new DateTime(2020, 11, 12, 11, 49, 40, 0, DateTimeKind.Unspecified)
@@ -12977,6 +14760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1725,
+                            Billed = false,
                             Comment = "57814977_Haus_in_9804",
                             CustomerId = 32,
                             Date = new DateTime(2020, 11, 12, 17, 55, 20, 0, DateTimeKind.Unspecified)
@@ -12984,6 +14768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1726,
+                            Billed = false,
                             Comment = "74137827_Haus_in_4842",
                             CustomerId = 8,
                             Date = new DateTime(2020, 11, 13, 5, 57, 5, 0, DateTimeKind.Unspecified)
@@ -12991,6 +14776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1727,
+                            Billed = false,
                             Comment = "60313806_Haus_in_5429",
                             CustomerId = 36,
                             Date = new DateTime(2020, 11, 14, 0, 26, 10, 0, DateTimeKind.Unspecified)
@@ -12998,6 +14784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1728,
+                            Billed = false,
                             Comment = "68076371_Haus_in_1564",
                             CustomerId = 37,
                             Date = new DateTime(2020, 11, 14, 16, 31, 6, 0, DateTimeKind.Unspecified)
@@ -13005,6 +14792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1729,
+                            Billed = false,
                             Comment = "75067897_Haus_in_3185",
                             CustomerId = 30,
                             Date = new DateTime(2020, 11, 15, 9, 46, 17, 0, DateTimeKind.Unspecified)
@@ -13012,6 +14800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1730,
+                            Billed = false,
                             Comment = "55656123_Haus_in_6412",
                             CustomerId = 30,
                             Date = new DateTime(2020, 11, 16, 5, 22, 0, 0, DateTimeKind.Unspecified)
@@ -13019,6 +14808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1731,
+                            Billed = false,
                             Comment = "20570008_Haus_in_9537",
                             CustomerId = 31,
                             Date = new DateTime(2020, 11, 16, 11, 31, 16, 0, DateTimeKind.Unspecified)
@@ -13026,6 +14816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1732,
+                            Billed = false,
                             Comment = "88917718_Haus_in_5113",
                             CustomerId = 33,
                             Date = new DateTime(2020, 11, 17, 7, 25, 32, 0, DateTimeKind.Unspecified)
@@ -13033,6 +14824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1733,
+                            Billed = false,
                             Comment = "54642165_Haus_in_3235",
                             CustomerId = 35,
                             Date = new DateTime(2020, 11, 18, 3, 45, 24, 0, DateTimeKind.Unspecified)
@@ -13040,6 +14832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1734,
+                            Billed = false,
                             Comment = "9810130_Haus_in_3965",
                             CustomerId = 25,
                             Date = new DateTime(2020, 11, 18, 18, 52, 48, 0, DateTimeKind.Unspecified)
@@ -13047,6 +14840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1735,
+                            Billed = false,
                             Comment = "39937993_Haus_in_2446",
                             CustomerId = 22,
                             Date = new DateTime(2020, 11, 19, 14, 33, 4, 0, DateTimeKind.Unspecified)
@@ -13054,6 +14848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1736,
+                            Billed = false,
                             Comment = "84728242_Haus_in_5163",
                             CustomerId = 20,
                             Date = new DateTime(2020, 11, 20, 8, 30, 58, 0, DateTimeKind.Unspecified)
@@ -13061,6 +14856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1737,
+                            Billed = false,
                             Comment = "9164435_Haus_in_7895",
                             CustomerId = 1,
                             Date = new DateTime(2020, 11, 20, 18, 21, 48, 0, DateTimeKind.Unspecified)
@@ -13068,6 +14864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1738,
+                            Billed = false,
                             Comment = "86745076_Haus_in_4964",
                             CustomerId = 30,
                             Date = new DateTime(2020, 11, 21, 14, 13, 10, 0, DateTimeKind.Unspecified)
@@ -13075,6 +14872,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1739,
+                            Billed = false,
                             Comment = "15214527_Haus_in_5089",
                             CustomerId = 20,
                             Date = new DateTime(2020, 11, 22, 2, 8, 13, 0, DateTimeKind.Unspecified)
@@ -13082,6 +14880,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1740,
+                            Billed = false,
                             Comment = "97474683_Haus_in_5785",
                             CustomerId = 38,
                             Date = new DateTime(2020, 11, 22, 11, 32, 16, 0, DateTimeKind.Unspecified)
@@ -13089,6 +14888,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1741,
+                            Billed = false,
                             Comment = "13125798_Haus_in_9193",
                             CustomerId = 5,
                             Date = new DateTime(2020, 11, 23, 4, 49, 47, 0, DateTimeKind.Unspecified)
@@ -13096,6 +14896,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1742,
+                            Billed = false,
                             Comment = "63025132_Haus_in_7312",
                             CustomerId = 18,
                             Date = new DateTime(2020, 11, 23, 19, 12, 15, 0, DateTimeKind.Unspecified)
@@ -13103,6 +14904,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1743,
+                            Billed = false,
                             Comment = "83228022_Haus_in_3079",
                             CustomerId = 26,
                             Date = new DateTime(2020, 11, 24, 7, 46, 17, 0, DateTimeKind.Unspecified)
@@ -13110,6 +14912,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1744,
+                            Billed = false,
                             Comment = "17545767_Haus_in_5222",
                             CustomerId = 34,
                             Date = new DateTime(2020, 11, 25, 5, 52, 5, 0, DateTimeKind.Unspecified)
@@ -13117,6 +14920,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1745,
+                            Billed = false,
                             Comment = "29444197_Haus_in_5005",
                             CustomerId = 20,
                             Date = new DateTime(2020, 11, 25, 13, 3, 54, 0, DateTimeKind.Unspecified)
@@ -13124,6 +14928,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1746,
+                            Billed = false,
                             Comment = "32859595_Haus_in_8294",
                             CustomerId = 14,
                             Date = new DateTime(2020, 11, 26, 1, 21, 45, 0, DateTimeKind.Unspecified)
@@ -13131,6 +14936,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1747,
+                            Billed = false,
                             Comment = "20418774_Haus_in_5495",
                             CustomerId = 19,
                             Date = new DateTime(2020, 11, 26, 12, 2, 29, 0, DateTimeKind.Unspecified)
@@ -13138,6 +14944,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1748,
+                            Billed = false,
                             Comment = "11283255_Haus_in_6215",
                             CustomerId = 14,
                             Date = new DateTime(2020, 11, 27, 10, 56, 47, 0, DateTimeKind.Unspecified)
@@ -13145,6 +14952,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1749,
+                            Billed = false,
                             Comment = "98718521_Haus_in_9129",
                             CustomerId = 34,
                             Date = new DateTime(2020, 11, 28, 0, 30, 21, 0, DateTimeKind.Unspecified)
@@ -13152,6 +14960,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1750,
+                            Billed = false,
                             Comment = "340450_Haus_in_9532",
                             CustomerId = 3,
                             Date = new DateTime(2020, 11, 28, 19, 20, 28, 0, DateTimeKind.Unspecified)
@@ -13159,6 +14968,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1751,
+                            Billed = false,
                             Comment = "1956473_Haus_in_4193",
                             CustomerId = 2,
                             Date = new DateTime(2020, 11, 29, 2, 23, 33, 0, DateTimeKind.Unspecified)
@@ -13166,6 +14976,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1752,
+                            Billed = false,
                             Comment = "39346423_Haus_in_2435",
                             CustomerId = 9,
                             Date = new DateTime(2020, 11, 29, 22, 27, 48, 0, DateTimeKind.Unspecified)
@@ -13173,6 +14984,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1753,
+                            Billed = false,
                             Comment = "86925846_Haus_in_3338",
                             CustomerId = 13,
                             Date = new DateTime(2020, 11, 30, 12, 57, 39, 0, DateTimeKind.Unspecified)
@@ -13180,6 +14992,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1754,
+                            Billed = false,
                             Comment = "4910920_Haus_in_7673",
                             CustomerId = 11,
                             Date = new DateTime(2020, 11, 30, 21, 41, 44, 0, DateTimeKind.Unspecified)
@@ -13187,6 +15000,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1755,
+                            Billed = false,
                             Comment = "61361243_Haus_in_5375",
                             CustomerId = 39,
                             Date = new DateTime(2020, 12, 1, 18, 16, 2, 0, DateTimeKind.Unspecified)
@@ -13194,6 +15008,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1756,
+                            Billed = false,
                             Comment = "37676646_Haus_in_2531",
                             CustomerId = 32,
                             Date = new DateTime(2020, 12, 2, 11, 27, 42, 0, DateTimeKind.Unspecified)
@@ -13201,6 +15016,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1757,
+                            Billed = false,
                             Comment = "52310803_Haus_in_1591",
                             CustomerId = 39,
                             Date = new DateTime(2020, 12, 3, 1, 23, 35, 0, DateTimeKind.Unspecified)
@@ -13208,6 +15024,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1758,
+                            Billed = false,
                             Comment = "35174062_Haus_in_5484",
                             CustomerId = 18,
                             Date = new DateTime(2020, 12, 3, 12, 36, 45, 0, DateTimeKind.Unspecified)
@@ -13215,6 +15032,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1759,
+                            Billed = false,
                             Comment = "89945358_Haus_in_3286",
                             CustomerId = 35,
                             Date = new DateTime(2020, 12, 3, 19, 0, 42, 0, DateTimeKind.Unspecified)
@@ -13222,6 +15040,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1760,
+                            Billed = false,
                             Comment = "17027652_Haus_in_5024",
                             CustomerId = 14,
                             Date = new DateTime(2020, 12, 4, 15, 50, 40, 0, DateTimeKind.Unspecified)
@@ -13229,6 +15048,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1761,
+                            Billed = false,
                             Comment = "50886166_Haus_in_2921",
                             CustomerId = 31,
                             Date = new DateTime(2020, 12, 4, 22, 41, 6, 0, DateTimeKind.Unspecified)
@@ -13236,6 +15056,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1762,
+                            Billed = false,
                             Comment = "90536878_Haus_in_9440",
                             CustomerId = 29,
                             Date = new DateTime(2020, 12, 5, 12, 21, 13, 0, DateTimeKind.Unspecified)
@@ -13243,6 +15064,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1763,
+                            Billed = false,
                             Comment = "92834310_Haus_in_8469",
                             CustomerId = 1,
                             Date = new DateTime(2020, 12, 5, 23, 33, 27, 0, DateTimeKind.Unspecified)
@@ -13250,6 +15072,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1764,
+                            Billed = false,
                             Comment = "93800963_Haus_in_3055",
                             CustomerId = 33,
                             Date = new DateTime(2020, 12, 6, 14, 59, 41, 0, DateTimeKind.Unspecified)
@@ -13257,6 +15080,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1765,
+                            Billed = false,
                             Comment = "92121367_Haus_in_5985",
                             CustomerId = 18,
                             Date = new DateTime(2020, 12, 7, 5, 48, 58, 0, DateTimeKind.Unspecified)
@@ -13264,6 +15088,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1766,
+                            Billed = false,
                             Comment = "90906552_Haus_in_7073",
                             CustomerId = 19,
                             Date = new DateTime(2020, 12, 7, 13, 54, 43, 0, DateTimeKind.Unspecified)
@@ -13271,6 +15096,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1767,
+                            Billed = false,
                             Comment = "95882303_Haus_in_7097",
                             CustomerId = 39,
                             Date = new DateTime(2020, 12, 8, 6, 28, 25, 0, DateTimeKind.Unspecified)
@@ -13278,6 +15104,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1768,
+                            Billed = false,
                             Comment = "51193857_Haus_in_7359",
                             CustomerId = 2,
                             Date = new DateTime(2020, 12, 8, 18, 47, 54, 0, DateTimeKind.Unspecified)
@@ -13285,6 +15112,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1769,
+                            Billed = false,
                             Comment = "76577299_Haus_in_7657",
                             CustomerId = 7,
                             Date = new DateTime(2020, 12, 9, 1, 38, 47, 0, DateTimeKind.Unspecified)
@@ -13292,6 +15120,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1770,
+                            Billed = false,
                             Comment = "26921733_Haus_in_7028",
                             CustomerId = 10,
                             Date = new DateTime(2020, 12, 9, 10, 54, 41, 0, DateTimeKind.Unspecified)
@@ -13299,6 +15128,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1771,
+                            Billed = false,
                             Comment = "54429803_Haus_in_8516",
                             CustomerId = 23,
                             Date = new DateTime(2020, 12, 10, 7, 57, 25, 0, DateTimeKind.Unspecified)
@@ -13306,6 +15136,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1772,
+                            Billed = false,
                             Comment = "40776649_Haus_in_4423",
                             CustomerId = 23,
                             Date = new DateTime(2020, 12, 10, 16, 49, 42, 0, DateTimeKind.Unspecified)
@@ -13313,6 +15144,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1773,
+                            Billed = false,
                             Comment = "43056911_Haus_in_6559",
                             CustomerId = 23,
                             Date = new DateTime(2020, 12, 11, 0, 26, 10, 0, DateTimeKind.Unspecified)
@@ -13320,6 +15152,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1774,
+                            Billed = false,
                             Comment = "42585051_Haus_in_1655",
                             CustomerId = 24,
                             Date = new DateTime(2020, 12, 11, 18, 53, 30, 0, DateTimeKind.Unspecified)
@@ -13327,6 +15160,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1775,
+                            Billed = false,
                             Comment = "25235616_Haus_in_6999",
                             CustomerId = 2,
                             Date = new DateTime(2020, 12, 12, 12, 51, 48, 0, DateTimeKind.Unspecified)
@@ -13334,6 +15168,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1776,
+                            Billed = false,
                             Comment = "4543228_Haus_in_9332",
                             CustomerId = 2,
                             Date = new DateTime(2020, 12, 13, 7, 15, 5, 0, DateTimeKind.Unspecified)
@@ -13341,6 +15176,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1777,
+                            Billed = false,
                             Comment = "86694129_Haus_in_6723",
                             CustomerId = 27,
                             Date = new DateTime(2020, 12, 14, 5, 2, 51, 0, DateTimeKind.Unspecified)
@@ -13348,6 +15184,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1778,
+                            Billed = false,
                             Comment = "5178484_Haus_in_2434",
                             CustomerId = 22,
                             Date = new DateTime(2020, 12, 14, 18, 29, 18, 0, DateTimeKind.Unspecified)
@@ -13355,6 +15192,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1779,
+                            Billed = false,
                             Comment = "49682728_Haus_in_8320",
                             CustomerId = 13,
                             Date = new DateTime(2020, 12, 15, 5, 9, 6, 0, DateTimeKind.Unspecified)
@@ -13362,6 +15200,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1780,
+                            Billed = false,
                             Comment = "92139526_Haus_in_5974",
                             CustomerId = 28,
                             Date = new DateTime(2020, 12, 15, 16, 28, 42, 0, DateTimeKind.Unspecified)
@@ -13369,6 +15208,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1781,
+                            Billed = false,
                             Comment = "80805410_Haus_in_1331",
                             CustomerId = 25,
                             Date = new DateTime(2020, 12, 16, 6, 38, 19, 0, DateTimeKind.Unspecified)
@@ -13376,6 +15216,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1782,
+                            Billed = false,
                             Comment = "63745996_Haus_in_6682",
                             CustomerId = 22,
                             Date = new DateTime(2020, 12, 16, 13, 43, 53, 0, DateTimeKind.Unspecified)
@@ -13383,6 +15224,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1783,
+                            Billed = false,
                             Comment = "17156225_Haus_in_9830",
                             CustomerId = 28,
                             Date = new DateTime(2020, 12, 17, 9, 49, 28, 0, DateTimeKind.Unspecified)
@@ -13390,6 +15232,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1784,
+                            Billed = false,
                             Comment = "76362928_Haus_in_6386",
                             CustomerId = 7,
                             Date = new DateTime(2020, 12, 18, 1, 58, 23, 0, DateTimeKind.Unspecified)
@@ -13397,6 +15240,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1785,
+                            Billed = false,
                             Comment = "71194480_Haus_in_7500",
                             CustomerId = 20,
                             Date = new DateTime(2020, 12, 18, 22, 26, 15, 0, DateTimeKind.Unspecified)
@@ -13404,6 +15248,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1786,
+                            Billed = false,
                             Comment = "12945070_Haus_in_7482",
                             CustomerId = 10,
                             Date = new DateTime(2020, 12, 19, 9, 40, 7, 0, DateTimeKind.Unspecified)
@@ -13411,6 +15256,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1787,
+                            Billed = false,
                             Comment = "44111073_Haus_in_9843",
                             CustomerId = 18,
                             Date = new DateTime(2020, 12, 19, 16, 26, 44, 0, DateTimeKind.Unspecified)
@@ -13418,6 +15264,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1788,
+                            Billed = false,
                             Comment = "46898118_Haus_in_4874",
                             CustomerId = 8,
                             Date = new DateTime(2020, 12, 20, 8, 8, 46, 0, DateTimeKind.Unspecified)
@@ -13425,6 +15272,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1789,
+                            Billed = false,
                             Comment = "8661970_Haus_in_8221",
                             CustomerId = 26,
                             Date = new DateTime(2020, 12, 20, 17, 45, 55, 0, DateTimeKind.Unspecified)
@@ -13432,6 +15280,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1790,
+                            Billed = false,
                             Comment = "77821700_Haus_in_4245",
                             CustomerId = 2,
                             Date = new DateTime(2020, 12, 21, 10, 8, 18, 0, DateTimeKind.Unspecified)
@@ -13439,6 +15288,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1791,
+                            Billed = false,
                             Comment = "23290792_Haus_in_4812",
                             CustomerId = 35,
                             Date = new DateTime(2020, 12, 21, 18, 44, 39, 0, DateTimeKind.Unspecified)
@@ -13446,6 +15296,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1792,
+                            Billed = false,
                             Comment = "69632552_Haus_in_4493",
                             CustomerId = 35,
                             Date = new DateTime(2020, 12, 22, 13, 20, 34, 0, DateTimeKind.Unspecified)
@@ -13453,6 +15304,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1793,
+                            Billed = false,
                             Comment = "58000578_Haus_in_1570",
                             CustomerId = 39,
                             Date = new DateTime(2020, 12, 23, 0, 32, 14, 0, DateTimeKind.Unspecified)
@@ -13460,6 +15312,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1794,
+                            Billed = false,
                             Comment = "25544744_Haus_in_1795",
                             CustomerId = 19,
                             Date = new DateTime(2020, 12, 23, 16, 12, 12, 0, DateTimeKind.Unspecified)
@@ -13467,6 +15320,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1795,
+                            Billed = false,
                             Comment = "63184716_Haus_in_7865",
                             CustomerId = 4,
                             Date = new DateTime(2020, 12, 24, 7, 53, 20, 0, DateTimeKind.Unspecified)
@@ -13474,6 +15328,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1796,
+                            Billed = false,
                             Comment = "28864192_Haus_in_8490",
                             CustomerId = 12,
                             Date = new DateTime(2020, 12, 24, 19, 50, 21, 0, DateTimeKind.Unspecified)
@@ -13481,6 +15336,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1797,
+                            Billed = false,
                             Comment = "44466886_Haus_in_8845",
                             CustomerId = 25,
                             Date = new DateTime(2020, 12, 25, 12, 33, 49, 0, DateTimeKind.Unspecified)
@@ -13488,6 +15344,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1798,
+                            Billed = false,
                             Comment = "28283649_Haus_in_9152",
                             CustomerId = 31,
                             Date = new DateTime(2020, 12, 26, 2, 55, 44, 0, DateTimeKind.Unspecified)
@@ -13495,6 +15352,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1799,
+                            Billed = false,
                             Comment = "46238140_Haus_in_2184",
                             CustomerId = 14,
                             Date = new DateTime(2020, 12, 26, 11, 34, 30, 0, DateTimeKind.Unspecified)
@@ -13502,6 +15360,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1800,
+                            Billed = false,
                             Comment = "28862629_Haus_in_5935",
                             CustomerId = 12,
                             Date = new DateTime(2020, 12, 27, 0, 14, 51, 0, DateTimeKind.Unspecified)
@@ -13509,6 +15368,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1801,
+                            Billed = false,
                             Comment = "54380954_Haus_in_7576",
                             CustomerId = 8,
                             Date = new DateTime(2020, 12, 27, 10, 54, 48, 0, DateTimeKind.Unspecified)
@@ -13516,6 +15376,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1802,
+                            Billed = false,
                             Comment = "33779673_Haus_in_8710",
                             CustomerId = 35,
                             Date = new DateTime(2020, 12, 27, 22, 59, 40, 0, DateTimeKind.Unspecified)
@@ -13523,6 +15384,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1803,
+                            Billed = false,
                             Comment = "98301896_Haus_in_9194",
                             CustomerId = 5,
                             Date = new DateTime(2020, 12, 28, 14, 56, 53, 0, DateTimeKind.Unspecified)
@@ -13530,6 +15392,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1804,
+                            Billed = false,
                             Comment = "96254910_Haus_in_9936",
                             CustomerId = 10,
                             Date = new DateTime(2020, 12, 28, 23, 43, 17, 0, DateTimeKind.Unspecified)
@@ -13537,6 +15400,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1805,
+                            Billed = false,
                             Comment = "91785758_Haus_in_6553",
                             CustomerId = 36,
                             Date = new DateTime(2020, 12, 29, 22, 41, 47, 0, DateTimeKind.Unspecified)
@@ -13544,6 +15408,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1806,
+                            Billed = false,
                             Comment = "32288479_Haus_in_8064",
                             CustomerId = 38,
                             Date = new DateTime(2020, 12, 30, 13, 3, 13, 0, DateTimeKind.Unspecified)
@@ -13551,6 +15416,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1807,
+                            Billed = false,
                             Comment = "40659005_Haus_in_3089",
                             CustomerId = 9,
                             Date = new DateTime(2020, 12, 31, 10, 22, 0, 0, DateTimeKind.Unspecified)
@@ -13558,6 +15424,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1808,
+                            Billed = false,
                             Comment = "76212254_Haus_in_5509",
                             CustomerId = 38,
                             Date = new DateTime(2020, 12, 31, 16, 38, 18, 0, DateTimeKind.Unspecified)
@@ -13565,6 +15432,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1809,
+                            Billed = false,
                             Comment = "14199717_Haus_in_5545",
                             CustomerId = 18,
                             Date = new DateTime(2021, 1, 1, 13, 53, 59, 0, DateTimeKind.Unspecified)
@@ -13572,6 +15440,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1810,
+                            Billed = false,
                             Comment = "21345474_Haus_in_5982",
                             CustomerId = 39,
                             Date = new DateTime(2021, 1, 1, 21, 58, 40, 0, DateTimeKind.Unspecified)
@@ -13579,6 +15448,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1811,
+                            Billed = false,
                             Comment = "37522180_Haus_in_9935",
                             CustomerId = 12,
                             Date = new DateTime(2021, 1, 2, 7, 26, 49, 0, DateTimeKind.Unspecified)
@@ -13586,6 +15456,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1812,
+                            Billed = false,
                             Comment = "21305134_Haus_in_7220",
                             CustomerId = 18,
                             Date = new DateTime(2021, 1, 2, 21, 4, 27, 0, DateTimeKind.Unspecified)
@@ -13593,6 +15464,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1813,
+                            Billed = false,
                             Comment = "21823634_Haus_in_7269",
                             CustomerId = 8,
                             Date = new DateTime(2021, 1, 3, 4, 58, 50, 0, DateTimeKind.Unspecified)
@@ -13600,6 +15472,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1814,
+                            Billed = false,
                             Comment = "98404038_Haus_in_7046",
                             CustomerId = 1,
                             Date = new DateTime(2021, 1, 3, 22, 2, 4, 0, DateTimeKind.Unspecified)
@@ -13607,6 +15480,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1815,
+                            Billed = false,
                             Comment = "80062870_Haus_in_3514",
                             CustomerId = 38,
                             Date = new DateTime(2021, 1, 4, 19, 4, 16, 0, DateTimeKind.Unspecified)
@@ -13614,6 +15488,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1816,
+                            Billed = false,
                             Comment = "99016062_Haus_in_9382",
                             CustomerId = 11,
                             Date = new DateTime(2021, 1, 5, 2, 58, 21, 0, DateTimeKind.Unspecified)
@@ -13621,6 +15496,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1817,
+                            Billed = false,
                             Comment = "51583037_Haus_in_2228",
                             CustomerId = 13,
                             Date = new DateTime(2021, 1, 5, 10, 42, 13, 0, DateTimeKind.Unspecified)
@@ -13628,6 +15504,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1818,
+                            Billed = false,
                             Comment = "33847079_Haus_in_3018",
                             CustomerId = 1,
                             Date = new DateTime(2021, 1, 6, 7, 10, 16, 0, DateTimeKind.Unspecified)
@@ -13635,6 +15512,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1819,
+                            Billed = false,
                             Comment = "28218207_Haus_in_2685",
                             CustomerId = 1,
                             Date = new DateTime(2021, 1, 6, 15, 7, 5, 0, DateTimeKind.Unspecified)
@@ -13642,6 +15520,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1820,
+                            Billed = false,
                             Comment = "36172250_Haus_in_4187",
                             CustomerId = 19,
                             Date = new DateTime(2021, 1, 7, 2, 20, 34, 0, DateTimeKind.Unspecified)
@@ -13649,6 +15528,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1821,
+                            Billed = false,
                             Comment = "34798848_Haus_in_3631",
                             CustomerId = 15,
                             Date = new DateTime(2021, 1, 7, 21, 49, 23, 0, DateTimeKind.Unspecified)
@@ -13656,6 +15536,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1822,
+                            Billed = false,
                             Comment = "10449618_Haus_in_5443",
                             CustomerId = 19,
                             Date = new DateTime(2021, 1, 8, 14, 40, 18, 0, DateTimeKind.Unspecified)
@@ -13663,6 +15544,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1823,
+                            Billed = false,
                             Comment = "16135000_Haus_in_5613",
                             CustomerId = 5,
                             Date = new DateTime(2021, 1, 9, 10, 3, 49, 0, DateTimeKind.Unspecified)
@@ -13670,6 +15552,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1824,
+                            Billed = false,
                             Comment = "82167464_Haus_in_8662",
                             CustomerId = 40,
                             Date = new DateTime(2021, 1, 10, 2, 57, 30, 0, DateTimeKind.Unspecified)
@@ -13677,6 +15560,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1825,
+                            Billed = false,
                             Comment = "93960426_Haus_in_8050",
                             CustomerId = 37,
                             Date = new DateTime(2021, 1, 10, 16, 3, 8, 0, DateTimeKind.Unspecified)
@@ -13684,6 +15568,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1826,
+                            Billed = false,
                             Comment = "51856652_Haus_in_1418",
                             CustomerId = 22,
                             Date = new DateTime(2021, 1, 11, 5, 39, 30, 0, DateTimeKind.Unspecified)
@@ -13691,6 +15576,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1827,
+                            Billed = false,
                             Comment = "40071869_Haus_in_5421",
                             CustomerId = 31,
                             Date = new DateTime(2021, 1, 11, 16, 7, 38, 0, DateTimeKind.Unspecified)
@@ -13698,6 +15584,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1828,
+                            Billed = false,
                             Comment = "20864085_Haus_in_9097",
                             CustomerId = 14,
                             Date = new DateTime(2021, 1, 12, 2, 47, 28, 0, DateTimeKind.Unspecified)
@@ -13705,6 +15592,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1829,
+                            Billed = false,
                             Comment = "84364740_Haus_in_5095",
                             CustomerId = 40,
                             Date = new DateTime(2021, 1, 12, 19, 59, 31, 0, DateTimeKind.Unspecified)
@@ -13712,6 +15600,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1830,
+                            Billed = false,
                             Comment = "93785637_Haus_in_3530",
                             CustomerId = 40,
                             Date = new DateTime(2021, 1, 13, 13, 47, 10, 0, DateTimeKind.Unspecified)
@@ -13719,6 +15608,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1831,
+                            Billed = false,
                             Comment = "1377320_Haus_in_5542",
                             CustomerId = 7,
                             Date = new DateTime(2021, 1, 14, 6, 29, 4, 0, DateTimeKind.Unspecified)
@@ -13726,6 +15616,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1832,
+                            Billed = false,
                             Comment = "81805905_Haus_in_7199",
                             CustomerId = 20,
                             Date = new DateTime(2021, 1, 14, 14, 44, 55, 0, DateTimeKind.Unspecified)
@@ -13733,6 +15624,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1833,
+                            Billed = false,
                             Comment = "71079681_Haus_in_2517",
                             CustomerId = 9,
                             Date = new DateTime(2021, 1, 15, 3, 36, 25, 0, DateTimeKind.Unspecified)
@@ -13740,6 +15632,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1834,
+                            Billed = false,
                             Comment = "24836585_Haus_in_7626",
                             CustomerId = 30,
                             Date = new DateTime(2021, 1, 15, 9, 43, 16, 0, DateTimeKind.Unspecified)
@@ -13747,6 +15640,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1835,
+                            Billed = false,
                             Comment = "89287893_Haus_in_7484",
                             CustomerId = 37,
                             Date = new DateTime(2021, 1, 16, 4, 11, 1, 0, DateTimeKind.Unspecified)
@@ -13754,6 +15648,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1836,
+                            Billed = false,
                             Comment = "11707193_Haus_in_7337",
                             CustomerId = 35,
                             Date = new DateTime(2021, 1, 16, 16, 29, 33, 0, DateTimeKind.Unspecified)
@@ -13761,6 +15656,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1837,
+                            Billed = false,
                             Comment = "22842230_Haus_in_9631",
                             CustomerId = 14,
                             Date = new DateTime(2021, 1, 17, 7, 38, 11, 0, DateTimeKind.Unspecified)
@@ -13768,6 +15664,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1838,
+                            Billed = false,
                             Comment = "60814937_Haus_in_9698",
                             CustomerId = 15,
                             Date = new DateTime(2021, 1, 17, 13, 48, 34, 0, DateTimeKind.Unspecified)
@@ -13775,6 +15672,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1839,
+                            Billed = false,
                             Comment = "98312607_Haus_in_8650",
                             CustomerId = 21,
                             Date = new DateTime(2021, 1, 18, 11, 15, 40, 0, DateTimeKind.Unspecified)
@@ -13782,6 +15680,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1840,
+                            Billed = false,
                             Comment = "42378603_Haus_in_6089",
                             CustomerId = 8,
                             Date = new DateTime(2021, 1, 19, 0, 8, 7, 0, DateTimeKind.Unspecified)
@@ -13789,6 +15688,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1841,
+                            Billed = false,
                             Comment = "11072390_Haus_in_5682",
                             CustomerId = 6,
                             Date = new DateTime(2021, 1, 19, 18, 20, 28, 0, DateTimeKind.Unspecified)
@@ -13796,6 +15696,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1842,
+                            Billed = false,
                             Comment = "63459667_Haus_in_6350",
                             CustomerId = 33,
                             Date = new DateTime(2021, 1, 20, 2, 52, 13, 0, DateTimeKind.Unspecified)
@@ -13803,6 +15704,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1843,
+                            Billed = false,
                             Comment = "71516277_Haus_in_1797",
                             CustomerId = 37,
                             Date = new DateTime(2021, 1, 20, 17, 31, 3, 0, DateTimeKind.Unspecified)
@@ -13810,6 +15712,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1844,
+                            Billed = false,
                             Comment = "98530139_Haus_in_5048",
                             CustomerId = 32,
                             Date = new DateTime(2021, 1, 21, 4, 53, 53, 0, DateTimeKind.Unspecified)
@@ -13817,6 +15720,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1845,
+                            Billed = false,
                             Comment = "45231217_Haus_in_3148",
                             CustomerId = 28,
                             Date = new DateTime(2021, 1, 21, 21, 45, 12, 0, DateTimeKind.Unspecified)
@@ -13824,6 +15728,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1846,
+                            Billed = false,
                             Comment = "61153677_Haus_in_1384",
                             CustomerId = 4,
                             Date = new DateTime(2021, 1, 22, 8, 8, 53, 0, DateTimeKind.Unspecified)
@@ -13831,6 +15736,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1847,
+                            Billed = false,
                             Comment = "21645317_Haus_in_1895",
                             CustomerId = 35,
                             Date = new DateTime(2021, 1, 23, 1, 0, 57, 0, DateTimeKind.Unspecified)
@@ -13838,6 +15744,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1848,
+                            Billed = false,
                             Comment = "99259567_Haus_in_4026",
                             CustomerId = 21,
                             Date = new DateTime(2021, 1, 23, 10, 9, 45, 0, DateTimeKind.Unspecified)
@@ -13845,6 +15752,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1849,
+                            Billed = false,
                             Comment = "83612506_Haus_in_1592",
                             CustomerId = 15,
                             Date = new DateTime(2021, 1, 24, 8, 38, 56, 0, DateTimeKind.Unspecified)
@@ -13852,6 +15760,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1850,
+                            Billed = false,
                             Comment = "52162836_Haus_in_3214",
                             CustomerId = 37,
                             Date = new DateTime(2021, 1, 25, 3, 34, 9, 0, DateTimeKind.Unspecified)
@@ -13859,6 +15768,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1851,
+                            Billed = false,
                             Comment = "56340828_Haus_in_3281",
                             CustomerId = 22,
                             Date = new DateTime(2021, 1, 25, 13, 1, 13, 0, DateTimeKind.Unspecified)
@@ -13866,6 +15776,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1852,
+                            Billed = false,
                             Comment = "30705755_Haus_in_8484",
                             CustomerId = 34,
                             Date = new DateTime(2021, 1, 26, 10, 26, 16, 0, DateTimeKind.Unspecified)
@@ -13873,6 +15784,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1853,
+                            Billed = false,
                             Comment = "59031843_Haus_in_8772",
                             CustomerId = 31,
                             Date = new DateTime(2021, 1, 26, 16, 54, 25, 0, DateTimeKind.Unspecified)
@@ -13880,6 +15792,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1854,
+                            Billed = false,
                             Comment = "70295287_Haus_in_9605",
                             CustomerId = 40,
                             Date = new DateTime(2021, 1, 27, 9, 3, 17, 0, DateTimeKind.Unspecified)
@@ -13887,6 +15800,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1855,
+                            Billed = false,
                             Comment = "37505078_Haus_in_7074",
                             CustomerId = 26,
                             Date = new DateTime(2021, 1, 27, 15, 54, 50, 0, DateTimeKind.Unspecified)
@@ -13894,6 +15808,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1856,
+                            Billed = false,
                             Comment = "68044746_Haus_in_7863",
                             CustomerId = 33,
                             Date = new DateTime(2021, 1, 28, 11, 35, 12, 0, DateTimeKind.Unspecified)
@@ -13901,6 +15816,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1857,
+                            Billed = false,
                             Comment = "60925077_Haus_in_6209",
                             CustomerId = 23,
                             Date = new DateTime(2021, 1, 28, 18, 15, 45, 0, DateTimeKind.Unspecified)
@@ -13908,6 +15824,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1858,
+                            Billed = false,
                             Comment = "35771714_Haus_in_4360",
                             CustomerId = 14,
                             Date = new DateTime(2021, 1, 29, 4, 25, 56, 0, DateTimeKind.Unspecified)
@@ -13915,6 +15832,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1859,
+                            Billed = false,
                             Comment = "28644696_Haus_in_4633",
                             CustomerId = 15,
                             Date = new DateTime(2021, 1, 30, 2, 22, 17, 0, DateTimeKind.Unspecified)
@@ -13922,6 +15840,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1860,
+                            Billed = false,
                             Comment = "47470380_Haus_in_7235",
                             CustomerId = 5,
                             Date = new DateTime(2021, 1, 30, 14, 35, 1, 0, DateTimeKind.Unspecified)
@@ -13929,6 +15848,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1861,
+                            Billed = false,
                             Comment = "1215460_Haus_in_6616",
                             CustomerId = 15,
                             Date = new DateTime(2021, 1, 31, 7, 50, 4, 0, DateTimeKind.Unspecified)
@@ -13936,6 +15856,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1862,
+                            Billed = false,
                             Comment = "73649508_Haus_in_9250",
                             CustomerId = 16,
                             Date = new DateTime(2021, 1, 31, 21, 2, 50, 0, DateTimeKind.Unspecified)
@@ -13943,6 +15864,7 @@ namespace db_projektarbeit.Migrations
                         new
                         {
                             Id = 1863,
+                            Billed = false,
                             Comment = "70813638_Haus_in_5966",
                             CustomerId = 13,
                             Date = new DateTime(2021, 2, 1, 8, 7, 20, 0, DateTimeKind.Unspecified)

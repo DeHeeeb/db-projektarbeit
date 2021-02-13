@@ -25,6 +25,7 @@ namespace db_projektarbeit.Model
                             c.CustomerNr == order.Customer.CustomerNr && 
                             DateTime.Now > c.ValidFrom &&
                             DateTime.Now < c.ValidTo);
+                    order.Date = order.Date.Date;
                 }
 
                 return orders;
@@ -92,6 +93,18 @@ namespace db_projektarbeit.Model
             }
 
             return order.Id;
+        }
+
+        public void Bill(int orderId)
+        {
+            using (var context = new ProjectContext())
+            {
+                var order = context.Orders.SingleOrDefault(o => o.Id == orderId);
+                order.Billed = true;
+                context.Orders.Update(order);
+
+                context.SaveChanges();
+            }
         }
     }
 }

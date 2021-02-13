@@ -27,5 +27,8 @@ namespace db_projektarbeit.View.Common
 
         public const string TextErrorDeleteLinkedArticles = "Die folgenden Artikel sind in der Artikelgruppe {0} " +
                                                             "({1}) und können somit nicht gelöscht werden: {2}";
+
+        public const string TextOrderBilled = "Der Auftrag wurde erfolgreich abgerechnet.";
+        public const string TextOrderTotalNotSet = "Der Auftrag muss ein gültiges Total haben um abgerechnet werden zu können.";
     }
 }

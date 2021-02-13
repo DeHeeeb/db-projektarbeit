@@ -24,7 +24,7 @@ namespace db_projektarbeit.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var now = DateTime.Now;
+            var now = new DateTime(2021, 02, 14);
 
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
                 .StartsAt(1_000);
@@ -705,6 +705,7 @@ namespace db_projektarbeit.Model
                     CompanyName = "Weber und Söhne",
                     Street = "Kleinweg",
                     CityId = 5,
+                    ValidFrom = now.AddDays(-45),
                     ValidTo = now.AddDays(-40)
                 },
                 new Customer()
@@ -53703,8 +53704,57 @@ new Position
                     CustomerId = 45,
                     Date = new DateTime(2021, 02, 01),
                     Netto = 1008.90M
-                }
-            };
+                },
+                new Bill()
+                {
+                    Id = 2,
+                    CustomerId = 37,
+                    Date = new DateTime(2021, 02, 14),
+                    Netto = 2141.90M
+                },
+                new Bill()
+                {
+                    Id = 3,
+                    CustomerId = 45,
+                    Date = new DateTime(2021, 02, 14),
+                    Netto = 545M
+                },
+                new Bill()
+                {
+                    Id = 4,
+                    CustomerId = 13,
+                    Date = new DateTime(2021, 02, 15),
+                    Netto = 3283.90M
+                },
+                new Bill()
+                {
+                    Id = 5,
+                    CustomerId = 10,
+                    Date = new DateTime(2021, 02, 20),
+                    Netto = 5344.20M
+                },
+                new Bill()
+                {
+                    Id = 6,
+                    CustomerId = 15,
+                    Date = new DateTime(2021, 02, 21),
+                    Netto = 775.70M
+                },
+                new Bill()
+                {
+                    Id = 7,
+                    CustomerId = 5,
+                    Date = new DateTime(2021, 02, 24),
+                    Netto = 2430.00M
+                },
+                new Bill()
+                {
+                    Id = 8,
+                    CustomerId = 33,
+                    Date = new DateTime(2021, 02, 24),
+                    Netto = 568.90M
+                },
+			};
             #endregion
 
             #region Preload all Data in the Entity

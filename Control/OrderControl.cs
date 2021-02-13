@@ -27,5 +27,10 @@ namespace db_projektarbeit.Control
         {
             return OrderModel.Delete(order);
         }
+
+        public void Bill(int orderId)
+        {
+            OrderModel.Bill(orderId);
+        }
     }
 }

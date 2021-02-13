@@ -15,10 +15,18 @@ namespace db_projektarbeit
         public Customer Customer { get; set; }
         public List<Position> Positions { get; set; }
         public decimal Total => GetTotal();
+        public bool Billed { get; set; }
 
         public decimal GetTotal()
         {
-            return Positions.Sum(p => p.Total);
+            if (Positions?.Count > 0)
+            {
+                return Positions.Sum(p => p.Total);
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

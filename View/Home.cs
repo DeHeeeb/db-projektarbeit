@@ -44,6 +44,11 @@ namespace db_projektarbeit.View
             new OrderView().Show();
         }
 
+        private void CmdBill_Click(object sender, EventArgs e)
+        {
+            new BillView().Show();
+        }
+
         private void TimerSQLCheck_Tick(object sender, EventArgs e)
         {
             var sqlCheck = homeControl.GetStatusSQL();

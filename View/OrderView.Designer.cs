@@ -46,6 +46,7 @@ namespace db_projektarbeit.View
             this.NumTotal = new System.Windows.Forms.NumericUpDown();
             this.CmdEditCustomer = new System.Windows.Forms.Button();
             this.CmdDelete = new System.Windows.Forms.Button();
+            this.CmdBill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumTotal)).BeginInit();
@@ -233,11 +234,24 @@ namespace db_projektarbeit.View
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
+            // CmdBill
+            // 
+            this.CmdBill.Enabled = false;
+            this.CmdBill.ForeColor = System.Drawing.Color.ForestGreen;
+            this.CmdBill.Location = new System.Drawing.Point(510, 518);
+            this.CmdBill.Name = "CmdBill";
+            this.CmdBill.Size = new System.Drawing.Size(250, 29);
+            this.CmdBill.TabIndex = 28;
+            this.CmdBill.Text = "Abrechnen";
+            this.CmdBill.UseVisualStyleBackColor = true;
+            this.CmdBill.Click += new System.EventHandler(this.CmdBill_Click);
+            // 
             // OrderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 561);
+            this.Controls.Add(this.CmdBill);
             this.Controls.Add(this.CmdDelete);
             this.Controls.Add(this.CmdEditCustomer);
             this.Controls.Add(this.NumTotal);
@@ -284,5 +298,6 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.NumericUpDown NumTotal;
         private System.Windows.Forms.Button CmdEditCustomer;
         private System.Windows.Forms.Button CmdDelete;
+        private System.Windows.Forms.Button CmdBill;
     }
 }
