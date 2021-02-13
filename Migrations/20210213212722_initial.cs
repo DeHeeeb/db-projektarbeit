@@ -3,12 +3,17 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.EnsureSchema(
                 name: "shared");
+
+            migrationBuilder.CreateSequence<int>(
+                name: "BillNr",
+                schema: "shared",
+                startValue: 100000L);
 
             migrationBuilder.CreateSequence<int>(
                 name: "CustomerNr",
@@ -67,7 +72,7 @@ namespace db_projektarbeit.Migrations
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     HouseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: false),
-                    ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 13, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)),
+                    ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 13, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)),
                     ValidTo = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999))
                 },
                 constraints: table =>
@@ -100,6 +105,28 @@ namespace db_projektarbeit.Migrations
                         name: "FK_Products_ProductGroups_GroupId",
                         column: x => x.GroupId,
                         principalTable: "ProductGroups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Bills",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BillNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.BillNr"),
+                    CustomerId = table.Column<int>(type: "int", nullable: false),
+                    Netto = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bills", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Bills_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -216,12 +243,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
-                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -259,12 +286,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
-                values: new object[] { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+                values: new object[] { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom", "ValidTo" },
-                values: new object[] { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055), new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+                values: new object[] { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893), new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893) });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -293,7 +320,7 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055) });
+                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893) });
 
             migrationBuilder.InsertData(
                 table: "ProductGroups",
@@ -326,6 +353,11 @@ namespace db_projektarbeit.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Bills",
+                columns: new[] { "Id", "CustomerId", "Date", "Netto" },
+                values: new object[] { 1, 45, new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1008.90m });
+
+            migrationBuilder.InsertData(
                 table: "Orders",
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
@@ -355,11 +387,11 @@ namespace db_projektarbeit.Migrations
                     { 619, "50204690_Haus_in_9708", 18, new DateTime(2019, 1, 2, 8, 23, 41, 0, DateTimeKind.Unspecified) },
                     { 583, "30319072_Haus_in_5585", 18, new DateTime(2018, 12, 12, 7, 45, 45, 0, DateTimeKind.Unspecified) },
                     { 544, "78262045_Haus_in_8087", 18, new DateTime(2018, 11, 18, 5, 17, 31, 0, DateTimeKind.Unspecified) },
-                    { 539, "68320203_Haus_in_4892", 18, new DateTime(2018, 11, 14, 15, 48, 13, 0, DateTimeKind.Unspecified) },
                     { 1630, "28898619_Haus_in_8669", 18, new DateTime(2020, 9, 17, 10, 7, 34, 0, DateTimeKind.Unspecified) },
-                    { 519, "8069842_Haus_in_9445", 18, new DateTime(2018, 11, 1, 2, 30, 16, 0, DateTimeKind.Unspecified) },
                     { 1645, "53424840_Haus_in_7750", 18, new DateTime(2020, 9, 26, 9, 43, 17, 0, DateTimeKind.Unspecified) },
+                    { 1673, "12606327_Haus_in_1949", 18, new DateTime(2020, 10, 14, 8, 53, 12, 0, DateTimeKind.Unspecified) },
                     { 1679, "63546369_Haus_in_8907", 18, new DateTime(2020, 10, 18, 12, 52, 24, 0, DateTimeKind.Unspecified) },
+                    { 803, "38769031_Haus_in_3817", 19, new DateTime(2019, 4, 22, 7, 18, 54, 0, DateTimeKind.Unspecified) },
                     { 780, "69937867_Haus_in_2510", 19, new DateTime(2019, 4, 8, 6, 38, 4, 0, DateTimeKind.Unspecified) },
                     { 718, "62881033_Haus_in_3290", 19, new DateTime(2019, 3, 2, 17, 18, 15, 0, DateTimeKind.Unspecified) },
                     { 653, "47962867_Haus_in_5709", 19, new DateTime(2019, 1, 23, 7, 13, 39, 0, DateTimeKind.Unspecified) },
@@ -370,8 +402,7 @@ namespace db_projektarbeit.Migrations
                     { 489, "96006951_Haus_in_8790", 19, new DateTime(2018, 10, 14, 16, 40, 58, 0, DateTimeKind.Unspecified) },
                     { 409, "42900443_Haus_in_6598", 19, new DateTime(2018, 8, 27, 20, 7, 32, 0, DateTimeKind.Unspecified) },
                     { 388, "76075591_Haus_in_2498", 19, new DateTime(2018, 8, 15, 9, 24, 34, 0, DateTimeKind.Unspecified) },
-                    { 373, "18169580_Haus_in_8585", 19, new DateTime(2018, 8, 7, 3, 5, 22, 0, DateTimeKind.Unspecified) },
-                    { 347, "22177694_Haus_in_9412", 19, new DateTime(2018, 7, 22, 22, 5, 6, 0, DateTimeKind.Unspecified) }
+                    { 373, "18169580_Haus_in_8585", 19, new DateTime(2018, 8, 7, 3, 5, 22, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -379,7 +410,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
-                    { 207, "9406652_Haus_in_6063", 19, new DateTime(2018, 4, 30, 16, 33, 44, 0, DateTimeKind.Unspecified) },
+                    { 539, "68320203_Haus_in_4892", 18, new DateTime(2018, 11, 14, 15, 48, 13, 0, DateTimeKind.Unspecified) },
+                    { 347, "22177694_Haus_in_9412", 19, new DateTime(2018, 7, 22, 22, 5, 6, 0, DateTimeKind.Unspecified) },
                     { 193, "68267360_Haus_in_9750", 19, new DateTime(2018, 4, 21, 11, 41, 8, 0, DateTimeKind.Unspecified) },
                     { 143, "93816809_Haus_in_3830", 19, new DateTime(2018, 3, 22, 17, 2, 3, 0, DateTimeKind.Unspecified) },
                     { 117, "12412172_Haus_in_9171", 19, new DateTime(2018, 3, 8, 2, 58, 15, 0, DateTimeKind.Unspecified) },
@@ -392,10 +424,11 @@ namespace db_projektarbeit.Migrations
                     { 1758, "35174062_Haus_in_5484", 18, new DateTime(2020, 12, 3, 12, 36, 45, 0, DateTimeKind.Unspecified) },
                     { 1742, "63025132_Haus_in_7312", 18, new DateTime(2020, 11, 23, 19, 12, 15, 0, DateTimeKind.Unspecified) },
                     { 1716, "8971890_Haus_in_1904", 18, new DateTime(2020, 11, 7, 8, 10, 3, 0, DateTimeKind.Unspecified) },
-                    { 1673, "12606327_Haus_in_1949", 18, new DateTime(2020, 10, 14, 8, 53, 12, 0, DateTimeKind.Unspecified) },
-                    { 803, "38769031_Haus_in_3817", 19, new DateTime(2019, 4, 22, 7, 18, 54, 0, DateTimeKind.Unspecified) },
+                    { 207, "9406652_Haus_in_6063", 19, new DateTime(2018, 4, 30, 16, 33, 44, 0, DateTimeKind.Unspecified) },
+                    { 519, "8069842_Haus_in_9445", 18, new DateTime(2018, 11, 1, 2, 30, 16, 0, DateTimeKind.Unspecified) },
                     { 440, "98210147_Haus_in_2780", 18, new DateTime(2018, 9, 15, 7, 49, 38, 0, DateTimeKind.Unspecified) },
-                    { 358, "54429423_Haus_in_7303", 18, new DateTime(2018, 7, 29, 0, 54, 27, 0, DateTimeKind.Unspecified) },
+                    { 439, "2561036_Haus_in_3309", 18, new DateTime(2018, 9, 14, 15, 40, 28, 0, DateTimeKind.Unspecified) },
+                    { 305, "39980869_Haus_in_8269", 17, new DateTime(2018, 6, 29, 12, 44, 18, 0, DateTimeKind.Unspecified) },
                     { 289, "86518592_Haus_in_6099", 17, new DateTime(2018, 6, 20, 5, 27, 37, 0, DateTimeKind.Unspecified) },
                     { 281, "46112495_Haus_in_8348", 17, new DateTime(2018, 6, 15, 17, 18, 4, 0, DateTimeKind.Unspecified) },
                     { 278, "90651205_Haus_in_4907", 17, new DateTime(2018, 6, 14, 14, 41, 17, 0, DateTimeKind.Unspecified) },
@@ -418,9 +451,7 @@ namespace db_projektarbeit.Migrations
                     { 1182, "80072622_Haus_in_2773", 16, new DateTime(2019, 12, 13, 21, 23, 40, 0, DateTimeKind.Unspecified) },
                     { 1163, "88466938_Haus_in_9135", 16, new DateTime(2019, 12, 2, 21, 32, 40, 0, DateTimeKind.Unspecified) },
                     { 1124, "69554664_Haus_in_7802", 16, new DateTime(2019, 11, 8, 17, 31, 20, 0, DateTimeKind.Unspecified) },
-                    { 1099, "45094030_Haus_in_4930", 16, new DateTime(2019, 10, 25, 13, 56, 10, 0, DateTimeKind.Unspecified) },
-                    { 1001, "99411648_Haus_in_9706", 16, new DateTime(2019, 8, 24, 0, 41, 10, 0, DateTimeKind.Unspecified) },
-                    { 996, "45006771_Haus_in_2482", 16, new DateTime(2019, 8, 20, 16, 28, 13, 0, DateTimeKind.Unspecified) }
+                    { 1099, "45094030_Haus_in_4930", 16, new DateTime(2019, 10, 25, 13, 56, 10, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -428,10 +459,12 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
-                    { 305, "39980869_Haus_in_8269", 17, new DateTime(2018, 6, 29, 12, 44, 18, 0, DateTimeKind.Unspecified) },
-                    { 439, "2561036_Haus_in_3309", 18, new DateTime(2018, 9, 14, 15, 40, 28, 0, DateTimeKind.Unspecified) },
+                    { 1001, "99411648_Haus_in_9706", 16, new DateTime(2019, 8, 24, 0, 41, 10, 0, DateTimeKind.Unspecified) },
                     { 346, "97313596_Haus_in_4464", 17, new DateTime(2018, 7, 22, 15, 32, 53, 0, DateTimeKind.Unspecified) },
-                    { 454, "80882921_Haus_in_8782", 17, new DateTime(2018, 9, 23, 17, 57, 32, 0, DateTimeKind.Unspecified) },
+                    { 806, "42370177_Haus_in_7408", 19, new DateTime(2019, 4, 24, 8, 4, 55, 0, DateTimeKind.Unspecified) },
+                    { 414, "758851_Haus_in_8266", 17, new DateTime(2018, 8, 30, 17, 5, 3, 0, DateTimeKind.Unspecified) },
+                    { 703, "61235726_Haus_in_2137", 17, new DateTime(2019, 2, 21, 16, 57, 51, 0, DateTimeKind.Unspecified) },
+                    { 358, "54429423_Haus_in_7303", 18, new DateTime(2018, 7, 29, 0, 54, 27, 0, DateTimeKind.Unspecified) },
                     { 152, "23299782_Haus_in_7238", 18, new DateTime(2018, 3, 28, 1, 20, 2, 0, DateTimeKind.Unspecified) },
                     { 118, "60661480_Haus_in_4680", 18, new DateTime(2018, 3, 8, 16, 10, 7, 0, DateTimeKind.Unspecified) },
                     { 69, "94946091_Haus_in_8835", 18, new DateTime(2018, 2, 10, 4, 11, 24, 0, DateTimeKind.Unspecified) },
@@ -456,11 +489,10 @@ namespace db_projektarbeit.Migrations
                     { 889, "516417_Haus_in_1838", 17, new DateTime(2019, 6, 15, 7, 27, 40, 0, DateTimeKind.Unspecified) },
                     { 834, "48937984_Haus_in_1946", 17, new DateTime(2019, 5, 12, 4, 57, 5, 0, DateTimeKind.Unspecified) },
                     { 746, "11005525_Haus_in_7363", 17, new DateTime(2019, 3, 17, 22, 7, 25, 0, DateTimeKind.Unspecified) },
-                    { 703, "61235726_Haus_in_2137", 17, new DateTime(2019, 2, 21, 16, 57, 51, 0, DateTimeKind.Unspecified) },
-                    { 414, "758851_Haus_in_8266", 17, new DateTime(2018, 8, 30, 17, 5, 3, 0, DateTimeKind.Unspecified) },
-                    { 806, "42370177_Haus_in_7408", 19, new DateTime(2019, 4, 24, 8, 4, 55, 0, DateTimeKind.Unspecified) },
+                    { 454, "80882921_Haus_in_8782", 17, new DateTime(2018, 9, 23, 17, 57, 32, 0, DateTimeKind.Unspecified) },
                     { 825, "95316736_Haus_in_5883", 19, new DateTime(2019, 5, 5, 18, 17, 36, 0, DateTimeKind.Unspecified) },
                     { 838, "27129121_Haus_in_2867", 19, new DateTime(2019, 5, 14, 16, 26, 8, 0, DateTimeKind.Unspecified) },
+                    { 900, "39154088_Haus_in_9941", 19, new DateTime(2019, 6, 21, 13, 5, 33, 0, DateTimeKind.Unspecified) },
                     { 55, "52227047_Haus_in_2018", 22, new DateTime(2018, 2, 1, 6, 56, 1, 0, DateTimeKind.Unspecified) },
                     { 33, "850978_Haus_in_7498", 22, new DateTime(2018, 1, 19, 13, 23, 44, 0, DateTimeKind.Unspecified) },
                     { 23, "12878612_Haus_in_4183", 22, new DateTime(2018, 1, 14, 3, 37, 6, 0, DateTimeKind.Unspecified) },
@@ -468,8 +500,7 @@ namespace db_projektarbeit.Migrations
                     { 1785, "71194480_Haus_in_7500", 20, new DateTime(2020, 12, 18, 22, 26, 15, 0, DateTimeKind.Unspecified) },
                     { 1745, "29444197_Haus_in_5005", 20, new DateTime(2020, 11, 25, 13, 3, 54, 0, DateTimeKind.Unspecified) },
                     { 1739, "15214527_Haus_in_5089", 20, new DateTime(2020, 11, 22, 2, 8, 13, 0, DateTimeKind.Unspecified) },
-                    { 1736, "84728242_Haus_in_5163", 20, new DateTime(2020, 11, 20, 8, 30, 58, 0, DateTimeKind.Unspecified) },
-                    { 1629, "43502971_Haus_in_9814", 20, new DateTime(2020, 9, 16, 12, 1, 41, 0, DateTimeKind.Unspecified) }
+                    { 1736, "84728242_Haus_in_5163", 20, new DateTime(2020, 11, 20, 8, 30, 58, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -477,6 +508,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1629, "43502971_Haus_in_9814", 20, new DateTime(2020, 9, 16, 12, 1, 41, 0, DateTimeKind.Unspecified) },
                     { 1615, "94947404_Haus_in_6175", 20, new DateTime(2020, 9, 8, 2, 15, 59, 0, DateTimeKind.Unspecified) },
                     { 1577, "92336337_Haus_in_5845", 20, new DateTime(2020, 8, 15, 22, 14, 3, 0, DateTimeKind.Unspecified) },
                     { 1554, "91646203_Haus_in_8951", 20, new DateTime(2020, 7, 31, 14, 12, 44, 0, DateTimeKind.Unspecified) },
@@ -517,8 +549,7 @@ namespace db_projektarbeit.Migrations
                     { 589, "84758740_Haus_in_4107", 22, new DateTime(2018, 12, 16, 10, 25, 42, 0, DateTimeKind.Unspecified) },
                     { 571, "10403078_Haus_in_9470", 22, new DateTime(2018, 12, 5, 18, 12, 58, 0, DateTimeKind.Unspecified) },
                     { 560, "56140799_Haus_in_8618", 22, new DateTime(2018, 11, 29, 2, 2, 37, 0, DateTimeKind.Unspecified) },
-                    { 507, "33087340_Haus_in_9185", 22, new DateTime(2018, 10, 25, 17, 50, 2, 0, DateTimeKind.Unspecified) },
-                    { 490, "18460753_Haus_in_2341", 22, new DateTime(2018, 10, 15, 15, 4, 53, 0, DateTimeKind.Unspecified) }
+                    { 507, "33087340_Haus_in_9185", 22, new DateTime(2018, 10, 25, 17, 50, 2, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -526,13 +557,15 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 490, "18460753_Haus_in_2341", 22, new DateTime(2018, 10, 15, 15, 4, 53, 0, DateTimeKind.Unspecified) },
                     { 459, "26345619_Haus_in_1394", 22, new DateTime(2018, 9, 27, 14, 7, 9, 0, DateTimeKind.Unspecified) },
                     { 424, "17711196_Haus_in_8792", 22, new DateTime(2018, 9, 6, 4, 25, 45, 0, DateTimeKind.Unspecified) },
                     { 362, "19226447_Haus_in_9845", 22, new DateTime(2018, 7, 31, 10, 14, 27, 0, DateTimeKind.Unspecified) },
                     { 267, "18290207_Haus_in_1370", 22, new DateTime(2018, 6, 8, 17, 56, 33, 0, DateTimeKind.Unspecified) },
+                    { 996, "45006771_Haus_in_2482", 16, new DateTime(2019, 8, 20, 16, 28, 13, 0, DateTimeKind.Unspecified) },
                     { 1016, "42046022_Haus_in_9754", 20, new DateTime(2019, 9, 2, 15, 34, 19, 0, DateTimeKind.Unspecified) },
-                    { 1005, "24636946_Haus_in_6211", 20, new DateTime(2019, 8, 26, 7, 57, 42, 0, DateTimeKind.Unspecified) },
                     { 914, "42857999_Haus_in_4833", 20, new DateTime(2019, 6, 30, 20, 50, 9, 0, DateTimeKind.Unspecified) },
+                    { 1708, "76162064_Haus_in_1978", 19, new DateTime(2020, 11, 3, 5, 35, 22, 0, DateTimeKind.Unspecified) },
                     { 1670, "63812047_Haus_in_1255", 19, new DateTime(2020, 10, 12, 10, 47, 48, 0, DateTimeKind.Unspecified) },
                     { 1566, "14729273_Haus_in_7699", 19, new DateTime(2020, 8, 7, 13, 26, 49, 0, DateTimeKind.Unspecified) },
                     { 1525, "50174664_Haus_in_4876", 19, new DateTime(2020, 7, 13, 3, 52, 12, 0, DateTimeKind.Unspecified) },
@@ -557,17 +590,15 @@ namespace db_projektarbeit.Migrations
                     { 1023, "49082111_Haus_in_5592", 19, new DateTime(2019, 9, 6, 22, 9, 11, 0, DateTimeKind.Unspecified) },
                     { 940, "43447785_Haus_in_3392", 19, new DateTime(2019, 7, 17, 2, 56, 29, 0, DateTimeKind.Unspecified) },
                     { 918, "8344825_Haus_in_4547", 19, new DateTime(2019, 7, 3, 14, 39, 40, 0, DateTimeKind.Unspecified) },
-                    { 900, "39154088_Haus_in_9941", 19, new DateTime(2019, 6, 21, 13, 5, 33, 0, DateTimeKind.Unspecified) },
-                    { 1708, "76162064_Haus_in_1978", 19, new DateTime(2020, 11, 3, 5, 35, 22, 0, DateTimeKind.Unspecified) },
                     { 1747, "20418774_Haus_in_5495", 19, new DateTime(2020, 11, 26, 12, 2, 29, 0, DateTimeKind.Unspecified) },
+                    { 1005, "24636946_Haus_in_6211", 20, new DateTime(2019, 8, 26, 7, 57, 42, 0, DateTimeKind.Unspecified) },
                     { 1766, "90906552_Haus_in_7073", 19, new DateTime(2020, 12, 7, 13, 54, 43, 0, DateTimeKind.Unspecified) },
-                    { 1794, "25544744_Haus_in_1795", 19, new DateTime(2020, 12, 23, 16, 12, 12, 0, DateTimeKind.Unspecified) },
+                    { 1820, "36172250_Haus_in_4187", 19, new DateTime(2021, 1, 7, 2, 20, 34, 0, DateTimeKind.Unspecified) },
                     { 828, "13887935_Haus_in_2224", 20, new DateTime(2019, 5, 8, 1, 31, 28, 0, DateTimeKind.Unspecified) },
                     { 779, "59999559_Haus_in_1651", 20, new DateTime(2019, 4, 7, 7, 47, 18, 0, DateTimeKind.Unspecified) },
                     { 763, "29906273_Haus_in_9081", 20, new DateTime(2019, 3, 28, 5, 57, 49, 0, DateTimeKind.Unspecified) },
                     { 761, "38315949_Haus_in_8863", 20, new DateTime(2019, 3, 26, 23, 4, 7, 0, DateTimeKind.Unspecified) },
-                    { 717, "14461926_Haus_in_9684", 20, new DateTime(2019, 3, 2, 7, 23, 30, 0, DateTimeKind.Unspecified) },
-                    { 706, "93797983_Haus_in_6174", 20, new DateTime(2019, 2, 23, 20, 16, 37, 0, DateTimeKind.Unspecified) }
+                    { 717, "14461926_Haus_in_9684", 20, new DateTime(2019, 3, 2, 7, 23, 30, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -575,14 +606,15 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 706, "93797983_Haus_in_6174", 20, new DateTime(2019, 2, 23, 20, 16, 37, 0, DateTimeKind.Unspecified) },
                     { 631, "36758950_Haus_in_7996", 20, new DateTime(2019, 1, 9, 5, 39, 16, 0, DateTimeKind.Unspecified) },
                     { 587, "54044234_Haus_in_5566", 20, new DateTime(2018, 12, 14, 21, 2, 27, 0, DateTimeKind.Unspecified) },
                     { 565, "80301345_Haus_in_9229", 20, new DateTime(2018, 12, 1, 16, 55, 13, 0, DateTimeKind.Unspecified) },
                     { 551, "11359134_Haus_in_1430", 20, new DateTime(2018, 11, 23, 12, 29, 5, 0, DateTimeKind.Unspecified) },
                     { 535, "33110374_Haus_in_7140", 20, new DateTime(2018, 11, 11, 17, 19, 59, 0, DateTimeKind.Unspecified) },
                     { 434, "86046721_Haus_in_1369", 20, new DateTime(2018, 9, 12, 0, 16, 10, 0, DateTimeKind.Unspecified) },
-                    { 970, "80640714_Haus_in_7751", 16, new DateTime(2019, 8, 3, 9, 18, 43, 0, DateTimeKind.Unspecified) },
                     { 328, "82021933_Haus_in_4941", 20, new DateTime(2018, 7, 12, 2, 28, 2, 0, DateTimeKind.Unspecified) },
+                    { 317, "54211761_Haus_in_2066", 20, new DateTime(2018, 7, 6, 17, 15, 29, 0, DateTimeKind.Unspecified) },
                     { 310, "79613402_Haus_in_7853", 20, new DateTime(2018, 7, 2, 16, 46, 28, 0, DateTimeKind.Unspecified) },
                     { 237, "73924817_Haus_in_3979", 20, new DateTime(2018, 5, 20, 13, 19, 42, 0, DateTimeKind.Unspecified) },
                     { 164, "74614306_Haus_in_9570", 20, new DateTime(2018, 4, 3, 8, 11, 46, 0, DateTimeKind.Unspecified) },
@@ -594,11 +626,11 @@ namespace db_projektarbeit.Migrations
                     { 36, "8393712_Haus_in_9518", 20, new DateTime(2018, 1, 21, 19, 19, 1, 0, DateTimeKind.Unspecified) },
                     { 24, "37392087_Haus_in_2648", 20, new DateTime(2018, 1, 14, 15, 2, 8, 0, DateTimeKind.Unspecified) },
                     { 1822, "10449618_Haus_in_5443", 19, new DateTime(2021, 1, 8, 14, 40, 18, 0, DateTimeKind.Unspecified) },
-                    { 1820, "36172250_Haus_in_4187", 19, new DateTime(2021, 1, 7, 2, 20, 34, 0, DateTimeKind.Unspecified) },
-                    { 317, "54211761_Haus_in_2066", 20, new DateTime(2018, 7, 6, 17, 15, 29, 0, DateTimeKind.Unspecified) },
-                    { 1375, "39410593_Haus_in_9686", 22, new DateTime(2020, 4, 9, 11, 55, 25, 0, DateTimeKind.Unspecified) },
+                    { 1794, "25544744_Haus_in_1795", 19, new DateTime(2020, 12, 23, 16, 12, 12, 0, DateTimeKind.Unspecified) },
+                    { 970, "80640714_Haus_in_7751", 16, new DateTime(2019, 8, 3, 9, 18, 43, 0, DateTimeKind.Unspecified) },
                     { 901, "58858870_Haus_in_3041", 16, new DateTime(2019, 6, 22, 7, 8, 12, 0, DateTimeKind.Unspecified) },
-                    { 730, "60979220_Haus_in_8207", 16, new DateTime(2019, 3, 9, 4, 27, 51, 0, DateTimeKind.Unspecified) },
+                    { 895, "59305147_Haus_in_8624", 16, new DateTime(2019, 6, 18, 18, 14, 56, 0, DateTimeKind.Unspecified) },
+                    { 608, "33470725_Haus_in_1721", 13, new DateTime(2018, 12, 26, 7, 19, 42, 0, DateTimeKind.Unspecified) },
                     { 452, "4662127_Haus_in_8177", 13, new DateTime(2018, 9, 22, 22, 35, 31, 0, DateTimeKind.Unspecified) },
                     { 441, "36627636_Haus_in_9617", 13, new DateTime(2018, 9, 15, 23, 17, 12, 0, DateTimeKind.Unspecified) },
                     { 405, "29112010_Haus_in_1905", 13, new DateTime(2018, 8, 25, 2, 18, 36, 0, DateTimeKind.Unspecified) },
@@ -615,8 +647,7 @@ namespace db_projektarbeit.Migrations
                     { 86, "38068833_Haus_in_6487", 13, new DateTime(2018, 2, 19, 19, 18, 11, 0, DateTimeKind.Unspecified) },
                     { 51, "62536433_Haus_in_6469", 13, new DateTime(2018, 1, 30, 13, 7, 49, 0, DateTimeKind.Unspecified) },
                     { 1854, "70295287_Haus_in_9605", 40, new DateTime(2021, 1, 27, 9, 3, 17, 0, DateTimeKind.Unspecified) },
-                    { 1830, "93785637_Haus_in_3530", 40, new DateTime(2021, 1, 13, 13, 47, 10, 0, DateTimeKind.Unspecified) },
-                    { 1829, "84364740_Haus_in_5095", 40, new DateTime(2021, 1, 12, 19, 59, 31, 0, DateTimeKind.Unspecified) }
+                    { 1830, "93785637_Haus_in_3530", 40, new DateTime(2021, 1, 13, 13, 47, 10, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -624,17 +655,18 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1829, "84364740_Haus_in_5095", 40, new DateTime(2021, 1, 12, 19, 59, 31, 0, DateTimeKind.Unspecified) },
                     { 1824, "82167464_Haus_in_8662", 40, new DateTime(2021, 1, 10, 2, 57, 30, 0, DateTimeKind.Unspecified) },
                     { 1714, "71302482_Haus_in_8105", 40, new DateTime(2020, 11, 6, 4, 46, 49, 0, DateTimeKind.Unspecified) },
                     { 1690, "44584429_Haus_in_6479", 40, new DateTime(2020, 10, 26, 0, 54, 45, 0, DateTimeKind.Unspecified) },
                     { 1638, "95103824_Haus_in_6916", 40, new DateTime(2020, 9, 21, 19, 24, 36, 0, DateTimeKind.Unspecified) },
                     { 1597, "55083118_Haus_in_6306", 40, new DateTime(2020, 8, 28, 13, 47, 26, 0, DateTimeKind.Unspecified) },
                     { 1578, "61783315_Haus_in_9794", 40, new DateTime(2020, 8, 16, 20, 18, 37, 0, DateTimeKind.Unspecified) },
-                    { 1462, "23778004_Haus_in_7982", 40, new DateTime(2020, 6, 2, 12, 47, 6, 0, DateTimeKind.Unspecified) },
-                    { 608, "33470725_Haus_in_1721", 13, new DateTime(2018, 12, 26, 7, 19, 42, 0, DateTimeKind.Unspecified) },
-                    { 1415, "65663626_Haus_in_2480", 40, new DateTime(2020, 5, 4, 13, 44, 10, 0, DateTimeKind.Unspecified) },
                     { 614, "11265232_Haus_in_3504", 13, new DateTime(2018, 12, 29, 22, 42, 9, 0, DateTimeKind.Unspecified) },
-                    { 628, "42815548_Haus_in_3480", 13, new DateTime(2019, 1, 7, 7, 54, 8, 0, DateTimeKind.Unspecified) },
+                    { 1462, "23778004_Haus_in_7982", 40, new DateTime(2020, 6, 2, 12, 47, 6, 0, DateTimeKind.Unspecified) },
+                    { 617, "71977704_Haus_in_9656", 13, new DateTime(2018, 12, 31, 16, 44, 48, 0, DateTimeKind.Unspecified) },
+                    { 696, "24763084_Haus_in_9466", 13, new DateTime(2019, 2, 18, 2, 35, 49, 0, DateTimeKind.Unspecified) },
+                    { 1863, "70813638_Haus_in_5966", 13, new DateTime(2021, 2, 1, 8, 7, 20, 0, DateTimeKind.Unspecified) },
                     { 1817, "51583037_Haus_in_2228", 13, new DateTime(2021, 1, 5, 10, 42, 13, 0, DateTimeKind.Unspecified) },
                     { 1779, "49682728_Haus_in_8320", 13, new DateTime(2020, 12, 15, 5, 9, 6, 0, DateTimeKind.Unspecified) },
                     { 1753, "86925846_Haus_in_3338", 13, new DateTime(2020, 11, 30, 12, 57, 39, 0, DateTimeKind.Unspecified) },
@@ -659,11 +691,10 @@ namespace db_projektarbeit.Migrations
                     { 841, "6789693_Haus_in_3043", 13, new DateTime(2019, 5, 16, 1, 17, 36, 0, DateTimeKind.Unspecified) },
                     { 836, "77791926_Haus_in_3909", 13, new DateTime(2019, 5, 13, 8, 14, 46, 0, DateTimeKind.Unspecified) },
                     { 813, "9269412_Haus_in_6755", 13, new DateTime(2019, 4, 28, 18, 18, 32, 0, DateTimeKind.Unspecified) },
-                    { 696, "24763084_Haus_in_9466", 13, new DateTime(2019, 2, 18, 2, 35, 49, 0, DateTimeKind.Unspecified) },
-                    { 617, "71977704_Haus_in_9656", 13, new DateTime(2018, 12, 31, 16, 44, 48, 0, DateTimeKind.Unspecified) },
-                    { 1863, "70813638_Haus_in_5966", 13, new DateTime(2021, 2, 1, 8, 7, 20, 0, DateTimeKind.Unspecified) },
+                    { 628, "42815548_Haus_in_3480", 13, new DateTime(2019, 1, 7, 7, 54, 8, 0, DateTimeKind.Unspecified) },
+                    { 1415, "65663626_Haus_in_2480", 40, new DateTime(2020, 5, 4, 13, 44, 10, 0, DateTimeKind.Unspecified) },
                     { 1338, "43384059_Haus_in_4833", 40, new DateTime(2020, 3, 18, 2, 43, 42, 0, DateTimeKind.Unspecified) },
-                    { 1261, "5321753_Haus_in_8451", 40, new DateTime(2020, 2, 1, 14, 6, 53, 0, DateTimeKind.Unspecified) },
+                    { 1325, "59559213_Haus_in_9554", 40, new DateTime(2020, 3, 10, 10, 52, 17, 0, DateTimeKind.Unspecified) },
                     { 318, "11016858_Haus_in_9448", 40, new DateTime(2018, 7, 7, 2, 53, 40, 0, DateTimeKind.Unspecified) },
                     { 271, "28107020_Haus_in_9952", 40, new DateTime(2018, 6, 10, 23, 46, 52, 0, DateTimeKind.Unspecified) }
                 });
@@ -682,7 +713,7 @@ namespace db_projektarbeit.Migrations
                     { 1756, "37676646_Haus_in_2531", 32, new DateTime(2020, 12, 2, 11, 27, 42, 0, DateTimeKind.Unspecified) },
                     { 1725, "57814977_Haus_in_9804", 32, new DateTime(2020, 11, 12, 17, 55, 20, 0, DateTimeKind.Unspecified) },
                     { 1719, "5144366_Haus_in_9315", 32, new DateTime(2020, 11, 9, 7, 18, 25, 0, DateTimeKind.Unspecified) },
-                    { 1662, "4420582_Haus_in_6742", 32, new DateTime(2020, 10, 7, 8, 16, 10, 0, DateTimeKind.Unspecified) },
+                    { 1697, "85387002_Haus_in_2421", 32, new DateTime(2020, 10, 29, 4, 37, 16, 0, DateTimeKind.Unspecified) },
                     { 1624, "54705772_Haus_in_6694", 32, new DateTime(2020, 9, 13, 14, 58, 58, 0, DateTimeKind.Unspecified) },
                     { 1595, "97919282_Haus_in_7559", 32, new DateTime(2020, 8, 27, 16, 38, 32, 0, DateTimeKind.Unspecified) },
                     { 1562, "91844663_Haus_in_3026", 32, new DateTime(2020, 8, 5, 3, 29, 54, 0, DateTimeKind.Unspecified) },
@@ -697,9 +728,10 @@ namespace db_projektarbeit.Migrations
                     { 1326, "94411615_Haus_in_8159", 32, new DateTime(2020, 3, 11, 9, 47, 59, 0, DateTimeKind.Unspecified) },
                     { 1312, "60184634_Haus_in_8255", 32, new DateTime(2020, 3, 3, 21, 4, 21, 0, DateTimeKind.Unspecified) },
                     { 334, "82080722_Haus_in_5842", 40, new DateTime(2018, 7, 16, 1, 53, 29, 0, DateTimeKind.Unspecified) },
-                    { 1325, "59559213_Haus_in_9554", 40, new DateTime(2020, 3, 10, 10, 52, 17, 0, DateTimeKind.Unspecified) },
                     { 338, "10235377_Haus_in_1604", 40, new DateTime(2018, 7, 18, 1, 59, 7, 0, DateTimeKind.Unspecified) },
+                    { 399, "51760045_Haus_in_6715", 40, new DateTime(2018, 8, 20, 18, 5, 40, 0, DateTimeKind.Unspecified) },
                     { 400, "85158052_Haus_in_5104", 40, new DateTime(2018, 8, 21, 14, 31, 51, 0, DateTimeKind.Unspecified) },
+                    { 1261, "5321753_Haus_in_8451", 40, new DateTime(2020, 2, 1, 14, 6, 53, 0, DateTimeKind.Unspecified) },
                     { 1176, "20765849_Haus_in_9026", 40, new DateTime(2019, 12, 9, 8, 56, 58, 0, DateTimeKind.Unspecified) },
                     { 1175, "60856078_Haus_in_6801", 40, new DateTime(2019, 12, 8, 11, 44, 9, 0, DateTimeKind.Unspecified) },
                     { 1164, "77643673_Haus_in_4438", 40, new DateTime(2019, 12, 3, 16, 43, 53, 0, DateTimeKind.Unspecified) },
@@ -711,10 +743,9 @@ namespace db_projektarbeit.Migrations
                     { 837, "69101578_Haus_in_9879", 40, new DateTime(2019, 5, 13, 22, 44, 23, 0, DateTimeKind.Unspecified) },
                     { 784, "21226037_Haus_in_7154", 40, new DateTime(2019, 4, 10, 16, 13, 14, 0, DateTimeKind.Unspecified) },
                     { 754, "48696863_Haus_in_6066", 40, new DateTime(2019, 3, 22, 10, 18, 29, 0, DateTimeKind.Unspecified) },
+                    { 8, "207572_Haus_in_8559", 14, new DateTime(2018, 1, 5, 8, 6, 14, 0, DateTimeKind.Unspecified) },
                     { 733, "46701694_Haus_in_4592", 40, new DateTime(2019, 3, 10, 17, 13, 11, 0, DateTimeKind.Unspecified) },
-                    { 697, "51409531_Haus_in_5202", 40, new DateTime(2019, 2, 18, 18, 17, 27, 0, DateTimeKind.Unspecified) },
-                    { 671, "912423_Haus_in_8114", 40, new DateTime(2019, 2, 3, 3, 35, 35, 0, DateTimeKind.Unspecified) },
-                    { 644, "39136052_Haus_in_3291", 40, new DateTime(2019, 1, 17, 9, 23, 46, 0, DateTimeKind.Unspecified) }
+                    { 671, "912423_Haus_in_8114", 40, new DateTime(2019, 2, 3, 3, 35, 35, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -722,6 +753,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 644, "39136052_Haus_in_3291", 40, new DateTime(2019, 1, 17, 9, 23, 46, 0, DateTimeKind.Unspecified) },
                     { 639, "94725136_Haus_in_6366", 40, new DateTime(2019, 1, 14, 7, 6, 13, 0, DateTimeKind.Unspecified) },
                     { 574, "55662043_Haus_in_9843", 40, new DateTime(2018, 12, 7, 3, 45, 22, 0, DateTimeKind.Unspecified) },
                     { 556, "21869945_Haus_in_6035", 40, new DateTime(2018, 11, 27, 1, 15, 32, 0, DateTimeKind.Unspecified) },
@@ -732,10 +764,11 @@ namespace db_projektarbeit.Migrations
                     { 488, "14577380_Haus_in_4276", 40, new DateTime(2018, 10, 13, 20, 1, 26, 0, DateTimeKind.Unspecified) },
                     { 438, "60232250_Haus_in_3070", 40, new DateTime(2018, 9, 13, 22, 36, 36, 0, DateTimeKind.Unspecified) },
                     { 427, "50579313_Haus_in_6967", 40, new DateTime(2018, 9, 7, 13, 19, 31, 0, DateTimeKind.Unspecified) },
-                    { 399, "51760045_Haus_in_6715", 40, new DateTime(2018, 8, 20, 18, 5, 40, 0, DateTimeKind.Unspecified) },
-                    { 8, "207572_Haus_in_8559", 14, new DateTime(2018, 1, 5, 8, 6, 14, 0, DateTimeKind.Unspecified) },
+                    { 697, "51409531_Haus_in_5202", 40, new DateTime(2019, 2, 18, 18, 17, 27, 0, DateTimeKind.Unspecified) },
+                    { 1375, "39410593_Haus_in_9686", 22, new DateTime(2020, 4, 9, 11, 55, 25, 0, DateTimeKind.Unspecified) },
                     { 48, "54649633_Haus_in_5844", 14, new DateTime(2018, 1, 29, 5, 19, 54, 0, DateTimeKind.Unspecified) },
-                    { 108, "30353829_Haus_in_1586", 14, new DateTime(2018, 3, 3, 11, 43, 31, 0, DateTimeKind.Unspecified) },
+                    { 312, "66935875_Haus_in_6873", 14, new DateTime(2018, 7, 3, 16, 49, 52, 0, DateTimeKind.Unspecified) },
+                    { 1518, "42974035_Haus_in_9288", 15, new DateTime(2020, 7, 9, 1, 32, 30, 0, DateTimeKind.Unspecified) },
                     { 1488, "70197864_Haus_in_5360", 15, new DateTime(2020, 6, 20, 21, 48, 31, 0, DateTimeKind.Unspecified) },
                     { 1398, "86958730_Haus_in_2395", 15, new DateTime(2020, 4, 24, 13, 41, 12, 0, DateTimeKind.Unspecified) },
                     { 1369, "72217773_Haus_in_8742", 15, new DateTime(2020, 4, 5, 9, 56, 47, 0, DateTimeKind.Unspecified) },
@@ -760,10 +793,8 @@ namespace db_projektarbeit.Migrations
                     { 751, "95345567_Haus_in_4357", 15, new DateTime(2019, 3, 21, 4, 17, 41, 0, DateTimeKind.Unspecified) },
                     { 741, "95586806_Haus_in_5681", 15, new DateTime(2019, 3, 14, 22, 2, 41, 0, DateTimeKind.Unspecified) },
                     { 738, "65975212_Haus_in_4422", 15, new DateTime(2019, 3, 13, 14, 43, 10, 0, DateTimeKind.Unspecified) },
-                    { 624, "29917746_Haus_in_2013", 15, new DateTime(2019, 1, 4, 18, 0, 5, 0, DateTimeKind.Unspecified) },
-                    { 1518, "42974035_Haus_in_9288", 15, new DateTime(2020, 7, 9, 1, 32, 30, 0, DateTimeKind.Unspecified) },
-                    { 601, "63311316_Haus_in_8086", 15, new DateTime(2018, 12, 22, 16, 3, 10, 0, DateTimeKind.Unspecified) },
-                    { 1540, "65385090_Haus_in_1717", 15, new DateTime(2020, 7, 21, 22, 35, 10, 0, DateTimeKind.Unspecified) }
+                    { 1540, "65385090_Haus_in_1717", 15, new DateTime(2020, 7, 21, 22, 35, 10, 0, DateTimeKind.Unspecified) },
+                    { 624, "29917746_Haus_in_2013", 15, new DateTime(2019, 1, 4, 18, 0, 5, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -771,7 +802,9 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
-                    { 1594, "80849549_Haus_in_2978", 15, new DateTime(2020, 8, 26, 22, 22, 15, 0, DateTimeKind.Unspecified) },
+                    { 1585, "96325666_Haus_in_4889", 15, new DateTime(2020, 8, 21, 1, 56, 6, 0, DateTimeKind.Unspecified) },
+                    { 1612, "68548642_Haus_in_5504", 15, new DateTime(2020, 9, 6, 2, 53, 43, 0, DateTimeKind.Unspecified) },
+                    { 730, "60979220_Haus_in_8207", 16, new DateTime(2019, 3, 9, 4, 27, 51, 0, DateTimeKind.Unspecified) },
                     { 678, "87375795_Haus_in_3990", 16, new DateTime(2019, 2, 7, 18, 3, 31, 0, DateTimeKind.Unspecified) },
                     { 596, "47711011_Haus_in_8811", 16, new DateTime(2018, 12, 19, 14, 6, 0, 0, DateTimeKind.Unspecified) },
                     { 588, "49561993_Haus_in_7829", 16, new DateTime(2018, 12, 15, 13, 10, 18, 0, DateTimeKind.Unspecified) },
@@ -796,11 +829,11 @@ namespace db_projektarbeit.Migrations
                     { 1688, "21006564_Haus_in_8425", 15, new DateTime(2020, 10, 24, 6, 2, 44, 0, DateTimeKind.Unspecified) },
                     { 1680, "42688553_Haus_in_7350", 15, new DateTime(2020, 10, 19, 1, 0, 59, 0, DateTimeKind.Unspecified) },
                     { 1668, "88239191_Haus_in_8492", 15, new DateTime(2020, 10, 11, 12, 26, 22, 0, DateTimeKind.Unspecified) },
-                    { 1612, "68548642_Haus_in_5504", 15, new DateTime(2020, 9, 6, 2, 53, 43, 0, DateTimeKind.Unspecified) },
-                    { 1585, "96325666_Haus_in_4889", 15, new DateTime(2020, 8, 21, 1, 56, 6, 0, DateTimeKind.Unspecified) },
+                    { 1594, "80849549_Haus_in_2978", 15, new DateTime(2020, 8, 26, 22, 22, 15, 0, DateTimeKind.Unspecified) },
+                    { 601, "63311316_Haus_in_8086", 15, new DateTime(2018, 12, 22, 16, 3, 10, 0, DateTimeKind.Unspecified) },
                     { 563, "72875998_Haus_in_2267", 15, new DateTime(2018, 12, 1, 0, 3, 34, 0, DateTimeKind.Unspecified) },
                     { 549, "38021037_Haus_in_1666", 15, new DateTime(2018, 11, 22, 8, 32, 59, 0, DateTimeKind.Unspecified) },
-                    { 548, "66911698_Haus_in_8569", 15, new DateTime(2018, 11, 21, 10, 57, 29, 0, DateTimeKind.Unspecified) },
+                    { 1196, "88182890_Haus_in_3955", 14, new DateTime(2019, 12, 23, 1, 25, 4, 0, DateTimeKind.Unspecified) },
                     { 1170, "35636243_Haus_in_3791", 14, new DateTime(2019, 12, 6, 4, 29, 6, 0, DateTimeKind.Unspecified) },
                     { 1039, "44183516_Haus_in_8878", 14, new DateTime(2019, 9, 16, 12, 57, 44, 0, DateTimeKind.Unspecified) },
                     { 1027, "41726393_Haus_in_3617", 14, new DateTime(2019, 9, 8, 21, 23, 10, 0, DateTimeKind.Unspecified) },
@@ -810,9 +843,7 @@ namespace db_projektarbeit.Migrations
                     { 927, "39958329_Haus_in_7778", 14, new DateTime(2019, 7, 8, 16, 35, 2, 0, DateTimeKind.Unspecified) },
                     { 845, "14259375_Haus_in_4748", 14, new DateTime(2019, 5, 18, 4, 57, 24, 0, DateTimeKind.Unspecified) },
                     { 817, "86706587_Haus_in_8970", 14, new DateTime(2019, 4, 30, 15, 13, 26, 0, DateTimeKind.Unspecified) },
-                    { 778, "98985432_Haus_in_5524", 14, new DateTime(2019, 4, 6, 13, 31, 9, 0, DateTimeKind.Unspecified) },
-                    { 731, "28284852_Haus_in_9086", 14, new DateTime(2019, 3, 9, 17, 55, 4, 0, DateTimeKind.Unspecified) },
-                    { 704, "37516763_Haus_in_7343", 14, new DateTime(2019, 2, 22, 4, 6, 40, 0, DateTimeKind.Unspecified) }
+                    { 778, "98985432_Haus_in_5524", 14, new DateTime(2019, 4, 6, 13, 31, 9, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -820,6 +851,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 731, "28284852_Haus_in_9086", 14, new DateTime(2019, 3, 9, 17, 55, 4, 0, DateTimeKind.Unspecified) },
+                    { 704, "37516763_Haus_in_7343", 14, new DateTime(2019, 2, 22, 4, 6, 40, 0, DateTimeKind.Unspecified) },
                     { 687, "10733792_Haus_in_1560", 14, new DateTime(2019, 2, 12, 23, 20, 7, 0, DateTimeKind.Unspecified) },
                     { 686, "59929003_Haus_in_8326", 14, new DateTime(2019, 2, 12, 15, 52, 54, 0, DateTimeKind.Unspecified) },
                     { 629, "97979712_Haus_in_9020", 14, new DateTime(2019, 1, 8, 0, 45, 37, 0, DateTimeKind.Unspecified) },
@@ -832,11 +865,11 @@ namespace db_projektarbeit.Migrations
                     { 422, "91252108_Haus_in_5823", 14, new DateTime(2018, 9, 5, 8, 14, 48, 0, DateTimeKind.Unspecified) },
                     { 421, "28335540_Haus_in_6577", 14, new DateTime(2018, 9, 4, 12, 47, 38, 0, DateTimeKind.Unspecified) },
                     { 403, "1649880_Haus_in_7612", 14, new DateTime(2018, 8, 23, 18, 12, 42, 0, DateTimeKind.Unspecified) },
-                    { 312, "66935875_Haus_in_6873", 14, new DateTime(2018, 7, 3, 16, 49, 52, 0, DateTimeKind.Unspecified) },
-                    { 1196, "88182890_Haus_in_3955", 14, new DateTime(2019, 12, 23, 1, 25, 4, 0, DateTimeKind.Unspecified) },
                     { 1221, "32610686_Haus_in_9932", 14, new DateTime(2020, 1, 8, 2, 44, 27, 0, DateTimeKind.Unspecified) },
                     { 1249, "49798616_Haus_in_3079", 14, new DateTime(2020, 1, 26, 0, 37, 5, 0, DateTimeKind.Unspecified) },
                     { 1269, "78277889_Haus_in_3684", 14, new DateTime(2020, 2, 5, 16, 17, 31, 0, DateTimeKind.Unspecified) },
+                    { 1297, "9301178_Haus_in_1796", 14, new DateTime(2020, 2, 23, 3, 30, 36, 0, DateTimeKind.Unspecified) },
+                    { 548, "66911698_Haus_in_8569", 15, new DateTime(2018, 11, 21, 10, 57, 29, 0, DateTimeKind.Unspecified) },
                     { 546, "25245597_Haus_in_5536", 15, new DateTime(2018, 11, 19, 19, 27, 6, 0, DateTimeKind.Unspecified) },
                     { 506, "65974058_Haus_in_2690", 15, new DateTime(2018, 10, 25, 9, 25, 31, 0, DateTimeKind.Unspecified) },
                     { 469, "26737444_Haus_in_4670", 15, new DateTime(2018, 10, 3, 6, 12, 36, 0, DateTimeKind.Unspecified) },
@@ -848,9 +881,9 @@ namespace db_projektarbeit.Migrations
                     { 12, "54081376_Haus_in_2549", 15, new DateTime(2018, 1, 6, 22, 57, 44, 0, DateTimeKind.Unspecified) },
                     { 1858, "35771714_Haus_in_4360", 14, new DateTime(2021, 1, 29, 4, 25, 56, 0, DateTimeKind.Unspecified) },
                     { 1837, "22842230_Haus_in_9631", 14, new DateTime(2021, 1, 17, 7, 38, 11, 0, DateTimeKind.Unspecified) },
+                    { 108, "30353829_Haus_in_1586", 14, new DateTime(2018, 3, 3, 11, 43, 31, 0, DateTimeKind.Unspecified) },
                     { 1828, "20864085_Haus_in_9097", 14, new DateTime(2021, 1, 12, 2, 47, 28, 0, DateTimeKind.Unspecified) },
-                    { 895, "59305147_Haus_in_8624", 16, new DateTime(2019, 6, 18, 18, 14, 56, 0, DateTimeKind.Unspecified) },
-                    { 1799, "46238140_Haus_in_2184", 14, new DateTime(2020, 12, 26, 11, 34, 30, 0, DateTimeKind.Unspecified) },
+                    { 1760, "17027652_Haus_in_5024", 14, new DateTime(2020, 12, 4, 15, 50, 40, 0, DateTimeKind.Unspecified) },
                     { 1748, "11283255_Haus_in_6215", 14, new DateTime(2020, 11, 27, 10, 56, 47, 0, DateTimeKind.Unspecified) },
                     { 1746, "32859595_Haus_in_8294", 14, new DateTime(2020, 11, 26, 1, 21, 45, 0, DateTimeKind.Unspecified) },
                     { 1689, "48228482_Haus_in_4295", 14, new DateTime(2020, 10, 25, 2, 48, 2, 0, DateTimeKind.Unspecified) },
@@ -859,9 +892,7 @@ namespace db_projektarbeit.Migrations
                     { 1548, "63539058_Haus_in_9571", 14, new DateTime(2020, 7, 27, 23, 44, 37, 0, DateTimeKind.Unspecified) },
                     { 1521, "46485925_Haus_in_8462", 14, new DateTime(2020, 7, 10, 17, 54, 38, 0, DateTimeKind.Unspecified) },
                     { 1513, "81308426_Haus_in_3289", 14, new DateTime(2020, 7, 6, 5, 53, 30, 0, DateTimeKind.Unspecified) },
-                    { 1512, "23254148_Haus_in_2547", 14, new DateTime(2020, 7, 5, 10, 13, 25, 0, DateTimeKind.Unspecified) },
-                    { 1443, "5248413_Haus_in_2384", 14, new DateTime(2020, 5, 20, 18, 37, 49, 0, DateTimeKind.Unspecified) },
-                    { 1409, "41714883_Haus_in_1170", 14, new DateTime(2020, 4, 30, 18, 51, 26, 0, DateTimeKind.Unspecified) }
+                    { 1512, "23254148_Haus_in_2547", 14, new DateTime(2020, 7, 5, 10, 13, 25, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -869,10 +900,11 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
-                    { 1297, "9301178_Haus_in_1796", 14, new DateTime(2020, 2, 23, 3, 30, 36, 0, DateTimeKind.Unspecified) },
-                    { 1760, "17027652_Haus_in_5024", 14, new DateTime(2020, 12, 4, 15, 50, 40, 0, DateTimeKind.Unspecified) },
-                    { 1224, "38868040_Haus_in_9026", 32, new DateTime(2020, 1, 9, 21, 8, 46, 0, DateTimeKind.Unspecified) },
+                    { 1443, "5248413_Haus_in_2384", 14, new DateTime(2020, 5, 20, 18, 37, 49, 0, DateTimeKind.Unspecified) },
+                    { 1409, "41714883_Haus_in_1170", 14, new DateTime(2020, 4, 30, 18, 51, 26, 0, DateTimeKind.Unspecified) },
+                    { 1799, "46238140_Haus_in_2184", 14, new DateTime(2020, 12, 26, 11, 34, 30, 0, DateTimeKind.Unspecified) },
                     { 1439, "37833053_Haus_in_9542", 22, new DateTime(2020, 5, 18, 10, 35, 0, 0, DateTimeKind.Unspecified) },
+                    { 1564, "36908102_Haus_in_4608", 22, new DateTime(2020, 8, 6, 7, 47, 43, 0, DateTimeKind.Unspecified) },
                     { 1718, "32594309_Haus_in_4458", 22, new DateTime(2020, 11, 8, 13, 23, 57, 0, DateTimeKind.Unspecified) },
                     { 1572, "72988357_Haus_in_8771", 31, new DateTime(2020, 8, 12, 7, 10, 59, 0, DateTimeKind.Unspecified) },
                     { 1551, "86058541_Haus_in_5868", 31, new DateTime(2020, 7, 29, 19, 33, 21, 0, DateTimeKind.Unspecified) },
@@ -909,8 +941,7 @@ namespace db_projektarbeit.Migrations
                     { 912, "51604680_Haus_in_5001", 33, new DateTime(2019, 6, 29, 23, 8, 12, 0, DateTimeKind.Unspecified) },
                     { 801, "42823855_Haus_in_3678", 33, new DateTime(2019, 4, 21, 7, 17, 6, 0, DateTimeKind.Unspecified) },
                     { 766, "86370188_Haus_in_1899", 33, new DateTime(2019, 3, 29, 12, 52, 3, 0, DateTimeKind.Unspecified) },
-                    { 747, "87078062_Haus_in_3736", 33, new DateTime(2019, 3, 18, 9, 46, 26, 0, DateTimeKind.Unspecified) },
-                    { 702, "13921613_Haus_in_8521", 33, new DateTime(2019, 2, 21, 4, 37, 1, 0, DateTimeKind.Unspecified) }
+                    { 747, "87078062_Haus_in_3736", 33, new DateTime(2019, 3, 18, 9, 46, 26, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -918,6 +949,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 702, "13921613_Haus_in_8521", 33, new DateTime(2019, 2, 21, 4, 37, 1, 0, DateTimeKind.Unspecified) },
                     { 669, "34281746_Haus_in_9201", 33, new DateTime(2019, 2, 1, 15, 59, 32, 0, DateTimeKind.Unspecified) },
                     { 661, "18358209_Haus_in_6617", 33, new DateTime(2019, 1, 27, 17, 0, 6, 0, DateTimeKind.Unspecified) },
                     { 638, "41690719_Haus_in_4466", 33, new DateTime(2019, 1, 13, 17, 36, 20, 0, DateTimeKind.Unspecified) },
@@ -958,8 +990,7 @@ namespace db_projektarbeit.Migrations
                     { 1025, "67640116_Haus_in_2475", 30, new DateTime(2019, 9, 7, 17, 21, 36, 0, DateTimeKind.Unspecified) },
                     { 985, "94922031_Haus_in_3997", 30, new DateTime(2019, 8, 13, 17, 5, 11, 0, DateTimeKind.Unspecified) },
                     { 973, "8388208_Haus_in_6159", 30, new DateTime(2019, 8, 5, 18, 2, 52, 0, DateTimeKind.Unspecified) },
-                    { 963, "82060289_Haus_in_1311", 30, new DateTime(2019, 7, 30, 19, 53, 31, 0, DateTimeKind.Unspecified) },
-                    { 937, "44969950_Haus_in_2510", 30, new DateTime(2019, 7, 14, 23, 27, 41, 0, DateTimeKind.Unspecified) }
+                    { 963, "82060289_Haus_in_1311", 30, new DateTime(2019, 7, 30, 19, 53, 31, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -967,6 +998,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 937, "44969950_Haus_in_2510", 30, new DateTime(2019, 7, 14, 23, 27, 41, 0, DateTimeKind.Unspecified) },
                     { 870, "32559903_Haus_in_4897", 30, new DateTime(2019, 6, 3, 3, 14, 59, 0, DateTimeKind.Unspecified) },
                     { 852, "10612986_Haus_in_4359", 30, new DateTime(2019, 5, 22, 4, 24, 27, 0, DateTimeKind.Unspecified) },
                     { 821, "72347554_Haus_in_3733", 30, new DateTime(2019, 5, 3, 9, 51, 20, 0, DateTimeKind.Unspecified) },
@@ -1007,8 +1039,7 @@ namespace db_projektarbeit.Migrations
                     { 579, "84813718_Haus_in_9390", 35, new DateTime(2018, 12, 9, 17, 10, 43, 0, DateTimeKind.Unspecified) },
                     { 470, "25787861_Haus_in_6224", 35, new DateTime(2018, 10, 3, 19, 13, 45, 0, DateTimeKind.Unspecified) },
                     { 460, "9122488_Haus_in_2128", 35, new DateTime(2018, 9, 28, 11, 58, 40, 0, DateTimeKind.Unspecified) },
-                    { 458, "28221134_Haus_in_4547", 35, new DateTime(2018, 9, 26, 18, 52, 42, 0, DateTimeKind.Unspecified) },
-                    { 380, "87985986_Haus_in_2644", 35, new DateTime(2018, 8, 11, 10, 5, 12, 0, DateTimeKind.Unspecified) }
+                    { 458, "28221134_Haus_in_4547", 35, new DateTime(2018, 9, 26, 18, 52, 42, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1016,6 +1047,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 380, "87985986_Haus_in_2644", 35, new DateTime(2018, 8, 11, 10, 5, 12, 0, DateTimeKind.Unspecified) },
                     { 315, "66842396_Haus_in_5464", 35, new DateTime(2018, 7, 5, 8, 12, 51, 0, DateTimeKind.Unspecified) },
                     { 262, "76588584_Haus_in_2474", 35, new DateTime(2018, 6, 5, 14, 8, 12, 0, DateTimeKind.Unspecified) },
                     { 135, "94084051_Haus_in_6484", 35, new DateTime(2018, 3, 18, 4, 54, 35, 0, DateTimeKind.Unspecified) },
@@ -1056,8 +1088,7 @@ namespace db_projektarbeit.Migrations
                     { 1276, "76486092_Haus_in_4127", 35, new DateTime(2020, 2, 9, 19, 31, 14, 0, DateTimeKind.Unspecified) },
                     { 1250, "37872887_Haus_in_3302", 35, new DateTime(2020, 1, 26, 23, 22, 32, 0, DateTimeKind.Unspecified) },
                     { 1217, "23402526_Haus_in_9925", 35, new DateTime(2020, 1, 5, 7, 20, 39, 0, DateTimeKind.Unspecified) },
-                    { 1214, "84904179_Haus_in_5172", 35, new DateTime(2020, 1, 3, 16, 27, 14, 0, DateTimeKind.Unspecified) },
-                    { 1049, "58047369_Haus_in_1805", 35, new DateTime(2019, 9, 24, 3, 27, 0, 0, DateTimeKind.Unspecified) }
+                    { 1214, "84904179_Haus_in_5172", 35, new DateTime(2020, 1, 3, 16, 27, 14, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1065,6 +1096,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1049, "58047369_Haus_in_1805", 35, new DateTime(2019, 9, 24, 3, 27, 0, 0, DateTimeKind.Unspecified) },
                     { 1030, "92389883_Haus_in_5437", 35, new DateTime(2019, 9, 10, 12, 53, 53, 0, DateTimeKind.Unspecified) },
                     { 962, "42294366_Haus_in_9615", 35, new DateTime(2019, 7, 30, 5, 32, 55, 0, DateTimeKind.Unspecified) },
                     { 891, "92034199_Haus_in_9185", 35, new DateTime(2019, 6, 16, 22, 10, 19, 0, DateTimeKind.Unspecified) },
@@ -1105,8 +1137,7 @@ namespace db_projektarbeit.Migrations
                     { 265, "91851282_Haus_in_1966", 34, new DateTime(2018, 6, 7, 19, 44, 15, 0, DateTimeKind.Unspecified) },
                     { 272, "71856471_Haus_in_3421", 34, new DateTime(2018, 6, 11, 10, 33, 22, 0, DateTimeKind.Unspecified) },
                     { 344, "29057024_Haus_in_7526", 34, new DateTime(2018, 7, 21, 13, 6, 36, 0, DateTimeKind.Unspecified) },
-                    { 1335, "97441717_Haus_in_4328", 34, new DateTime(2020, 3, 15, 23, 34, 57, 0, DateTimeKind.Unspecified) },
-                    { 1322, "83895584_Haus_in_8127", 34, new DateTime(2020, 3, 9, 0, 34, 46, 0, DateTimeKind.Unspecified) }
+                    { 1335, "97441717_Haus_in_4328", 34, new DateTime(2020, 3, 15, 23, 34, 57, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1114,6 +1145,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1322, "83895584_Haus_in_8127", 34, new DateTime(2020, 3, 9, 0, 34, 46, 0, DateTimeKind.Unspecified) },
                     { 1219, "22594466_Haus_in_8988", 34, new DateTime(2020, 1, 6, 14, 39, 25, 0, DateTimeKind.Unspecified) },
                     { 1208, "24586789_Haus_in_9609", 34, new DateTime(2019, 12, 31, 16, 55, 29, 0, DateTimeKind.Unspecified) },
                     { 1120, "77875962_Haus_in_5652", 34, new DateTime(2019, 11, 6, 4, 20, 27, 0, DateTimeKind.Unspecified) },
@@ -1139,7 +1171,7 @@ namespace db_projektarbeit.Migrations
                     { 367, "53804834_Haus_in_4571", 34, new DateTime(2018, 8, 3, 23, 54, 12, 0, DateTimeKind.Unspecified) },
                     { 351, "98903351_Haus_in_1203", 34, new DateTime(2018, 7, 24, 20, 47, 27, 0, DateTimeKind.Unspecified) },
                     { 736, "81362160_Haus_in_7382", 34, new DateTime(2019, 3, 12, 20, 27, 0, 0, DateTimeKind.Unspecified) },
-                    { 1564, "36908102_Haus_in_4608", 22, new DateTime(2020, 8, 6, 7, 47, 43, 0, DateTimeKind.Unspecified) },
+                    { 1224, "38868040_Haus_in_9026", 32, new DateTime(2020, 1, 9, 21, 8, 46, 0, DateTimeKind.Unspecified) },
                     { 600, "92438067_Haus_in_6785", 30, new DateTime(2018, 12, 21, 17, 51, 41, 0, DateTimeKind.Unspecified) },
                     { 593, "63511519_Haus_in_7651", 30, new DateTime(2018, 12, 18, 1, 23, 4, 0, DateTimeKind.Unspecified) },
                     { 1571, "83752949_Haus_in_4874", 26, new DateTime(2020, 8, 11, 15, 13, 33, 0, DateTimeKind.Unspecified) },
@@ -1154,8 +1186,7 @@ namespace db_projektarbeit.Migrations
                     { 1127, "44856589_Haus_in_7982", 26, new DateTime(2019, 11, 10, 22, 27, 39, 0, DateTimeKind.Unspecified) },
                     { 1003, "86866607_Haus_in_1481", 26, new DateTime(2019, 8, 25, 9, 18, 31, 0, DateTimeKind.Unspecified) },
                     { 993, "51592713_Haus_in_2642", 26, new DateTime(2019, 8, 18, 18, 47, 51, 0, DateTimeKind.Unspecified) },
-                    { 981, "95460914_Haus_in_8607", 26, new DateTime(2019, 8, 10, 21, 15, 46, 0, DateTimeKind.Unspecified) },
-                    { 888, "81682385_Haus_in_5300", 26, new DateTime(2019, 6, 14, 17, 9, 18, 0, DateTimeKind.Unspecified) }
+                    { 981, "95460914_Haus_in_8607", 26, new DateTime(2019, 8, 10, 21, 15, 46, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1163,6 +1194,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 888, "81682385_Haus_in_5300", 26, new DateTime(2019, 6, 14, 17, 9, 18, 0, DateTimeKind.Unspecified) },
                     { 887, "51935961_Haus_in_1845", 26, new DateTime(2019, 6, 14, 5, 59, 17, 0, DateTimeKind.Unspecified) },
                     { 859, "40631083_Haus_in_2390", 26, new DateTime(2019, 5, 26, 13, 25, 6, 0, DateTimeKind.Unspecified) },
                     { 771, "70948320_Haus_in_2210", 26, new DateTime(2019, 4, 1, 22, 15, 2, 0, DateTimeKind.Unspecified) },
@@ -1203,8 +1235,7 @@ namespace db_projektarbeit.Migrations
                     { 1, "84451102_Haus_in_1604", 27, new DateTime(2018, 1, 1, 11, 41, 54, 0, DateTimeKind.Unspecified) },
                     { 1855, "37505078_Haus_in_7074", 26, new DateTime(2021, 1, 27, 15, 54, 50, 0, DateTimeKind.Unspecified) },
                     { 1789, "8661970_Haus_in_8221", 26, new DateTime(2020, 12, 20, 17, 45, 55, 0, DateTimeKind.Unspecified) },
-                    { 1641, "69773805_Haus_in_4462", 26, new DateTime(2020, 9, 23, 13, 39, 19, 0, DateTimeKind.Unspecified) },
-                    { 930, "59792235_Haus_in_7575", 27, new DateTime(2019, 7, 10, 3, 1, 14, 0, DateTimeKind.Unspecified) }
+                    { 1641, "69773805_Haus_in_4462", 26, new DateTime(2020, 9, 23, 13, 39, 19, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1212,6 +1243,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 930, "59792235_Haus_in_7575", 27, new DateTime(2019, 7, 10, 3, 1, 14, 0, DateTimeKind.Unspecified) },
                     { 366, "68732417_Haus_in_9094", 26, new DateTime(2018, 8, 3, 7, 5, 52, 0, DateTimeKind.Unspecified) },
                     { 202, "71889022_Haus_in_1476", 26, new DateTime(2018, 4, 27, 15, 33, 54, 0, DateTimeKind.Unspecified) },
                     { 789, "31568492_Haus_in_1970", 24, new DateTime(2019, 4, 13, 19, 22, 37, 0, DateTimeKind.Unspecified) },
@@ -1252,8 +1284,7 @@ namespace db_projektarbeit.Migrations
                     { 43, "29168994_Haus_in_4936", 26, new DateTime(2018, 1, 26, 19, 13, 42, 0, DateTimeKind.Unspecified) },
                     { 19, "87455820_Haus_in_8933", 26, new DateTime(2018, 1, 11, 17, 57, 35, 0, DateTimeKind.Unspecified) },
                     { 16, "45077967_Haus_in_6739", 26, new DateTime(2018, 1, 9, 9, 23, 47, 0, DateTimeKind.Unspecified) },
-                    { 1774, "42585051_Haus_in_1655", 24, new DateTime(2020, 12, 11, 18, 53, 30, 0, DateTimeKind.Unspecified) },
-                    { 1682, "15032503_Haus_in_6459", 24, new DateTime(2020, 10, 20, 17, 33, 51, 0, DateTimeKind.Unspecified) }
+                    { 1774, "42585051_Haus_in_1655", 24, new DateTime(2020, 12, 11, 18, 53, 30, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1261,6 +1292,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1682, "15032503_Haus_in_6459", 24, new DateTime(2020, 10, 20, 17, 33, 51, 0, DateTimeKind.Unspecified) },
                     { 1663, "73712090_Haus_in_8660", 24, new DateTime(2020, 10, 7, 21, 17, 24, 0, DateTimeKind.Unspecified) },
                     { 1640, "11299235_Haus_in_2602", 24, new DateTime(2020, 9, 23, 7, 12, 46, 0, DateTimeKind.Unspecified) },
                     { 1539, "99319966_Haus_in_3395", 24, new DateTime(2020, 7, 21, 9, 33, 57, 0, DateTimeKind.Unspecified) },
@@ -1301,8 +1333,7 @@ namespace db_projektarbeit.Migrations
                     { 1400, "8479674_Haus_in_2584", 28, new DateTime(2020, 4, 25, 9, 17, 35, 0, DateTimeKind.Unspecified) },
                     { 1399, "98065553_Haus_in_4816", 28, new DateTime(2020, 4, 25, 0, 6, 8, 0, DateTimeKind.Unspecified) },
                     { 1384, "85846071_Haus_in_5909", 28, new DateTime(2020, 4, 15, 19, 13, 59, 0, DateTimeKind.Unspecified) },
-                    { 1283, "21821976_Haus_in_3192", 28, new DateTime(2020, 2, 14, 5, 23, 30, 0, DateTimeKind.Unspecified) },
-                    { 1282, "55993616_Haus_in_8903", 28, new DateTime(2020, 2, 13, 12, 1, 59, 0, DateTimeKind.Unspecified) }
+                    { 1283, "21821976_Haus_in_3192", 28, new DateTime(2020, 2, 14, 5, 23, 30, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1310,6 +1341,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1282, "55993616_Haus_in_8903", 28, new DateTime(2020, 2, 13, 12, 1, 59, 0, DateTimeKind.Unspecified) },
                     { 1278, "90338961_Haus_in_9892", 28, new DateTime(2020, 2, 11, 5, 19, 20, 0, DateTimeKind.Unspecified) },
                     { 1012, "15368722_Haus_in_5204", 29, new DateTime(2019, 8, 31, 0, 53, 58, 0, DateTimeKind.Unspecified) },
                     { 1271, "88640722_Haus_in_2973", 28, new DateTime(2020, 2, 7, 4, 32, 21, 0, DateTimeKind.Unspecified) },
@@ -1350,8 +1382,7 @@ namespace db_projektarbeit.Migrations
                     { 1777, "86694129_Haus_in_6723", 27, new DateTime(2020, 12, 14, 5, 2, 51, 0, DateTimeKind.Unspecified) },
                     { 1691, "36496437_Haus_in_3136", 27, new DateTime(2020, 10, 26, 10, 42, 22, 0, DateTimeKind.Unspecified) },
                     { 1617, "47562062_Haus_in_2018", 27, new DateTime(2020, 9, 9, 4, 32, 35, 0, DateTimeKind.Unspecified) },
-                    { 1611, "51905863_Haus_in_8313", 27, new DateTime(2020, 9, 5, 4, 51, 59, 0, DateTimeKind.Unspecified) },
-                    { 1596, "9836323_Haus_in_7979", 27, new DateTime(2020, 8, 28, 7, 0, 34, 0, DateTimeKind.Unspecified) }
+                    { 1611, "51905863_Haus_in_8313", 27, new DateTime(2020, 9, 5, 4, 51, 59, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1359,6 +1390,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1596, "9836323_Haus_in_7979", 27, new DateTime(2020, 8, 28, 7, 0, 34, 0, DateTimeKind.Unspecified) },
                     { 1420, "90453789_Haus_in_7080", 27, new DateTime(2020, 5, 7, 18, 34, 30, 0, DateTimeKind.Unspecified) },
                     { 1418, "12456823_Haus_in_8151", 27, new DateTime(2020, 5, 6, 15, 57, 20, 0, DateTimeKind.Unspecified) },
                     { 1407, "33821457_Haus_in_9208", 27, new DateTime(2020, 4, 29, 10, 21, 20, 0, DateTimeKind.Unspecified) },
@@ -1399,8 +1431,7 @@ namespace db_projektarbeit.Migrations
                     { 487, "87807230_Haus_in_4733", 28, new DateTime(2018, 10, 13, 5, 22, 51, 0, DateTimeKind.Unspecified) },
                     { 426, "35588390_Haus_in_8375", 28, new DateTime(2018, 9, 7, 2, 22, 0, 0, DateTimeKind.Unspecified) },
                     { 350, "11076174_Haus_in_9112", 28, new DateTime(2018, 7, 24, 9, 56, 55, 0, DateTimeKind.Unspecified) },
-                    { 321, "97127842_Haus_in_1405", 28, new DateTime(2018, 7, 8, 1, 18, 40, 0, DateTimeKind.Unspecified) },
-                    { 320, "35655880_Haus_in_4223", 28, new DateTime(2018, 7, 7, 18, 36, 43, 0, DateTimeKind.Unspecified) }
+                    { 321, "97127842_Haus_in_1405", 28, new DateTime(2018, 7, 8, 1, 18, 40, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1408,6 +1439,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 320, "35655880_Haus_in_4223", 28, new DateTime(2018, 7, 7, 18, 36, 43, 0, DateTimeKind.Unspecified) },
                     { 314, "43615130_Haus_in_6058", 28, new DateTime(2018, 7, 4, 22, 44, 38, 0, DateTimeKind.Unspecified) },
                     { 255, "18463340_Haus_in_9215", 28, new DateTime(2018, 6, 1, 16, 23, 28, 0, DateTimeKind.Unspecified) },
                     { 221, "43811866_Haus_in_4418", 28, new DateTime(2018, 5, 10, 22, 27, 16, 0, DateTimeKind.Unspecified) },
@@ -1415,7 +1447,7 @@ namespace db_projektarbeit.Migrations
                     { 150, "19185710_Haus_in_2318", 28, new DateTime(2018, 3, 26, 15, 40, 41, 0, DateTimeKind.Unspecified) },
                     { 637, "55401365_Haus_in_4331", 28, new DateTime(2019, 1, 13, 1, 55, 23, 0, DateTimeKind.Unspecified) },
                     { 1159, "47946786_Haus_in_3955", 32, new DateTime(2019, 11, 30, 5, 23, 10, 0, DateTimeKind.Unspecified) },
-                    { 1697, "85387002_Haus_in_2421", 32, new DateTime(2020, 10, 29, 4, 37, 16, 0, DateTimeKind.Unspecified) },
+                    { 1662, "4420582_Haus_in_6742", 32, new DateTime(2020, 10, 7, 8, 16, 10, 0, DateTimeKind.Unspecified) },
                     { 1075, "81922555_Haus_in_1950", 32, new DateTime(2019, 10, 10, 13, 4, 8, 0, DateTimeKind.Unspecified) },
                     { 1019, "64940268_Haus_in_6420", 38, new DateTime(2019, 9, 4, 13, 36, 51, 0, DateTimeKind.Unspecified) },
                     { 1013, "33263055_Haus_in_4584", 38, new DateTime(2019, 8, 31, 23, 15, 59, 0, DateTimeKind.Unspecified) },
@@ -1448,8 +1480,7 @@ namespace db_projektarbeit.Migrations
                     { 1222, "34515038_Haus_in_9263", 38, new DateTime(2020, 1, 8, 12, 33, 52, 0, DateTimeKind.Unspecified) },
                     { 138, "64413229_Haus_in_7538", 4, new DateTime(2018, 3, 20, 4, 51, 43, 0, DateTimeKind.Unspecified) },
                     { 89, "94089970_Haus_in_2035", 4, new DateTime(2018, 2, 21, 5, 30, 26, 0, DateTimeKind.Unspecified) },
-                    { 52, "19144153_Haus_in_2202", 4, new DateTime(2018, 1, 31, 2, 15, 6, 0, DateTimeKind.Unspecified) },
-                    { 14, "6608857_Haus_in_2861", 4, new DateTime(2018, 1, 7, 22, 59, 51, 0, DateTimeKind.Unspecified) }
+                    { 52, "19144153_Haus_in_2202", 4, new DateTime(2018, 1, 31, 2, 15, 6, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1457,6 +1488,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 14, "6608857_Haus_in_2861", 4, new DateTime(2018, 1, 7, 22, 59, 51, 0, DateTimeKind.Unspecified) },
                     { 1815, "80062870_Haus_in_3514", 38, new DateTime(2021, 1, 4, 19, 4, 16, 0, DateTimeKind.Unspecified) },
                     { 1808, "76212254_Haus_in_5509", 38, new DateTime(2020, 12, 31, 16, 38, 18, 0, DateTimeKind.Unspecified) },
                     { 1806, "32288479_Haus_in_8064", 38, new DateTime(2020, 12, 30, 13, 3, 13, 0, DateTimeKind.Unspecified) },
@@ -1497,8 +1529,7 @@ namespace db_projektarbeit.Migrations
                     { 1694, "98981707_Haus_in_4562", 3, new DateTime(2020, 10, 28, 4, 36, 6, 0, DateTimeKind.Unspecified) },
                     { 1692, "40244837_Haus_in_4669", 3, new DateTime(2020, 10, 27, 0, 47, 5, 0, DateTimeKind.Unspecified) },
                     { 1671, "86905956_Haus_in_4768", 3, new DateTime(2020, 10, 13, 4, 29, 40, 0, DateTimeKind.Unspecified) },
-                    { 1636, "65017522_Haus_in_8640", 3, new DateTime(2020, 9, 20, 7, 40, 27, 0, DateTimeKind.Unspecified) },
-                    { 1620, "73728294_Haus_in_8167", 3, new DateTime(2020, 9, 10, 21, 29, 47, 0, DateTimeKind.Unspecified) }
+                    { 1636, "65017522_Haus_in_8640", 3, new DateTime(2020, 9, 20, 7, 40, 27, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1506,6 +1537,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1620, "73728294_Haus_in_8167", 3, new DateTime(2020, 9, 10, 21, 29, 47, 0, DateTimeKind.Unspecified) },
                     { 1574, "74416169_Haus_in_9129", 3, new DateTime(2020, 8, 13, 14, 16, 24, 0, DateTimeKind.Unspecified) },
                     { 1555, "23415433_Haus_in_8340", 3, new DateTime(2020, 8, 1, 10, 10, 8, 0, DateTimeKind.Unspecified) },
                     { 1530, "26039798_Haus_in_7432", 3, new DateTime(2020, 7, 16, 2, 53, 40, 0, DateTimeKind.Unspecified) },
@@ -1546,8 +1578,7 @@ namespace db_projektarbeit.Migrations
                     { 457, "35219016_Haus_in_8518", 37, new DateTime(2018, 9, 26, 1, 14, 26, 0, DateTimeKind.Unspecified) },
                     { 181, "66019277_Haus_in_9527", 4, new DateTime(2018, 4, 14, 2, 36, 42, 0, DateTimeKind.Unspecified) },
                     { 227, "10999205_Haus_in_8785", 4, new DateTime(2018, 5, 15, 9, 17, 25, 0, DateTimeKind.Unspecified) },
-                    { 257, "47575943_Haus_in_2904", 4, new DateTime(2018, 6, 2, 6, 40, 55, 0, DateTimeKind.Unspecified) },
-                    { 35, "91333488_Haus_in_6907", 6, new DateTime(2018, 1, 20, 22, 25, 15, 0, DateTimeKind.Unspecified) }
+                    { 257, "47575943_Haus_in_2904", 4, new DateTime(2018, 6, 2, 6, 40, 55, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1555,6 +1586,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 35, "91333488_Haus_in_6907", 6, new DateTime(2018, 1, 20, 22, 25, 15, 0, DateTimeKind.Unspecified) },
                     { 5, "61198647_Haus_in_2027", 6, new DateTime(2018, 1, 3, 22, 38, 5, 0, DateTimeKind.Unspecified) },
                     { 1860, "47470380_Haus_in_7235", 5, new DateTime(2021, 1, 30, 14, 35, 1, 0, DateTimeKind.Unspecified) },
                     { 1823, "16135000_Haus_in_5613", 5, new DateTime(2021, 1, 9, 10, 3, 49, 0, DateTimeKind.Unspecified) },
@@ -1595,8 +1627,7 @@ namespace db_projektarbeit.Migrations
                     { 1067, "10539366_Haus_in_3967", 6, new DateTime(2019, 10, 5, 10, 48, 18, 0, DateTimeKind.Unspecified) },
                     { 999, "36369676_Haus_in_9417", 6, new DateTime(2019, 8, 22, 21, 25, 52, 0, DateTimeKind.Unspecified) },
                     { 971, "61421260_Haus_in_4485", 6, new DateTime(2019, 8, 4, 3, 25, 47, 0, DateTimeKind.Unspecified) },
-                    { 936, "97930578_Haus_in_1595", 6, new DateTime(2019, 7, 14, 8, 48, 48, 0, DateTimeKind.Unspecified) },
-                    { 935, "47665407_Haus_in_8352", 6, new DateTime(2019, 7, 13, 10, 5, 10, 0, DateTimeKind.Unspecified) }
+                    { 936, "97930578_Haus_in_1595", 6, new DateTime(2019, 7, 14, 8, 48, 48, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1604,6 +1635,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 935, "47665407_Haus_in_8352", 6, new DateTime(2019, 7, 13, 10, 5, 10, 0, DateTimeKind.Unspecified) },
                     { 1102, "57496475_Haus_in_4874", 32, new DateTime(2019, 10, 26, 17, 41, 14, 0, DateTimeKind.Unspecified) },
                     { 680, "73185991_Haus_in_4641", 6, new DateTime(2019, 2, 9, 12, 24, 48, 0, DateTimeKind.Unspecified) },
                     { 620, "77126249_Haus_in_7072", 6, new DateTime(2019, 1, 2, 14, 30, 3, 0, DateTimeKind.Unspecified) },
@@ -1644,8 +1676,7 @@ namespace db_projektarbeit.Migrations
                     { 308, "74497553_Haus_in_4188", 4, new DateTime(2018, 7, 1, 7, 52, 8, 0, DateTimeKind.Unspecified) },
                     { 301, "12816792_Haus_in_2921", 4, new DateTime(2018, 6, 26, 23, 38, 22, 0, DateTimeKind.Unspecified) },
                     { 280, "57394501_Haus_in_6927", 4, new DateTime(2018, 6, 15, 5, 39, 36, 0, DateTimeKind.Unspecified) },
-                    { 1247, "63107289_Haus_in_4676", 4, new DateTime(2020, 1, 24, 18, 5, 35, 0, DateTimeKind.Unspecified) },
-                    { 1289, "20725057_Haus_in_2481", 4, new DateTime(2020, 2, 17, 10, 33, 20, 0, DateTimeKind.Unspecified) }
+                    { 1247, "63107289_Haus_in_4676", 4, new DateTime(2020, 1, 24, 18, 5, 35, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1653,6 +1684,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1289, "20725057_Haus_in_2481", 4, new DateTime(2020, 2, 17, 10, 33, 20, 0, DateTimeKind.Unspecified) },
                     { 1303, "44064694_Haus_in_3099", 4, new DateTime(2020, 2, 27, 3, 34, 36, 0, DateTimeKind.Unspecified) },
                     { 1336, "29611673_Haus_in_5868", 4, new DateTime(2020, 3, 16, 20, 45, 7, 0, DateTimeKind.Unspecified) },
                     { 676, "27628536_Haus_in_7084", 5, new DateTime(2019, 2, 6, 20, 52, 42, 0, DateTimeKind.Unspecified) },
@@ -1693,8 +1725,7 @@ namespace db_projektarbeit.Migrations
                     { 899, "69269978_Haus_in_7632", 23, new DateTime(2019, 6, 20, 17, 55, 21, 0, DateTimeKind.Unspecified) },
                     { 896, "95732706_Haus_in_9751", 23, new DateTime(2019, 6, 19, 3, 54, 48, 0, DateTimeKind.Unspecified) },
                     { 883, "27439959_Haus_in_4431", 23, new DateTime(2019, 6, 11, 15, 23, 20, 0, DateTimeKind.Unspecified) },
-                    { 847, "10704619_Haus_in_3975", 23, new DateTime(2019, 5, 19, 4, 32, 16, 0, DateTimeKind.Unspecified) },
-                    { 815, "13994953_Haus_in_8122", 23, new DateTime(2019, 4, 29, 10, 40, 50, 0, DateTimeKind.Unspecified) }
+                    { 847, "10704619_Haus_in_3975", 23, new DateTime(2019, 5, 19, 4, 32, 16, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1702,6 +1733,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 815, "13994953_Haus_in_8122", 23, new DateTime(2019, 4, 29, 10, 40, 50, 0, DateTimeKind.Unspecified) },
                     { 759, "7543575_Haus_in_5119", 23, new DateTime(2019, 3, 25, 23, 22, 36, 0, DateTimeKind.Unspecified) },
                     { 670, "89057430_Haus_in_2069", 23, new DateTime(2019, 2, 2, 13, 42, 6, 0, DateTimeKind.Unspecified) },
                     { 666, "82865519_Haus_in_4799", 23, new DateTime(2019, 1, 31, 7, 20, 17, 0, DateTimeKind.Unspecified) },
@@ -1742,8 +1774,7 @@ namespace db_projektarbeit.Migrations
                     { 1536, "95660496_Haus_in_2121", 23, new DateTime(2020, 7, 19, 10, 34, 58, 0, DateTimeKind.Unspecified) },
                     { 1402, "88229263_Haus_in_1148", 23, new DateTime(2020, 4, 26, 8, 9, 39, 0, DateTimeKind.Unspecified) },
                     { 1393, "9331538_Haus_in_8531", 23, new DateTime(2020, 4, 21, 12, 33, 57, 0, DateTimeKind.Unspecified) },
-                    { 1374, "14761266_Haus_in_6654", 23, new DateTime(2020, 4, 8, 22, 10, 14, 0, DateTimeKind.Unspecified) },
-                    { 1371, "92591978_Haus_in_9387", 23, new DateTime(2020, 4, 6, 15, 28, 8, 0, DateTimeKind.Unspecified) }
+                    { 1374, "14761266_Haus_in_6654", 23, new DateTime(2020, 4, 8, 22, 10, 14, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1751,6 +1782,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1371, "92591978_Haus_in_9387", 23, new DateTime(2020, 4, 6, 15, 28, 8, 0, DateTimeKind.Unspecified) },
                     { 1344, "70133179_Haus_in_2120", 23, new DateTime(2020, 3, 21, 19, 54, 50, 0, DateTimeKind.Unspecified) },
                     { 1309, "3020329_Haus_in_4882", 23, new DateTime(2020, 3, 1, 21, 39, 53, 0, DateTimeKind.Unspecified) },
                     { 1255, "41043361_Haus_in_1143", 23, new DateTime(2020, 1, 29, 22, 33, 33, 0, DateTimeKind.Unspecified) },
@@ -1791,8 +1823,7 @@ namespace db_projektarbeit.Migrations
                     { 54, "3831045_Haus_in_9002", 23, new DateTime(2018, 1, 31, 20, 13, 18, 0, DateTimeKind.Unspecified) },
                     { 44, "19992264_Haus_in_6471", 23, new DateTime(2018, 1, 27, 5, 11, 6, 0, DateTimeKind.Unspecified) },
                     { 1819, "28218207_Haus_in_2685", 1, new DateTime(2021, 1, 6, 15, 7, 5, 0, DateTimeKind.Unspecified) },
-                    { 1818, "33847079_Haus_in_3018", 1, new DateTime(2021, 1, 6, 7, 10, 16, 0, DateTimeKind.Unspecified) },
-                    { 1814, "98404038_Haus_in_7046", 1, new DateTime(2021, 1, 3, 22, 2, 4, 0, DateTimeKind.Unspecified) }
+                    { 1818, "33847079_Haus_in_3018", 1, new DateTime(2021, 1, 6, 7, 10, 16, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1800,6 +1831,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1814, "98404038_Haus_in_7046", 1, new DateTime(2021, 1, 3, 22, 2, 4, 0, DateTimeKind.Unspecified) },
                     { 1763, "92834310_Haus_in_8469", 1, new DateTime(2020, 12, 5, 23, 33, 27, 0, DateTimeKind.Unspecified) },
                     { 1737, "9164435_Haus_in_7895", 1, new DateTime(2020, 11, 20, 18, 21, 48, 0, DateTimeKind.Unspecified) },
                     { 1677, "73958292_Haus_in_1432", 1, new DateTime(2020, 10, 16, 22, 51, 50, 0, DateTimeKind.Unspecified) },
@@ -1840,8 +1872,7 @@ namespace db_projektarbeit.Migrations
                     { 1362, "83921291_Haus_in_3906", 2, new DateTime(2020, 4, 1, 12, 59, 12, 0, DateTimeKind.Unspecified) },
                     { 1357, "71991923_Haus_in_4839", 2, new DateTime(2020, 3, 29, 1, 33, 58, 0, DateTimeKind.Unspecified) },
                     { 1316, "95112365_Haus_in_3165", 2, new DateTime(2020, 3, 5, 12, 16, 9, 0, DateTimeKind.Unspecified) },
-                    { 1266, "5780407_Haus_in_3868", 2, new DateTime(2020, 2, 4, 10, 51, 31, 0, DateTimeKind.Unspecified) },
-                    { 1263, "98180358_Haus_in_5801", 2, new DateTime(2020, 2, 2, 19, 52, 17, 0, DateTimeKind.Unspecified) }
+                    { 1266, "5780407_Haus_in_3868", 2, new DateTime(2020, 2, 4, 10, 51, 31, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1849,6 +1880,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1263, "98180358_Haus_in_5801", 2, new DateTime(2020, 2, 2, 19, 52, 17, 0, DateTimeKind.Unspecified) },
                     { 1240, "6537357_Haus_in_5935", 2, new DateTime(2020, 1, 19, 23, 52, 4, 0, DateTimeKind.Unspecified) },
                     { 1149, "62781080_Haus_in_6554", 2, new DateTime(2019, 11, 23, 6, 23, 40, 0, DateTimeKind.Unspecified) },
                     { 1134, "82051506_Haus_in_4535", 2, new DateTime(2019, 11, 15, 7, 13, 3, 0, DateTimeKind.Unspecified) },
@@ -1889,8 +1921,7 @@ namespace db_projektarbeit.Migrations
                     { 989, "80765095_Haus_in_9941", 2, new DateTime(2019, 8, 16, 12, 13, 55, 0, DateTimeKind.Unspecified) },
                     { 972, "59754970_Haus_in_3828", 2, new DateTime(2019, 8, 4, 20, 15, 13, 0, DateTimeKind.Unspecified) },
                     { 1581, "91672388_Haus_in_6605", 36, new DateTime(2020, 8, 18, 19, 9, 18, 0, DateTimeKind.Unspecified) },
-                    { 1561, "65366955_Haus_in_4024", 36, new DateTime(2020, 8, 4, 19, 26, 47, 0, DateTimeKind.Unspecified) },
-                    { 1550, "84414077_Haus_in_8583", 36, new DateTime(2020, 7, 29, 4, 28, 29, 0, DateTimeKind.Unspecified) }
+                    { 1561, "65366955_Haus_in_4024", 36, new DateTime(2020, 8, 4, 19, 26, 47, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1898,6 +1929,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1550, "84414077_Haus_in_8583", 36, new DateTime(2020, 7, 29, 4, 28, 29, 0, DateTimeKind.Unspecified) },
                     { 1538, "36405259_Haus_in_1578", 36, new DateTime(2020, 7, 20, 11, 15, 39, 0, DateTimeKind.Unspecified) },
                     { 1529, "71849258_Haus_in_8459", 36, new DateTime(2020, 7, 15, 19, 18, 33, 0, DateTimeKind.Unspecified) },
                     { 1489, "55814761_Haus_in_9196", 36, new DateTime(2020, 6, 21, 5, 42, 27, 0, DateTimeKind.Unspecified) },
@@ -1938,8 +1970,7 @@ namespace db_projektarbeit.Migrations
                     { 493, "80354050_Haus_in_2618", 2, new DateTime(2018, 10, 17, 15, 33, 51, 0, DateTimeKind.Unspecified) },
                     { 529, "55996171_Haus_in_8349", 36, new DateTime(2018, 11, 7, 11, 49, 52, 0, DateTimeKind.Unspecified) },
                     { 477, "82086101_Haus_in_5043", 2, new DateTime(2018, 10, 7, 6, 3, 59, 0, DateTimeKind.Unspecified) },
-                    { 371, "52189234_Haus_in_1848", 2, new DateTime(2018, 8, 6, 6, 54, 42, 0, DateTimeKind.Unspecified) },
-                    { 331, "48894978_Haus_in_9856", 2, new DateTime(2018, 7, 14, 15, 21, 14, 0, DateTimeKind.Unspecified) }
+                    { 371, "52189234_Haus_in_1848", 2, new DateTime(2018, 8, 6, 6, 54, 42, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1947,6 +1978,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 331, "48894978_Haus_in_9856", 2, new DateTime(2018, 7, 14, 15, 21, 14, 0, DateTimeKind.Unspecified) },
                     { 313, "99284655_Haus_in_6453", 2, new DateTime(2018, 7, 4, 12, 32, 1, 0, DateTimeKind.Unspecified) },
                     { 296, "22274376_Haus_in_1698", 2, new DateTime(2018, 6, 24, 20, 3, 15, 0, DateTimeKind.Unspecified) },
                     { 294, "98784402_Haus_in_5081", 2, new DateTime(2018, 6, 23, 11, 5, 11, 0, DateTimeKind.Unspecified) },
@@ -1987,8 +2019,7 @@ namespace db_projektarbeit.Migrations
                     { 1650, "88818962_Haus_in_2443", 21, new DateTime(2020, 9, 29, 9, 38, 38, 0, DateTimeKind.Unspecified) },
                     { 1582, "88397056_Haus_in_7133", 21, new DateTime(2020, 8, 19, 5, 54, 36, 0, DateTimeKind.Unspecified) },
                     { 868, "77061467_Haus_in_1200", 10, new DateTime(2019, 6, 1, 12, 49, 52, 0, DateTimeKind.Unspecified) },
-                    { 1568, "50619879_Haus_in_4963", 21, new DateTime(2020, 8, 9, 6, 43, 3, 0, DateTimeKind.Unspecified) },
-                    { 882, "9215928_Haus_in_8892", 10, new DateTime(2019, 6, 10, 20, 7, 46, 0, DateTimeKind.Unspecified) }
+                    { 1568, "50619879_Haus_in_4963", 21, new DateTime(2020, 8, 9, 6, 43, 3, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -1996,6 +2027,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 882, "9215928_Haus_in_8892", 10, new DateTime(2019, 6, 10, 20, 7, 46, 0, DateTimeKind.Unspecified) },
                     { 957, "36640008_Haus_in_8897", 10, new DateTime(2019, 7, 27, 18, 27, 47, 0, DateTimeKind.Unspecified) },
                     { 174, "9921446_Haus_in_8953", 11, new DateTime(2018, 4, 9, 21, 49, 49, 0, DateTimeKind.Unspecified) },
                     { 103, "31486369_Haus_in_8302", 11, new DateTime(2018, 2, 28, 9, 15, 23, 0, DateTimeKind.Unspecified) },
@@ -2036,8 +2068,7 @@ namespace db_projektarbeit.Migrations
                     { 180, "82026053_Haus_in_5392", 21, new DateTime(2018, 4, 13, 14, 17, 20, 0, DateTimeKind.Unspecified) },
                     { 168, "27615323_Haus_in_5329", 21, new DateTime(2018, 4, 5, 20, 58, 54, 0, DateTimeKind.Unspecified) },
                     { 165, "27968237_Haus_in_7137", 21, new DateTime(2018, 4, 3, 19, 33, 30, 0, DateTimeKind.Unspecified) },
-                    { 1272, "98818552_Haus_in_5492", 6, new DateTime(2020, 2, 7, 14, 22, 49, 0, DateTimeKind.Unspecified) },
-                    { 93, "35537952_Haus_in_7625", 21, new DateTime(2018, 2, 23, 3, 54, 20, 0, DateTimeKind.Unspecified) }
+                    { 1272, "98818552_Haus_in_5492", 6, new DateTime(2020, 2, 7, 14, 22, 49, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2045,6 +2076,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 93, "35537952_Haus_in_7625", 21, new DateTime(2018, 2, 23, 3, 54, 20, 0, DateTimeKind.Unspecified) },
                     { 85, "35722251_Haus_in_6117", 21, new DateTime(2018, 2, 19, 6, 52, 3, 0, DateTimeKind.Unspecified) },
                     { 38, "77508683_Haus_in_1333", 21, new DateTime(2018, 1, 23, 4, 20, 55, 0, DateTimeKind.Unspecified) },
                     { 30, "94315415_Haus_in_6317", 21, new DateTime(2018, 1, 18, 6, 54, 26, 0, DateTimeKind.Unspecified) },
@@ -2085,8 +2117,7 @@ namespace db_projektarbeit.Migrations
                     { 646, "27953016_Haus_in_6691", 21, new DateTime(2019, 1, 18, 17, 51, 3, 0, DateTimeKind.Unspecified) },
                     { 641, "67181511_Haus_in_2981", 21, new DateTime(2019, 1, 15, 11, 19, 27, 0, DateTimeKind.Unspecified) },
                     { 634, "58461632_Haus_in_6013", 21, new DateTime(2019, 1, 11, 13, 47, 20, 0, DateTimeKind.Unspecified) },
-                    { 569, "42343475_Haus_in_8488", 21, new DateTime(2018, 12, 4, 12, 52, 35, 0, DateTimeKind.Unspecified) },
-                    { 553, "52040508_Haus_in_8348", 21, new DateTime(2018, 11, 24, 21, 35, 13, 0, DateTimeKind.Unspecified) }
+                    { 569, "42343475_Haus_in_8488", 21, new DateTime(2018, 12, 4, 12, 52, 35, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2094,6 +2125,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 553, "52040508_Haus_in_8348", 21, new DateTime(2018, 11, 24, 21, 35, 13, 0, DateTimeKind.Unspecified) },
                     { 530, "82521422_Haus_in_7387", 21, new DateTime(2018, 11, 8, 8, 36, 41, 0, DateTimeKind.Unspecified) },
                     { 200, "37682164_Haus_in_6288", 11, new DateTime(2018, 4, 26, 0, 37, 46, 0, DateTimeKind.Unspecified) },
                     { 215, "15637416_Haus_in_5263", 11, new DateTime(2018, 5, 7, 0, 33, 7, 0, DateTimeKind.Unspecified) },
@@ -2134,8 +2166,7 @@ namespace db_projektarbeit.Migrations
                     { 808, "9597346_Haus_in_8691", 32, new DateTime(2019, 4, 25, 21, 8, 59, 0, DateTimeKind.Unspecified) },
                     { 794, "99302417_Haus_in_2645", 32, new DateTime(2019, 4, 17, 3, 5, 43, 0, DateTimeKind.Unspecified) },
                     { 768, "41058219_Haus_in_9518", 32, new DateTime(2019, 3, 30, 10, 6, 19, 0, DateTimeKind.Unspecified) },
-                    { 749, "14979172_Haus_in_7522", 32, new DateTime(2019, 3, 19, 23, 44, 11, 0, DateTimeKind.Unspecified) },
-                    { 692, "13679532_Haus_in_4610", 32, new DateTime(2019, 2, 16, 2, 36, 54, 0, DateTimeKind.Unspecified) }
+                    { 749, "14979172_Haus_in_7522", 32, new DateTime(2019, 3, 19, 23, 44, 11, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2143,6 +2174,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 692, "13679532_Haus_in_4610", 32, new DateTime(2019, 2, 16, 2, 36, 54, 0, DateTimeKind.Unspecified) },
                     { 564, "24402652_Haus_in_5870", 32, new DateTime(2018, 12, 1, 7, 47, 4, 0, DateTimeKind.Unspecified) },
                     { 559, "69858333_Haus_in_7717", 32, new DateTime(2018, 11, 28, 17, 43, 59, 0, DateTimeKind.Unspecified) },
                     { 532, "59561718_Haus_in_8826", 32, new DateTime(2018, 11, 9, 12, 27, 54, 0, DateTimeKind.Unspecified) },
@@ -2183,8 +2215,7 @@ namespace db_projektarbeit.Migrations
                     { 585, "6669518_Haus_in_6572", 11, new DateTime(2018, 12, 13, 14, 4, 29, 0, DateTimeKind.Unspecified) },
                     { 577, "49140414_Haus_in_8831", 11, new DateTime(2018, 12, 8, 14, 10, 31, 0, DateTimeKind.Unspecified) },
                     { 517, "40773795_Haus_in_4264", 11, new DateTime(2018, 10, 31, 6, 42, 8, 0, DateTimeKind.Unspecified) },
-                    { 455, "9281598_Haus_in_4523", 11, new DateTime(2018, 9, 24, 9, 53, 35, 0, DateTimeKind.Unspecified) },
-                    { 448, "65155500_Haus_in_3301", 11, new DateTime(2018, 9, 19, 18, 18, 15, 0, DateTimeKind.Unspecified) }
+                    { 455, "9281598_Haus_in_4523", 11, new DateTime(2018, 9, 24, 9, 53, 35, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2192,6 +2223,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 448, "65155500_Haus_in_3301", 11, new DateTime(2018, 9, 19, 18, 18, 15, 0, DateTimeKind.Unspecified) },
                     { 392, "32879145_Haus_in_7806", 11, new DateTime(2018, 8, 16, 20, 46, 5, 0, DateTimeKind.Unspecified) },
                     { 364, "17622515_Haus_in_3480", 11, new DateTime(2018, 8, 2, 3, 9, 28, 0, DateTimeKind.Unspecified) },
                     { 324, "76987876_Haus_in_5069", 11, new DateTime(2018, 7, 9, 12, 46, 49, 0, DateTimeKind.Unspecified) },
@@ -2232,8 +2264,7 @@ namespace db_projektarbeit.Migrations
                     { 1349, "35385439_Haus_in_7789", 39, new DateTime(2020, 3, 24, 4, 16, 29, 0, DateTimeKind.Unspecified) },
                     { 1333, "66231147_Haus_in_6971", 39, new DateTime(2020, 3, 15, 0, 8, 11, 0, DateTimeKind.Unspecified) },
                     { 1292, "34636103_Haus_in_4102", 39, new DateTime(2020, 2, 19, 4, 25, 29, 0, DateTimeKind.Unspecified) },
-                    { 1290, "97449742_Haus_in_1192", 39, new DateTime(2020, 2, 18, 8, 38, 57, 0, DateTimeKind.Unspecified) },
-                    { 1212, "21340620_Haus_in_3898", 39, new DateTime(2020, 1, 2, 18, 15, 57, 0, DateTimeKind.Unspecified) }
+                    { 1290, "97449742_Haus_in_1192", 39, new DateTime(2020, 2, 18, 8, 38, 57, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2241,6 +2272,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1212, "21340620_Haus_in_3898", 39, new DateTime(2020, 1, 2, 18, 15, 57, 0, DateTimeKind.Unspecified) },
                     { 1195, "25987957_Haus_in_7950", 39, new DateTime(2019, 12, 22, 12, 14, 13, 0, DateTimeKind.Unspecified) },
                     { 1160, "8783810_Haus_in_3333", 39, new DateTime(2019, 11, 30, 18, 15, 58, 0, DateTimeKind.Unspecified) },
                     { 1140, "69949846_Haus_in_2814", 39, new DateTime(2019, 11, 18, 17, 44, 54, 0, DateTimeKind.Unspecified) },
@@ -2281,8 +2313,7 @@ namespace db_projektarbeit.Migrations
                     { 62, "40156611_Haus_in_5707", 8, new DateTime(2018, 2, 5, 9, 40, 54, 0, DateTimeKind.Unspecified) },
                     { 1339, "56828016_Haus_in_2425", 9, new DateTime(2020, 3, 18, 11, 34, 36, 0, DateTimeKind.Unspecified) },
                     { 1810, "21345474_Haus_in_5982", 39, new DateTime(2021, 1, 1, 21, 58, 40, 0, DateTimeKind.Unspecified) },
-                    { 1793, "58000578_Haus_in_1570", 39, new DateTime(2020, 12, 23, 0, 32, 14, 0, DateTimeKind.Unspecified) },
-                    { 1767, "95882303_Haus_in_7097", 39, new DateTime(2020, 12, 8, 6, 28, 25, 0, DateTimeKind.Unspecified) }
+                    { 1793, "58000578_Haus_in_1570", 39, new DateTime(2020, 12, 23, 0, 32, 14, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2290,6 +2321,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1767, "95882303_Haus_in_7097", 39, new DateTime(2020, 12, 8, 6, 28, 25, 0, DateTimeKind.Unspecified) },
                     { 1757, "52310803_Haus_in_1591", 39, new DateTime(2020, 12, 3, 1, 23, 35, 0, DateTimeKind.Unspecified) },
                     { 1755, "61361243_Haus_in_5375", 39, new DateTime(2020, 12, 1, 18, 16, 2, 0, DateTimeKind.Unspecified) },
                     { 1715, "46965638_Haus_in_5385", 39, new DateTime(2020, 11, 6, 11, 26, 21, 0, DateTimeKind.Unspecified) },
@@ -2330,8 +2362,7 @@ namespace db_projektarbeit.Migrations
                     { 389, "62912156_Haus_in_7715", 39, new DateTime(2018, 8, 15, 15, 30, 19, 0, DateTimeKind.Unspecified) },
                     { 1242, "96683682_Haus_in_9499", 7, new DateTime(2020, 1, 21, 9, 15, 46, 0, DateTimeKind.Unspecified) },
                     { 1302, "94444411_Haus_in_5883", 7, new DateTime(2020, 2, 26, 9, 17, 6, 0, DateTimeKind.Unspecified) },
-                    { 285, "71296752_Haus_in_4303", 39, new DateTime(2018, 6, 17, 9, 13, 18, 0, DateTimeKind.Unspecified) },
-                    { 187, "73101851_Haus_in_8615", 39, new DateTime(2018, 4, 17, 15, 1, 30, 0, DateTimeKind.Unspecified) }
+                    { 285, "71296752_Haus_in_4303", 39, new DateTime(2018, 6, 17, 9, 13, 18, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2339,6 +2370,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 187, "73101851_Haus_in_8615", 39, new DateTime(2018, 4, 17, 15, 1, 30, 0, DateTimeKind.Unspecified) },
                     { 130, "82624982_Haus_in_5129", 39, new DateTime(2018, 3, 15, 6, 0, 44, 0, DateTimeKind.Unspecified) },
                     { 94, "81518362_Haus_in_2060", 39, new DateTime(2018, 2, 23, 13, 6, 48, 0, DateTimeKind.Unspecified) },
                     { 78, "273547_Haus_in_6634", 39, new DateTime(2018, 2, 15, 0, 18, 25, 0, DateTimeKind.Unspecified) },
@@ -2379,8 +2411,7 @@ namespace db_projektarbeit.Migrations
                     { 1070, "15762394_Haus_in_9617", 8, new DateTime(2019, 10, 7, 14, 1, 1, 0, DateTimeKind.Unspecified) },
                     { 1656, "22423515_Haus_in_5590", 25, new DateTime(2020, 10, 3, 6, 50, 13, 0, DateTimeKind.Unspecified) },
                     { 1653, "77069597_Haus_in_3699", 25, new DateTime(2020, 10, 1, 6, 30, 40, 0, DateTimeKind.Unspecified) },
-                    { 1600, "15073787_Haus_in_8025", 25, new DateTime(2020, 8, 30, 0, 36, 37, 0, DateTimeKind.Unspecified) },
-                    { 1520, "70445234_Haus_in_5960", 25, new DateTime(2020, 7, 9, 22, 29, 36, 0, DateTimeKind.Unspecified) }
+                    { 1600, "15073787_Haus_in_8025", 25, new DateTime(2020, 8, 30, 0, 36, 37, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2388,6 +2419,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1520, "70445234_Haus_in_5960", 25, new DateTime(2020, 7, 9, 22, 29, 36, 0, DateTimeKind.Unspecified) },
                     { 1505, "25024275_Haus_in_7745", 25, new DateTime(2020, 7, 2, 1, 35, 21, 0, DateTimeKind.Unspecified) },
                     { 1499, "93152419_Haus_in_7176", 25, new DateTime(2020, 6, 27, 16, 45, 49, 0, DateTimeKind.Unspecified) },
                     { 1478, "40025849_Haus_in_9250", 25, new DateTime(2020, 6, 14, 10, 48, 6, 0, DateTimeKind.Unspecified) },
@@ -2428,8 +2460,7 @@ namespace db_projektarbeit.Migrations
                     { 383, "10100449_Haus_in_5616", 9, new DateTime(2018, 8, 12, 16, 18, 10, 0, DateTimeKind.Unspecified) },
                     { 365, "22517983_Haus_in_6256", 9, new DateTime(2018, 8, 3, 0, 58, 4, 0, DateTimeKind.Unspecified) },
                     { 219, "89747230_Haus_in_8405", 9, new DateTime(2018, 5, 9, 17, 52, 33, 0, DateTimeKind.Unspecified) },
-                    { 1191, "70651945_Haus_in_1576", 25, new DateTime(2019, 12, 19, 9, 16, 51, 0, DateTimeKind.Unspecified) },
-                    { 1666, "89676437_Haus_in_1489", 25, new DateTime(2020, 10, 9, 22, 21, 24, 0, DateTimeKind.Unspecified) }
+                    { 1191, "70651945_Haus_in_1576", 25, new DateTime(2019, 12, 19, 9, 16, 51, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2437,6 +2468,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 1666, "89676437_Haus_in_1489", 25, new DateTime(2020, 10, 9, 22, 21, 24, 0, DateTimeKind.Unspecified) },
                     { 1167, "90556560_Haus_in_5342", 25, new DateTime(2019, 12, 5, 7, 52, 38, 0, DateTimeKind.Unspecified) },
                     { 1788, "46898118_Haus_in_4874", 8, new DateTime(2020, 12, 20, 8, 8, 46, 0, DateTimeKind.Unspecified) },
                     { 1726, "74137827_Haus_in_4842", 8, new DateTime(2020, 11, 13, 5, 57, 5, 0, DateTimeKind.Unspecified) },
@@ -2477,8 +2509,7 @@ namespace db_projektarbeit.Migrations
                     { 788, "58090834_Haus_in_8739", 25, new DateTime(2019, 4, 13, 1, 18, 7, 0, DateTimeKind.Unspecified) },
                     { 643, "91850583_Haus_in_9201", 25, new DateTime(2019, 1, 16, 17, 35, 11, 0, DateTimeKind.Unspecified) },
                     { 636, "73437603_Haus_in_9075", 25, new DateTime(2019, 1, 12, 17, 29, 32, 0, DateTimeKind.Unspecified) },
-                    { 607, "18940963_Haus_in_8822", 25, new DateTime(2018, 12, 25, 19, 46, 48, 0, DateTimeKind.Unspecified) },
-                    { 598, "50680450_Haus_in_4178", 25, new DateTime(2018, 12, 21, 2, 50, 54, 0, DateTimeKind.Unspecified) }
+                    { 607, "18940963_Haus_in_8822", 25, new DateTime(2018, 12, 25, 19, 46, 48, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2486,21 +2517,22 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Comment", "CustomerId", "Date" },
                 values: new object[,]
                 {
+                    { 598, "50680450_Haus_in_4178", 25, new DateTime(2018, 12, 21, 2, 50, 54, 0, DateTimeKind.Unspecified) },
                     { 557, "76401911_Haus_in_3347", 25, new DateTime(2018, 11, 27, 16, 42, 22, 0, DateTimeKind.Unspecified) },
                     { 884, "24740096_Haus_in_4001", 25, new DateTime(2019, 6, 12, 3, 8, 31, 0, DateTimeKind.Unspecified) },
-                    { 465, "45935906_Haus_in_2820", 25, new DateTime(2018, 10, 1, 20, 34, 18, 0, DateTimeKind.Unspecified) },
-                    { 40, "47500529_Haus_in_5134", 25, new DateTime(2018, 1, 24, 19, 12, 33, 0, DateTimeKind.Unspecified) },
-                    { 523, "1522306_Haus_in_9839", 25, new DateTime(2018, 11, 3, 20, 40, 14, 0, DateTimeKind.Unspecified) },
-                    { 73, "81777782_Haus_in_9582", 25, new DateTime(2018, 2, 12, 4, 6, 9, 0, DateTimeKind.Unspecified) },
-                    { 186, "69274494_Haus_in_6902", 25, new DateTime(2018, 4, 16, 22, 31, 47, 0, DateTimeKind.Unspecified) },
-                    { 214, "6356546_Haus_in_1686", 25, new DateTime(2018, 5, 6, 4, 1, 6, 0, DateTimeKind.Unspecified) },
-                    { 218, "38114633_Haus_in_2553", 25, new DateTime(2018, 5, 8, 23, 59, 58, 0, DateTimeKind.Unspecified) },
                     { 210, "37310782_Haus_in_3789", 25, new DateTime(2018, 5, 3, 6, 11, 25, 0, DateTimeKind.Unspecified) },
-                    { 259, "6725742_Haus_in_2288", 25, new DateTime(2018, 6, 3, 7, 25, 32, 0, DateTimeKind.Unspecified) },
-                    { 274, "40542651_Haus_in_7486", 25, new DateTime(2018, 6, 12, 9, 24, 9, 0, DateTimeKind.Unspecified) },
-                    { 275, "31796608_Haus_in_1920", 25, new DateTime(2018, 6, 12, 23, 1, 49, 0, DateTimeKind.Unspecified) },
+                    { 465, "45935906_Haus_in_2820", 25, new DateTime(2018, 10, 1, 20, 34, 18, 0, DateTimeKind.Unspecified) },
+                    { 420, "90338725_Haus_in_9913", 25, new DateTime(2018, 9, 3, 18, 16, 12, 0, DateTimeKind.Unspecified) },
                     { 408, "24674076_Haus_in_2680", 25, new DateTime(2018, 8, 27, 8, 38, 7, 0, DateTimeKind.Unspecified) },
-                    { 420, "90338725_Haus_in_9913", 25, new DateTime(2018, 9, 3, 18, 16, 12, 0, DateTimeKind.Unspecified) }
+                    { 275, "31796608_Haus_in_1920", 25, new DateTime(2018, 6, 12, 23, 1, 49, 0, DateTimeKind.Unspecified) },
+                    { 274, "40542651_Haus_in_7486", 25, new DateTime(2018, 6, 12, 9, 24, 9, 0, DateTimeKind.Unspecified) },
+                    { 259, "6725742_Haus_in_2288", 25, new DateTime(2018, 6, 3, 7, 25, 32, 0, DateTimeKind.Unspecified) },
+                    { 218, "38114633_Haus_in_2553", 25, new DateTime(2018, 5, 8, 23, 59, 58, 0, DateTimeKind.Unspecified) },
+                    { 214, "6356546_Haus_in_1686", 25, new DateTime(2018, 5, 6, 4, 1, 6, 0, DateTimeKind.Unspecified) },
+                    { 186, "69274494_Haus_in_6902", 25, new DateTime(2018, 4, 16, 22, 31, 47, 0, DateTimeKind.Unspecified) },
+                    { 73, "81777782_Haus_in_9582", 25, new DateTime(2018, 2, 12, 4, 6, 9, 0, DateTimeKind.Unspecified) },
+                    { 523, "1522306_Haus_in_9839", 25, new DateTime(2018, 11, 3, 20, 40, 14, 0, DateTimeKind.Unspecified) },
+                    { 40, "47500529_Haus_in_5134", 25, new DateTime(2018, 1, 24, 19, 12, 33, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(
@@ -2508,8 +2540,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "Name", "ParentId" },
                 values: new object[,]
                 {
-                    { 8, "Fotodrucker", 7 },
-                    { 9, "Multifunktionsdrucker", 7 }
+                    { 9, "Multifunktionsdrucker", 7 },
+                    { 8, "Fotodrucker", 7 }
                 });
 
             migrationBuilder.InsertData(
@@ -2517,11 +2549,12 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
-                    { 31, new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech G703 Lightspeed", 18, 85.70m },
-                    { 29, new DateTime(2019, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech MX Vertical", 18, 89.90m },
-                    { 27, new DateTime(2019, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech MX Master 3", 18, 92.00m },
                     { 30, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech Wireless Mouse", 18, 38.60m },
+                    { 39, new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech Iluminated", 19, 84.00m },
                     { 28, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech G Pro", 18, 109.00m },
+                    { 31, new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech G703 Lightspeed", 18, 85.70m },
+                    { 27, new DateTime(2019, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech MX Master 3", 18, 92.00m },
+                    { 29, new DateTime(2019, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech MX Vertical", 18, 89.90m },
                     { 32, new DateTime(2018, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech Razer Nega Pro", 18, 164.00m },
                     { 37, new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP Slime", 19, 56.70m },
                     { 34, new DateTime(2019, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ligitech MK270 Combo", 19, 129.00m },
@@ -2529,7 +2562,6 @@ namespace db_projektarbeit.Migrations
                     { 36, new DateTime(2019, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ligitech MK540", 19, 55.70m },
                     { 38, new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech K120", 19, 22.00m },
                     { 26, new DateTime(2018, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech MX Master 2", 18, 72.00m },
-                    { 39, new DateTime(2020, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Logitech Iluminated", 19, 84.00m },
                     { 33, new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Apple Magic Trackpad 2", 18, 129.00m },
                     { 25, new DateTime(2018, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Bildschirm 27\"", 17, 280.00m },
                     { 3, new DateTime(2020, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Rolli", 3, 199.90m },
@@ -2540,8 +2572,7 @@ namespace db_projektarbeit.Migrations
                     { 19, new DateTime(2018, 12, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pult 180x60cm", 15, 180.70m },
                     { 18, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pult 120x60cm", 15, 120.70m },
                     { 17, new DateTime(2019, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stehpult Deluxe", 14, 980.70m },
-                    { 16, new DateTime(2019, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stehpult Torto", 14, 568.90m },
-                    { 15, new DateTime(2019, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stehpult Alpha", 14, 300.50m }
+                    { 16, new DateTime(2019, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stehpult Torto", 14, 568.90m }
                 });
 
             migrationBuilder.InsertData(
@@ -2549,6 +2580,7 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CreationDate", "Description", "GroupId", "Price" },
                 values: new object[,]
                 {
+                    { 15, new DateTime(2019, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stehpult Alpha", 14, 300.50m },
                     { 9, new DateTime(2020, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "HP all-in-one", 10, 999.90m },
                     { 4, new DateTime(2020, 7, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "RT-9000", 6, 360.50m },
                     { 2, new DateTime(2020, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Stuhl Comfort", 2, 170m },
@@ -9151,6 +9183,11 @@ namespace db_projektarbeit.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Bills_CustomerId",
+                table: "Bills",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Customers_CityId",
                 table: "Customers",
                 column: "CityId");
@@ -9184,6 +9221,9 @@ namespace db_projektarbeit.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Bills");
+
+            migrationBuilder.DropTable(
                 name: "Positions");
 
             migrationBuilder.DropTable(
@@ -9200,6 +9240,10 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.DropTable(
                 name: "Cities");
+
+            migrationBuilder.DropSequence(
+                name: "BillNr",
+                schema: "shared");
 
             migrationBuilder.DropSequence(
                 name: "CustomerNr",

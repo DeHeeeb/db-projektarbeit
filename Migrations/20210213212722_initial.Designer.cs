@@ -10,8 +10,8 @@ using db_projektarbeit.Model;
 namespace db_projektarbeit.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20210213202234_inital")]
-    partial class inital
+    [Migration("20210213212722_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,11 +21,52 @@ namespace db_projektarbeit.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
+            modelBuilder.HasSequence<int>("BillNr", "shared")
+                .StartsAt(100000L);
+
             modelBuilder.HasSequence<int>("CustomerNr", "shared")
                 .StartsAt(1000L);
 
             modelBuilder.HasSequence<int>("ProductNr", "shared")
                 .StartsAt(10000L);
+
+            modelBuilder.Entity("db_projektarbeit.Bill", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("BillNr")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValueSql("NEXT VALUE FOR shared.BillNr");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Netto")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Bills");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BillNr = 0,
+                            CustomerId = 45,
+                            Date = new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Netto = 1008.90m
+                        });
+                });
 
             modelBuilder.Entity("db_projektarbeit.City", b =>
                 {
@@ -260,7 +301,7 @@ namespace db_projektarbeit.Migrations
                     b.Property<DateTime>("ValidFrom")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 2, 13, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055));
+                        .HasDefaultValue(new DateTime(2021, 2, 13, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893));
 
                     b.Property<DateTime>("ValidTo")
                         .ValueGeneratedOnAdd()
@@ -788,7 +829,7 @@ namespace db_projektarbeit.Migrations
                             LastName = "Kunz",
                             Street = "Grubstrasse",
                             ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
+                            ValidTo = new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
                         },
                         new
                         {
@@ -799,7 +840,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "9",
                             LastName = "Kunz",
                             Street = "Grabweg",
-                            ValidFrom = new DateTime(2021, 2, 6, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
+                            ValidFrom = new DateTime(2021, 2, 6, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -812,7 +853,7 @@ namespace db_projektarbeit.Migrations
                             LastName = "Weber",
                             Street = "Kleinweg",
                             ValidFrom = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ValidTo = new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
+                            ValidTo = new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
                         },
                         new
                         {
@@ -824,8 +865,8 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 1, 4, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
-                            ValidTo = new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055)
+                            ValidFrom = new DateTime(2021, 1, 4, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
+                            ValidTo = new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893)
                         },
                         new
                         {
@@ -837,7 +878,7 @@ namespace db_projektarbeit.Migrations
                             HouseNumber = "500",
                             LastName = "Weber",
                             Street = "Grossweg",
-                            ValidFrom = new DateTime(2021, 2, 11, 21, 22, 32, 711, DateTimeKind.Local).AddTicks(3055),
+                            ValidFrom = new DateTime(2021, 2, 11, 22, 27, 20, 485, DateTimeKind.Local).AddTicks(4893),
                             ValidTo = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -53917,6 +53958,17 @@ namespace db_projektarbeit.Migrations
                             Name = "Tastatur",
                             ParentId = 16
                         });
+                });
+
+            modelBuilder.Entity("db_projektarbeit.Bill", b =>
+                {
+                    b.HasOne("db_projektarbeit.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("db_projektarbeit.Customer", b =>
