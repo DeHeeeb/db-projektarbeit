@@ -17,7 +17,7 @@ namespace db_projektarbeit.Model
         public DbSet<Bill> Bills { get; set; }
         #endregion
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
         }

@@ -48,6 +48,10 @@ namespace db_projektarbeit.View
         {
             new BillView().Show();
         }
+        private void CmdStatistics_Click(object sender, EventArgs e)
+        {
+            new StatisticsView().Show();
+        }
 
         private void TimerSQLCheck_Tick(object sender, EventArgs e)
         {
@@ -61,5 +65,7 @@ namespace db_projektarbeit.View
                 LblSQLCheck.Text = "SQL Server nicht Verbunden";
             }
         }
+
+
     }
 }

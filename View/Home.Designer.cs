@@ -37,6 +37,7 @@
             this.TimerSQLCheck = new System.Windows.Forms.Timer(this.components);
             this.LblSQLCheck = new System.Windows.Forms.Label();
             this.CmdBill = new System.Windows.Forms.Button();
+            this.CmdStatistics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdCustomer
@@ -103,7 +104,7 @@
             // LblSQLCheck
             // 
             this.LblSQLCheck.AutoSize = true;
-            this.LblSQLCheck.Location = new System.Drawing.Point(12, 368);
+            this.LblSQLCheck.Location = new System.Drawing.Point(11, 437);
             this.LblSQLCheck.Name = "LblSQLCheck";
             this.LblSQLCheck.Size = new System.Drawing.Size(208, 20);
             this.LblSQLCheck.TabIndex = 5;
@@ -120,11 +121,23 @@
             this.CmdBill.UseVisualStyleBackColor = true;
             this.CmdBill.Click += new System.EventHandler(this.CmdBill_Click);
             // 
+            // CmdStatistics
+            // 
+            this.CmdStatistics.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdStatistics.Location = new System.Drawing.Point(11, 321);
+            this.CmdStatistics.Name = "CmdStatistics";
+            this.CmdStatistics.Size = new System.Drawing.Size(325, 97);
+            this.CmdStatistics.TabIndex = 7;
+            this.CmdStatistics.Text = "Statistik";
+            this.CmdStatistics.UseVisualStyleBackColor = true;
+            this.CmdStatistics.Click += new System.EventHandler(this.CmdStatistics_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 402);
+            this.ClientSize = new System.Drawing.Size(666, 466);
+            this.Controls.Add(this.CmdStatistics);
             this.Controls.Add(this.CmdBill);
             this.Controls.Add(this.LblSQLCheck);
             this.Controls.Add(this.CmdCity);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Timer TimerSQLCheck;
         private System.Windows.Forms.Label LblSQLCheck;
         private System.Windows.Forms.Button CmdBill;
+        private System.Windows.Forms.Button CmdStatistics;
     }
 }
