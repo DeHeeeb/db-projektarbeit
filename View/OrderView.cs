@@ -32,13 +32,15 @@ namespace db_projektarbeit.View
             DgvOrder.DataSource = orders;
 
             DgvOrder.Columns[0].Visible = false;
-            DgvOrder.Columns[2].Visible = false;
             DgvOrder.Columns[3].Visible = false;
-            DgvOrder.Columns[5].Visible = false;
+            DgvOrder.Columns[4].Visible = false;
             DgvOrder.Columns[6].Visible = false;
+            DgvOrder.Columns[7].Visible = false;
             DgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvOrder.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DgvOrder.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvOrder.Columns[1].HeaderText = "Datum";
+            DgvOrder.Columns[2].HeaderText = "Auftrags-Nr";
             DgvOrder.Columns[4].HeaderText = "Kunde";
         }
 

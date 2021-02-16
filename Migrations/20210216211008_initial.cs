@@ -21,6 +21,11 @@ namespace db_projektarbeit.Migrations
                 startValue: 1000L);
 
             migrationBuilder.CreateSequence<int>(
+                name: "OrderNr",
+                schema: "shared",
+                startValue: 100L);
+
+            migrationBuilder.CreateSequence<int>(
                 name: "ProductNr",
                 schema: "shared",
                 startValue: 10000L);
@@ -138,6 +143,7 @@ namespace db_projektarbeit.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OrderNr = table.Column<int>(type: "int", nullable: false, defaultValueSql: "NEXT VALUE FOR shared.OrderNr"),
                     Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     Billed = table.Column<bool>(type: "bit", nullable: false)
@@ -9257,6 +9263,10 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.DropSequence(
                 name: "CustomerNr",
+                schema: "shared");
+
+            migrationBuilder.DropSequence(
+                name: "OrderNr",
                 schema: "shared");
 
             migrationBuilder.DropSequence(

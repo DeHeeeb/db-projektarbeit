@@ -26,6 +26,9 @@ namespace db_projektarbeit.Model
         {
             var now = new DateTime(2021, 02, 14);
 
+            modelBuilder.HasSequence<int>("OrderNr", schema: "shared")
+                .StartsAt(100);
+
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
                 .StartsAt(1_000);
 
@@ -34,6 +37,10 @@ namespace db_projektarbeit.Model
 
             modelBuilder.HasSequence<int>("BillNr", schema: "shared")
                 .StartsAt(100_000);
+
+            modelBuilder.Entity<Order>()
+                .Property(o => o.OrderNr)
+                .HasDefaultValueSql("NEXT VALUE FOR shared.OrderNr");
 
             modelBuilder.Entity<Customer>()
                 .Property(c => c.CustomerNr)

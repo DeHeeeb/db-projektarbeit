@@ -10,6 +10,7 @@ namespace db_projektarbeit
     {
         public int Id { get; set; } 
         public DateTime Date { get; set; }
+        public int OrderNr { get; set; }
         public string? Comment { get; set; }
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
