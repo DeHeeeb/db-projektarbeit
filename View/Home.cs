@@ -59,6 +59,14 @@ namespace db_projektarbeit.View
             if (sqlCheck)
             {
                 LblSQLCheck.Text = "SQL Server Verbunden";
+                CmdBill.Enabled = true;
+                CmdCity.Enabled = true;
+                CmdCustomer.Enabled = true;
+                CmdOrder.Enabled = true;
+                CmdOrder.BackColor = Color.MediumSeaGreen;
+                CmdProduct.Enabled = true;
+                CmdProductGroup.Enabled = true;
+                CmdStatistics.Enabled = true;
             }
             else
             {
