@@ -122,9 +122,9 @@
             this.LblSQLCheck.Location = new System.Drawing.Point(113, 562);
             this.LblSQLCheck.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblSQLCheck.Name = "LblSQLCheck";
-            this.LblSQLCheck.Size = new System.Drawing.Size(250, 25);
+            this.LblSQLCheck.Size = new System.Drawing.Size(249, 25);
             this.LblSQLCheck.TabIndex = 5;
-            this.LblSQLCheck.Text = "SQL Verbindung Initialisieren...";
+            this.LblSQLCheck.Text = "SQL Verbindung initialisieren...";
             // 
             // CmdBill
             // 

@@ -31,6 +31,6 @@ namespace db_projektarbeit.View.Common
         public const string TextOrderBilled = "Der Auftrag wurde erfolgreich abgerechnet.";
         public const string TextOrderTotalNotSet = "Der Auftrag muss ein gültiges Total haben um abgerechnet werden zu können.";
 
-        public const string TextDBMigrated = "Die Datenbank wurde inklusive Testdaten erstellt.";
+        public const string TextDBMigrated = "Die Datenbank 'Accounting' wurde inklusive Testdaten erstellt.";
     }
 }

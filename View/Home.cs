@@ -7,6 +7,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using db_projektarbeit.Model;
+using db_projektarbeit.View.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.View
 {
@@ -55,10 +58,21 @@ namespace db_projektarbeit.View
 
         private void TimerSQLCheck_Tick(object sender, EventArgs e)
         {
+            ProjectContext context = new ProjectContext();
+            if (!context.Database.CanConnect())
+            {
+                context.Database.Migrate();
+
+                MessageBox.Show(MessageBoxConstants.TextDBMigrated,
+                    MessageBoxConstants.CaptionSuccess,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
             var sqlCheck = homeControl.GetStatusSQL();
             if (sqlCheck)
             {
-                LblSQLCheck.Text = "SQL Server Verbunden";
+                LblSQLCheck.Text = "SQL Server verbunden";
                 CmdBill.Enabled = true;
                 CmdCity.Enabled = true;
                 CmdCustomer.Enabled = true;
@@ -70,10 +84,8 @@ namespace db_projektarbeit.View
             }
             else
             {
-                LblSQLCheck.Text = "SQL Server nicht Verbunden";
+                LblSQLCheck.Text = "SQL Server nicht verbunden";
             }
         }
-
-
     }
 }
