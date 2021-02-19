@@ -68,6 +68,13 @@ namespace db_projektarbeit.View
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show(MessageBoxConstants.TextDBConnectError,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
 
             var sqlCheck = homeControl.GetStatusSQL();
             if (sqlCheck)
