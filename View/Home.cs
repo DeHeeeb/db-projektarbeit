@@ -61,19 +61,22 @@ namespace db_projektarbeit.View
             ProjectContext context = new ProjectContext();
             if (!context.Database.CanConnect())
             {
-                context.Database.Migrate();
+                try
+                {
+                    context.Database.Migrate();
 
-                MessageBox.Show(MessageBoxConstants.TextDBMigrated,
-                    MessageBoxConstants.CaptionSuccess,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(MessageBoxConstants.TextDBConnectError,
-                    MessageBoxConstants.CaptionError,
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    MessageBox.Show(MessageBoxConstants.TextDBMigrated,
+                        MessageBoxConstants.CaptionSuccess,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message,
+                        MessageBoxConstants.CaptionError,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
 
             var sqlCheck = homeControl.GetStatusSQL();
