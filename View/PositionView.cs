@@ -51,7 +51,7 @@ namespace db_projektarbeit.View
         {
             ClearFields();
             UnlockFields();
-            NumCount.Focus();
+            EnterSaveMode();
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
@@ -73,6 +73,7 @@ namespace db_projektarbeit.View
                 LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
                 LoadCombobox(ProductControl.GetAll());
                 CbxProduct.SelectedValue = selected.Product.Id;
+                EndSaveMode();
             }
             else
             {
@@ -160,6 +161,27 @@ namespace db_projektarbeit.View
         {
             NumCount.ReadOnly = true;
             CbxProduct.Enabled = false;
+        }
+
+        private void EnterSaveMode()
+        {
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
+            CmdNew.Enabled = false;
+            TxtSearch.Enabled = false;
+            CmdSearch.Enabled = false;
+            CmdEditProduct.Enabled = false;
+            NumCount.Focus();
+        }
+
+        private void EndSaveMode()
+        {
+            CmdSave.BackColor = Color.Gainsboro;
+            CmdDelete.Enabled = true;
+            CmdNew.Enabled = true;
+            TxtSearch.Enabled = true;
+            CmdSearch.Enabled = true;
+            CmdEditProduct.Enabled = true;
         }
 
         private void CmdDelete_Click(object sender, EventArgs e)

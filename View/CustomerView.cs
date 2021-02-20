@@ -48,6 +48,7 @@ namespace db_projektarbeit.View
         {
             ClearFields();
             UnlockFields();
+            EnterSaveMode();
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace db_projektarbeit.View
                 LoadTable(CustomerControl.GetAll());
                 LoadCombobox(CityControl.GetAll());
                 CbxCity.SelectedValue = selected.City.Id;
+                EndSaveMode();
             }
             else
             {
@@ -229,6 +231,27 @@ namespace db_projektarbeit.View
             TxtStreet.ReadOnly = true;
             TxtHouseNumber.ReadOnly = true;
             CbxCity.Enabled = false;
+        }
+
+        private void EnterSaveMode()
+        {
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
+            CmdNew.Enabled = false;
+            TxtSearch.Enabled = false;
+            CmdSearch.Enabled = false;
+            CmdEditCity.Enabled = false;
+            TxtCompanyName.Focus();
+        }
+
+        private void EndSaveMode()
+        {
+            CmdSave.BackColor = Color.Gainsboro;
+            CmdDelete.Enabled = true;
+            CmdNew.Enabled = true;
+            TxtSearch.Enabled = true;
+            CmdSearch.Enabled = true;
+            CmdEditCity.Enabled = true;
         }
     }
 }

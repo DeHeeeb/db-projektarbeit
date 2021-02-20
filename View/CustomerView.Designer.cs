@@ -61,35 +61,35 @@ namespace db_projektarbeit.View
             this.DgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvCustomers.Location = new System.Drawing.Point(15, 56);
-            this.DgvCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DgvCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.DgvCustomers.MultiSelect = false;
             this.DgvCustomers.Name = "DgvCustomers";
             this.DgvCustomers.ReadOnly = true;
             this.DgvCustomers.RowHeadersWidth = 51;
             this.DgvCustomers.RowTemplate.Height = 29;
             this.DgvCustomers.Size = new System.Drawing.Size(970, 311);
-            this.DgvCustomers.TabIndex = 0;
+            this.DgvCustomers.TabIndex = 42;
             this.DgvCustomers.TabStop = false;
             this.DgvCustomers.SelectionChanged += new System.EventHandler(this.DgvCustomers_SelectionChanged);
             // 
             // TxtSearch
             // 
             this.TxtSearch.Location = new System.Drawing.Point(15, 15);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(845, 31);
-            this.TxtSearch.TabIndex = 1;
+            this.TxtSearch.TabIndex = 40;
             this.TxtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
             // TxtCustomerNr
             // 
             this.TxtCustomerNr.Location = new System.Drawing.Point(124, 388);
-            this.TxtCustomerNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCustomerNr.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCustomerNr.Name = "TxtCustomerNr";
             this.TxtCustomerNr.ReadOnly = true;
             this.TxtCustomerNr.Size = new System.Drawing.Size(250, 31);
-            this.TxtCustomerNr.TabIndex = 2;
+            this.TxtCustomerNr.TabIndex = 47;
             // 
             // LblCustomerNr
             // 
@@ -114,11 +114,11 @@ namespace db_projektarbeit.View
             // TxtCompanyName
             // 
             this.TxtCompanyName.Location = new System.Drawing.Point(124, 429);
-            this.TxtCompanyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCompanyName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCompanyName.Name = "TxtCompanyName";
             this.TxtCompanyName.ReadOnly = true;
             this.TxtCompanyName.Size = new System.Drawing.Size(250, 31);
-            this.TxtCompanyName.TabIndex = 4;
+            this.TxtCompanyName.TabIndex = 48;
             // 
             // LblStreet
             // 
@@ -133,19 +133,19 @@ namespace db_projektarbeit.View
             // TxtStreet
             // 
             this.TxtStreet.Location = new System.Drawing.Point(541, 470);
-            this.TxtStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtStreet.Margin = new System.Windows.Forms.Padding(4);
             this.TxtStreet.Name = "TxtStreet";
             this.TxtStreet.ReadOnly = true;
             this.TxtStreet.Size = new System.Drawing.Size(250, 31);
-            this.TxtStreet.TabIndex = 6;
+            this.TxtStreet.TabIndex = 51;
             // 
             // CmdSearch
             // 
             this.CmdSearch.Location = new System.Drawing.Point(869, 12);
-            this.CmdSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdSearch.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSearch.Name = "CmdSearch";
             this.CmdSearch.Size = new System.Drawing.Size(119, 36);
-            this.CmdSearch.TabIndex = 8;
+            this.CmdSearch.TabIndex = 41;
             this.CmdSearch.Text = "Suche";
             this.CmdSearch.UseVisualStyleBackColor = true;
             this.CmdSearch.Click += new System.EventHandler(this.CmdSearch_Click);
@@ -153,10 +153,10 @@ namespace db_projektarbeit.View
             // CmdSave
             // 
             this.CmdSave.Location = new System.Drawing.Point(15, 511);
-            this.CmdSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdSave.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(115, 36);
-            this.CmdSave.TabIndex = 9;
+            this.CmdSave.TabIndex = 43;
             this.CmdSave.Text = "Speichern";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
@@ -164,10 +164,10 @@ namespace db_projektarbeit.View
             // CmdNew
             // 
             this.CmdNew.Location = new System.Drawing.Point(138, 511);
-            this.CmdNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdNew.Margin = new System.Windows.Forms.Padding(4);
             this.CmdNew.Name = "CmdNew";
             this.CmdNew.Size = new System.Drawing.Size(115, 36);
-            this.CmdNew.TabIndex = 10;
+            this.CmdNew.TabIndex = 44;
             this.CmdNew.Text = "Neu";
             this.CmdNew.UseVisualStyleBackColor = true;
             this.CmdNew.Click += new System.EventHandler(this.CmdNew_Click);
@@ -188,18 +188,18 @@ namespace db_projektarbeit.View
             this.CbxCity.Enabled = false;
             this.CbxCity.FormattingEnabled = true;
             this.CbxCity.Location = new System.Drawing.Point(541, 511);
-            this.CbxCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CbxCity.Margin = new System.Windows.Forms.Padding(4);
             this.CbxCity.Name = "CbxCity";
             this.CbxCity.Size = new System.Drawing.Size(250, 33);
-            this.CbxCity.TabIndex = 15;
+            this.CbxCity.TabIndex = 53;
             // 
             // CmdEditCity
             // 
             this.CmdEditCity.Location = new System.Drawing.Point(801, 511);
-            this.CmdEditCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdEditCity.Margin = new System.Windows.Forms.Padding(4);
             this.CmdEditCity.Name = "CmdEditCity";
             this.CmdEditCity.Size = new System.Drawing.Size(180, 35);
-            this.CmdEditCity.TabIndex = 16;
+            this.CmdEditCity.TabIndex = 46;
             this.CmdEditCity.Text = "Städte bearbeiten";
             this.CmdEditCity.UseVisualStyleBackColor = true;
             this.CmdEditCity.Click += new System.EventHandler(this.CmdEditCity_Click);
@@ -217,11 +217,11 @@ namespace db_projektarbeit.View
             // TxtFirstName
             // 
             this.TxtFirstName.Location = new System.Drawing.Point(541, 388);
-            this.TxtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtFirstName.Name = "TxtFirstName";
             this.TxtFirstName.ReadOnly = true;
             this.TxtFirstName.Size = new System.Drawing.Size(250, 31);
-            this.TxtFirstName.TabIndex = 17;
+            this.TxtFirstName.TabIndex = 49;
             // 
             // LblLastName
             // 
@@ -236,20 +236,20 @@ namespace db_projektarbeit.View
             // TxtLastName
             // 
             this.TxtLastName.Location = new System.Drawing.Point(541, 429);
-            this.TxtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.ReadOnly = true;
             this.TxtLastName.Size = new System.Drawing.Size(250, 31);
-            this.TxtLastName.TabIndex = 19;
+            this.TxtLastName.TabIndex = 50;
             // 
             // TxtHouseNumber
             // 
             this.TxtHouseNumber.Location = new System.Drawing.Point(849, 470);
-            this.TxtHouseNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtHouseNumber.Margin = new System.Windows.Forms.Padding(4);
             this.TxtHouseNumber.Name = "TxtHouseNumber";
             this.TxtHouseNumber.ReadOnly = true;
             this.TxtHouseNumber.Size = new System.Drawing.Size(133, 31);
-            this.TxtHouseNumber.TabIndex = 21;
+            this.TxtHouseNumber.TabIndex = 52;
             // 
             // LblHouseNumber
             // 
@@ -267,7 +267,7 @@ namespace db_projektarbeit.View
             this.CmdDelete.Margin = new System.Windows.Forms.Padding(4);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(115, 36);
-            this.CmdDelete.TabIndex = 23;
+            this.CmdDelete.TabIndex = 45;
             this.CmdDelete.Text = "Löschen";
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
@@ -298,7 +298,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.TxtCustomerNr);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.DgvCustomers);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerView";
             this.Text = "Kunden-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).EndInit();

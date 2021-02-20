@@ -139,8 +139,7 @@ namespace db_projektarbeit.View
                     LoadCombobox(CustomerControl.GetAll());
                     LoadTotal();
                     CbxCustomer.SelectedValue = selected.Customer.Id;
-                    CmdSave.BackColor = Color.Gainsboro;
-                    CmdDelete.Enabled = true;
+                    EndSaveMode();
                 }
                 else
                 {
@@ -157,8 +156,7 @@ namespace db_projektarbeit.View
             UnlockFields();
             ClearFields();
             LoadPositionTable(new List<Position>());
-            CmdSave.BackColor = Color.MediumSeaGreen;
-            CmdDelete.Enabled = false;
+            EnterSaveMode();
         }
 
         private void DgvOrder_SelectionChanged(object sender, EventArgs e)
@@ -261,6 +259,31 @@ namespace db_projektarbeit.View
             NumTotal.Value = 0;
             CmdBill.Enabled = true;
             CmdBill.ForeColor = Color.Black;
+        }
+
+        private void EnterSaveMode()
+        {
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
+            CmdNew.Enabled = false;
+            TxtSearch.Enabled = false;
+            CmdSearch.Enabled = false;
+            CmdEditCustomer.Enabled = false;
+            CmdBill.Enabled = false;
+            CmdBillView.Enabled = false;
+            DtpDate.Focus();
+        }
+
+        private void EndSaveMode()
+        {
+            CmdSave.BackColor = Color.Gainsboro;
+            CmdDelete.Enabled = true;
+            CmdNew.Enabled = true;
+            TxtSearch.Enabled = true;
+            CmdSearch.Enabled = true;
+            CmdEditCustomer.Enabled = true;
+            CmdBill.Enabled = true;
+            CmdBillView.Enabled = true;
         }
 
         private void CmdDelete_Click(object sender, EventArgs e)
