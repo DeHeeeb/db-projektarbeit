@@ -55,7 +55,7 @@ namespace db_projektarbeit.View
             // 
             // CmdSearch
             // 
-            this.CmdSearch.Location = new System.Drawing.Point(1176, 11);
+            this.CmdSearch.Location = new System.Drawing.Point(1365, 12);
             this.CmdSearch.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSearch.Name = "CmdSearch";
             this.CmdSearch.Size = new System.Drawing.Size(118, 36);
@@ -69,7 +69,7 @@ namespace db_projektarbeit.View
             this.TxtSearch.Location = new System.Drawing.Point(15, 15);
             this.TxtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(1155, 31);
+            this.TxtSearch.Size = new System.Drawing.Size(1342, 31);
             this.TxtSearch.TabIndex = 1;
             this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
@@ -87,7 +87,7 @@ namespace db_projektarbeit.View
             this.DgvOrder.ReadOnly = true;
             this.DgvOrder.RowHeadersWidth = 51;
             this.DgvOrder.RowTemplate.Height = 29;
-            this.DgvOrder.Size = new System.Drawing.Size(578, 574);
+            this.DgvOrder.Size = new System.Drawing.Size(761, 574);
             this.DgvOrder.TabIndex = 3;
             this.DgvOrder.TabStop = false;
             this.DgvOrder.SelectionChanged += new System.EventHandler(this.DgvOrder_SelectionChanged);
@@ -99,7 +99,7 @@ namespace db_projektarbeit.View
             this.DgvPosition.AllowUserToResizeRows = false;
             this.DgvPosition.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvPosition.Location = new System.Drawing.Point(604, 59);
+            this.DgvPosition.Location = new System.Drawing.Point(793, 59);
             this.DgvPosition.Margin = new System.Windows.Forms.Padding(4);
             this.DgvPosition.MultiSelect = false;
             this.DgvPosition.Name = "DgvPosition";
@@ -114,7 +114,7 @@ namespace db_projektarbeit.View
             // 
             this.DtpDate.Enabled = false;
             this.DtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpDate.Location = new System.Drawing.Point(742, 375);
+            this.DtpDate.Location = new System.Drawing.Point(931, 376);
             this.DtpDate.Margin = new System.Windows.Forms.Padding(4);
             this.DtpDate.Name = "DtpDate";
             this.DtpDate.Size = new System.Drawing.Size(312, 31);
@@ -123,7 +123,7 @@ namespace db_projektarbeit.View
             // LblDate
             // 
             this.LblDate.AutoSize = true;
-            this.LblDate.Location = new System.Drawing.Point(604, 378);
+            this.LblDate.Location = new System.Drawing.Point(793, 379);
             this.LblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblDate.Name = "LblDate";
             this.LblDate.Size = new System.Drawing.Size(66, 25);
@@ -132,7 +132,7 @@ namespace db_projektarbeit.View
             // 
             // CmdEditPositions
             // 
-            this.CmdEditPositions.Location = new System.Drawing.Point(604, 286);
+            this.CmdEditPositions.Location = new System.Drawing.Point(793, 287);
             this.CmdEditPositions.Margin = new System.Windows.Forms.Padding(4);
             this.CmdEditPositions.Name = "CmdEditPositions";
             this.CmdEditPositions.Size = new System.Drawing.Size(690, 36);
@@ -146,7 +146,7 @@ namespace db_projektarbeit.View
             this.CbxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCustomer.Enabled = false;
             this.CbxCustomer.FormattingEnabled = true;
-            this.CbxCustomer.Location = new System.Drawing.Point(742, 418);
+            this.CbxCustomer.Location = new System.Drawing.Point(931, 419);
             this.CbxCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.CbxCustomer.Name = "CbxCustomer";
             this.CbxCustomer.Size = new System.Drawing.Size(312, 33);
@@ -155,7 +155,7 @@ namespace db_projektarbeit.View
             // LblCustomer
             // 
             this.LblCustomer.AutoSize = true;
-            this.LblCustomer.Location = new System.Drawing.Point(604, 419);
+            this.LblCustomer.Location = new System.Drawing.Point(793, 420);
             this.LblCustomer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCustomer.Name = "LblCustomer";
             this.LblCustomer.Size = new System.Drawing.Size(62, 25);
@@ -165,7 +165,7 @@ namespace db_projektarbeit.View
             // LblComment
             // 
             this.LblComment.AutoSize = true;
-            this.LblComment.Location = new System.Drawing.Point(604, 458);
+            this.LblComment.Location = new System.Drawing.Point(793, 459);
             this.LblComment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblComment.Name = "LblComment";
             this.LblComment.Size = new System.Drawing.Size(105, 25);
@@ -174,7 +174,7 @@ namespace db_projektarbeit.View
             // 
             // TxtComment
             // 
-            this.TxtComment.Location = new System.Drawing.Point(742, 456);
+            this.TxtComment.Location = new System.Drawing.Point(931, 457);
             this.TxtComment.Margin = new System.Windows.Forms.Padding(4);
             this.TxtComment.Multiline = true;
             this.TxtComment.Name = "TxtComment";
@@ -183,10 +183,10 @@ namespace db_projektarbeit.View
             // 
             // CmdNew
             // 
-            this.CmdNew.Location = new System.Drawing.Point(140, 648);
+            this.CmdNew.Location = new System.Drawing.Point(213, 649);
             this.CmdNew.Margin = new System.Windows.Forms.Padding(4);
             this.CmdNew.Name = "CmdNew";
-            this.CmdNew.Size = new System.Drawing.Size(118, 36);
+            this.CmdNew.Size = new System.Drawing.Size(190, 36);
             this.CmdNew.TabIndex = 5;
             this.CmdNew.Text = "Neu";
             this.CmdNew.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@ namespace db_projektarbeit.View
             this.CmdSave.Location = new System.Drawing.Point(15, 648);
             this.CmdSave.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSave.Name = "CmdSave";
-            this.CmdSave.Size = new System.Drawing.Size(118, 36);
+            this.CmdSave.Size = new System.Drawing.Size(190, 36);
             this.CmdSave.TabIndex = 4;
             this.CmdSave.Text = "Speichern";
             this.CmdSave.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@ namespace db_projektarbeit.View
             // 
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblTotal.Location = new System.Drawing.Point(1074, 648);
+            this.LblTotal.Location = new System.Drawing.Point(1265, 649);
             this.LblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(70, 32);
@@ -219,7 +219,7 @@ namespace db_projektarbeit.View
             // 
             this.NumTotal.DecimalPlaces = 2;
             this.NumTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumTotal.Location = new System.Drawing.Point(1154, 646);
+            this.NumTotal.Location = new System.Drawing.Point(1342, 645);
             this.NumTotal.Margin = new System.Windows.Forms.Padding(4);
             this.NumTotal.Maximum = new decimal(new int[] {
             10000000,
@@ -233,7 +233,7 @@ namespace db_projektarbeit.View
             // 
             // CmdEditCustomer
             // 
-            this.CmdEditCustomer.Location = new System.Drawing.Point(1060, 418);
+            this.CmdEditCustomer.Location = new System.Drawing.Point(1249, 419);
             this.CmdEditCustomer.Margin = new System.Windows.Forms.Padding(4);
             this.CmdEditCustomer.Name = "CmdEditCustomer";
             this.CmdEditCustomer.Size = new System.Drawing.Size(234, 35);
@@ -244,7 +244,7 @@ namespace db_projektarbeit.View
             // 
             // CmdDelete
             // 
-            this.CmdDelete.Location = new System.Drawing.Point(265, 648);
+            this.CmdDelete.Location = new System.Drawing.Point(450, 649);
             this.CmdDelete.Margin = new System.Windows.Forms.Padding(4);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(326, 36);
@@ -257,10 +257,10 @@ namespace db_projektarbeit.View
             // 
             this.CmdBill.Enabled = false;
             this.CmdBill.ForeColor = System.Drawing.Color.ForestGreen;
-            this.CmdBill.Location = new System.Drawing.Point(744, 648);
+            this.CmdBill.Location = new System.Drawing.Point(931, 648);
             this.CmdBill.Margin = new System.Windows.Forms.Padding(4);
             this.CmdBill.Name = "CmdBill";
-            this.CmdBill.Size = new System.Drawing.Size(310, 36);
+            this.CmdBill.Size = new System.Drawing.Size(312, 36);
             this.CmdBill.TabIndex = 9;
             this.CmdBill.Text = "Abrechnen";
             this.CmdBill.UseVisualStyleBackColor = true;
@@ -268,9 +268,9 @@ namespace db_projektarbeit.View
             // 
             // CmdBillView
             // 
-            this.CmdBillView.Location = new System.Drawing.Point(744, 692);
+            this.CmdBillView.Location = new System.Drawing.Point(931, 692);
             this.CmdBillView.Name = "CmdBillView";
-            this.CmdBillView.Size = new System.Drawing.Size(310, 34);
+            this.CmdBillView.Size = new System.Drawing.Size(312, 34);
             this.CmdBillView.TabIndex = 10;
             this.CmdBillView.Text = "Rechnungs-Übersicht";
             this.CmdBillView.UseVisualStyleBackColor = true;
@@ -280,7 +280,7 @@ namespace db_projektarbeit.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 738);
+            this.ClientSize = new System.Drawing.Size(1497, 738);
             this.Controls.Add(this.CmdBillView);
             this.Controls.Add(this.CmdBill);
             this.Controls.Add(this.CmdDelete);

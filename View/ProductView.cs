@@ -55,6 +55,7 @@ namespace db_projektarbeit.View
         {
             ClearFields();
             UnlockFields();
+            EnterSaveMode();
         }
 
         private void CmdSave_Click(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace db_projektarbeit.View
                 ProductControl.Save(productToSave);
 
                 LoadTable(ProductControl.GetAll());
+                EndSaveMode();
             }
             else
             {
@@ -186,6 +188,32 @@ namespace db_projektarbeit.View
             TxtDescription.ReadOnly = true;
             NumPrice.ReadOnly = true;
             TvProductGroup.Enabled = false;
+        }
+
+        private void EnterSaveMode()
+        {
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
+            CmdNew.Enabled = false;
+            TxtSearch.Enabled = false;
+            CmdSearch.Enabled = false;
+            CmdEditProductGroup.Enabled = false;
+            TxtDescription.Focus();
+        }
+
+        private void EndSaveMode()
+        {
+            CmdSave.BackColor = Color.Gainsboro;
+            CmdDelete.Enabled = true;
+            CmdNew.Enabled = true;
+            TxtSearch.Enabled = true;
+            CmdSearch.Enabled = true;
+            CmdEditProductGroup.Enabled = true;
+        }
+
+        private void CmdEditProductGroup_Click(object sender, EventArgs e)
+        {
+            new ProductGroupView().Show();
         }
     }
 }

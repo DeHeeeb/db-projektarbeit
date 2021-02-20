@@ -43,6 +43,7 @@ namespace db_projektarbeit.View
             this.TvProductGroup = new System.Windows.Forms.TreeView();
             this.NumPrice = new System.Windows.Forms.NumericUpDown();
             this.CmdDelete = new System.Windows.Forms.Button();
+            this.CmdEditProductGroup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumPrice)).BeginInit();
             this.SuspendLayout();
@@ -55,34 +56,34 @@ namespace db_projektarbeit.View
             this.DgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvProducts.Location = new System.Drawing.Point(15, 56);
-            this.DgvProducts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DgvProducts.Margin = new System.Windows.Forms.Padding(4);
             this.DgvProducts.MultiSelect = false;
             this.DgvProducts.Name = "DgvProducts";
             this.DgvProducts.ReadOnly = true;
             this.DgvProducts.RowHeadersWidth = 51;
             this.DgvProducts.RowTemplate.Height = 29;
             this.DgvProducts.Size = new System.Drawing.Size(970, 244);
-            this.DgvProducts.TabIndex = 0;
+            this.DgvProducts.TabIndex = 62;
             this.DgvProducts.TabStop = false;
             this.DgvProducts.SelectionChanged += new System.EventHandler(this.DgvCustomers_SelectionChanged);
             // 
             // TxtSearch
             // 
             this.TxtSearch.Location = new System.Drawing.Point(15, 15);
-            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSearch.Name = "TxtSearch";
             this.TxtSearch.Size = new System.Drawing.Size(845, 31);
-            this.TxtSearch.TabIndex = 1;
+            this.TxtSearch.TabIndex = 60;
             this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
             // TxtProductNr
             // 
             this.TxtProductNr.Location = new System.Drawing.Point(145, 319);
-            this.TxtProductNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtProductNr.Margin = new System.Windows.Forms.Padding(4);
             this.TxtProductNr.Name = "TxtProductNr";
             this.TxtProductNr.ReadOnly = true;
             this.TxtProductNr.Size = new System.Drawing.Size(250, 31);
-            this.TxtProductNr.TabIndex = 2;
+            this.TxtProductNr.TabIndex = 67;
             // 
             // LblProductNr
             // 
@@ -107,11 +108,11 @@ namespace db_projektarbeit.View
             // TxtDescription
             // 
             this.TxtDescription.Location = new System.Drawing.Point(145, 360);
-            this.TxtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.TxtDescription.Name = "TxtDescription";
             this.TxtDescription.ReadOnly = true;
             this.TxtDescription.Size = new System.Drawing.Size(250, 31);
-            this.TxtDescription.TabIndex = 4;
+            this.TxtDescription.TabIndex = 68;
             // 
             // LblPrice
             // 
@@ -126,10 +127,10 @@ namespace db_projektarbeit.View
             // CmdSearch
             // 
             this.CmdSearch.Location = new System.Drawing.Point(868, 12);
-            this.CmdSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdSearch.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSearch.Name = "CmdSearch";
             this.CmdSearch.Size = new System.Drawing.Size(118, 36);
-            this.CmdSearch.TabIndex = 8;
+            this.CmdSearch.TabIndex = 61;
             this.CmdSearch.Text = "Suche";
             this.CmdSearch.UseVisualStyleBackColor = true;
             this.CmdSearch.Click += new System.EventHandler(this.CmdSearch_Click);
@@ -137,10 +138,10 @@ namespace db_projektarbeit.View
             // CmdSave
             // 
             this.CmdSave.Location = new System.Drawing.Point(13, 591);
-            this.CmdSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdSave.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(118, 36);
-            this.CmdSave.TabIndex = 9;
+            this.CmdSave.TabIndex = 63;
             this.CmdSave.Text = "Speichern";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
@@ -148,10 +149,10 @@ namespace db_projektarbeit.View
             // CmdNew
             // 
             this.CmdNew.Location = new System.Drawing.Point(139, 591);
-            this.CmdNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmdNew.Margin = new System.Windows.Forms.Padding(4);
             this.CmdNew.Name = "CmdNew";
             this.CmdNew.Size = new System.Drawing.Size(118, 36);
-            this.CmdNew.TabIndex = 10;
+            this.CmdNew.TabIndex = 64;
             this.CmdNew.Text = "Neu";
             this.CmdNew.UseVisualStyleBackColor = true;
             this.CmdNew.Click += new System.EventHandler(this.CmdNew_Click);
@@ -170,16 +171,16 @@ namespace db_projektarbeit.View
             // 
             this.TvProductGroup.Enabled = false;
             this.TvProductGroup.Location = new System.Drawing.Point(585, 319);
-            this.TvProductGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TvProductGroup.Margin = new System.Windows.Forms.Padding(2);
             this.TvProductGroup.Name = "TvProductGroup";
-            this.TvProductGroup.Size = new System.Drawing.Size(399, 283);
-            this.TvProductGroup.TabIndex = 13;
+            this.TvProductGroup.Size = new System.Drawing.Size(399, 263);
+            this.TvProductGroup.TabIndex = 70;
             // 
             // NumPrice
             // 
             this.NumPrice.DecimalPlaces = 2;
             this.NumPrice.Location = new System.Drawing.Point(145, 402);
-            this.NumPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NumPrice.Margin = new System.Windows.Forms.Padding(4);
             this.NumPrice.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -188,7 +189,7 @@ namespace db_projektarbeit.View
             this.NumPrice.Name = "NumPrice";
             this.NumPrice.ReadOnly = true;
             this.NumPrice.Size = new System.Drawing.Size(251, 31);
-            this.NumPrice.TabIndex = 14;
+            this.NumPrice.TabIndex = 69;
             // 
             // CmdDelete
             // 
@@ -196,16 +197,27 @@ namespace db_projektarbeit.View
             this.CmdDelete.Margin = new System.Windows.Forms.Padding(4);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(118, 36);
-            this.CmdDelete.TabIndex = 15;
+            this.CmdDelete.TabIndex = 65;
             this.CmdDelete.Text = "Löschen";
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
+            // 
+            // CmdEditProductGroup
+            // 
+            this.CmdEditProductGroup.Location = new System.Drawing.Point(585, 587);
+            this.CmdEditProductGroup.Name = "CmdEditProductGroup";
+            this.CmdEditProductGroup.Size = new System.Drawing.Size(399, 36);
+            this.CmdEditProductGroup.TabIndex = 66;
+            this.CmdEditProductGroup.Text = "Artikelgruppen bearbeiten";
+            this.CmdEditProductGroup.UseVisualStyleBackColor = true;
+            this.CmdEditProductGroup.Click += new System.EventHandler(this.CmdEditProductGroup_Click);
             // 
             // ProductView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 640);
+            this.Controls.Add(this.CmdEditProductGroup);
             this.Controls.Add(this.CmdDelete);
             this.Controls.Add(this.NumPrice);
             this.Controls.Add(this.TvProductGroup);
@@ -220,7 +232,7 @@ namespace db_projektarbeit.View
             this.Controls.Add(this.TxtProductNr);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.DgvProducts);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProductView";
             this.Text = "Artikel-Verwaltung";
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).EndInit();
@@ -246,5 +258,6 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.TreeView TvProductGroup;
         private System.Windows.Forms.NumericUpDown NumPrice;
         private System.Windows.Forms.Button CmdDelete;
+        private System.Windows.Forms.Button CmdEditProductGroup;
     }
 }

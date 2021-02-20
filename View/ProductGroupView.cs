@@ -200,6 +200,7 @@ namespace db_projektarbeit.View
             VisibleNewNode();
             DeVisibleUpdateDelete();
             TxtProductGrupNr.Text = "...";
+            EnterSaveMode();
         }
 
         private void UnlockFields()
@@ -215,6 +216,11 @@ namespace db_projektarbeit.View
         private void ClearFields()
         {
             TxtProductGroupName.Clear();
+        }
+
+        private void EnterSaveMode()
+        {
+            TxtProductGroupName.Focus();
         }
 
         private void VisibleNewNode()

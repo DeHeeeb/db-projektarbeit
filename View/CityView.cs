@@ -57,6 +57,7 @@ namespace db_projektarbeit.View
                 CityControl.Save(city);
 
                 LoadTable(CityControl.GetAll());
+                EndSaveMode();
             }
             else
             {
@@ -95,6 +96,7 @@ namespace db_projektarbeit.View
         {
             ClearFields();
             UnlockFields();
+            EnterSaveMode();
         }
 
         private void LoadTable(List<City> cities)
@@ -165,6 +167,25 @@ namespace db_projektarbeit.View
         {
             NumZip.ReadOnly = true;
             TxtName.ReadOnly = true;
+        }
+
+        private void EnterSaveMode()
+        {
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
+            CmdNew.Enabled = false;
+            TxtSearch.Enabled = false;
+            CmdSearch.Enabled = false;
+            NumZip.Focus();
+        }
+
+        private void EndSaveMode()
+        {
+            CmdSave.BackColor = Color.Gainsboro;
+            CmdDelete.Enabled = true;
+            CmdNew.Enabled = true;
+            TxtSearch.Enabled = true;
+            CmdSearch.Enabled = true;
         }
     }
 }
