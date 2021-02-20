@@ -36,18 +36,18 @@ namespace db_projektarbeit.View
             // DgvStatistics
             // 
             this.DgvStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvStatistics.Location = new System.Drawing.Point(1, 13);
+            this.DgvStatistics.Location = new System.Drawing.Point(12, 13);
             this.DgvStatistics.Name = "DgvStatistics";
             this.DgvStatistics.RowHeadersWidth = 51;
             this.DgvStatistics.RowTemplate.Height = 29;
-            this.DgvStatistics.Size = new System.Drawing.Size(1110, 434);
+            this.DgvStatistics.Size = new System.Drawing.Size(2459, 919);
             this.DgvStatistics.TabIndex = 0;
             // 
             // StatisticsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 450);
+            this.ClientSize = new System.Drawing.Size(2483, 944);
             this.Controls.Add(this.DgvStatistics);
             this.Name = "StatisticsView";
             this.Text = "StatisticsView";

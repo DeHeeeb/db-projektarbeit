@@ -21,6 +21,13 @@ namespace db_projektarbeit.View
         private void StatisticsView_Load(object sender, EventArgs e)
         {
             DgvStatistics.DataSource = statisticsControl.GetAll();
+            DgvStatistics.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            for (int i = 1; i < DgvStatistics.Columns.Count; i++)
+            {
+                DgvStatistics.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            DgvStatistics.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            DgvStatistics.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }
     }
 }
