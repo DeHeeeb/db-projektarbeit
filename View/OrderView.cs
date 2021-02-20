@@ -139,6 +139,8 @@ namespace db_projektarbeit.View
                     LoadCombobox(CustomerControl.GetAll());
                     LoadTotal();
                     CbxCustomer.SelectedValue = selected.Customer.Id;
+                    CmdSave.BackColor = Color.Gainsboro;
+                    CmdDelete.Enabled = true;
                 }
                 else
                 {
@@ -155,6 +157,8 @@ namespace db_projektarbeit.View
             UnlockFields();
             ClearFields();
             LoadPositionTable(new List<Position>());
+            CmdSave.BackColor = Color.MediumSeaGreen;
+            CmdDelete.Enabled = false;
         }
 
         private void DgvOrder_SelectionChanged(object sender, EventArgs e)
@@ -303,6 +307,11 @@ namespace db_projektarbeit.View
             DtpDate.Enabled = false;
             CbxCustomer.Enabled = false;
             TxtComment.ReadOnly = true;
+        }
+
+        private void CmdBillView_Click(object sender, EventArgs e)
+        {
+            new BillView().Show();
         }
     }
 }

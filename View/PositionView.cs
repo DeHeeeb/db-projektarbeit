@@ -51,6 +51,7 @@ namespace db_projektarbeit.View
         {
             ClearFields();
             UnlockFields();
+            NumCount.Focus();
         }
 
         private void CmdSave_Click(object sender, EventArgs e)

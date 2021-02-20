@@ -46,9 +46,10 @@ namespace db_projektarbeit.View
             // 
             // CmdEditProduct
             // 
-            this.CmdEditProduct.Location = new System.Drawing.Point(525, 278);
+            this.CmdEditProduct.Location = new System.Drawing.Point(656, 348);
+            this.CmdEditProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmdEditProduct.Name = "CmdEditProduct";
-            this.CmdEditProduct.Size = new System.Drawing.Size(167, 28);
+            this.CmdEditProduct.Size = new System.Drawing.Size(209, 35);
             this.CmdEditProduct.TabIndex = 36;
             this.CmdEditProduct.Text = "Produkte bearbeiten";
             this.CmdEditProduct.UseVisualStyleBackColor = true;
@@ -60,36 +61,40 @@ namespace db_projektarbeit.View
             this.CbxProduct.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbxProduct.Enabled = false;
             this.CbxProduct.FormattingEnabled = true;
-            this.CbxProduct.Location = new System.Drawing.Point(320, 280);
+            this.CbxProduct.Location = new System.Drawing.Point(400, 350);
+            this.CbxProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxProduct.Name = "CbxProduct";
-            this.CbxProduct.Size = new System.Drawing.Size(201, 28);
-            this.CbxProduct.TabIndex = 35;
+            this.CbxProduct.Size = new System.Drawing.Size(250, 33);
+            this.CbxProduct.TabIndex = 38;
             // 
             // LblProduct
             // 
             this.LblProduct.AutoSize = true;
-            this.LblProduct.Location = new System.Drawing.Point(255, 282);
+            this.LblProduct.Location = new System.Drawing.Point(319, 352);
+            this.LblProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblProduct.Name = "LblProduct";
-            this.LblProduct.Size = new System.Drawing.Size(60, 20);
+            this.LblProduct.Size = new System.Drawing.Size(75, 25);
             this.LblProduct.TabIndex = 34;
             this.LblProduct.Text = "Produkt";
             // 
             // CmdNew
             // 
-            this.CmdNew.Location = new System.Drawing.Point(112, 336);
+            this.CmdNew.Location = new System.Drawing.Point(141, 420);
+            this.CmdNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmdNew.Name = "CmdNew";
-            this.CmdNew.Size = new System.Drawing.Size(95, 29);
-            this.CmdNew.TabIndex = 33;
+            this.CmdNew.Size = new System.Drawing.Size(119, 36);
+            this.CmdNew.TabIndex = 34;
             this.CmdNew.Text = "Neu";
             this.CmdNew.UseVisualStyleBackColor = true;
             this.CmdNew.Click += new System.EventHandler(this.CmdNew_Click);
             // 
             // CmdSave
             // 
-            this.CmdSave.Location = new System.Drawing.Point(13, 336);
+            this.CmdSave.Location = new System.Drawing.Point(16, 420);
+            this.CmdSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmdSave.Name = "CmdSave";
-            this.CmdSave.Size = new System.Drawing.Size(95, 29);
-            this.CmdSave.TabIndex = 32;
+            this.CmdSave.Size = new System.Drawing.Size(119, 36);
+            this.CmdSave.TabIndex = 33;
             this.CmdSave.Text = "Speichern";
             this.CmdSave.UseVisualStyleBackColor = true;
             this.CmdSave.Click += new System.EventHandler(this.CmdSave_Click);
@@ -97,9 +102,10 @@ namespace db_projektarbeit.View
             // LblCount
             // 
             this.LblCount.AutoSize = true;
-            this.LblCount.Location = new System.Drawing.Point(9, 282);
+            this.LblCount.Location = new System.Drawing.Point(11, 352);
+            this.LblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCount.Name = "LblCount";
-            this.LblCount.Size = new System.Drawing.Size(54, 20);
+            this.LblCount.Size = new System.Drawing.Size(65, 25);
             this.LblCount.TabIndex = 26;
             this.LblCount.Text = "Anzahl";
             // 
@@ -110,20 +116,21 @@ namespace db_projektarbeit.View
             this.DgvPositions.AllowUserToResizeRows = false;
             this.DgvPositions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvPositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvPositions.Location = new System.Drawing.Point(9, 46);
+            this.DgvPositions.Location = new System.Drawing.Point(11, 58);
+            this.DgvPositions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DgvPositions.MultiSelect = false;
             this.DgvPositions.Name = "DgvPositions";
             this.DgvPositions.ReadOnly = true;
             this.DgvPositions.RowHeadersWidth = 51;
             this.DgvPositions.RowTemplate.Height = 29;
-            this.DgvPositions.Size = new System.Drawing.Size(681, 218);
-            this.DgvPositions.TabIndex = 23;
+            this.DgvPositions.Size = new System.Drawing.Size(851, 272);
+            this.DgvPositions.TabIndex = 32;
             this.DgvPositions.TabStop = false;
             this.DgvPositions.SelectionChanged += new System.EventHandler(this.DgvPositions_SelectionChanged);
             // 
             // NumCount
             // 
-            this.NumCount.Location = new System.Drawing.Point(77, 281);
+            this.NumCount.Location = new System.Drawing.Point(96, 351);
             this.NumCount.Margin = new System.Windows.Forms.Padding(1);
             this.NumCount.Maximum = new decimal(new int[] {
             1000,
@@ -137,7 +144,7 @@ namespace db_projektarbeit.View
             0});
             this.NumCount.Name = "NumCount";
             this.NumCount.ReadOnly = true;
-            this.NumCount.Size = new System.Drawing.Size(130, 27);
+            this.NumCount.Size = new System.Drawing.Size(162, 31);
             this.NumCount.TabIndex = 37;
             this.NumCount.Value = new decimal(new int[] {
             1,
@@ -147,37 +154,40 @@ namespace db_projektarbeit.View
             // 
             // CmdDelete
             // 
-            this.CmdDelete.Location = new System.Drawing.Point(213, 336);
+            this.CmdDelete.Location = new System.Drawing.Point(266, 420);
+            this.CmdDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmdDelete.Name = "CmdDelete";
-            this.CmdDelete.Size = new System.Drawing.Size(92, 29);
-            this.CmdDelete.TabIndex = 38;
+            this.CmdDelete.Size = new System.Drawing.Size(115, 36);
+            this.CmdDelete.TabIndex = 35;
             this.CmdDelete.Text = "Löschen";
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
             // CmdSearch
             // 
-            this.CmdSearch.Location = new System.Drawing.Point(583, 11);
+            this.CmdSearch.Location = new System.Drawing.Point(729, 14);
+            this.CmdSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmdSearch.Name = "CmdSearch";
-            this.CmdSearch.Size = new System.Drawing.Size(107, 29);
-            this.CmdSearch.TabIndex = 40;
+            this.CmdSearch.Size = new System.Drawing.Size(134, 36);
+            this.CmdSearch.TabIndex = 31;
             this.CmdSearch.Text = "Suche";
             this.CmdSearch.UseVisualStyleBackColor = true;
             this.CmdSearch.Click += new System.EventHandler(this.CmdSearch_Click);
             // 
             // TxtSearch
             // 
-            this.TxtSearch.Location = new System.Drawing.Point(9, 12);
+            this.TxtSearch.Location = new System.Drawing.Point(11, 15);
+            this.TxtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtSearch.Name = "TxtSearch";
-            this.TxtSearch.Size = new System.Drawing.Size(568, 27);
-            this.TxtSearch.TabIndex = 39;
+            this.TxtSearch.Size = new System.Drawing.Size(709, 31);
+            this.TxtSearch.TabIndex = 30;
             this.TxtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearch_KeyUp);
             // 
             // PositionView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 374);
+            this.ClientSize = new System.Drawing.Size(878, 468);
             this.Controls.Add(this.CmdSearch);
             this.Controls.Add(this.TxtSearch);
             this.Controls.Add(this.CmdDelete);
