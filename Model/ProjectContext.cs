@@ -8603,56 +8603,56 @@ new Position { Id = 5547 , Count = 5 , OrderId = 1844 , ProductId = 11 }
                 {
                     Id = 1,
                     CustomerId = 45,
-                    Date = new DateTime(2021, 02, 01),
+                    Date = new DateTime(2021, 02, 01, 14, 35, 05),
                     Netto = 1008.90M
                 },
                 new Bill()
                 {
                     Id = 2,
                     CustomerId = 37,
-                    Date = new DateTime(2021, 02, 14),
+                    Date = new DateTime(2021, 02, 14, 08, 57, 34),
                     Netto = 2141.90M
                 },
                 new Bill()
                 {
                     Id = 3,
                     CustomerId = 45,
-                    Date = new DateTime(2021, 02, 14),
+                    Date = new DateTime(2021, 02, 14, 13, 26, 47),
                     Netto = 545M
                 },
                 new Bill()
                 {
                     Id = 4,
                     CustomerId = 13,
-                    Date = new DateTime(2021, 02, 15),
+                    Date = new DateTime(2021, 02, 15, 12, 30, 45),
                     Netto = 3283.90M
                 },
                 new Bill()
                 {
                     Id = 5,
                     CustomerId = 10,
-                    Date = new DateTime(2021, 02, 20),
+                    Date = new DateTime(2021, 02, 20, 12, 50, 32),
                     Netto = 5344.20M
                 },
                 new Bill()
                 {
                     Id = 6,
                     CustomerId = 15,
-                    Date = new DateTime(2021, 02, 21),
+                    Date = new DateTime(2021, 02, 21, 11, 22, 33),
                     Netto = 775.70M
                 },
                 new Bill()
                 {
                     Id = 7,
                     CustomerId = 5,
-                    Date = new DateTime(2021, 02, 24),
+                    Date = new DateTime(2021, 02, 24, 23, 23, 45),
                     Netto = 2430.00M
                 },
                 new Bill()
                 {
                     Id = 8,
                     CustomerId = 33,
-                    Date = new DateTime(2021, 02, 24),
+                    Date = new DateTime(2021, 02, 24, 09, 30, 23),
                     Netto = 568.90M
                 },
 			};

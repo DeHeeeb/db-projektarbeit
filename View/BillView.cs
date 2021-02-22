@@ -51,7 +51,7 @@ namespace db_projektarbeit.View
             DgvBills.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvBills.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             DgvBills.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            DgvBills.Columns[1].HeaderText = "Datum";
+            DgvBills.Columns[1].HeaderText = "Abrechnungsdatum";
             DgvBills.Columns[2].HeaderText = "Rechnungs-Nr";
             DgvBills.Columns[3].HeaderText = "Kunden-Nr";
             DgvBills.Columns[4].HeaderText = "Kunde";

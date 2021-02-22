@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace db_projektarbeit.Migrations
 {
-    public partial class inital : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -363,14 +363,14 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CustomerId", "Date", "Netto" },
                 values: new object[,]
                 {
-                    { 7, 5, new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 2430.00m },
-                    { 5, 10, new DateTime(2021, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 5344.20m },
-                    { 6, 15, new DateTime(2021, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), 775.70m },
-                    { 2, 37, new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2141.90m },
-                    { 4, 13, new DateTime(2021, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 3283.90m },
-                    { 8, 33, new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), 568.90m },
-                    { 1, 45, new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1008.90m },
-                    { 3, 45, new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 545m }
+                    { 7, 5, new DateTime(2021, 2, 24, 23, 23, 45, 0, DateTimeKind.Unspecified), 2430.00m },
+                    { 5, 10, new DateTime(2021, 2, 20, 12, 50, 32, 0, DateTimeKind.Unspecified), 5344.20m },
+                    { 6, 15, new DateTime(2021, 2, 21, 11, 22, 33, 0, DateTimeKind.Unspecified), 775.70m },
+                    { 2, 37, new DateTime(2021, 2, 14, 8, 57, 34, 0, DateTimeKind.Unspecified), 2141.90m },
+                    { 4, 13, new DateTime(2021, 2, 15, 12, 30, 45, 0, DateTimeKind.Unspecified), 3283.90m },
+                    { 8, 33, new DateTime(2021, 2, 24, 9, 30, 23, 0, DateTimeKind.Unspecified), 568.90m },
+                    { 1, 45, new DateTime(2021, 2, 1, 14, 35, 5, 0, DateTimeKind.Unspecified), 1008.90m },
+                    { 3, 45, new DateTime(2021, 2, 14, 13, 26, 47, 0, DateTimeKind.Unspecified), 545m }
                 });
 
             migrationBuilder.InsertData(

@@ -64,7 +64,7 @@ namespace db_projektarbeit.Migrations
                             Id = 1,
                             BillNr = 0,
                             CustomerId = 45,
-                            Date = new DateTime(2021, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 1, 14, 35, 5, 0, DateTimeKind.Unspecified),
                             Netto = 1008.90m
                         },
                         new
@@ -72,7 +72,7 @@ namespace db_projektarbeit.Migrations
                             Id = 2,
                             BillNr = 0,
                             CustomerId = 37,
-                            Date = new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 14, 8, 57, 34, 0, DateTimeKind.Unspecified),
                             Netto = 2141.90m
                         },
                         new
@@ -80,7 +80,7 @@ namespace db_projektarbeit.Migrations
                             Id = 3,
                             BillNr = 0,
                             CustomerId = 45,
-                            Date = new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 14, 13, 26, 47, 0, DateTimeKind.Unspecified),
                             Netto = 545m
                         },
                         new
@@ -88,7 +88,7 @@ namespace db_projektarbeit.Migrations
                             Id = 4,
                             BillNr = 0,
                             CustomerId = 13,
-                            Date = new DateTime(2021, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 15, 12, 30, 45, 0, DateTimeKind.Unspecified),
                             Netto = 3283.90m
                         },
                         new
@@ -96,7 +96,7 @@ namespace db_projektarbeit.Migrations
                             Id = 5,
                             BillNr = 0,
                             CustomerId = 10,
-                            Date = new DateTime(2021, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 20, 12, 50, 32, 0, DateTimeKind.Unspecified),
                             Netto = 5344.20m
                         },
                         new
@@ -104,7 +104,7 @@ namespace db_projektarbeit.Migrations
                             Id = 6,
                             BillNr = 0,
                             CustomerId = 15,
-                            Date = new DateTime(2021, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 21, 11, 22, 33, 0, DateTimeKind.Unspecified),
                             Netto = 775.70m
                         },
                         new
@@ -112,7 +112,7 @@ namespace db_projektarbeit.Migrations
                             Id = 7,
                             BillNr = 0,
                             CustomerId = 5,
-                            Date = new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 24, 23, 23, 45, 0, DateTimeKind.Unspecified),
                             Netto = 2430.00m
                         },
                         new
@@ -120,7 +120,7 @@ namespace db_projektarbeit.Migrations
                             Id = 8,
                             BillNr = 0,
                             CustomerId = 33,
-                            Date = new DateTime(2021, 2, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2021, 2, 24, 9, 30, 23, 0, DateTimeKind.Unspecified),
                             Netto = 568.90m
                         });
                 });
