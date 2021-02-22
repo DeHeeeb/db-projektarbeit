@@ -197,7 +197,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = false;
             TxtSearch.Enabled = false;
             CmdSearch.Enabled = false;
-            CmdEditProductGroup.Enabled = false;
             TxtDescription.Focus();
         }
 
@@ -208,7 +207,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = true;
             TxtSearch.Enabled = true;
             CmdSearch.Enabled = true;
-            CmdEditProductGroup.Enabled = true;
         }
 
         private void CmdEditProductGroup_Click(object sender, EventArgs e)

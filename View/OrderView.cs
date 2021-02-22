@@ -268,7 +268,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = false;
             TxtSearch.Enabled = false;
             CmdSearch.Enabled = false;
-            CmdEditCustomer.Enabled = false;
             CmdBill.Enabled = false;
             CmdBillView.Enabled = false;
             DtpDate.Focus();
@@ -281,7 +280,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = true;
             TxtSearch.Enabled = true;
             CmdSearch.Enabled = true;
-            CmdEditCustomer.Enabled = true;
             CmdBill.Enabled = true;
             CmdBillView.Enabled = true;
         }

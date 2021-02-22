@@ -240,7 +240,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = false;
             TxtSearch.Enabled = false;
             CmdSearch.Enabled = false;
-            CmdEditCity.Enabled = false;
             TxtCompanyName.Focus();
         }
 
@@ -251,7 +250,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = true;
             TxtSearch.Enabled = true;
             CmdSearch.Enabled = true;
-            CmdEditCity.Enabled = true;
         }
     }
 }

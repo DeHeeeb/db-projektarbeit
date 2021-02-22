@@ -170,7 +170,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = false;
             TxtSearch.Enabled = false;
             CmdSearch.Enabled = false;
-            CmdEditProduct.Enabled = false;
             NumCount.Focus();
         }
 
@@ -181,7 +180,6 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = true;
             TxtSearch.Enabled = true;
             CmdSearch.Enabled = true;
-            CmdEditProduct.Enabled = true;
         }
 
         private void CmdDelete_Click(object sender, EventArgs e)
