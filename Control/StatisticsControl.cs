@@ -9,9 +9,14 @@ namespace db_projektarbeit.Control
     class StatisticsControl
     {
         StatisticsModel statisticsModel = new StatisticsModel();
-        public DataTable GetAll()
+        public DataTable GetAllSelfe()
         {
-            return statisticsModel.GetAll();
+            return statisticsModel.GetAllSelfe();
+        }
+
+        public DataTable GetAllCustomer()
+        {
+            return statisticsModel.GetAllCustomer();
         }
     }
 }

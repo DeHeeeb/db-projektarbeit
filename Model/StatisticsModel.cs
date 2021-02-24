@@ -14,10 +14,10 @@ namespace db_projektarbeit.Model
     class StatisticsModel
     {
 
-        public DataTable GetAll()
+        public DataTable GetAllSelfe()
         {
 
-            DataTable dt = new DataTable("Jahresvergleich");
+            DataTable dt = new DataTable("Jahresvergleich Geschäft");
             DataColumn column;
 
             int currentYear = DateTime.Now.Year;
@@ -74,6 +74,65 @@ namespace db_projektarbeit.Model
             GetArtikelCount(dt);
             GetArtikelPerOrder(dt);
             GetTotalSales(dt);
+
+            return dt;
+        }
+
+        public DataTable GetAllCustomer()
+        {
+
+            DataTable dt = new DataTable("Jahresvergleich Customer");
+            DataColumn column;
+
+            int currentYear = DateTime.Now.Year;
+
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Kategorie";
+            column.ReadOnly = true;
+            column.Unique = false;
+            dt.Columns.Add(column);
+
+
+            for (int i = 1; i < 4; i++)
+            {
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "YOY " + (currentYear - i) + " zu " + (currentYear - (i + 1));
+                column.ReadOnly = true;
+                column.Unique = false;
+                dt.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "Q4 " + (currentYear - i);
+                column.ReadOnly = true;
+                column.Unique = false;
+                dt.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "Q3 " + (currentYear - i);
+                column.ReadOnly = true;
+                column.Unique = false;
+                dt.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "Q2 " + (currentYear - i);
+                column.ReadOnly = true;
+                column.Unique = false;
+                dt.Columns.Add(column);
+
+                column = new DataColumn();
+                column.DataType = System.Type.GetType("System.String");
+                column.ColumnName = "Q1 " + (currentYear - i);
+                column.ReadOnly = true;
+                column.Unique = false;
+                dt.Columns.Add(column);
+            }
+
             GetTotalSalesPerCustomer(dt);
 
             return dt;

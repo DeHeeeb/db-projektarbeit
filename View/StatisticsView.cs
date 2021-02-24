@@ -20,14 +20,24 @@ namespace db_projektarbeit.View
 
         private void StatisticsView_Load(object sender, EventArgs e)
         {
-            DgvStatistics.DataSource = statisticsControl.GetAll();
-            DgvStatistics.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            for (int i = 1; i < DgvStatistics.Columns.Count; i++)
+            DgvStatisticsSelfe.DataSource = statisticsControl.GetAllSelfe();
+            DgvStatisticsSelfe.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            for (int i = 1; i < DgvStatisticsSelfe.Columns.Count; i++)
             {
-                DgvStatistics.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                DgvStatisticsSelfe.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
-            DgvStatistics.RowsDefaultCellStyle.BackColor = Color.Bisque;
-            DgvStatistics.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            DgvStatisticsSelfe.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            DgvStatisticsSelfe.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            DgvStatisticsSelfe.ScrollBars = ScrollBars.None;
+
+            DgvStatisticsCustomer.DataSource = statisticsControl.GetAllCustomer();
+            DgvStatisticsCustomer.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            for (int i = 1; i < DgvStatisticsCustomer.Columns.Count; i++)
+            {
+                DgvStatisticsCustomer.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            DgvStatisticsCustomer.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            DgvStatisticsCustomer.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
         }
     }
 }
