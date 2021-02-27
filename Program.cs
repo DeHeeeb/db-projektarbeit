@@ -1,10 +1,6 @@
 using db_projektarbeit.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using db_projektarbeit.Model;
 
 namespace db_projektarbeit
 {

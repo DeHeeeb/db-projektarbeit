@@ -1,20 +1,14 @@
 ﻿
-using System;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System;
 using System.Data;
-using System.Data.Common;
-using System.Security.AccessControl;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms.VisualStyles;
 
 namespace db_projektarbeit.Model
 {
     class StatisticsModel
     {
 
-        public DataTable GetAllSelfe()
+        public DataTable GetAllSelf()
         {
 
             DataTable dt = new DataTable("Jahresvergleich Geschäft");
@@ -24,7 +18,7 @@ namespace db_projektarbeit.Model
 
 
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
+            column.DataType = Type.GetType("System.String");
             column.ColumnName = "Kategorie";
             column.ReadOnly = true;
             column.Unique = false;
@@ -34,35 +28,35 @@ namespace db_projektarbeit.Model
             for (int i = 1; i < 4; i++)
             {
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "YOY " + (currentYear - i) + " zu " + (currentYear - (i+1));
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q4 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q3 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q2 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q1 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
@@ -88,7 +82,7 @@ namespace db_projektarbeit.Model
 
 
             column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
+            column.DataType = Type.GetType("System.String");
             column.ColumnName = "Kategorie";
             column.ReadOnly = true;
             column.Unique = false;
@@ -98,35 +92,35 @@ namespace db_projektarbeit.Model
             for (int i = 1; i < 4; i++)
             {
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "YOY " + (currentYear - i) + " zu " + (currentYear - (i + 1));
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q4 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q3 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q2 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
                 dt.Columns.Add(column);
 
                 column = new DataColumn();
-                column.DataType = System.Type.GetType("System.String");
+                column.DataType = Type.GetType("System.String");
                 column.ColumnName = "Q1 " + (currentYear - i);
                 column.ReadOnly = true;
                 column.Unique = false;
@@ -179,7 +173,7 @@ namespace db_projektarbeit.Model
                     }
                 }
             }
-            compareArrayToDataRow(dt, compareArray, "Anzahl Aufträge");
+            CompareArrayToDataRow(dt, compareArray, "Anzahl Aufträge");
         }
         private void GetArtikelCount(DataTable dt)
         {
@@ -232,7 +226,7 @@ namespace db_projektarbeit.Model
                     }
                 }
             }
-            compareArrayToDataRow(dt, compareArray, "Anzahl Artikel");
+            CompareArrayToDataRow(dt, compareArray, "Anzahl Artikel");
         }
         private void GetArtikelPerOrder(DataTable dt)
         {
@@ -288,7 +282,7 @@ namespace db_projektarbeit.Model
                     }
                 }
             }
-            compareArrayToDataRow(dt, compareArray, "Anzahl Artikel pro Bestellung");
+            CompareArrayToDataRow(dt, compareArray, "Anzahl Artikel pro Bestellung");
         }
         private void GetTotalSales(DataTable dt)
         {
@@ -355,7 +349,7 @@ namespace db_projektarbeit.Model
                     }
                 }
             }
-            compareArrayToDataRow(dt, compareArray, "Gesamtumsatz");
+            CompareArrayToDataRow(dt, compareArray, "Gesamtumsatz");
         }
         private void GetTotalSalesPerCustomer(DataTable dt)
         {
@@ -445,14 +439,14 @@ namespace db_projektarbeit.Model
                         counter++;
                         if (counter >= 4)
                         {
-                            compareArrayToDataRow(dt, compareArray, "Umsatz " + customerName);  // nicht omptimal weil die Datenverbindung zu DB noch offen ist
+                            CompareArrayToDataRow(dt, compareArray, "Umsatz " + customerName);  // nicht omptimal weil die Datenverbindung zu DB noch offen ist
                             counter = 0;
                         }
                     }
                 }
             }
         }
-        private void compareArrayToDataRow(DataTable dt, int[,] compareArray,string rowName)
+        private void CompareArrayToDataRow(DataTable dt, int[,] compareArray,string rowName)
         {
             DataRow row = dt.NewRow();
             row[0] = rowName;

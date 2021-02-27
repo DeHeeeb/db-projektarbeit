@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using db_projektarbeit.Control;
-using System.Linq;
+﻿using db_projektarbeit.Control;
 using db_projektarbeit.View.Common;
-using Newtonsoft.Json.Bson;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.View
 {
     public partial class ProductGroupView : Form
     {
 
-        ProductGroupControl ProductGroupControl = new ProductGroupControl();
+        private readonly ProductGroupControl ProductGroupControl = new ProductGroupControl();
 
         public ProductGroupView()
         {

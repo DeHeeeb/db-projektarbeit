@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using db_projektarbeit.Control;
+﻿using db_projektarbeit.Control;
 using db_projektarbeit.View.Common;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.View
 {
     public partial class CityView : Form
     {
-        CityControl CityControl = new CityControl();
-        City selected = new City();
+        private readonly CityControl CityControl = new CityControl();
+        private City selected = new City();
 
         public CityView()
         {

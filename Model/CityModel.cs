@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using db_projektarbeit.Control;
 
 namespace db_projektarbeit.Model
 {
     class CityModel
     {
-
         public List<City> GetAll()
         {
             using (var context = new ProjectContext())
@@ -16,14 +12,6 @@ namespace db_projektarbeit.Model
                 return context.Cities
                     .OrderBy(c => c.Zip)
                     .ToList();
-            }
-        }
-
-        public City GetByZip(int zip)
-        {
-            using (var context = new ProjectContext())
-            {
-                return context.Cities.SingleOrDefault(c => c.Zip == zip);
             }
         }
 

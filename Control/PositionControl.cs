@@ -1,13 +1,11 @@
-﻿using System;
+﻿using db_projektarbeit.Model;
 using System.Collections.Generic;
-using System.Text;
-using db_projektarbeit.Model;
 
 namespace db_projektarbeit.Control
 {
     class PositionControl
     {
-        private PositionModel PositionModel = new PositionModel();
+        private readonly PositionModel PositionModel = new PositionModel();
 
         public List<Position> GetAllByOrderId(int orderId)
         {

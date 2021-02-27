@@ -29,46 +29,43 @@ namespace db_projektarbeit.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvStatisticsSelfe = new System.Windows.Forms.DataGridView();
+            this.DgvStatisticsSelf = new System.Windows.Forms.DataGridView();
             this.DgvStatisticsCustomer = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsSelfe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsSelf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsCustomer)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvStatisticsSelfe
+            // DgvStatisticsSelf
             // 
-            this.DgvStatisticsSelfe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvStatisticsSelfe.Location = new System.Drawing.Point(9, 8);
-            this.DgvStatisticsSelfe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DgvStatisticsSelfe.Name = "DgvStatisticsSelfe";
-            this.DgvStatisticsSelfe.RowHeadersWidth = 51;
-            this.DgvStatisticsSelfe.RowTemplate.Height = 29;
-            this.DgvStatisticsSelfe.Size = new System.Drawing.Size(1763, 160);
-            this.DgvStatisticsSelfe.TabIndex = 0;
+            this.DgvStatisticsSelf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvStatisticsSelf.Location = new System.Drawing.Point(10, 11);
+            this.DgvStatisticsSelf.Name = "DgvStatisticsSelf";
+            this.DgvStatisticsSelf.RowHeadersWidth = 51;
+            this.DgvStatisticsSelf.RowTemplate.Height = 29;
+            this.DgvStatisticsSelf.Size = new System.Drawing.Size(2015, 213);
+            this.DgvStatisticsSelf.TabIndex = 0;
             // 
             // DgvStatisticsCustomer
             // 
             this.DgvStatisticsCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvStatisticsCustomer.Location = new System.Drawing.Point(9, 183);
-            this.DgvStatisticsCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgvStatisticsCustomer.Location = new System.Drawing.Point(10, 244);
             this.DgvStatisticsCustomer.Name = "DgvStatisticsCustomer";
             this.DgvStatisticsCustomer.RowHeadersWidth = 51;
             this.DgvStatisticsCustomer.RowTemplate.Height = 29;
-            this.DgvStatisticsCustomer.Size = new System.Drawing.Size(1763, 567);
+            this.DgvStatisticsCustomer.Size = new System.Drawing.Size(2015, 756);
             this.DgvStatisticsCustomer.TabIndex = 1;
             // 
             // StatisticsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1784, 761);
+            this.ClientSize = new System.Drawing.Size(2039, 1015);
             this.Controls.Add(this.DgvStatisticsCustomer);
-            this.Controls.Add(this.DgvStatisticsSelfe);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.DgvStatisticsSelf);
             this.Name = "StatisticsView";
             this.Text = "StatisticsView";
             this.Load += new System.EventHandler(this.StatisticsView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsSelfe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsSelf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStatisticsCustomer)).EndInit();
             this.ResumeLayout(false);
 
@@ -76,7 +73,7 @@ namespace db_projektarbeit.View
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvStatisticsSelfe;
+        private System.Windows.Forms.DataGridView DgvStatisticsSelf;
         private System.Windows.Forms.DataGridView DgvStatisticsCustomer;
     }
 }

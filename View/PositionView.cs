@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using db_projektarbeit.Control;
+﻿using db_projektarbeit.Control;
 using db_projektarbeit.View.Common;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.View
 {
     public partial class PositionView : Form
     {
-        PositionControl PositionControl = new PositionControl();
-        ProductControl ProductControl = new ProductControl();
-        Position selected = new Position();
-        Order parentOrder;
+        private readonly PositionControl PositionControl = new PositionControl();
+        private readonly ProductControl ProductControl = new ProductControl();
+        private Position selected = new Position();
+        private readonly Order parentOrder;
         
         public PositionView(Order order)
         {

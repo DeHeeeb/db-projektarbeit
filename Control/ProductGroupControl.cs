@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using db_projektarbeit.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using db_projektarbeit.Model;
 using System.Windows.Forms;
 
 namespace db_projektarbeit.Control
 {
     class ProductGroupControl
     {
-        private ProductGroupModel ProductGroupModel = new ProductGroupModel();
-
-        private ProductControl ProductControl = new ProductControl();
+        private readonly ProductGroupModel ProductGroupModel = new ProductGroupModel();
+        private readonly ProductControl ProductControl = new ProductControl();
 
         public List<ProductGroup> GetAll()
         {
@@ -41,11 +37,11 @@ namespace db_projektarbeit.Control
 
         public TreeNode[] ConvertToTreeNodes(List<ProductGroup> productGroups)
         {
-            List<TreeNode> listTreeNodes = new List<TreeNode>();                                    // Liste von TreeNode
+            List<TreeNode> listTreeNodes = new List<TreeNode>(); 
 
-            var root = productGroups.Where(p => p.ParentId == null);// Root Node suchen
+            var root = productGroups.Where(p => p.ParentId == null);
 
-            foreach (var parent in root)                                                 // 
+            foreach (var parent in root)
             {
                 var parentNode = new TreeNode(parent.Name)
                 {
@@ -62,6 +58,7 @@ namespace db_projektarbeit.Control
 
             return listTreeNodes.ToArray();
         }
+
         private static void PopulateChildren(TreeNode parentNode, IEnumerable<ProductGroup> children)
         {
             foreach (var child in children)

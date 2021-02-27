@@ -1,15 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using db_projektarbeit.Control;
-using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Model
 {
     class BillModel
     {
-
         public List<Bill> GetAll()
         {
             using (var context = new ProjectContext())
@@ -37,16 +33,12 @@ namespace db_projektarbeit.Model
         public List<Bill> Search(string text)
         {
             text = text.ToLower();
-            using (var context = new ProjectContext())
-            {
-                var bills = GetAll();
-                return bills.Where(b =>
-                    b.Customer.CustomerNr.ToString().Contains(text) ||
-                    b.Customer.FullName.ToLower().Contains(text) ||
-                    b.Customer.Street.ToLower().Contains(text) ||
-                    b.Customer.City.DisplayName.ToLower().Contains(text)
-                ).ToList();
-            }
+            return GetAll().Where(b =>
+                b.Customer.CustomerNr.ToString().Contains(text) ||
+                b.Customer.FullName.ToLower().Contains(text) ||
+                b.Customer.Street.ToLower().Contains(text) ||
+                b.Customer.City.DisplayName.ToLower().Contains(text)
+            ).ToList();
         }
 
         public int Save(Bill bill)

@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class ProductControl
     {
-        private ProductModel ProductModel = new ProductModel();
+        private readonly ProductModel ProductModel = new ProductModel();
 
         public List<Product> GetAll()
         {

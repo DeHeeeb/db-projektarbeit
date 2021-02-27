@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class CustomerControl
     {
-        private CustomerModel CustomerModel = new CustomerModel();
+        private readonly CustomerModel CustomerModel = new CustomerModel();
 
         public List<Customer> GetAll()
         {

@@ -1,20 +1,17 @@
 ﻿using db_projektarbeit.Control;
+using db_projektarbeit.View.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
     public partial class CustomerView : Form
     {
-        CustomerControl CustomerControl = new CustomerControl();
-        CityControl CityControl = new CityControl();
-        Customer selected = new Customer();
+        private readonly CustomerControl CustomerControl = new CustomerControl();
+        private readonly CityControl CityControl = new CityControl();
+        private Customer selected = new Customer();
 
         public CustomerView()
         {

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace db_projektarbeit.View.Common
 {
-    public class MessageBoxConstants
+    class MessageBoxConstants
     {
         public const string CaptionSuccess = "SUCCESS";
         public const string CaptionError = "ERROR";
@@ -32,6 +29,5 @@ namespace db_projektarbeit.View.Common
         public const string TextOrderTotalNotSet = "Der Auftrag muss ein gültiges Total haben um abgerechnet werden zu können.";
 
         public const string TextDBMigrated = "Die Datenbank 'Accounting' wurde inklusive Testdaten erstellt.";
-        public const string TextDBConnectError = "Es besteht ein Verbindungsproblem mit der SQL-Datenbank." + "\r\n" + "Bitte prüfen Sie, ob auf dem aktuellen Rechner eine aktive SQL-Installation besteht.";
     }
 }

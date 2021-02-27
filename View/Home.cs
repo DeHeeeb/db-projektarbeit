@@ -1,21 +1,16 @@
 ﻿using db_projektarbeit.Control;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml;
 using db_projektarbeit.Model;
 using db_projektarbeit.View.Common;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.View
 {
     public partial class Home : Form
     {
-        HomeControl homeControl = new HomeControl();
+        private readonly HomeControl HomeControl = new HomeControl();
 
         public Home()
         {
@@ -79,7 +74,7 @@ namespace db_projektarbeit.View
                 }
             }
 
-            var sqlCheck = homeControl.GetStatusSQL();
+            var sqlCheck = HomeControl.GetStatusSQL();
             if (sqlCheck)
             {
                 LblSQLCheck.Text = "SQL Server verbunden";

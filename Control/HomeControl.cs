@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using db_projektarbeit.Model;
+﻿using db_projektarbeit.Model;
 
 namespace db_projektarbeit.Control
 {
     class HomeControl
     {
-        private HomeModel homeModel = new HomeModel();
+        private readonly HomeModel HomeModel = new HomeModel();
 
         public bool GetStatusSQL()
         {
-            return homeModel.GetStatusSQL();
+            return HomeModel.GetStatusSQL();
         }
     }
 }

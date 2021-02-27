@@ -1,20 +1,17 @@
 ﻿using db_projektarbeit.Control;
+using db_projektarbeit.View.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
     public partial class ProductView : Form
     {
-        ProductControl ProductControl = new ProductControl();
-        ProductGroupControl ProductGroupControl = new ProductGroupControl();
-        Product selected = new Product();
+        private readonly ProductControl ProductControl = new ProductControl();
+        private readonly ProductGroupControl ProductGroupControl = new ProductGroupControl();
+        private Product selected = new Product();
 
         public ProductView()
         {

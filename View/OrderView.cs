@@ -1,22 +1,17 @@
 ﻿using db_projektarbeit.Control;
-using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using db_projektarbeit.View.Common;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace db_projektarbeit.View
 {
     public partial class OrderView : Form
     {
-        private OrderControl OrderControl = new OrderControl();
-        private CustomerControl CustomerControl = new CustomerControl();
-        private BillControl BillControl = new BillControl();
+        private readonly OrderControl OrderControl = new OrderControl();
+        private readonly CustomerControl CustomerControl = new CustomerControl();
+        private readonly BillControl BillControl = new BillControl();
         private Order selected = new Order();
 
         public OrderView()

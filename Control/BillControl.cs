@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class BillControl
     {
-        private BillModel BillModel = new BillModel();
+        private readonly BillModel BillModel = new BillModel();
 
         public List<Bill> GetAll()
         {

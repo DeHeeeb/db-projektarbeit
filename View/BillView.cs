@@ -1,13 +1,13 @@
-﻿using System;
+﻿using db_projektarbeit.Control;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using db_projektarbeit.Control;
 
 namespace db_projektarbeit.View
 {
     public partial class BillView : Form
     {
-        BillControl BillControl = new BillControl();
+        private readonly BillControl BillControl = new BillControl();
 
         public BillView()
         {
