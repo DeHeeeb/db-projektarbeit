@@ -1,30 +1,40 @@
-﻿using db_projektarbeit.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class PositionControl
     {
-        private readonly PositionModel PositionModel = new PositionModel();
+        private readonly PositionRepository PositionRepository = new PositionRepository();
 
         public List<Position> GetAllByOrderId(int orderId)
         {
-            return PositionModel.GetAllByOrderId(orderId);
+            return PositionRepository.GetAllByOrderId(orderId);
         }
 
         public List<Position> Search(string text, int orderId)
         {
-            return PositionModel.Search(text, orderId);
+            return PositionRepository.Search(text, orderId);
         }
 
         public int Save(Position position)
         {
-            return PositionModel.Save(position);
+            if (position.Id == 0)
+            {
+                PositionRepository.Save(position);
+            }
+            else
+            {
+                PositionRepository.Update(position);
+            }
+
+            return position.Id;
         }
 
         public int Delete(Position position)
         {
-            return PositionModel.Delete(position);
+            var deleted = PositionRepository.Delete(position.Id);
+            return deleted.Id;
         }
     }
 }
