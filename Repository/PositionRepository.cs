@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using db_projektarbeit.Model;
 
 namespace db_projektarbeit.Repository
 {

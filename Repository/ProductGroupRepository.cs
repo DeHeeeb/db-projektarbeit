@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using db_projektarbeit.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository

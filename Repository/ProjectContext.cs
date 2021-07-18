@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace db_projektarbeit.Model
+namespace db_projektarbeit.Repository
 {
     class ProjectContext : DbContext
     {

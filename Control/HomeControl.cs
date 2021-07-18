@@ -1,14 +1,14 @@
-﻿using db_projektarbeit.Model;
+﻿using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class HomeControl
     {
-        private readonly HomeModel HomeModel = new HomeModel();
+        private readonly HomeRepository HomeRepository = new HomeRepository();
 
         public bool GetStatusSQL()
         {
-            return HomeModel.GetStatusSQL();
+            return HomeRepository.GetStatusSQL();
         }
     }
 }

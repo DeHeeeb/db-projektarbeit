@@ -2,23 +2,21 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace db_projektarbeit.Model
+namespace db_projektarbeit.Repository
 {
-    class HomeModel
+    class HomeRepository
     {
         public bool GetStatusSQL()
         {
             int statusSQL = 0;
-            using (var context = new ProjectContext())
+            using var context = new ProjectContext();
+            try
             {
-                try
-                {
-                    statusSQL = context.Database.ExecuteSqlRaw("Select 1");
-                }
-                catch (SqlException se)
-                {
-                    Console.WriteLine(se);
-                }
+                statusSQL = context.Database.ExecuteSqlRaw("Select 1");
+            }
+            catch (SqlException se)
+            {
+                Console.WriteLine(se);
             }
 
             if (statusSQL == -1)

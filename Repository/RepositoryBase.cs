@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using db_projektarbeit.Model;
 using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository
