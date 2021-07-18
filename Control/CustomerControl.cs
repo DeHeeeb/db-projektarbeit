@@ -1,30 +1,30 @@
-﻿using db_projektarbeit.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class CustomerControl
     {
-        private readonly CustomerModel CustomerModel = new CustomerModel();
+        private readonly CustomerRepository CustomerRepository = new CustomerRepository();
 
         public List<Customer> GetAll()
         {
-            return CustomerModel.GetAll();
+            return CustomerRepository.GetAll();
         }
 
         public List<Customer> Search(string text)
         {
-            return CustomerModel.Search(text);
+            return CustomerRepository.Search(text);
         }
 
         public int Save(Customer customer)
         {
-            return CustomerModel.Save(customer);
+            return CustomerRepository.Save(customer);
         }
 
         public int Delete(Customer customer)
         {
-            return CustomerModel.Delete(customer);
+            return CustomerRepository.Delete(customer);
         }
     }
 }
