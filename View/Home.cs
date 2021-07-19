@@ -1,10 +1,10 @@
 ﻿using db_projektarbeit.Control;
-using db_projektarbeit.Model;
 using db_projektarbeit.View.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.View
 {

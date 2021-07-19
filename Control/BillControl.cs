@@ -1,25 +1,26 @@
-﻿using db_projektarbeit.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class BillControl
     {
-        private readonly BillModel BillModel = new BillModel();
+        private readonly BillRepository BillRepository = new BillRepository();
 
         public List<Bill> GetAll()
         {
-            return BillModel.GetAll();
+            return BillRepository.GetAll();
         }
 
         public List<Bill> Search(string text)
         {
-            return BillModel.Search(text);
+            return BillRepository.Search(text);
         }
 
         public int Save(Bill bill)
         {
-            return BillModel.Save(bill);
+            var saved = BillRepository.Save(bill);
+            return saved.Id;
         }
     }
 }

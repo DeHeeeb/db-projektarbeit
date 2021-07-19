@@ -1,20 +1,20 @@
-﻿using db_projektarbeit.Model;
-using System.Data;
+﻿using System.Data;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class StatisticsControl
     {
-        private readonly StatisticsModel StatisticsModel = new StatisticsModel();
+        private readonly StatisticsRepository StatisticsRepository = new StatisticsRepository();
 
         public DataTable GetAllSelf()
         {
-            return StatisticsModel.GetAllSelf();
+            return StatisticsRepository.GetAllSelf();
         }
 
         public DataTable GetAllCustomer()
         {
-            return StatisticsModel.GetAllCustomer();
+            return StatisticsRepository.GetAllCustomer();
         }
     }
 }

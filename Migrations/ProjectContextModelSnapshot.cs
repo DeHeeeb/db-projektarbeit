@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using db_projektarbeit.Model;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Migrations
 {

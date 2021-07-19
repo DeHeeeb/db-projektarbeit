@@ -1,28 +1,30 @@
-﻿using db_projektarbeit.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class ProductGroupControl
     {
-        private readonly ProductGroupModel ProductGroupModel = new ProductGroupModel();
+        private readonly ProductGroupRepository ProductGroupRepository = new ProductGroupRepository();
         private readonly ProductControl ProductControl = new ProductControl();
 
         public List<ProductGroup> GetAll()
         {
-            return ProductGroupModel.GetAll();
+            return ProductGroupRepository.GetAll();
         }
 
         public int AddNode(ProductGroup productGroup)
         {
-            return ProductGroupModel.Add(productGroup);
+            var saved = ProductGroupRepository.Save(productGroup);
+            return saved.Id;
         }
 
         public int UpdateNode(ProductGroup productGroup)
         {
-            return ProductGroupModel.Update(productGroup);
+            var updated = ProductGroupRepository.Update(productGroup);
+            return updated.Id;
         }
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
@@ -32,12 +34,14 @@ namespace db_projektarbeit.Control
 
         public int DeleteNode(ProductGroup productGroup)
         {
-            return ProductGroupModel.Delete(productGroup);
+            var deleted = ProductGroupRepository.Delete(productGroup.Id);
+
+            return deleted?.Id ?? 0;
         }
 
         public TreeNode[] ConvertToTreeNodes(List<ProductGroup> productGroups)
         {
-            List<TreeNode> listTreeNodes = new List<TreeNode>(); 
+            List<TreeNode> listTreeNodes = new List<TreeNode>();
 
             var root = productGroups.Where(p => p.ParentId == null);
 

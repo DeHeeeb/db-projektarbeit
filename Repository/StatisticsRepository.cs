@@ -1,11 +1,10 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace db_projektarbeit.Model
+namespace db_projektarbeit.Repository
 {
-    class StatisticsModel
+    class StatisticsRepository
     {
 
         public DataTable GetAllSelf()

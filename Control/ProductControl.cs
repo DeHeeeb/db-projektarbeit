@@ -1,35 +1,48 @@
-﻿using db_projektarbeit.Model;
+﻿using System;
 using System.Collections.Generic;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
     class ProductControl
     {
-        private readonly ProductModel ProductModel = new ProductModel();
+        private readonly ProductRepository ProductRepository = new ProductRepository();
 
         public List<Product> GetAll()
         {
-            return ProductModel.GetAll();
+            return ProductRepository.GetAll();
         }
 
         public List<Product> Search(string text)
         {
-            return ProductModel.Search(text);
+            return ProductRepository.Search(text);
         }
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            return ProductModel.SearchUsedProductGroup(productGroup);
+            return ProductRepository.SearchUsedProductGroup(productGroup);
         }
 
         public int Save(Product product)
         {
-            return ProductModel.Save(product);
+            if (product.Id == 0)
+            {
+                product.CreationDate = DateTime.Now.Date;
+                ProductRepository.Save(product);
+            }
+            else
+            {
+                ProductRepository.Update(product);
+            }
+
+            return product.Id;
         }
 
         public int Delete(Product product)
         {
-            return ProductModel.Delete(product);
+            var deleted = ProductRepository.Delete(product.Id);
+
+            return deleted?.Id ?? 0;
         }
     }
 }
