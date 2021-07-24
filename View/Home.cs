@@ -97,13 +97,14 @@ namespace db_projektarbeit.View
 
         private void CmdExportCustomer_Click(object sender, EventArgs e)
         {
+            new ExportView().Show();
             //var export = new CustomerExport<Customer>("//SerializationOverview1.xml", new XmlExportStrategy());
         }
 
         private void CmdImportCustomer_Click(object sender, EventArgs e)
         {
-            //var import = new CustomerImport("//SerializationOverview1.xml", new XmlImportStrategy());
-            //import.GetCustomers();
+            var import = new CustomerImport("//SerializationOverview1.xml", new XmlImportStrategy());
+            import.GetCustomers();
         }
 
         private void LblSQLCheck_Click(object sender, EventArgs e)

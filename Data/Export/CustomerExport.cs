@@ -5,7 +5,7 @@ using db_projektarbeit.Control;
 
 namespace db_projektarbeit.Data.Export
 {
-    class CustomerExport<TData>
+    class CustomerExport
     {
         private readonly ICustomerExportStrategy _exportStrategy;
         public CustomerExport(string dataName,ICustomerExportStrategy exportStrategy)

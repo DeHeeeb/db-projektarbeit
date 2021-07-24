@@ -7,11 +7,10 @@ namespace db_projektarbeit.Data.Export
 {
     public class XmlExportStrategy : ICustomerExportStrategy
     {
-        public bool Export(string dataName, List<db_projektarbeit.Customer> data)
+        public bool Export(string path, List<db_projektarbeit.Customer> data)
         {
             XmlSerializer writer = new XmlSerializer(typeof(List<db_projektarbeit.Customer>));
 
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + dataName;
             try
             {
                 using (var stream = File.OpenWrite(path))
