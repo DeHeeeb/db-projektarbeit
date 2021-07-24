@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using db_projektarbeit.Data.Export;
+using db_projektarbeit.Data.Import;
 using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.View
@@ -92,5 +94,23 @@ namespace db_projektarbeit.View
                 LblSQLCheck.Text = "SQL Server nicht verbunden";
             }
         }
+
+        private void CmdExportCustomer_Click(object sender, EventArgs e)
+        {
+            //var export = new CustomerExport<Customer>("//SerializationOverview1.xml", new XmlExportStrategy());
+        }
+
+        private void CmdImportCustomer_Click(object sender, EventArgs e)
+        {
+            //var import = new CustomerImport("//SerializationOverview1.xml", new XmlImportStrategy());
+            //import.GetCustomers();
+        }
+
+        private void LblSQLCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

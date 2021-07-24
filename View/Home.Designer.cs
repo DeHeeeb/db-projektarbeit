@@ -41,18 +41,21 @@
             this.GrpReport = new System.Windows.Forms.GroupBox();
             this.GrpManipulation = new System.Windows.Forms.GroupBox();
             this.LblStatus = new System.Windows.Forms.Label();
+            this.CmdExportCustomer = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmdImportCustomer = new System.Windows.Forms.Button();
             this.GrpReport.SuspendLayout();
             this.GrpManipulation.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CmdCustomer
             // 
             this.CmdCustomer.Enabled = false;
             this.CmdCustomer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdCustomer.Location = new System.Drawing.Point(7, 45);
-            this.CmdCustomer.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdCustomer.Location = new System.Drawing.Point(5, 28);
             this.CmdCustomer.Name = "CmdCustomer";
-            this.CmdCustomer.Size = new System.Drawing.Size(406, 79);
+            this.CmdCustomer.Size = new System.Drawing.Size(325, 63);
             this.CmdCustomer.TabIndex = 0;
             this.CmdCustomer.Text = "Kunden";
             this.CmdCustomer.UseVisualStyleBackColor = true;
@@ -62,10 +65,9 @@
             // 
             this.CmdProduct.Enabled = false;
             this.CmdProduct.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdProduct.Location = new System.Drawing.Point(7, 132);
-            this.CmdProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdProduct.Location = new System.Drawing.Point(5, 98);
             this.CmdProduct.Name = "CmdProduct";
-            this.CmdProduct.Size = new System.Drawing.Size(406, 79);
+            this.CmdProduct.Size = new System.Drawing.Size(325, 63);
             this.CmdProduct.TabIndex = 1;
             this.CmdProduct.Text = "Artikel";
             this.CmdProduct.UseVisualStyleBackColor = true;
@@ -75,10 +77,9 @@
             // 
             this.CmdProductGroup.Enabled = false;
             this.CmdProductGroup.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdProductGroup.Location = new System.Drawing.Point(7, 219);
-            this.CmdProductGroup.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdProductGroup.Location = new System.Drawing.Point(6, 167);
             this.CmdProductGroup.Name = "CmdProductGroup";
-            this.CmdProductGroup.Size = new System.Drawing.Size(406, 79);
+            this.CmdProductGroup.Size = new System.Drawing.Size(325, 63);
             this.CmdProductGroup.TabIndex = 2;
             this.CmdProductGroup.Text = "Artikelgruppen";
             this.CmdProductGroup.UseVisualStyleBackColor = true;
@@ -88,10 +89,9 @@
             // 
             this.CmdOrder.Enabled = false;
             this.CmdOrder.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdOrder.Location = new System.Drawing.Point(21, 13);
-            this.CmdOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdOrder.Location = new System.Drawing.Point(17, 11);
             this.CmdOrder.Name = "CmdOrder";
-            this.CmdOrder.Size = new System.Drawing.Size(848, 121);
+            this.CmdOrder.Size = new System.Drawing.Size(678, 97);
             this.CmdOrder.TabIndex = 3;
             this.CmdOrder.Text = "Auftrags-Verwaltung";
             this.CmdOrder.UseVisualStyleBackColor = true;
@@ -101,10 +101,9 @@
             // 
             this.CmdCity.Enabled = false;
             this.CmdCity.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdCity.Location = new System.Drawing.Point(7, 306);
-            this.CmdCity.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdCity.Location = new System.Drawing.Point(6, 236);
             this.CmdCity.Name = "CmdCity";
-            this.CmdCity.Size = new System.Drawing.Size(406, 79);
+            this.CmdCity.Size = new System.Drawing.Size(325, 63);
             this.CmdCity.TabIndex = 4;
             this.CmdCity.Text = "Städte";
             this.CmdCity.UseVisualStyleBackColor = true;
@@ -119,21 +118,20 @@
             // LblSQLCheck
             // 
             this.LblSQLCheck.AutoSize = true;
-            this.LblSQLCheck.Location = new System.Drawing.Point(113, 562);
-            this.LblSQLCheck.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSQLCheck.Location = new System.Drawing.Point(487, 459);
             this.LblSQLCheck.Name = "LblSQLCheck";
-            this.LblSQLCheck.Size = new System.Drawing.Size(249, 25);
+            this.LblSQLCheck.Size = new System.Drawing.Size(208, 20);
             this.LblSQLCheck.TabIndex = 5;
             this.LblSQLCheck.Text = "SQL Verbindung initialisieren...";
+            this.LblSQLCheck.Click += new System.EventHandler(this.LblSQLCheck_Click);
             // 
             // CmdBill
             // 
             this.CmdBill.Enabled = false;
             this.CmdBill.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdBill.Location = new System.Drawing.Point(7, 45);
-            this.CmdBill.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdBill.Location = new System.Drawing.Point(6, 28);
             this.CmdBill.Name = "CmdBill";
-            this.CmdBill.Size = new System.Drawing.Size(406, 79);
+            this.CmdBill.Size = new System.Drawing.Size(325, 63);
             this.CmdBill.TabIndex = 6;
             this.CmdBill.Text = "Rechnungs-Übersicht";
             this.CmdBill.UseVisualStyleBackColor = true;
@@ -143,10 +141,9 @@
             // 
             this.CmdStatistics.Enabled = false;
             this.CmdStatistics.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CmdStatistics.Location = new System.Drawing.Point(7, 132);
-            this.CmdStatistics.Margin = new System.Windows.Forms.Padding(4);
+            this.CmdStatistics.Location = new System.Drawing.Point(6, 98);
             this.CmdStatistics.Name = "CmdStatistics";
-            this.CmdStatistics.Size = new System.Drawing.Size(406, 79);
+            this.CmdStatistics.Size = new System.Drawing.Size(325, 63);
             this.CmdStatistics.TabIndex = 7;
             this.CmdStatistics.Text = "Statistik";
             this.CmdStatistics.UseVisualStyleBackColor = true;
@@ -156,9 +153,11 @@
             // 
             this.GrpReport.Controls.Add(this.CmdBill);
             this.GrpReport.Controls.Add(this.CmdStatistics);
-            this.GrpReport.Location = new System.Drawing.Point(14, 182);
+            this.GrpReport.Location = new System.Drawing.Point(11, 118);
+            this.GrpReport.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.GrpReport.Name = "GrpReport";
-            this.GrpReport.Size = new System.Drawing.Size(427, 298);
+            this.GrpReport.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GrpReport.Size = new System.Drawing.Size(340, 170);
             this.GrpReport.TabIndex = 8;
             this.GrpReport.TabStop = false;
             this.GrpReport.Text = "Reporting";
@@ -169,9 +168,11 @@
             this.GrpManipulation.Controls.Add(this.CmdProduct);
             this.GrpManipulation.Controls.Add(this.CmdProductGroup);
             this.GrpManipulation.Controls.Add(this.CmdCity);
-            this.GrpManipulation.Location = new System.Drawing.Point(456, 182);
+            this.GrpManipulation.Location = new System.Drawing.Point(364, 118);
+            this.GrpManipulation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.GrpManipulation.Name = "GrpManipulation";
-            this.GrpManipulation.Size = new System.Drawing.Size(427, 405);
+            this.GrpManipulation.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GrpManipulation.Size = new System.Drawing.Size(342, 311);
             this.GrpManipulation.TabIndex = 9;
             this.GrpManipulation.TabStop = false;
             this.GrpManipulation.Text = "Stammdaten";
@@ -179,27 +180,64 @@
             // LblStatus
             // 
             this.LblStatus.AutoSize = true;
-            this.LblStatus.Location = new System.Drawing.Point(14, 562);
+            this.LblStatus.Location = new System.Drawing.Point(370, 459);
+            this.LblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblStatus.Name = "LblStatus";
-            this.LblStatus.Size = new System.Drawing.Size(92, 25);
+            this.LblStatus.Size = new System.Drawing.Size(76, 20);
             this.LblStatus.TabIndex = 10;
             this.LblStatus.Text = "Status DB:";
             // 
+            // CmdExportCustomer
+            // 
+            this.CmdExportCustomer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdExportCustomer.Location = new System.Drawing.Point(6, 26);
+            this.CmdExportCustomer.Name = "CmdExportCustomer";
+            this.CmdExportCustomer.Size = new System.Drawing.Size(325, 63);
+            this.CmdExportCustomer.TabIndex = 8;
+            this.CmdExportCustomer.Text = "Export Kunde";
+            this.CmdExportCustomer.UseVisualStyleBackColor = true;
+            this.CmdExportCustomer.Click += new System.EventHandler(this.CmdExportCustomer_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.CmdImportCustomer);
+            this.groupBox1.Controls.Add(this.CmdExportCustomer);
+            this.groupBox1.Location = new System.Drawing.Point(11, 294);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.groupBox1.Size = new System.Drawing.Size(340, 171);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Import/Export";
+            // 
+            // CmdImportCustomer
+            // 
+            this.CmdImportCustomer.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CmdImportCustomer.Location = new System.Drawing.Point(6, 95);
+            this.CmdImportCustomer.Name = "CmdImportCustomer";
+            this.CmdImportCustomer.Size = new System.Drawing.Size(325, 63);
+            this.CmdImportCustomer.TabIndex = 9;
+            this.CmdImportCustomer.Text = "Import Kunde";
+            this.CmdImportCustomer.UseVisualStyleBackColor = true;
+            this.CmdImportCustomer.Click += new System.EventHandler(this.CmdImportCustomer_Click);
+            // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 610);
+            this.ClientSize = new System.Drawing.Size(717, 488);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LblStatus);
             this.Controls.Add(this.GrpManipulation);
             this.Controls.Add(this.GrpReport);
             this.Controls.Add(this.LblSQLCheck);
             this.Controls.Add(this.CmdOrder);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.Text = "Home";
             this.GrpReport.ResumeLayout(false);
             this.GrpManipulation.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +257,8 @@
         private System.Windows.Forms.GroupBox GrpReport;
         private System.Windows.Forms.GroupBox GrpManipulation;
         private System.Windows.Forms.Label LblStatus;
+        private System.Windows.Forms.Button CmdExportCustomer;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button CmdImportCustomer;
     }
 }
