@@ -7,11 +7,14 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using db_projektarbeit.Data.Export;
+using db_projektarbeit.View.Common;
 
 namespace db_projektarbeit.View
 {
     public partial class ExportView : Form
     {
+
+        private string path;
         public ExportView()
         {
             InitializeComponent();
@@ -19,21 +22,32 @@ namespace db_projektarbeit.View
 
         private void CmdOfd_Click(object sender, EventArgs e)
         {
-
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.InitialDirectory = "c:\\";
-                saveFileDialog.Filter = "xml files (*.xml)|*.xml|Json files (*.json)|*.json";
+                saveFileDialog.Filter = "Export files (*.xml;*.json)|*.xml;*.json";
                 saveFileDialog.FilterIndex = 2;
                 saveFileDialog.RestoreDirectory = true;
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var _customerExport = new CustomerExport(saveFileDialog.FileName, new XmlExportStrategy());
+                    path = saveFileDialog.FileName;
+                    TxtPath.Text = path;
                 }
-
             }
+        }
 
+        private void CmdExport_Click(object sender, EventArgs e)
+        {
+            if (path != string.Empty)
+            {
+                var _customerExport = new CustomerExport(path, new XmlExportStrategy());
+
+                MessageBox.Show(MessageBoxConstants.TextExportSuccessful,
+                    MessageBoxConstants.CaptionInformation,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
     }
 }

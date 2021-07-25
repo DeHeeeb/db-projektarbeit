@@ -52,6 +52,15 @@ namespace db_projektarbeit.View
         {
             new StatisticsView().Show();
         }
+        private void CmdExportCustomer_Click(object sender, EventArgs e)
+        {
+            new ExportView().Show();
+        }
+
+        private void CmdImportCustomer_Click(object sender, EventArgs e)
+        {
+            new ImportView().Show();
+        }
 
         private void TimerSQLCheck_Tick(object sender, EventArgs e)
         {
@@ -93,23 +102,6 @@ namespace db_projektarbeit.View
             {
                 LblSQLCheck.Text = "SQL Server nicht verbunden";
             }
-        }
-
-        private void CmdExportCustomer_Click(object sender, EventArgs e)
-        {
-            new ExportView().Show();
-            //var export = new CustomerExport<Customer>("//SerializationOverview1.xml", new XmlExportStrategy());
-        }
-
-        private void CmdImportCustomer_Click(object sender, EventArgs e)
-        {
-            var import = new CustomerImport("//SerializationOverview1.xml", new XmlImportStrategy());
-            import.GetCustomers();
-        }
-
-        private void LblSQLCheck_Click(object sender, EventArgs e)
-        {
-
         }
 
 

@@ -123,7 +123,6 @@
             this.LblSQLCheck.Size = new System.Drawing.Size(208, 20);
             this.LblSQLCheck.TabIndex = 5;
             this.LblSQLCheck.Text = "SQL Verbindung initialisieren...";
-            this.LblSQLCheck.Click += new System.EventHandler(this.LblSQLCheck_Click);
             // 
             // CmdBill
             // 
@@ -194,7 +193,7 @@
             this.CmdExportCustomer.Name = "CmdExportCustomer";
             this.CmdExportCustomer.Size = new System.Drawing.Size(325, 63);
             this.CmdExportCustomer.TabIndex = 8;
-            this.CmdExportCustomer.Text = "Export Kunde";
+            this.CmdExportCustomer.Text = "Export";
             this.CmdExportCustomer.UseVisualStyleBackColor = true;
             this.CmdExportCustomer.Click += new System.EventHandler(this.CmdExportCustomer_Click);
             // 
@@ -218,7 +217,7 @@
             this.CmdImportCustomer.Name = "CmdImportCustomer";
             this.CmdImportCustomer.Size = new System.Drawing.Size(325, 63);
             this.CmdImportCustomer.TabIndex = 9;
-            this.CmdImportCustomer.Text = "Import Kunde";
+            this.CmdImportCustomer.Text = "Import";
             this.CmdImportCustomer.UseVisualStyleBackColor = true;
             this.CmdImportCustomer.Click += new System.EventHandler(this.CmdImportCustomer_Click);
             // 

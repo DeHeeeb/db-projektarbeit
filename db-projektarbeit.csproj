@@ -26,4 +26,16 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="View\ExportView - Copy %282%29.resx">
+      <DependentUpon>ExportView.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ExportView - Copy - Copy.resx">
+      <DependentUpon>ExportView - Copy.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\ExportView - Copy.resx">
+      <DependentUpon>ExportView.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

@@ -11,8 +11,6 @@ namespace db_projektarbeit.Data.Import
     {
         public List<db_projektarbeit.Customer> Import(string path)
         {
-            path = "C:\\Users\\Trabe\\Documents\\SerializationOverview1.xml";
-
             var customers = new List<db_projektarbeit.Customer>();
             var serializer = new XmlSerializer(typeof(List<db_projektarbeit.Customer>));
 

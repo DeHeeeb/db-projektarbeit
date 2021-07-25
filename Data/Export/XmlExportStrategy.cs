@@ -20,7 +20,7 @@ namespace db_projektarbeit.Data.Export
             }
             catch (Exception e)
             {
-                throw new Exception("Export File Exeption");
+                throw new Exception("Export File Exeption", e);
             }
 
             return true;

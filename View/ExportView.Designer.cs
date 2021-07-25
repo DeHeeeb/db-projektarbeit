@@ -35,8 +35,8 @@ namespace db_projektarbeit.View
             this.CmdExport = new System.Windows.Forms.Button();
             this.GrpDaten = new System.Windows.Forms.GroupBox();
             this.GrpFromat = new System.Windows.Forms.GroupBox();
-            this.RadXml = new System.Windows.Forms.RadioButton();
             this.RadJson = new System.Windows.Forms.RadioButton();
+            this.RadXml = new System.Windows.Forms.RadioButton();
             this.GrpDaten.SuspendLayout();
             this.GrpFromat.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@ namespace db_projektarbeit.View
             // 
             // CmdOfd
             // 
-            this.CmdOfd.Location = new System.Drawing.Point(436, 11);
+            this.CmdOfd.Location = new System.Drawing.Point(435, 12);
             this.CmdOfd.Name = "CmdOfd";
             this.CmdOfd.Size = new System.Drawing.Size(94, 29);
             this.CmdOfd.TabIndex = 1;
@@ -65,19 +65,20 @@ namespace db_projektarbeit.View
             // 
             // TxtPath
             // 
-            this.TxtPath.Location = new System.Drawing.Point(12, 13);
+            this.TxtPath.Location = new System.Drawing.Point(11, 14);
             this.TxtPath.Name = "TxtPath";
             this.TxtPath.Size = new System.Drawing.Size(418, 27);
             this.TxtPath.TabIndex = 2;
             // 
             // CmdExport
             // 
-            this.CmdExport.Location = new System.Drawing.Point(536, 11);
+            this.CmdExport.Location = new System.Drawing.Point(535, 12);
             this.CmdExport.Name = "CmdExport";
             this.CmdExport.Size = new System.Drawing.Size(94, 29);
             this.CmdExport.TabIndex = 44;
             this.CmdExport.Text = "Export";
             this.CmdExport.UseVisualStyleBackColor = true;
+            this.CmdExport.Click += new System.EventHandler(this.CmdExport_Click);
             // 
             // GrpDaten
             // 
@@ -100,17 +101,6 @@ namespace db_projektarbeit.View
             this.GrpFromat.TabStop = false;
             this.GrpFromat.Text = "Fromat";
             // 
-            // RadXml
-            // 
-            this.RadXml.AutoSize = true;
-            this.RadXml.Checked = true;
-            this.RadXml.Location = new System.Drawing.Point(15, 36);
-            this.RadXml.Name = "RadXml";
-            this.RadXml.Size = new System.Drawing.Size(59, 24);
-            this.RadXml.TabIndex = 0;
-            this.RadXml.Text = "XML";
-            this.RadXml.UseVisualStyleBackColor = true;
-            // 
             // RadJson
             // 
             this.RadJson.AutoSize = true;
@@ -120,6 +110,19 @@ namespace db_projektarbeit.View
             this.RadJson.TabIndex = 1;
             this.RadJson.Text = "JSON";
             this.RadJson.UseVisualStyleBackColor = true;
+            this.RadJson.Visible = false;
+            // 
+            // RadXml
+            // 
+            this.RadXml.AutoSize = true;
+            this.RadXml.Checked = true;
+            this.RadXml.Location = new System.Drawing.Point(15, 36);
+            this.RadXml.Name = "RadXml";
+            this.RadXml.Size = new System.Drawing.Size(59, 24);
+            this.RadXml.TabIndex = 0;
+            this.RadXml.TabStop = true;
+            this.RadXml.Text = "XML";
+            this.RadXml.UseVisualStyleBackColor = true;
             // 
             // ExportView
             // 
