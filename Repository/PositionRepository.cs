@@ -6,11 +6,15 @@ namespace db_projektarbeit.Repository
 {
     class PositionRepository : RepositoryBase<Position>
     {
+        private readonly ProjectContext _context;
+        public PositionRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public List<Position> GetAllByOrderId(int orderId)
         {
-            using var context = new ProjectContext();
-
-            return context.Positions
+            return _context.Positions
                 .Include(p => p.Product)
                 .OrderBy(p => p.Id)
                 .Where(p => p.OrderId == orderId)
@@ -20,9 +24,8 @@ namespace db_projektarbeit.Repository
         public List<Position> Search(string text, int orderId)
         {
             text = text.ToLower();
-            using var context = new ProjectContext();
 
-            return context.Positions
+            return _context.Positions
                 .Include(p => p.Product)
                 .ThenInclude(p => p.Group)
                 .Where(p =>

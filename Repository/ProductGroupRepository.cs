@@ -5,12 +5,18 @@ namespace db_projektarbeit.Repository
 {
     class ProductGroupRepository : RepositoryBase<ProductGroup>
     {
+        private readonly ProjectContext _context;
+        public ProductGroupRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public new List<ProductGroup> GetAll()
         {
             List<ProductGroup> productGroups = new List<ProductGroup>();
-            using var context = new ProjectContext();
 
-            var result = context.ProductGroups.FromSqlRaw(
+
+            var result = _context.ProductGroups.FromSqlRaw(
                 ";WITH CTE_ProductGroup " +
                 "(Id, Name, ParentId, ProductLevel) " +
                 "AS (SELECT " +

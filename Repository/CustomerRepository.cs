@@ -7,10 +7,16 @@ namespace db_projektarbeit.Repository
 {
     class CustomerRepository : RepositoryBase<Customer>
     {
+        private readonly ProjectContext _context;
+
+        public CustomerRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public new List<Customer> GetAll()
         {
-            using var context = new ProjectContext();
-            return context.Customers
+            return _context.Customers
                 .Include(c => c.City)
                 .OrderBy(c => c.CustomerNr)
                 .Where(c =>
@@ -22,9 +28,8 @@ namespace db_projektarbeit.Repository
         public List<Customer> Search(string text)
         {
             text = text.ToLower();
-            using var context = new ProjectContext();
 
-            return context.Customers
+            return _context.Customers
                 .Include(c => c.City)
                 .Where(c => (
                         c.CustomerNr.ToString().ToLower().Contains(text) ||
@@ -75,11 +80,9 @@ namespace db_projektarbeit.Repository
         {
             try
             {
-                using var context = new ProjectContext();
-
                 customer.ValidTo = DateTime.Now;
                 Update(customer);
-                context.SaveChanges();
+                _context.SaveChanges();
             }
             catch
             {

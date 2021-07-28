@@ -1,16 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Repository
 {
     class BillRepository : RepositoryBase<Bill>
     {
+
+        private readonly ProjectContext _context;
+        public BillRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public List<Bill> GetAll()
         {
-            using var context = new ProjectContext();
-
-            var bills = context.Bills
+            var bills = _context.Bills
                 .Include(b => b.Customer)
                 .ThenInclude(c => c.City)
                 .OrderByDescending(b => b.Date)
@@ -18,7 +24,7 @@ namespace db_projektarbeit.Repository
 
             foreach (var bill in bills)
             {
-                bill.Customer = context.Customers.Where(c =>
+                bill.Customer = _context.Customers.Where(c =>
                         c.CustomerNr == bill.Customer.CustomerNr &&
                         bill.Date >= c.ValidFrom &&
                         bill.Date <= c.ValidTo)

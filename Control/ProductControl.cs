@@ -6,7 +6,7 @@ namespace db_projektarbeit.Control
 {
     class ProductControl
     {
-        private readonly ProductRepository ProductRepository = new ProductRepository();
+        private readonly ProductRepository ProductRepository = new ProductRepository(new ProjectContext());
 
         public List<Product> GetAll()
         {

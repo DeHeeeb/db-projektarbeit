@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class PositionControl
     {
-        private readonly PositionRepository PositionRepository = new PositionRepository();
+        private readonly PositionRepository PositionRepository = new PositionRepository(new ProjectContext());
 
         public List<Position> GetAllByOrderId(int orderId)
         {

@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class OrderControl
     {
-        private readonly OrderRepository OrderRepository = new OrderRepository();
+        private readonly OrderRepository OrderRepository = new OrderRepository(new ProjectContext());
 
         public List<Order> GetAll()
         {

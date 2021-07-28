@@ -5,7 +5,7 @@ namespace db_projektarbeit.Control
 {
     class CustomerControl
     {
-        private readonly CustomerRepository CustomerRepository = new CustomerRepository();
+        private readonly CustomerRepository CustomerRepository = new CustomerRepository(new ProjectContext());
 
         public List<Customer> GetAll()
         {

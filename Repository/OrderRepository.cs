@@ -7,11 +7,15 @@ namespace db_projektarbeit.Repository
 {
     class OrderRepository : RepositoryBase<Order>
     {
+        private readonly ProjectContext _context;
+        public OrderRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public new List<Order> GetAll()
         {
-            using var context = new ProjectContext();
-
-            var orders = context.Orders
+            var orders = _context.Orders
                 .Include(o => o.Positions)
                 .ThenInclude(p => p.Product)
                 .Include(o => o.Customer)
@@ -20,7 +24,7 @@ namespace db_projektarbeit.Repository
 
             foreach (var order in orders)
             {
-                order.Customer = context.Customers.SingleOrDefault(c =>
+                order.Customer = _context.Customers.SingleOrDefault(c =>
                     c.CustomerNr == order.Customer.CustomerNr &&
                     DateTime.Now > c.ValidFrom &&
                     DateTime.Now < c.ValidTo);
@@ -33,9 +37,8 @@ namespace db_projektarbeit.Repository
         public List<Order> Search(string text)
         {
             text = text.ToLower();
-            using var context = new ProjectContext();
 
-            return context.Orders
+            return _context.Orders
                 .Include(o => o.Positions)
                 .ThenInclude(p => p.Product)
                 .Include(o => o.Customer)
@@ -52,34 +55,34 @@ namespace db_projektarbeit.Repository
 
         public new int Save(Order order)
         {
-            using var context = new ProjectContext();
             if (order.Id == 0)
             {
-                context.Orders.Add(order);
+                _context.Orders.Add(order);
             }
             else
             {
-                var customer = context.Customers.SingleOrDefault(c => c.Id == order.CustomerId);
-                order.Customer = context.Customers.SingleOrDefault(c =>
+                var customer = _context.Customers.SingleOrDefault(c => c.Id == order.CustomerId);
+                order.Customer = _context.Customers.SingleOrDefault(c =>
                     c.CustomerNr == customer.CustomerNr &&
                     DateTime.Now > c.ValidFrom &&
                     DateTime.Now < c.ValidTo);
-                context.Orders.Update(order);
+                _context.Orders.Update(order);
             }
 
-            context.SaveChanges();
+            _context.SaveChanges();
 
             return order.Id;
         }
 
         public void Bill(int orderId)
         {
-            using var context = new ProjectContext();
-            var order = context.Orders.SingleOrDefault(o => o.Id == orderId);
+            var order = _context.Orders.SingleOrDefault(o => o.Id == orderId);
             order.Billed = true;
-            context.Orders.Update(order);
+            _context.Orders.Update(order);
 
-            context.SaveChanges();
+            _context.SaveChanges();
         }
+
+
     }
 }

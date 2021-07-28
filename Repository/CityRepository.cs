@@ -5,6 +5,10 @@ namespace db_projektarbeit.Repository
 {
     class CityRepository : RepositoryBase<City>
     {
+        public CityRepository(ProjectContext context) : base(context)
+        {
+
+        }
         public List<City> Search(string text)
         {
             text = text.ToLower();
@@ -17,5 +21,7 @@ namespace db_projektarbeit.Repository
                 ).OrderBy(c => c.Zip)
                 .ToList();
         }
+
+
     }
 }

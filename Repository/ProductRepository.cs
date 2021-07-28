@@ -6,11 +6,16 @@ namespace db_projektarbeit.Repository
 {
     class ProductRepository : RepositoryBase<Product>
     {
+
+        private readonly ProjectContext _context;
+        public ProductRepository(ProjectContext context) : base(context)
+        {
+            _context = context;
+        }
+
         public new List<Product> GetAll()
         {
-            using var context = new ProjectContext();
-
-            return context.Products
+            return _context.Products
                 .Include(p => p.Group)
                 .OrderBy(p => p.ProductNr)
                 .ToList();
@@ -19,9 +24,8 @@ namespace db_projektarbeit.Repository
         public List<Product> Search(string text)
         {
             text = text.ToLower();
-            using var context = new ProjectContext();
 
-            return context.Products
+            return _context.Products
                 .Include(p => p.Group)
                 .Where(p =>
                     p.ProductNr.ToString().ToLower().Contains(text) ||
@@ -35,9 +39,7 @@ namespace db_projektarbeit.Repository
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            using var context = new ProjectContext();
-
-            return context.Products
+            return _context.Products
                 .Where(pg => pg.GroupId == productGroup.Id)
                 .ToList();
         }

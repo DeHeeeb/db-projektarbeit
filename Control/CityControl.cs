@@ -6,7 +6,7 @@ namespace db_projektarbeit.Control
 {
     class CityControl
     {
-        private readonly CityRepository CityRepository = new CityRepository();
+        private readonly CityRepository CityRepository = new CityRepository(new ProjectContext());
 
         public List<City> GetAll()
         {
