@@ -48,32 +48,29 @@ namespace db_projektarbeit.Repository
 
         public new int Save(Customer customer)
         {
-            using (var context = new ProjectContext())
+            var currentDate = DateTime.Now;
+
+            if (customer.Id == 0)
             {
-                var currentDate = DateTime.Now;
-
-                if (customer.Id == 0)
-                {
-                    customer.ValidFrom = currentDate;
-                    customer.ValidTo = DateTime.MaxValue;
-                    context.Customers.Add(customer);
-                }
-                else
-                {
-                    var oldCustomer = context.Customers
-                        .Single(c => c.Id == customer.Id);
-                    oldCustomer.ValidTo = currentDate;
-
-                    customer.Id = 0;
-                    customer.ValidFrom = currentDate;
-                    customer.ValidTo = DateTime.MaxValue;
-                    context.Customers.Add(customer);
-                }
-
-                context.SaveChanges();
-
-                return customer.Id;
+                customer.ValidFrom = currentDate;
+                customer.ValidTo = DateTime.MaxValue;
+                _context.Customers.Add(customer);
             }
+            else
+            {
+                var oldCustomer = _context.Customers
+                    .Single(c => c.Id == customer.Id);
+                oldCustomer.ValidTo = currentDate;
+
+                customer.Id = 0;
+                customer.ValidFrom = currentDate;
+                customer.ValidTo = DateTime.MaxValue;
+                _context.Customers.Add(customer);
+            }
+
+            _context.SaveChanges();
+
+            return customer.Id;
         }
 
         public int Delete(Customer customer)

@@ -6,13 +6,18 @@ namespace db_projektarbeit.Repository
 {
     class HomeRepository
     {
+        private readonly ProjectContext _context;
+        public HomeRepository(ProjectContext context)
+        {
+            _context = context;
+        }
+
         public bool GetStatusSQL()
         {
             int statusSQL = 0;
-            using var context = new ProjectContext();
             try
             {
-                statusSQL = context.Database.ExecuteSqlRaw("Select 1");
+                statusSQL = _context.Database.ExecuteSqlRaw("Select 1");
             }
             catch (SqlException se)
             {
