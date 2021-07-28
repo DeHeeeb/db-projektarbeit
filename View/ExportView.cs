@@ -41,7 +41,14 @@ namespace db_projektarbeit.View
         {
             if (path != string.Empty)
             {
-                var _customerExport = new CustomerExport(path, new XmlExportStrategy());
+                if (RadXml.Checked == true)
+                {
+                    var _customerExport = new CustomerExport(path, new XmlExportStrategy());
+                }
+                else if (RadJson.Checked == true)
+                {
+                    var _customerExport = new CustomerExport(path, new JsonExportStrategy());
+                }
 
                 MessageBox.Show(MessageBoxConstants.TextExportSuccessful,
                     MessageBoxConstants.CaptionInformation,

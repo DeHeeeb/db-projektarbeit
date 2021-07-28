@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using db_projektarbeit.Control;
@@ -17,6 +18,7 @@ namespace db_projektarbeit.View
         private string path;
         private List<Customer> customers;
         private readonly CustomerControl _customerControl = new CustomerControl();
+        private CustomerImport _customerImport;
 
         public ImportView()
         {
@@ -38,8 +40,21 @@ namespace db_projektarbeit.View
                     path = openFileDialog.FileName;
                     TxtPath.Text = path.ToString();
 
-                    var _customerImport = new CustomerImport(path, new XmlImportStrategy());
+                    string extension = Path.GetExtension(openFileDialog.FileName);
+
+                    if (extension == ".xml")
+                    {
+                        _customerImport = new CustomerImport(path, new XmlImportStrategy());
+                        
+                    }
+                    else if (extension == ".json")
+                    {
+                        _customerImport = new CustomerImport(path, new JsonImportStrategy());
+                    }
+
                     var _customers = _customerImport.GetCustomers();
+
+
 
                     foreach (var customer in _customers)
                     {

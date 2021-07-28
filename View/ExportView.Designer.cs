@@ -110,7 +110,6 @@ namespace db_projektarbeit.View
             this.RadJson.TabIndex = 1;
             this.RadJson.Text = "JSON";
             this.RadJson.UseVisualStyleBackColor = true;
-            this.RadJson.Visible = false;
             // 
             // RadXml
             // 

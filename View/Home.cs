@@ -103,7 +103,5 @@ namespace db_projektarbeit.View
                 LblSQLCheck.Text = "SQL Server nicht verbunden";
             }
         }
-
-
     }
 }
