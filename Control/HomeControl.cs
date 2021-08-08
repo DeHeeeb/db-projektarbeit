@@ -4,7 +4,7 @@ namespace db_projektarbeit.Control
 {
     class HomeControl
     {
-        private readonly HomeRepository HomeRepository = new HomeRepository();
+        private readonly HomeRepository HomeRepository = new HomeRepository(new ProjectContext());
 
         public bool GetStatusSQL()
         {
