@@ -78,7 +78,10 @@ namespace db_projektarbeit.Migrations
                     HouseNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CityId = table.Column<int>(type: "int", nullable: false),
                     ValidFrom = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2021, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    ValidTo = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999))
+                    ValidTo = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(9999, 12, 31, 23, 59, 59, 999, DateTimeKind.Unspecified).AddTicks(9999)),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Website = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -238,95 +241,95 @@ namespace db_projektarbeit.Migrations
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                columns: new[] { "Id", "CityId", "CompanyName", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "Website" },
                 values: new object[,]
                 {
-                    { 1, 1, "Traber Corp", "Marc", "12", "Traber", "Hauptstrasse" },
-                    { 14, 13, "Raiffeisenbank Berg", "Antonio", "13", "Perugia", "Schlossgasse" },
-                    { 15, 14, "Stampino AG", "Tina", "16", "Mächler", "Hinterwaldstrasse" },
-                    { 16, 15, "Sport Säntis", "Didier", "3", "Cuche", "Unter den Linden" }
+                    { 1, 1, "Traber Corp", null, "Marc", "12", "Traber", null, "Hauptstrasse", null },
+                    { 14, 13, "Raiffeisenbank Berg", null, "Antonio", "13", "Perugia", null, "Schlossgasse", null },
+                    { 15, 14, "Stampino AG", null, "Tina", "16", "Mächler", null, "Hinterwaldstrasse", null },
+                    { 16, 15, "Sport Säntis", null, "Didier", "3", "Cuche", null, "Unter den Linden", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidTo" },
-                values: new object[] { 41, 15, null, 9001, "Dominic", "32", "Kunz", "Grubstrasse", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidTo", "Website" },
+                values: new object[] { 41, 15, null, 9001, null, "Dominic", "32", "Kunz", null, "Grubstrasse", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 42, 15, null, 9001, "Dominic", "9", "Kunz", "Grabweg", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "Website" },
+                values: new object[] { 42, 15, null, 9001, null, "Dominic", "9", "Kunz", null, "Grabweg", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                columns: new[] { "Id", "CityId", "CompanyName", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "Website" },
                 values: new object[,]
                 {
-                    { 18, 17, "Sägerei Fenk", "Michael", "10", "Graf", "Fuchsweg" },
-                    { 19, 18, null, "Angela", "75", "Wick", "Dammstrasse" },
-                    { 20, 19, "Sounddog GmbH", "Patrick", "5", "Viera", "Sonnengasse" },
-                    { 22, 20, "Enderli Buch AG", "Erich", "18", "Kästner", "Feldwiesenstrasse" },
-                    { 24, 21, "Velomech.ch AG", "Beat", "1", "Breu", "Gartenstrasse" },
-                    { 26, 22, "Anton Kehrer AG", "Nadine", null, "Niedermann", "Am Bühl" },
-                    { 27, 23, "Tres Amigos Ristorante", "Fabian", "2", "Buhmann", "Hauptstrasse" },
-                    { 28, 24, "Birreria", "Tatjana", "92", "Kekarova", "Meistergasse" },
-                    { 29, 25, "Pizzeria Antonio", "Selina", "3", "Gabenthuler", "Postplatz" },
-                    { 30, 26, null, "Alessia", null, "Eichholzer", "Im Tobel" },
-                    { 31, 27, "TeleVisio Corporation", "Tobias", "32", "Savello", "Marktgasse" },
-                    { 33, 28, "Car Import GmbH", "Ignazio", "2", "Torres", "Rheinstrasse" },
-                    { 34, 29, "NetworkTrade GmbH", "Rolf", "56", "Fringer", "Pizolerstrasse" },
-                    { 35, 30, "Gasser Bau AG", "Hubert", "11", "Gasser", "Studenbach" },
-                    { 13, 12, "Eon Pharma AG", "Ernst", "2", "Hediger", "Dinkelweg" },
-                    { 40, 11, null, "Manuel", "28", "Stähli", "Lindenweg" },
-                    { 17, 16, null, "Stefano", null, "Dalbacco", "Birkenau" },
-                    { 12, 11, null, "Marianne", "7", "Stettler", "Bachstrasse" },
-                    { 23, 1, "Blumeria GmbH", "Remo", "88", "Santiago", "Bahnhofstrasse" },
-                    { 36, 1, null, "Bernhard", "22", "Lutz", "Fähnernweg" },
-                    { 2, 2, "Heeb GmbH", "Lukas", "2", "Heeb", "Winkelstrasse" },
-                    { 32, 11, "CompuTrade GmbH", "Daniel", "10", "Brunner", "Bachstrasse" },
-                    { 37, 3, "Orthopädie Lüchinger", "Dorothea", "19", "Mittermeier", "Hauptstrasse" },
-                    { 38, 3, "Sonnenbräu AG", "Fritz", "5", "Baumann", "Hinterstrasse" },
-                    { 4, 4, null, "Charlotte", "9", "Segmüller", "Weiherweg" },
-                    { 5, 5, "Swisscom AG", "Fred", "2", "Chatwick", "Burggasse" }
+                    { 18, 17, "Sägerei Fenk", null, "Michael", "10", "Graf", null, "Fuchsweg", null },
+                    { 19, 18, null, null, "Angela", "75", "Wick", null, "Dammstrasse", null },
+                    { 20, 19, "Sounddog GmbH", null, "Patrick", "5", "Viera", null, "Sonnengasse", null },
+                    { 22, 20, "Enderli Buch AG", null, "Erich", "18", "Kästner", null, "Feldwiesenstrasse", null },
+                    { 24, 21, "Velomech.ch AG", null, "Beat", "1", "Breu", null, "Gartenstrasse", null },
+                    { 26, 22, "Anton Kehrer AG", null, "Nadine", null, "Niedermann", null, "Am Bühl", null },
+                    { 27, 23, "Tres Amigos Ristorante", null, "Fabian", "2", "Buhmann", null, "Hauptstrasse", null },
+                    { 28, 24, "Birreria", null, "Tatjana", "92", "Kekarova", null, "Meistergasse", null },
+                    { 29, 25, "Pizzeria Antonio", null, "Selina", "3", "Gabenthuler", null, "Postplatz", null },
+                    { 30, 26, null, null, "Alessia", null, "Eichholzer", null, "Im Tobel", null },
+                    { 31, 27, "TeleVisio Corporation", null, "Tobias", "32", "Savello", null, "Marktgasse", null },
+                    { 33, 28, "Car Import GmbH", null, "Ignazio", "2", "Torres", null, "Rheinstrasse", null },
+                    { 34, 29, "NetworkTrade GmbH", null, "Rolf", "56", "Fringer", null, "Pizolerstrasse", null },
+                    { 35, 30, "Gasser Bau AG", null, "Hubert", "11", "Gasser", null, "Studenbach", null },
+                    { 13, 12, "Eon Pharma AG", null, "Ernst", "2", "Hediger", null, "Dinkelweg", null },
+                    { 40, 11, null, null, "Manuel", "28", "Stähli", null, "Lindenweg", null },
+                    { 17, 16, null, null, "Stefano", null, "Dalbacco", null, "Birkenau", null },
+                    { 12, 11, null, null, "Marianne", "7", "Stettler", null, "Bachstrasse", null },
+                    { 23, 1, "Blumeria GmbH", null, "Remo", "88", "Santiago", null, "Bahnhofstrasse", null },
+                    { 36, 1, null, null, "Bernhard", "22", "Lutz", null, "Fähnernweg", null },
+                    { 2, 2, "Heeb GmbH", null, "Lukas", "2", "Heeb", null, "Winkelstrasse", null },
+                    { 32, 11, "CompuTrade GmbH", null, "Daniel", "10", "Brunner", null, "Bachstrasse", null },
+                    { 37, 3, "Orthopädie Lüchinger", null, "Dorothea", "19", "Mittermeier", null, "Hauptstrasse", null },
+                    { 38, 3, "Sonnenbräu AG", null, "Fritz", "5", "Baumann", null, "Hinterstrasse", null },
+                    { 4, 4, null, null, "Charlotte", "9", "Segmüller", null, "Weiherweg", null },
+                    { 5, 5, "Swisscom AG", null, "Fred", "2", "Chatwick", null, "Burggasse", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom", "ValidTo" },
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "ValidTo", "Website" },
                 values: new object[,]
                 {
-                    { 43, 5, "Weber und Söhne", 9002, "Christian", null, "Weber", "Kleinweg", new DateTime(2020, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 44, 5, "Weber und Söhne", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 43, 5, "Weber und Söhne", 9002, null, "Christian", null, "Weber", null, "Kleinweg", new DateTime(2020, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 44, 5, "Weber und Söhne", 9002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                columns: new[] { "Id", "CityId", "CompanyName", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "Website" },
                 values: new object[,]
                 {
-                    { 3, 3, "CableTec AG", "Eric", "25", "Lüchinger", "Bergstrasse" },
-                    { 6, 6, null, "Selina", null, "Schmidt", "Im Bohl" },
-                    { 7, 7, "Setca GmbH", "Paul", "21", "Del Curto", "Bahnhofstrasse" },
-                    { 39, 7, null, "Alexander", "15", "Marty", "Kugelgasse" },
-                    { 8, 8, "Bau Köster AG", "Michelle", "5", "Terzic", "Settlerstrasse" },
-                    { 25, 8, null, "Jan", "62", "Steiger", "Rorschacherstrasse" },
-                    { 9, 9, null, "Thorsten", "2", "Müller", "Waldweg" },
-                    { 21, 9, "BCJ AG", "Davide", "7", "Kluser", "Mühlackerweg" }
+                    { 3, 3, "CableTec AG", null, "Eric", "25", "Lüchinger", null, "Bergstrasse", null },
+                    { 6, 6, null, null, "Selina", null, "Schmidt", null, "Im Bohl", null },
+                    { 7, 7, "Setca GmbH", null, "Paul", "21", "Del Curto", null, "Bahnhofstrasse", null },
+                    { 39, 7, null, null, "Alexander", "15", "Marty", null, "Kugelgasse", null },
+                    { 8, 8, "Bau Köster AG", null, "Michelle", "5", "Terzic", null, "Settlerstrasse", null },
+                    { 25, 8, null, null, "Jan", "62", "Steiger", null, "Rorschacherstrasse", null },
+                    { 9, 9, null, null, "Thorsten", "2", "Müller", null, "Waldweg", null },
+                    { 21, 9, "BCJ AG", null, "Davide", "7", "Kluser", null, "Mühlackerweg", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "FirstName", "HouseNumber", "LastName", "Street" },
+                columns: new[] { "Id", "CityId", "CompanyName", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "Website" },
                 values: new object[,]
                 {
-                    { 10, 10, "Contacta GmbH", "Andreas", "1", "Hugentobler", "Hauptstrasse" },
-                    { 11, 11, "Stadtverwaltung Arbon", "Esther", null, "Amgarten", "Rathausplatz" }
+                    { 10, 10, "Contacta GmbH", null, "Andreas", "1", "Hugentobler", null, "Hauptstrasse", null },
+                    { 11, 11, "Stadtverwaltung Arbon", null, "Esther", null, "Amgarten", null, "Rathausplatz", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Customers",
-                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "FirstName", "HouseNumber", "LastName", "Street", "ValidFrom" },
-                values: new object[] { 45, 5, "Weber AG", 9002, "Christian", "500", "Weber", "Grossweg", new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "Website" },
+                values: new object[] { 45, 5, "Weber AG", 9002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "ProductGroups",
