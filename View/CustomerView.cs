@@ -61,13 +61,16 @@ namespace db_projektarbeit.View
                     CustomerNr = selected.CustomerNr,
                     FirstName = TxtFirstName.Text,
                     LastName = TxtLastName.Text,
-                    CompanyName = 
-                        string.IsNullOrWhiteSpace(TxtCompanyName.Text) ? 
+                    CompanyName =
+                        string.IsNullOrWhiteSpace(TxtCompanyName.Text) ?
                             null : TxtCompanyName.Text,
                     Street = TxtStreet.Text,
-                    HouseNumber = 
-                        string.IsNullOrWhiteSpace(TxtHouseNumber.Text) ? 
+                    HouseNumber =
+                        string.IsNullOrWhiteSpace(TxtHouseNumber.Text) ?
                             null : TxtHouseNumber.Text,
+                    Email = TxtEmail.Text,
+                    Website = TxtWebsite.Text,
+                    Password = TxtPassword.Text,
                     CityId = (int)CbxCity.SelectedValue
                 };
                 CustomerControl.Save(customerToSave);
@@ -123,6 +126,9 @@ namespace db_projektarbeit.View
             TxtLastName.Text = selected.LastName;
             TxtStreet.Text = selected.Street;
             TxtHouseNumber.Text = selected.HouseNumber;
+            TxtEmail.Text = selected.Email;
+            TxtWebsite.Text = selected.Website;
+            TxtPassword.Text = selected.Password;
             CbxCity.SelectedValue = selected.City.Id;
         }
 
@@ -164,6 +170,9 @@ namespace db_projektarbeit.View
             TxtLastName.Clear();
             TxtStreet.Clear();
             TxtHouseNumber.Clear();
+            TxtEmail.Clear();
+            TxtWebsite.Clear();
+            TxtPassword.Clear();
             CbxCity.SelectedIndex = 0;
         }
 
@@ -174,6 +183,9 @@ namespace db_projektarbeit.View
             TxtCompanyName.ReadOnly = false;
             TxtStreet.ReadOnly = false;
             TxtHouseNumber.ReadOnly = false;
+            TxtEmail.ReadOnly = false;
+            TxtWebsite.ReadOnly = false;
+            TxtPassword.ReadOnly = false;
             CbxCity.Enabled = true;
         }
 
@@ -227,6 +239,9 @@ namespace db_projektarbeit.View
             TxtLastName.ReadOnly = true;
             TxtStreet.ReadOnly = true;
             TxtHouseNumber.ReadOnly = true;
+            TxtEmail.ReadOnly = true;
+            TxtWebsite.ReadOnly = true;
+            TxtPassword.ReadOnly = true;
             CbxCity.Enabled = false;
         }
 

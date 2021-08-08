@@ -50,6 +50,12 @@ namespace db_projektarbeit.View
             this.TxtHouseNumber = new System.Windows.Forms.TextBox();
             this.LblHouseNumber = new System.Windows.Forms.Label();
             this.CmdDelete = new System.Windows.Forms.Button();
+            this.LblEmail = new System.Windows.Forms.Label();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.TxtWebsite = new System.Windows.Forms.TextBox();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.LblWebsite = new System.Windows.Forms.Label();
+            this.LblPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +129,7 @@ namespace db_projektarbeit.View
             // LblStreet
             // 
             this.LblStreet.AutoSize = true;
-            this.LblStreet.Location = new System.Drawing.Point(430, 474);
+            this.LblStreet.Location = new System.Drawing.Point(430, 392);
             this.LblStreet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblStreet.Name = "LblStreet";
             this.LblStreet.Size = new System.Drawing.Size(67, 25);
@@ -132,7 +138,7 @@ namespace db_projektarbeit.View
             // 
             // TxtStreet
             // 
-            this.TxtStreet.Location = new System.Drawing.Point(541, 470);
+            this.TxtStreet.Location = new System.Drawing.Point(543, 388);
             this.TxtStreet.Margin = new System.Windows.Forms.Padding(4);
             this.TxtStreet.Name = "TxtStreet";
             this.TxtStreet.ReadOnly = true;
@@ -152,7 +158,7 @@ namespace db_projektarbeit.View
             // 
             // CmdSave
             // 
-            this.CmdSave.Location = new System.Drawing.Point(15, 511);
+            this.CmdSave.Location = new System.Drawing.Point(13, 556);
             this.CmdSave.Margin = new System.Windows.Forms.Padding(4);
             this.CmdSave.Name = "CmdSave";
             this.CmdSave.Size = new System.Drawing.Size(115, 36);
@@ -163,7 +169,7 @@ namespace db_projektarbeit.View
             // 
             // CmdNew
             // 
-            this.CmdNew.Location = new System.Drawing.Point(138, 511);
+            this.CmdNew.Location = new System.Drawing.Point(136, 556);
             this.CmdNew.Margin = new System.Windows.Forms.Padding(4);
             this.CmdNew.Name = "CmdNew";
             this.CmdNew.Size = new System.Drawing.Size(115, 36);
@@ -175,7 +181,7 @@ namespace db_projektarbeit.View
             // LblCity
             // 
             this.LblCity.AutoSize = true;
-            this.LblCity.Location = new System.Drawing.Point(430, 515);
+            this.LblCity.Location = new System.Drawing.Point(430, 433);
             this.LblCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCity.Name = "LblCity";
             this.LblCity.Size = new System.Drawing.Size(99, 25);
@@ -187,7 +193,7 @@ namespace db_projektarbeit.View
             this.CbxCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxCity.Enabled = false;
             this.CbxCity.FormattingEnabled = true;
-            this.CbxCity.Location = new System.Drawing.Point(541, 511);
+            this.CbxCity.Location = new System.Drawing.Point(543, 428);
             this.CbxCity.Margin = new System.Windows.Forms.Padding(4);
             this.CbxCity.Name = "CbxCity";
             this.CbxCity.Size = new System.Drawing.Size(250, 33);
@@ -195,7 +201,7 @@ namespace db_projektarbeit.View
             // 
             // CmdEditCity
             // 
-            this.CmdEditCity.Location = new System.Drawing.Point(801, 511);
+            this.CmdEditCity.Location = new System.Drawing.Point(801, 429);
             this.CmdEditCity.Margin = new System.Windows.Forms.Padding(4);
             this.CmdEditCity.Name = "CmdEditCity";
             this.CmdEditCity.Size = new System.Drawing.Size(180, 35);
@@ -207,7 +213,7 @@ namespace db_projektarbeit.View
             // LblFirstName
             // 
             this.LblFirstName.AutoSize = true;
-            this.LblFirstName.Location = new System.Drawing.Point(430, 391);
+            this.LblFirstName.Location = new System.Drawing.Point(11, 473);
             this.LblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblFirstName.Name = "LblFirstName";
             this.LblFirstName.Size = new System.Drawing.Size(83, 25);
@@ -216,7 +222,7 @@ namespace db_projektarbeit.View
             // 
             // TxtFirstName
             // 
-            this.TxtFirstName.Location = new System.Drawing.Point(541, 388);
+            this.TxtFirstName.Location = new System.Drawing.Point(124, 470);
             this.TxtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtFirstName.Name = "TxtFirstName";
             this.TxtFirstName.ReadOnly = true;
@@ -226,7 +232,7 @@ namespace db_projektarbeit.View
             // LblLastName
             // 
             this.LblLastName.AutoSize = true;
-            this.LblLastName.Location = new System.Drawing.Point(430, 431);
+            this.LblLastName.Location = new System.Drawing.Point(11, 513);
             this.LblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblLastName.Name = "LblLastName";
             this.LblLastName.Size = new System.Drawing.Size(96, 25);
@@ -235,7 +241,7 @@ namespace db_projektarbeit.View
             // 
             // TxtLastName
             // 
-            this.TxtLastName.Location = new System.Drawing.Point(541, 429);
+            this.TxtLastName.Location = new System.Drawing.Point(124, 511);
             this.TxtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtLastName.Name = "TxtLastName";
             this.TxtLastName.ReadOnly = true;
@@ -244,7 +250,7 @@ namespace db_projektarbeit.View
             // 
             // TxtHouseNumber
             // 
-            this.TxtHouseNumber.Location = new System.Drawing.Point(849, 470);
+            this.TxtHouseNumber.Location = new System.Drawing.Point(849, 388);
             this.TxtHouseNumber.Margin = new System.Windows.Forms.Padding(4);
             this.TxtHouseNumber.Name = "TxtHouseNumber";
             this.TxtHouseNumber.ReadOnly = true;
@@ -254,7 +260,7 @@ namespace db_projektarbeit.View
             // LblHouseNumber
             // 
             this.LblHouseNumber.AutoSize = true;
-            this.LblHouseNumber.Location = new System.Drawing.Point(801, 474);
+            this.LblHouseNumber.Location = new System.Drawing.Point(801, 392);
             this.LblHouseNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblHouseNumber.Name = "LblHouseNumber";
             this.LblHouseNumber.Size = new System.Drawing.Size(31, 25);
@@ -263,7 +269,7 @@ namespace db_projektarbeit.View
             // 
             // CmdDelete
             // 
-            this.CmdDelete.Location = new System.Drawing.Point(261, 511);
+            this.CmdDelete.Location = new System.Drawing.Point(259, 556);
             this.CmdDelete.Margin = new System.Windows.Forms.Padding(4);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(115, 36);
@@ -272,11 +278,71 @@ namespace db_projektarbeit.View
             this.CmdDelete.UseVisualStyleBackColor = true;
             this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
+            // LblEmail
+            // 
+            this.LblEmail.AutoSize = true;
+            this.LblEmail.Location = new System.Drawing.Point(430, 473);
+            this.LblEmail.Name = "LblEmail";
+            this.LblEmail.Size = new System.Drawing.Size(54, 25);
+            this.LblEmail.TabIndex = 54;
+            this.LblEmail.Text = "Email";
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(543, 470);
+            this.TxtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.ReadOnly = true;
+            this.TxtEmail.Size = new System.Drawing.Size(250, 31);
+            this.TxtEmail.TabIndex = 55;
+            // 
+            // TxtWebsite
+            // 
+            this.TxtWebsite.Location = new System.Drawing.Point(543, 511);
+            this.TxtWebsite.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtWebsite.Name = "TxtWebsite";
+            this.TxtWebsite.ReadOnly = true;
+            this.TxtWebsite.Size = new System.Drawing.Size(250, 31);
+            this.TxtWebsite.TabIndex = 56;
+            // 
+            // TxtPassword
+            // 
+            this.TxtPassword.Location = new System.Drawing.Point(543, 556);
+            this.TxtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.ReadOnly = true;
+            this.TxtPassword.Size = new System.Drawing.Size(250, 31);
+            this.TxtPassword.TabIndex = 57;
+            // 
+            // LblWebsite
+            // 
+            this.LblWebsite.AutoSize = true;
+            this.LblWebsite.Location = new System.Drawing.Point(430, 513);
+            this.LblWebsite.Name = "LblWebsite";
+            this.LblWebsite.Size = new System.Drawing.Size(84, 25);
+            this.LblWebsite.TabIndex = 58;
+            this.LblWebsite.Text = "Webseite";
+            // 
+            // LblPassword
+            // 
+            this.LblPassword.AutoSize = true;
+            this.LblPassword.Location = new System.Drawing.Point(430, 559);
+            this.LblPassword.Name = "LblPassword";
+            this.LblPassword.Size = new System.Drawing.Size(82, 25);
+            this.LblPassword.TabIndex = 59;
+            this.LblPassword.Text = "Passwort";
+            // 
             // CustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 562);
+            this.ClientSize = new System.Drawing.Size(1000, 608);
+            this.Controls.Add(this.LblPassword);
+            this.Controls.Add(this.LblWebsite);
+            this.Controls.Add(this.TxtPassword);
+            this.Controls.Add(this.TxtWebsite);
+            this.Controls.Add(this.TxtEmail);
+            this.Controls.Add(this.LblEmail);
             this.Controls.Add(this.CmdDelete);
             this.Controls.Add(this.LblHouseNumber);
             this.Controls.Add(this.TxtHouseNumber);
@@ -330,5 +396,11 @@ namespace db_projektarbeit.View
         private System.Windows.Forms.TextBox TxtHouseNumber;
         private System.Windows.Forms.Label LblHouseNumber;
         private System.Windows.Forms.Button CmdDelete;
+        private System.Windows.Forms.Label LblEmail;
+        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.TextBox TxtWebsite;
+        private System.Windows.Forms.TextBox TxtPassword;
+        private System.Windows.Forms.Label LblWebsite;
+        private System.Windows.Forms.Label LblPassword;
     }
 }
