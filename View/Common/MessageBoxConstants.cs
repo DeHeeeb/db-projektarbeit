@@ -15,7 +15,11 @@ namespace db_projektarbeit.View.Common
                                                          "möglich. Bitte löschen Sie diese " +
                                                          "Datensätze zuerst.";
 
-        public const string TextMissingFormInfo = "Bitte füllen Sie die Formularfelder vollständig aus.";
+        public const string TextMissingFormInfo = "Bitte füllen Sie die folgende Formularfelder vollständig aus:\n" + 
+            "- Vorname\n" +
+            "- Nachname\n" +
+            "- Strasse\n" + 
+            "- Passwort";
         public const string TextMissingOrderEntity = "Speichern Sie zuerst Ihren Auftrag ab.";
 
         public const string TextErrorDeletedArticleGroup = "Die Artikelgruppe " +
@@ -32,5 +36,11 @@ namespace db_projektarbeit.View.Common
 
         public const string TextExportSuccessful = "Der Export der Daten war erfolgreich";
         public const string TextImportSuccessful = "Der Import der Daten war erfolgreich";
+        public const string TextPassword = "Passwort ungültig. Es gelten folgende Regeln:\n" +
+            "- min. 8 Zeichen.\n" +
+            "- zwingend einen Gross- sowie einen Kleinbuchstaben.\n" +
+            "- zwingend eine Zahl\n";
+        public const string TextEmail = "Emailadresse ist nicht gültig.";
+        public const string TextWebsite = "Webseite ist nicht gültig.";
     }
 }

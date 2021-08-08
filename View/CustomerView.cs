@@ -3,6 +3,7 @@ using db_projektarbeit.View.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace db_projektarbeit.View
@@ -50,11 +51,43 @@ namespace db_projektarbeit.View
 
         private void CmdSave_Click(object sender, EventArgs e)
         {
+            if (!ValidatePassword(TxtPassword.Text))
+            {
+                MessageBox.Show(MessageBoxConstants.TextPassword,
+                MessageBoxConstants.CaptionError,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
+
+            if (!string.IsNullOrWhiteSpace(TxtEmail.Text))
+            {
+                if (!ValidateEmail(TxtEmail.Text))
+                {
+                    MessageBox.Show(MessageBoxConstants.TextEmail,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(TxtWebsite.Text))
+            {
+                if (!ValidateWebsite(TxtWebsite.Text))
+                {
+                    MessageBox.Show(MessageBoxConstants.TextWebsite,
+                    MessageBoxConstants.CaptionError,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+
+
             if (!string.IsNullOrWhiteSpace(TxtFirstName.Text) &&
                 !string.IsNullOrWhiteSpace(TxtLastName.Text) &&
                 !string.IsNullOrWhiteSpace(TxtStreet.Text) &&
-                CbxCity.SelectedItem != null) 
-            {
+                !string.IsNullOrWhiteSpace(TxtPassword.Text) &&
+                CbxCity.SelectedItem != null)
+            { 
                 Customer customerToSave = new Customer
                 {
                     Id = selected.Id,
@@ -262,6 +295,39 @@ namespace db_projektarbeit.View
             CmdNew.Enabled = true;
             TxtSearch.Enabled = true;
             CmdSearch.Enabled = true;
+        }
+
+        private bool ValidateEmail(String email)
+        {
+            String emailPattern = "";
+            Regex regexEmail = new Regex(emailPattern);
+            if (regexEmail.IsMatch(TxtEmail.Text))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool ValidateWebsite(String website)
+        {
+            String websitePattern = "";
+            Regex regexWebsite = new Regex(websitePattern);
+            if (regexWebsite.IsMatch(TxtEmail.Text))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool ValidatePassword(String password)
+        {
+            String passwordPattern = "";
+            Regex regexPassword = new Regex(passwordPattern);
+            if (regexPassword.IsMatch(TxtEmail.Text))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
