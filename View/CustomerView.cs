@@ -10,6 +10,10 @@ namespace db_projektarbeit.View
 {
     public partial class CustomerView : Form
     {
+        readonly Regex EmailRegex = new Regex(@"^[a - zA - Z0 - 9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", RegexOptions.IgnoreCase);
+        readonly Regex WebsiteRegex = new Regex(@"^(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$", RegexOptions.IgnoreCase);
+        readonly Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$", RegexOptions.IgnoreCase);
+
         private readonly CustomerControl CustomerControl = new CustomerControl();
         private readonly CityControl CityControl = new CityControl();
         private Customer selected = new Customer();
@@ -299,9 +303,7 @@ namespace db_projektarbeit.View
 
         private bool ValidateEmail(String email)
         {
-            String emailPattern = "";
-            Regex regexEmail = new Regex(emailPattern);
-            if (regexEmail.IsMatch(TxtEmail.Text))
+            if (EmailRegex.IsMatch(TxtEmail.Text))
             {
                 return true;
             }
@@ -310,9 +312,7 @@ namespace db_projektarbeit.View
 
         private bool ValidateWebsite(String website)
         {
-            String websitePattern = "";
-            Regex regexWebsite = new Regex(websitePattern);
-            if (regexWebsite.IsMatch(TxtEmail.Text))
+            if (WebsiteRegex.IsMatch(TxtEmail.Text))
             {
                 return true;
             }
@@ -321,9 +321,7 @@ namespace db_projektarbeit.View
 
         private bool ValidatePassword(String password)
         {
-            String passwordPattern = "";
-            Regex regexPassword = new Regex(passwordPattern);
-            if (regexPassword.IsMatch(TxtEmail.Text))
+            if (PasswordRegex.IsMatch(TxtEmail.Text))
             {
                 return true;
             }
