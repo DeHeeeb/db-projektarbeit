@@ -10,9 +10,9 @@ namespace db_projektarbeit.View
 {
     public partial class CustomerView : Form
     {
-        readonly Regex EmailRegex = new Regex(@"^[a - zA - Z0 - 9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", RegexOptions.IgnoreCase);
-        readonly Regex WebsiteRegex = new Regex(@"^(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?$", RegexOptions.IgnoreCase);
-        readonly Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$", RegexOptions.IgnoreCase);
+        readonly Regex EmailRegex = new Regex(@"^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$", RegexOptions.IgnoreCase);
+        readonly Regex WebsiteRegex = new Regex(@"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$", RegexOptions.IgnoreCase);
+        readonly Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
 
         private readonly CustomerControl CustomerControl = new CustomerControl();
         private readonly CityControl CityControl = new CityControl();
