@@ -303,7 +303,7 @@ namespace db_projektarbeit.View
 
         private bool ValidateEmail(String email)
         {
-            if (EmailRegex.IsMatch(TxtEmail.Text))
+            if (EmailRegex.IsMatch(email))
             {
                 return true;
             }
@@ -312,7 +312,7 @@ namespace db_projektarbeit.View
 
         private bool ValidateWebsite(String website)
         {
-            if (WebsiteRegex.IsMatch(TxtEmail.Text))
+            if (WebsiteRegex.IsMatch(website))
             {
                 return true;
             }
@@ -321,7 +321,7 @@ namespace db_projektarbeit.View
 
         private bool ValidatePassword(String password)
         {
-            if (PasswordRegex.IsMatch(TxtEmail.Text))
+            if (PasswordRegex.IsMatch(password))
             {
                 return true;
             }
