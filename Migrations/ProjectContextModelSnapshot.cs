@@ -23,7 +23,7 @@ namespace db_projektarbeit.Migrations
                 .StartsAt(100000L);
 
             modelBuilder.HasSequence<int>("CustomerNr", "shared")
-                .StartsAt(1000L);
+                .StartsAt(10000L);
 
             modelBuilder.HasSequence<int>("OrderNr", "shared")
                 .StartsAt(100L);
@@ -889,7 +889,7 @@ namespace db_projektarbeit.Migrations
                         {
                             Id = 41,
                             CityId = 15,
-                            CustomerNr = 9001,
+                            CustomerNr = 90001,
                             FirstName = "Dominic",
                             HouseNumber = "32",
                             LastName = "Kunz",
@@ -901,7 +901,7 @@ namespace db_projektarbeit.Migrations
                         {
                             Id = 42,
                             CityId = 15,
-                            CustomerNr = 9001,
+                            CustomerNr = 90001,
                             FirstName = "Dominic",
                             HouseNumber = "9",
                             LastName = "Kunz",
@@ -914,7 +914,7 @@ namespace db_projektarbeit.Migrations
                             Id = 43,
                             CityId = 5,
                             CompanyName = "Weber und Söhne",
-                            CustomerNr = 9002,
+                            CustomerNr = 90002,
                             FirstName = "Christian",
                             LastName = "Weber",
                             Street = "Kleinweg",
@@ -926,7 +926,7 @@ namespace db_projektarbeit.Migrations
                             Id = 44,
                             CityId = 5,
                             CompanyName = "Weber und Söhne",
-                            CustomerNr = 9002,
+                            CustomerNr = 90002,
                             FirstName = "Christian",
                             HouseNumber = "500",
                             LastName = "Weber",
@@ -939,7 +939,7 @@ namespace db_projektarbeit.Migrations
                             Id = 45,
                             CityId = 5,
                             CompanyName = "Weber AG",
-                            CustomerNr = 9002,
+                            CustomerNr = 90002,
                             FirstName = "Christian",
                             HouseNumber = "500",
                             LastName = "Weber",

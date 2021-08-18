@@ -18,7 +18,7 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.CreateSequence<int>(
                 name: "CustomerNr",
                 schema: "shared",
-                startValue: 1000L);
+                startValue: 10000L);
 
             migrationBuilder.CreateSequence<int>(
                 name: "OrderNr",
@@ -253,12 +253,12 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidTo", "Website" },
-                values: new object[] { 41, 15, null, 9001, null, "Dominic", "32", "Kunz", null, "Grubstrasse", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
+                values: new object[] { 41, 15, null, 90001, null, "Dominic", "32", "Kunz", null, "Grubstrasse", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "Website" },
-                values: new object[] { 42, 15, null, 9001, null, "Dominic", "9", "Kunz", null, "Grabweg", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
+                values: new object[] { 42, 15, null, 90001, null, "Dominic", "9", "Kunz", null, "Grabweg", new DateTime(2021, 2, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "Customers",
@@ -298,8 +298,8 @@ namespace db_projektarbeit.Migrations
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "ValidTo", "Website" },
                 values: new object[,]
                 {
-                    { 43, 5, "Weber und Söhne", 9002, null, "Christian", null, "Weber", null, "Kleinweg", new DateTime(2020, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
-                    { 44, 5, "Weber und Söhne", 9002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
+                    { 43, 5, "Weber und Söhne", 90002, null, "Christian", null, "Weber", null, "Kleinweg", new DateTime(2020, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 44, 5, "Weber und Söhne", 90002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
                 });
 
             migrationBuilder.InsertData(
@@ -329,7 +329,7 @@ namespace db_projektarbeit.Migrations
             migrationBuilder.InsertData(
                 table: "Customers",
                 columns: new[] { "Id", "CityId", "CompanyName", "CustomerNr", "Email", "FirstName", "HouseNumber", "LastName", "Password", "Street", "ValidFrom", "Website" },
-                values: new object[] { 45, 5, "Weber AG", 9002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
+                values: new object[] { 45, 5, "Weber AG", 90002, null, "Christian", "500", "Weber", null, "Grossweg", new DateTime(2021, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), null });
 
             migrationBuilder.InsertData(
                 table: "ProductGroups",

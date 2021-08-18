@@ -157,7 +157,7 @@ namespace db_projektarbeit.View
             UnlockFields();
 
             selected = (Customer) row.DataBoundItem;
-            TxtCustomerNr.Text = selected.CustomerNr.ToString();
+            TxtCustomerNr.Text = "CU"+selected.CustomerNr.ToString();
             TxtCompanyName.Text = selected.CompanyName;
             TxtFirstName.Text = selected.FirstName;
             TxtLastName.Text = selected.LastName;

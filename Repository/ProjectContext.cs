@@ -30,7 +30,7 @@ namespace db_projektarbeit.Repository
                 .StartsAt(100);
 
             modelBuilder.HasSequence<int>("CustomerNr", schema: "shared")
-                .StartsAt(1_000);
+                .StartsAt(10_000);
 
             modelBuilder.HasSequence<int>("ProductNr", schema: "shared")
                 .StartsAt(10_000);
@@ -682,7 +682,7 @@ namespace db_projektarbeit.Repository
                 new Customer()
                 {
                     Id = 41,
-                    CustomerNr = 9001,
+                    CustomerNr = 90001,
                     FirstName = "Dominic",
                     LastName = "Kunz",
                     CompanyName = null,
@@ -694,7 +694,7 @@ namespace db_projektarbeit.Repository
                 new Customer()
                 {
                     Id = 42,
-                    CustomerNr = 9001,
+                    CustomerNr = 90001,
                     FirstName = "Dominic",
                     LastName = "Kunz",
                     CompanyName = null,
@@ -706,7 +706,7 @@ namespace db_projektarbeit.Repository
                 new Customer()
                 {
                     Id = 43,
-                    CustomerNr = 9002,
+                    CustomerNr = 90002,
                     FirstName = "Christian",
                     LastName = "Weber",
                     CompanyName = "Weber und Söhne",
@@ -718,7 +718,7 @@ namespace db_projektarbeit.Repository
                 new Customer()
                 {
                     Id = 44,
-                    CustomerNr = 9002,
+                    CustomerNr = 90002,
                     FirstName = "Christian",
                     LastName = "Weber",
                     CompanyName = "Weber und Söhne",
@@ -731,7 +731,7 @@ namespace db_projektarbeit.Repository
                 new Customer()
                 {
                     Id = 45,
-                    CustomerNr = 9002,
+                    CustomerNr = 90002,
                     FirstName = "Christian",
                     LastName = "Weber",
                     CompanyName = "Weber AG",
