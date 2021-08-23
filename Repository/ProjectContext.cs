@@ -20,6 +20,7 @@ namespace db_projektarbeit.Repository
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
+            optionsBuilder.EnableSensitiveDataLogging(true);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

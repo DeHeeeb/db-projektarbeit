@@ -9,23 +9,26 @@ namespace db_projektarbeit.Control
 
         public List<Position> GetAllByOrderId(int orderId)
         {
-            return PositionRepository.GetAllByOrderId(orderId);
+            using ProjectContext context = new ProjectContext();
+            return PositionRepository.GetAllByOrderId(orderId, context);
         }
 
         public List<Position> Search(string text, int orderId)
         {
-            return PositionRepository.Search(text, orderId);
+            using ProjectContext context = new ProjectContext();
+            return PositionRepository.Search(text, orderId, context);
         }
 
         public int Save(Position position)
         {
+            using ProjectContext context = new ProjectContext();
             if (position.Id == 0)
             {
-                PositionRepository.Save(position);
+                PositionRepository.Save(position, context);
             }
             else
             {
-                PositionRepository.Update(position);
+                PositionRepository.Update(position, context);
             }
 
             return position.Id;
@@ -33,7 +36,8 @@ namespace db_projektarbeit.Control
 
         public int Delete(Position position)
         {
-            var deleted = PositionRepository.Delete(position.Id);
+            using ProjectContext context = new ProjectContext();
+            var deleted = PositionRepository.Delete(position.Id, context);
             return deleted.Id;
         }
     }

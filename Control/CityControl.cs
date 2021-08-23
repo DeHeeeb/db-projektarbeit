@@ -10,25 +10,28 @@ namespace db_projektarbeit.Control
 
         public List<City> GetAll()
         {
-            return CityRepository.GetAll()
+            using ProjectContext context = new ProjectContext();
+            return CityRepository.GetAll(context)
                 .OrderBy(c => c.Zip)
                 .ToList();
         }
 
         public List<City> Search(string text)
         {
-            return CityRepository.Search(text);
+            using ProjectContext context = new ProjectContext();
+            return CityRepository.Search(text, context);
         }
 
         public int Save(City city)
         {
+            using ProjectContext context = new ProjectContext();
             if (city.Id == 0)
             {
-                CityRepository.Save(city);
+                CityRepository.Save(city, context);
             }
             else
             {
-                CityRepository.Update(city);
+                CityRepository.Update(city, context);
             }
 
             return city.Id;
@@ -36,7 +39,8 @@ namespace db_projektarbeit.Control
 
         public int Delete(City city)
         {
-            var deleted = CityRepository.Delete(city.Id);
+            using ProjectContext context = new ProjectContext();
+            var deleted = CityRepository.Delete(city.Id, context);
 
             return deleted?.Id ?? 0;
         }

@@ -9,22 +9,26 @@ namespace db_projektarbeit.Control
 
         public List<Customer> GetAll()
         {
-            return CustomerRepository.GetAll();
+            using ProjectContext context = new ProjectContext();
+            return CustomerRepository.GetAll(context);
         }
 
         public List<Customer> Search(string text)
         {
-            return CustomerRepository.Search(text);
+            using ProjectContext context = new ProjectContext();
+            return CustomerRepository.Search(text, context);
         }
 
         public int Save(Customer customer)
         {
-            return CustomerRepository.Save(customer);
+            using ProjectContext context = new ProjectContext();
+            return CustomerRepository.Save(customer, context);
         }
 
         public int Delete(Customer customer)
         {
-            return CustomerRepository.Delete(customer);
+            using ProjectContext context = new ProjectContext();
+            return CustomerRepository.Delete(customer, context);
         }
     }
 }

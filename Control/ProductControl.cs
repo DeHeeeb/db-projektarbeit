@@ -10,29 +10,33 @@ namespace db_projektarbeit.Control
 
         public List<Product> GetAll()
         {
-            return ProductRepository.GetAll();
+            using ProjectContext context = new ProjectContext();
+            return ProductRepository.GetAll(context);
         }
 
         public List<Product> Search(string text)
         {
-            return ProductRepository.Search(text);
+            using ProjectContext context = new ProjectContext();
+            return ProductRepository.Search(text, context);
         }
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            return ProductRepository.SearchUsedProductGroup(productGroup);
+            using ProjectContext context = new ProjectContext();
+            return ProductRepository.SearchUsedProductGroup(productGroup, context);
         }
 
         public int Save(Product product)
         {
+            using ProjectContext context = new ProjectContext();
             if (product.Id == 0)
             {
                 product.CreationDate = DateTime.Now.Date;
-                ProductRepository.Save(product);
+                ProductRepository.Save(product, context);
             }
             else
             {
-                ProductRepository.Update(product);
+                ProductRepository.Update(product, context);
             }
 
             return product.Id;
@@ -40,7 +44,8 @@ namespace db_projektarbeit.Control
 
         public int Delete(Product product)
         {
-            var deleted = ProductRepository.Delete(product.Id);
+            using ProjectContext context = new ProjectContext();
+            var deleted = ProductRepository.Delete(product.Id, context);
 
             return deleted?.Id ?? 0;
         }

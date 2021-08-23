@@ -9,28 +9,33 @@ namespace db_projektarbeit.Control
 
         public List<Order> GetAll()
         {
-            return OrderRepository.GetAll();
+            using ProjectContext context = new ProjectContext();
+            return OrderRepository.GetAll(context);
         }
 
         public List<Order> Search(string text)
         {
-            return OrderRepository.Search(text);
+            using ProjectContext context = new ProjectContext();
+            return OrderRepository.Search(text, context);
         }
 
         public int Save(Order order)
         {
-            return OrderRepository.Save(order);
+            using ProjectContext context = new ProjectContext();
+            return OrderRepository.Save(order, context);
         }
 
         public int Delete(Order order)
         {
-            var deleted = OrderRepository.Delete(order.Id);
+            using ProjectContext context = new ProjectContext();
+            var deleted = OrderRepository.Delete(order.Id, context);
             return deleted?.Id ?? 0;
         }
 
         public void Bill(int orderId)
         {
-            OrderRepository.Bill(orderId);
+            using ProjectContext context = new ProjectContext();
+            OrderRepository.Bill(orderId, context);
         }
     }
 }

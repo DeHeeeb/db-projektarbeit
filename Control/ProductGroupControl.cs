@@ -12,18 +12,21 @@ namespace db_projektarbeit.Control
 
         public List<ProductGroup> GetAll()
         {
-            return ProductGroupRepository.GetAll();
+            using ProjectContext context = new ProjectContext();
+            return ProductGroupRepository.GetAll(context);
         }
 
         public int AddNode(ProductGroup productGroup)
         {
-            var saved = ProductGroupRepository.Save(productGroup);
+            using ProjectContext context = new ProjectContext();
+            var saved = ProductGroupRepository.Save(productGroup, context);
             return saved.Id;
         }
 
         public int UpdateNode(ProductGroup productGroup)
         {
-            var updated = ProductGroupRepository.Update(productGroup);
+            using ProjectContext context = new ProjectContext();
+            var updated = ProductGroupRepository.Update(productGroup, context);
             return updated.Id;
         }
 
@@ -34,7 +37,8 @@ namespace db_projektarbeit.Control
 
         public int DeleteNode(ProductGroup productGroup)
         {
-            var deleted = ProductGroupRepository.Delete(productGroup.Id);
+            using ProjectContext context = new ProjectContext();
+            var deleted = ProductGroupRepository.Delete(productGroup.Id, context);
 
             return deleted?.Id ?? 0;
         }

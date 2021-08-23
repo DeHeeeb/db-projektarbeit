@@ -7,48 +7,46 @@ namespace db_projektarbeit.Repository
 {
     abstract class RepositoryBase<M> : IRepositoryBase<M> where M : class
     {
-        private readonly ProjectContext _context;
 
         public RepositoryBase(ProjectContext context)
         {
-            _context = context;
         }
 
-        public List<M> GetAll()
+        public List<M> GetAll(ProjectContext context)
         {
-            var table = _context.Set<M>();
+            var table = context.Set<M>();
 
             return table.ToList();
         }
 
-        public M Save(M entity)
+        public M Save(M entity, ProjectContext context)
         {
-            var table = _context.Set<M>();
+            var table = context.Set<M>();
             var attach = table.Attach(entity);
-            _context.SaveChanges();
+            context.SaveChanges();
 
             return attach.Entity;
         }
 
-        public M Update(M entity)
+        public M Update(M entity, ProjectContext context)
         {
-            var table = _context.Set<M>();
+            var table = context.Set<M>();
             var attach = table.Attach(entity);
-            _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
+            context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
 
             return attach.Entity;
         }
 
-        public M Delete(int id)
+        public M Delete(int id, ProjectContext context)
         {
-            var table = _context.Set<M>();
+            var table = context.Set<M>();
             var existing = table.Find(id);
 
             try
             {
                 table.Remove(existing);
-                _context.SaveChanges();
+                context.SaveChanges();
             }
             catch
             {

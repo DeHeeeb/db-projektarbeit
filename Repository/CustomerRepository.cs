@@ -7,16 +7,14 @@ namespace db_projektarbeit.Repository
 {
     class CustomerRepository : RepositoryBase<Customer>
     {
-        private readonly ProjectContext _context;
 
         public CustomerRepository(ProjectContext context) : base(context)
         {
-            _context = context;
         }
 
-        public new List<Customer> GetAll()
+        public new List<Customer> GetAll(ProjectContext context)
         {
-            return _context.Customers
+            return context.Customers
                 .Include(c => c.City)
                 .OrderBy(c => c.CustomerNr)
                 .Where(c =>
@@ -25,11 +23,11 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public List<Customer> Search(string text)
+        public List<Customer> Search(string text, ProjectContext context)
         {
             text = text.ToLower();
 
-            return _context.Customers
+            return context.Customers
                 .Include(c => c.City)
                 .Where(c => (
                         c.CustomerNr.ToString().ToLower().Contains(text) ||
@@ -46,7 +44,7 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public new int Save(Customer customer)
+        public new int Save(Customer customer, ProjectContext context)
         {
             var currentDate = DateTime.Now;
 
@@ -54,32 +52,32 @@ namespace db_projektarbeit.Repository
             {
                 customer.ValidFrom = currentDate;
                 customer.ValidTo = DateTime.MaxValue;
-                _context.Customers.Add(customer);
+                context.Customers.Add(customer);
             }
             else
             {
-                var oldCustomer = _context.Customers
+                var oldCustomer = context.Customers
                     .Single(c => c.Id == customer.Id);
                 oldCustomer.ValidTo = currentDate;
 
                 customer.Id = 0;
                 customer.ValidFrom = currentDate;
                 customer.ValidTo = DateTime.MaxValue;
-                _context.Customers.Add(customer);
+                context.Customers.Add(customer);
             }
 
-            _context.SaveChanges();
+            context.SaveChanges();
 
             return customer.Id;
         }
 
-        public int Delete(Customer customer)
+        public int Delete(Customer customer, ProjectContext context)
         {
             try
             {
                 customer.ValidTo = DateTime.Now;
-                Update(customer);
-                _context.SaveChanges();
+                Update(customer, context);
+                context.SaveChanges();
             }
             catch
             {

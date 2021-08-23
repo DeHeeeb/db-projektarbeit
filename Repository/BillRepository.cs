@@ -7,16 +7,13 @@ namespace db_projektarbeit.Repository
 {
     class BillRepository : RepositoryBase<Bill>
     {
-
-        private readonly ProjectContext _context;
         public BillRepository(ProjectContext context) : base(context)
         {
-            _context = context;
         }
 
-        public List<Bill> GetAll()
+        public new List<Bill> GetAll(ProjectContext context)
         {
-            var bills = _context.Bills
+            var bills = context.Bills
                 .Include(b => b.Customer)
                 .ThenInclude(c => c.City)
                 .OrderByDescending(b => b.Date)
@@ -24,7 +21,7 @@ namespace db_projektarbeit.Repository
 
             foreach (var bill in bills)
             {
-                bill.Customer = _context.Customers.Where(c =>
+                bill.Customer = context.Customers.Where(c =>
                         c.CustomerNr == bill.Customer.CustomerNr &&
                         bill.Date >= c.ValidFrom &&
                         bill.Date <= c.ValidTo)
@@ -35,10 +32,10 @@ namespace db_projektarbeit.Repository
             return bills;
         }
 
-        public List<Bill> Search(string text)
+        public List<Bill> Search(string text, ProjectContext context)
         {
             text = text.ToLower();
-            return GetAll().Where(b =>
+            return GetAll(context).Where(b =>
                 b.Customer.CustomerNr.ToString().Contains(text) ||
                 b.Customer.FullName.ToLower().Contains(text) ||
                 b.Customer.Street.ToLower().Contains(text) ||

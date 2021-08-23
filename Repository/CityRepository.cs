@@ -5,17 +5,15 @@ namespace db_projektarbeit.Repository
 {
     class CityRepository : RepositoryBase<City>
     {
-        private readonly ProjectContext _context;
         public CityRepository(ProjectContext context) : base(context)
         {
-            _context = context;
         }
 
-        public List<City> Search(string text)
+        public List<City> Search(string text, ProjectContext context)
         {
             text = text.ToLower();
 
-            return _context.Cities
+            return context.Cities
                 .Where(c =>
                     c.Zip.ToString().ToLower().Contains(text) ||
                     c.Name.ToLower().Contains(text)

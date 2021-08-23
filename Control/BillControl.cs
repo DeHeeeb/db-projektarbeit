@@ -9,17 +9,20 @@ namespace db_projektarbeit.Control
 
         public List<Bill> GetAll()
         {
-            return BillRepository.GetAll();
+            using ProjectContext context = new ProjectContext();
+            return BillRepository.GetAll(context);
         }
 
         public List<Bill> Search(string text)
         {
-            return BillRepository.Search(text);
+            using ProjectContext context = new ProjectContext();
+            return BillRepository.Search(text, context);
         }
 
         public int Save(Bill bill)
         {
-            var saved = BillRepository.Save(bill);
+            using ProjectContext context = new ProjectContext();
+            var saved = BillRepository.Save(bill, context);
             return saved.Id;
         }
     }
