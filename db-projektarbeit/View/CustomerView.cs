@@ -305,7 +305,7 @@ namespace db_projektarbeit.View
             CmdSearch.Enabled = true;
         }
 
-        private bool ValidateEmail(String email)
+        public bool ValidateEmail(String email)
         {
             if (EmailRegex.IsMatch(email))
             {
@@ -314,7 +314,7 @@ namespace db_projektarbeit.View
             return false;
         }
 
-        private bool ValidateWebsite(String website)
+        public bool ValidateWebsite(String website)
         {
             if (WebsiteRegex.IsMatch(website))
             {
@@ -323,7 +323,7 @@ namespace db_projektarbeit.View
             return false;
         }
 
-        private bool ValidatePassword(String password)
+        public bool ValidatePassword(String password)
         {
             if (PasswordRegex.IsMatch(password))
             {
