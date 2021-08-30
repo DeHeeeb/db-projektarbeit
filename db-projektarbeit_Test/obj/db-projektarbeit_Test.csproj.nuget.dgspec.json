@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj": {}
+    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj": {}
   },
   "projects": {
-    "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj": {
+    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
+        "projectUniqueName": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
         "projectName": "db-projektarbeit",
-        "projectPath": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
-        "packagesPath": "C:\\Users\\ericm\\.nuget\\packages\\",
-        "outputPath": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\obj\\",
+        "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj",
+        "packagesPath": "C:\\Users\\Trabe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ericm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,17 +85,21 @@
         }
       }
     },
-    "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj": {
+    "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj",
+        "projectUniqueName": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj",
         "projectName": "db-projektarbeit_Test",
-        "projectPath": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj",
-        "packagesPath": "C:\\Users\\ericm\\.nuget\\packages\\",
-        "outputPath": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit_Test\\obj\\",
+        "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit_Test\\db-projektarbeit_Test.csproj",
+        "packagesPath": "C:\\Users\\Trabe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit_Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ericm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Trabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -105,8 +113,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj": {
-                "projectPath": "C:\\visual\\PRG_ADVANCED_II\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj"
+              "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj": {
+                "projectPath": "C:\\Users\\Trabe\\Source\\Repos\\DeHeeeb\\db-projektarbeit\\db-projektarbeit\\db-projektarbeit.csproj"
               }
             }
           }
