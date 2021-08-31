@@ -3,32 +3,33 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class CustomerControl
+    public class CustomerControl
     {
-        private readonly CustomerRepository CustomerRepository = new CustomerRepository(new ProjectContext());
+        private readonly CustomerRepository _customerRepository;
+
+        public CustomerControl(CustomerRepository customerRepository)
+        {
+            _customerRepository = customerRepository;
+        }
 
         public List<Customer> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return CustomerRepository.GetAll(context);
+            return _customerRepository.GetAll();
         }
 
         public List<Customer> Search(string text)
         {
-            using ProjectContext context = new ProjectContext();
-            return CustomerRepository.Search(text, context);
+            return _customerRepository.Search(text);
         }
 
         public int Save(Customer customer)
         {
-            using ProjectContext context = new ProjectContext();
-            return CustomerRepository.Save(customer, context);
+            return _customerRepository.Save(customer);
         }
 
         public int Delete(Customer customer)
         {
-            using ProjectContext context = new ProjectContext();
-            return CustomerRepository.Delete(customer, context);
+            return _customerRepository.Delete(customer);
         }
     }
 }

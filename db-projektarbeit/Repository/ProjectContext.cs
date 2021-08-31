@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace db_projektarbeit.Repository
 {
-    class ProjectContext : DbContext
+    public class ProjectContext : DbContext
     {
 
         #region Entities
@@ -17,11 +17,16 @@ namespace db_projektarbeit.Repository
         public DbSet<Bill> Bills { get; set; }
         #endregion
 
+        public ProjectContext(DbContextOptions<ProjectContext> options) : base(options)
+        {
+        }
+
+        /*
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.; Database=Accounting; Trusted_Connection=True");
             optionsBuilder.EnableSensitiveDataLogging(true);
-        }
+        }*/
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

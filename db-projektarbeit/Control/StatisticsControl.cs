@@ -3,18 +3,23 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class StatisticsControl
+    public class StatisticsControl
     {
-        private readonly StatisticsRepository StatisticsRepository = new StatisticsRepository();
+        private readonly StatisticsRepository _statisticsRepository;
+
+        public StatisticsControl(StatisticsRepository statisticsRepository)
+        {
+            _statisticsRepository = statisticsRepository;
+        }
 
         public DataTable GetAllSelf()
         {
-            return StatisticsRepository.GetAllSelf();
+            return _statisticsRepository.GetAllSelf();
         }
 
         public DataTable GetAllCustomer()
         {
-            return StatisticsRepository.GetAllCustomer();
+            return _statisticsRepository.GetAllCustomer();
         }
     }
 }

@@ -4,21 +4,30 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit.View
 {
     public partial class ProductView : Form
     {
-        private readonly ProductControl ProductControl = new ProductControl();
-        private readonly ProductGroupControl ProductGroupControl = new ProductGroupControl();
+        private IServiceProvider _provider;
+        private readonly ProductControl _productControl;
+        private readonly ProductGroupControl _productGroupControl;
         private Product selected = new Product();
 
-        public ProductView()
+        public ProductView(ProductControl productControl, ProductGroupControl productGroupControl)
         {
+            _productControl = productControl;
+            _productGroupControl = productGroupControl;
             InitializeComponent();
-            LoadTable(ProductControl.GetAll());
-            var arrayNodes = ProductGroupControl.ConvertToTreeNodes(ProductGroupControl.GetAll());
+            LoadTable(_productControl.GetAll());
+            var arrayNodes = _productGroupControl.ConvertToTreeNodes(_productGroupControl.GetAll());
             LoadTreeView(arrayNodes);
+        }
+
+        public void SetProvider(IServiceProvider provider)
+        {
+            _provider = provider;
         }
 
         public void LoadTreeView(TreeNode[] treeNodes)
@@ -32,10 +41,10 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadTable(ProductControl.GetAll());
+                LoadTable(_productControl.GetAll());
             } else
             {
-                LoadTable(ProductControl.Search(searchText));
+                LoadTable(_productControl.Search(searchText));
             }
         }
 
@@ -69,9 +78,9 @@ namespace db_projektarbeit.View
                     Price = NumPrice.Value,
                     GroupId = Convert.ToInt32(TvProductGroup.SelectedNode.Name)
                 };
-                ProductControl.Save(productToSave);
+                _productControl.Save(productToSave);
 
-                LoadTable(ProductControl.GetAll());
+                LoadTable(_productControl.GetAll());
                 EndSaveMode();
             }
             else
@@ -152,7 +161,7 @@ namespace db_projektarbeit.View
 
             if (dialogResult == DialogResult.Yes)
             {
-                var toDelete = ProductControl.Delete(selected);
+                var toDelete = _productControl.Delete(selected);
                 if (toDelete != 0)
                 {
                     MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Der Artikel"),
@@ -177,7 +186,7 @@ namespace db_projektarbeit.View
             }
 
             UnlockFields();
-            LoadTable(ProductControl.GetAll());
+            LoadTable(_productControl.GetAll());
         }
 
         private void LockFields()
@@ -208,7 +217,8 @@ namespace db_projektarbeit.View
 
         private void CmdEditProductGroup_Click(object sender, EventArgs e)
         {
-            new ProductGroupView().Show();
+            var view = _provider.GetRequiredService<ProductGroupView>();
+            view.Show();
         }
     }
 }

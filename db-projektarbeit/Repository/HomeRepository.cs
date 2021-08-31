@@ -1,23 +1,26 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
+using Microsoft.Extensions.Options;
 
 namespace db_projektarbeit.Repository
 {
-    class HomeRepository
+    public class HomeRepository
     {
-        private readonly ProjectContext _context;
-        public HomeRepository(ProjectContext context)
+        private readonly DbContextOptions<ProjectContext> Options;
+
+        public HomeRepository(DbContextOptions<ProjectContext> options)
         {
-            _context = context;
+            Options = options;
         }
 
         public bool GetStatusSQL()
         {
+            using var context = new ProjectContext(Options);
             int statusSQL = 0;
             try
             {
-                statusSQL = _context.Database.ExecuteSqlRaw("Select 1");
+                statusSQL = context.Database.ExecuteSqlRaw("Select 1");
             }
             catch (SqlException se)
             {

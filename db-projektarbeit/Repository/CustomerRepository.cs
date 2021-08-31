@@ -5,15 +5,16 @@ using System.Linq;
 
 namespace db_projektarbeit.Repository
 {
-    class CustomerRepository : RepositoryBase<Customer>
+    public class CustomerRepository : RepositoryBase<Customer>
     {
 
-        public CustomerRepository(ProjectContext context) : base(context)
+        public CustomerRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public new List<Customer> GetAll(ProjectContext context)
+        public new List<Customer> GetAll()
         {
+            using var context = new ProjectContext(Options);
             return context.Customers
                 .Include(c => c.City)
                 .OrderBy(c => c.CustomerNr)
@@ -23,8 +24,9 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public List<Customer> Search(string text, ProjectContext context)
+        public List<Customer> Search(string text)
         {
+            using var context = new ProjectContext(Options);
             text = text.ToLower();
 
             return context.Customers
@@ -44,8 +46,9 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public new int Save(Customer customer, ProjectContext context)
+        public new int Save(Customer customer)
         {
+            using var context = new ProjectContext(Options);
             var currentDate = DateTime.Now;
 
             if (customer.Id == 0)
@@ -71,12 +74,13 @@ namespace db_projektarbeit.Repository
             return customer.Id;
         }
 
-        public int Delete(Customer customer, ProjectContext context)
+        public int Delete(Customer customer)
         {
+            using var context = new ProjectContext(Options);
             try
             {
                 customer.ValidTo = DateTime.Now;
-                Update(customer, context);
+                Update(customer);
                 context.SaveChanges();
             }
             catch

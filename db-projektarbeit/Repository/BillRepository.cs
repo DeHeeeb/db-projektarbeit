@@ -5,14 +5,15 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Repository
 {
-    class BillRepository : RepositoryBase<Bill>
+    public class BillRepository : RepositoryBase<Bill>
     {
-        public BillRepository(ProjectContext context) : base(context)
+        public BillRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public new List<Bill> GetAll(ProjectContext context)
+        public new List<Bill> GetAll()
         {
+            using var context = new ProjectContext(Options);
             var bills = context.Bills
                 .Include(b => b.Customer)
                 .ThenInclude(c => c.City)
@@ -32,10 +33,10 @@ namespace db_projektarbeit.Repository
             return bills;
         }
 
-        public List<Bill> Search(string text, ProjectContext context)
+        public List<Bill> Search(string text)
         {
             text = text.ToLower();
-            return GetAll(context).Where(b =>
+            return GetAll().Where(b =>
                 b.Customer.CustomerNr.ToString().Contains(text) ||
                 b.Customer.FullName.ToLower().Contains(text) ||
                 b.Customer.Street.ToLower().Contains(text) ||

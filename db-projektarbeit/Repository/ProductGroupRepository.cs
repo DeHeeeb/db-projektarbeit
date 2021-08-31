@@ -3,16 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository
 {
-    class ProductGroupRepository : RepositoryBase<ProductGroup>
+    public class ProductGroupRepository : RepositoryBase<ProductGroup>
     {
-        public ProductGroupRepository(ProjectContext context) : base(context)
+        public ProductGroupRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public new List<ProductGroup> GetAll(ProjectContext context)
+        public new List<ProductGroup> GetAll()
         {
             List<ProductGroup> productGroups = new List<ProductGroup>();
 
+            using var context = new ProjectContext(Options);
 
             var result = context.ProductGroups.FromSqlRaw(
                 ";WITH CTE_ProductGroup " +

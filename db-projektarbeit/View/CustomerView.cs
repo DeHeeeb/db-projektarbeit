@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit.View
 {
@@ -14,15 +15,25 @@ namespace db_projektarbeit.View
         readonly Regex WebsiteRegex = new Regex(@"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$", RegexOptions.IgnoreCase);
         readonly Regex PasswordRegex = new Regex(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$");
 
-        private readonly CustomerControl CustomerControl = new CustomerControl();
-        private readonly CityControl CityControl = new CityControl();
+        private IServiceProvider _provider;
+        private readonly CustomerControl _customerControl;
+        private readonly CityControl _cityControl;
         private Customer selected = new Customer();
 
-        public CustomerView()
+        public CustomerView() {}
+
+        public CustomerView(CustomerControl customerControl, CityControl cityControl)
         {
+            _customerControl = customerControl;
+            _cityControl = cityControl;
             InitializeComponent();
-            LoadCombobox(CityControl.GetAll());
-            LoadTable(CustomerControl.GetAll());
+            LoadCombobox(_cityControl.GetAll());
+            LoadTable(_customerControl.GetAll());
+        }
+
+        public void SetProvider(IServiceProvider provider)
+        {
+            this._provider = provider;
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -30,10 +41,10 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadTable(CustomerControl.GetAll());
+                LoadTable(_customerControl.GetAll());
             } else
             {
-                LoadTable(CustomerControl.Search(searchText));
+                LoadTable(_customerControl.Search(searchText));
             }
         }
 
@@ -110,10 +121,10 @@ namespace db_projektarbeit.View
                     Password = TxtPassword.Text,
                     CityId = (int)CbxCity.SelectedValue
                 };
-                CustomerControl.Save(customerToSave);
+                _customerControl.Save(customerToSave);
 
-                LoadTable(CustomerControl.GetAll());
-                LoadCombobox(CityControl.GetAll());
+                LoadTable(_customerControl.GetAll());
+                LoadCombobox(_cityControl.GetAll());
                 CbxCity.SelectedValue = selected.City.Id;
                 EndSaveMode();
             }
@@ -128,15 +139,15 @@ namespace db_projektarbeit.View
 
         private void CmdEditCity_Click(object sender, EventArgs e)
         {
-            CityView cityView = new CityView();
-            cityView.Show();
-            cityView.Closed += RefreshCombobox;
+            var view = _provider.GetRequiredService<CityView>();
+            view.Show();
+            view.Closed += RefreshCombobox;
         }
 
         private void RefreshCombobox(object sender, EventArgs e)
         {
-            LoadCombobox(CityControl.GetAll());
-            LoadTable(CustomerControl.GetAll());
+            LoadCombobox(_cityControl.GetAll());
+            LoadTable(_customerControl.GetAll());
         }
 
         private void DgvCustomers_SelectionChanged(object sender, EventArgs e)
@@ -246,7 +257,7 @@ namespace db_projektarbeit.View
 
             if (dialogResult == DialogResult.Yes)
             {
-                var toDelete = CustomerControl.Delete(selected);
+                var toDelete = _customerControl.Delete(selected);
                 if (toDelete != 0)
                 {
                     MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete,"Der Kunde"),
@@ -270,7 +281,7 @@ namespace db_projektarbeit.View
                     MessageBoxIcon.Information);
             }
             UnlockFields();
-            LoadTable(CustomerControl.GetAll());
+            LoadTable(_customerControl.GetAll());
         }
 
         private void LockFields()

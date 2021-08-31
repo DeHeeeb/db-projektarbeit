@@ -4,34 +4,36 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class CityControl
+    public class CityControl
     {
-        private readonly CityRepository CityRepository = new CityRepository(new ProjectContext());
+        private readonly CityRepository _cityRepository;
+
+        public CityControl(CityRepository cityRepository)
+        {
+            _cityRepository = cityRepository;
+        }
 
         public List<City> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return CityRepository.GetAll(context)
+            return _cityRepository.GetAll()
                 .OrderBy(c => c.Zip)
                 .ToList();
         }
 
         public List<City> Search(string text)
         {
-            using ProjectContext context = new ProjectContext();
-            return CityRepository.Search(text, context);
+            return _cityRepository.Search(text);
         }
 
         public int Save(City city)
         {
-            using ProjectContext context = new ProjectContext();
             if (city.Id == 0)
             {
-                CityRepository.Save(city, context);
+                _cityRepository.Save(city);
             }
             else
             {
-                CityRepository.Update(city, context);
+                _cityRepository.Update(city);
             }
 
             return city.Id;
@@ -39,8 +41,7 @@ namespace db_projektarbeit.Control
 
         public int Delete(City city)
         {
-            using ProjectContext context = new ProjectContext();
-            var deleted = CityRepository.Delete(city.Id, context);
+            var deleted = _cityRepository.Delete(city.Id);
 
             return deleted?.Id ?? 0;
         }
