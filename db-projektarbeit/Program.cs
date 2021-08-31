@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
@@ -29,7 +29,8 @@ namespace db_projektarbeit
             home.SetProvider(serviceProvider);
             Application.Run(home);
         }
-        private static void ConfigureServices(ServiceCollection services)
+
+        public static void ConfigureServices(ServiceCollection services)
         {
             services.AddTransient<BillView>();
             services.AddTransient<CityView>();
