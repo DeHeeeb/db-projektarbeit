@@ -31,6 +31,8 @@ namespace db_projektarbeit_Test.integration.setup
 
             context.Customers.RemoveRange(context.Customers);
             context.Cities.RemoveRange(context.Cities);
+            context.ProductGroups.RemoveRange(context.ProductGroups);
+            context.Products.RemoveRange(context.Products);
             context.SaveChanges();
 
             SeedData.Populate(context);
