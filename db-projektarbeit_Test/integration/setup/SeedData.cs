@@ -19,6 +19,24 @@ namespace db_projektarbeit_Test.integration.setup
                     ValidFrom = new DateTime(1, 1, 1),
                     ValidTo = new DateTime(3000, 1, 1),
                     CityId = 1
+                },
+                new Customer()
+                {
+                    Id = 2,
+                    FirstName = "Eric",
+                    LastName = "Lüchinger",
+                    ValidFrom = new DateTime(1, 1, 1),
+                    ValidTo = new DateTime(3000, 1, 1),
+                    CityId = 2
+                },
+                new Customer()
+                {
+                    Id = 3,
+                    FirstName = "Marc",
+                    LastName = "Traber",
+                    ValidFrom = new DateTime(1, 1, 1),
+                    ValidTo = new DateTime(3000, 1, 1),
+                    CityId = 3
                 }
             };
             var cities = new List<City>
@@ -28,6 +46,18 @@ namespace db_projektarbeit_Test.integration.setup
                     Id = 1,
                     Zip = 9000,
                     Name = "St. Gallen"
+                },
+                new City()
+                {
+                    Id = 2,
+                    Zip = 5000,
+                    Name = "Aarau"
+                },
+                new City()
+                {
+                    Id = 3,
+                    Zip = 1000,
+                    Name = "Lausanne"
                 }
             };
 
