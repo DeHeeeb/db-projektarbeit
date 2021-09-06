@@ -7,12 +7,13 @@ namespace db_projektarbeit.View
 {
     public partial class BillView : Form
     {
-        private readonly BillControl BillControl = new BillControl();
-
-        public BillView()
+        private readonly BillControl _billControl;
+        
+        public BillView(BillControl billControl)
         {
+            _billControl = billControl;
             InitializeComponent();
-            LoadTable(BillControl.GetAll());
+            LoadTable(_billControl.GetAll());
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -20,11 +21,11 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadTable(BillControl.GetAll());
+                LoadTable(_billControl.GetAll());
             }
             else
             {
-                LoadTable(BillControl.Search(searchText));
+                LoadTable(_billControl.Search(searchText));
             }
         }
 

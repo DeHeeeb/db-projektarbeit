@@ -4,12 +4,12 @@ namespace db_projektarbeit.Repository
 {
     interface IRepositoryBase<M>
     {
-        List<M> GetAll(ProjectContext context);
+        List<M> GetAll();
 
-        M Save(M entity, ProjectContext context);
+        M Save(M entity);
 
-        M Update(M entity, ProjectContext context);
+        M Update(M entity);
 
-        M Delete(int id, ProjectContext context);
+        M Delete(int id);
     }
 }

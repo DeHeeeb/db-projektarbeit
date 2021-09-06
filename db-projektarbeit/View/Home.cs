@@ -4,67 +4,88 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using db_projektarbeit.Data.Export;
-using db_projektarbeit.Data.Import;
 using db_projektarbeit.Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit.View
 {
     public partial class Home : Form
     {
-        private readonly HomeControl HomeControl = new HomeControl();
+        private IServiceProvider _provider;
+        private readonly HomeControl _homeControl;
+        private readonly DbContextOptions<ProjectContext> Options;
 
-        public Home()
+        public Home(HomeControl homeControl, DbContextOptions<ProjectContext> options)
         {
+            _homeControl = homeControl;
+            Options = options;
             InitializeComponent();
+        }
+
+        public void SetProvider(IServiceProvider provider)
+        {
+            this._provider = provider;
         }
 
         private void CmdCustomer_Click(object sender, EventArgs e)
         {
-            new CustomerView().Show();
+            var view = _provider.GetRequiredService<CustomerView>();
+            view.SetProvider(_provider);
+            view.Show();
         }
 
         private void CmdCity_Click(object sender, EventArgs e)
         {
-            new CityView().Show();
+            var view = _provider.GetRequiredService<CityView>();
+            view.Show();
         }
 
         private void CmdProduct_Click(object sender, EventArgs e)
         {
-            new ProductView().Show();
+            var view = _provider.GetRequiredService<ProductView>();
+            view.SetProvider(_provider);
+            view.Show();
         }
 
         private void CmdProductGroup_Click(object sender, EventArgs e)
         {
-            new ProductGroupView().Show();
+            var view = _provider.GetRequiredService<ProductGroupView>();
+            view.Show();
         }
 
         private void CmdOrder_Click(object sender, EventArgs e)
         {
-            new OrderView().Show();
+            var view = _provider.GetRequiredService<OrderView>();
+            view.SetProvider(_provider);
+            view.Show();
         }
 
         private void CmdBill_Click(object sender, EventArgs e)
         {
-            new BillView().Show();
+            var view = _provider.GetRequiredService<BillView>();
+            view.Show();
         }
         private void CmdStatistics_Click(object sender, EventArgs e)
         {
-            new StatisticsView().Show();
+            var view = _provider.GetRequiredService<StatisticsView>();
+            view.Show();
         }
         private void CmdExportCustomer_Click(object sender, EventArgs e)
         {
-            new ExportView().Show();
+            var view = _provider.GetRequiredService<ExportView>();
+            view.SetProvider(_provider);
+            view.Show();
         }
 
         private void CmdImportCustomer_Click(object sender, EventArgs e)
         {
-            new ImportView().Show();
+            var view = _provider.GetRequiredService<ImportView>();
+            view.Show();
         }
 
         private void TimerSQLCheck_Tick(object sender, EventArgs e)
         {
-            ProjectContext context = new ProjectContext();
+            using var context = new ProjectContext(Options);
             if (!context.Database.CanConnect())
             {
                 try
@@ -85,7 +106,7 @@ namespace db_projektarbeit.View
                 }
             }
 
-            var sqlCheck = HomeControl.GetStatusSQL();
+            var sqlCheck = _homeControl.GetStatusSQL();
             if (sqlCheck)
             {
                 LblSQLCheck.Text = "SQL Server verbunden";

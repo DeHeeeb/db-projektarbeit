@@ -7,7 +7,7 @@ namespace db_projektarbeit.Data.Export
 {
     public class XmlExportStrategy : ICustomerExportStrategy
     {
-        public bool Export(string path, List<db_projektarbeit.Customer> data)
+        public bool Export(string path, List<Customer> data)
         {
             XmlSerializer writer = new XmlSerializer(typeof(List<db_projektarbeit.Customer>));
 

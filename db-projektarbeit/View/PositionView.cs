@@ -4,22 +4,42 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit.View
 {
     public partial class PositionView : Form
     {
-        private readonly PositionControl PositionControl = new PositionControl();
-        private readonly ProductControl ProductControl = new ProductControl();
+        private IServiceProvider _provider;
+        private readonly PositionControl _positionControl;
+        private readonly ProductControl _productControl;
         private Position selected = new Position();
-        private readonly Order parentOrder;
+        private Order parentOrder;
         
-        public PositionView(Order order)
+        public PositionView(PositionControl positionControl, ProductControl productControl)
+        {
+            _positionControl = positionControl;
+            _productControl = productControl;
+            InitializeComponent();
+            if (parentOrder != null)
+            {
+                LoadTable(_positionControl.GetAllByOrderId(parentOrder.Id));
+            }
+            LoadCombobox(_productControl.GetAll());
+        }
+
+        public void SetProvider(IServiceProvider provider)
+        {
+            _provider = provider;
+        }
+
+        public void SetSelected(Order order)
         {
             parentOrder = order;
-            InitializeComponent();
-            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
-            LoadCombobox(ProductControl.GetAll());
+            if (order != null)
+            {
+                LoadTable(_positionControl.GetAllByOrderId(order.Id));
+            }
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -27,11 +47,11 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
+                LoadTable(_positionControl.GetAllByOrderId(parentOrder.Id));
             }
             else
             {
-                LoadTable(PositionControl.Search(searchText, parentOrder.Id));
+                LoadTable(_positionControl.Search(searchText, parentOrder.Id));
             }
         }
 
@@ -65,10 +85,10 @@ namespace db_projektarbeit.View
                     ProductId = (int)CbxProduct.SelectedValue
                 };
 
-                PositionControl.Save(positionToSave);
+                _positionControl.Save(positionToSave);
 
-                LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
-                LoadCombobox(ProductControl.GetAll());
+                LoadTable(_positionControl.GetAllByOrderId(parentOrder.Id));
+                LoadCombobox(_productControl.GetAll());
                 CbxProduct.SelectedValue = selected.Product.Id;
                 EndSaveMode();
             }
@@ -83,15 +103,15 @@ namespace db_projektarbeit.View
 
         private void CmdEditProduct_Click(object sender, EventArgs e)
         {
-            ProductView productView = new ProductView();
-            productView.Show();
-            productView.Closed += RefreshCombobox;
+            var view = _provider.GetRequiredService<ProductView>();
+            view.Show();
+            view.Closed += RefreshCombobox;
         }
 
         private void RefreshCombobox(object sender, EventArgs e)
         {
-            LoadCombobox(ProductControl.GetAll());
-            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
+            LoadCombobox(_productControl.GetAll());
+            LoadTable(_positionControl.GetAllByOrderId(parentOrder.Id));
         }
 
         private void DgvPositions_SelectionChanged(object sender, EventArgs e)
@@ -190,7 +210,7 @@ namespace db_projektarbeit.View
 
             if (dialogResult == DialogResult.Yes)
             {
-                var toDelete = PositionControl.Delete(selected);
+                var toDelete = _positionControl.Delete(selected);
                 if (toDelete != 0)
                 {
                     MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Die Position"),
@@ -214,7 +234,7 @@ namespace db_projektarbeit.View
                     MessageBoxIcon.Information);
             }
             UnlockFields();
-            LoadTable(PositionControl.GetAllByOrderId(parentOrder.Id));
+            LoadTable(_positionControl.GetAllByOrderId(parentOrder.Id));
         }
     }
 }

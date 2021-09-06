@@ -17,11 +17,12 @@ namespace db_projektarbeit.View
     {
         private string path;
         private List<Customer> customers;
-        private readonly CustomerControl _customerControl = new CustomerControl();
+        private readonly CustomerControl _customerControl;
         private CustomerImport _customerImport;
 
-        public ImportView()
+        public ImportView(CustomerControl customerControl)
         {
+            _customerControl = customerControl;
             InitializeComponent();
             customers = new List<Customer>();
         }

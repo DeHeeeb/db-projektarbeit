@@ -4,14 +4,15 @@ using System.Linq;
 
 namespace db_projektarbeit.Repository
 {
-    class PositionRepository : RepositoryBase<Position>
+    public class PositionRepository : RepositoryBase<Position>
     {
-        public PositionRepository(ProjectContext context) : base(context)
+        public PositionRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public List<Position> GetAllByOrderId(int orderId, ProjectContext context)
+        public List<Position> GetAllByOrderId(int orderId)
         {
+            using var context = new ProjectContext(Options);
             return context.Positions
                 .Include(p => p.Product)
                 .OrderBy(p => p.Id)
@@ -19,8 +20,9 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public List<Position> Search(string text, int orderId, ProjectContext context)
+        public List<Position> Search(string text, int orderId)
         {
+            using var context = new ProjectContext(Options);
             text = text.ToLower();
 
             return context.Positions

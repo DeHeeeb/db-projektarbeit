@@ -3,39 +3,39 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class OrderControl
+    public class OrderControl
     {
-        private readonly OrderRepository OrderRepository = new OrderRepository(new ProjectContext());
+        private readonly OrderRepository _orderRepository;
+
+        public OrderControl(OrderRepository orderRepository)
+        {
+            _orderRepository = orderRepository;
+        }
 
         public List<Order> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return OrderRepository.GetAll(context);
+            return _orderRepository.GetAll();
         }
 
         public List<Order> Search(string text)
         {
-            using ProjectContext context = new ProjectContext();
-            return OrderRepository.Search(text, context);
+            return _orderRepository.Search(text);
         }
 
         public int Save(Order order)
         {
-            using ProjectContext context = new ProjectContext();
-            return OrderRepository.Save(order, context);
+            return _orderRepository.Save(order);
         }
 
         public int Delete(Order order)
         {
-            using ProjectContext context = new ProjectContext();
-            var deleted = OrderRepository.Delete(order.Id, context);
+            var deleted = _orderRepository.Delete(order.Id);
             return deleted?.Id ?? 0;
         }
 
         public void Bill(int orderId)
         {
-            using ProjectContext context = new ProjectContext();
-            OrderRepository.Bill(orderId, context);
+            _orderRepository.Bill(orderId);
         }
     }
 }

@@ -5,22 +5,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository
 {
-    abstract class RepositoryBase<M> : IRepositoryBase<M> where M : class
+    public abstract class RepositoryBase<M> : IRepositoryBase<M> where M : class
     {
+        protected readonly DbContextOptions<ProjectContext> Options;
 
-        public RepositoryBase(ProjectContext context)
+        public RepositoryBase(DbContextOptions<ProjectContext> options)
         {
+            Options = options;
         }
 
-        public List<M> GetAll(ProjectContext context)
+        public List<M> GetAll()
         {
+            using var context = new ProjectContext(Options);
             var table = context.Set<M>();
 
             return table.ToList();
         }
 
-        public M Save(M entity, ProjectContext context)
+        public M Save(M entity)
         {
+            using var context = new ProjectContext(Options);
             var table = context.Set<M>();
             var attach = table.Attach(entity);
             context.SaveChanges();
@@ -28,8 +32,9 @@ namespace db_projektarbeit.Repository
             return attach.Entity;
         }
 
-        public M Update(M entity, ProjectContext context)
+        public M Update(M entity)
         {
+            using var context = new ProjectContext(Options);
             var table = context.Set<M>();
             var attach = table.Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
@@ -38,8 +43,9 @@ namespace db_projektarbeit.Repository
             return attach.Entity;
         }
 
-        public M Delete(int id, ProjectContext context)
+        public M Delete(int id)
         {
+            using var context = new ProjectContext(Options);
             var table = context.Set<M>();
             var existing = table.Find(id);
 

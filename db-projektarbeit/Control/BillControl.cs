@@ -3,26 +3,28 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class BillControl
+    public class BillControl
     {
-        private readonly BillRepository BillRepository = new BillRepository(new ProjectContext());
+        private readonly BillRepository _billRepository;
+
+        public BillControl(BillRepository billRepository)
+        {
+            _billRepository = billRepository;
+        }
 
         public List<Bill> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return BillRepository.GetAll(context);
+            return _billRepository.GetAll();
         }
 
         public List<Bill> Search(string text)
         {
-            using ProjectContext context = new ProjectContext();
-            return BillRepository.Search(text, context);
+            return _billRepository.Search(text);
         }
 
         public int Save(Bill bill)
         {
-            using ProjectContext context = new ProjectContext();
-            var saved = BillRepository.Save(bill, context);
+            var saved = _billRepository.Save(bill);
             return saved.Id;
         }
     }

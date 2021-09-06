@@ -4,22 +4,32 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace db_projektarbeit.View
 {
     public partial class OrderView : Form
     {
-        private readonly OrderControl OrderControl = new OrderControl();
-        private readonly CustomerControl CustomerControl = new CustomerControl();
-        private readonly BillControl BillControl = new BillControl();
+        private IServiceProvider _provider;
+        private readonly OrderControl _orderControl;
+        private readonly CustomerControl _customerControl;
+        private readonly BillControl _billControl;
         private Order selected = new Order();
 
-        public OrderView()
+        public OrderView(OrderControl orderControl, CustomerControl customerControl, BillControl billControl)
         {
+            _orderControl = orderControl;
+            _customerControl = customerControl;
+            _billControl = billControl;
             InitializeComponent();
-            LoadOrderTable(OrderControl.GetAll());
-            LoadCombobox(CustomerControl.GetAll());
+            LoadOrderTable(_orderControl.GetAll());
+            LoadCombobox(_customerControl.GetAll());
             LoadTotal();
+        }
+
+        public void SetProvider(IServiceProvider provider)
+        {
+            _provider = provider;
         }
 
         private void LoadOrderTable(List<Order> orders)
@@ -78,11 +88,11 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadOrderTable(OrderControl.GetAll());
+                LoadOrderTable(_orderControl.GetAll());
             }
             else
             {
-                LoadOrderTable(OrderControl.Search(searchText));
+                LoadOrderTable(_orderControl.Search(searchText));
             }
         }
 
@@ -99,9 +109,11 @@ namespace db_projektarbeit.View
         {
             if (selected.Id != 0)
             {
-                PositionView positionView = new PositionView(selected);
-                positionView.Show();
-                positionView.Closed += Refresh;
+                var view = _provider.GetRequiredService<PositionView>();
+                view.SetSelected(selected);
+                view.SetProvider(_provider);
+                view.Show();
+                view.Closed += Refresh;
             }
             else
             {
@@ -129,10 +141,10 @@ namespace db_projektarbeit.View
                                 null : TxtComment.Text,
                         CustomerId = (int) CbxCustomer.SelectedValue
                     };
-                    OrderControl.Save(orderToSave);
+                    _orderControl.Save(orderToSave);
 
-                    LoadOrderTable(OrderControl.GetAll());
-                    LoadCombobox(CustomerControl.GetAll());
+                    LoadOrderTable(_orderControl.GetAll());
+                    LoadCombobox(_customerControl.GetAll());
                     LoadTotal();
                     CbxCustomer.SelectedValue = selected.Customer.Id;
                     EndSaveMode();
@@ -194,9 +206,10 @@ namespace db_projektarbeit.View
 
         private void CmdEditCustomer_Click(object sender, EventArgs e)
         {
-            CustomerView customerView = new CustomerView();
-            customerView.Show();
-            customerView.Closed += Refresh;
+            var view = _provider.GetRequiredService<CustomerView>();
+            view.SetProvider(_provider);
+            view.Show();
+            view.Closed += Refresh;
         }
 
         private void CmdBill_Click(object sender, EventArgs e)
@@ -207,7 +220,7 @@ namespace db_projektarbeit.View
             {
                 if (selected.Total > 0)
                 {
-                    OrderControl.Bill(selected.Id);
+                    _orderControl.Bill(selected.Id);
 
                     var billToSave = new Bill
                     {
@@ -215,13 +228,13 @@ namespace db_projektarbeit.View
                         CustomerId = selected.CustomerId,
                         Netto = selected.Total
                     };
-                    BillControl.Save(billToSave);
+                    _billControl.Save(billToSave);
 
                     MessageBox.Show(MessageBoxConstants.TextOrderBilled,
                         MessageBoxConstants.CaptionSuccess,
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    LoadOrderTable(OrderControl.GetAll());
+                    LoadOrderTable(_orderControl.GetAll());
                 }
                 else
                 {
@@ -235,8 +248,8 @@ namespace db_projektarbeit.View
 
         private void Refresh(object sender, EventArgs e)
         {
-            LoadCombobox(CustomerControl.GetAll());
-            LoadOrderTable(OrderControl.GetAll());
+            LoadCombobox(_customerControl.GetAll());
+            LoadOrderTable(_orderControl.GetAll());
         }
 
         private void UnlockFields()
@@ -293,7 +306,7 @@ namespace db_projektarbeit.View
 
             if (dialogResult == DialogResult.Yes)
             {
-                var toDelete = OrderControl.Delete(selected);
+                var toDelete = _orderControl.Delete(selected);
                 if (toDelete != 0)
                 {
                     MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Der Auftrag"),
@@ -318,7 +331,7 @@ namespace db_projektarbeit.View
             }
 
             UnlockFields();
-            LoadOrderTable((OrderControl.GetAll()));
+            LoadOrderTable((_orderControl.GetAll()));
         }
 
         private void LockFields()
@@ -330,7 +343,8 @@ namespace db_projektarbeit.View
 
         private void CmdBillView_Click(object sender, EventArgs e)
         {
-            new BillView().Show();
+            var view = _provider.GetRequiredService<BillView>();
+            view.Show();
         }
     }
 }
