@@ -25,7 +25,13 @@ namespace db_projektarbeit.View
             using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
                 saveFileDialog.InitialDirectory = "c:\\";
-                saveFileDialog.Filter = "Export files (*.xml;*.json)|*.xml;*.json";
+                if (RadXml.Checked == true) {
+                    saveFileDialog.Filter = "Export files (*.xml)|*.xml";
+                }
+                else {
+                    saveFileDialog.Filter = "Export files (*.json)|*.json";
+                }
+                    
                 saveFileDialog.FilterIndex = 2;
                 saveFileDialog.RestoreDirectory = true;
 
