@@ -4,23 +4,25 @@ using System.Linq;
 
 namespace db_projektarbeit.Repository
 {
-    class ProductRepository : RepositoryBase<Product>
+    public class ProductRepository : RepositoryBase<Product>
     {
 
-        public ProductRepository(ProjectContext context) : base(context)
+        public ProductRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public new List<Product> GetAll(ProjectContext context)
+        public new List<Product> GetAll()
         {
+            using var context = new ProjectContext(Options);
             return context.Products
                 .Include(p => p.Group)
                 .OrderBy(p => p.ProductNr)
                 .ToList();
         }
 
-        public List<Product> Search(string text, ProjectContext context)
+        public List<Product> Search(string text)
         {
+            using var context = new ProjectContext(Options);
             text = text.ToLower();
 
             return context.Products
@@ -35,8 +37,9 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public List<Product> SearchUsedProductGroup(ProductGroup productGroup, ProjectContext context)
+        public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
+            using var context = new ProjectContext(Options);
             return context.Products
                 .Where(pg => pg.GroupId == productGroup.Id)
                 .ToList();

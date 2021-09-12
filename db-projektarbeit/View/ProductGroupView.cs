@@ -9,17 +9,18 @@ namespace db_projektarbeit.View
     public partial class ProductGroupView : Form
     {
 
-        private readonly ProductGroupControl ProductGroupControl = new ProductGroupControl();
+        private readonly ProductGroupControl _productGroupControl;
 
-        public ProductGroupView()
+        public ProductGroupView(ProductGroupControl productGroupControl)
         {
+            _productGroupControl = productGroupControl;
             InitializeComponent();
             LoadTreeViewDefault();
         }
 
         public void LoadTreeViewDefault()
         {
-            var arrayNodes = ProductGroupControl.ConvertToTreeNodes(ProductGroupControl.GetAll());
+            var arrayNodes = _productGroupControl.ConvertToTreeNodes(_productGroupControl.GetAll());
             LoadTreeView(arrayNodes);
 
             TvProductGroup.ExpandAll();
@@ -42,7 +43,7 @@ namespace db_projektarbeit.View
                     Id = int.Parse(selectedNode.Name),                      // Id des aktuellen Node         
                     Name = TxtProductGroupName.Text                        // Anzeigetext
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
+                _productGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
             }
             else
             {
@@ -52,7 +53,7 @@ namespace db_projektarbeit.View
                     Name = TxtProductGroupName.Text,                       // Anzeigetext
                     ParentId = int.Parse(selectedNode.Parent.Name)          // Id des Eltern Node
                 };
-                ProductGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
+                _productGroupControl.UpdateNode(updateProductGroup);         // zu löschendes Element übergeben
             }
 
             LoadTreeViewDefault();                                          // TreeView aktuallisieren
@@ -84,14 +85,14 @@ namespace db_projektarbeit.View
                 };
             }
 
-            onUsedProductGroup = ProductGroupControl
+            onUsedProductGroup = _productGroupControl
                                     .SearchUsedProductGroup(deletedProductGroup);   // Product suchen die eine Verbindung
                                                                                     // zu dieser ProductGruppe haben
             if (onUsedProductGroup.Count == 0)
             {
                 if (selectedNode.Nodes.Count == 0)
                 {
-                    ProductGroupControl.DeleteNode(deletedProductGroup);
+                    _productGroupControl.DeleteNode(deletedProductGroup);
                 }
                 else
                 {
@@ -145,7 +146,7 @@ namespace db_projektarbeit.View
                     {
                         Name = TxtProductGroupName.Text
                     };
-                    ProductGroupControl.AddNode(newArtikelGroup);
+                    _productGroupControl.AddNode(newArtikelGroup);
 
                 }
                 else
@@ -156,7 +157,7 @@ namespace db_projektarbeit.View
                         ParentId = int.Parse(selectedNode.Parent.Name)
 
                     };
-                    ProductGroupControl.AddNode(newArtikelGroup);
+                    _productGroupControl.AddNode(newArtikelGroup);
 
                 }
 
@@ -178,7 +179,7 @@ namespace db_projektarbeit.View
                     ParentId = selectId
                 };
 
-                ProductGroupControl.AddNode(newArtikelGroup);
+                _productGroupControl.AddNode(newArtikelGroup);
 
                 LoadTreeViewDefault();
             }

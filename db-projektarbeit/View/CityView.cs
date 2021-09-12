@@ -9,13 +9,14 @@ namespace db_projektarbeit.View
 {
     public partial class CityView : Form
     {
-        private readonly CityControl CityControl = new CityControl();
+        private readonly CityControl _cityControl;
         private City selected = new City();
 
-        public CityView()
+        public CityView(CityControl cityControl)
         {
+            _cityControl = cityControl;
             InitializeComponent();
-            LoadTable(CityControl.GetAll());
+            LoadTable(_cityControl.GetAll());
         }
 
         private void CmdSearch_Click(object sender, EventArgs e)
@@ -23,11 +24,11 @@ namespace db_projektarbeit.View
             var searchText = TxtSearch.Text;
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                LoadTable(CityControl.GetAll());
+                LoadTable(_cityControl.GetAll());
             }
             else
             {
-                LoadTable(CityControl.Search(searchText));
+                LoadTable(_cityControl.Search(searchText));
             }
         }
 
@@ -51,9 +52,9 @@ namespace db_projektarbeit.View
                     Zip = (int)NumZip.Value,
                     Name = TxtName.Text
                 };
-                CityControl.Save(city);
+                _cityControl.Save(city);
 
-                LoadTable(CityControl.GetAll());
+                LoadTable(_cityControl.GetAll());
                 EndSaveMode();
             }
             else
@@ -132,7 +133,7 @@ namespace db_projektarbeit.View
 
             if (dialogResult == DialogResult.Yes)
             {
-                var toDelete = CityControl.Delete(selected);
+                var toDelete = _cityControl.Delete(selected);
                 if (toDelete != 0)
                 {
                     MessageBox.Show(string.Format(MessageBoxConstants.TextSuccessDelete, "Die Stadt"),
@@ -157,7 +158,7 @@ namespace db_projektarbeit.View
             }
 
             UnlockFields();
-            LoadTable(CityControl.GetAll());
+            LoadTable(_cityControl.GetAll());
         }
 
         private void LockFields()

@@ -4,8 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository
 {
-    class StatisticsRepository
+    public class StatisticsRepository
     {
+        private readonly DbContextOptions<ProjectContext> Options;
+
+        public StatisticsRepository(DbContextOptions<ProjectContext> options)
+        {
+            Options = options;
+        }
 
         public DataTable GetAllSelf()
         {
@@ -133,7 +139,7 @@ namespace db_projektarbeit.Repository
         private void GetOrderCount(DataTable dt)
         {
             int[,] compareArray = new int[4, 6];
-            using (var context = new ProjectContext())
+            using (var context = new ProjectContext(Options))
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = ";WITH CTE_GET_ALL_GROUP_DATA AS" +
@@ -177,7 +183,7 @@ namespace db_projektarbeit.Repository
         private void GetArtikelCount(DataTable dt)
         {
             int[,] compareArray = new int[4, 6];
-            using (var context = new ProjectContext())
+            using (var context = new ProjectContext(Options))
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = ";WITH CTE_GET_ALL_DATA AS " +
@@ -230,7 +236,7 @@ namespace db_projektarbeit.Repository
         private void GetArtikelPerOrder(DataTable dt)
         {
             int[,] compareArray = new int[4, 6];
-            using (var context = new ProjectContext())
+            using (var context = new ProjectContext(Options))
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = ";WITH CTE_GET_ALL_DATA AS " +
@@ -286,7 +292,7 @@ namespace db_projektarbeit.Repository
         private void GetTotalSales(DataTable dt)
         {
             int[,] compareArray = new int[4, 6];
-            using (var context = new ProjectContext())
+            using (var context = new ProjectContext(Options))
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = ";WITH CTE_GET_ALL_DATA AS " +
@@ -353,7 +359,7 @@ namespace db_projektarbeit.Repository
         private void GetTotalSalesPerCustomer(DataTable dt)
         {
             int[,] compareArray = new int[4, 6];
-            using (var context = new ProjectContext())
+            using (var context = new ProjectContext(Options))
             using (var command = context.Database.GetDbConnection().CreateCommand())
             {
                 command.CommandText = ";WITH CTE_GET_ALL_DATA AS " +

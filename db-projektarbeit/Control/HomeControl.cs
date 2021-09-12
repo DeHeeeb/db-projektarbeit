@@ -2,13 +2,18 @@
 
 namespace db_projektarbeit.Control
 {
-    class HomeControl
+    public class HomeControl
     {
-        private readonly HomeRepository HomeRepository = new HomeRepository(new ProjectContext());
+        private readonly HomeRepository _homeRepository;
+
+        public HomeControl(HomeRepository homeRepository)
+        {
+            _homeRepository = homeRepository;
+        }
 
         public bool GetStatusSQL()
         {
-            return HomeRepository.GetStatusSQL();
+            return _homeRepository.GetStatusSQL();
         }
     }
 }

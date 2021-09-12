@@ -5,40 +5,42 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class ProductGroupControl
+    public class ProductGroupControl
     {
-        private readonly ProductGroupRepository ProductGroupRepository = new ProductGroupRepository(new ProjectContext());
-        private readonly ProductControl ProductControl = new ProductControl();
+        private readonly ProductGroupRepository _productGroupRepository;
+        private readonly ProductControl _productControl;
+
+        public ProductGroupControl(ProductGroupRepository productGroupRepository, ProductControl productControl)
+        {
+            _productGroupRepository = productGroupRepository;
+            _productControl = productControl;
+        }
 
         public List<ProductGroup> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return ProductGroupRepository.GetAll(context);
+            return _productGroupRepository.GetAll();
         }
 
         public int AddNode(ProductGroup productGroup)
         {
-            using ProjectContext context = new ProjectContext();
-            var saved = ProductGroupRepository.Save(productGroup, context);
+            var saved = _productGroupRepository.Save(productGroup);
             return saved.Id;
         }
 
         public int UpdateNode(ProductGroup productGroup)
         {
-            using ProjectContext context = new ProjectContext();
-            var updated = ProductGroupRepository.Update(productGroup, context);
+            var updated = _productGroupRepository.Update(productGroup);
             return updated.Id;
         }
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            return ProductControl.SearchUsedProductGroup(productGroup);
+            return _productControl.SearchUsedProductGroup(productGroup);
         }
 
         public int DeleteNode(ProductGroup productGroup)
         {
-            using ProjectContext context = new ProjectContext();
-            var deleted = ProductGroupRepository.Delete(productGroup.Id, context);
+            var deleted = _productGroupRepository.Delete(productGroup.Id);
 
             return deleted?.Id ?? 0;
         }

@@ -3,32 +3,34 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class PositionControl
+    public class PositionControl
     {
-        private readonly PositionRepository PositionRepository = new PositionRepository(new ProjectContext());
+        private readonly PositionRepository _positionRepository;
+
+        public PositionControl(PositionRepository positionRepository)
+        {
+            _positionRepository = positionRepository;
+        }
 
         public List<Position> GetAllByOrderId(int orderId)
         {
-            using ProjectContext context = new ProjectContext();
-            return PositionRepository.GetAllByOrderId(orderId, context);
+            return _positionRepository.GetAllByOrderId(orderId);
         }
 
         public List<Position> Search(string text, int orderId)
         {
-            using ProjectContext context = new ProjectContext();
-            return PositionRepository.Search(text, orderId, context);
+            return _positionRepository.Search(text, orderId);
         }
 
         public int Save(Position position)
         {
-            using ProjectContext context = new ProjectContext();
             if (position.Id == 0)
             {
-                PositionRepository.Save(position, context);
+                _positionRepository.Save(position);
             }
             else
             {
-                PositionRepository.Update(position, context);
+                _positionRepository.Update(position);
             }
 
             return position.Id;
@@ -36,8 +38,7 @@ namespace db_projektarbeit.Control
 
         public int Delete(Position position)
         {
-            using ProjectContext context = new ProjectContext();
-            var deleted = PositionRepository.Delete(position.Id, context);
+            var deleted = _positionRepository.Delete(position.Id);
             return deleted.Id;
         }
     }

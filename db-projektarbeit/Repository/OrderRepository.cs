@@ -5,14 +5,15 @@ using System.Linq;
 
 namespace db_projektarbeit.Repository
 {
-    class OrderRepository : RepositoryBase<Order>
+    public class OrderRepository : RepositoryBase<Order>
     {
-        public OrderRepository(ProjectContext context) : base(context)
+        public OrderRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public new List<Order> GetAll(ProjectContext context)
+        public new List<Order> GetAll()
         {
+            using var context = new ProjectContext(Options);
             var orders = context.Orders
                 .Include(o => o.Positions)
                 .ThenInclude(p => p.Product)
@@ -32,8 +33,9 @@ namespace db_projektarbeit.Repository
             return orders;
         }
 
-        public List<Order> Search(string text, ProjectContext context)
+        public List<Order> Search(string text)
         {
+            using var context = new ProjectContext(Options);
             text = text.ToLower();
 
             return context.Orders
@@ -51,8 +53,9 @@ namespace db_projektarbeit.Repository
                 .ToList();
         }
 
-        public new int Save(Order order, ProjectContext context)
+        public new int Save(Order order)
         {
+            using var context = new ProjectContext(Options);
             if (order.Id == 0)
             {
                 context.Orders.Add(order);
@@ -72,8 +75,9 @@ namespace db_projektarbeit.Repository
             return order.Id;
         }
 
-        public void Bill(int orderId, ProjectContext context)
+        public void Bill(int orderId)
         {
+            using var context = new ProjectContext(Options);
             var order = context.Orders.SingleOrDefault(o => o.Id == orderId);
             order.Billed = true;
             context.Orders.Update(order);

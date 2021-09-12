@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace db_projektarbeit.Repository
 {
-    class CityRepository : RepositoryBase<City>
+    public class CityRepository : RepositoryBase<City>
     {
-        public CityRepository(ProjectContext context) : base(context)
+        public CityRepository(DbContextOptions<ProjectContext> options) : base(options)
         {
         }
 
-        public List<City> Search(string text, ProjectContext context)
+        public List<City> Search(string text)
         {
+            using var context = new ProjectContext(Options);
             text = text.ToLower();
 
             return context.Cities

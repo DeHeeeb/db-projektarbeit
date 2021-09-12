@@ -4,39 +4,40 @@ using db_projektarbeit.Repository;
 
 namespace db_projektarbeit.Control
 {
-    class ProductControl
+    public class ProductControl
     {
-        private readonly ProductRepository ProductRepository = new ProductRepository(new ProjectContext());
+        private readonly ProductRepository _productRepository;
+
+        public ProductControl(ProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
 
         public List<Product> GetAll()
         {
-            using ProjectContext context = new ProjectContext();
-            return ProductRepository.GetAll(context);
+            return _productRepository.GetAll();
         }
 
         public List<Product> Search(string text)
         {
-            using ProjectContext context = new ProjectContext();
-            return ProductRepository.Search(text, context);
+            return _productRepository.Search(text);
         }
 
         public List<Product> SearchUsedProductGroup(ProductGroup productGroup)
         {
-            using ProjectContext context = new ProjectContext();
-            return ProductRepository.SearchUsedProductGroup(productGroup, context);
+            return _productRepository.SearchUsedProductGroup(productGroup);
         }
 
         public int Save(Product product)
         {
-            using ProjectContext context = new ProjectContext();
             if (product.Id == 0)
             {
                 product.CreationDate = DateTime.Now.Date;
-                ProductRepository.Save(product, context);
+                _productRepository.Save(product);
             }
             else
             {
-                ProductRepository.Update(product, context);
+                _productRepository.Update(product);
             }
 
             return product.Id;
@@ -44,8 +45,7 @@ namespace db_projektarbeit.Control
 
         public int Delete(Product product)
         {
-            using ProjectContext context = new ProjectContext();
-            var deleted = ProductRepository.Delete(product.Id, context);
+            var deleted = _productRepository.Delete(product.Id);
 
             return deleted?.Id ?? 0;
         }
