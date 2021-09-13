@@ -208,7 +208,7 @@
             this.groupBox1.Size = new System.Drawing.Size(340, 171);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Import/Export";
+            this.groupBox1.Text = "Export/Import";
             // 
             // CmdImportCustomer
             // 

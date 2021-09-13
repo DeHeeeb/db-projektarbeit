@@ -99,7 +99,7 @@ namespace db_projektarbeit.View
             this.GrpFromat.Size = new System.Drawing.Size(181, 165);
             this.GrpFromat.TabIndex = 46;
             this.GrpFromat.TabStop = false;
-            this.GrpFromat.Text = "Fromat";
+            this.GrpFromat.Text = "Format";
             // 
             // RadJson
             // 
